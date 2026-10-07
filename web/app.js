@@ -3,31 +3,14 @@
  * Zero backend, instant Vietnamese full-text search across 2,479 prompts.
  */
 
-// Vietnamese Accent Normalization Map
-const VN_ACCENT_MAP = {
-  'à': 'a', 'á': 'a', 'ả': 'a', 'ã': 'a', 'ạ': 'a',
-  'ă': 'a', 'ằ': 'a', 'ắ': 'a', 'ẳ': 'a', 'ẵ': 'a', 'ặ': 'a',
-  'â': 'a', 'ầ': 'a', 'ấ': 'a', 'ẩ': 'a', 'ẫ': 'a', 'ậ': 'a',
-  'đ': 'd',
-  'è': 'e', 'é': 'e', 'ẻ': 'e', 'ẽ': 'e', 'ẹ': 'e',
-  'ê': 'e', 'ề': 'e', 'ế': 'e', 'ể': 'e', 'ễ': 'e', 'ệ': 'e',
-  'ì': 'i', 'í': 'i', 'ỉ': 'i', 'ĩ': 'i', 'ị': 'i',
-  'ò': 'o', 'ó': 'o', 'ỏ': 'o', 'õ': 'o', 'ọ': 'o',
-  'ô': 'o', 'ồ': 'o', 'ố': 'o', 'ổ': 'o', 'ỗ': 'o', 'ộ': 'o',
-  'ơ': 'o', 'ờ': 'o', 'ớ': 'o', 'ở': 'o', 'ỡ': 'o', 'ợ': 'o',
-  'ù': 'u', 'ú': 'u', 'ủ': 'u', 'ũ': 'u', 'ụ': 'u',
-  'ư': 'u', 'ừ': 'u', 'ứ': 'u', 'ử': 'u', 'ữ': 'u', 'ự': 'u',
-  'ỳ': 'y', 'ý': 'y', 'ỷ': 'y', 'ỹ': 'y', 'ỵ': 'y'
-};
-
+// Bulletproof Vietnamese Accent & Unicode Normalizer (NFC, NFD & Mac keyboards)
 function removeAccents(text) {
   if (!text) return '';
-  const str = String(text).toLowerCase();
-  let result = '';
-  for (let i = 0; i < str.length; i++) {
-    result += VN_ACCENT_MAP[str[i]] || str[i];
-  }
-  return result;
+  return String(text)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/đ/gi, 'd')
+    .toLowerCase();
 }
 
 function tokenize(text) {
@@ -112,6 +95,17 @@ async function initApp() {
 
     state.allCards = await cardsRes.json();
     state.searchIndex = await indexRes.json();
+
+    // Pre-calculate normalized search string for instant 0ms full-text lookup
+    state.allCards.forEach(card => {
+      card._searchStr = removeAccents([
+        card.vi_title || '',
+        card.snippet || '',
+        card.category || '',
+        card.subcategory || '',
+        (card.tags || []).join(' ')
+      ].join(' '));
+    });
 
     if (elements.totalPromptsCounter) {
       elements.totalPromptsCounter.textContent = state.allCards.length.toLocaleString();
@@ -278,39 +272,49 @@ function applyFiltersAndSearch() {
   const startTime = performance.now();
   const query = state.searchQuery.trim();
   const queryClean = removeAccents(query);
-  const qTokens = tokenize(query);
+  const qTokens = queryClean.split(/\s+/).filter(Boolean);
 
   let candidates = state.allCards;
 
-  // 1. Full-text search with inverted index if query exists
-  if (qTokens.length > 0 && state.searchIndex && state.searchIndex.inverted_index) {
-    const inv = state.searchIndex.inverted_index;
+  // 1. Instant Multi-Strategy Search if query exists
+  if (qTokens.length > 0) {
     const scores = new Map();
+    const inv = (state.searchIndex && state.searchIndex.inverted_index) ? state.searchIndex.inverted_index : null;
 
-    qTokens.forEach(token => {
-      const postings = inv[token] || [];
-      postings.forEach(([docIdx, weight]) => {
-        scores.set(docIdx, (scores.get(docIdx) || 0) + weight);
+    // A. Inverted Index token match
+    if (inv) {
+      qTokens.forEach(token => {
+        const postings = inv[token] || [];
+        postings.forEach(([docIdx, weight]) => {
+          scores.set(docIdx, (scores.get(docIdx) || 0) + weight);
+        });
       });
-    });
+    }
 
-    // Exact title match bonus
-    scores.forEach((score, docIdx) => {
-      const card = state.allCards[docIdx];
-      if (card && card.vi_title) {
-        const titleClean = removeAccents(card.vi_title);
-        if (titleClean.includes(queryClean)) {
-          scores.set(docIdx, score + 30);
-        }
+    // B. Substring & Prefix matching across all fields (handles partial words, prefixes, Vietnamese phrases)
+    state.allCards.forEach((card, docIdx) => {
+      const searchStr = card._searchStr || '';
+      const titleClean = removeAccents(card.vi_title || '');
+
+      const allTokensMatch = qTokens.every(tok => searchStr.includes(tok));
+      if (allTokensMatch) {
+        let boost = (scores.get(docIdx) || 0) + 20;
+        // Exact phrase bonus in title
+        if (titleClean.includes(queryClean)) boost += 50;
+        // Starts with bonus
+        if (titleClean.startsWith(queryClean)) boost += 30;
+        scores.set(docIdx, boost);
       }
     });
 
-    // Filter and sort by score
-    const matchedIndices = Array.from(scores.entries())
-      .sort((a, b) => b[1] - a[1])
-      .map(([docIdx]) => docIdx);
-
-    candidates = matchedIndices.map(idx => state.allCards[idx]).filter(Boolean);
+    if (scores.size > 0) {
+      candidates = Array.from(scores.entries())
+        .sort((a, b) => b[1] - a[1])
+        .map(([docIdx]) => state.allCards[docIdx])
+        .filter(Boolean);
+    } else {
+      candidates = [];
+    }
   }
 
   // 2. Multi-dimensional Filtering
@@ -604,18 +608,38 @@ function showToast(message) {
 
 // Event Listeners
 function setupEventListeners() {
-  // 1. Search input debounce
+  // 1. Search input debounce & instant execution
   let debounceTimer;
   if (elements.searchInput) {
-    elements.searchInput.addEventListener('input', (e) => {
+    const handleSearchInput = (val) => {
       clearTimeout(debounceTimer);
       debounceTimer = setTimeout(() => {
-        state.searchQuery = e.target.value;
+        state.searchQuery = val || '';
         if (elements.clearSearchBtn) {
           elements.clearSearchBtn.classList.toggle('hidden', state.searchQuery.length === 0);
         }
         applyFiltersAndSearch();
-      }, 150);
+      }, 60);
+    };
+
+    elements.searchInput.addEventListener('input', (e) => {
+      handleSearchInput(e.target.value);
+    });
+
+    elements.searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        clearTimeout(debounceTimer);
+        state.searchQuery = e.target.value || '';
+        if (elements.clearSearchBtn) {
+          elements.clearSearchBtn.classList.toggle('hidden', state.searchQuery.length === 0);
+        }
+        applyFiltersAndSearch();
+        elements.searchInput.blur();
+      }
+    });
+
+    elements.searchInput.addEventListener('search', (e) => {
+      handleSearchInput(e.target.value);
     });
   }
 
