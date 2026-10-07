@@ -83,6 +83,15 @@ function initElements() {
   elements.toastMessage = document.getElementById('toastMessage');
   elements.quickTagsContainer = document.getElementById('quickTagsContainer');
   elements.totalPromptsCounter = document.getElementById('totalPromptsCounter');
+
+  // Architecture & AI Directory Section Elements
+  elements.tabAiIndexBtn = document.getElementById('tabAiIndexBtn');
+  elements.tabArchitectureBtn = document.getElementById('tabArchitectureBtn');
+  elements.toggleSectionBtn = document.getElementById('toggleSectionBtn');
+  elements.toggleSectionIcon = document.getElementById('toggleSectionIcon');
+  elements.architectureSectionContent = document.getElementById('architectureSectionContent');
+  elements.aiIndexView = document.getElementById('aiIndexView');
+  elements.architectureView = document.getElementById('architectureView');
 }
 
 // Initialize Application
@@ -719,6 +728,121 @@ function setupEventListeners() {
     if (e.key === 'Escape' && elements.detailModal && !elements.detailModal.classList.contains('hidden')) {
       closeDetailModal();
     }
+  });
+
+  // 6. Architecture & AI Directory Tabs & Interaction
+  if (elements.tabAiIndexBtn && elements.tabArchitectureBtn) {
+    elements.tabAiIndexBtn.addEventListener('click', () => {
+      // Show AI Index, hide Architecture
+      if (elements.aiIndexView) elements.aiIndexView.classList.remove('hidden');
+      if (elements.architectureView) elements.architectureView.classList.add('hidden');
+      
+      // Update Tab Styles
+      elements.tabAiIndexBtn.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 bg-indigo-600 text-white shadow-md shadow-indigo-600/30';
+      elements.tabArchitectureBtn.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 text-slate-400 hover:text-slate-200';
+    });
+
+    elements.tabArchitectureBtn.addEventListener('click', () => {
+      // Show Architecture, hide AI Index
+      if (elements.architectureView) elements.architectureView.classList.remove('hidden');
+      if (elements.aiIndexView) elements.aiIndexView.classList.add('hidden');
+
+      // Update Tab Styles
+      elements.tabArchitectureBtn.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 bg-indigo-600 text-white shadow-md shadow-indigo-600/30';
+      elements.tabAiIndexBtn.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 text-slate-400 hover:text-slate-200';
+    });
+  }
+
+  // Toggle Collapse / Expand
+  if (elements.toggleSectionBtn && elements.architectureSectionContent) {
+    let isCollapsed = false;
+    elements.toggleSectionBtn.addEventListener('click', () => {
+      isCollapsed = !isCollapsed;
+      if (isCollapsed) {
+        elements.architectureSectionContent.classList.add('hidden');
+        if (elements.toggleSectionIcon) elements.toggleSectionIcon.style.transform = 'rotate(180deg)';
+      } else {
+        elements.architectureSectionContent.classList.remove('hidden');
+        if (elements.toggleSectionIcon) elements.toggleSectionIcon.style.transform = 'rotate(0deg)';
+      }
+    });
+  }
+
+  // Topic Explore Buttons
+  document.querySelectorAll('.ai-topic-explore-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.dataset.cat;
+      const search = btn.dataset.search;
+
+      if (cat) {
+        // Clear search query so category results are not restricted
+        state.searchQuery = '';
+        if (elements.searchInput) elements.searchInput.value = '';
+        if (elements.clearSearchBtn) elements.clearSearchBtn.classList.add('hidden');
+
+        // Select category
+        state.selectedCategory = cat;
+        if (elements.categorySelect) {
+          const catLower = cat.toLowerCase();
+          for (let opt of elements.categorySelect.options) {
+            if (opt.value && opt.value.toLowerCase().includes(catLower)) {
+              elements.categorySelect.value = opt.value;
+              state.selectedCategory = opt.value;
+              break;
+            }
+          }
+        }
+        updateSubcategories();
+      } else if (search) {
+        // Clear category filter so search covers all items
+        state.selectedCategory = '';
+        state.selectedSubcategory = '';
+        if (elements.categorySelect) elements.categorySelect.value = '';
+        if (elements.subcategorySelect) {
+          elements.subcategorySelect.value = '';
+          elements.subcategorySelect.disabled = true;
+        }
+
+        state.searchQuery = search;
+        if (elements.searchInput) elements.searchInput.value = search;
+        if (elements.clearSearchBtn) elements.clearSearchBtn.classList.remove('hidden');
+      }
+
+      applyFiltersAndSearch();
+
+      // Smooth scroll to prompts results
+      const grid = document.getElementById('promptsGrid');
+      if (grid) {
+        grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Topic Tags
+  document.querySelectorAll('.ai-topic-tag').forEach(tagBtn => {
+    tagBtn.addEventListener('click', () => {
+      const tag = tagBtn.dataset.tag;
+      if (tag) {
+        // Reset category filter to allow global search
+        state.selectedCategory = '';
+        state.selectedSubcategory = '';
+        if (elements.categorySelect) elements.categorySelect.value = '';
+        if (elements.subcategorySelect) {
+          elements.subcategorySelect.value = '';
+          elements.subcategorySelect.disabled = true;
+        }
+
+        state.searchQuery = tag;
+        if (elements.searchInput) elements.searchInput.value = tag;
+        if (elements.clearSearchBtn) elements.clearSearchBtn.classList.remove('hidden');
+        
+        applyFiltersAndSearch();
+        const grid = document.getElementById('promptsGrid');
+        if (grid) {
+          grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
   });
 }
 
