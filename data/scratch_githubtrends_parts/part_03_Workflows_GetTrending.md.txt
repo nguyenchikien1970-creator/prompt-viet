@@ -1,0 +1,62 @@
+Workflows/GetTrending.md 
+# Quy trình GetTrending (GetTrending Workflow)
+
+Quy trình làm việc để lấy danh sách các dự án thịnh hành (trending) trên GitHub.
+
+## Mô tả (Description)
+
+Quy trình này sử dụng công cụ GetTrending.ts để lấy danh sách các dự án hot nhất hiện tại từ GitHub, hỗ trợ lọc theo chu kỳ thời gian (hàng ngày/hàng tuần) và ngôn ngữ lập trình.
+
+## Khi nào nên dùng (When to Use)
+
+Sử dụng quy trình này khi người dùng yêu cầu bất kỳ điều gì sau:
+- "show github trends" / "github trending"
+- "hiển thị dự án hot" / "xem có dự án nào đang thịnh hành"
+- "weekly trending" / "dự án hot tuần này"
+- "daily trending" / "dự án hot hôm nay"
+- "TypeScript trending" / "Python trending" / Lọc theo ngôn ngữ
+- "what's hot on github" / "github có gì hot"
+
+## Các bước thực hiện (Workflow Steps)
+
+### Bước 1: Xác định tham số
+Xác nhận với người dùng hoặc suy luận các tham số sau:
+- **Chu kỳ thời gian**: daily (hàng ngày) hoặc weekly (hàng tuần, mặc định)
+- **Ngôn ngữ lập trình**: Tùy chọn (ví dụ: TypeScript, Python, Go, Rust, v.v.)
+- **Số lượng dự án**: Mặc định 10 dự án
+
+### Bước 2: Thực thi công cụ
+Chạy công cụ GetTrending.ts:
+
+```bash
+# Cách dùng cơ bản (hàng tuần, tất cả ngôn ngữ, 10 dự án)
+bun ~/.claude/skills/GitHubTrends/Tools/GetTrending.ts weekly
+
+# Chỉ định ngôn ngữ
+bun ~/.claude/skills/GitHubTrends/Tools/GetTrending.ts weekly --language=TypeScript
+
+# Chỉ định số lượng
+bun ~/.claude/skills/GitHubTrends/Tools/GetTrending.ts weekly --limit=20
+
+# Kết hợp các tham số
+bun ~/.claude/skills/GitHubTrends/Tools/GetTrending.ts daily --language=Python --limit=15
+```
+
+### Bước 3: Hiển thị kết quả
+Công cụ sẽ tự động định dạng kết quả đầu ra, bao gồm:
+- Thứ hạng dự án
+- Tên dự án
+- Tổng số Star và mức tăng trong chu kỳ
+- Ngôn ngữ lập trình
+- Mô tả dự án
+- Đường dẫn GitHub URL
+
+### Bước 4: Thao tác tiếp theo (Tùy chọn)
+Tùy theo nhu cầu của người dùng, có thể:
+- Mở trang dự án cụ thể
+- Sử dụng các skill khác để phân tích sâu hơn về dự án
+- Lưu kết quả ra tệp để tham khảo sau
+
+## Tích hợp với các Skill khác
+- **OSINT**: Khám phá các công cụ và thư viện hữu ích trong quá trình nghiên cứu
+- **Research**: Nắm bắt xu hướng công nghệ mới nổi

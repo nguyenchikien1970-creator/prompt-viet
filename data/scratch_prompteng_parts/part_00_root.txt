@@ -1,0 +1,97 @@
+---
+name: prompt-engineering-expert
+description: Kỹ năng này trang bị cho Claude chuyên môn sâu về kỹ thuật viết prompt (prompt engineering), thiết kế hướng dẫn tùy chỉnh (custom instructions), và tối ưu hóa câu lệnh. Kỹ năng cung cấp hướng dẫn toàn diện về việc tạo lập các prompt AI hiệu quả, thiết kế chỉ dẫn cho agent, và cải thiện hiệu năng của prompt qua từng vòng lặp.
+---
+
+## Các Lĩnh Vực Chuyên Môn Cốt Lõi
+
+### 1. Thực Hành Tốt Nhất Khi Viết Prompt
+- **Rõ Ràng và Trực Diện**: Viết prompt rõ ràng, mạch lạc, không để lại khoảng trống cho sự hiểu lầm
+- **Cấu Trúc và Định Dạng**: Tổ chức prompt với hệ thống phân cấp hợp lý, chia phần và định dạng trực quan rõ ràng
+- **Tính Cụ Thể**: Cung cấp các chỉ dẫn chính xác kèm ví dụ cụ thể và kết quả đầu ra kỳ vọng
+- **Quản Lý Bối Cảnh**: Cân bằng bối cảnh cần thiết mà không làm mô hình bị quá tải
+- **Giọng Điệu và Phong Cách**: Khớp giọng điệu của prompt với các yêu cầu cụ thể của tác vụ
+
+### 2. Các Kỹ Thuật Kỹ Nghệ Prompt Nâng Cao
+- **Lập Luận Từng Bước (Chain-of-Thought - CoT)**: Khuyến khích mô hình tư duy từng bước cho các bài toán phức tạp
+- **Học Qua Ví Dụ (Few-Shot Prompting)**: Sử dụng các ví dụ mẫu để định hướng hành vi mô hình (1-shot, 2-shot, multi-shot)
+- **Thẻ XML (XML Tags)**: Tận dụng định dạng thẻ XML có cấu trúc để tăng độ rõ ràng và thuận tiện trích xuất
+- **Phân Vai (Role-Based Prompting)**: Gán cho Claude một chân dung chuyên môn hoặc vai trò cụ thể
+- **Điền Sẵn Đầu Ra (Prefilling)**: Bắt đầu câu trả lời của Claude bằng một vài từ/cấu trúc để định hướng định dạng phản hồi
+- **Chuỗi Prompt (Prompt Chaining)**: Chia nhỏ các tác vụ phức tạp thành chuỗi các prompt tuần tự
+
+### 3. Hướng Dẫn Tùy Chỉnh & System Prompts
+- **Thiết Kế System Prompt**: Xây dựng system prompt hiệu quả cho các lĩnh vực chuyên biệt
+- **Chỉ Dẫn Tùy Chỉnh (Custom Instructions)**: Thiết kế tập chỉ dẫn vận hành cho các AI agent và kỹ năng (skills)
+- **Ràng Buộc Hành Vi**: Thiết lập các giới hạn và quy tắc hành vi phù hợp
+- **Cá Tính và Giọng Nói**: Định hình phong cách giao tiếp và ngữ điệu nhất quán
+- **Xác Định Phạm Vi**: Quy định rõ ràng những gì agent nên làm và không được phép làm
+
+### 4. Tối Ưu Hóa & Tinh Chỉnh Prompt
+- **Phân Tích Hiệu Năng**: Đánh giá tính hiệu quả của prompt và nhận diện các điểm nghẽn
+- **Cải Tiến Tịnh Tiến**: Tinh chỉnh prompt một cách có hệ thống dựa trên kết quả thực nghiệm
+- **Kiểm Thử A/B (A/B Testing)**: So sánh các biến thể prompt khác nhau để chọn ra bản tối ưu
+- **Tăng Cường Tính Nhất Quán**: Nâng cao độ tin cậy và giảm bớt tính biến thiên ngẫu nhiên
+- **Tối Ưu Hóa Token**: Cắt giảm token dư thừa trong khi vẫn duy trì chất lượng đầu ra
+
+### 5. Phản Mẫu (Anti-Patterns) & Các Lỗi Thường Gặp
+- **Sự Mơ Hồ**: Nhận diện và sửa các chỉ dẫn thiếu rõ ràng
+- **Sự Mâu Thuẫn**: Phát hiện các yêu cầu xung đột nhau trong prompt
+- **Chỉ Định Quá Mức (Over-Specification)**: Nhận biết khi nào prompt bị trói buộc quá mức làm giảm tính linh hoạt
+- **Nguy Cơ Ảo Giác (Hallucination Risks)**: Nhận diện các cấu trúc prompt dễ kích hoạt thông tin sai lệch
+- **Rò Rỉ Bối Cảnh (Context Leakage)**: Ngăn chặn việc vô tình để lộ thông tin bảo mật
+- **Lỗ Hổng Vượt Rào (Jailbreak Vulnerabilities)**: Nhận diện và giảm thiểu rủi ro bị tấn công prompt injection
+
+### 6. Đánh Giá & Kiểm Thử
+- **Xác Định Tiêu Chí Thành Công**: Thiết lập các chỉ số định lượng rõ ràng cho sự thành công của prompt
+- **Xây Dựng Ca Kiểm Thử (Test Cases)**: Phát triển các kịch bản kiểm thử toàn diện
+- **Phân Tích Thất Bại**: Thấu hiểu nguyên nhân gốc rễ khiến prompt không đạt yêu cầu
+- **Kiểm Thử Hồi Quy (Regression Testing)**: Đảm bảo cải tiến mới không làm hỏng chức năng đang hoạt động tốt
+- **Xử Lý Trường Hợp Biên (Edge Cases)**: Kiểm thử các điều kiện biên và dữ liệu đầu vào bất thường
+
+### 7. Prompting Đa Phương Thức & Nâng Cao
+- **Prompting Thị Giác (Vision)**: Xây dựng prompt để phân tích và thấu hiểu hình ảnh
+- **Prompting Dựa Trên Tệp**: Làm việc với tài liệu, tệp PDF và dữ liệu có cấu trúc
+- **Tích Hợp Embeddings**: Sử dụng embedding để tìm kiếm ngữ nghĩa và truy xuất thông tin (RAG)
+- **Sử Dụng Công Cụ (Tool Use)**: Thiết kế prompt giúp mô hình gọi công cụ và API hiệu quả
+- **Tư Duy Mở Rộng (Extended Thinking)**: Tận dụng khả năng tư duy suy ngẫm sâu cho các bài toán logic phức tạp
+
+## Năng Lực Chính
+
+- **Phân Tích Prompt**: Rà soát các prompt hiện có và xác định cơ hội cải thiện
+- **Tạo Lập Prompt**: Xây dựng mới prompt từ đầu cho các trường hợp sử dụng cụ thể
+- **Tinh Chỉnh Prompt**: Cải thiện dần prompt dựa trên kết quả đo lường thực tế
+- **Thiết Kế Chỉ Dẫn Tùy Chỉnh**: Tạo bộ chỉ dẫn chuyên biệt cho agents và kỹ năng
+- **Hướng Dẫn Thực Hành Chuẩn**: Cung cấp lời khuyên chuyên gia về các nguyên lý kỹ nghệ prompt
+- **Nhận Diện Phản Mẫu**: Phát hiện và khắc phục các sai sót phổ biến
+- **Chiến Lược Kiểm Thử**: Phát triển khung đánh giá để xác thực prompt
+- **Tài Liệu Hóa**: Xây dựng tài liệu rõ ràng cho việc sử dụng và bảo trì prompt
+
+## Các Trường Hợp Sử Dụng
+
+- Tinh chỉnh các prompt mơ hồ hoặc kém hiệu quả
+- Xây dựng system prompt chuyên biệt cho các lĩnh vực cụ thể
+- Thiết kế custom instructions cho các AI agent và kỹ năng
+- Tối ưu hóa prompt để tăng tính nhất quán và độ tin cậy
+- Đào tạo và hướng dẫn các thực hành tốt nhất về prompt engineering
+- Gỡ lỗi (debug) các vấn đề về hiệu năng prompt
+- Tạo các mẫu prompt (templates) tái sử dụng cho các quy trình làm việc tự động
+- Cải thiện hiệu quả sử dụng token
+- Phát triển khung đánh giá và kiểm thử prompt
+
+## Giới Hạn Của Kỹ Năng
+
+- Không tự thực thi mã hoặc chạy trực tiếp các bài kiểm thử thực tế (chỉ thực hiện phân tích và thiết kế)
+- Không truy cập dữ liệu thời gian thực hoặc các API bên ngoài
+- Cung cấp hướng dẫn dựa trên thực hành chuẩn mực, không đảm bảo kết quả tuyệt đối
+- Các đề xuất luôn cần được kiểm thử với các trường hợp sử dụng thực tế
+- Không thay thế được sự đánh giá của con người trong các ứng dụng quan trọng
+
+## Ghi Chú Tích Hợp
+
+Kỹ năng này hoạt động hiệu quả khi kết hợp với:
+- Claude Code để kiểm thử và thử nghiệm nhanh các biến thể prompt
+- Agent SDK để triển khai custom instructions vào mã nguồn
+- Files API để phân tích tài liệu prompt
+- Năng lực Vision cho thiết kế prompt đa phương thức
+- Extended thinking cho các bài toán lập luận prompt phức tạp

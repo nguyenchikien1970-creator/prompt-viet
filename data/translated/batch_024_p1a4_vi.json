@@ -1,0 +1,137 @@
+[
+  {
+    "id": "cmm682atm0005jm042fbta1q2",
+    "slug": "image-to-video-360-product-rotation",
+    "original_title": "image to video 360 product rotaion",
+    "original_prompt": "{\n  \"model\": \"veo-3.1\",\n  \"task\": \"image_to_video_360_product_rotation\",\n\n  \"objective\": \"Generate a photorealistic, silent, 360-degree rotation video from the provided front and back images of the exact same product. Preserve 100% of the original product identity without modification, addition, removal, or hallucination. The product must appear naturally filled internally using ghost mannequin volume reconstruction, while remaining completely faithful to the original images. The garment must appear professionally ironed, perfectly smooth, crisp, and retail-ready while preserving all original details. Output must contain absolutely no audio.\",\n\n  \"garment_condition_global_rule\": {\n    \"all_clothing_must_be_ironed\": true,\n    \"appearance\": \"perfectly pressed, crisp, smooth, structured, premium retail presentation\",\n    \"no_new_wrinkles\": true,\n    \"no_random_fabric_folding\": true,\n    \"maintain_original_wrinkle_data_if_present\": true,\n    \"no_artificial_wrinkle_generation\": true,\n    \"clean_finish\": true,\n    \"brand_new_look\": true\n  },\n\n  \"input\": {\n    \"type\": \"multi_image\",\n    \"views\": [\n      {\n        \"name\": \"front\",\n        \"role\": \"primary_reference\",\n        \"weight\": 1.0\n      },\n      {\n        \"name\": \"back\",\n        \"role\": \"secondary_reference\",\n        \"weight\": 1.0\n      }\n    ],\n\n    \"forensic_identity_lock\": {\n      \"mode\": \"strict\",\n\n      \"geometry_lock\": true,\n      \"silhouette_lock\": true,\n      \"mesh_lock\": true,\n\n      \"texture_lock\": true,\n      \"fabric_pattern_lock\": true,\n      \"stitching_lock\": true,\n      \"wrinkle_lock\": true,\n\n      \"color_lock\": true,\n      \"material_lock\": true,\n      \"surface_lock\": true,\n\n      \"logo_lock\": true,\n      \"label_lock\": true,\n      \"branding_lock\": true,\n\n      \"proportion_lock\": true,\n      \"measurement_lock\": true,\n\n      \"prevent_hallucination\": true,\n      \"prevent_detail_invention\": true,\n      \"prevent_detail_removal\": true\n    }\n  },\n\n  \"geometry_reconstruction\": {\n    \"method\": \"constrained_true_3d_reconstruction\",\n\n    \"source_constraint\": \"only_use_information_present_in_input_images\",\n\n    \"volume_generation\": {\n      \"enabled\": true,\n      \"type\": \"ghost_mannequin_volume\",\n      \"visibility\": \"none\"\n    },\n\n    \"reconstruction_rules\": {\n      \"interpolate_only\": true,\n      \"no_detail_creation\": true,\n      \"no_surface_modification\": true,\n      \"no_topology_change\": true,\n      \"no_design_interpretation\": true\n    },\n\n    \"mesh_constraints\": {\n      \"rigid\": true,\n      \"no_deformation\": true,\n      \"no_shape_change\": true,\n      \"no_texture_shift\": true\n    }\n  },\n\n  \"animation\": {\n    \"type\": \"360_degree_rotation\",\n    \"axis\": \"vertical\",\n    \"degrees\": 360,\n    \"direction\": \"clockwise\",\n\n    \"speed\": \"constant\",\n    \"duration_seconds\": 6,\n\n    \"motion_constraints\": {\n      \"no_wobble\": true,\n      \"no_jitter\": true,\n      \"no_mesh_change\": true,\n      \"no_texture_shift\": true,\n      \"no_geometry_shift\": true\n    },\n\n    \"start_state\": \"exact_front_view\",\n    \"end_state\": \"exact_front_view\",\n\n    \"loop\": true\n  },\n\n  \"ghost_mannequin\": {\n    \"enabled\": true,\n    \"visibility\": \"invisible\",\n\n    \"constraints\": {\n      \"must_not_be_visible\": true,\n      \"must_not_modify_surface\": true,\n      \"must_not_modify_shape\": true,\n      \"must_not_modify_wrinkles\": true,\n      \"must_not_modify_fit\": true\n    }\n  },\n\n  \"scene\": {\n    \"background\": {\n      \"type\": \"pure_white\",\n      \"color\": \"#FFFFFF\",\n      \"uniform\": true\n    },\n\n    \"product_state\": {\n      \"floating\": true,\n      \"no_support_visible\": true\n    },\n\n    \"shadow\": {\n      \"type\": \"soft_contact\",\n      \"stable\": true,\n      \"physically_correct\": true\n    }\n  },\n\n  \"camera\": {\n    \"type\": \"fixed\",\n    \"movement\": \"none\",\n    \"rotation\": \"none\",\n    \"zoom\": \"none\",\n    \"center_lock\": true,\n    \"lens\": \"85mm\",\n    \"distortion\": false\n  },\n\n  \"lighting\": {\n    \"type\": \"studio_softbox\",\n    \"consistency\": \"locked\",\n    \"variation\": false,\n    \"flicker\": false,\n    \"must_not_change_during_rotation\": true\n  },\n\n  \"rendering\": {\n    \"mode\": \"photorealistic\",\n    \"texture_source\": \"input_images_only\",\n    \"no_texture_generation\": true,\n    \"no_creative_interpretation\": true,\n    \"no_artificial_enhancement\": true,\n    \"fabric_finish\": \"smooth_pressed_clean\",\n    \"retail_presentation_standard\": \"premium_ecommerce_ready\"\n  },\n\n  \"audio\": {\n    \"enabled\": false,\n    \"generate_audio\": false,\n    \"include_audio_track\": false,\n    \"music\": false,\n    \"sound_effects\": false,\n    \"voice\": false,\n    \"ambient_sound\": false,\n    \"silence\": true\n  },\n\n  \"output\": {\n    \"resolution\": \"2160x2160\",\n    \"fps\": 30,\n    \"duration_seconds\": 6,\n    \"format\": \"mp4\",\n    \"video_codec\": \"H.264\",\n    \"audio_codec\": \"none\",\n    \"include_audio_track\": false,\n    \"loop\": true,\n    \"background\": \"pure_white\",\n    \"silent\": true\n  },\n\n  \"hard_constraints\": [\n    \"NO audio\",\n    \"NO music\",\n    \"NO sound effects\",\n    \"NO voice\",\n    \"NO ambient sound\",\n    \"DO NOT add details\",\n    \"DO NOT remove details\",\n    \"DO NOT modify stitching\",\n    \"DO NOT modify logos\",\n    \"DO NOT modify texture\",\n    \"DO NOT modify structure\",\n    \"DO NOT change proportions\",\n    \"DO NOT stylize\",\n    \"DO NOT hallucinate\",\n    \"NO new wrinkles\",\n    \"NO messy fabric folds\",\n    \"MUST appear professionally ironed\"\n  ],\n\n  \"negative_prompt\": [\n    \"music\",\n    \"sound\",\n    \"voice\",\n    \"audio\",\n    \"ambient audio\",\n    \"sound effects\",\n    \"hallucinated details\",\n    \"modified stitching\",\n    \"different fabric\",\n    \"shape morphing\",\n    \"geometry distortion\",\n    \"creative reinterpretation\",\n    \"wrinkled fabric\",\n    \"messy folds\",\n    \"creased clothing\",\n    \"unpressed garment\"\n  ]\n}",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Chuyển ảnh thành video xoay sản phẩm 360 độ (Veo 3.1)",
+    "vi_prompt": "{\n  \"model\": \"veo-3.1\",\n  \"task\": \"image_to_video_360_product_rotation\",\n\n  \"objective\": \"Tạo một video quay 360 độ siêu thực, không có âm thanh từ các hình ảnh mặt trước và mặt sau được cung cấp của cùng một sản phẩm chính xác. Giữ nguyên 100% nhận diện sản phẩm gốc mà không sửa đổi, thêm bớt hay tạo chi tiết ảo (hallucination). Sản phẩm phải trông như được lấp đầy tự nhiên từ bên trong bằng kỹ thuật tái dựng thể tích ma-nơ-canh tàng hình (ghost mannequin), đồng thời hoàn toàn trung thực với ảnh gốc. Trang phục phải trông như được là ủi chuyên nghiệp, hoàn toàn phẳng phiu, sắc nét và sẵn sàng trưng bày bán lẻ trong khi vẫn bảo tồn mọi chi tiết nguyên bản. Đầu ra tuyệt đối không chứa âm thanh.\",\n\n  \"garment_condition_global_rule\": {\n    \"all_clothing_must_be_ironed\": true,\n    \"appearance\": \"perfectly pressed, crisp, smooth, structured, premium retail presentation\",\n    \"no_new_wrinkles\": true,\n    \"no_random_fabric_folding\": true,\n    \"maintain_original_wrinkle_data_if_present\": true,\n    \"no_artificial_wrinkle_generation\": true,\n    \"clean_finish\": true,\n    \"brand_new_look\": true\n  },\n\n  \"input\": {\n    \"type\": \"multi_image\",\n    \"views\": [\n      {\n        \"name\": \"front\",\n        \"role\": \"primary_reference\",\n        \"weight\": 1.0\n      },\n      {\n        \"name\": \"back\",\n        \"role\": \"secondary_reference\",\n        \"weight\": 1.0\n      }\n    ],\n\n    \"forensic_identity_lock\": {\n      \"mode\": \"strict\",\n\n      \"geometry_lock\": true,\n      \"silhouette_lock\": true,\n      \"mesh_lock\": true,\n\n      \"texture_lock\": true,\n      \"fabric_pattern_lock\": true,\n      \"stitching_lock\": true,\n      \"wrinkle_lock\": true,\n\n      \"color_lock\": true,\n      \"material_lock\": true,\n      \"surface_lock\": true,\n\n      \"logo_lock\": true,\n      \"label_lock\": true,\n      \"branding_lock\": true,\n\n      \"proportion_lock\": true,\n      \"measurement_lock\": true,\n\n      \"prevent_hallucination\": true,\n      \"prevent_detail_invention\": true,\n      \"prevent_detail_removal\": true\n    }\n  },\n\n  \"geometry_reconstruction\": {\n    \"method\": \"constrained_true_3d_reconstruction\",\n\n    \"source_constraint\": \"only_use_information_present_in_input_images\",\n\n    \"volume_generation\": {\n      \"enabled\": true,\n      \"type\": \"ghost_mannequin_volume\",\n      \"visibility\": \"none\"\n    },\n\n    \"reconstruction_rules\": {\n      \"interpolate_only\": true,\n      \"no_detail_creation\": true,\n      \"no_surface_modification\": true,\n      \"no_topology_change\": true,\n      \"no_design_interpretation\": true\n    },\n\n    \"mesh_constraints\": {\n      \"rigid\": true,\n      \"no_deformation\": true,\n      \"no_shape_change\": true,\n      \"no_texture_shift\": true\n    }\n  },\n\n  \"animation\": {\n    \"type\": \"360_degree_rotation\",\n    \"axis\": \"vertical\",\n    \"degrees\": 360,\n    \"direction\": \"clockwise\",\n\n    \"speed\": \"constant\",\n    \"duration_seconds\": 6,\n\n    \"motion_constraints\": {\n      \"no_wobble\": true,\n      \"no_jitter\": true,\n      \"no_mesh_change\": true,\n      \"no_texture_shift\": true,\n      \"no_geometry_shift\": true\n    },\n\n    \"start_state\": \"exact_front_view\",\n    \"end_state\": \"exact_front_view\",\n\n    \"loop\": true\n  },\n\n  \"ghost_mannequin\": {\n    \"enabled\": true,\n    \"visibility\": \"invisible\",\n\n    \"constraints\": {\n      \"must_not_be_visible\": true,\n      \"must_not_modify_surface\": true,\n      \"must_not_modify_shape\": true,\n      \"must_not_modify_wrinkles\": true,\n      \"must_not_modify_fit\": true\n    }\n  },\n\n  \"scene\": {\n    \"background\": {\n      \"type\": \"pure_white\",\n      \"color\": \"#FFFFFF\",\n      \"uniform\": true\n    },\n\n    \"product_state\": {\n      \"floating\": true,\n      \"no_support_visible\": true\n    },\n\n    \"shadow\": {\n      \"type\": \"soft_contact\",\n      \"stable\": true,\n      \"physically_correct\": true\n    }\n  },\n\n  \"camera\": {\n    \"type\": \"fixed\",\n    \"movement\": \"none\",\n    \"rotation\": \"none\",\n    \"zoom\": \"none\",\n    \"center_lock\": true,\n    \"lens\": \"85mm\",\n    \"distortion\": false\n  },\n\n  \"lighting\": {\n    \"type\": \"studio_softbox\",\n    \"consistency\": \"locked\",\n    \"variation\": false,\n    \"flicker\": false,\n    \"must_not_change_during_rotation\": true\n  },\n\n  \"rendering\": {\n    \"mode\": \"photorealistic\",\n    \"texture_source\": \"input_images_only\",\n    \"no_texture_generation\": true,\n    \"no_creative_interpretation\": true,\n    \"no_artificial_enhancement\": true,\n    \"fabric_finish\": \"smooth_pressed_clean\",\n    \"retail_presentation_standard\": \"premium_ecommerce_ready\"\n  },\n\n  \"audio\": {\n    \"enabled\": false,\n    \"generate_audio\": false,\n    \"include_audio_track\": false,\n    \"music\": false,\n    \"sound_effects\": false,\n    \"voice\": false,\n    \"ambient_sound\": false,\n    \"silence\": true\n  },\n\n  \"output\": {\n    \"resolution\": \"2160x2160\",\n    \"fps\": 30,\n    \"duration_seconds\": 6,\n    \"format\": \"mp4\",\n    \"video_codec\": \"H.264\",\n    \"audio_codec\": \"none\",\n    \"include_audio_track\": false,\n    \"loop\": true,\n    \"background\": \"pure_white\",\n    \"silent\": true\n  },\n\n  \"hard_constraints\": [\n    \"KHÔNG âm thanh\",\n    \"KHÔNG âm nhạc\",\n    \"KHÔNG hiệu ứng âm thanh\",\n    \"KHÔNG giọng nói\",\n    \"KHÔNG âm thanh môi trường\",\n    \"KHÔNG thêm chi tiết\",\n    \"KHÔNG xóa chi tiết\",\n    \"KHÔNG sửa đổi đường may\",\n    \"KHÔNG sửa đổi logo\",\n    \"KHÔNG sửa đổi chất liệu\",\n    \"KHÔNG sửa đổi cấu trúc\",\n    \"KHÔNG thay đổi tỷ lệ\",\n    \"KHÔNG cách điệu hóa\",\n    \"KHÔNG tạo chi tiết ảo (hallucinate)\",\n    \"KHÔNG tạo nếp nhăn mới\",\n    \"KHÔNG tạo nếp gấp vải lộn xộn\",\n    \"BẮT BUỘC trông như được là ủi chuyên nghiệp\"\n  ],\n\n  \"negative_prompt\": [\n    \"music\",\n    \"sound\",\n    \"voice\",\n    \"audio\",\n    \"ambient audio\",\n    \"sound effects\",\n    \"hallucinated details\",\n    \"modified stitching\",\n    \"different fabric\",\n    \"shape morphing\",\n    \"geometry distortion\",\n    \"creative reinterpretation\",\n    \"wrinkled fabric\",\n    \"messy folds\",\n    \"creased clothing\",\n    \"unpressed garment\"\n  ]\n}",
+    "translation_status": "translated",
+    "source_category": "Video Generation",
+    "source_tags": [
+      "JSON"
+    ],
+    "category": "Thiết kế & Đồ họa",
+    "subcategory": "Sinh Video AI & Xoay 3D sản phẩm",
+    "tags": [
+      "video 360",
+      "veo 3.1",
+      "xoay sản phẩm",
+      "ghost mannequin",
+      "thương mại điện tử"
+    ],
+    "search_keywords_vi": [
+      "tạo video xoay 360 độ sản phẩm",
+      "prompt video veo 3.1",
+      "xoay sản phẩm thương mại điện tử"
+    ],
+    "use_case": "Cấu hình JSON kỹ thuật điều khiển mô hình AI tạo video xoay sản phẩm 360 độ chuẩn thương mại điện tử",
+    "model_type": [
+      "video"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "ayoubelouardi3710",
+      "name": "Watson Charlie",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocL8khk5HFEJMUyDNYUq-CBxvgncZCsdVsM1gVTFWymP7En3Nqze=s96-c",
+      "identifier": "ayoubelouardi3710",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/image-to-video-360-product-rotation",
+    "created_at": "2026-02-28T11:12:42.826Z"
+  },
+  {
+    "id": "cmm63sh4c0007i804wis3eo5g",
+    "slug": "notebooklm-lecture-notes",
+    "original_title": "notebooklm_lecture_notes",
+    "original_prompt": "Create a deck summarizing the content of each section; emphasize the key points; The target audience is professionals. Use a pure white background without any grid.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Ghi chú bài giảng NotebookLM",
+    "vi_prompt": "Tạo một bộ slide (deck) tóm tắt nội dung của từng phần; nhấn mạnh các điểm cốt lõi; Đối tượng độc giả mục tiêu là các chuyên gia. Sử dụng nền trắng tinh khiết không có bất kỳ đường lưới nào.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Năng suất & Công việc",
+    "subcategory": "Tóm tắt & Thiết kế Slide thuyết trình",
+    "tags": [
+      "notebooklm",
+      "slide thuyết trình",
+      "tóm tắt bài giảng",
+      "deck presentation",
+      "năng suất"
+    ],
+    "search_keywords_vi": [
+      "tóm tắt bài giảng notebooklm",
+      "tạo slide thuyết trình chuyên nghiệp",
+      "prompt tóm tắt bài giảng thành slide"
+    ],
+    "use_case": "Tạo dàn ý bộ slide thuyết trình súc tích, chuyên nghiệp tóm tắt nội dung bài giảng",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "easy",
+    "quality_status": "ok",
+    "author": {
+      "username": "zzfmvp",
+      "name": "Zhifeng Zhu",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJcljM1I5o1qgfhonwqC3zuqkEaD5e1wxkQaF202arQzCfwBw0=s96-c",
+      "identifier": "zzfmvp",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/notebooklm-lecture-notes",
+    "created_at": "2026-02-28T09:13:05.965Z"
+  },
+  {
+    "id": "cmm5mrd6x0007l204u2i7p4dv",
+    "slug": "transform-the-input-product-image-into-a-professional-commercial-studio-photograph",
+    "original_title": "Transform the input product image into a professional commercial studio photograph",
+    "original_prompt": "{\n  \"model\": \"nano-banana\",\n  \"task\": \"image_to_image_product_enhancement\",\n  \"objective\": \"Transform the input product image into a professional commercial studio photograph while preserving the exact product identity, geometry, proportions, stitching, texture, and material properties.\",\n  \"input\": {\n    \"type\": \"image\",\n    \"preserve_identity\": true,\n    \"preserve_geometry\": true,\n    \"preserve_texture\": true,\n    \"preserve_color\": true,\n    \"preserve_material\": true\n  },\n  \"scene\": {\n    \"background\": {\n      \"type\": \"solid\",\n      \"color\": \"#FFFFFF\",\n      \"pure_white\": true,\n      \"uniform\": true,\n      \"no_gradient\": true,\n      \"no_texture\": true\n    },\n    \"environment\": \"professional commercial photography studio\",\n    \"surface\": \"invisible or pure white seamless sweep\"\n  },\n  \"lighting\": {\n    \"style\": \"soft studio lighting\",\n    \"setup\": \"three_point_lighting\",\n    \"key_light\": {\n      \"type\": \"softbox\",\n      \"position\": \"front-left\",\n      \"intensity\": \"medium\",\n      \"softness\": \"high\"\n    },\n    \"fill_light\": {\n      \"type\": \"softbox\",\n      \"position\": \"front-right\",\n      \"intensity\": \"low\",\n      \"softness\": \"high\"\n    },\n    \"rim_light\": {\n      \"type\": \"softbox\",\n      \"position\": \"rear\",\n      \"intensity\": \"low\",\n      \"purpose\": \"edge separation and clean outline\"\n    },\n    \"shadow\": {\n      \"type\": \"contact_shadow\",\n      \"softness\": \"soft\",\n      \"opacity\": \"low\",\n      \"blur\": \"subtle\",\n      \"direction\": \"natural\",\n      \"realistic\": true\n    },\n    \"reflections\": {\n      \"allowed\": false\n    }\n  },\n  \"camera\": {\n    \"angle\": \"front-facing or natural product angle\",\n    \"alignment\": \"perfectly centered\",\n    \"lens\": \"85mm equivalent\",\n    \"distortion\": \"none\",\n    \"focus\": \"tack sharp across entire product\",\n    \"depth_of_field\": \"moderate\",\n    \"aperture\": \"f/8\",\n    \"perspective\": \"natural and undistorted\"\n  },\n  \"composition\": {\n    \"framing\": \"centered\",\n    \"product_scale\": \"occupies 75-90% of frame\",\n    \"orientation\": \"straight, upright, natural\",\n    \"symmetry\": \"maintained if applicable\",\n    \"clean_edges\": true,\n    \"no_crop_of_product\": true\n  },\n  \"quality\": {\n    \"resolution\": \"4096x4096\",\n    \"definition\": \"ultra high definition\",\n    \"sharpness\": \"maximum\",\n    \"noise\": \"none\",\n    \"grain\": \"none\",\n    \"compression_artifacts\": \"none\",\n    \"photorealism\": \"maximum\",\n    \"commercial_quality\": true,\n    \"catalog_ready\": true,\n    \"ecommerce_ready\": true\n  },\n  \"color\": {\n    \"profile\": \"sRGB\",\n    \"accuracy\": \"true_to_original\",\n    \"white_balance\": \"neutral studio\",\n    \"exposure\": \"balanced\",\n    \"contrast\": \"natural\",\n    \"saturation\": \"accurate\",\n    \"no_color_shift\": true\n  },\n  \"material_rendering\": {\n    \"fabric_detail\": \"fully preserved\",\n    \"texture_clarity\": \"high\",\n    \"stitching_visibility\": \"clear\",\n    \"edges\": \"clean and precise\",\n    \"wrinkles\": \"natural and realistic\",\n    \"no_fake_modifications\": true\n  },\n  \"constraints\": {\n    \"do_not_modify_product_design\": true,\n    \"do_not_change_shape\": true,\n    \"do_not_add_or_remove_parts\": true,\n    \"do_not_hallucinate_details\": true,\n    \"do_not_stylize\": true,\n    \"keep_product_exact\": true\n  },\n  \"negative_prompt\": [\n    \"colored background\",\n    \"gray background\",\n    \"gradient background\",\n    \"dirty background\",\n    \"text\",\n    \"logo\",\n    \"watermark\",\n    \"reflection floor\",\n    \"extra objects\",\n    \"props\",\n    \"person\",\n    \"hands\",\n    \"model\",\n    \"distortion\",\n    \"warping\",\n    \"blurry\",\n    \"low resolution\",\n    \"noise\",\n    \"grain\",\n    \"overexposed\",\n    \"underexposed\",\n    \"harsh shadows\",\n    \"hard shadows\",\n    \"inconsistent lighting\",\n    \"fake texture\",\n    \"hallucinated details\"\n  ],\n  \"output\": {\n    \"format\": \"PNG\",\n    \"background\": \"pure_white\",\n    \"transparent_background\": false,\n    \"ready_for\": [\n      \"ecommerce\",\n      \"catalog\",\n      \"website\",\n      \"advertising\",\n      \"print\"\n    ]\n  }\n}",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Biến đổi ảnh sản phẩm thành ảnh chụp studio thương mại chuyên nghiệp",
+    "vi_prompt": "{\n  \"model\": \"nano-banana\",\n  \"task\": \"image_to_image_product_enhancement\",\n  \"objective\": \"Biến đổi ảnh sản phẩm đầu vào thành ảnh chụp studio thương mại chuyên nghiệp trong khi vẫn bảo tồn chính xác nhận diện sản phẩm, hình học, tỷ lệ, đường may, kết cấu và các đặc tính chất liệu.\",\n  \"input\": {\n    \"type\": \"image\",\n    \"preserve_identity\": true,\n    \"preserve_geometry\": true,\n    \"preserve_texture\": true,\n    \"preserve_color\": true,\n    \"preserve_material\": true\n  },\n  \"scene\": {\n    \"background\": {\n      \"type\": \"solid\",\n      \"color\": \"#FFFFFF\",\n      \"pure_white\": true,\n      \"uniform\": true,\n      \"no_gradient\": true,\n      \"no_texture\": true\n    },\n    \"environment\": \"professional commercial photography studio\",\n    \"surface\": \"invisible or pure white seamless sweep\"\n  },\n  \"lighting\": {\n    \"style\": \"soft studio lighting\",\n    \"setup\": \"three_point_lighting\",\n    \"key_light\": {\n      \"type\": \"softbox\",\n      \"position\": \"front-left\",\n      \"intensity\": \"medium\",\n      \"softness\": \"high\"\n    },\n    \"fill_light\": {\n      \"type\": \"softbox\",\n      \"position\": \"front-right\",\n      \"intensity\": \"low\",\n      \"softness\": \"high\"\n    },\n    \"rim_light\": {\n      \"type\": \"softbox\",\n      \"position\": \"rear\",\n      \"intensity\": \"low\",\n      \"purpose\": \"edge separation and clean outline\"\n    },\n    \"shadow\": {\n      \"type\": \"contact_shadow\",\n      \"softness\": \"soft\",\n      \"opacity\": \"low\",\n      \"blur\": \"subtle\",\n      \"direction\": \"natural\",\n      \"realistic\": true\n    },\n    \"reflections\": {\n      \"allowed\": false\n    }\n  },\n  \"camera\": {\n    \"angle\": \"front-facing or natural product angle\",\n    \"alignment\": \"perfectly centered\",\n    \"lens\": \"85mm equivalent\",\n    \"distortion\": \"none\",\n    \"focus\": \"tack sharp across entire product\",\n    \"depth_of_field\": \"moderate\",\n    \"aperture\": \"f/8\",\n    \"perspective\": \"natural and undistorted\"\n  },\n  \"composition\": {\n    \"framing\": \"centered\",\n    \"product_scale\": \"occupies 75-90% of frame\",\n    \"orientation\": \"straight, upright, natural\",\n    \"symmetry\": \"maintained if applicable\",\n    \"clean_edges\": true,\n    \"no_crop_of_product\": true\n  },\n  \"quality\": {\n    \"resolution\": \"4096x4096\",\n    \"definition\": \"ultra high definition\",\n    \"sharpness\": \"maximum\",\n    \"noise\": \"none\",\n    \"grain\": \"none\",\n    \"compression_artifacts\": \"none\",\n    \"photorealism\": \"maximum\",\n    \"commercial_quality\": true,\n    \"catalog_ready\": true,\n    \"ecommerce_ready\": true\n  },\n  \"color\": {\n    \"profile\": \"sRGB\",\n    \"accuracy\": \"true_to_original\",\n    \"white_balance\": \"neutral studio\",\n    \"exposure\": \"balanced\",\n    \"contrast\": \"natural\",\n    \"saturation\": \"accurate\",\n    \"no_color_shift\": true\n  },\n  \"material_rendering\": {\n    \"fabric_detail\": \"fully preserved\",\n    \"texture_clarity\": \"high\",\n    \"stitching_visibility\": \"clear\",\n    \"edges\": \"clean and precise\",\n    \"wrinkles\": \"natural and realistic\",\n    \"no_fake_modifications\": true\n  },\n  \"constraints\": {\n    \"do_not_modify_product_design\": true,\n    \"do_not_change_shape\": true,\n    \"do_not_add_or_remove_parts\": true,\n    \"do_not_hallucinate_details\": true,\n    \"do_not_stylize\": true,\n    \"keep_product_exact\": true\n  },\n  \"negative_prompt\": [\n    \"colored background\",\n    \"gray background\",\n    \"gradient background\",\n    \"dirty background\",\n    \"text\",\n    \"logo\",\n    \"watermark\",\n    \"reflection floor\",\n    \"extra objects\",\n    \"props\",\n    \"person\",\n    \"hands\",\n    \"model\",\n    \"distortion\",\n    \"warping\",\n    \"blurry\",\n    \"low resolution\",\n    \"noise\",\n    \"grain\",\n    \"overexposed\",\n    \"underexposed\",\n    \"harsh shadows\",\n    \"hard shadows\",\n    \"inconsistent lighting\",\n    \"fake texture\",\n    \"hallucinated details\"\n  ],\n  \"output\": {\n    \"format\": \"PNG\",\n    \"background\": \"pure_white\",\n    \"transparent_background\": false,\n    \"ready_for\": [\n      \"ecommerce\",\n      \"catalog\",\n      \"website\",\n      \"advertising\",\n      \"print\"\n    ]\n  }\n}",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Nano Banana",
+      "image-prompt",
+      "Image Generation"
+    ],
+    "category": "Thiết kế & Đồ họa",
+    "subcategory": "Nhiếp ảnh sản phẩm thương mại",
+    "tags": [
+      "nhiếp ảnh sản phẩm",
+      "commercial studio",
+      "nano banana",
+      "ecommerce ready",
+      "chụp ảnh sản phẩm"
+    ],
+    "search_keywords_vi": [
+      "chuyển ảnh sản phẩm sang studio",
+      "nâng cấp ảnh sản phẩm thương mại",
+      "prompt nano banana product enhancement"
+    ],
+    "use_case": "Cấu hình JSON nâng cấp ảnh chụp sản phẩm thô thành ảnh chụp phòng studio thương mại cao cấp chuẩn catalog",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "ayoubelouardi3710",
+      "name": "Watson Charlie",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocL8khk5HFEJMUyDNYUq-CBxvgncZCsdVsM1gVTFWymP7En3Nqze=s96-c",
+      "identifier": "ayoubelouardi3710",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/transform-the-input-product-image-into-a-professional-commercial-studio-photograph",
+    "created_at": "2026-02-28T01:16:20.745Z"
+  }
+]

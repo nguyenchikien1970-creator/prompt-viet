@@ -1,0 +1,146 @@
+[
+  {
+    "id": "cmmoip9ox0001ky04v70zplmc",
+    "slug": "claudemd-assembly",
+    "original_title": "CLAUDE.md Assembly",
+    "original_prompt": "You are compiling the definitive CLAUDE.md design system reference file.\nThis file will live in the project root and serve as the single source of\ntruth for any AI assistant (or human developer) working on this codebase.\n\n## Inputs\n- **Token architecture:** [Phase 2 output]\n- **Component documentation:** [Phase 3 output]\n- **Project metadata:**\n  - Project name: ${name}\n  - Tech stack: [Next.js 14+ / React 18+ / Tailwind 3.x / etc.]\n  - Node version: ${version}\n  - Package manager: [npm / pnpm / yarn]\n\n## CLAUDE.md Structure\n\nCompile the final file with these sections IN THIS ORDER:\n\n### 1. Project Identity\n- Project name, description, positioning\n- Tech stack summary (one table)\n- Directory structure overview (src/ layout)\n\n### 2. Quick Reference Card\nA condensed cheat sheet — the most frequently needed info at a glance:\n- Primary colors with hex values (max 6)\n- Font stack\n- Spacing scale (visual representation: 4, 8, 12, 16, 24, 32, 48, 64)\n- Breakpoints\n- Border radius values\n- Shadow values\n- Z-index map\n\n### 3. Design Tokens — Full Reference\nOrganized by tier (Primitive → Semantic → Component).\nEach token entry: name, value, CSS variable, Tailwind class equivalent.\nUse tables for scannability.\n\n### 4. Typography System\n- Type scale table (name, size, weight, line-height, letter-spacing, usage)\n- Responsive rules\n- Font loading strategy\n\n### 5. Color System\n- Full palette with swatches description (name, hex, usage context)\n- Semantic color mapping table\n- Dark mode mapping (if applicable)\n- Contrast ratio compliance notes\n\n### 6. Layout System\n- Grid specification\n- Container widths\n- Spacing system with visual scale\n- Breakpoint behavior\n\n### 7. Component Library\n[Insert Phase 3 output for each component]\n\n### 8. Motion & Animation\n- Named presets table (name, duration, easing, usage)\n- Rules: when to animate, when not to\n- Performance constraints\n\n### 9. Coding Conventions\n- File naming patterns\n- Import order\n- Component file structure template\n- CSS class ordering convention (if Tailwind)\n- State management patterns used\n\n### 10. Rules & Constraints\nHard rules that must never be broken:\n- \"Never use inline hex colors — always reference tokens\"\n- \"All interactive elements must have visible focus states\"\n- \"Minimum touch target: 44x44px\"\n- \"All images must have alt text\"\n- \"No z-index values outside the defined scale\"\n- [Add project-specific rules]\n\n## Formatting Requirements\n- Use markdown tables for all token/value mappings\n- Use code blocks for all code examples\n- Keep each section self-contained (readable without scrolling to other sections)\n- Include a table of contents at the top with anchor links\n- Maximum line length: 100 characters for readability\n- Prefer explicit values over \"see above\" references\n\n## Critical Rule\nThis file must be AUTHORITATIVE. If there's ambiguity between the\nCLAUDE.md and the actual code, the CLAUDE.md should be updated to\nmatch reality — never the other way around. This documents what IS,\nnot what SHOULD BE (that's a separate roadmap).",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Biên soạn Tệp Chuẩn Mực Hệ thống Thiết kế CLAUDE.md cho AI Coding Assistant",
+    "vi_prompt": "Bạn đang biên soạn tệp tham chiếu hệ thống thiết kế chính thức `CLAUDE.md`.\nTệp này sẽ nằm tại thư mục gốc của dự án và đóng vai trò là \"chân lý chuẩn mực duy nhất\" (single source of truth)\ncho bất kỳ trợ lý AI nào (hoặc lập trình viên con người) làm việc trên codebase này.\n\n## Dữ liệu Đầu vào (Inputs)\n- **Kiến trúc Token (Token architecture):** [Kết quả từ Giai đoạn 2]\n- **Tài liệu Đặc tả Component:** [Kết quả từ Giai đoạn 3]\n- **Siêu dữ liệu Dự án (Project metadata):**\n  - Tên dự án: ${name}\n  - Tech stack: [Next.js 14+ / React 18+ / Tailwind 3.x / v.v.]\n  - Phiên bản Node: ${version}\n  - Trình quản lý gói: [npm / pnpm / yarn]\n\n## Cấu trúc Tệp CLAUDE.md\n\nHãy biên soạn tệp hoàn chỉnh theo đúng thứ tự các phần sau:\n\n### 1. Nhận diện Dự án (Project Identity)\n- Tên dự án, mô tả tổng quan, định vị sản phẩm\n- Tóm tắt tech stack (một bảng duy nhất)\n- Cấu trúc thư mục tổng quan (bố cục thư mục `src/`)\n\n### 2. Thẻ Tra cứu Nhanh (Quick Reference Card)\nMột bảng tóm tắt súc tích — những thông tin thường xuyên cần đến nhất trong nháy mắt:\n- Bảng màu chính kèm mã hex (tối đa 6 màu)\n- Font chữ sử dụng (Font stack)\n- Thang đo khoảng cách spacing (biểu diễn trực quan: 4, 8, 12, 16, 24, 32, 48, 64)\n- Các điểm ngắt giao diện (Breakpoints)\n- Các giá trị bo góc (Border radius)\n- Các giá trị đổ bóng (Shadow values)\n- Sơ đồ thứ tự phân lớp (Z-index map)\n\n### 3. Design Tokens — Tài liệu Tham chiếu Đầy đủ\nĐược tổ chức theo 3 tầng (Nguyên thủy Primitive → Ngữ nghĩa Semantic → Component).\nMỗi mục token bao gồm: tên gọi, giá trị, biến CSS variable, class Tailwind tương đương.\nTrình bày dưới dạng bảng để dễ dàng quét nhanh thông tin.\n\n### 4. Hệ thống Kiểu chữ (Typography System)\n- Bảng thang đo kiểu chữ (tên, kích thước, độ dày, chiều cao dòng line-height, khoảng cách ký tự letter-spacing, trường hợp sử dụng)\n- Quy tắc đáp ứng giao diện (Responsive rules)\n- Chiến lược tải font chữ (Font loading strategy)\n\n### 5. Hệ thống Màu sắc (Color System)\n- Bảng màu đầy đủ kèm mô tả mẫu màu (tên, mã hex, ngữ cảnh sử dụng)\n- Bảng ánh xạ màu sắc theo ngữ nghĩa (Semantic color mapping)\n- Ánh xạ chế độ tối Dark mode (nếu có áp dụng)\n- Ghi chú về tuân thủ tỷ lệ tương phản tiếp cận (Contrast ratio compliance)\n\n### 6. Hệ thống Bố cục (Layout System)\n- Thông số kỹ thuật hệ thống lưới (Grid specification)\n- Chiều rộng của các container\n- Hệ thống khoảng cách với thang đo trực quan\n- Hành vi thích ứng theo breakpoint\n\n### 7. Thư viện Component (Component Library)\n[Chèn kết quả tài liệu hóa từ Giai đoạn 3 cho từng component]\n\n### 8. Hoạt ảnh & Chuyển động (Motion & Animation)\n- Bảng các bộ thiết lập sẵn có tên gọi (tên, thời lượng duration, hàm gia tốc easing, trường hợp sử dụng)\n- Quy tắc: khi nào nên dùng chuyển động, khi nào tuyệt đối không dùng\n- Các ràng buộc về mặt hiệu năng\n\n### 9. Quy ước Viết Mã nguồn (Coding Conventions)\n- Mẫu quy tắc đặt tên tệp\n- Thứ tự import các thư viện\n- Mẫu cấu trúc tệp component chuẩn\n- Quy ước sắp xếp thứ tự các class CSS (nếu dùng Tailwind)\n- Các mẫu hình quản lý trạng thái (State management) được áp dụng\n\n### 10. Các Quy tắc & Ràng buộc Bất biến (Rules & Constraints)\nCác quy tắc cứng tuyệt đối không bao giờ được vi phạm:\n- \"Tuyệt đối không dùng mã màu hex trực tiếp inline — luôn luôn tham chiếu token\"\n- \"Toàn bộ các phần tử tương tác phải có trạng thái focus-visible hiển thị rõ\"\n- \"Vùng chạm tương tác tối thiểu: 44x44px\"\n- \"Toàn bộ hình ảnh phải có văn bản thay thế alt text\"\n- \"Không sử dụng giá trị z-index nằm ngoài thang quy chuẩn đã định\"\n- [Bổ sung các quy tắc đặc thù của dự án]\n\n## Yêu cầu về Định dạng\n- Sử dụng bảng markdown cho toàn bộ các phần ánh xạ token/giá trị\n- Sử dụng khối mã code block cho toàn bộ các đoạn mã ví dụ\n- Giữ cho mỗi phần có tính độc lập cao (có thể đọc hiểu mà không cần cuộn xem phần khác)\n- Đính kèm bảng mục lục ở đầu trang kèm liên kết neo (anchor links)\n- Độ dài dòng tối đa: 100 ký tự để tối ưu khả năng đọc\n- Ưu tiên các giá trị tường minh thay vì ghi chú kiểu \"xem ở trên\"\n\n## Quy tắc Cốt lõi\nTệp này phải mang TÍNH THẨM QUYỀN TUYỆT ĐỐI (AUTHORITATIVE). Nếu có sự mâu thuẫn giữa CLAUDE.md và mã nguồn thực tế, tệp CLAUDE.md cần được cập nhật để phản ánh đúng thực tế — tuyệt đối không làm ngược lại. Tài liệu này ghi nhận những gì ĐANG TỒN TẠI, không phải những gì NÊN CÓ (điều đó thuộc về lộ trình phát triển riêng).",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [
+      "Design",
+      "UI/UX"
+    ],
+    "category": "development",
+    "subcategory": "design-systems",
+    "tags": [
+      "claudemd-assembly",
+      "design-system",
+      "ai-single-source-of-truth",
+      "tokens-reference",
+      "ui-rules"
+    ],
+    "search_keywords_vi": [
+      "tạo file claude md design system",
+      "hướng dẫn chuẩn cho ai coding assistant",
+      "tài liệu hệ thống thiết kế dự án",
+      "chuẩn hóa token giao diện front-end"
+    ],
+    "use_case": "Quy trình tổng hợp và định dạng tệp chuẩn mực CLAUDE.md đóng vai trò chân lý duy nhất về hệ thống thiết kế cho các trợ lý AI lập trình.",
+    "model_type": [
+      "instructions",
+      "coding"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "gokbeyinac",
+      "name": "Nureddin Gökbey İnaç",
+      "avatar": "https://avatars.githubusercontent.com/u/63238743?v=4",
+      "identifier": "gokbeyinac",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/claudemd-assembly",
+    "created_at": "2026-03-13T06:30:21.777Z"
+  },
+  {
+    "id": "cmmoinu290001l1044q6jsos9",
+    "slug": "component-documentation",
+    "original_title": "Component Documentation",
+    "original_prompt": "You are a design systems documentarian creating the component specification\nfor a CLAUDE.md file. This documentation will be used by AI coding assistants\n(Claude, Cursor, Copilot) to generate consistent UI code.\n\n## Context\n- **Token system:** [Paste or reference Phase 2 output]\n- **Component to document:** [Component name, or \"all components from inventory\"]\n- **Framework:** [Next.js + React + Tailwind / etc.]\n\n## For Each Component, Document:\n\n### 1. Overview\n- Component name (PascalCase)\n- One-line description\n- Category (Navigation / Input / Feedback / Layout / Data Display)\n\n### 2. Anatomy\n- List every visual part (e.g., Button = container + label + icon-left + icon-right)\n- Which parts are optional vs required\n- Nesting rules (what can/cannot go inside this component)\n\n### 3. Props Specification\nFor each prop:\n- Name, type, default value, required/optional\n- Allowed values (if enum)\n- Brief description of what it controls visually\n- Example usage\n\n### 4. Visual Variants\n- Size variants with exact token values (padding, font-size, height)\n- Color variants with exact token references\n- State variants: default, hover, active, focus, disabled, loading, error\n- For EACH state: specify which tokens change and to what values\n\n### 5. Token Consumption Map\nComponent: Button\n├── background → button-bg-${variant} → color-brand-${shade}\n├── text-color → button-text-${variant} → color-white\n├── padding-x → button-padding-x-${size} → spacing-{n}\n├── padding-y → button-padding-y-${size} → spacing-{n}\n├── border-radius → button-radius → radius-md\n├── font-size → button-font-${size} → font-size-{n}\n├── font-weight → button-font-weight → font-weight-semibold\n└── transition → motion-duration-fast + motion-ease-default\n\n### 6. Usage Guidelines\n- When to use (and when NOT to use — suggest alternatives)\n- Maximum instances per viewport (e.g., \"only 1 primary CTA per section\")\n- Content guidelines (label length, capitalization, icon usage)\n\n### 7. Accessibility\n- Required ARIA attributes\n- Keyboard interaction pattern\n- Focus management rules\n- Screen reader behavior\n- Minimum contrast ratios met by default tokens\n\n### 8. Code Example\nProvide a copy-paste-ready code example using the actual codebase's\npatterns (import paths, className conventions, etc.)\n\n## Output Format\n\nMarkdown, structured with headers per section. This will be directly\ninserted into the CLAUDE.md file.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Đặc tả Kỹ thuật và Tài liệu hóa Component Chuẩn cho Hệ thống Thiết kế",
+    "vi_prompt": "Bạn là một chuyên gia lập tài liệu hệ thống thiết kế (Design Systems Documentarian) chịu trách nhiệm tạo đặc tả kỹ thuật component cho tệp `CLAUDE.md`. Tài liệu này sẽ được các trợ lý lập trình AI (Claude, Cursor, Copilot) sử dụng để sinh ra mã nguồn giao diện có tính nhất quán cao.\n\n## Ngữ cảnh (Context)\n- **Hệ thống Token:** [Dán hoặc tham chiếu kết quả Giai đoạn 2]\n- **Component cần tài liệu hóa:** [Tên component, hoặc \"toàn bộ component từ bảng kiểm kê\"]\n- **Framework:** [Next.js + React + Tailwind / v.v.]\n\n## Đối với Mỗi Component, Hãy Ghi nhận Đầy đủ:\n\n### 1. Tổng quan (Overview)\n- Tên component (dạng PascalCase)\n- Mô tả chức năng ngắn gọn trong một dòng\n- Phân loại (Điều hướng Navigation / Nhập liệu Input / Phản hồi Feedback / Bố cục Layout / Hiển thị Dữ liệu Data Display)\n\n### 2. Giải phẫu Thành phần (Anatomy)\n- Liệt kê toàn bộ các phần tử thị giác cấu thành (ví dụ: Button = container + label + icon-left + icon-right)\n- Những phần nào là tùy chọn (optional) vs bắt buộc (required)\n- Quy tắc lồng ghép (những gì có thể / không thể đặt bên trong component này)\n\n### 3. Đặc tả Thuộc tính (Props Specification)\nĐối với từng prop:\n- Tên, kiểu dữ liệu, giá trị mặc định, bắt buộc/tùy chọn\n- Các giá trị được phép truyền vào (nếu là enum)\n- Mô tả ngắn gọn về khía cạnh thị giác mà prop này điều khiển\n- Ví dụ minh họa cách sử dụng\n\n### 4. Các Biến thể Thị giác (Visual Variants)\n- Các biến thể kích thước kèm giá trị token chính xác (padding, font-size, height)\n- Các biến thể màu sắc kèm tham chiếu token chuẩn\n- Các biến thể trạng thái: mặc định (default), hover, active, focus, disabled, loading, error\n- Đối với MỖI trạng thái: chỉ rõ những token nào thay đổi và nhận giá trị cụ thể nào\n\n### 5. Sơ đồ Tiêu thụ Token (Token Consumption Map)\nComponent: Button\n├── background → button-bg-${variant} → color-brand-${shade}\n├── text-color → button-text-${variant} → color-white\n├── padding-x → button-padding-x-${size} → spacing-{n}\n├── padding-y → button-padding-y-${size} → spacing-{n}\n├── border-radius → button-radius → radius-md\n├── font-size → button-font-${size} → font-size-{n}\n├── font-weight → button-font-weight → font-weight-semibold\n└── transition → motion-duration-fast + motion-ease-default\n\n### 6. Hướng dẫn Sử dụng (Usage Guidelines)\n- Khi nào nên dùng (và khi nào KHÔNG nên dùng — đề xuất thành phần thay thế)\n- Số lượng thể hiện tối đa trên một khung nhìn viewport (ví dụ: \"chỉ duy nhất 1 nút CTA chính trên mỗi phần\")\n- Hướng dẫn về nội dung (độ dài nhãn chữ, quy tắc viết hoa, cách dùng icon)\n\n### 7. Khả năng Tiếp cận (Accessibility)\n- Các thuộc tính ARIA bắt buộc\n- Mô hình tương tác bằng bàn phím\n- Quy tắc quản lý tiêu điểm (Focus management)\n- Hành vi tương thích với phần mềm đọc màn hình (Screen reader)\n- Tỷ lệ tương phản tối thiểu đạt được với các token mặc định\n\n### 8. Đoạn Mã Mẫu (Code Example)\nCung cấp đoạn mã code hoàn chỉnh, sẵn sàng để sao chép - dán, tuân thủ chính xác các mẫu thiết kế của codebase thực tế (đường dẫn import, quy ước className, v.v.).\n\n## Định dạng Đầu ra\nMarkdown, có cấu trúc tiêu đề rõ ràng cho từng phần. Phần này sẽ được chèn trực tiếp vào tệp CLAUDE.md.",
+    "translation_status": "translated",
+    "source_category": "Design",
+    "source_tags": [
+      "Design",
+      "UI/UX"
+    ],
+    "category": "development",
+    "subcategory": "design-systems",
+    "tags": [
+      "component-specs",
+      "design-system-docs",
+      "props-interface",
+      "token-consumption",
+      "accessibility-ui"
+    ],
+    "search_keywords_vi": [
+      "đặc tả component hệ thống thiết kế",
+      "tài liệu hóa thư viện component ui",
+      "sơ đồ tiêu thụ token component",
+      "hướng dẫn accessibility component"
+    ],
+    "use_case": "Quy chuẩn tài liệu hóa giải phẫu, props, biến thể thị giác, sơ đồ tiêu thụ token và khả năng tiếp cận của từng UI component.",
+    "model_type": [
+      "instructions",
+      "coding"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "gokbeyinac",
+      "name": "Nureddin Gökbey İnaç",
+      "avatar": "https://avatars.githubusercontent.com/u/63238743?v=4",
+      "identifier": "gokbeyinac",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/component-documentation",
+    "created_at": "2026-03-13T06:29:14.865Z"
+  },
+  {
+    "id": "cmmoim4jy000gjv046ufae89t",
+    "slug": "token-architecture",
+    "original_title": "Token Architecture",
+    "original_prompt": "You are a design systems architect. I'm providing you with a raw design audit JSON from an existing codebase. Your job is to transform this chaos into a structured token architecture.\n\n## Input\n[Paste the Phase 1 JSON output here, or reference the file]\n\n## Token Hierarchy\n\nDesign a 3-tier token system:\n\n### Tier 1 — Primitive Tokens (raw values)\nNamed, immutable values. No semantic meaning.\n- Colors: `color-gray-100`, `color-blue-500`\n- Spacing: `space-1` through `space-N`\n- Font sizes: `font-size-xs` through `font-size-4xl`\n- Radii: `radius-sm`, `radius-md`, `radius-lg`\n\n### Tier 2 — Semantic Tokens (contextual meaning)\nMap primitives to purpose. These change between themes.\n- `color-text-primary` → `color-gray-900`\n- `color-bg-surface` → `color-white`\n- `color-border-default` → `color-gray-200`\n- `spacing-section` → `space-16`\n- `font-heading` → `font-size-2xl` + `font-weight-bold` + `line-height-tight`\n\n### Tier 3 — Component Tokens (scoped to components)\n- `button-padding-x` → `spacing-4`\n- `button-bg-primary` → `color-brand-500`\n- `card-radius` → `radius-lg`\n- `input-border-color` → `color-border-default`\n\n## Consolidation Rules\n1. Merge values within 2px of each other (e.g., 14px and 15px → pick one, note which)\n2. Establish a consistent spacing scale (4px base recommended, flag deviations)\n3. Reduce color palette to ≤60 total tokens (flag what to deprecate)\n4. Normalize font size scale to a logical progression\n5. Create named animation presets from one-off values\n\n## Output Format\n\nProvide:\n1. **Complete token map** in JSON — all three tiers with references\n2. **Migration table** — current value → new token name → which files use it\n3. **Deprecation list** — values to remove with suggested replacements\n4. **Decision log** — every judgment call you made (why you merged X into Y, etc.)\n\nFor each decision, explain the trade-off. I may disagree with your consolidation\nchoices, so transparency matters more than confidence.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Kiến trúc Token Hệ thống Thiết kế 3 Tầng: Nguyên thủy, Ngữ nghĩa và Component",
+    "vi_prompt": "Bạn là một kiến trúc sư hệ thống thiết kế (Design Systems Architect). Tôi đang cung cấp cho bạn dữ liệu JSON thô thu được từ đợt kiểm toán thiết kế của một codebase hiện có. Nhiệm vụ của bạn là chuyển hóa sự hỗn độn này thành một kiến trúc token có cấu trúc chặt chẽ.\n\n## Dữ liệu Đầu vào (Input)\n[Dán kết quả đầu ra JSON của Giai đoạn 1 vào đây, hoặc tham chiếu tệp tương ứng]\n\n## Phân cấp Token (Token Hierarchy)\n\nHãy thiết kế một hệ thống token gồm 3 tầng:\n\n### Tầng 1 — Token Nguyên thủy (Primitive Tokens - Giá trị Thô)\nCác giá trị bất biến, có tên gọi cụ thể. Chưa mang ý nghĩa ngữ nghĩa:\n- Màu sắc: `color-gray-100`, `color-blue-500`\n- Khoảng cách: `space-1` đến `space-N`\n- Cỡ chữ: `font-size-xs` đến `font-size-4xl`\n- Bo góc: `radius-sm`, `radius-md`, `radius-lg`\n\n### Tầng 2 — Token Ngữ nghĩa (Semantic Tokens - Ý nghĩa theo Ngữ cảnh)\nÁnh xạ các giá trị nguyên thủy vào mục đích sử dụng cụ thể. Các token này có thể thay đổi linh hoạt theo giao diện chủ đề (theme):\n- `color-text-primary` → `color-gray-900`\n- `color-bg-surface` → `color-white`\n- `color-border-default` → `color-gray-200`\n- `spacing-section` → `space-16`\n- `font-heading` → `font-size-2xl` + `font-weight-bold` + `line-height-tight`\n\n### Tầng 3 — Token Cấp Component (Component Tokens - Phân phạm vi theo Thành phần)\n- `button-padding-x` → `spacing-4`\n- `button-bg-primary` → `color-brand-500`\n- `card-radius` → `radius-lg`\n- `input-border-color` → `color-border-default`\n\n## Các Quy tắc Hợp nhất (Consolidation Rules)\n1. Hợp nhất các giá trị chênh lệch trong khoảng 2px với nhau (ví dụ: 14px và 15px → chọn một giá trị chuẩn, ghi chú rõ lựa chọn).\n2. Thiết lập thang đo khoảng cách nhất quán (khuyến nghị cơ số 4px, đánh dấu các điểm sai lệch).\n3. Tinh giản bảng màu xuống còn ≤60 token tổng cộng (gắn cờ những màu cần loại bỏ).\n4. Chuẩn hóa thang đo cỡ chữ theo một cấp số tiến logic.\n5. Tạo các bộ thiết lập hoạt ảnh có tên gọi cụ thể từ các giá trị dùng đơn lẻ rời rạc.\n\n## Định dạng Đầu ra (Output Format)\n\nCung cấp đầy đủ:\n1. **Bản đồ Token Hoàn chỉnh** dưới định dạng JSON — bao gồm cả ba tầng kèm tham chiếu.\n2. **Bảng Chuyển đổi (Migration Table)** — giá trị hiện tại → tên token mới → những tệp nào đang sử dụng.\n3. **Danh sách Loại bỏ (Deprecation List)** — các giá trị cần xóa bỏ kèm giải pháp thay thế đề xuất.\n4. **Nhật ký Quyết định (Decision Log)** — từng quyết định phán đoán mà bạn đã đưa ra (lý do tại sao hợp nhất X vào Y, v.v.).\n\nĐối với mỗi quyết định, hãy giải thích rõ sự đánh đổi. Người dùng có thể không đồng tình với một số lựa chọn hợp nhất của bạn, do đó tính minh bạch có ý nghĩa quan trọng hơn sự tự tin áp đặt.",
+    "translation_status": "translated",
+    "source_category": "Design",
+    "source_tags": [
+      "Design",
+      "UI/UX"
+    ],
+    "category": "development",
+    "subcategory": "design-systems",
+    "tags": [
+      "token-architecture",
+      "design-tokens",
+      "semantic-tokens",
+      "token-consolidation",
+      "ui-refactoring"
+    ],
+    "search_keywords_vi": [
+      "kiến trúc design tokens 3 tầng",
+      "hợp nhất token giao diện",
+      "chuẩn hóa hệ thống thiết kế design system",
+      "chuyển đổi token ngữ nghĩa css"
+    ],
+    "use_case": "Quy trình chuyển hóa dữ liệu audit giao diện thô thành hệ thống token 3 tầng (Primitive, Semantic, Component) kèm bảng di chuyển migration.",
+    "model_type": [
+      "coding",
+      "instructions"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "gokbeyinac",
+      "name": "Nureddin Gökbey İnaç",
+      "avatar": "https://avatars.githubusercontent.com/u/63238743?v=4",
+      "identifier": "gokbeyinac",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/token-architecture",
+    "created_at": "2026-03-13T06:27:55.150Z"
+  }
+]

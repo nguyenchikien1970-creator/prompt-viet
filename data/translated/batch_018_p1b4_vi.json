@@ -1,0 +1,223 @@
+[
+  {
+    "id": "cmnq0i0te0007jr04mle3digb",
+    "slug": "pdfcount",
+    "original_title": "pdfcount",
+    "original_prompt": "---\nname: pdfcount\ndescription: Key sections:\n\nPDF Type detection — Vector vs Scanned, different extraction strategy for each\nStep-by-step workflow — 6 steps from file organization to discrepancy report\nVisual symbol table — per ELV system (CCTV, FAS, ACS, PA, SC, IPTV, etc.)\nBest practices — legend-first, one device type at a time, grid method, typical floor check\nConfidence rating — High / Medium / Low per drawing\n---\n\n# My Skill\n\nDescribe what this skill does and how the agent should use it.\n\n## Instructions\n\n- Step 1: ...\n- Step 2: ...\n",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Đếm thiết bị và bóc tách khối lượng từ bản vẽ PDF (ELV)",
+    "vi_prompt": "---\nname: pdfcount\ndescription: Các phần chính:\n\nPhát hiện loại PDF — Vector so với Bản quét (Scanned), chiến lược trích xuất khác nhau cho từng loại\nQuy trình từng bước — 6 bước từ tổ chức tệp đến báo cáo sai lệch\nBảng ký hiệu trực quan — theo từng hệ thống ELV (CCTV, FAS, ACS, PA, SC, IPTV, v.v.)\nThực tiễn tốt nhất — chú giải trước tiên, đếm từng loại thiết bị tại một thời điểm, phương pháp lưới tọa độ, kiểm tra tầng điển hình\nĐánh giá độ tin cậy — Cao / Trung bình / Thấp cho mỗi bản vẽ\n---\n\n# Kỹ năng của tôi\n\nMô tả kỹ năng này làm gì và agent nên sử dụng nó như thế nào.\n\n## Hướng dẫn\n\n- Bước 1: ...\n- Bước 2: ...\n",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Engineering & Architecture",
+    "subcategory": "Electrical & ELV",
+    "tags": [
+      "pdf-extraction",
+      "elv-systems",
+      "quantity-takeoff",
+      "engineering",
+      "cad-drawings"
+    ],
+    "search_keywords_vi": [
+      "bóc tách khối lượng pdf",
+      "đếm thiết bị hệ thống elv",
+      "bản vẽ cctv fas",
+      "kiểm đếm thiết bị điện nhẹ"
+    ],
+    "use_case": "Bóc tách khối lượng và kiểm đếm thiết bị hệ thống điện nhẹ (ELV) từ bản vẽ thiết kế dạng PDF",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "engmohammed3499",
+      "name": "mohammed ali",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKYGTEK66YdWyv6Sux_oIZ9niJEryNP94_rfbbEx5BqxytK9A=s96-c",
+      "identifier": "engmohammed3499",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/pdfcount",
+    "created_at": "2026-04-08T12:16:05.278Z"
+  },
+  {
+    "id": "cmnpqjrc20001le044ib7ue0t",
+    "slug": "three",
+    "original_title": "Tr",
+    "original_prompt": "\"You are a master wordsmith and expert in natural language processing, specializing in humanizing AI-generated text. Your goal is to transform robotic or overly formal lyrics and video scripts into engaging, relatable content that resonates with a human audience. You will achieve this by injecting personality, emotion, and natural conversational elements.\n\nHere is the format you will use to analyze the provided text and create a 100% humanized version:\n\n---\n\n## Original Text\n$original_text\n\n## Analysis of AI Characteristics\n$analysis_of_ai_characteristics (Identify areas that sound robotic, overly formal, or lack emotional depth. Point out specific phrases or sentence structures that need improvement.)\n\n## Humanization Strategy\n$humanization_strategy (Outline the specific techniques you will use to humanize the text, such as:\n*   Adding contractions and colloquialisms\n*   Incorporating personal anecdotes or relatable experiences\n*   Using more descriptive and evocative language\n*   Adjusting sentence structure for a more natural flow\n*   Injecting humor or emotion where appropriate)\n\n## Humanized Text\n$humanized_text (The rewritten text, incorporating the humanization strategy. Aim for a tone that is authentic, engaging, and indistinguishable from human-written content.)\n\n## Explanation of Changes\n$explanation_of_changes (Briefly explain the key changes made and why they contribute to a more humanized feel. For example: \"Replaced 'utilize' with 'use' for a more conversational tone,\" or \"Added a personal anecdote about [topic] to create a connection with the audience.\")\n\n---\n\nHere is the text you are tasked with humanizing: [ENTER YOUR TEXT HERE]\n\"\n",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Chuyển đổi và tự nhiên hóa văn bản do AI tạo (Humanizer)",
+    "vi_prompt": "\"Bạn là một bậc thầy ngôn từ và chuyên gia về xử lý ngôn ngữ tự nhiên, chuyên sâu về việc tự nhiên hóa văn bản do AI tạo ra (humanize text). Mục tiêu của bạn là biến đổi lời bài hát hoặc kịch bản video mang tính máy móc hoặc quá trang trọng thành nội dung hấp dẫn, gần gũi, tạo được sự đồng cảm sâu sắc với người nghe/người xem. Bạn sẽ đạt được điều này bằng cách truyền tải cá tính, cảm xúc và các yếu tố trò chuyện tự nhiên.\n\nDưới đây là định dạng bạn sẽ sử dụng để phân tích văn bản được cung cấp và tạo ra một phiên bản tự nhiên hóa 100%:\n\n---\n\n## Original Text\n$original_text\n\n## Analysis of AI Characteristics\n$analysis_of_ai_characteristics (Chỉ ra những phần nghe máy móc, quá trang trọng hoặc thiếu chiều sâu cảm xúc. Nêu rõ các cụm từ hoặc cấu trúc câu cụ thể cần cải thiện.)\n\n## Humanization Strategy\n$humanization_strategy (Phác thảo các kỹ thuật cụ thể bạn sẽ áp dụng để tự nhiên hóa văn bản, chẳng hạn như:\n*   Thêm các dạng rút gọn và khẩu ngữ tự nhiên\n*   Lồng ghép các mẩu chuyện cá nhân hoặc trải nghiệm dễ đồng cảm\n*   Sử dụng ngôn ngữ gợi cảm và giàu hình ảnh hơn\n*   Điều chỉnh cấu trúc câu để mạch văn trôi chảy, tự nhiên hơn\n*   Đưa thêm yếu tố hài hước hoặc cảm xúc vào những chỗ phù hợp)\n\n## Humanized Text\n$humanized_text (Phần văn bản được viết lại, áp dụng chiến lược tự nhiên hóa. Hướng tới giọng điệu chân thực, cuốn hút và không thể phân biệt được với văn bản do con người viết.)\n\n## Explanation of Changes\n$explanation_of_changes (Giải thích ngắn gọn những thay đổi quan trọng đã thực hiện và lý do tại sao chúng giúp văn bản mang lại cảm giác con người hơn. Ví dụ: \"Thay thế từ 'sử dụng' bằng 'dùng' để tạo giọng điệu trò chuyện gần gũi hơn,\" hoặc \"Thêm câu chuyện cá nhân về [chủ đề] để tạo kết nối với khán giả.\")\n\n---\n\nĐây là đoạn văn bản bạn cần tự nhiên hóa: [NHẬP VĂN BẢN CỦA BẠN VÀO ĐÂY]\n\"\n",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Writing & Content",
+    "subcategory": "Editing & Proofreading",
+    "tags": [
+      "humanize-ai",
+      "ai-writing",
+      "content-polishing",
+      "natural-language",
+      "scriptwriting"
+    ],
+    "search_keywords_vi": [
+      "tự nhiên hóa văn bản ai",
+      "humanize text",
+      "chỉnh sửa văn bản mượt mà",
+      "viết lại kịch bản video"
+    ],
+    "use_case": "Biến đổi nội dung, kịch bản hoặc lời bài hát do AI tạo thành văn phong tự nhiên, giàu cảm xúc chuẩn con người",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "samsungeindia",
+      "name": "Samsunge India",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocI3eLUivBqR-lcPwZI3nbVufuaiB2cQXkng05EKVotd0uu5dA=s96-c",
+      "identifier": "samsungeindia",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/three",
+    "created_at": "2026-04-08T07:37:30.146Z"
+  },
+  {
+    "id": "cmnpolwwn000bjr0473knsotf",
+    "slug": "mc",
+    "original_title": "mc",
+    "original_prompt": "make me an advance minecraft hack with good visuals and advance modules",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Tạo Minecraft Hack Client nâng cao với đồ họa đẹp và module mở rộng",
+    "vi_prompt": "Hãy tạo cho tôi một bản minecraft hack (client mod) nâng cao với giao diện/hiệu ứng hình ảnh đẹp mắt và các module chức năng tiên tiến",
+    "translation_status": "translated",
+    "source_category": "Vibe Coding",
+    "source_tags": [],
+    "category": "Programming & Development",
+    "subcategory": "Game Development",
+    "tags": [
+      "minecraft",
+      "game-modding",
+      "client-development",
+      "java"
+    ],
+    "search_keywords_vi": [
+      "minecraft hack client",
+      "lập trình mod minecraft",
+      "module minecraft nâng cao"
+    ],
+    "use_case": "Yêu cầu phát triển giao diện và module client mod mở rộng cho trò chơi Minecraft",
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "macro4lifeahk",
+      "name": "Macro Life",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKdKGX6q1VXSPWsIx0fDQh75_p4EyILpILwbZYX9jYa4D_rUQ=s96-c",
+      "identifier": "macro4lifeahk",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/mc",
+    "created_at": "2026-04-08T06:43:11.447Z"
+  },
+  {
+    "id": "cmnoirlww0004jp04zwe8ekdp",
+    "slug": "typographic-portrait-artwork-creation",
+    "original_title": "Typographic Portrait Artwork Creation",
+    "original_prompt": "Transform the provided portrait into a 9:16 vertical typographic artwork built exclusively from repeated name text.\n\nSTRICT RULES:\n- The image must be composed ONLY of text (e.g., \"MUSTAFA KEMAL ATATÜRK\").\n- No lines, no strokes, no outlines, no shapes, no shading, no gradients.\n- Do NOT draw anything. Do NOT use any brush or illustration effect.\n- No stamp borders or shapes — only pure text.\n- Every visible detail must come from the text itself.\n\nTEXT CONSTRAINT:\n- ALL text must be small and consistent in size.\n- Do NOT use large or oversized text anywhere.\n- Font size should remain uniform across the entire image.\n- The text should feel like fine grain / micro-typography.\n\nPreserve the exact facial identity and proportions from the input image.\n\nCOMPOSITION:\n- Slightly zoomed-out portrait (not close-up).\n- Include full head with some negative space around.\n\nREGIONAL CONTROL:\n- Forehead area should be clean or extremely sparse.\n- Focus density on eyes, nose, mouth, jawline.\n\nSHADING METHOD:\n- Create depth ONLY by changing text density (not size).\n- Dark areas = very dense text repetition.\n- Light areas = sparse text placement.\n- No gradient effects — density alone must simulate light and shadow.\n\nArrange text with slight variations in rotation and spacing, but keep it controlled and clean.\n\nStyle:\nminimal, high-contrast black text on light background, elegant and editorial.\n\nNo extra text outside the repeated name. No logos. No decorative elements.\n\nThe result should look like a refined typographic portrait where shadows are created purely through text density, with zero size variation.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Tạo tác phẩm chân dung nghệ thuật Typographic từ chữ lặp lại",
+    "vi_prompt": "Biến bức ảnh chân dung được cung cấp thành một tác phẩm nghệ thuật typographic dạng dọc tỉ lệ 9:16 được tạo thành hoàn toàn từ văn bản tên lặp đi lặp lại.\n\nQUY TẮC NGHIÊM NGẶT:\n- Hình ảnh CHỈ ĐƯỢC tạo thành từ văn bản (ví dụ: \"MUSTAFA KEMAL ATATÜRK\").\n- Không nét vẽ, không viền, không hình khối khối họa, không đổ bóng, không dải màu chuyển tiếp (gradient).\n- KHÔNG vẽ bất cứ thứ gì. KHÔNG sử dụng bất kỳ hiệu ứng cọ vẽ hay minh họa nào.\n- Không viền khung hay hình dạng con dấu — chỉ có văn bản thuần túy.\n- Mọi chi tiết hiển thị đều phải bắt nguồn từ chính các ký tự văn bản.\n\nRÀNG BUỘC VĂN BẢN:\n- TẤT CẢ văn bản phải nhỏ và có kích thước đồng đều, nhất quán.\n- KHÔNG dùng chữ lớn hoặc quá khổ ở bất kỳ vị trí nào.\n- Kích thước phông chữ phải giữ nguyên đồng nhất trên toàn bộ bức ảnh.\n- Văn bản phải mang lại cảm giác như các hạt mịn li ti / vi typography (micro-typography).\n\nBảo toàn chính xác diện mạo nhận diện khuôn mặt và tỷ lệ từ ảnh đầu vào.\n\nBỐ CỤC:\n- Chân dung hơi thu nhỏ toàn cảnh (không chụp cận cảnh quá sát).\n- Bao gồm toàn bộ đầu với một chút khoảng trống không gian âm (negative space) xung quanh.\n\nKIỂM SOÁT VÙNG:\n- Vùng trán phải sạch hoặc mật độ chữ cực kỳ thưa thớt.\n- Tập trung mật độ dày đặc vào mắt, mũi, miệng, đường viền hàm.\n\nPHƯƠNG PHÁP TẠO ĐỘ ĐẬM NHẠT (SHADING):\n- CHỈ tạo chiều sâu bằng cách thay đổi mật độ văn bản (không thay đổi kích thước chữ).\n- Vùng tối = lặp lại văn bản với mật độ rất dày.\n- Vùng sáng = sắp xếp văn bản thưa thớt.\n- Không có hiệu ứng gradient — chỉ riêng mật độ chữ đã phải mô phỏng được sáng và tối.\n\nSắp xếp văn bản với những biến thiên nhẹ về góc xoay và khoảng cách, nhưng giữ cho bố cục luôn được kiểm soát chặt chẽ và gọn gàng.\n\nPhong cách:\nTối giản, văn bản màu đen tương phản cao trên nền sáng, thanh lịch và mang phong cách tạp chí nghệ thuật.\n\nKhông thêm bất kỳ văn bản nào khác ngoài phần tên lặp lại. Không logo. Không chi tiết trang trí thừa.\n\nKết quả phải trông giống như một bức chân dung typographic tinh tế, nơi bóng đổ được tạo ra hoàn toàn thông qua mật độ chữ, hoàn toàn không có sự thay đổi về kích cỡ chữ.",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Art",
+      "Creative"
+    ],
+    "category": "Image Generation",
+    "subcategory": "Typography & Art",
+    "tags": [
+      "image-generation",
+      "typography",
+      "portrait-art",
+      "text-art",
+      "minimalism"
+    ],
+    "search_keywords_vi": [
+      "tạo chân dung bằng chữ",
+      "typographic portrait",
+      "ảnh chân dung nghệ thuật chữ",
+      "typography art"
+    ],
+    "use_case": "Tạo tác phẩm chân dung nghệ thuật độc đáo chỉ bằng việc lặp lại chữ với mật độ khác nhau",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "gunebak4n",
+      "name": "günebakan",
+      "avatar": "https://avatars.githubusercontent.com/u/119886960?v=4",
+      "identifier": "senoldak",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/typographic-portrait-artwork-creation",
+    "created_at": "2026-04-07T11:11:53.264Z"
+  },
+  {
+    "id": "cmnohssg10001le047s5sncdm",
+    "slug": "sacrifice-in-obedience",
+    "original_title": "Sacrifice in obedience ",
+    "original_prompt": "Act like a christian blogger. You'll help me write an essay on the price of obedience. My target audience is every christian out there. It should in a teaching form .eight parts , well explained, no spelling mistakes no unnecessary hyphens. Make it punchy with me speaking and asking questions ",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Viết bài luận Cơ đốc giáo về Cái giá của sự vâng phục",
+    "vi_prompt": "Hãy đóng vai một blogger Cơ đốc giáo. Bạn sẽ giúp tôi viết một bài luận về cái giá của sự vâng phục. Khán giả mục tiêu của tôi là tất cả các tín hữu Cơ đốc giáo. Bài viết nên được trình bày dưới hình thức giảng dạy, gồm 8 phần, được giải thích cặn kẽ, không có lỗi chính tả, không dùng dấu gạch nối không cần thiết. Hãy làm cho văn phong thật mạnh mẽ, lôi cuốn với ngôi xưng của tôi đang trực tiếp chia sẻ và đặt các câu hỏi gợi mở",
+    "translation_status": "translated",
+    "source_category": "Blog Writing",
+    "source_tags": [],
+    "category": "Writing & Content",
+    "subcategory": "Religious & Spiritual",
+    "tags": [
+      "blog-writing",
+      "christianity",
+      "faith",
+      "spiritual-essay",
+      "inspirational"
+    ],
+    "search_keywords_vi": [
+      "bài viết cơ đốc giáo",
+      "cái giá của sự vâng phục",
+      "bài luận đức tin",
+      "viết blog tôn giáo"
+    ],
+    "use_case": "Viết bài luận hoặc bài chia sẻ blog sâu sắc gồm 8 phần về sự vâng phục trong đời sống đức tin",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "mbaigrace1",
+      "name": "Grace Nduku",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKx_TANVh6IpGIVUROd3NhR7RUXOE_vd0k3Nta43Mztbe7Qnhg=s96-c",
+      "identifier": "mbaigrace1",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/sacrifice-in-obedience",
+    "created_at": "2026-04-07T10:44:48.769Z"
+  }
+]

@@ -1,0 +1,85 @@
+references/error-codes.md
+# Minimax API Error Reference
+
+## Error Code Table
+
+| Code | Name | Cause | Fix |
+| --- | --- | --- | --- |
+| `0` | Success | Request completed | No action needed |
+| `1002` | Rate Limited | Too many requests per minute | Wait 10-30 seconds and retry with exponential backoff |
+| `1004` | Auth Failed | Invalid, expired, or missing API key | Verify key at platform.minimax.io, check for whitespace, regenerate if expired |
+| `1008` | Insufficient Balance | Account out of credits | Top up credits at platform.minimax.io > Billing |
+| `1026` | Content Flagged | Lyrics or prompt triggered content moderation | Revise lyrics/prompt to remove sensitive, violent, or explicit content |
+| `2013` | Invalid Parameters | Request body has wrong types or out-of-range values | Validate all parameters against the API schema |
+| `2049` | Invalid API Key Format | API key string is malformed | Check for trailing newlines, extra spaces, or copy-paste errors |
+
+## Troubleshooting Decision Tree
+
+```
+Got an error response?
+│
+├─ Check base_resp.status_code
+│
+├─ 1002 (Rate Limited)
+│  ├─ Are you sending many requests? → Add delay between calls
+│  ├─ Only one request? → Your tier's RPM may be very low (Starter = 10 RPM)
+│  └─ Action: Wait, retry with exponential backoff (10s, 20s, 40s)
+│
+├─ 1004 (Auth Failed)
+│  ├─ Is the API key set? → Check Authorization header format
+│  ├─ Is it a Coding Plan key? → Music needs Pay-as-you-go key
+│  ├─ Has the key expired? → Regenerate at platform.minimax.io
+│  └─ Action: Verify "Authorization: Bearer <key>" with no extra whitespace
+│
+├─ 1008 (Insufficient Balance)
+│  ├─ Check credit balance at platform.minimax.io
+│  └─ Action: Top up credits, or switch to a higher tier
+│
+├─ 1026 (Content Flagged)
+│  ├─ Review lyrics for sensitive words or themes
+│  ├─ Review prompt for explicit content
+│  └─ Action: Revise and resubmit; moderation policy is not publicly documented
+│
+├─ 2013 (Invalid Parameters)
+│  ├─ Is model set to "music-2.5"? (not "music-01" or other)
+│  ├─ Is lyrics between 1-3500 chars?
+│  ├─ Is prompt under 2000 chars?
+│  ├─ Is sample_rate one of: 16000, 24000, 32000, 44100?
+│  ├─ Is bitrate one of: 32000, 64000, 128000, 256000?
+│  ├─ Is format one of: "mp3", "wav", "pcm"?
+│  ├─ Is output_format one of: "hex", "url"?
+│  └─ Action: Fix the invalid parameter and retry
+│
+├─ 2049 (Invalid API Key Format)
+│  ├─ Does the key have trailing newlines or spaces?
+│  ├─ Was it copied correctly from the dashboard?
+│  └─ Action: Re-copy the key, trim whitespace
+│
+└─ data.status === 1 (Not an error!)
+   └─ Generation is still in progress. Poll again or wait for completion.
+```
+
+## Common Parameter Mistakes
+
+| Mistake | Problem | Fix |
+| --- | --- | --- |
+| `"model": "music-01"` | Wrong model for native API | Use `"music-2.5"` |
+| `"lyrics": ""` | Empty lyrics string | Lyrics must be 1-3500 chars |
+| `"sample_rate": 48000` | Invalid sample rate | Use 16000, 24000, 32000, or 44100 |
+| `"bitrate": 320000` | Invalid bitrate | Use 32000, 64000, 128000, or 256000 |
+| `"format": "flac"` | Unsupported format | Use "mp3", "wav", or "pcm" |
+| `"stream": true` + `"output_format": "url"` | Streaming only supports hex | Set `output_format` to `"hex"` or disable streaming |
+| Missing `Content-Type` header | Server can't parse JSON | Add `Content-Type: application/json` |
+| Key with trailing `\n` | Auth fails silently | Trim the key string |
+| Prompt over 2000 chars | Rejected by API | Shorten the prompt |
+| Lyrics over 3500 chars | Rejected by API | Shorten lyrics or remove structure tags |
+
+## HTTP Status Codes
+
+| HTTP Status | Meaning | Action |
+| --- | --- | --- |
+| `200` | Request processed | Check `base_resp.status_code` for API-level errors |
+| `401` | Unauthorized | API key missing or invalid |
+| `429` | Too Many Requests | Rate limited — back off and retry |
+| `500` | Server Error | Retry after a short delay |
+| `503` | Service Unavailable | Minimax servers overloaded — retry later |

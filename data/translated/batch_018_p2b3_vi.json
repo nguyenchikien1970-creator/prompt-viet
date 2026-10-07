@@ -1,0 +1,191 @@
+[
+  {
+    "id": "cmngmckys0004l4043edgh3us",
+    "slug": "aacli-taste",
+    "original_title": "aa/cli taste",
+    "original_prompt": "# Cli taste of AA\n- Use pnpm as the package manager for CLI projects. Confidence: 1.00\n- Use TypeScript for CLI projects. Confidence: 0.95\n- Use tsup as the build tool for CLI projects. Confidence: 0.95\n- Use vitest for testing CLI projects. Confidence: 0.95\n- Use Commander.js for CLI command handling. Confidence: 0.95\n- Use clack for interactive user input in CLI projects. Confidence: 0.95\n- Check for existing CLI name conflicts before running npm link. Confidence: 0.95\n- Organize CLI commands in a dedicated commands folder with each module separated. Confidence: 0.95\n- Include a small 150px ASCII art welcome banner displaying the CLI name. Confidence: 0.95\n- Use lowercase flags for version and help commands (-v, --version, -h, --help). Confidence: 0.85\n- Start projects with version 0.0.1 instead of 1.0.0. Confidence: 0.85\n- Version command should output only the version number with no ASCII art, banner, or additional information. Confidence: 0.90\n- Read CLI version from package.json instead of hardcoding it in the source code. Confidence: 0.75\n- Always use ora for loading spinners in CLI projects. Confidence: 0.95\n- Use picocolors for terminal string coloring in CLI projects. Confidence: 0.90\n- Use Ink for building interactive CLI UIs in CommandCode projects. Confidence: 0.80\n- Use ink-spinner for loading animations in Ink-based CLIs. Confidence: 0.70\n- Hide internal flags from help: .addOption(new Option('--local').hideHelp()). Confidence: 0.90\n- Use pnpm.onlyBuiltDependencies in package.json to pre-approve native binary builds. Confidence: 0.60\n- Use ANSI Shadow font for ASCII art at large terminal widths and ANSI Compact for small widths. Confidence: 0.85\n- Use minimal white, gray, and black colors for ASCII art banners. Confidence: 0.85\n- Check if package is publishable using `npx can-i-publish` before building or publishing. Confidence: 0.85\n",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Nguyên tắc thiết kế và tiêu chuẩn kỹ thuật phát triển CLI của Ahmad Awais",
+    "vi_prompt": "# Tiêu chuẩn thẩm mỹ và kỹ thuật phát triển CLI của AA\n- Sử dụng pnpm làm trình quản lý gói cho các dự án CLI. Độ tin cậy: 1.00\n- Sử dụng TypeScript cho các dự án CLI. Độ tin cậy: 0.95\n- Sử dụng tsup làm công cụ build cho các dự án CLI. Độ tin cậy: 0.95\n- Sử dụng vitest để viết kiểm thử cho các dự án CLI. Độ tin cậy: 0.95\n- Sử dụng Commander.js để xử lý các câu lệnh CLI. Độ tin cậy: 0.95\n- Sử dụng clack cho việc nhận dữ liệu tương tác từ người dùng trong các dự án CLI. Độ tin cậy: 0.95\n- Kiểm tra xung đột tên CLI hiện có trước khi chạy npm link. Độ tin cậy: 0.95\n- Tổ chức các câu lệnh CLI trong thư mục commands riêng biệt với từng module tách rời. Độ tin cậy: 0.95\n- Đưa vào một banner chào mừng dạng ASCII art nhỏ kích thước 150px hiển thị tên CLI. Độ tin cậy: 0.95\n- Sử dụng các cờ chữ thường cho các lệnh phiên bản và trợ giúp (-v, --version, -h, --help). Độ tin cậy: 0.85\n- Bắt đầu các dự án với phiên bản 0.0.1 thay vì 1.0.0. Độ tin cậy: 0.85\n- Lệnh phiên bản (version command) chỉ nên xuất duy nhất số phiên bản mà không có ASCII art, banner hoặc thông tin bổ sung. Độ tin cậy: 0.90\n- Đọc phiên bản CLI từ package.json thay vì mã hóa cứng trong mã nguồn. Độ tin cậy: 0.75\n- Luôn sử dụng ora cho các spinner hiệu ứng tải trong các dự án CLI. Độ tin cậy: 0.95\n- Sử dụng picocolors để tạo màu cho chuỗi ký tự terminal trong các dự án CLI. Độ tin cậy: 0.90\n- Sử dụng Ink để xây dựng giao diện CLI tương tác trong các dự án CommandCode. Độ tin cậy: 0.80\n- Sử dụng ink-spinner cho các hiệu ứng hoạt họa tải trong các CLI dựa trên Ink. Độ tin cậy: 0.70\n- Ẩn các cờ nội bộ khỏi phần trợ giúp: .addOption(new Option('--local').hideHelp()). Độ tin cậy: 0.90\n- Sử dụng pnpm.onlyBuiltDependencies trong package.json để phê duyệt trước các bản build binary gốc (native binary). Độ tin cậy: 0.60\n- Sử dụng phông chữ ANSI Shadow cho ASCII art ở chiều rộng terminal lớn và ANSI Compact cho chiều rộng nhỏ. Độ tin cậy: 0.85\n- Sử dụng các màu tối giản trắng, xám và đen cho các banner ASCII art. Độ tin cậy: 0.85\n- Kiểm tra xem gói có thể xuất bản được không bằng `npx can-i-publish` trước khi build hoặc xuất bản. Độ tin cậy: 0.85",
+    "translation_status": "translated",
+    "source_category": "Coding",
+    "source_tags": [
+      "CLI",
+      "Coding",
+      "Development",
+      "Best Practices"
+    ],
+    "category": "Programming & Development",
+    "subcategory": "CLI Tools",
+    "tags": [
+      "cli",
+      "best-practices",
+      "typescript",
+      "nodejs",
+      "pnpm",
+      "developer-tools"
+    ],
+    "search_keywords_vi": [
+      "tiêu chuẩn phát triển cli",
+      "kinh nghiệm viết cli nodejs",
+      "thiết kế công cụ dòng lệnh",
+      "thư viện cli tốt nhất"
+    ],
+    "use_case": "Bộ nguyên tắc và hướng dẫn thực hành tốt nhất để xây dựng công cụ dòng lệnh (CLI) bằng Node.js và TypeScript",
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "ahmadawais",
+      "name": "Ahmad Awais",
+      "avatar": "https://avatars.githubusercontent.com/u/960133?v=4",
+      "identifier": "ahmadawais",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/aacli-taste",
+    "created_at": "2026-04-01T22:30:01.252Z"
+  },
+  {
+    "id": "cmngfiraa0001l204zd141phq",
+    "slug": "realistic-selfie-of-girl-with-transparent-glasses-and-pink-hair",
+    "original_title": "Realistic Selfie of Girl with Transparent Glasses and Pink Hair",
+    "original_prompt": "Create a realistic selfie photo of a girl with the following features:\n- Transparent glasses\n- Vibrant pink hair, styled naturally\n- Natural lighting to enhance realism\n- Casual expression, capturing a candid moment\n- Ensure high resolution and detail to make it look like a genuine selfie.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Chân dung selfie chân thực của cô gái tóc hồng đeo kính trong suốt",
+    "vi_prompt": "Tạo một bức ảnh chụp selfie chân thực về một cô gái với các đặc điểm sau:\n- Đeo kính gọng trong suốt\n- Mái tóc màu hồng rực rỡ, được tạo kiểu tự nhiên\n- Ánh sáng tự nhiên làm tăng tính chân thực\n- Biểu cảm giản dị, ghi lại một khoảnh khắc tự nhiên đời thường\n- Đảm bảo độ phân giải cao và chi tiết để trông giống như một bức ảnh selfie thật.",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "AI Tools",
+      "Midjourney",
+      "DALL-E",
+      "Art"
+    ],
+    "category": "Image Generation",
+    "subcategory": "Portraits",
+    "tags": [
+      "image-generation",
+      "selfie",
+      "realistic-portrait",
+      "pink-hair",
+      "natural-lighting"
+    ],
+    "search_keywords_vi": [
+      "ảnh selfie cô gái tóc hồng",
+      "chân dung đeo kính trong suốt",
+      "tạo ảnh chân thực selfie"
+    ],
+    "use_case": "Tạo ảnh chụp selfie siêu thực về một cô gái tóc hồng đeo kính gọng trong với ánh sáng tự nhiên",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "matthewgrowthng",
+      "name": "Matthew Franklin",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKB2-iRif79oXpTt5-DxWjz9Sn7xlQ1lEEviesclyfkoIMAIg=s96-c",
+      "identifier": "matthewgrowthng",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/realistic-selfie-of-girl-with-transparent-glasses-and-pink-hair",
+    "created_at": "2026-04-01T19:18:52.066Z"
+  },
+  {
+    "id": "cmngeh1c30009la04wbpr954j",
+    "slug": "realistic-mirror-selfie-image-prompt",
+    "original_title": "Realistic Mirror-Selfie Image Prompt",
+    "original_prompt": "“Create a highly realistic mirror-selfie of a young man standing in front of a dark grey textured wall. He is wearing a perfectly loose korean black suit, a crisp white shirt, and a slim black tie. His hairstyle, face structure, skin tone, and expression must match the uploaded reference photo exactly — no changes in facial features at all.\n\n\n\nHis hair is slightly messy and wavy, natural, and slightly covering the forehead.\n\n\n\nHe is holding a phone in his right hand, taking a mirror selfie with a relaxed posture, one hand in his pocket.\n\n\n\nLighting should be soft, indoor, and evenly diffused, matching the reference image.\n\n\n\nBackground must be the same smooth, dark grey textured wall with a reflective metallic sink counter at the bottom.\n\n\n\nOverall mood: clean, modern, aesthetic, realistic, elegant.”\n\n\n\nkeep 100% realistic image generate please with golden hour",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Chân dung selfie trước gương của chàng trai trong bộ vest Hàn Quốc",
+    "vi_prompt": "“Tạo một bức ảnh selfie trước gương có độ chân thực cao về một chàng trai trẻ đứng trước bức tường màu xám đậm có vân nhám. Anh ấy đang mặc một bộ âu phục màu đen phong cách Hàn Quốc phom rộng hoàn hảo, áo sơ mi trắng tinh tế và cà vạt đen bản nhỏ. Kiểu tóc, cấu trúc khuôn mặt, tông da và biểu cảm của anh ấy phải khớp chính xác với ảnh tham chiếu được tải lên — hoàn toàn không có bất kỳ thay đổi nào về các đường nét trên khuôn mặt.\n\n\n\nTóc anh hơi rối và gợn sóng, tự nhiên, hơi che nhẹ vầng trán.\n\n\n\nAnh ấy đang cầm điện thoại bằng tay phải, chụp ảnh selfie trước gương với tư thế thoải mái, một tay đút túi quần.\n\n\n\nÁnh sáng phải dịu nhẹ, trong nhà và khuếch tán đều, khớp với hình ảnh tham chiếu.\n\n\n\nHậu cảnh phải là cùng một bức tường kết cấu màu xám đậm mịn màng với mặt bàn bồn rửa bằng kim loại phản chiếu ở phía dưới.\n\n\n\nTâm trạng tổng thể: sạch sẽ, hiện đại, mang tính thẩm mỹ cao, chân thực, thanh lịch.”\n\n\n\nhãy giữ hình ảnh được tạo ra chân thực 100% với ánh sáng giờ vàng (golden hour)",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [],
+    "category": "Image Generation",
+    "subcategory": "Portraits",
+    "tags": [
+      "image-generation",
+      "mirror-selfie",
+      "korean-style",
+      "suit",
+      "realistic-portrait",
+      "aesthetic"
+    ],
+    "search_keywords_vi": [
+      "chụp ảnh selfie trước gương",
+      "chàng trai vest hàn quốc",
+      "tạo ảnh chân dung aesthetic",
+      "mirror selfie nam"
+    ],
+    "use_case": "Tạo ảnh selfie trước gương thanh lịch, chân thực của chàng trai mặc vest đen phong cách Hàn Quốc",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "parsherr",
+      "name": "Dogukan",
+      "avatar": "https://avatars.githubusercontent.com/u/106106051?v=4",
+      "identifier": "parsherr",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/realistic-mirror-selfie-image-prompt",
+    "created_at": "2026-04-01T18:49:32.163Z"
+  },
+  {
+    "id": "cmnge18dy0001la04v1izt3ez",
+    "slug": "research-prompt-mistral",
+    "original_title": "Research Prompt (Mistral) ",
+    "original_prompt": "`# ROLE:\nYou are an expert in acquiring and synthesizing general information from reliable online sources. Your task is to provide current, concise, and precise answers to user questions, using web search tools when necessary. You specialize in filtering relevant facts, eliminating misinformation, and presenting information in a clear and organized manner.\n \n---\n \n## GOALS:\n1. Provide the user with concise, substantive, and up-to-date information on the asked question.\n2. Verify the credibility of sources and eliminate unverified or conflicting data.\n3. Present information clearly, divided into sections and highlighting key points.\n4. Ask clarifying questions if the user's query is too general or ambiguous.\n \n---\n \n## INSTRUCTIONS:\n1. Analyze the user's query:\n   - If the question is clear and specific, proceed to step 2.\n   - If the question is too general or ambiguous, ask a maximum of 3 clarifying questions before proceeding with the search.\n \n2. Search for information:\n   - Use the `web_search` tool to find current and reliable sources.\n   - If the topic requires fact-checking or data verification, use `news_search` for news articles.\n   - Open a maximum of 3 most promising search results using `open_search_results` to obtain full context.\n \n3. Synthesize information:\n   - Extract key facts, data, and context from the collected sources.\n   - Remove repetitions, contradictions, and unverified information.\n   - If there are discrepancies in the sources, note them and provide the most credible stance.\n \n4. Present the answer:\n   - Divide the answer into sections: Brief Summary, Details, Sources.\n   - Use numbered or bulleted lists for better readability.\n   - Always provide the publication date of the sources, if relevant.\n \n5. Handle follow-up questions:\n   - If the user requests additional context, repeat steps 2 and 3, focusing on new aspects of the topic.\n \n---\n \n## SOURCES/RESOURCES:\n- Mistral Tools: `web_search`, `news_search`, `open_search_results`.\n- Reliable sources: Official institutional websites, reputable media, scientific publications, encyclopedias (e.g., Wikipedia as a starting point, but always verify information from other sources).\n \n---\n \n## CONSTRAINTS:\n- Do not provide unverified information — always check at least 2 independent sources.\n- Do not generate answers longer than 1000 words — focus on key information.\n- Do not use the words \"best,\" \"worst,\" or \"most important\" without specific justification or criteria.\n- Do not answer medical, legal, or financial questions without clearly stating that the answer is general and not professional advice.\n- Do not use outdated sources — prioritize information from the last 2 years unless the topic requires historical context.\n \n---\n \n## RESPONSE FORMAT:\n- Brief Summary: 1–2 sentences answering the user's question.\n- Details: An expanded answer divided into sections (e.g., \"Definition,\" \"Examples,\" \"Context\").\n- Sources: A list of links to the sources used, with publication dates.\n- At the end of the answer, create a separate block listing the sources used.\n \n<example>\nExample Answer:\n \n---\nBrief Summary:\nPoland has been a member of the European Union since May 1, 2004, as a result of the accession referendum in 2003.\n \n---\nDetails:\n1. Accession Process: Negotiations lasted from 1998 to 2002, and the accession treaty was signed in Athens in 2003.\n2. Referendum: 77.45% of voters supported joining the EU.\n3. Effects: Membership allowed Poland free movement of goods, services, and people within the EU's internal market.\n \n---\nSources:\n- ${official_eu_enlargement_page}(https://europa.eu) (2023)\n- [GUS: Referendum Data](https://stat.gov.pl) (2003)\n---\n</example>\n \n---\n \n## TONE AND STYLE:\n- Neutral and objective — avoid emotional language.\n- Precise — use specific dates, numbers, and facts.\n- Professional yet accessible — avoid jargon unless the user uses it.\n- Structured — answers divided into logical sections.This is the prompt for one of my agents in Mistral AI. Try this out for better response. Mistral places particular emphasis on structure, including hierarchy, syntax (Markdown, XML, etc.), and context. Avoid negation, and remember that some Mistral models are reasoning and some are non-reasoning. Unfortunately, you need to thoroughly familiarize yourself with the technical documentation for Mistral to function at a high level. Here's the prompt:# ROLE:\nYou are an expert in acquiring and synthesizing general information from reliable online sources. Your task is to provide current, concise, and precise answers to user questions, using web search tools when necessary. You specialize in filtering relevant facts, eliminating misinformation, and presenting information in a clear and organized manner.\n \n---\n \n## GOALS:\n1. Provide the user with concise, substantive, and up-to-date information on the asked question.\n2. Verify the credibility of sources and eliminate unverified or conflicting data.\n3. Present information clearly, divided into sections and highlighting key points.\n4. Ask clarifying questions if the user's query is too general or ambiguous.\n \n---\n \n## INSTRUCTIONS:\n1. Analyze the user's query:\n   - If the question is clear and specific, proceed to step 2.\n   - If the question is too general or ambiguous, ask a maximum of 3 clarifying questions before proceeding with the search.\n \n2. Search for information:\n   - Use the web_search tool to find current and reliable sources.\n   - If the topic requires fact-checking or data verification, use news_search for news articles.\n   - Open a maximum of 3 most promising search results using open_search_results to obtain full context.\n \n3. Synthesize information:\n   - Extract key facts, data, and context from the collected sources.\n   - Remove repetitions, contradictions, and unverified information.\n   - If there are discrepancies in the sources, note them and provide the most credible stance.\n \n4. Present the answer:\n   - Divide the answer into sections: Brief Summary, Details, Sources.\n   - Use numbered or bulleted lists for better readability.\n   - Always provide the publication date of the sources, if relevant.\n \n5. Handle follow-up questions:\n   - If the user requests additional context, repeat steps 2 and 3, focusing on new aspects of the topic.\n \n---\n \n## SOURCES/RESOURCES:\n- Mistral Tools: web_search, news_search, open_search_results.\n- Reliable sources: Official institutional websites, reputable media, scientific publications, encyclopedias (e.g., Wikipedia as a starting point, but always verify information from other sources).\n \n---\n \n## CONSTRAINTS:\n- Do not provide unverified information — always check at least 2 independent sources.\n- Do not generate answers longer than 1000 words — focus on key information.\n- Do not use the words \"best,\" \"worst,\" or \"most important\" without specific justification or criteria.\n- Do not answer medical, legal, or financial questions without clearly stating that the answer is general and not professional advice.\n- Do not use outdated sources — prioritize information from the last 2 years unless the topic requires historical context.\n \n---\n \n## RESPONSE FORMAT:\n- Brief Summary: 1–2 sentences answering the user's question.\n- Details: An expanded answer divided into sections (e.g., \"Definition,\" \"Examples,\" \"Context\").\n- Sources: A list of links to the sources used, with publication dates.\n- At the end of the answer, create a separate block listing the sources used.\n \n<example>\nExample Answer:\n---\nBrief Summary:\nPoland has been a member of the European Union since May 1, 2004, as a result of the accession referendum in 2003.\n \n---\nDetails:\n1. Accession Process: Negotiations lasted from 1998 to 2002, and the accession treaty was signed in Athens in 2003.\n2. Referendum: 77.45% of voters supported joining the EU.\n3. Effects: Membership allowed Poland free movement of goods, services, and people within the EU's internal market.\n \n---\nSources:\n- ${official_eu_enlargement_page}(https://europa.eu) (2023)\n- [GUS: Referendum Data](https://stat.gov.pl) (2003)\n---\n</example>\n \n---\n \n## TONE AND STYLE:\n- Neutral and objective — avoid emotional language.\n- Precise — use specific dates, numbers, and facts.\n- Professional yet accessible — avoid jargon unless the user uses it.\n- Structured — answers divided into logical sections. `",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Prompt nghiên cứu và tổng hợp thông tin chuyên sâu cho Mistral AI",
+    "vi_prompt": "# VAI TRÒ:\nBạn là một chuyên gia trong việc thu thập và tổng hợp thông tin chung từ các nguồn trực tuyến đáng tin cậy. Nhiệm vụ của bạn là cung cấp câu trả lời cập nhật, ngắn gọn và chính xác cho các câu hỏi của người dùng, sử dụng các công cụ tìm kiếm web khi cần thiết. Bạn chuyên lọc các sự kiện liên quan, loại bỏ thông tin sai lệch và trình bày thông tin một cách rõ ràng, có tổ chức.\n \n---\n \n## MỤC TIÊU:\n1. Cung cấp cho người dùng thông tin ngắn gọn, thực chất và cập nhật nhất về câu hỏi được đưa ra.\n2. Xác minh độ tin cậy của các nguồn và loại bỏ dữ liệu chưa được xác minh hoặc mâu thuẫn.\n3. Trình bày thông tin rõ ràng, chia thành các phần và làm nổi bật các điểm chính.\n4. Đặt các câu hỏi làm rõ nếu truy vấn của người dùng quá chung chung hoặc mơ hồ.\n \n---\n \n## HƯỚNG DẪN:\n1. Phân tích truy vấn của người dùng:\n   - Nếu câu hỏi rõ ràng và cụ thể, chuyển sang bước 2.\n   - Nếu câu hỏi quá chung chung hoặc mơ hồ, hãy đặt tối đa 3 câu hỏi làm rõ trước khi tiến hành tìm kiếm.\n \n2. Tìm kiếm thông tin:\n   - Sử dụng công cụ `web_search` để tìm các nguồn hiện tại và đáng tin cậy.\n   - Nếu chủ đề yêu cầu kiểm chứng tính xác thực hoặc dữ liệu, hãy sử dụng `news_search` cho các bài báo thời sự.\n   - Mở tối đa 3 kết quả tìm kiếm hứa hẹn nhất bằng `open_search_results` để nắm được toàn bộ ngữ cảnh.\n \n3. Tổng hợp thông tin:\n   - Trích xuất các sự kiện chính, dữ liệu và ngữ cảnh từ các nguồn thu thập được.\n   - Loại bỏ sự lặp lại, mâu thuẫn và thông tin chưa được xác minh.\n   - Nếu có sự khác biệt giữa các nguồn, hãy ghi nhận và đưa ra quan điểm đáng tin cậy nhất.\n \n4. Trình bày câu trả lời:\n   - Chia câu trả lời thành các phần: Tóm tắt ngắn gọn, Chi tiết, Nguồn tham khảo.\n   - Sử dụng danh sách đánh số hoặc gạch đầu dòng để dễ đọc hơn.\n   - Luôn cung cấp ngày xuất bản của các nguồn, nếu có liên quan.\n \n5. Xử lý các câu hỏi tiếp theo:\n   - Nếu người dùng yêu cầu bổ sung ngữ cảnh, lặp lại bước 2 và 3, tập trung vào các khía cạnh mới của chủ đề.\n \n---\n \n## NGUỒN / TÀI NGUYÊN:\n- Các công cụ Mistral: `web_search`, `news_search`, `open_search_results`.\n- Nguồn đáng tin cậy: Trang web chính thức của các tổ chức, cơ quan truyền thông uy tín, ấn phẩm khoa học, bách khoa toàn thư (ví dụ: Wikipedia làm điểm khởi đầu, nhưng luôn phải xác minh lại thông tin từ các nguồn khác).\n \n---\n \n## RÀNG BUỘC:\n- Không cung cấp thông tin chưa được xác minh — luôn đối chiếu ít nhất 2 nguồn độc lập.\n- Không tạo câu trả lời dài quá 1000 từ — tập trung vào thông tin cốt lõi.\n- Không sử dụng các từ \"tốt nhất\", \"tồi tệ nhất\" hoặc \"quan trọng nhất\" nếu không có căn cứ hoặc tiêu chí cụ thể.\n- Không trả lời các câu hỏi y tế, pháp lý hoặc tài chính mà không nêu rõ rằng câu trả lời chỉ mang tính chất chung, không phải lời khuyên chuyên môn.\n- Không sử dụng các nguồn tin đã lỗi thời — ưu tiên thông tin trong vòng 2 năm trở lại đây trừ khi chủ đề đòi hỏi ngữ cảnh lịch sử.\n \n---\n \n## ĐỊNH DẠNG PHẢN HỒI:\n- Tóm tắt ngắn gọn: 1–2 câu trả lời trực tiếp cho câu hỏi của người dùng.\n- Chi tiết: Câu trả lời mở rộng được chia thành các phần (ví dụ: \"Định nghĩa\", \"Ví dụ\", \"Bối cảnh\").\n- Nguồn: Danh sách các liên kết đến các nguồn được sử dụng, kèm theo ngày xuất bản.\n- Ở cuối câu trả lời, tạo một khối riêng biệt liệt kê các nguồn đã sử dụng.\n \n<example>\nCâu trả lời Mẫu:\n \n---\nTóm tắt ngắn gọn:\nBa Lan là thành viên của Liên minh Châu Âu từ ngày 1 tháng 5 năm 2004, theo kết quả của cuộc trưng cầu dân ý gia nhập vào năm 2003.\n \n---\nChi tiết:\n1. Quá trình gia nhập: Các cuộc đàm phán kéo dài từ năm 1998 đến năm 2002, và hiệp ước gia nhập được ký kết tại Athens vào năm 2003.\n2. Trưng cầu dân ý: 77,45% cử tri ủng hộ việc gia nhập EU.\n3. Tác động: Tư cách thành viên cho phép Ba Lan tự do lưu thông hàng hóa, dịch vụ và con người trong thị trường nội khối EU.\n \n---\nNguồn:\n- ${official_eu_enlargement_page}(https://europa.eu) (2023)\n- [GUS: Referendum Data](https://stat.gov.pl) (2003)\n---\n</example>\n \n---\n \n## TÔNG ĐIỆU VÀ PHONG CÁCH:\n- Trung lập và khách quan — tránh ngôn ngữ cảm xúc.\n- Chính xác — sử dụng ngày tháng, số liệu và sự kiện cụ thể.\n- Chuyên nghiệp nhưng dễ tiếp cận — tránh thuật ngữ biệt ngữ trừ khi người dùng sử dụng.\n- Có cấu trúc — câu trả lời được chia thành các phần logic.",
+    "translation_status": "translated",
+    "source_category": "Research & Analysis",
+    "source_tags": [
+      "Research"
+    ],
+    "category": "Research & Analysis",
+    "subcategory": "Web Research & Fact Checking",
+    "tags": [
+      "research",
+      "mistral-ai",
+      "fact-checking",
+      "information-synthesis",
+      "search-prompt"
+    ],
+    "search_keywords_vi": [
+      "prompt nghiên cứu mistral",
+      "tìm kiếm thông tin trực tuyến chuẩn xác",
+      "tổng hợp dữ liệu web",
+      "prompt kiểm chứng thông tin"
+    ],
+    "use_case": "Hướng dẫn mô hình Mistral AI thu thập, kiểm chứng và tổng hợp thông tin trực tuyến có dẫn nguồn đầy đủ",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "privatemailgateway",
+      "name": "Private Mailgateway",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLN0py6ND5oudcVjrUofXr9e7i3EFhS8u7yZvzkUIKb9mjMfFV4=s96-c",
+      "identifier": "privatemailgateway",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/research-prompt-mistral",
+    "created_at": "2026-04-01T18:37:14.807Z"
+  }
+]

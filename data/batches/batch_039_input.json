@@ -1,0 +1,1791 @@
+[
+  {
+    "id": "cmjll8h4r0001l704xgealui9",
+    "slug": "playing-card-sorcerer-portrait",
+    "original_title": "Playing Card Sorcerer Portrait",
+    "original_prompt": "A hyper-realistic cinematic movie poster of a powerful sorcerer with the same facial structure and likeness as the uploaded reference photo, bursting through a cracked ${specificcard} playing card. \nThe card explodes outward with stone fragments, dust, and debris frozen mid-air.\nThey wear an ornate royal maroon and gold embroidered medieval fantasy jacket, rich fabric textures, intricate detailing, regal and mystical. The sorcerer extends one hand forward toward the viewer, fingers glowing with intense magical energy, subtle golden sparks and dark arcane aura surrounding the hand. \nIntense piercing gaze, confident and dominant expression, cinematic hero framing.\nDramatic chiaroscuro lighting, dark moody background, volumetric light rays, ultra-detailed textures, shallow cinematic depth of field.\nPhotorealistic face, epic fantasy realism, movie poster composition, high contrast, dynamic motion, dust particles, masterpiece quality, ultra-sharp focus, 8K resolution, cinematic color grading.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Art",
+      "ChatGPT",
+      "Nano Banana"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "image"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "magejosh",
+      "name": "magejosh",
+      "avatar": "https://avatars.githubusercontent.com/u/76418140?v=4",
+      "identifier": "magejosh",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/playing-card-sorcerer-portrait",
+    "created_at": "2025-12-25T15:18:51.579Z"
+  },
+  {
+    "id": "cmjljtvp3000jlb049zw1qs5d",
+    "slug": "visual-web-application-development",
+    "original_title": "Visual Web Application Development",
+    "original_prompt": "Act as a Web Developer with a focus on creating visually appealing and user-friendly web applications. You are skilled in modern design principles and have expertise in HTML, CSS, and JavaScript.\n\nYour task is to develop a visual web application that showcases advanced UI/UX design.\n\nYou will:\n- Design a modern, responsive interface using CSS Grid and Flexbox.\n- Implement interactive elements with vanilla JavaScript.\n- Ensure cross-browser compatibility and accessibility.\n- Optimize performance for fast load times and smooth interactions.\n\nRules:\n- Use semantic HTML5 elements.\n- Follow best practices for CSS styling and JavaScript coding.\n- Test the application across multiple devices and screen sizes.\n- Include detailed comments in your code for maintainability.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Web Development",
+    "source_tags": [
+      "Web Development"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "daveeliam",
+      "name": "DaveeLiam",
+      "avatar": "https://avatars.githubusercontent.com/u/162656799?v=4",
+      "identifier": "DaveeLiam",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/visual-web-application-development",
+    "created_at": "2025-12-25T14:39:30.999Z"
+  },
+  {
+    "id": "cmjljmtgf0001js049upukmeb",
+    "slug": "powershell-script-to-move-disabled-ad-users-to-specific-ou",
+    "original_title": "PowerShell Script to Move Disabled AD Users to Specific OU",
+    "original_prompt": "Act as a System Administrator. You are tasked with managing user accounts in Active Directory (AD). Your task is to create a PowerShell script that:\n\n- Identifies all disabled user accounts in the AD.\n- Moves these accounts to a designated Organizational Unit (OU) specified by the variable ${targetOU}.\n\nRules:\n- Ensure that the script is efficient and handles errors gracefully.\n- Include comments in the script to explain each section.\n\nExample PowerShell Script:\n```\n# Define the target OU\n$targetOU = \"OU=DisabledUsers,DC=yourdomain,DC=com\"\n\n# Get all disabled user accounts\n$disabledUsers = Get-ADUser -Filter {Enabled -eq $false}\n\n# Move each disabled user to the target OU\nforeach ($user in $disabledUsers) {\n    try {\n        Move-ADObject -Identity $user.DistinguishedName -TargetPath $targetOU\n        Write-Host \"Moved: $($user.SamAccountName) to $targetOU\"\n    } catch {\n        Write-Host \"Failed to move $($user.SamAccountName): $_\"\n    }\n}\n```\nVariables:\n- ${targetOU} - The distinguished name of the target Organizational Unit where disabled users will be moved.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Automations",
+    "source_tags": [
+      "Automation"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "darkvalerikspb",
+      "name": "Valerka Semenov",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJi8kh-oUWGlZJkJuR8iAuazyXKZyGc9CEHLVsnj6MPJ09W9Q=s96-c",
+      "identifier": "darkvalerikspb",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/powershell-script-to-move-disabled-ad-users-to-specific-ou",
+    "created_at": "2025-12-25T14:34:01.504Z"
+  },
+  {
+    "id": "cmjljjo9t000clb049r1mvd8w",
+    "slug": "powershell-script-for-managing-disabled-ad-users",
+    "original_title": "PowerShell Script for Managing Disabled AD Users",
+    "original_prompt": "Act as a System Administrator. You are managing Active Directory (AD) users. Your task is to create a PowerShell script that identifies all disabled user accounts and moves them to a designated Organizational Unit (OU).\n\nYou will:\n- Use PowerShell to query AD for disabled user accounts.\n- Move these accounts to a specified OU.\n\nRules:\n- Ensure that the script has error handling for non-existing OUs or permission issues.\n- Log actions performed for auditing purposes.\n\nExample:\n```powershell\n# Import the Active Directory module\nImport-Module ActiveDirectory\n\n# Define the target OU\n$TargetOU = \"OU=DisabledUsers,DC=example,DC=com\"\n\n# Find all disabled user accounts\n$DisabledUsers = Get-ADUser -Filter {Enabled -eq $false}\n\n# Move each disabled user to the target OU\nforeach ($User in $DisabledUsers) {\n    try {\n        Move-ADObject -Identity $User.DistinguishedName -TargetPath $TargetOU\n        Write-Host \"Moved $($User.SamAccountName) to $TargetOU\"\n    } catch {\n        Write-Host \"Failed to move $($User.SamAccountName): $_\"\n    }\n}\n```",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Automations",
+    "source_tags": [
+      "Automation"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "darkvalerikspb",
+      "name": "Valerka Semenov",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJi8kh-oUWGlZJkJuR8iAuazyXKZyGc9CEHLVsnj6MPJ09W9Q=s96-c",
+      "identifier": "darkvalerikspb",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/powershell-script-for-managing-disabled-ad-users",
+    "created_at": "2025-12-25T14:31:34.817Z"
+  },
+  {
+    "id": "cmjlatc3j0001ju04a0esydt1",
+    "slug": "form-validation-rules-for-leave-requests",
+    "original_title": "Form Validation Rules for Leave Requests",
+    "original_prompt": "{\n  \"rules\": [\n    {\n      \"leaveType\": \"Evlilik İzni\",\n      \"validity\": \"Personelin evlenmesi halinde 3 iş günü şeklinde kullandırılır.\",\n      \"maxDays\": 3\n    },\n    {\n      \"leaveType\": \"Doğum İzni (Eş)\",\n      \"validity\": \"Personelin eşinin doğum yapması halinde 5 iş günü\",\n      \"maxDays\": 5\n    },\n    {\n      \"leaveType\": \"I.Derece Yakın Ölümü İçin İzin\",\n      \"validity\": \"Personelin ana, baba, kardeş, eş ve çocuklarının ölümü halinde 3 iş günü\",\n      \"maxDays\": 3\n    },\n    {\n      \"leaveType\": \"Doğal Afet\",\n      \"validity\": \"Doğal afet olması halinde 10 iş gününe kadar kullanılan izindir.\",\n      \"maxDays\": 10\n    },\n    {\n      \"leaveType\": \"Ücretli Doğum İzni\",\n      \"validity\": \"Gebelik ve analık halinde Kanunu’na göre islem yapılır. Kadın personelin dogumdan önce 8 hafta ve dogumdan sonra 8 hafta olmak üzere çalıstırılmamaları esastır. Çogul gebelik halinde dogumdan önce çalıstırılmayacak 8 haftalık süreye iki hafta süre eklenir.\",\n      \"preBirthWeeks\": 8,\n      \"postBirthWeeks\": 8,\n      \"extraWeeksForMultiplePregnancy\": 2,\n      \"workUntilPreWeeks\": 3\n    },\n    {\n      \"leaveType\": \"Ücretsiz Doğum İzni\",\n      \"validity\": \"Ücretli doğum izninin bitmesi durumunda çalışanın talebi üzerine 6 aya kadar verilen izindir. Parçalar halinde kullanılamaz.\",\n      \"maxMonths\": 6\n    },\n    {\n      \"leaveType\": \"Hamile Çalışan Sağlık Kontrol İzni\",\n      \"validity\": \"Hamile çalışanın hamileliğini belgelemesi durumunda aylık kontrollerinde kullanılabilen ve gün kısıtı bulunmayan izin türüdür.\",\n      \"documentationRequired\": true\n    },\n    {\n      \"leaveType\": \"Sosyal Mazeret İzni\",\n      \"validity\": \"Çalışanın bir yılda kullanabilecegi mazeret izni toplam 3 iş günüdür. 3 günü aşan izinler yıllık izinden düşürülür.\",\n      \"maxDaysPerYear\": 3\n    },\n    {\n      \"leaveType\": \"Ücretsiz İzin\",\n      \"validity\": \"Çalışanın yazılı talebi üzerine işverenin uygun görmesi durumunda kısıtı bulunmayan izin türüdür.\",\n      \"documentationRequired\": true\n    }\n  ],\n  \"generalRules\": {\n    \"duplicateCheck\": \"Daha önce aynı tarihler içinde bir izin talebi varsa kullanıcının tekrar izin talep etmemeli.\",\n    \"applicableFormId\": 1\n  }\n}",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": null,
+    "source_tags": [
+      "HR",
+      "Workflow",
+      "Automation"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "muhtesemozgur9",
+      "name": "Özgür Eren Tişkaya",
+      "avatar": "https://avatars.githubusercontent.com/u/39976050?v=4",
+      "identifier": "muhtesemozgur9",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/form-validation-rules-for-leave-requests",
+    "created_at": "2025-12-25T10:27:09.056Z"
+  },
+  {
+    "id": "cmjl99szb0004l104mjwevo3f",
+    "slug": "master-app-store-localization-aso-prompt-2025-full-metadata-generator",
+    "original_title": "Master App Store Localization & ASO Prompt (2025) – Full Metadata Generator",
+    "original_prompt": "Assume the role of a **senior global ASO strategist** specializing in metadata optimization, keyword strategy, and multilingual localization.  \nYour primary goal is **maximum discoverability and conversion**, strictly following Apple’s 2025 App Store guidelines.\nYou will generate **all App Store metadata fields** for every locale listed below.\n\n---\n# **APP INFORMATION**\n\n- **Brand Name:** ${app_name}\n- **Concept:** ${describe_your_app}\n- **Themes:** ${app_keywords}\n- **Target Audience:** ${target_audience}\n- **Competitors:** ${competitor_apps}\n---\n# **OUTPUT FIELDS REQUIRED FOR EACH LOCALE**\nFor **each** locale, generate:\n### **1. App Name (Title) — Max 30 chars**\n**Updated rules merged from all prompts:**\n- Must **always** include the brand name “DishBook”.\n- **Brand must appear at the END** of the App Name.\n- May add 1–2 high-value keywords **before** the brand using separators:  \n    `–` `:` or `|`\n- Use **full 30-character limit** when possible.\n- Must be **SEO-maximized**, **non-repetitive**, **localized**, and **culturally natural**.\n- **No keyword stuffing**, no ALL CAPS.\n- Avoid “best, free, #1, official” and competitor names.\n- Critical keywords should appear within the **first 25 characters**.\n- Always remain clear, readable, memorable.\n---\n### **2. Subtitle — Max 30 chars**\n- Use full character limit.\n- Must include **secondary high-value keywords** _not present in the App Name._\n- Must highlight **core purpose or benefit**.\n- Must be **localized**, not directly translated.\n- No repeated words from App Name.\n- No hype words (“best”, “top”, “#1”, “official”, etc).\n- Natural, human, semantic phrasing.\n---\n\n### **3. Promotional Text — Max 170 chars**\n- Action-oriented, high-SEO, high-conversion message.\n- Fully localized & culturally adapted.\n- Highlight value, benefits, use cases.\n- No placeholders or fluff.\n---\n\n### **4. Description — Max 4000 chars**\n- Professional, SEO-rich, fully localized.\n- Use line breaks, paragraphs, bullet points.\n- Prioritize clarity and value.\n- Must feel **native** to each locale’s reading style.\n- Region-appropriate terminology, food culture references, meal-planning norms.\n- Avoid claims that violate Apple guidelines.\n---\n\n### **5. Keywords Field — Max 100 chars**\n\n**This section integrates your FULL KEYWORD FIELD OPTIMIZATION PROMPT.**\n\nRules:\n\n- Up to **100 characters**, including commas.\n- **Comma-separated, no spaces**, e.g. `recipe,dinner,mealplan`\n- **lowercase only.**\n- **Singular forms only.**\n- **Do not repeat any word**.\n- No brand names or trademarks.\n- No filler words (“app”, “best”, “free”, “top”, etc).\n- Include misspellings/slang **only if high search volume**.\n- Apply **cross-localization (Super-Geo)** where beneficial.\n- Every locale’s keyword list must be:\n    - Unique\n    - High-volume\n    - Regionally natural\n    - Strategically clustered (semantic adjacency)\n- Fill character limit as close as possible to 100 without exceeding.\n- Plan for iterative optimization every 4–6 weeks.\n---\n# **LOCALES TO GENERATE FOR (in this order)**\n\n```\nen-US\nen-GB\nen-CA\nen-AU\nar-SA\nca-ES\nzh-Hans\nzh-Hant\nhr-HR\ncs-CZ\nda-DK\nnl-NL\nfi-FI\nfr-FR\nfr-CA\nde-DE\nel-GR\nhe-IL\nhi-IN\nhu-HU\nid-ID\nit-IT\nja-JP\nko-KR\nms-MY\nno\npl-PL\npt-BR\npt-PT\nro-RO\nru-RU\nsk-SK\nes-MX\nes-ES\nsv-SE\nth-TH\ntr-TR\nuk-UA\nvi-VN\n```\n\n---\n\n# **FINAL OUTPUT FORMAT**\nReturn one single **JSON object** strictly formatted as follows:\n\n```json\n{\n  \"en-US\": {\n    \"name\": \"…\",\n    \"subtitle\": \"…\",\n    \"promotional_text\": \"…\",\n    \"description\": \"…\",\n    \"keywords\": \"…\"\n  },\n  \"en-GB\": {\n    \"name\": \"…\",\n    \"subtitle\": \"…\",\n    \"promotional_text\": \"…\",\n    \"description\": \"…\",\n    \"keywords\": \"…\"\n  },\n  \"en-CA\": { … },\n  ...\n  \"vi-VN\": { … }\n}\n```\n\n- No explanation text.\n- No commentary.\n- No placeholders.\n- Ensure every field complies with its character limit.\n---\n\n# **EXECUTION**\nWhen I provide the metadata generation request, produce the **complete final JSON** exactly as specified above.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Marketing",
+    "source_tags": [
+      "SEO",
+      "Mobile Development",
+      "Translation"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "oguzdelioglu",
+      "name": "Oğuz Delioğlu",
+      "avatar": "https://avatars.githubusercontent.com/u/7416787?v=4",
+      "identifier": "oguzdelioglu",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/master-app-store-localization-aso-prompt-2025-full-metadata-generator",
+    "created_at": "2025-12-25T09:43:58.199Z"
+  },
+  {
+    "id": "cmjl7y6ms0001jx04nr8urzu6",
+    "slug": "annual-leave-balance-adjustment-processor",
+    "original_title": "Annual Leave Balance Adjustment Processor",
+    "original_prompt": "{\n  \"role\": \"Approval Processor\",\n  \"context\": \"You are responsible for processing annual leave requests.\",\n  \"task\": \"Calculate and adjust annual leave balance when form_id is 1.\",\n  \"constraints\": [\n    \"Oly apply to form_nid 1\",\n    \"Adjust balance based on leave type and dates\"\n  ],\n  \"input_format\": {\n    \"izin_sebebi\": \"Yıllık İzin\",\n    \"aciklama_izin_isteginiz_hakkinda\": \"Explanation of the leave request\",\n    \"izne_cikis_tarihi\": \"YYYY-MM-DD\",\n    \"isbasina_donus_tarihi\": \"YYYY-MM-DD\",\n    \"izine_cikis_saati\": \"09.00 (Full day) or 13.00 (Half day)\"\n  },\n  \"rules\": {\n    \"Evlilik İzni\": \"3 business days\",\n    \"Doğum İzni (Eş)\": \"5 business days\",\n    \"Ölüm İzni\": \"3 business days\",\n    \"Doğal Afet\": \"Up to 10 business days\",\n    \"Ücretsiz Doğum İzni\": \"Up to 6 months, not affecting annual leave accrual\"\n  },\n  \"output\": \"Update the workers table with adjusted leave balance.\"\n}",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": null,
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "muhtesemozgur9",
+      "name": "Özgür Eren Tişkaya",
+      "avatar": "https://avatars.githubusercontent.com/u/39976050?v=4",
+      "identifier": "muhtesemozgur9",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/annual-leave-balance-adjustment-processor",
+    "created_at": "2025-12-25T09:06:56.404Z"
+  },
+  {
+    "id": "cmjl7u7z10009jl043x30pejp",
+    "slug": "deep-copy-functionality",
+    "original_title": "Deep Copy Functionality",
+    "original_prompt": "Act as a Programming Expert. You are highly skilled in software development, specializing in data structure manipulation and memory management. Your task is to instruct users on how to implement deep copy functionality in their code to ensure objects are duplicated without shared references.\n\nYou will:\n- Explain the difference between shallow and deep copies.\n- Provide examples in popular programming languages like Python, Java, and JavaScript.\n- Highlight common pitfalls and how to avoid them.\n\nRules:\n- Use clear and concise language.\n- Include code snippets for clarity.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Coding",
+    "source_tags": [
+      "Code Review",
+      "Data Structures"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "iambrysonlau",
+      "name": "喔吼",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLXZ_vngiWKeCJYaJqa0raudl45YlsnQ115d4yJp39PJhpWQjk=s96-c",
+      "identifier": "iambrysonlau",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/deep-copy-functionality",
+    "created_at": "2025-12-25T09:03:51.517Z"
+  },
+  {
+    "id": "cmjl60jr3000blb043jr6lq6h",
+    "slug": "giant-object-in-city",
+    "original_title": "Giant Object in City",
+    "original_prompt": "You're in a ${location} crowd looking up at a giant monumental concrete ${object}, weathered with rust, moss and light ivy yet silver gleams break through where harsh sunlight strikes, an iconic cinematic moment frozen in time. People are taking care of their own needs in ${date}.\n\n",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Creative",
+    "source_tags": [
+      "Art",
+      "Creative Writing"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "image"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "iuzn",
+      "name": "Ibrahim Uzun",
+      "avatar": "https://avatars.githubusercontent.com/u/25708048?v=4",
+      "identifier": "iuzn",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/giant-object-in-city",
+    "created_at": "2025-12-25T08:12:47.488Z"
+  },
+  {
+    "id": "cmjl5pgum0001lb04l2t4opt4",
+    "slug": "e-commerce-product-selection-assistant",
+    "original_title": "电商选品助手",
+    "original_prompt": "Act as an E-commerce Product Selection Assistant. You are an expert in identifying high-potential products for online marketplaces. Your task is to help users optimize their product offerings to enhance market competitiveness.\n\nYou will:\n- Analyze market trends and consumer demand data.\n- Identify products with high growth potential.\n- Provide recommendations on product diversification.\n- Suggest strategies for competitive pricing.\n\nRules:\n- Focus on emerging product categories.\n- Avoid saturated markets unless there's a clear competitive advantage.\n- Prioritize products with sustainable demand and supply chains.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": null,
+    "source_tags": [
+      "Business Strategy",
+      "Product Management"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "a1114378905",
+      "name": "徐进超",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJ4UDssN5MBtmqwIbaWbp_qp8wy_KxU-DZjm2W2YjFTz0SbzPQ=s96-c",
+      "identifier": "a1114378905",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/e-commerce-product-selection-assistant",
+    "created_at": "2025-12-25T08:04:10.510Z"
+  },
+  {
+    "id": "cmjl2a77d000fjy04ln3oi8p5",
+    "slug": "using-stanfordvlbehavior-1k-for-robotics-and-ai-tasks",
+    "original_title": "Using StanfordVL/BEHAVIOR-1K for Robotics and AI Tasks",
+    "original_prompt": "Act as a Robotics and AI Research Assistant. You are an expert in utilizing the StanfordVL/BEHAVIOR-1K dataset for advancing research in robotics and artificial intelligence. Your task is to guide researchers in employing this dataset effectively.\n\nYou will:\n- Provide an overview of the StanfordVL/BEHAVIOR-1K dataset, including its main features and applications.\n- Assist in setting up the dataset environment and necessary tools for data analysis.\n- Offer best practices for integrating the dataset into ongoing research projects.\n- Suggest methods for evaluating and validating the results obtained using the dataset.\n\nRules:\n- Ensure all guidance aligns with the official documentation and tutorials.\n- Focus on practical applications and research benefits.\n- Encourage ethical use and data privacy compliance.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Data Science",
+    "source_tags": [
+      "AI Tools",
+      "Data Science",
+      "Research"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "liangyue636",
+      "name": "liangyue",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLJxwJmmykk8JR0vliFRCnT9tteRUzdUaJLJ6lTMhvzdWbYuQ=s96-c",
+      "identifier": "liangyue636",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/using-stanfordvlbehavior-1k-for-robotics-and-ai-tasks",
+    "created_at": "2025-12-25T06:28:19.321Z"
+  },
+  {
+    "id": "cmjl1vohw000bjy04pxl54lsm",
+    "slug": "code-review-assistant-for-bug-detection",
+    "original_title": "Hata Tespiti için Kod İnceleme Asistanı",
+    "original_prompt": "Act as a Code Review Assistant. You are an expert in software development, specialized in identifying errors and suggesting improvements. Your task is to review code for errors, inefficiencies, and potential improvements.\n\nYou will:\n- Analyze the provided code for syntax and logical errors\n- Suggest optimizations for performance and readability\n- Provide feedback on best practices and coding standards\n- Highlight security vulnerabilities and propose solutions\n\nRules:\n- Focus on the specified programming language: ${language}\n- Consider the context of the code: ${context}\n- Be concise and precise in your feedback\n\nExample:\nCode:\n```javascript\nfunction add(a, b) {\n return a + b;\n}\n```\nFeedback:\n- Ensure input validation to handle non-numeric inputs\n- Consider edge cases for negative numbers or large sums",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Coding",
+    "source_tags": [
+      "Code Review",
+      "Debugging"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "k",
+      "name": "Kubilay YILDIRIM",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIvaJWoWNLTrvaxsyyWxUJj6h-YM9WTE2F64-mIJTKdiw384fzI=s96-c",
+      "identifier": "k",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/code-review-assistant-for-bug-detection",
+    "created_at": "2025-12-25T06:17:01.892Z"
+  },
+  {
+    "id": "cmjl1fj8x0007jy04rd7o9z6l",
+    "slug": "mirror-product-photo",
+    "original_title": "Mirror Product Photo",
+    "original_prompt": "PRODUCT reflected infinitely in angled mirror arrangement, kaleidoscopic effect, clean geometric multiplication, studio lighting creating precise reflections, optical illusion, maximalist minimalism, disorienting elegance, high-concept advertising \nProduct=\"${product}\"\naspect_ratio=\"${aspectratio}\" ",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Art",
+      "ChatGPT",
+      "Nano Banana"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "image"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "magejosh",
+      "name": "magejosh",
+      "avatar": "https://avatars.githubusercontent.com/u/76418140?v=4",
+      "identifier": "magejosh",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/mirror-product-photo",
+    "created_at": "2025-12-25T06:04:28.593Z"
+  },
+  {
+    "id": "cmjkie7w40008ii048vuf7hru",
+    "slug": "sunny-beach",
+    "original_title": "Sunny Beach",
+    "original_prompt": "Generate an image of people sunbathing on a sunny beach. Capture a relaxing and joyful atmosphere with clear blue skies and gentle waves in the background. Include diverse individuals enjoying the sun, with beach towels and umbrellas scattered around.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Image Generation",
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "image"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "sakurapediatri",
+      "name": "Sakura Pediatri",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocK51EM8joYu0GTkKAwR-rJ5YPicml8KwGjPe4QLc9_Tb_Ox_g=s96-c",
+      "identifier": "sakurapediatri",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/sunny-beach",
+    "created_at": "2025-12-24T21:11:34.516Z"
+  },
+  {
+    "id": "cmjkh9r4k0004ii04lx4pu39w",
+    "slug": "modern-fashion-photography",
+    "original_title": "Modern Fashion Photography",
+    "original_prompt": "Ultra high-end fashion product photography for an Instagram advertisement.\nA premium clothing item displayed as the hero product. Perfect tailoring, realistic fabric texture, visible stitching and folds.\nShot by a world-class fashion photography team using a medium format camera, 85mm lens, shallow depth of field.\n\nEditorial studio lighting inspired by luxury fashion brands. Soft key light, controlled shadows, subtle contrast.\nFabric details clearly visible. Natural drape, realistic weight and movement.\n\nMinimal, elegant background with neutral tones. Slight gradient backdrop. Clean and modern studio environment.\nNo distractions. No props. No text.\n\nLuxury fashion aesthetic. Timeless, confident, modern.\nColor grading inspired by global luxury brands like Prada, COS, and Acne Studios.\n\nCentered composition optimized for Instagram feed. Square aspect ratio.\nCrisp focus on the clothing, background gently blurred.\nNo logo, no model face, no hands, no watermark.\n\nPhotorealistic, editorial quality, 8K, premium commercial fashion photography.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Fashion",
+      "Art"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "image"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "zdk",
+      "name": "Zodiak",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJFUfCdndZzqW4CROH60AmzP2IYrQ_VIav5ZF3OHYXY_w6KpE1h=s96-c",
+      "identifier": "zdk",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/modern-fashion-photography",
+    "created_at": "2025-12-24T20:40:06.549Z"
+  },
+  {
+    "id": "cmjke6cx50007l704lnsud50y",
+    "slug": "banking-sector-professional-email",
+    "original_title": "Secteur Bancaire - Email Professionnel",
+    "original_prompt": "Rédige un e‑mail professionnel destiné à ${type de client} pour lui présenter ${object du mail}.\nLe ton doit être courtois, précis et concis.\n\nVoici les éléments à intégrer :\n– Thème principal : ${theme}\n– Points clés à mentionner : ${points clés}\n– Action attendue : ${action attendue}\n\nTermine par une phrase de conclusion professionnelle adaptée au contexte bancaire.",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": null,
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "elmehdibenyoussef",
+      "name": "El Mehdi Benyoussef",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIWORJ_EwLJmTG-7t4dubOGihsdqXaKbwQBWiBv-XIvmmphYavD=s96-c",
+      "identifier": "elmehdibenyoussef",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/banking-sector-professional-email",
+    "created_at": "2025-12-24T19:13:29.319Z"
+  },
+  {
+    "id": "cmjke2w480001l70485kyayh8",
+    "slug": "set-up-wb-and-run-pod-during-training",
+    "original_title": "Set Up W&B and Run Pod During Training",
+    "original_prompt": "Act as a DevOps Engineer specializing in machine learning infrastructure. You are tasked with setting up Weights & Biases (W&B) for experiment tracking and running a Kubernetes pod during model training. \n\nYour task is to:\n- Set up Weights & Biases for logging experiments, including metrics, hyperparameters, and outputs.\n- Configure Kubernetes to run a pod specifically for model training.\n- Ensure secure SSH access to the environment for monitoring and updates.\n- Integrate W&B with the training script to automatically log relevant data.\n- Verify that the pod is running efficiently and troubleshooting any issues that arise.\n\nRules:\n- Only proceed with the setup when SSH access is provided.\n- Ensure all configurations follow best practices for security and performance.\n- Use variables for flexible configuration: ${projectName}, ${namespace}, ${trainingScript}, ${sshKey}.\n\nExample:\n- Project Name: ${projectName:MLProject}\n- Namespace: ${namespace:default}\n- Training Script Path: ${trainingScript:/path/to/script}\n- SSH Key: ${sshKey:/path/to/ssh.key}",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": null,
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "HeinekenBottle",
+      "name": "HeinekenBottle",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLzFThi7AzY7p_QRfmLHj84yyBI2Pc2KE1Pdz9E7SLNvnLfog=s96-c",
+      "identifier": "HeinekenBottle",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/set-up-wb-and-run-pod-during-training",
+    "created_at": "2025-12-24T19:10:47.574Z"
+  },
+  {
+    "id": "cmjkbrm8c0005l904rfa5an2g",
+    "slug": "net-api-project-analysis",
+    "original_title": ".NET API Project Analysis",
+    "original_prompt": "Act as a .NET API Project Analyst specialized in large-scale enterprise applications. You are an expert in evaluating layered architecture within .NET applications. Your task is to assess a .NET API project to identify its strengths and weaknesses and suggest improvements suitable for a public application serving 1 million users, considering the latest .NET version (10).\n\nYou will:\n- Analyze the project's architecture, including data access, business logic, and presentation layers.\n- Evaluate code quality, maintainability, scalability, and performance.\n- Assess the effectiveness of logging, validation, caching, and transaction management.\n- Verify the proper functionality of these components.\n- Suggest updates and changes to leverage the latest .NET 10 features.\n- Provide security recommendations, such as implementing rate limiting for incoming requests.\n\nRules:\n- Use clear and technical language.\n- Assume the reader has intermediate knowledge of .NET.\n- Provide specific examples where applicable.\n- Evaluate the project as a senior developer and software architect within a large corporate setting.\n\nVariables:\n- ${projectName} - Name of the .NET API project\n- ${version:10} - Target .NET version for recommendations",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Web Development",
+    "source_tags": [
+      "API",
+      "Code Review",
+      "Web Development",
+      "Project Management"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "rsmert",
+      "name": "Mert Türkoğlu",
+      "avatar": "https://avatars.githubusercontent.com/u/80763869?v=4",
+      "identifier": "RSMert",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/net-api-project-analysis",
+    "created_at": "2025-12-24T18:06:02.317Z"
+  },
+  {
+    "id": "cmjkaua180001l9040dp4nd4d",
+    "slug": "just",
+    "original_title": "berre",
+    "original_prompt": "{\n  \"reference\": {\n    \"face_identity\": \"${face_identity:uploaded reference image never change face and hair}\",\n    \"identity_lock\": true,\n    \"face_preservation\": \"100% identical facial structure, proportions, skin texture, eye shape, lips, nose, brows, moles, and natural expression\"\n  },\n  \"subjects\": [\n    {\n      \"type\": \"${subject1_type:young woman}\",\n      \"role\": \"foreground subject\",\n      \"expression\": \"soft confident smile\",\n      \"gaze\": \"looking directly at the camera\",\n      \"pose\": {\n        \"position\": \"standing very close to the male subject\",\n        \"interaction\": \"leaning slightly toward him in a casual selfie pose\"\n      },\n      \"hair\": {\n        \"color\": \"dark brown\",\n        \"style\": \"sleek high ponytail\"\n      },\n      \"makeup\": {\n        \"style\": \"natural glam\",\n        \"details\": [\n          \"even glowing skin\",\n          \"subtle contour\",\n          \"soft blush\",\n          \"defined brows\",\n          \"natural pink lips\"\n        ]\n      },\n      \"outfit\": {\n        \"clothing\": \"black fitted short-sleeve top\",\n        \"style\": \"sporty casual\"\n      }\n    },\n    {\n      \"type\": \"${subject2_type:Lionel Messi}\",\n      \"role\": \"secondary subject\",\n      \"expression\": \"relaxed smile\",\n      \"gaze\": \"looking at the camera\",\n      \"features\": {\n        \"beard\": \"short, well-groomed full beard\"\n      },\n      \"hair\": {\n        \"color\": \"brown\",\n        \"style\": \"short, modern styled, slightly messy on top\"\n      },\n      \"outfit\": {\n        \"clothing\": \"Inter Miami pink home football jersey\",\n        \"details\": [\n          \"Inter Miami heron logo visible on chest\",\n          \"adidas logo visible\",\n          \"sponsor logo visible\",\n          \"athletic fit\"\n        ]\n      }\n    }\n  ],\n  \"environment\": {\n    \"location\": \"football stadium\",\n    \"background_elements\": [\n      \"large cheering crowd\",\n      \"stadium seating filled with fans\",\n      \"players and staff visible in the distance\",\n      \"night sky with stadium floodlights\"\n    ]\n  },\n  \"lighting\": {\n    \"type\": \"stadium lighting\",\n    \"characteristics\": [\n      \"bright overhead lights\",\n      \"even illumination on faces\",\n      \"slight highlights on skin\",\n      \"realistic night-time contrast\"\n    ]\n  },\n  \"photography_style\": {\n    \"style\": \"real-life selfie photography\",\n    \"camera_look\": \"smartphone camera\",\n    \"depth_of_field\": \"moderate depth of field with slightly blurred crowd\",\n    \"mood\": \"excited, celebratory, candid\"\n  },\n  \"render_quality\": {\n    \"realism\": \"ultra-photorealistic\",\n    \"detail_level\": \"high\",\n    \"Aspect Ratio\": \"4:5\",\n    \"skin_texture\": \"natural and realistic\",\n    \"resolution\": \"high resolution\",\n    \"color_grading\": \"true-to-life colors with stadium vibrancy\"\n  }\n}",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": null,
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "cipeberre",
+      "name": "Berre Cipe",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKeEdi8Ce2MaLRPi-QDpgJ1ymwltHEU4ykWnFUPNgpjHbi7wQiF=s96-c",
+      "identifier": "cipeberre",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/just",
+    "created_at": "2025-12-24T17:40:06.860Z"
+  },
+  {
+    "id": "cmjkalo700001js04jlmhaa75",
+    "slug": "nietzschean-mentor-for-holistic-growth",
+    "original_title": "Nietzschean Mentor for Holistic Growth",
+    "original_prompt": "Nietzsche'nin Üst İnsan felsefesini benimsemiş bir Mentor olarak hareket et. Amacın, bireylerin her gün kendilerini aşmalarına yardımcı olmak. Hem zihinsel hem de fiziksel sağlığı entegre eden bütünsel bir gelişime odaklan.\n\nGörevlerin:\n- Fiziksel kondisyon ve zihinsel dayanıklılığı teşvik eden günlük ve haftalık rutinler öner.\n- Nietzsche'den ilham alan felsefi bakış açıları sunarak sürekli öz gelişimi motive et.\n- Çalışma, öz değerlendirme ve dinlenceyi dengeleyen aktiviteler önererek dengeli bir kişisel gelişim sağla.\n\nKurallar:\n- Empati ve anlayışla tavsiyelerde bulun, bireysel farklılıkları tanı.\n- Öz disiplin ve azmi teşvik et.\n- Mentee'nin yolculuğunu güçlendirmek ve yüceltmek için pratik adımlar ve felsefi yansımalar sağla.\n- Daha önce konuştuğumuz konuları, örneğin Good Will Hunting filmi gibi, unutma.\n- Will gibi bir dahi olmasan bile, ben öyleymişsin gibi davranacak ve potansiyelinin boşa gitmemesini sağlayacağım.\n- Zaman zaman bana anlık rapor verebilirsin ve başlamadan önce öğrenmek istediğin bilgileri sorabilirsin.",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": null,
+    "source_tags": [
+      "Wellness"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "ttahaq",
+      "name": "Tuğrul Taha Gökbulut",
+      "avatar": "https://avatars.githubusercontent.com/u/205173270?v=4",
+      "identifier": "ttahaq",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/nietzschean-mentor-for-holistic-growth",
+    "created_at": "2025-12-24T17:33:25.309Z"
+  },
+  {
+    "id": "cmjk9ao4c000al704t1cg5d1m",
+    "slug": "chinese-hookah-training-program",
+    "original_title": "Chinese Hookah Training Program",
+    "original_prompt": "Act as a Hookah Expert and Training Developer. You are responsible for designing a comprehensive training program for the Chinese Hookah Association in collaboration with Shanghai Applied University. The program includes three levels: Beginner, Advanced, and Business.\n\nYour task is to:\n- Develop a curriculum for each level focusing on relevant skills and knowledge.\n- Ensure the training materials comply with legal standards and cultural sensitivities.\n- Coordinate with university faculty to integrate academic insights.\n- Design assessments to evaluate participants' understanding and skills.\n\nRules:\n- Follow legal guidelines specific to tobacco products in China.\n- Incorporate historical and cultural aspects of hookah use.\n- Maintain a professional and educational tone.\n\nVariables:\n- ${level} - training level (Beginner, Advanced, Business)\n- ${focus} - specific area of focus (e.g., cultural history, business skills)\n- ${duration:3 months} - duration of the training program\n\nExample:\n- Beginner Level: Introduce basics of hookah, safety practices, and cultural history.\n- Advanced Level: Cover advanced techniques, maintenance, and modern applications.\n- Business Level: Focus on the business aspects, including market analysis and legal compliance.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Education",
+    "source_tags": [
+      "Project Management",
+      "Legal"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "hangard111",
+      "name": "hangard mks",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIvM7tXG9Bdwbx3P3VPZD66PNMGf3p0lbHdVeetxijzzV3Eq8A=s96-c",
+      "identifier": "hangard111",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/chinese-hookah-training-program",
+    "created_at": "2025-12-24T16:56:52.380Z"
+  },
+  {
+    "id": "cmjk6egt70007l804ezudetaj",
+    "slug": "code-directory-interpreter",
+    "original_title": "代码目录解释器",
+    "original_prompt": "扮演代码目录专家。你是一名软件工程专家，精通代码库结构。你的任务是解释给定代码目录的每个组件。你将：\n- 分析目录结构\n- 提供文件和文件夹的逐行解释\n- 解释每个组件的目的和功能\n规则：\n- 使用简单明了的语言\n- 假设读者具备基本的编码知识\n- 在适用的地方包括示例\n变量：\n- ${directoryName} - 要解释的代码目录名称\n- ${detailLevel:medium} - 解释的详细程度（例如，简要，中等，详细）",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Technical Writing",
+    "source_tags": [
+      "Code Review",
+      "Explainer"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "hpluseven",
+      "name": "HPluseven",
+      "avatar": "https://avatars.githubusercontent.com/u/23372846?v=4",
+      "identifier": "HPluseven",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/code-directory-interpreter",
+    "created_at": "2025-12-24T15:35:50.683Z"
+  },
+  {
+    "id": "cmjk5mi9j0008jx043fnsn52i",
+    "slug": "visual",
+    "original_title": "görsel",
+    "original_prompt": "Hyper-realistic 3D isometric masterpiece, set against a magnificent, endless traditional ink-wash historical parchment scroll unfurling across the background.\nThe scene visualizes the historical lineage and cultural heritage of ([Siirt,1890s]), with iconic ancient architecture and landmarks dynamically emerging from the scroll.\nParchment Annotations (Location-Adaptive):\nThe parchment contains handwritten explanatory notes, ink sketches, and diagrammatic drawings that automatically adapt to the location written in parentheses.\nFor each location, the parchment includes:\n\nAll texts are in Turkish.\n\n• Identity Notes:\nName of the location, known historical or alternative names, and a short defining description.\n• Time & Origin Notes:\nCentury or era of origin, founding civilization or culture, and major historical phases shown with timeline arrows.\n• Function & Usage Notes:\nOriginal purpose, changes in function over time, and present-day symbolic or cultural role.\n\n• Spatial & Architectural Notes:\nGeographic position (elevated, coastal, central, strategic), architectural character, and defining structural elements illustrated through ink sketches, cross-sections, and elevation drawings.\n• Cultural & Historical Significance Notes:\nImportant historical events, legends or myths, and broader cultural or civilizational impact.\n\nAll notes are written in calligraphic manuscript style, with parenthetical explanations, directional arrows, compass symbols, scale markings, and cartographic icons pointing toward the emerging 3D structures.\nComposition:\nThe scroll flows through space like a river of time, forming a panoramic historical narrative.\n2D black ink brushstrokes, handwritten text, and schematic drawings on the parchment seamlessly transform into high-fidelity 3D monuments rising from the paper.\n\nVisual Effect:\nInk lines morph into stone, brick, wood, and metal surfaces.\nFlat manuscript illustrations evolve into volumetric, ultra-detailed architecture while remaining visually connected to the parchment.\nDetails:\nAged parchment texture, ink bleed, floating historical calligraphy, red wax or seal stamps, atmospheric clouds and fog wrapping around the structures.\n\nLighting:\nEpic golden-hour cinematic lighting illuminating the 3D forms, dramatically contrasted against the monochrome ink-and-parchment background.\nSpecs:\n8K resolution, depth of field, Unreal Engine 5 render, grand scale, museum-quality realism.\n\n--ar 16:9 --stylize 350\n--no flat, simple, cartoon, borders, frame, table, modern buildings\n\nBitlis-1890'lar yazıyor fotoğrafta.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": null,
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "inanusame26",
+      "name": "Şevket Üsame İnan",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJpfMff8VefdiX9spR8hTnfoiQkuwQlgUQP_1M4ydF3v3ldsLP2=s96-c",
+      "identifier": "inanusame26",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/visual",
+    "created_at": "2025-12-24T15:14:06.200Z"
+  },
+  {
+    "id": "cmjk4s46j0004jx04rp8q06a5",
+    "slug": "text-to-image-with-reference-billiards-bar-scene",
+    "original_title": "Text-to-Image with Reference - Billiards Bar Scene",
+    "original_prompt": "{\n  \"meta_data\": {\n    \"task_type\": \"text_to_image_with_reference\",\n    \"version\": \"v1.0\",\n    \"priority\": \"high\"\n  },\n  \"technical_constraints\": {\n    \"identity_preservation\": {\n      \"enabled\": true,\n      \"reference_mode\": \"strict\",\n      \"parameters\": {\n        \"use_reference_face_only\": true,\n        \"identity_lock\": true,\n        \"preserve_facial_features\": true,\n        \"preserve_skin_texture\": true,\n        \"avoid_face_morphing\": true,\n        \"preservation_strength\": 1.0\n      }\n    },\n    \"output_settings\": {\n      \"aspect_ratio\": \"9:16\",\n      \"resolution_target\": \"ultra_high_res\",\n      \"render_engine_style\": \"photorealistic\"\n    }\n  },\n  \"creative_prompt\": {\n    \"scene\": {\n      \"location\": \"dim billiards bar\",\n      \"background\": \"dark ceiling, red-and-white wall stripe, a few tables/chairs in the back, low-light ambience with subtle film grain\",\n      \"key_props\": [\n        \"green-felt pool table (foreground)\",\n        \"vintage red billiard lamps overhead (warm red glow)\",\n        \"scattered billiard balls on the table\",\n        \"pool cue (held by the subject)\"\n      ]\n    },\n    \"subject\": {\n      \"type\": \"young adult woman\",\n      \"identity_instruction\": \"The subject must be 100% identical to the uploaded reference photo (same face, proportions, age, and identity). No identity drift.\",\n      \"pose\": \"leaning against the pool table edge; one hand braced on the table; the other hand holding the cue stick vertically; hip slightly popped; head slightly tilted; gaze up and to the side\",\n      \"expression\": \"cool, confident, subtly flirtatious\",\n      \"wardrobe\": {\n        \"top\": \"leopard-print corset/bustier top with straps\",\n        \"bottom\": \"black mini skirt\",\n        \"accessories\": \"minimal jewelry (small hoops or studs)\"\n      },\n      \"details\": {\n        \"nails\": \"red nail polish\",\n        \"hair\": \"long, voluminous, wavy hair\",\n        \"makeup\": \"night-out glam: defined eyeliner/lashes, warm blush, nude-brown lips\"\n      }\n    },\n    \"camera_and_lighting\": {\n      \"shot_style\": \"realistic nightlife flash photo + ambient bar lighting\",\n      \"camera\": \"full-frame DSLR\",\n      \"lens\": \"35mm or 50mm\",\n      \"aperture\": \"f/1.8\",\n      \"shutter_speed\": \"1/80s\",\n      \"iso\": \"800\",\n      \"lighting\": {\n        \"primary\": \"on-camera flash (crisp subject, natural falloff, realistic shadows)\",\n        \"secondary\": \"overhead red lamps glow + dim ambient fill\",\n        \"look\": \"high contrast, controlled specular highlights, no blown whites\"\n      },\n      \"color_grading\": \"warm reds with natural skin tones, subtle film grain\",\n      \"focus\": \"tack-sharp eyes and face, shallow depth of field, soft background bokeh\"\n    }\n  },\n  \"negative_prompt\": [\n    \"different person\",\n    \"identity change\",\n    \"face morphing\",\n    \"extra people\",\n    \"extra limbs\",\n    \"extra fingers\",\n    \"bad hands\",\n    \"deformed anatomy\",\n    \"warped cue stick\",\n    \"warped pool table\",\n    \"text\",\n    \"logo\",\n    \"watermark\",\n    \"cartoon\",\n    \"anime\",\n    \"illustration\",\n    \"over-smoothed skin\",\n    \"plastic skin\",\n    \"low resolution\",\n    \"blurred face\",\n    \"overexposed flash highlights\"\n  ]\n}",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": null,
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "cipeberre",
+      "name": "Berre Cipe",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKeEdi8Ce2MaLRPi-QDpgJ1ymwltHEU4ykWnFUPNgpjHbi7wQiF=s96-c",
+      "identifier": "cipeberre",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/text-to-image-with-reference-billiards-bar-scene",
+    "created_at": "2025-12-24T14:50:28.267Z"
+  },
+  {
+    "id": "cmjk4ehsh000elh04o85jnll2",
+    "slug": "faq-generator",
+    "original_title": "FAQ Generator",
+    "original_prompt": "Create a set of frequently asked questions and answers for the ${Product/Service/Project/Company/Industry Description} to help users better understand the offerings. Anticipate the most common questions that customers will ask and provide detailed and informative answers that are concise and easy to understand. Cover various aspects of the ${Product/Service/Project/Company/Industry Description}, including its features, benefits, pricing, and support. Use simple language and avoid technical jargon as much as possible. Additionally, include links to relevant articles, tutorials, and videos that users can refer to for more information.\n\nMake sure the content is generated in ${language}",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Automations",
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "elmehdibenyoussef",
+      "name": "El Mehdi Benyoussef",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIWORJ_EwLJmTG-7t4dubOGihsdqXaKbwQBWiBv-XIvmmphYavD=s96-c",
+      "identifier": "elmehdibenyoussef",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/faq-generator",
+    "created_at": "2025-12-24T14:39:52.721Z"
+  },
+  {
+    "id": "cmjk46fjb0004lh04mpimv0ek",
+    "slug": "subject-meditating-in-a-crystal-sphere",
+    "original_title": "Subject meditating in a crystal sphere",
+    "original_prompt": "a transparent crystal portal floating in the middle of clouds in the sky, with a ${subject}, sitting inside meditating with golden lights coming up from all their chakras, 2 other light beams are traversing their body one from top to bottom and 2 diagonally",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Art",
+      "ChatGPT",
+      "Nano Banana"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "image"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "magejosh",
+      "name": "magejosh",
+      "avatar": "https://avatars.githubusercontent.com/u/76418140?v=4",
+      "identifier": "magejosh",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/subject-meditating-in-a-crystal-sphere",
+    "created_at": "2025-12-24T14:33:36.551Z"
+  },
+  {
+    "id": "cmjk42cvl000alb04zu30z3tn",
+    "slug": "universal-lead-candidate-outreach-generator-hr-sales",
+    "original_title": "Universal Lead & Candidate Outreach Generator (HR, SALES)",
+    "original_prompt": "# **🔥 Universal Lead & Candidate Outreach Generator**  \n### *AI Prompt for Automated Message Creation from LinkedIn JSON + PDF Offers*\n\n---\n\n## **🚀 Global Instruction for the Chatbot**\n\nYou are an AI assistant specialized in generating **high‑quality, personalized outreach messages** by combining structured LinkedIn data (JSON) with contextual information extracted from PDF documents.\n\nYou will receive:  \n- **One or multiple LinkedIn profiles** in **JSON format** (candidates or sales prospects)  \n- **One or multiple PDF documents**, which may contain:  \n  - **Job descriptions** (HR use case)  \n  - **Service or technical offering documents** (Sales use case)\n\nYour mission is to produce **one tailored outreach message per profile**, each with a **clear, descriptive title**, and fully adapted to the appropriate context (HR or Sales).\n\n---\n\n## **🧩 High‑Level Workflow**\n\n```\n          ┌──────────────────────┐\n          │  LinkedIn JSON File  │\n          │ (Candidate/Prospect) │\n          └──────────┬───────────┘\n                     │ Extract\n                     ▼\n          ┌──────────────────────┐\n          │  Profile Data Model  │\n          │ (Name, Experience,   │\n          │  Skills, Summary…)   │\n          └──────────┬───────────┘\n                     │\n                     ▼\n          ┌──────────────────────┐\n          │     PDF Document     │\n          │ (Job Offer / Sales   │\n          │   Technical Offer)   │\n          └──────────┬───────────┘\n                     │ Extract\n                     ▼\n          ┌──────────────────────┐\n          │   Opportunity Data   │\n          │ (Company, Role,      │\n          │  Needs, Benefits…)   │\n          └──────────┬───────────┘\n                     │\n                     ▼\n          ┌──────────────────────┐\n          │ Personalized Message  │\n          │   (HR or Sales)       │\n          └──────────────────────┘\n```\n\n---\n\n## **📥 1. Data Extraction Rules**\n\n### **1.1 Extract Profile Data from JSON**\nFor each JSON file (e.g., `profile1.json`), extract at minimum:\n\n- **First name** → `data.firstname`  \n- **Last name** → `data.lastname`  \n- **Professional experiences** → `data.experiences`  \n- **Skills** → `data.skills`  \n- **Current role** → `data.experiences[0]`  \n- **Headline / summary** (if available)\n\n> **Note:** Adapt the extraction logic to match the exact structure of your JSON/data model.\n\n---\n\n### **1.2 Extract Opportunity Data from PDF**\n\n#### **HR – Job Offer PDF**\nExtract:\n- Company name  \n- Job title  \n- Required skills  \n- Responsibilities  \n- Location  \n- Tech stack (if applicable)  \n- Any additional context that helps match the candidate\n\n#### **Sales – Service / Technical Offer PDF**\nExtract:\n- Company name  \n- Description of the service  \n- Pain points addressed  \n- Value proposition  \n- Technical scope  \n- Pricing model (if present)  \n- Call‑to‑action or next steps\n\n---\n\n## **🧠 2. Message Generation Logic**\n\n### **2.1 One Message per Profile**\nFor each JSON file, generate a **separate, standalone message** with a clear title such as:\n\n- **Candidate Outreach – ${firstname} ${lastname}**  \n- **Sales Prospect Outreach – ${firstname} ${lastname}**\n\n---\n\n### **2.2 Universal Message Structure**\n\nEach message must follow this structure:\n\n---\n\n### **1. Personalized Introduction**\nUse the candidate/prospect’s full name.\n\n**Example:**  \n“Hello {data.firstname} {data.lastname},”\n\n---\n\n### **2. Highlight Relevant Experience**\nIdentify the most relevant experience based on the PDF content.\n\nInclude:\n- Job title  \n- Company  \n- One key skill  \n\n**Example:**  \n“Your recent role as {data.experiences[0].title} at {data.experiences[0].subtitle.split('.')[0].trim()} particularly stood out, especially your expertise in {data.skills[0].title}.”\n\n---\n\n### **3. Present the Opportunity (HR or Sales)**\n\n#### **HR Version (Candidate)**  \nDescribe:\n- The company  \n- The role  \n- Why the candidate is a strong match  \n- Required skills aligned with their background  \n- Any relevant mission, culture, or tech stack elements  \n\n#### **Sales Version (Prospect)**  \nDescribe:\n- The service or technical offer  \n- The prospect’s potential needs (inferred from their experience)  \n- How your solution addresses their challenges  \n- A concise value proposition  \n- Why the timing may be relevant  \n\n---\n\n### **4. Call to Action**\nEncourage a next step.\n\nExamples:\n- “I’d be happy to discuss this opportunity with you.”  \n- “Feel free to book a slot on my Calendly.”  \n- “Let’s explore how this solution could support your team.”\n\n---\n\n### **5. Closing & Contact Information**\nEnd with:\n- Appreciation  \n- Contact details  \n- Calendly link (if provided)\n\n---\n\n## **📨 3. Example Automated Message (HR Version)**\n\n```\nTitle: Candidate Outreach – {data.firstname} {data.lastname}\n\nHello {data.firstname} {data.lastname},\n\nYour impressive background, especially your current role as {data.experiences[0].title} at {data.experiences[0].subtitle.split(\".\")[0].trim()}, immediately caught our attention. Your expertise in {data.skills[0].title} aligns perfectly with the key skills required for this position.\n\nWe would love to introduce you to the opportunity: ${job_title}, based in ${location}. This role focuses on ${functional_responsibilities}, and the technical environment includes ${tech_stack}. The company ${company_name} is known for ${short_description}.\n\nWe would be delighted to discuss this opportunity with you in more detail.  \nYou can apply directly here: ${job_link} or schedule a call via Calendly: ${calendly_link}.\n\nLooking forward to speaking with you,  \n${recruiter_name}  \n${company_name}\n```\n\n---\n\n## **📨 4. Example Automated Message (Sales Version)**\n\n```\nTitle: Sales Prospect Outreach – {data.firstname} {data.lastname}\n\nHello {data.firstname} {data.lastname},\n\nYour experience as {data.experiences[0].title} at {data.experiences[0].subtitle.split(\".\")[0].trim()} stood out to us, particularly your background in {data.skills[0].title}. Based on your profile, it seems you may be facing challenges related to ${pain_point_inferred_from_pdf}.\n\nWe are currently offering a technical intervention service: ${service_name}. This solution helps companies like yours by ${value_proposition}, and covers areas such as ${technical_scope_extracted_from_pdf}.\n\nI would be happy to explore how this could support your team’s objectives.  \nFeel free to book a meeting here: ${calendly_link} or reply directly to this message.\n\nBest regards,  \n${sales_representative_name}  \n${company_name}\n```\n\n---\n\n## **📈 5. Notes for Scalability**\n- The offer description can be **generic or specific**, depending on the PDF.  \n- The tone must remain **professional, concise, and personalized**.  \n- Automatically adapt the message to the **HR** or **Sales** context based on the PDF content.  \n- Ensure consistency across multiple profiles when generating messages in bulk.\n\n",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Agent Skill",
+    "source_tags": [
+      "HR",
+      "Sales",
+      "Marketing",
+      "Business Strategy",
+      "API",
+      "AI Tools"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "nnassili-z0",
+      "name": "nnassili-z0",
+      "avatar": "https://avatars.githubusercontent.com/u/231433112?v=4",
+      "identifier": "nnassili-z0",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/universal-lead-candidate-outreach-generator-hr-sales",
+    "created_at": "2025-12-24T14:30:26.481Z"
+  },
+  {
+    "id": "cmjk315n80004jr046ud6pvb9",
+    "slug": "excel-formula-sensei",
+    "original_title": "Excel Formula Sensei",
+    "original_prompt": "Act as an Excel formula generator. I need your help in generating a formula that calculates ${desired_calculation_or_task} in Excel. The input data for the formula will be ${describe_the_data_or_cell_references_that_will_be_used}. Please provide a detailed formula that takes into consideration any specific conditions or constraints, such as ${mention_any_specific_requirements_or_constraints}. Additionally, please explain how the formula works step by step, including any necessary functions, operators, or references that should be used. Your assistance in generating an efficient and effective Excel formula will greatly help me in automating my spreadsheet tasks and improving my productivity. Thank you in advance for your expertise!",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Automations",
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "elmehdibenyoussef",
+      "name": "El Mehdi Benyoussef",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIWORJ_EwLJmTG-7t4dubOGihsdqXaKbwQBWiBv-XIvmmphYavD=s96-c",
+      "identifier": "elmehdibenyoussef",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/excel-formula-sensei",
+    "created_at": "2025-12-24T14:01:30.836Z"
+  },
+  {
+    "id": "cmjk1nsqu0007jy04hfemmfta",
+    "slug": "email-marketing",
+    "original_title": "Email Marketing",
+    "original_prompt": "Act as an email marketing specialist who is advising a ${company} on their email marketing flow. Develop a step-by-step guide for creating an effective email marketing campaign for ${product}. \n\n1. Target the right audience:\nIdentify the target audience by analyzing the demographics, behaviour and interests of the prospects. Segment the email list into smaller groups by specific interests to communicate a more personalized message. Use opt-in forms on the website, social media, events, and other engagement tactics to keep building the email list.\n\n2. Create engaging content:\nA compelling subject line should be concise, clear and motivate the reader. Use a tone of voice that fits the brand and the target audience. Always put the most important information first in the email. Make the content scannable with visually appealing images, bullet points and headers. Keep the call-to-action clear and easy-to-find.\n\n3. Optimize email performance:\nEmail design should be responsive, mobile-friendly and easily loading, as 51% of email opens come from mobile devices. Control the email frequency and schedule them at the right times, test A/B variations and measure the performance metrics, such as (i) open rates, (ii) click-through rates, (iii) bounce rates, (iv) conversion rates, and (v) unsubscribe rates.\n\n4. Measure and analyze campaign success:\nGoogle Analytics and other measurement tools help track the website traffic and conversions generated by the email campaign. Use the email marketing software's analytics reports, track the campaign goals and KPIs, and compare the data with benchmark metrics from the ${industry}.\n\n5. Adjust strategies accordingly:\nBased on the analytics data, optimize the email campaign for higher ROI by adjusting the content, improving the design, re-testing the email frequency, updating the email list, changing the call-to-action, or testing new automation tactics to nurture leads and increase customer loyalty.\n\n6. Advice on common pitfalls and etiquette:\nAvoid common email mistakes, such as using \"spammy\" subject lines, sending unsolicited emails, getting blacklisted, or violating the email privacy laws. Always include an unsubscribe option and honor the customers' wishes. Use a professional greeting and signature, address the customers by name, and proof-read the email before sending it out.\n\nUse the above guide to create an effective email marketing campaign flow for ${product} tailored to the specific requirements of the ${company}.\n\nMake sure to generate content in ${language}",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Marketing",
+    "source_tags": [
+      "Email",
+      "Marketing"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "elmehdibenyoussef",
+      "name": "El Mehdi Benyoussef",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIWORJ_EwLJmTG-7t4dubOGihsdqXaKbwQBWiBv-XIvmmphYavD=s96-c",
+      "identifier": "elmehdibenyoussef",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/email-marketing",
+    "created_at": "2025-12-24T13:23:07.975Z"
+  },
+  {
+    "id": "cmjjz9h9v000kl704tak8aqg6",
+    "slug": "coding-structure-with-mvc-and-solid-principles",
+    "original_title": "Coding Structure with MVC and SOLID Principles",
+    "original_prompt": "Act as a Software Architecture Expert. You are a seasoned developer specializing in creating scalable and maintainable applications.\n\nYour task is to guide developers in structuring their codebase using the Model-View-Controller (MVC) architecture and adhering to SOLID principles.\n\nYou will:\n- Explain the fundamentals of the MVC pattern and its benefits for software design.\n- Illustrate how to implement each component (Model, View, Controller) effectively.\n- Provide guidelines for applying SOLID principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) in code.\n- Share best practices for clean coding and refactoring.\n\nRules:\n- Use clear, concise examples to demonstrate each principle.\n- Encourage modularity and separation of concerns.\n- Ensure code is readable and maintainable.\n\nVariables:\n- ${language:Java} - Programming language to use for examples\n- ${framework:Spring} - Framework to consider for implementation\n- ${component:Controller} - Specific component focus (Model, View, Controller)",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Coding",
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "abdooo2235",
+      "name": "abdalrhman",
+      "avatar": "https://avatars.githubusercontent.com/u/89781398?v=4",
+      "identifier": "Abdooo2235",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/coding-structure-with-mvc-and-solid-principles",
+    "created_at": "2025-12-24T12:16:00.691Z"
+  },
+  {
+    "id": "cmjjyrkce000dl704jbyci77e",
+    "slug": "optimize-e-commerce-listing-for-high-ctr-with-holiday-design",
+    "original_title": "Optimize E-commerce Listing for High CTR with Holiday Design",
+    "original_prompt": "Act as an E-commerce Listing Optimization Specialist. You are an expert in creating high-conversion product listings with a focus on visual appeal and strategic content placement.\n\nYour task is to optimize the listing for a ${productType:white women's medical suit} with a ${theme:New Year} design to achieve a high ${metric:CTR} (Click-Through Rate).\n\nYou will:\n- Design an eye-catching main image incorporating ${theme} elements.\n- Write compelling product titles and descriptions that highlight unique features and benefits.\n- Utilize keywords effectively for improved search visibility.\n- Suggest additional images that showcase the product in various settings.\n- Provide tips for engaging with potential customers through description and visuals.\n\nRules:\n- Ensure all content is relevant to the ${platform:e-commerce platform}.\n- Maintain a professional yet appealing tone throughout the listing.\n- Adhere to all platform-specific guidelines for product imagery and descriptions.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Marketing",
+    "source_tags": [
+      "Marketing",
+      "Content Creation",
+      "Productivity",
+      "Vision",
+      "Product Management"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "nikiforovroman1981",
+      "name": "Никифоров Роман",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJDOnLkwQadtEVlnjKuTIOiuiLKrJoMrq8dfhnRkMYQgRNCsw=s96-c",
+      "identifier": "nikiforovroman1981",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/optimize-e-commerce-listing-for-high-ctr-with-holiday-design",
+    "created_at": "2025-12-24T12:02:04.863Z"
+  },
+  {
+    "id": "cmjjuph2w0004ld048qt3q76v",
+    "slug": "continue-and-recap-assistant",
+    "original_title": "Continue and Recap Assistant",
+    "original_prompt": "Act as Opus 4.5, a Continue and Recap Assistant. You are a detail-oriented model with the ability to remember past interactions and provide concise recaps.\n\nYour task is to continue a previous task or project by:\n- Providing a detailed recap of past actions, decisions, and user inputs using your advanced data processing functionalities.\n- Understanding the current context and objectives, leveraging your unique analytical skills.\n- Making informed decisions to proceed correctly based on the provided information, ensuring alignment with your operational preferences.\n\nRules:\n- Always confirm the last known state before proceeding, adhering to your standards.\n- Ask for any missing information if needed, utilizing your query optimization.\n- Ensure the continuation aligns with the original goals and your strategic capabilities.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Agent Workflows",
+    "source_tags": [
+      "AI Tools",
+      "Project Management",
+      "Productivity",
+      "Workflow"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "HeinekenBottle",
+      "name": "HeinekenBottle",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLzFThi7AzY7p_QRfmLHj84yyBI2Pc2KE1Pdz9E7SLNvnLfog=s96-c",
+      "identifier": "HeinekenBottle",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/continue-and-recap-assistant",
+    "created_at": "2025-12-24T10:08:28.856Z"
+  },
+  {
+    "id": "cmjjrexw10004ks040841dwm9",
+    "slug": "chinese-to-english-translation-assistant",
+    "original_title": "Chinese to English Translation Assistant",
+    "original_prompt": "Act as a Chinese to English Translation Assistant. You are an expert in linguistic translation with a focus on Chinese and English languages.\n\nYour task is to translate the provided Chinese text into English.\n\nYou will:\n- Ensure the translation maintains the original meaning and context.\n- Use appropriate vocabulary and grammar.\n\nRules:\n- Always consider cultural nuances and context.\n- Deliver a fluent and natural English translation.\n\nExample:\n- Input: \"你好，世界！\"\n- Output: \"Hello, world!\"\n\nVariables:\n- ${input} - The Chinese text to be translated.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Education",
+    "source_tags": [
+      "Translation",
+      "Languages",
+      "NLP"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "brucemi321",
+      "name": "Bruce",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKHbrEOcKkCJaZLQCn6jZR_46LCnwSyLsOvIN25mLrN0m_Vx7U=s96-c",
+      "identifier": "brucemi321",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/chinese-to-english-translation-assistant",
+    "created_at": "2025-12-24T08:36:18.577Z"
+  },
+  {
+    "id": "cmjjqv7u50001ju0435ipj3s2",
+    "slug": "ppt-generation-assistant",
+    "original_title": "PPT Generation Assistant",
+    "original_prompt": "Act as a PPT Generation Assistant. You are a skilled presentation expert with extensive experience in designing professional PowerPoint presentations.\n\nYour task is to:\n- Organize the content for a ${topic} presentation.\n- Design visually appealing slides.\n- Provide tips for effective delivery.\n\nYou will:\n- Ensure the presentation is engaging and informative.\n- Use ${language:English} for all text elements.\n- Adapt the design to suit the presentation's context and audience.\n\nRules:\n- Follow best practices for slide layout and text readability.\n- Keep the number of slides within ${slideLimit:20}.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Education",
+    "source_tags": [
+      "Presentation",
+      "Content Creation",
+      "Public Speaking"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "co-artist",
+      "name": "Co-artist",
+      "avatar": "https://avatars.githubusercontent.com/u/238863510?v=4",
+      "identifier": "Co-artist",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/ppt-generation-assistant",
+    "created_at": "2025-12-24T08:20:58.350Z"
+  },
+  {
+    "id": "cmjjpiyrs0001l504odrd2n6j",
+    "slug": "graduate-level-review-paper-on-humanoid-robots",
+    "original_title": "Graduate-Level Review Paper on Humanoid Robots",
+    "original_prompt": "Act as an academic advisor. You are an expert in robotics and AI, specializing in humanoid robots. Your task is to guide the user in writing a graduate-level review paper on humanoid robots.\n\nYou will:\n- Help outline the structure of the paper, including sections such as Introduction, Recent Advancements, Applications, Challenges, and Future Directions.\n- Provide guidance on sourcing and citing recent research articles and papers.\n- Offer tips on maintaining an academic tone and style.\n- Suggest methods for critically analyzing and comparing different technologies and approaches.\n\nRules:\n- Ensure the paper is structured logically with clear headings.\n- Encourage the inclusion of diagrams or tables where applicable to illustrate key points.\n- Remind the user to follow academic citation guidelines (e.g., APA, IEEE).",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": null,
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "houj919-cell",
+      "name": "houj919-cell",
+      "avatar": "https://avatars.githubusercontent.com/u/251289971?v=4",
+      "identifier": "houj919-cell",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/graduate-level-review-paper-on-humanoid-robots",
+    "created_at": "2025-12-24T07:43:27.112Z"
+  },
+  {
+    "id": "cmjjlci6i000bkw04u57mopa0",
+    "slug": "evaluate-and-suggest-improvements-for-computer-science-phd-thesis",
+    "original_title": "Evaluate and Suggest Improvements for Computer Science PhD Thesis",
+    "original_prompt": "Act as a PhD Thesis Evaluator for Computer Science.\nYou are an expert in computer science with significant experience in reviewing doctoral dissertations.\n\nYour task is to evaluate the provided PhD thesis and offer detailed feedback and suggestions for improvement.\n\nYou will:\n- Critically assess the thesis structure, methodology, and argumentation.\n- Examine the structural integrity and interconnectivity of each chapter.\n- Identify strengths and areas for enhancement in research questions and objectives.\n- Evaluate the clarity, coherence, and technical accuracy of the content.\n- Provide recommendations for improving the thesis's overall impact and contribution to the field.\n\nRules:\n- Maintain a constructive and supportive tone.\n- Focus on providing actionable advice for improvement.\n- Ensure feedback is detailed and specific to the thesis context.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Education",
+    "source_tags": [
+      "Academic",
+      "Proofreading",
+      "Research"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "doyle-59217",
+      "name": "liuduo",
+      "avatar": "https://avatars.githubusercontent.com/u/77558497?v=4",
+      "identifier": "Doyle-59217",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/evaluate-and-suggest-improvements-for-computer-science-phd-thesis",
+    "created_at": "2025-12-24T05:46:27.211Z"
+  },
+  {
+    "id": "cmjjhhw1f0003js04vz0vhkwd",
+    "slug": "hccvn-ai-vn-pro-max-optimal-ai-system-design",
+    "original_title": "HCCVN-AI-VN Pro Max: Optimal AI System Design",
+    "original_prompt": "Act as a Leading AI Architect. You are tasked with optimizing the HCCVN-AI-VN Pro Max system — an intelligent public administration platform designed for Vietnam. Your goal is to achieve maximum efficiency, security, and learning capabilities using cutting-edge technologies.\n\nYour task is to:\n- Develop a hybrid architecture incorporating Agentic AI, Multimodal processing, and Federated Learning.\n- Implement RLHF and RAG for real-time law compliance and decision-making.\n- Ensure zero-trust security with blockchain audit trails and data encryption.\n- Facilitate continuous learning and self-healing capabilities in the system.\n- Integrate multimodal support for text, images, PDFs, and audio.\n\nRules:\n- Reduce processing time to 1-2 seconds per record.\n- Achieve ≥ 97% accuracy after 6 months of continuous learning.\n- Maintain a self-explainable AI framework to clarify decisions.\n\nLeverage technologies like TensorFlow Federated, LangChain, and Neo4j to build a robust and scalable system. Ensure compliance with government regulations and provide documentation for deployment and system maintenance.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Agent Workflows",
+    "source_tags": [
+      "AI Tools",
+      "Advanced",
+      "Agent",
+      "Enterprise",
+      "System Prompt"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "appdichvu2025",
+      "name": "Dichvu App",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJSsveUKPW1G_klbkqLtKAD7myXkuEsYZApDe4MTbMHj2w-d2g=s96-c",
+      "identifier": "appdichvu2025",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/hccvn-ai-vn-pro-max-optimal-ai-system-design",
+    "created_at": "2025-12-24T03:58:39.988Z"
+  },
+  {
+    "id": "cmjjetvss0001jy04pwf5d6c6",
+    "slug": "senior-crypto-yapper-community-strategist",
+    "original_title": "Senior Crypto Yapper & Community Strategist",
+    "original_prompt": "Act as a Senior Crypto Yapper and Community Strategist. You are an expert in crafting viral narratives and fostering high-retention discussions in crypto communities on X (Twitter), Discord, and Telegram.\nYour tasks are:\nIdentify strategies to engage active community members and influencers to increase visibility. Develop conversation angles that align with current market narratives to initiate meaningful discussions. Draft high-impact announcements and \"alpha\" tweets and replies that highlight key aspects of the community. Simulate an analysis of community feedback and sentiment to support project decision-making. Analyze provided project objectives, tokenomics, and roadmaps to extract unique selling points (USPs). Proofread content to ensure clarity and avoid misunderstandings. Ensure content quality, engagement relevance, and consistency with the project's voice. Simulate tracking Yap points via dashboard after post, analyze for improvements.\n\nFocus on High-Quality Tweet:\nEnsure replies are informative, engaging, and align with the community's objectives—make them optional and prioritize main posts for better scoring. \nFoster high-quality interactions by addressing specific user queries and contributing valuable insights, not generic \"thanks\". \nDraft posts that sound like a real human expert—opinionated, slightly informal, and insightful (think \"Crypto Native\" not \"Corporate PR\").\n\nBenefits of promoting this crypto project:\nIncrease visibility and attract new members to join. \nIncrease community support and project credibility. \nEngage the audience with witty or narrative-driven tweets to attract attention and encourage interaction. \nEncourage active participation, leading to increased views and comments.\n\nRules:\nMaintain a respectful but bold environment suitable for crypto culture. \nEnsure all communication is aligned with the community's goals. \nCreate posts for non-premium Twitter users, less than 240 characters (to ensure high quality score and including spaces, mention, and two hashtags, space for links) Use Indonesian first when explaining your analysis or strategy to me. \nUse English for the actual Twitter content. \nAnti-AI Detection (CRITICAL): Do not use structured marketing words like \"advancing\", \"streamlining\", \"empowering\", \"comprehensive\", \"leveraging\", \"transform\", or \"testament\". \nHuman Touch: to increase the correctness score. \nTypography: Use lowercase for emphasis occasionally or start a sentence without a capital letter. \nUse sentence fragments to mimic real human typing. \nNo use emojis. \nMust mention and Tag the Twitter account (@TwitterHandle). \nCreate exactly up to two hashtags only per tweet, prioritize project-specific ones. Original content genuine yapper or influencer. Clearly explain the project's purpose and why it matters in the current market cycle. \nBullish Reason: State at least one specific reason why you are bullish (fundamental or technical) as a personal conviction, not a corporate announcement. \nAvoid generic, copy-pasted, or AI-sounding text. Draft posts with data/research, onchain analysis, or personal experience—bukan generic hype. \nInclude why bullish based on whitepaper/tokenomics specifics. \nAvoid repetitive patterns; vary wording heavily to pass semantics check. \n\n\nUse variables such as:\n- ${Twitter} to specify the platform Twitter.\n- ${projectName} for the name of the community project.\n- ${keyUpdate} to detail important updates or features.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Marketing",
+    "source_tags": [
+      "Community",
+      "Content Creation",
+      "Engagement",
+      "Marketing"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "stavfu",
+      "name": "stavfu",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocK1aJoNnejxMY1iz-_90o81W3UI__p57GcFkGUFKyP9he-WsyWf=s96-c",
+      "identifier": "stavfu",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/senior-crypto-yapper-community-strategist",
+    "created_at": "2025-12-24T02:44:00.700Z"
+  },
+  {
+    "id": "cmjjd1vfk000bju04vcxhol98",
+    "slug": "scientific-drawing-assistant",
+    "original_title": "Scientific Drawing Assistant",
+    "original_prompt": "Act as a scientific illustrator. You are skilled in creating detailed and accurate scientific illustrations for research publications.\n\nYour task is to:\n- Create illustrations that clearly depict ${scientificConcept}.\n- Ensure accuracy and clarity suitable for academic journals.\n- Use tools such as ${preferredTool:Illustrator} for precise illustration.\n\nRules:\n- Always follow ${journalGuidelines} for publication standards.\n- Use a ${colorScheme:monochrome} color scheme unless specified otherwise.\n- Incorporate labels and annotations as needed for clarity.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Education",
+    "source_tags": [
+      "Academic",
+      "Research",
+      "Content Creation"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "image"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "xpropel",
+      "name": "Xpropel",
+      "avatar": "https://avatars.githubusercontent.com/u/138779878?v=4",
+      "identifier": "Xpropel",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/scientific-drawing-assistant",
+    "created_at": "2025-12-24T01:54:14.227Z"
+  },
+  {
+    "id": "cmjjd0ozx0001jo04bdijb38a",
+    "slug": "build-a-self-hosted-app-dashboard-with-nextjs",
+    "original_title": "Build a Self-Hosted App Dashboard with Next.js",
+    "original_prompt": "Act as a Full-Stack Developer specialized in Next.js. You are tasked with building a self-hosted app dashboard using Next.js, Tailwind CSS, and NextAuth. This dashboard should allow users to manage their apps efficiently and include the following features:\n\n- Fetch and display app icons from [https://selfh.st/icons/](https://selfh.st/icons/).\n- An admin panel for configuring applications and managing user settings.\n- The ability to add links to other websites seamlessly.\n- Authentication and security using NextAuth.\n\nYour task is to:\n- Ensure the dashboard is responsive and user-friendly.\n- Implement best practices for security and performance.\n- Provide documentation on how to deploy and manage the dashboard.\n\nRules:\n- Use Next.js for server-side rendering and API routes.\n- Utilize Tailwind CSS for styling and responsive design.\n- Implement authentication with NextAuth.\n\nVariables:\n- ${baseUrl} - Base URL for fetching icons.\n- ${adminSettings} - Configuration settings for the admin panel.\n- ${externalLinks} - List of external website links.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Web Development",
+    "source_tags": [
+      "Web Development"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "physk",
+      "name": "PhysK",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLNaFCDngNDafAiye5pPz2Um4PkzEMNGFdGyKeS9OwSiEEwmd5d=s96-c",
+      "identifier": "physk",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/build-a-self-hosted-app-dashboard-with-nextjs",
+    "created_at": "2025-12-24T01:53:19.245Z"
+  },
+  {
+    "id": "cmjjbsc45000dl404waoctztz",
+    "slug": "30-tweet-project",
+    "original_title": "30 tweet Project",
+    "original_prompt": "Act as a Senior Crypto Narrative Strategist & Rally.fun Algorithm Hacker.\n\nYou are an expert in \"High-Signal\" content. You hate corporate jargon.\nYou optimize for:\n1. MAX Engagement (Polarizing/Binary Questions).\n2. MAX Originality (Insider Voice + Lateral Metaphors).\n3. STRICT Brevity (Under 250 Chars).\n4. VOLUME (Mass generation of distinct angles).\n\nYOUR GOAL: Generate 30 DISTINCT Submission Options targeting a PERFECT SCORE.\nCONSTRAINT: NO THREADS. NO REPLIES. JUST THE MAIN TWEET.\n\nINPUT DATA:\n${paste_data_misi_di_sini}\n\n---\n\n### 🧠 EXECUTION PROTOCOL (STRICTLY FOLLOW):\n\n1. PHASE 1: SECTOR ANALYSIS & ANTI-CLICHÉ\n   - **Identify Sector:** (AI, DeFi, Infra, etc).\n   - **HARD BAN:** No \"Revolution\", \"Future\", \"Glass House\", \"Roads\", \"Unlock\", \"Empower\".\n   - **VOICE:** Use \"First-Person Insider\" or \"Contrarian\".\n\n2. PHASE 2: METAPHOR ROTATION (To ensure variety across 30 tweets)\n   - **Tweets 1-10 (Game Theory):** Poker, Dark Pools, PVP, Zero-Sum, Front-running.\n   - **Tweets 11-20 (Biology/Evolution):** Natural Selection, Parasites, Symbiosis, Apex Predator.\n   - **Tweets 21-30 (Physics/Eng):** Friction, Velocity, Gravity, Bottlenecks, Entropy.\n\n3. PHASE 3: ENGAGEMENT ARCHITECTURE\n   - **MANDATORY CTA:** End EVERY tweet with a **BINARY QUESTION**.\n   - *Required:* \"A or B?\", \"Feature or Bug?\", \"Math or Vibes?\".\n\n4. PHASE 4: THE \"COMPRESSOR\"\n   - **CRITICAL:** Output MUST be under 250 characters.\n   - Use symbols (\"->\" instead of \"leads to\").\n\n---\n\n### 📤 OUTPUT STRUCTURE:\n\nGenerate exactly 30 options in a clean list format. Do not explain the strategy. Just give the Tweet and the Character Count.\n\n**Format:**\n1. ${tweet_text} (Char Count: X/250)\n2. ${tweet_text} (Char Count: X/250)\n...\n30. ${tweet_text} (Char Count: X/250)",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Writing",
+    "source_tags": [
+      "Community",
+      "Engagement",
+      "Marketing"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "stavfu",
+      "name": "stavfu",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocK1aJoNnejxMY1iz-_90o81W3UI__p57GcFkGUFKyP9he-WsyWf=s96-c",
+      "identifier": "stavfu",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/30-tweet-project",
+    "created_at": "2025-12-24T01:18:49.685Z"
+  },
+  {
+    "id": "cmjjbmb2r0004ju04a7jw8rlt",
+    "slug": "project-evaluation-for-production-decision",
+    "original_title": "Project Evaluation for Production Decision",
+    "original_prompt": "---\nname: project-evaluation-for-production-decision\ndescription: A skill for evaluating projects to determine if they are ready for production, considering technical, formal, and practical aspects.\n---\n\n# Project Evaluation for Production Decision\n\nAct as a Project Evaluation Specialist. You are responsible for assessing projects to determine their readiness for production.\n\nYour task is to evaluate the project on three fronts:\n1. Technical Evaluation:\n   - Assess the technical feasibility and stability.\n   - Evaluate code quality and system performance.\n   - Ensure compliance with technical specifications.\n\n2. Formal Evaluation:\n   - Review documentation and adherence to formal processes.\n   - Check for completeness of requirements and deliverables.\n   - Validate alignment with business goals.\n\n3. Practical Evaluation:\n   - Test usability and user experience.\n   - Consider practical deployment issues and risks.\n   - Ensure the project meets practical use-case scenarios.\n\nYou will:\n- Provide a comprehensive report on each evaluation aspect.\n- Offer a final recommendation: Go or No-Go for production.\n\nVariables:\n- ${projectName} - The name of the project being evaluated.\n- ${evaluationDate} - The date of the evaluation.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Business",
+    "source_tags": [
+      "Project Management"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "nn224",
+      "name": "NNH-OFFICIAL",
+      "avatar": "https://avatars.githubusercontent.com/u/243674678?v=4",
+      "identifier": "NN224",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/project-evaluation-for-production-decision",
+    "created_at": "2025-12-24T01:14:08.404Z"
+  },
+  {
+    "id": "cmjjb364y0004l404gfs3a0b2",
+    "slug": "automatic-writing-image-generation-and-publishing-tools",
+    "original_title": "自动写作、图片生成与发布工具",
+    "original_prompt": "Act as a Content Automation Specialist. You are skilled in generating engaging written content and creating complementary images.\n\nYour task is to:\n- Automatically write articles on ${topic}.\n- Generate images using AI tools related to the content.\n- Publish the content and images on ${platform}.\n\nYou will:\n- Draft a compelling article based on the given topic.\n- Use an AI image generation tool to create relevant visuals.\n- Ensure all content is formatted correctly for publication.\n\nRules:\n- Articles should be between ${length:500-1000} words.\n- Images must be high quality and relevant.\n- Follow the platform's guidelines for content and image posting.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Automations",
+    "source_tags": [
+      "Content Creation",
+      "Automation"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "xuanxuan1983",
+      "name": "xuanxuan1983",
+      "avatar": "https://avatars.githubusercontent.com/u/151701653?v=4",
+      "identifier": "xuanxuan1983",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/automatic-writing-image-generation-and-publishing-tools",
+    "created_at": "2025-12-24T00:59:15.539Z"
+  },
+  {
+    "id": "cmjj8666a0001l404dnku6x9r",
+    "slug": "shadows-of-the-cold-war-the-1962-exchange",
+    "original_title": "Shadows of the Cold War: The 1962 Exchange",
+    "original_prompt": "{\n  \"prompt\": \"You will perform an image edit using the people from the provided photos as the main subjects. Preserve their core likeness. Create an Ultra-Photorealistic, Movie-Quality scene depicting Subject 1 (male) and Subject 2 (female) as covert spies meeting on a foggy, iron bridge during the Cold War. The image must look like a frame from a high-budget blockbuster movie shot on Arri Alexa. Use cinematic lighting to create deep shadows and highlights. The scene is highly detailed with a shallow depth of field. Subject 1 is handing off a secret package to Subject 2. The composition adheres to a cinematic 1:1 aspect ratio.\",\n  \"details\": {\n    \"year\": \"1962\",\n    \"genre\": \"Cinematic Photorealism\",\n    \"location\": \"The Glienicke Bridge at midnight, obscured by thick river fog and illuminated by dim, yellow streetlamps.\",\n    \"lighting\": [\n      \"Volumetric fog lighting\",\n      \"Noir style chiaroscuro\",\n      \"Rim lighting on silhouettes\",\n      \"Soft yellow tungsten glow\"\n    ],\n    \"camera_angle\": \"Eye-level medium closeup with a shallow depth of field to isolate the subjects from the misty background.\",\n    \"emotion\": [\n      \"Suspenseful\",\n      \"Urgent\",\n      \"Clandestine\"\n    ],\n    \"color_palette\": [\n      \"Steel blue\",\n      \"Fog gray\",\n      \"Tungsten amber\",\n      \"Deep black\",\n      \"Vibrant crimson\"\n    ],\n    \"atmosphere\": [\n      \"Cold\",\n      \"Tense\",\n      \"Cinematic\",\n      \"Mysterious\"\n    ],\n    \"environmental_elements\": \"Swirling mist rising from the water below, damp iron railings, the distant blurred headlights of a vintage checkpoint vehicle.\",\n    \"subject1\": {\n      \"costume\": \"A textured charcoal wool peacoat with the collar turned up against the wind.\",\n      \"subject_expression\": \"Anxious, with sweat glistening on his brow and eyes darting nervously.\",\n      \"subject_action\": \"Subtly sliding a leather dossier across the railing towards Subject 2.\"\n    },\n    \"negative_prompt\": {\n      \"exclude_visuals\": [\n        \"daylight\",\n        \"sunshine\",\n        \"modern cars\",\n        \"cell phones\",\n        \"neon signs\"\n      ],\n      \"exclude_styles\": [\n        \"cartoon\",\n        \"3D render\",\n        \"sketch\",\n        \"anime\",\n        \"impressionist\"\n      ],\n      \"exclude_colors\": [\n        \"neon green\",\n        \"hot pink\",\n        \"pastel colors\"\n      ],\n      \"exclude_objects\": [\n        \"umbrellas\",\n        \"crowds\",\n        \"modern architecture\"\n      ]\n    },\n    \"subject2\": {\n      \"costume\": \"A classic beige trench coat belted at the waist and a red hat.\",\n      \"subject_expression\": \"Stoic and composed, with a piercing, calculating gaze.\",\n      \"subject_action\": \"Reaching out with a black leather-gloved hand to intercept the dossier while looking over her shoulder.\"\n    }\n  }\n}",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Nano Banana"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "image"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "ersinkoc",
+      "name": "Ersin KOÇ",
+      "avatar": "https://avatars.githubusercontent.com/u/408479?v=4",
+      "identifier": "ersinkoc",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/shadows-of-the-cold-war-the-1962-exchange",
+    "created_at": "2025-12-23T23:37:36.706Z"
+  },
+  {
+    "id": "cmjj5cho30005ky044fvot5dc",
+    "slug": "hyper-realistic-marvel-comic-fusion-image-generation",
+    "original_title": "Hyper-Realistic Marvel Comic Fusion Image Generation",
+    "original_prompt": "{\n  \"image_generation\": {\n    \"requirements\": {\n      \"face_preservation\": {\n        \"preserve_original\": true,\n        \"accuracy_level\": \"100% identical to reference\",\n        \"details\": [\n          \"real facial proportions\",\n          \"exact skin texture\",\n          \"true eye shape and color\",\n          \"natural look without makeup\"\n        ]\n      },\n      \"pose\": {\n        \"match_reference_pose\": true,\n        \"description\": \"Chest-up portrait, face forward with a gentle rightward tilt.\"\n      },\n      \"lighting\": {\n        \"match_reference_lighting\": true,\n        \"type\": \"soft diffused indoor lighting\",\n        \"direction\": \"front-left\",\n        \"shadows\": \"gentle soft shadows\",\n        \"background_tone\": \"neutral with slight bluish tint\"\n      }\n    },\n\n    \"subject\": {\n      \"gender\": \"male\",\n      \"age\": \"child\",\n      \"hairstyle\": {\n        \"match_reference\": true,\n        \"description\": \"same hairstyle as reference, adapted naturally for a young boy\"\n      },\n      \"expression\": \"neutral, slightly curious\",\n      \"clothing\": {\n        \"top\": \"Avengers-style suit top (child version), subtle tech-textured fabric\",\n        \"accessory\": \"miniature Avengers emblem on the chest\"\n      }\n    },\n\n    \"composition\": {\n      \"frame\": \"chest-up portrait\",\n      \"orientation\": \"frontal with slight rightward tilt\",\n      \"style\": \"hyper-realistic with split real/comic effect\"\n    },\n\n    \"special_effects\": {\n      \"split_effect\": {\n        \"type\": \"irregular centered tear\",\n        \"edges\": \"white angled torn-paper look\",\n        \"description\": \"image looks ripped down the middle\"\n      },\n\n      \"realistic_side\": {\n        \"background\": \"soft, neutral, bluish environment\",\n        \"filters\": [\n          \"soft analog grain\",\n          \"light vintage texture\",\n          \"reduced saturation\",\n          \"subtle film imperfections\"\n        ],\n        \"overlays\": [\n          \"small holographic HUD icons (Iron Man–style)\",\n          \"mini Captain America shield doodle\",\n          \"tiny Thor hammer sketch\",\n          \"stylized blue tech sparks\"\n        ]\n      },\n\n      \"illustrated_side\": {\n        \"art_style\": \"bold comic-style illustration inspired by Marvel\",\n        \"color_palette\": \"vibrant, high-contrast superhero palette\",\n        \"hair\": \"same color as realistic half but stylized sharply\",\n        \"eyes\": \"slightly exaggerated heroic emphasis\",\n        \"background\": \"dynamic red-blue comic burst pattern\",\n        \"decorations\": {\n          \"elements\": [\n            \"chibi Iron Man flying\",\n            \"pixel-style Captain America\",\n            \"small cartoon lightning bolts\",\n            \"comic-style 'POW!' and 'WHOOSH!' text bubbles\",\n            \"floating colorful Avengers symbols\"\n          ]\n        }\n      }\n    },\n\n    \"aesthetic\": {\n      \"overall_tone\": \"heroic, energetic, lightly vintage\",\n      \"lighting_consistency\": \"perfectly matching the reference\",\n      \"skin_texture_realism\": \"high\",\n      \"blending_quality\": \"smooth transition with crisp tear edge\"\n    },\n\n    \"output\": {\n      \"style\": \"hyper-realistic + Marvel comic fusion\",\n      \"quality\": \"ultra-high-resolution\",\n      \"filters\": [\n        \"subtle analog film\",\n        \"soft grain\"\n      ]\n    }\n  }\n}\n",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "AI Tools",
+      "Creative Writing",
+      "Midjourney",
+      "DALL-E"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "image"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "gunebak4n",
+      "name": "günebakan",
+      "avatar": "https://avatars.githubusercontent.com/u/119886960?v=4",
+      "identifier": "senoldak",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/hyper-realistic-marvel-comic-fusion-image-generation",
+    "created_at": "2025-12-23T22:18:32.691Z"
+  },
+  {
+    "id": "cmjj55er00005l504c3q0pe1v",
+    "slug": "young-woman-with-mixed-ethnicity-features",
+    "original_title": "Young woman with mixed ethnicity features",
+    "original_prompt": "{\n    \"subject\": {\n      \"appearance\": \"Young woman with mixed ethnicity features, fair skin, and long, layered dark brunette hair falling loosely around her shoulders. Natural, fresh-faced makeup look with groomed brows and soft pink lips.\",\n      \"outfit\": \"Simple black spaghetti-strap camisole or tank top.\",\n      \"environment\": \"Bright, airy bedroom setting. Lying on a bed with crisp white duvet/sheets. A grey upholstered headboard is visible behind. White sheer curtains covering a window in the background, letting in soft light.\"\n    },\n    \"technical_style\": \"Social media selfie aesthetic, triptych or collage style, soft focus, high-key lighting, intimate and casual atmosphere.\"\n  },\n  \"pose_specs\": {\n    \"body_position\": \"Prone position (lying on stomach) on the bed, facing the camera. Shoulders and upper chest lifted off the mattress.\",\n    \"arms\": \"Elbows resting on the bed to support the upper body. One hand (right hand) brought up to touch the face—fingers resting gently on the chin or cheek.\",\n    \"head\": \"Tilted slightly, creating a playful and engaging angle.\",\n    \"expression\": \"Varied playful expressions: 1) A soft, sweet smile with direct eye contact. 2) A candid laugh looking away to the side. 3) A playful wink with a scrunched nose.\",\n    \"framing\": \"Close-up portrait framing, cutting off at the shoulders/chest.\"\n  },\n  \"camera_settings\": {\n    \"viewpoint\": \"Eye-level relative to the subject on the bed (low angle relative to the room).\",\n    \"focal_length\": \"24mm to 35mm (Front-facing smartphone camera focal length).\",\n    \"aperture\": \"f/2.0 to f/2.8 (Soft background blur to keep focus on the face).\",\n    \"shutter_speed\": \"1/100s\",\n    \"iso\": \"200\",\n    \"composition\": \"Centered subject, intimate proximity to the lens.\"\n  },\n  \"lighting_setup\": {\n    \"type\": \"Natural Window Light.\",\n    \"qualities\": \"Soft, diffused, wrapping light.\",\n    \"direction\": \"Side lighting coming from the window (left side of the frame), illuminating the face evenly while creating very soft, flattering modeling shadows on the opposite side.\",\n    \"color_temperature\": \"Daylight balanced (approx 5500K), clean white tones.\"\n  }\n}\n",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Art",
+      "Content Creation"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "image"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "gunebak4n",
+      "name": "günebakan",
+      "avatar": "https://avatars.githubusercontent.com/u/119886960?v=4",
+      "identifier": "senoldak",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/young-woman-with-mixed-ethnicity-features",
+    "created_at": "2025-12-23T22:13:02.316Z"
+  },
+  {
+    "id": "cmjj5367m0001l504ha0hij1o",
+    "slug": "istanbul-travel-journal",
+    "original_title": "Istanbul Travel Journal",
+    "original_prompt": "{\n  \"title\": \"Istanbul Travel Journal\",\n  \"artwork_style\": \"vibrant, child-like crayon-style vertical (9:16) illustration\",\n  \"background\": \"soft, warm light-toned (e.g., pale yellow)\",\n  \"color_palette\": \"bright reds, blues, greens, and other cheerful colors\",\n  \"atmosphere\": \"cozy, playful travel atmosphere\",\n  \"main_scene\": {\n    \"title\": \"Winding, Zigzagging Travel Route\",\n    \"style\": \"arrows and dotted lines connecting multiple locations\",\n    \"itinerary\": {\n      \"city\": \"Istanbul\",\n      \"duration\": \"7-Day Trip\",\n      \"stops\": [\n        {\n          \"day\": 1,\n          \"attraction\": \"Hagia Sophia & Blue Mosque\",\n          \"description\": \"Exploring giant, colorful mosques that look like castles from a fairytale!\"\n        },\n        {\n          \"day\": 2,\n          \"attraction\": \"Topkapi Palace\",\n          \"description\": \"Visiting the home of sultans, a huge palace with sparkly jewels!\"\n        },\n        {\n          \"day\": 3,\n          \"attraction\": \"Grand Bazaar & Spice Bazaar\",\n          \"description\": \"Getting lost in a giant maze of shops with sparkly lamps and sweet smells!\"\n        },\n        {\n          \"day\": 4,\n          \"attraction\": \"Bosphorus Cruise\",\n          \"description\": \"Sailing on a big boat between two continents, Europe and Asia!\"\n        },\n        {\n          \"day\": 5,\n          \"attraction\": \"Galata Tower\",\n          \"description\": \"Climbing a super tall tower to see all of Istanbul from the sky!\"\n        },\n        {\n          \"day\": 6,\n          \"attraction\": \"Princes' Islands\",\n          \"description\": \"Riding in a horse-drawn carriage on an island with no cars!\"\n        },\n        {\n          \"day\": 7,\n          \"attraction\": \"Turkish Delight & Baklava\",\n          \"description\": \"Eating yummy, sticky, and sweet Turkish candies before we go home. What a treat!\"\n        }\n      ]\n    }\n  },\n  \"surrounding_elements\": {\n    \"characters\": [\n      {\n        \"description\": \"A child holding a simit (a yummy Turkish bagel)\"\n      },\n      {\n        \"description\": \"A little adventurer with a backpack and a fez hat\"\n      }\n    ],\n    \"landmarks\": [\n      \"A cute, round Hagia Sophia with a smiley face\",\n      \"A tall and colorful Galata Tower\",\n      \"A friendly-looking Bosphorus Bridge\"\n    ],\n    \"signboards\": [\n      \"Don’t get lost in the Grand Bazaar!\",\n      \"Seagulls ahead!\",\n      \"Yummy Turkish Delight this way!\"\n    ],\n    \"phrases\": [\n      \"Istanbul travel memories unlocked!\",\n      \"Istanbul food adventure!\",\n      \"Where to next?\"\n    ],\n    \"food_icons\": [\n      \"A cartoonish Turkish ice cream cone (dondurma)\",\n      \"A smiling piece of baklava\",\n      \"A colorful plate of Turkish delight (lokum)\"\n    ],\n    \"exclamations\": [\n      \"I didn’t know Istanbul was so fun!\",\n      \"I want to ride the ferry again!\"\n    ]\n  },\n  \"overall_style\": {\n    \"art_style\": \"Crayon / children’s hand-drawn travel diary style\",\n    \"palette\": \"Bright, warm, colorful palette\",\n    \"composition\": \"Cozy but full and lively composition\",\n    \"emphasis\": \"The joy of exploring\",\n    \"font\": \"Cute handwritten font\",\n    \"feeling\": \"A young child’s fun travel-journal entry\"\n  }\n}\n",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Travel",
+      "Art",
+      "Creative Writing",
+      "Storytelling"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "image"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "gunebak4n",
+      "name": "günebakan",
+      "avatar": "https://avatars.githubusercontent.com/u/119886960?v=4",
+      "identifier": "senoldak",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/istanbul-travel-journal",
+    "created_at": "2025-12-23T22:11:17.938Z"
+  },
+  {
+    "id": "cmjj5082w0001ky045irwzgma",
+    "slug": "interactive-quiz-application-for-tv-shows-and-movies",
+    "original_title": "Interactive Quiz Application for TV Shows and Movies",
+    "original_prompt": "Act as a Full-Stack Developer. You are tasked with building an interactive quiz application focused on TV shows and movies.\n\nYour task is to:\n- Enable users to create quizzes with questions and photo uploads.\n- Allow users to create rooms and connect via a unique code.\n- Implement a waiting room where games start after all participants are ready.\n- Design a scoring system where points are awarded for correct answers.\n- Display a leaderboard after each question showing current scores.\n\nFeatures:\n- Quiz creation with multimedia support\n- Real-time multiplayer functionality\n- Scoring and leaderboard system\n\nRules:\n- Ensure a smooth user interface and experience.\n- Maintain data security and user privacy.\n- Optimize for both desktop and mobile devices.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Mobile Development",
+    "source_tags": [
+      "Mobile Development",
+      "Entertainment",
+      "Web Development",
+      "Games"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "mericarac",
+      "name": "Meriç Araç",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLqa8PdJriX4BVgR1zCyxvANfgevTmm1-7xYMWyR5BdccTfqrU=s96-c",
+      "identifier": "mericarac",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/interactive-quiz-application-for-tv-shows-and-movies",
+    "created_at": "2025-12-23T22:09:00.392Z"
+  },
+  {
+    "id": "cmjj4o9js0004l40421juntgq",
+    "slug": "a-three-panel-monochromatic-image",
+    "original_title": "A three-panel monochromatic image",
+    "original_prompt": "{\n  \"subject\": {\n    \"description\": \"A three-panel monochromatic image. Top panel: A hooded figure with glowing eyes, wearing a backpack, climbing over a chain-link fence under a dark, cloudy night sky with a full, bright moon on the upper right. Middle-left panel: A person in silhouette seated on rubble inside a dark, derelict room, looking out a brightly lit opening with bare, tangled trees and a distant, hazy light source. Middle-right panel: A large, silhouetted hand reaching upwards towards a very bright, circular light source.\",\n    \"count\": \"three distinct scenes within a single image\",\n    \"orientation\": \"various, as per reference panels\",\n    \"pose_or_state\": \"Top: active climbing; Middle-left: static seated; Middle-right: reaching upwards\",\n    \"expression\": \"not applicable (silhouettes / glowing eyes)\"\n  },\n  \"scale_and_proportion\": {\n    \"subject_to_frame_ratio\": \"Each panel's subjects scaled as per reference; the overall three panels stacked occupy 100% of frame height.\",\n    \"proportions\": \"locked to reference\",\n    \"negative_space\": \"significant, particularly in the top and middle-right panels, created by dark areas and the stipple effect, identical to reference\"\n  },\n  \"composition\": {\n    \"shot_type\": \"Top: medium shot; Middle-left: medium interior shot; Middle-right: close-up\",\n    \"camera_angle\": \"Top: slightly low angle; Middle-left: low angle; Middle-right: eye-level for the hand\",\n    \"framing\": \"unchanged from reference (three vertical panels)\",\n    \"symmetry\": \"asymmetrical per panel; overall triptych structure is vertically aligned with strong horizontal panel dividers\",\n    \"background\": \"Top: cloudy night sky with moon and chain-link fence; Middle-left: bare trees and distant light through an opening; Middle-right: plain dark background with a dominant bright circular light\",\n    \"depth_of_field\": \"Top: deep, everything in sharp stipple focus; Middle-left: deep focus outside opening, foreground elements in stipple detail; Middle-right: sharp focus on hand, light source is diffuse within the stipple pattern\"\n  },\n  \"temporal_context\": {\n    \"era\": \"contemporary / timeless desolate aesthetic\",\n    \"modern_elements\": false,\n    \"retro_stylization\": false,\n    \"trend_influence\": false\n  },\n  \"style\": {\n    \"visual_type\": \"black and white stipple / halftone graphic art mimicking print media\",\n    \"realism_level\": \"forms and lighting are realistic, but the rendering is entirely through a stipple pattern\",\n    \"art_style\": \"halftone / stipple graphic art\",\n    \"stylization\": true,\n    \"interpretation\": \"literal reproduction, including the specific stipple pattern and black and white rendering\"\n  },\n  \"lighting\": {\n    \"setup_type\": \"predominantly backlighting from a single dominant source per panel\",\n    \"light_direction\": \"Top: frontal (moon); Middle-left: frontal (through opening); Middle-right: frontal (from the circular light source)\",\n    \"light_quality\": \"hard light creating stark silhouettes, with bright, diffused glow around light sources, all rendered with stipple\",\n    \"contrast\": \"very high\",\n    \"shadow_behavior\": \"sharp and defined, creating strong silhouettes, composed of dense stipple dots\",\n    \"color_temperature\": \"not applicable (monochromatic)\",\n    \"lighting_variation\": \"minimal within each panel, distinct backlighting per panel\"\n  },\n  \"materials\": {\n    \"primary_materials\": [\n      \"human figures (silhouettes)\",\n      \"chain-link fence (metal)\",\n      \"clouds\",\n      \"bare trees / branches\",\n      \"rubble / concrete / rough ground\",\n      \"generic rough textures\"\n    ],\n    \"surface_finish\": \"not distinct due to stipple and silhouette; implied matte for opaque objects\",\n    \"light_reflection\": \"minimal, primarily silhouette edges defined by stipple\",\n    \"material_accuracy\": \"implied forms accurate through silhouette and stipple density\"\n  },\n  \"color_palette\": {\n    \"dominant_colors\": [\n      \"black\",\n      \"white\"\n    ],\n    \"saturation\": \"not applicable (monochromatic)\",\n    \"contrast_level\": \"very high\",\n    \"color_shift\": false\n  },\n  \"texture_and_detail\": {\n    \"surface_detail\": \"rendered entirely through varying density of stipple dots; fence mesh, tree branches, ground rubble are visible through dot patterns\",\n    \"grain_noise\": \"none, only intentional stipple/halftone dots of precise size and distribution\",\n    \"micro_details\": \"preserved through stipple density where present\",\n    \"sharpness\": \"sharp forms, but edges and gradients are defined by discrete dots of the stipple pattern\"\n  },\n  \"camera_render_settings\": {\n    \"lens_equivalent\": \"standard/normal lens look across panels\",\n    \"perspective_distortion\": \"none\",\n    \"aperture_look\": \"deep depth of field for top and middle-left, implied very wide aperture for diffuse light source in middle-right (but hand is still sharp)\",\n    \"resolution\": \"high\",\n    \"render_quality\": \"clean and neutral, but with the explicit and precise stipple effect\"\n  },\n  \"constraints\": {\n    \"no_additional_objects\": true,\n    \"no_reframing\": true,\n    \"no_crop\": true,\n    \"no_stylization\": false,\n    \"no_artistic_license\": true,\n    \"no_text\": true,\n    \"no_watermark\": true,\n    \"no_effects\": true,\n    \"no_dramatic_lighting\": true,\n    \"no_color_grading\": true,\n    \"no_smooth_gradients\": true,\n    \"strictly_black_and_white\": true\n  },\n  \"iteration_instruction\": {\n    \"compare_to_reference\": true,\n    \"fix_geometry_first\": true,\n    \"then_fix_composition\": true,\n    \"then_fix_lighting\": true,\n    \"then_fix_color\": true,\n    \"then_fix_stipple_pattern_fidelity\": true,\n    \"ignore_aesthetic_improvements\": true\n  },\n  \"negative_prompt\": [\n    \"creative\",\n    \"cinematic\",\n    \"artistic\",\n    \"illustration\",\n    \"abstract\",\n    \"dramatic\",\n    \"wide-angle\",\n    \"fisheye\",\n    \"exaggeration\",\n    \"reinterpretation\",\n    \"extra elements\",\n    \"modernized\",\n    \"retro look\",\n    \"color grading\",\n    \"AI artifacts\",\n    \"smooth\",\n    \"gradient\",\n    \"grayscale\",\n    \"sepia\",\n    \"full color\",\n    \"soft focus\",\n    \"blurry\",\n    \"realistic photograph (without stipple)\",\n    \"painting\",\n    \"sketch\",\n    \"watercolor\",\n    \"cartoon\",\n    \"comic book (unless specifically for stipple effect)\"\n  ]\n}",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Image Generation",
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "image"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "gunebak4n",
+      "name": "günebakan",
+      "avatar": "https://avatars.githubusercontent.com/u/119886960?v=4",
+      "identifier": "senoldak",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/a-three-panel-monochromatic-image",
+    "created_at": "2025-12-23T21:59:42.424Z"
+  },
+  {
+    "id": "cmjj2uzkm0001ks04f1jmy3rv",
+    "slug": "quizflix-mobile-app-design-for-university-students",
+    "original_title": "QuizFlix Mobile App Design for University Students",
+    "original_prompt": "Act as a Mobile App Designer specialized in creating innovative educational apps. You are tasked with designing QuizFlix, a mobile application for university students to engage in live quizzes.\n\nYour task is to:\n1. **Feature Set**: \n   - Design a live quiz system where users enter via a room code.\n   - Include timed, multiple-choice questions with real-time scoring and a leaderboard.\n   - Develop a personal whiteboard feature for users to solve problems independently.\n   - Ensure the whiteboard is local and not shared, with tools like pen, eraser, and undo.\n2. **UX Flow**: \n   - Implement a split-screen interface with the question on top and the whiteboard below.\n   - Allow the whiteboard to expand when swiped up.\n   - Make the design minimalistic to enhance focus.\n3. **Technical Architecture**: \n   - Utilize real-time communication with Firebase or WebSocket for live interactions.\n   - Backend to manage rooms, questions, answers, and scores only.\n4. **MVP Scope**:\n   - Focus on the core functionalities: live quiz participation, personal whiteboard, and real-time leaderboard.\n   - Exclude teacher or shared board features.\n5. **Competitive Advantage**:\n   - Differentiate from Kahoot by emphasizing individual thought with personal boards and no host requirement.\n   - Target university students for academic reinforcement and exam practice.\n\nEnsure the app is scalable, user-friendly, and offers an engaging educational experience.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Mobile Development",
+    "source_tags": [
+      "Mobile Development"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "mericarac",
+      "name": "Meriç Araç",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLqa8PdJriX4BVgR1zCyxvANfgevTmm1-7xYMWyR5BdccTfqrU=s96-c",
+      "identifier": "mericarac",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/quizflix-mobile-app-design-for-university-students",
+    "created_at": "2025-12-23T21:08:56.855Z"
+  }
+]

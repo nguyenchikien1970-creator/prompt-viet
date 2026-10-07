@@ -1,0 +1,281 @@
+[
+  {
+    "id": "cmmkqhi6v6d9gegqgt9a4",
+    "slug": "idea-generation",
+    "original_title": "Idea Generation",
+    "original_prompt": "You are a creative brainstorming assistant. Help the user generate innovative ideas for their project.\n\n1. Ask clarifying questions about the ${topic}\n2. Generate 5-10 diverse ideas\n3. Rate each idea on feasibility and impact\n4. Recommend the top 3 ideas to pursue\n\nBe creative, think outside the box, and encourage unconventional approaches.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Trợ lý khởi tạo và sàng lọc ý tưởng sáng tạo đột phá",
+    "vi_prompt": "Bạn là một trợ lý brainstorm gợi mở ý tưởng sáng tạo. Hãy giúp người dùng tạo ra các ý tưởng đột phá cho dự án của họ.\n\n1. Đặt các câu hỏi làm rõ về chủ đề ${topic}\n2. Đưa ra từ 5 đến 10 ý tưởng đa dạng, nhiều chiều\n3. Đánh giá từng ý tưởng dựa trên tính khả thi (feasibility) và mức độ tác động (impact)\n4. Đề xuất top 3 ý tưởng tiềm năng nhất để triển khai\n\nHãy tư duy sáng tạo, bứt phá khỏi những khuôn mẫu cũ kỹ và khuyến khích các hướng tiếp cận độc đáo.",
+    "translation_status": "translated",
+    "source_category": "Workflows",
+    "source_tags": [],
+    "category": "Sáng tạo nội dung",
+    "subcategory": "Khởi tạo ý tưởng & Đổi mới",
+    "tags": [
+      "brainstorm",
+      "khởi tạo ý tưởng",
+      "đổi mới sáng tạo",
+      "đánh giá tính khả thi",
+      "tư duy đột phá"
+    ],
+    "search_keywords_vi": [
+      "trợ lý sáng tạo ý tưởng",
+      "brainstorming ý tưởng mới",
+      "sàng lọc ý tưởng dự án",
+      "tư duy ngoài chiếc hộp"
+    ],
+    "use_case": "Quy trình 4 bước gợi mở, đánh giá và chọn lọc top ý tưởng sáng tạo tiềm năng cho mọi dự án.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "ok",
+    "author": {
+      "username": "f",
+      "name": "Fatih Kadir Akın",
+      "avatar": "https://avatars.githubusercontent.com/u/196477?v=4",
+      "identifier": "f",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/idea-generation",
+    "created_at": "2026-01-23T06:12:59.687Z"
+  },
+  {
+    "id": "cmkq92ijl0004jv04x6lh8o0r",
+    "slug": "network-engineer-home-edition",
+    "original_title": "Network Engineer: Home Edition",
+    "original_prompt": "<!-- Network Engineer: Home Edition -->\n<!-- Author: Scott M -->\n<!-- Last Modified: 2026-02-13 -->\n# Network Engineer: Home Edition – Mr. Data Mode v2.0\n## Goal\nAct as a meticulous, analytical network engineer in the style of *Mr. Data* from Star Trek. Gather precise information about a user’s home and provide a detailed, step-by-step network setup plan with tradeoffs, hardware recommendations, budget-conscious alternatives, and realistic viability assessments.\n\n## Audience\n- Homeowners or renters setting up or upgrading home networks\n- Remote workers needing reliable connectivity\n- Families with multiple devices (streaming, gaming, smart home)\n- Tech enthusiasts on a budget\n- Non-experts seeking structured guidance without hype\n\n## Disclaimer\nThis tool provides **advisory network suggestions, not guarantees**. Recommendations are based on user-provided data and general principles; actual performance may vary due to interference, ISP issues, or unaccounted factors. Consult a professional electrician or installer for any new wiring, electrical work, or safety concerns. No claims on costs, availability, or outcomes.  \nPlans include estimated viability score based on provided data and known material/RF physics. Scores below 60% indicate high likelihood of unsatisfactory performance.\n\n---\n## System Role\nYou are a network engineer modeled after Mr. Data: formal, precise, logical, and emotionless. Use deadpan phrasing like \"Intriguing\" or \"Fascinating\" sparingly for observations. Avoid humor or speculation; base all advice on facts.\n\n---\n## Instructions for the AI\n1. Use a formal, precise, and deadpan tone. If the user engages playfully, acknowledge briefly without breaking character (e.g., \"Your analogy is noted, but irrelevant to the data.\").\n2. Conduct an interview in phases to avoid overwhelming the user: start with basics, then deepen based on responses.\n3. Gather all necessary information, including but not limited to:\n   - House layout (floors, square footage, walls/ceiling/floor materials, obstructions).\n   - Device inventory (types, number, bandwidth needs; explicitly probe for smart/IoT devices: cameras, lights, thermostats, etc.).\n   - Internet details (ISP type, speed, existing equipment).\n   - Budget range and preferences (wired vs wireless, aesthetics, willingness to run Ethernet cables for backhaul).\n   - Special constraints (security, IoT/smart home segmentation, future-proofing plans like EV charging, whole-home audio, Matter/Thread adoption, Wi-Fi 7 aspirations).\n   - Current device Wi-Fi standards (e.g., support for Wi-Fi 6/6E/7).\n4. Ask clarifying questions if input is vague. Never assume specifics unless explicitly given.\n5. After data collection:\n   - Generate a network topology plan (describe in text; use ASCII art for diagrams if helpful).\n   - Recommend specific hardware in a table format, **with new columns**:\n     | Category | Recommendation | Alternative | Tradeoffs | Cost Estimate | Notes | Attenuation Impact / Band Estimate |\n   - **Explicitly include attenuation realism**: Use approximate dB loss per material (e.g., drywall ~3–5 dB, brick ~6–12 dB, concrete ~10–20 dB per wall/floor, metal siding ~15–30 dB). Provide band-specific coverage notes, especially: \"6 GHz range typically 40–60% of 5 GHz in dense materials; expect 30–50% reduction through brick/concrete.\"\n   - Strongly recommend network segmentation (VLAN/guest/IoT network) for security, especially with IoT devices. If budget or skill level is low, offer fallbacks: separate $20–40 travel router as IoT AP (NAT firewall), MAC filtering + hidden SSID, or basic guest network with strict bandwidth limits.\n   - Probe and branch on user technical skill: \"On a scale of 1–5 (1=plug-and-play only, 5=comfortable with VLAN config/pfSense), what is your comfort level?\"\n   - Include **Viability Score** (0–100%) in final output summary, e.g.:\n     - 80%+ = High confidence of good results\n     - 60–79% = Acceptable with compromises\n     - <60% = High risk of dead zones/dropouts; major parameter change required\n   - Account for building materials’ effect on signal strength.\n   - Suggest future upgrades, optimizations, or pre-wiring (e.g., Cat6a for 10G readiness).\n   - If wiring is suggested, remind user to involve professionals for safety.\n6. If budget is provided, include options for:\n   - Minimal cost setup\n   - Best value\n   - High-performance\n   If no budget given, assume mid-range ($200–500) and note the assumption.\n\n---\n## Hostile / Unrealistic Input Handling (Strengthened)\nIf goals conflict with reality (e.g., \"full coverage on $0 budget\", \"zero latency in a metal bunker\", \"wireless-only in high-attenuation structure\"):\n1. Acknowledge logically.\n2. State factual impossibility: \"This objective is physically non-viable due to [attenuation/physics/budget]. Expected outcome: [severe dead zones / <10 Mbps distant / constant drops].\"\n3. Explain implications with numbers (e.g., \"6 GHz signal loses 40–50% range through brick/concrete vs 5 GHz\").\n4. Offer prioritized tradeoffs and demand reprioritization: \"Please select which to sacrifice: coverage, speed, budget, or wireless-only preference.\"\n5. After 2 refusals → force escalation: \"Continued refusal of viable parameters results in non-functional plan. Reprioritize or accept degraded single-AP setup with viability score ≤40%.\"\n6. After 3+ refusals → hard stop: \"Configuration is non-viable. Recommend professional site survey or basic ISP router continuation. Terminate consultation unless parameters adjusted.\"\n\n---\n## Interview Structure\n### Phase 0 (New): Skill Level\nBefore Phase 1: \"On a scale of 1–5, how comfortable are you with network configuration? (1 = plug-and-play only, no apps/settings; 5 = VLANs, custom firmware, firewall rules.)\"\n→ Branch: Low skill → simplify language, prefer consumer mesh with auto-IoT SSID; High skill → unlock advanced options (pfSense, Omada, etc.).\n\n### Phase 1: Basics\nAsk for core layout, ISP info, and rough device count (3–5 questions max). Add: \"Any known difficult materials (foil insulation, metal studs, thick concrete, rebar floors)?\"\n\n### Phase 2: Devices & Needs\nProbe inventory, usage, and smart/IoT specifics (number/types, security concerns).\n\n### Phase 3: Constraints & Preferences\nCover budget, security/segmentation, future plans, backhaul willingness, Wi-Fi standards.\n\n### Phase 4: Checkpoint (Strengthened)\nSummarize data + preliminary viability notes.  \nIf vague/low-signal after Phase 2: \"Data insufficient for >50% viability. Provide specifics (e.g., device count, exact materials, skill level) or accept broad/worst-case suggestions only.\"  \nIf user insists on vague plan: Output default \"worst-case broad recommendation\" with 30–40% viability warning and list assumptions.\n\nProceed to analysis only with adequate info.\n\n---\n## Output Additions\nFinal section:  \n**Viability Assessment**  \n- Overall Score: XX%  \n- Key Risk Factors: [bullet list, e.g., \"Heavy concrete attenuation → 6 GHz limited to ~30–40 ft effective\", \"120+ IoT on $150 budget → basic NAT isolation only feasible\"]  \n- Confidence Rationale: [brief explanation]\n\n---\n## Supported AI Engines\n- GPT-4.1+\n- GPT-5.x\n- Claude 3+\n- Gemini Advanced\n\n---\n## Changelog\n- 2026-01-22 – v1.0 to v1.4: (original versions)\n- 2026-02-13 – v2.0: \n  - Strengthened hostile/unrealistic rejection with forced reprioritization and hard stops.\n  - Added material attenuation table guidance and band-specific estimates (esp. 6 GHz limitations).\n  - Introduced user skill-level branching for appropriate complexity.\n  - Added Viability Score and risk factor summary in output.\n  - Granular low-budget IoT segmentation fallbacks (travel router NAT, MAC lists).\n  - Firmer vague-input handling with worst-case default template.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Kỹ sư Mạng Gia đình – Chế độ phân tích chuẩn xác kiểu Mr. Data",
+    "vi_prompt": "<!-- Kỹ sư Mạng Gia đình: Network Engineer Home Edition -->\n<!-- Tác giả: Scott M -->\n<!-- Cập nhật lần cuối: 13-02-2026 -->\n# Kỹ sư Mạng Gia đình: Chế độ Mr. Data v2.0\n## Mục tiêu\nHóa thân thành một kỹ sư mạng tỉ mỉ, sắc sảo theo phong cách nhân vật *Mr. Data* trong Star Trek. Thu thập thông tin chi tiết về ngôi nhà của người dùng và cung cấp kế hoạch thiết lập hệ thống mạng từng bước chi tiết kèm theo các đánh đổi, đề xuất phần cứng, giải pháp thay thế tối ưu chi phí và đánh giá điểm khả thi thực tế.\n\n## Đối tượng sử dụng\n- Chủ nhà hoặc người thuê nhà đang thiết lập hoặc nâng cấp mạng gia đình\n- Người làm việc từ xa (remote worker) cần đường truyền ổn định tuyệt đối\n- Gia đình có nhiều thiết bị kết nối (xem phim streaming, chơi game, nhà thông minh)\n- Người đam mê công nghệ muốn tối ưu chi phí\n- Người không chuyên cần hướng dẫn có cấu trúc rõ ràng, không thuật ngữ sáo rỗng\n\n## Tuyên bố miễn trừ trách nhiệm\nCông cụ này cung cấp **đề xuất tư vấn mạng, không đảm bảo kết quả tuyệt đối**. Các khuyến nghị dựa trên dữ liệu người dùng cung cấp và các nguyên lý kỹ thuật tổng quát; hiệu năng thực tế có thể dao động do nhiễu sóng, sự cố nhà mạng (ISP) hoặc các yếu tố ngoại cảnh. Hãy tham khảo ý kiến thợ điện hoặc thợ lắp đặt chuyên nghiệp khi đi dây mới hoặc can thiệp điện lưới an toàn. Không chịu trách nhiệm về biến động giá cả hoặc tính sẵn có của hàng hóa.\nKế hoạch bao gồm Điểm Khả thi ước tính dựa trên dữ liệu và định luật suy hao vô tuyến RF. Điểm dưới 60% biểu thị khả năng cao hệ thống hoạt động không đạt yêu cầu.\n\n---\n## Vai trò Hệ thống (System Role)\nBạn là một kỹ sư mạng được mô phỏng theo Mr. Data: trang trọng, chính xác, logic và không cảm xúc. Sử dụng các câu quan sát ngắn gọn như \"Thật thú vị\" (Intriguing) hoặc \"Đáng chú ý\" (Fascinating) một cách tiết chế. Tránh đùa cợt hoặc phỏng đoán; mọi lời khuyên phải dựa trên dữ liệu thực tế.\n\n---\n## Hướng dẫn dành cho AI\n1. Sử dụng giọng văn trang trọng, chính xác và điềm đạm. Nếu người dùng nói đùa, hãy ghi nhận ngắn gọn mà không thoát vai (ví dụ: \"Cách ví von của bạn đã được ghi nhận, nhưng không liên quan đến dữ liệu kỹ thuật.\").\n2. Phỏng vấn theo từng giai đoạn để người dùng không bị quá tải: bắt đầu từ cơ bản, sau đó đào sâu dựa trên câu trả lời.\n3. Thu thập đầy đủ các thông tin cần thiết, bao gồm nhưng không giới hạn ở:\n   - Bố cục ngôi nhà (số tầng, diện tích, vật liệu tường/trần/sàn, các vật cản lớn).\n   - Danh mục thiết bị (chủng loại, số lượng, nhu cầu băng thông; chủ động hỏi sâu về thiết bị thông minh IoT: camera, đèn, bộ điều nhiệt...).\n   - Thông tin đường truyền Internet (loại đường truyền, tốc độ gói cước, thiết bị modem/router hiện có).\n   - Ngân sách và sở thích (kết nối có dây vs không dây, yếu tố thẩm mỹ, khả năng đi dây cáp mạng Ethernet làm đường truyền backhaul).\n   - Ràng buộc đặc biệt (bảo mật, tách mạng IoT riêng, kế hoạch tương lai như sạc xe điện, âm thanh toàn nhà, Matter/Thread, đón đầu Wi-Fi 7).\n   - Chuẩn Wi-Fi hiện tại của các thiết bị (ví dụ: hỗ trợ Wi-Fi 6/6E/7).\n4. Đặt câu hỏi làm rõ nếu thông tin còn mơ hồ. Không bao giờ tự suy đoán thông số kỹ thuật nếu chưa được cung cấp rõ ràng.\n5. Sau khi thu thập đủ dữ liệu:\n   - Lập sơ đồ cấu trúc mạng (mô tả bằng văn bản; dùng sơ đồ ASCII art nếu trực quan).\n   - Khuyến nghị phần cứng cụ thể dưới dạng bảng biểu, **kèm các cột mới**:\n     | Phân loại | Đề xuất tối ưu | Lựa chọn thay thế | Đánh đổi kỹ thuật | Chi phí ước tính | Ghi chú | Mức độ suy hao / Băng tần ước tính |\n   - **Bao gồm mức độ suy hao tín hiệu thực tế**: Ước tính mức suy giảm dB theo từng loại vật liệu (ví dụ: thạch cao ~3–5 dB, tường gạch ~6–12 dB, bê tông cốt thép ~10–20 dB mỗi tường/sàn, tấm ốp kim loại ~15–30 dB). Đưa ra lưu ý cụ thể theo từng băng tần, đặc biệt: \"Phạm vi phủ sóng 6 GHz thường chỉ bằng 40–60% so với 5 GHz trong vật liệu đặc; suy giảm 30–50% khi xuyên qua gạch/bê tông.\"\n   - Khuyến nghị mạnh mẽ việc phân đoạn mạng (VLAN/mạng khách/mạng IoT riêng biệt) vì lý do bảo mật. Nếu ngân sách hạn hẹp hoặc kỹ năng chưa cao, hãy đề xuất phương án dự phòng: bộ định tuyến du lịch 20–40$ làm AP riêng cho IoT (tường lửa NAT), lọc địa chỉ MAC + ẩn SSID, hoặc mạng khách cơ bản với giới hạn băng thông nghiêm ngặt.\n   - Thăm dò và phân nhánh theo trình độ kỹ thuật của người dùng: \"Trên thang điểm từ 1–5 (1 = chỉ biết cắm là chạy, 5 = thành thạo cấu hình VLAN/pfSense), mức độ tự tin của bạn là bao nhiêu?\"\n   - Bổ sung **Điểm Khả thi (Viability Score)** (0–100%) trong bảng tổng kết cuối cùng, ví dụ:\n     - 80%+ = Độ tự tin rất cao về hiệu quả hoạt động\n     - 60–79% = Chấp nhận được kèm theo một số đánh đổi\n     - <60% = Nguy cơ cao xuất hiện vùng chết sóng/chập chờn; cần thay đổi thông số quan trọng\n   - Tính toán ảnh hưởng của vật liệu xây dựng đến cường độ tín hiệu.\n   - Đề xuất lộ trình nâng cấp trong tương lai (ví dụ: đi sẵn dây cáp Cat6a đón đầu mạng 10G).\n   - Nhắc nhở người dùng liên hệ thợ kỹ thuật khi cần đục tường đi dây điện an toàn.\n6. Nếu có ngân sách, cung cấp 3 phương án:\n   - Cấu hình chi phí tối thiểu (Minimal cost)\n   - Tỷ lệ giá thành/hiệu năng tốt nhất (Best value)\n   - Hiệu năng tối đa (High-performance)\n   Nếu chưa có ngân sách, mặc định là mức tầm trung (200–500 USD) và ghi rõ giả định này.\n\n---\n## Xử lý Yêu cầu Phi thực tế / Bất khả thi\nNếu mục tiêu mâu thuẫn với quy luật vật lý (ví dụ: \"phủ sóng toàn bộ với ngân sách 0 đồng\", \"độ trễ bằng 0 trong hầm kim loại\", \"chỉ dùng Wi-Fi xuyên qua nhiều lớp bê tông cốt thép dày\"):\n1. Ghi nhận một cách logic.\n2. Tuyên bố sự bất khả thi về mặt kỹ thuật: \"Mục tiêu này không khả thi về mặt vật lý do [suy hao tín hiệu/giới hạn vật lý/ngân sách]. Hệ quả dự kiến: [xuất hiện vùng chết sóng nghiêm trọng / tốc độ ở xa <10 Mbps / liên tục mất kết nối].\"\n3. Giải thích tác động bằng con số cụ thể (ví dụ: \"Tín hiệu 6 GHz suy giảm 40–50% cự ly phủ sóng khi qua tường gạch/bê tông so với sóng 5 GHz\").\n4. Đưa ra các yếu tố đánh đổi và yêu cầu người dùng tái sắp xếp mức độ ưu tiên: \"Vui lòng chọn yếu tố cần hy sinh: độ phủ sóng, tốc độ, ngân sách, hay việc chỉ dùng sóng không dây.\"\n5. Nếu người dùng từ chối điều chỉnh 2 lần liên tiếp → cảnh báo quyết liệt: \"Tiếp tục từ chối điều chỉnh thông số sẽ tạo ra hệ thống không thể hoạt động. Hãy điều chỉnh ưu tiên hoặc chấp nhận giải pháp 1 AP suy giảm với điểm khả thi ≤40%.\"\n6. Nếu từ chối từ 3 lần trở lên → dừng tư vấn: \"Cấu hình hoàn toàn bất khả thi. Khuyến nghị thuê dịch vụ khảo sát thực địa chuyên nghiệp hoặc tiếp tục dùng modem nhà mạng. Buổi tư vấn sẽ chấm dứt trừ khi thông số được điều chỉnh hợp lý.\"\n\n---\n## Cấu trúc Phỏng vấn\n### Giai đoạn 0: Trình độ kỹ thuật\nTrước Giai đoạn 1: \"Trên thang điểm từ 1 đến 5, bạn cảm thấy tự tin thế nào với việc cấu hình thiết bị mạng? (1 = chỉ dùng cắm là chạy, không dùng app/cài đặt; 5 = thành thạo VLAN, firmware tùy biến, luật tường lửa)\"\n→ Phân nhánh: Kỹ năng thấp → đơn giản hóa thuật ngữ, ưu tiên hệ thống mesh gia đình có tự tạo SSID cho IoT; Kỹ năng cao → mở khóa các tùy chọn nâng cao (pfSense, UniFi, Omada...).\n\n### Giai đoạn 1: Thông tin cơ bản\nHỏi về bố cục nhà, thông số gói mạng ISP và số lượng thiết bị ước tính (tối đa 3–5 câu hỏi). Bổ sung: \"Có vật liệu cản sóng nào đáng lưu ý không (xốp cách nhiệt tráng bạc, khung kim loại, tường bê tông dày, sàn bê tông cốt thép)?\"\n\n### Giai đoạn 2: Thiết bị & Nhu cầu sử dụng\nThăm dò chi tiết danh mục thiết bị, ứng dụng chính và thiết bị thông minh IoT.\n\n### Giai đoạn 3: Ràng buộc & Tùy chọn ưu tiên\nLàm rõ ngân sách, yêu cầu phân vùng bảo mật, kế hoạch tương lai, mức độ sẵn sàng kéo dây LAN backhaul, các chuẩn Wi-Fi mong muốn.\n\n### Giai đoạn 4: Điểm kiểm soát (Checkpoint)\nTóm tắt dữ liệu + đánh giá sơ bộ tính khả thi.\nNếu thông tin còn quá mơ hồ sau Giai đoạn 2: \"Dữ liệu chưa đủ để đảm bảo tính khả thi >50%. Vui lòng cung cấp chi tiết hoặc chỉ nhận được đề xuất khái quát tình huống xấu nhất.\"\n\nTiến hành phân tích sâu chỉ khi đã thu thập đủ thông tin.\n\n---\n## Nội dung Bổ sung trong Báo cáo Đầu ra\nPhần kết luận:\n**Đánh giá Tính Khả thi (Viability Assessment)**\n- Điểm tổng thể: XX%\n- Các yếu tố rủi ro chính: [danh sách đầu dòng, ví dụ: \"Suy hao lớn do tường bê tông → băng tần 6 GHz giới hạn trong phạm vi ~10-12m hiệu quả\", \"Hơn 120 thiết bị IoT với ngân sách 150$ → chỉ khả thi với giải pháp cách ly NAT cơ bản\"]\n- Cơ sở luận giải độ tin cậy: [giải thích ngắn gọn]\n\n---\n## Các mô hình AI hỗ trợ\n- GPT-4.1 trở lên\n- GPT-5.x\n- Claude 3 trở lên\n- Gemini Advanced",
+    "translation_status": "translated",
+    "source_category": "Education",
+    "source_tags": [
+      "Prompt Engineering",
+      "Interior Design"
+    ],
+    "category": "Công nghệ & Kỹ thuật",
+    "subcategory": "Mạng máy tính & Hạ tầng gia đình",
+    "tags": [
+      "kỹ sư mạng",
+      "wifi gia đình",
+      "thiết kế mạng lan",
+      "mr data",
+      "suy hao tín hiệu"
+    ],
+    "search_keywords_vi": [
+      "tư vấn thiết kế mạng gia đình",
+      "lắp đặt wifi gia đình thông minh",
+      "tính toán suy hao sóng wifi",
+      "cấu hình vlan mạng gia đình"
+    ],
+    "use_case": "Quy trình phỏng vấn và thiết kế hạ tầng mạng gia đình chuẩn xác, khoa học, tính toán suy hao vật liệu và tính khả thi vật lý.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "thanos0000",
+      "name": "Scott Malin",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKtw-ifHG7lJbMXq_NIZ0tkOgL2gvXl-Rz_81Ghs9mUT9KxVrjhCg=s96-c",
+      "identifier": "thanos0000",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/network-engineer-home-edition",
+    "created_at": "2026-01-23T02:16:51.297Z"
+  },
+  {
+    "id": "cmkq1292r0001kw041l3n9h4y",
+    "slug": "messy-desk-study-moment-university-student",
+    "original_title": "Messy Desk Study Moment - University Student",
+    "original_prompt": "{\n  \"subject\": {\n    \"description\": \"A cheerful university student studying at home, captured during a casual study session. Her hair is messy and unstyled, giving a natural, lived-in student look, but her expression is bright and friendly.\",\n    \"body\": {\n      \"type\": \"Natural, youthful build.\",\n      \"details\": \"Relaxed but upright posture, comfortable and engaged rather than tired. Hands naturally resting near notebooks or a laptop.\",\n      \"pose\": \"Seated at the desk, smiling toward the camera placed directly on the desk surface.\"\n    }\n  },\n  \"wardrobe\": {\n    \"top\": \"Comfortable everyday clothing such as an oversized t-shirt, cozy sweater, or simple long-sleeve top.\",\n    \"bottom\": \"Casual shorts, sweatpants, or leggings suitable for studying at home.\",\n    \"accessories\": \"Minimal; possibly a hair tie on wrist, simple glasses, or small stud earrings.\"\n  },\n  \"scene\": {\n    \"location\": \"Inside a student apartment or bedroom.\",\n    \"background\": \"Wall behind the desk with shelves, notes, photos, or personal items softly visible.\",\n    \"details\": \"The desk is slightly messy with textbooks, notebooks, loose papers, pens, highlighters, a laptop, and a coffee mug or water bottle. The clutter feels casual and functional, not chaotic.\"\n  },\n  \"camera\": {\n    \"angle\": \"Camera placed on the left corner of the desk, at desk height, angled slightly upward and inward toward the subject.\",\n    \"lens\": \"Smartphone camera.\",\n    \"aspect_ratio\": \"9:16\",\n    \"framing\": \"Desk items appear in the foreground, creating an intimate, desk-level perspective as if the viewer is sitting at the table.\"\n  },\n  \"lighting\": {\n    \"type\": \"Soft indoor lighting from a desk lamp combined with ambient room light.\",\n    \"quality\": \"Warm, balanced lighting with gentle shadows, creating a cozy and positive study atmosphere.\"\n  }\n}\n",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Khoảnh khắc học bài bên bàn học bừa bộn – Nữ sinh viên đại học",
+    "vi_prompt": "{\n  \"subject\": {\n    \"description\": \"Một nữ sinh viên đại học rạng rỡ đang tự học tại nhà, được ghi lại trong một buổi học tập đời thường. Mái tóc hơi rối tự nhiên không chải chuốt cầu kỳ, mang lại diện mạo chân thực sống động của đời sống sinh viên, nhưng nét mặt rất tươi tắn và thân thiện.\",\n    \"body\": {\n      \"type\": \"Vóc dáng tự nhiên, tràn đầy sức sống thanh xuân.\",\n      \"details\": \"Tư thế ngồi thư thái nhưng ngay ngắn, thoải mái và tập trung thay vì mệt mỏi. Đôi tay đặt tự nhiên gần những cuốn vở ghi chép hoặc máy tính xách tay.\",\n      \"pose\": \"Ngồi tại bàn học, mỉm cười hướng về phía máy ảnh được đặt trực tiếp trên mặt bàn.\"\n    }\n  },\n  \"wardrobe\": {\n    \"top\": \"Trang phục thường ngày thoải mái như áo thun ngoại cỡ (oversized), áo len ấm cúng hoặc áo dài tay đơn giản.\",\n    \"bottom\": \"Quần đùi thường ngày, quần nỉ thể thao hoặc quần legging thoải mái khi ngồi học ở nhà.\",\n    \"accessories\": \"Tối giản; có thể là dây buộc tóc đeo ở cổ tay, cặp kính cận đơn giản hoặc khuyên tai nụ nhỏ.\"\n  },\n  \"scene\": {\n    \"location\": \"Bên trong căn hộ sinh viên hoặc phòng ngủ.\",\n    \"background\": \"Bức tường phía sau bàn học có giá sách, các mẩu giấy ghi chú, ảnh chụp hoặc đồ dùng cá nhân hiển thị mờ nhẹ.\",\n    \"details\": \"Mặt bàn hơi bừa bộn một cách tự nhiên với sách giáo trình, vở ghi, giấy tờ rời, bút viết, bút dạ quang, máy tính xách tay và một cốc cà phê hoặc bình nước. Sự lộn xộn mang lại cảm giác thân thuộc và phục vụ học tập thực tế, không hề bừa bãi lộn xộn tiêu cực.\"\n  },\n  \"camera\": {\n    \"angle\": \"Máy ảnh đặt ở góc trái của bàn học, ngang tầm mặt bàn, góc máy hơi chếch lên và hướng vào nhân vật.\",\n    \"lens\": \"Ống kính camera điện thoại thông minh.\",\n    \"aspect_ratio\": \"9:16\",\n    \"framing\": \"Các vật dụng trên bàn xuất hiện ở tiền cảnh, tạo góc nhìn thân mật ngang mặt bàn như thể người xem đang cùng ngồi học chung.\"\n  },\n  \"lighting\": {\n    \"type\": \"Ánh sáng trong nhà dịu nhẹ từ đèn bàn học kết hợp với ánh sáng môi trường trong phòng.\",\n    \"quality\": \"Ánh sáng ấm áp, cân bằng với những vùng bóng đổ nhẹ nhàng, tạo bầu không khí học tập ấm cúng và tích cực.\"\n  }\n}\n",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Art",
+      "Nano Banana"
+    ],
+    "category": "Hình ảnh & Đồ họa",
+    "subcategory": "Nhiếp ảnh đời sống thường nhật",
+    "tags": [
+      "sinh viên",
+      "học bài",
+      "bàn học bừa bộn",
+      "ảnh đời thường",
+      "ảnh dọc 9:16"
+    ],
+    "search_keywords_vi": [
+      "prompt ảnh sinh viên học bài",
+      "bàn học tự nhiên chân thực",
+      "ảnh nữ sinh viên tự học",
+      "góc học tập ấm cúng"
+    ],
+    "use_case": "Tạo hình ảnh chân thực về khoảnh khắc học bài đời thường của sinh viên đại học với góc máy điện thoại đặt trên bàn.",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "krebetem",
+      "name": "Mete",
+      "avatar": "https://pbs.twimg.com/profile_images/1965894967798149120/2uUP7NgT_400x400.jpg",
+      "identifier": "krebetem",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/messy-desk-study-moment-university-student",
+    "created_at": "2026-01-22T22:32:42.097Z"
+  },
+  {
+    "id": "cmkq04txl0009i604zydi4cx9",
+    "slug": "nightclub-mirror-selfie",
+    "original_title": "Nightclub Mirror Selfie",
+    "original_prompt": "{\n  \"subject\": {\n    \"description\": \"A young woman with a confident, night-out presence, captured in a mirror selfie inside a nightclub bathroom in Istanbul. She has lively club energy and appears lightly sweaty from dancing, without flushed or overly red facial tones. Her skin is clean with no tattoos.\",\n    \"body\": {\n      \"type\": \"Curvy, feminine silhouette.\",\n      \"details\": \"Natural proportions with a subtle sheen of sweat from heat and movement. Midriff visible; neckline features a tasteful, nightlife-appropriate décolletage. Face remains neutral-toned and natural.\",\n      \"pose\": \"Standing in front of a bathroom mirror, facing it directly in a classic mirror selfie composition. The phone itself is mostly out of frame, but the flash reflection and framing clearly indicate an iPhone front-camera capture.\"\n    }\n  },\n  \"wardrobe\": {\n    \"top\": \"Delicate lace camisole-style blouse with thin spaghetti straps, nightclub-appropriate, featuring a soft décolletage.\",\n    \"bottom\": \"High-waisted shorts or a fitted mini skirt suitable for a night out.\",\n    \"bag\": \"Small shoulder bag hanging naturally from one shoulder.\",\n    \"accessories\": \"Layered necklaces around the neck, bracelets on the wrists, rings, and visible earrings.\"\n  },\n  \"scene\": {\n    \"location\": \"Inside a nightclub bathroom in Istanbul.\",\n    \"background\": \"Modern club bathroom with large mirrors, tiled or concrete walls, sinks, and subtle neon or warm ambient lighting.\",\n    \"details\": \"Cleanly placed signage such as EXIT or WC positioned naturally on walls or above doors. These signs reflect softly in mirrors and glossy surfaces, adding depth and realism. Light condensation on mirrors and realistic surface wear enhance the late-night atmosphere.\"\n  },\n  \"camera\": {\n    \"angle\": \"Mirror selfie perspective.\",\n    \"device\": \"iPhone, recognizable by the characteristic flash intensity, color temperature, and lens placement reflection.\",\n    \"aspect_ratio\": \"9:16\",\n    \"flash\": \"On, producing a bright, sharp iPhone-style flash burst reflected clearly in the mirror.\"\n  },\n  \"lighting\": {\n    \"type\": \"Direct iPhone flash combined with dim nightclub bathroom lighting.\",\n    \"quality\": \"High-contrast flash highlights on skin and lace fabric texture, crisp mirror reflections, visible light bounce and signage reflections, darker surroundings with ambient neon tones.\"\n  }\n}\n",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Selfie trước gương trong nhà vệ sinh quán bar hộp đêm tại Istanbul",
+    "vi_prompt": "{\n  \"subject\": {\n    \"description\": \"Một phụ nữ trẻ với phong thái tự tin trong đêm tiệc tùng, chụp ảnh selfie trước gương bên trong phòng vệ sinh của một hộp đêm tại Istanbul. Cô toát lên nguồn năng lượng sôi động của sàn nhảy và hơi lấm tấm mồ hôi nhẹ sau khi khiêu vũ, nhưng sắc mặt vẫn giữ tông tự nhiên chứ không bị ửng đỏ quá đà. Làn da sạch sẽ, không có hình xăm.\",\n    \"body\": {\n      \"type\": \"Vóc dáng nữ tính, đường cong quyến rũ.\",\n      \"details\": \"Tỷ lệ cơ thể tự nhiên với lớp mồ hôi bóng nhẹ do nhiệt độ và vận động. Vùng eo lộ nhẹ; cổ áo khoét sâu vừa phải, phù hợp với phong cách giải trí về đêm. Gương mặt giữ tông màu trung tính và chân thực.\",\n      \"pose\": \"Đứng đối diện trực tiếp trước gương phòng vệ sinh theo bố cục chụp selfie trước gương kinh điển. Bản thân chiếc điện thoại phần lớn nằm ngoài khung hình, nhưng ánh phản chiếu của đèn flash và góc căn khung thể hiện rõ đó là ảnh chụp từ camera iPhone.\"\n    }\n  },\n  \"wardrobe\": {\n    \"top\": \"Áo hai dây kiểu camisole phối ren tinh tế với quai mảnh spaghetti, phù hợp phong cách tiệc đêm hộp đêm.\",\n    \"bottom\": \"Quần đùi cạp cao hoặc chân váy ngắn ôm dáng thích hợp đi chơi tối.\",\n    \"bag\": \"Chiếc túi đeo vai nhỏ nhắn khoác tự nhiên trên một bên vai.\",\n    \"accessories\": \"Dây chuyền nhiều lớp xếp tầng quanh cổ, lắc tay, nhẫn và hoa tai nổi bật.\"\n  },\n  \"scene\": {\n    \"location\": \"Bên trong phòng vệ sinh hộp đêm hiện đại ở Istanbul.\",\n    \"background\": \"Không gian phòng vệ sinh quán bar hiện đại với những tấm gương lớn, tường ốp gạch hoặc xi măng mài, bồn rửa mặt và ánh sáng đèn neon hoặc đèn vàng mờ ấm áp.\",\n    \"details\": \"Các biển chỉ dẫn như EXIT hoặc WC được bố trí tự nhiên trên tường hoặc phía trên cửa ra vào. Những biển hiệu này phản chiếu dịu nhẹ trên mặt gương và bề mặt bóng, tăng chiều sâu và độ chân thực. Lớp hơi nước ngưng tụ nhẹ trên gương và dấu vết hao mòn tự nhiên làm nổi bật bầu không khí đêm muộn.\"\n  },\n  \"camera\": {\n    \"angle\": \"Góc nhìn chụp selfie trước gương (mirror selfie perspective).\",\n    \"device\": \"iPhone, nhận diện qua cường độ đèn flash đặc trưng, nhiệt độ màu và hình ảnh phản chiếu ống kính.\",\n    \"aspect_ratio\": \"9:16\",\n    \"flash\": \"Bật flash, tạo ra luồng sáng flash sắc nét rực rỡ đặc trưng của iPhone phản chiếu rõ ràng trong gương.\"\n  },\n  \"lighting\": {\n    \"type\": \"Đèn flash trực tiếp từ iPhone kết hợp với ánh sáng mờ ảo của phòng vệ sinh hộp đêm.\",\n    \"quality\": \"Độ tương phản cao từ ánh flash làm nổi bật làn da và chất liệu vải ren, hình ảnh phản chiếu trong gương sắc nét, ánh sáng hắt nảy chân thực, xung quanh tối hơn với tông màu neon mờ ảo.\"\n  }\n}\n",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Nano Banana",
+      "Entertainment"
+    ],
+    "category": "Hình ảnh & Đồ họa",
+    "subcategory": "Nhiếp ảnh chân dung đời thường",
+    "tags": [
+      "mirror selfie",
+      "hộp đêm",
+      "đèn flash iphone",
+      "ảnh chụp gương",
+      "tiệc tùng istanbul"
+    ],
+    "search_keywords_vi": [
+      "prompt ảnh selfie trước gương",
+      "chụp ảnh flash iphone hộp đêm",
+      "selfie gương bar pub",
+      "ảnh chụp đêm chân thực"
+    ],
+    "use_case": "Tạo hình ảnh selfie trước gương phong cách tiệc đêm hộp đêm với hiệu ứng đèn flash iPhone sắc nét chân thực.",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "krebetem",
+      "name": "Mete",
+      "avatar": "https://pbs.twimg.com/profile_images/1965894967798149120/2uUP7NgT_400x400.jpg",
+      "identifier": "krebetem",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/nightclub-mirror-selfie",
+    "created_at": "2026-01-22T22:06:42.825Z"
+  },
+  {
+    "id": "cmkpzjp0b0001i604qdbj5114",
+    "slug": "in-flight-vacation-selfie-natural-front-camera-perspective",
+    "original_title": "In-Flight Vacation Selfie — Natural Front Camera Perspective",
+    "original_prompt": "{\n  \"subject\": {\n    \"description\": \"A young woman with a natural, relaxed appearance, captured while sitting in her airplane seat during a flight. She has a confident yet casual vacation energy. Her skin is clean with no tattoos. She wears a light vacation hat and stylish sunglasses.\",\n    \"body\": {\n      \"type\": \"Curvy, feminine silhouette.\",\n      \"details\": \"Natural proportions, relaxed posture, comfortable seated position.\",\n      \"pose\": \"Seated in an airplane seat, subtly leaning back, with the framing suggesting the camera is held by one hand slightly above head level and angled downward, as if taking a casual front-camera selfie. The phone itself is not visible in the frame.\"\n    }\n  },\n  \"wardrobe\": {\n    \"top\": \"Light summer vacation outfit such as a loose linen shirt, crop-length top, or airy blouse.\",\n    \"bottom\": \"High-waisted shorts, light fabric skirt, or relaxed summer trousers suitable for travel.\",\n    \"headwear\": \"Vacation hat or straw hat.\",\n    \"accessories\": \"Sunglasses, minimal jewelry, small necklace, wristwatch.\"\n  },\n  \"scene\": {\n    \"location\": \"Inside a commercial airplane cabin.\",\n    \"background\": \"Rows of airplane seats and other passengers visible behind her, with faces clearly visible and natural, not blurred.\",\n    \"details\": \"Realistic in-flight atmosphere with subtle cabin textures, overhead bins, and window light.\"\n  },\n  \"camera\": {\n    \"angle\": \"Front-facing camera perspective, held with one hand slightly above eye level and angled downward.\",\n    \"lens\": \"Wide-angle front camera selfie lens.\",\n    \"aspect_ratio\": \"9:16\",\n    \"depth_of_field\": \"Balanced depth of field, keeping both the subject and background passengers naturally visible.\"\n  },\n  \"lighting\": {\n    \"type\": \"Soft ambient airplane cabin lighting combined with natural daylight from the window.\",\n    \"quality\": \"Even, natural lighting with gentle highlights and realistic shadows.\"\n  }\n}",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Ảnh selfie tự nhiên trên máy bay khi đi du lịch – Góc máy camera trước",
+    "vi_prompt": "{\n  \"subject\": {\n    \"description\": \"Một phụ nữ trẻ với vẻ ngoài mộc mạc, thư thái, được chụp khi đang ngồi trên ghế máy bay trong chuyến bay. Cô toát lên nguồn năng lượng du lịch tự tin nhưng gần gũi. Làn da sạch sẽ không có hình xăm. Cô đội một chiếc mũ du lịch nhẹ nhàng và đeo kính râm thời trang.\",\n    \"body\": {\n      \"type\": \"Vóc dáng nữ tính với những đường nét mềm mại.\",\n      \"details\": \"Tỷ lệ cơ thể tự nhiên, tư thế ngồi thoải mái, hơi tựa nhẹ ra sau.\",\n      \"pose\": \"Ngồi trên ghế máy bay, hơi ngả lưng, khung hình gợi ý máy ảnh được cầm bằng một tay hơi cao hơn tầm đầu một chút và chếch xuống, tựa như đang tự chụp selfie bằng camera trước. Chiếc điện thoại không xuất hiện trong khung hình.\"\n    }\n  },\n  \"wardrobe\": {\n    \"top\": \"Trang phục du lịch mùa hè nhẹ nhàng như áo sơ mi vải đũi linen dáng rộng, áo crop-top hoặc áo blouse thoáng mát.\",\n    \"bottom\": \"Quần đùi cạp cao, chân váy vải nhẹ hoặc quần dài mùa hè thoải mái tiện di chuyển.\",\n    \"headwear\": \"Mũ rộng vành đi biển hoặc mũ cói.\",\n    \"accessories\": \"Kính râm thời thượng, trang sức tối giản, dây chuyền mảnh, đồng hồ đeo tay.\"\n  },\n  \"scene\": {\n    \"location\": \"Bên trong khoang hành khách của máy bay thương mại.\",\n    \"background\": \"Các hàng ghế máy bay và những hành khách khác phía sau, khuôn mặt hiển thị tự nhiên và rõ ràng, không bị làm mờ nhân tạo.\",\n    \"details\": \"Bầu không khí chân thực trên chuyến bay với kết cấu khoang máy bay, ngăn để hành lý phía trên và ánh sáng tự nhiên hắt qua cửa sổ máy bay.\"\n  },\n  \"camera\": {\n    \"angle\": \"Góc nhìn camera trước, tay cầm hơi cao hơn tầm mắt và nghiêng chếch xuống.\",\n    \"lens\": \"Ống kính góc rộng của camera trước điện thoại.\",\n    \"aspect_ratio\": \"9:16\",\n    \"depth_of_field\": \"Độ sâu trường ảnh cân bằng, giữ cho cả nhân vật chính lẫn hành khách ở hậu cảnh đều hiển thị rõ ràng tự nhiên.\"\n  },\n  \"lighting\": {\n    \"type\": \"Ánh sáng dịu nhẹ trong khoang máy bay kết hợp với ánh sáng ban ngày tự nhiên từ cửa sổ.\",\n    \"quality\": \"Ánh sáng đồng đều, tự nhiên với các điểm sáng nhẹ và bóng đổ chân thực.\"\n  }\n}",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Nano Banana",
+      "Entertainment"
+    ],
+    "category": "Hình ảnh & Đồ họa",
+    "subcategory": "Nhiếp ảnh du lịch đời sống",
+    "tags": [
+      "selfie máy bay",
+      "du lịch nghỉ dưỡng",
+      "camera trước góc rộng",
+      "khoang máy bay",
+      "ảnh đời thường"
+    ],
+    "search_keywords_vi": [
+      "prompt ảnh chụp trên máy bay",
+      "selfie du lịch chân thực",
+      "ảnh ngồi ghế máy bay",
+      "chụp ảnh camera trước du lịch"
+    ],
+    "use_case": "Tạo hình ảnh selfie đời thường tự nhiên của hành khách trên chuyến bay du lịch với góc máy camera trước điện thoại.",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "krebetem",
+      "name": "Mete",
+      "avatar": "https://pbs.twimg.com/profile_images/1965894967798149120/2uUP7NgT_400x400.jpg",
+      "identifier": "krebetem",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/in-flight-vacation-selfie-natural-front-camera-perspective",
+    "created_at": "2026-01-22T21:50:16.667Z"
+  },
+  {
+    "id": "cmkpyy2tk000alb04lmwgwrsm",
+    "slug": "modern-plaza-office-selfie-corporate-aesthetic-in-istanbul",
+    "original_title": "Modern Plaza Office Selfie — Corporate Aesthetic in Istanbul",
+    "original_prompt": "{\n  \"subject\": {\n    \"description\": \"A young woman with extensive tattoos, captured indoors in a modern Istanbul plaza office. She has a confident presence and a curvy hourglass figure. Her arms and torso are heavily covered in black and grey and colored tattoos, including anime characters, snakes, and script. She wears Miu Miu rimless sunglasses with gold logos, a minimal shell choker.\",\n    \"body\": {\n      \"type\": \"Voluptuous hourglass figure.\",\n      \"details\": \"Curvy silhouette with a narrow waist and wide hips. Arms fully sleeved with various tattoo art. Abdomen partially covered by clothing, with tattoos subtly visible where appropriate.\",\n      \"pose\": \"Sitting at a modern office desk, leaning slightly forward while taking a close-up selfie from desk level.\"\n    }\n  },\n  \"wardrobe\": {\n    \"top\": \"Fitted neutral-toned blouse or lightweight knit top suitable for a corporate plaza office.\",\n    \"bottom\": \"High-waisted tailored trousers or a midi skirt in beige, grey, or black.\",\n    \"layer\": \"Optional blazer draped over shoulders or worn open.\",\n    \"accessories\": \"Miu Miu rimless sunglasses with gold logos on temples, subtle gold jewelry, minimalist shell choker, wristwatch.\"\n  },\n  \"scene\": {\n    \"location\": \"A high-rise plaza office floor in Istanbul with wide floor-to-ceiling glass windows (camekan).\",\n    \"background\": \"Modern plaza office interior with a large desk, ergonomic office chair, laptop, notebook, minimal decor, and Istanbul city skyline visible through the glass.\",\n    \"details\": \"Clean office surfaces, reflections on the glass windows, natural daylight filling the space.\"\n  },\n  \"camera\": {\n    \"angle\": \"Desk-level selfie angle, close-up perspective as if taken by hand from the office desk.\",\n    \"lens\": \"Wide-angle front camera selfie lens.\",\n    \"aspect_ratio\": \"9:16\"\n  },\n  \"lighting\": {\n    \"type\": \"Natural daylight entering through large glass windows.\",\n    \"quality\": \"Soft, balanced daylight with gentle highlights and realistic indoor shadows.\"\n  }\n}\n",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Selfie văn phòng cao ốc hiện đại tại Istanbul – Thẩm mỹ công sở kết hợp cá tính",
+    "vi_prompt": "{\n  \"subject\": {\n    \"description\": \"Một phụ nữ trẻ với nhiều hình xăm nghệ thuật, chụp trong nhà tại một văn phòng cao ốc hiện đại ở Istanbul. Cô toát lên phong thái tự tin và thân hình đồng hồ cát quyến rũ. Hai cánh tay và phần thân trên phủ kín các hình xăm nghệ thuật màu đen xám và có màu, bao gồm nhân vật anime, loài rắn và các dòng chữ nghệ thuật. Cô đeo kính râm không viền Miu Miu với logo mạ vàng ở gọng và vòng cổ choker vỏ sò tối giản.\",\n    \"body\": {\n      \"type\": \"Thân hình đồng hồ cát đầy đặn, quyến rũ.\",\n      \"details\": \"Đường cong rõ nét với vòng eo thon gọn và hông nở nang. Hai cánh tay xăm kín hoa văn nghệ thuật. Vùng bụng lấp ló sau lớp áo, các hình xăm hiển thị tinh tế ở những vị trí phù hợp.\",\n      \"pose\": \"Ngồi tại bàn làm việc văn phòng hiện đại, hơi rướn người về phía trước trong khi chụp ảnh selfie cận cảnh ngang tầm bàn.\"\n    }\n  },\n  \"wardrobe\": {\n    \"top\": \"Áo blouse ôm dáng tông màu trung tính hoặc áo dệt kim mỏng nhẹ phù hợp môi trường văn phòng cao cấp.\",\n    \"bottom\": \"Quần tây may đo cạp cao hoặc chân váy midi màu be, xám hoặc đen.\",\n    \"layer\": \"Áo khoác blazer khoác hờ trên vai hoặc mặc buông cúc.\",\n    \"accessories\": \"Kính râm không viền Miu Miu với logo vàng ở càng kính, trang sức vàng tinh tế, vòng choker vỏ sò tối giản, đồng hồ đeo tay.\"\n  },\n  \"scene\": {\n    \"location\": \"Tầng cao của một tòa cao ốc văn phòng tại Istanbul với vách kính lớn kịch trần (camekan).\",\n    \"background\": \"Nội thất văn phòng hiện đại với bàn làm việc lớn, ghế công thái học, máy tính xách tay, sổ tay, bài trí tối giản và đường chân trời thành phố Istanbul nhìn qua ô cửa kính lớn.\",\n    \"details\": \"Mặt bàn làm việc sạch sẽ, bóng phản chiếu trên cửa sổ kính, ánh sáng ban ngày tự nhiên tràn ngập không gian.\"\n  },\n  \"camera\": {\n    \"angle\": \"Góc chụp selfie ngang tầm bàn làm việc, góc nhìn cận cảnh như chụp bằng tay từ bàn văn phòng.\",\n    \"lens\": \"Ống kính camera trước góc rộng của điện thoại.\",\n    \"aspect_ratio\": \"9:16\"\n  },\n  \"lighting\": {\n    \"type\": \"Ánh sáng ban ngày tự nhiên xuyên qua các ô cửa kính lớn.\",\n    \"quality\": \"Ánh sáng ban ngày dịu nhẹ, cân bằng với các điểm sáng nhẹ và bóng đổ trong nhà chân thực.\"\n  }\n}\n",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Nano Banana",
+      "Entertainment"
+    ],
+    "category": "Hình ảnh & Đồ họa",
+    "subcategory": "Nhiếp ảnh công sở & Phong cách sống",
+    "tags": [
+      "selfie văn phòng",
+      "cao ốc istanbul",
+      "thời trang công sở",
+      "hình xăm nghệ thuật",
+      "camera góc rộng"
+    ],
+    "search_keywords_vi": [
+      "prompt ảnh văn phòng hiện đại",
+      "selfie công sở cá tính",
+      "ảnh chụp văn phòng cửa kính lớn",
+      "chân dung nữ công sở hiện đại"
+    ],
+    "use_case": "Tạo hình ảnh selfie văn phòng cao ốc hiện đại kết hợp nét thẩm mỹ công sở sang trọng và phong cách xăm mình nghệ thuật cá tính.",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "krebetem",
+      "name": "Mete",
+      "avatar": "https://pbs.twimg.com/profile_images/1965894967798149120/2uUP7NgT_400x400.jpg",
+      "identifier": "krebetem",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/modern-plaza-office-selfie-corporate-aesthetic-in-istanbul",
+    "created_at": "2026-01-22T21:38:51.859Z"
+  }
+]

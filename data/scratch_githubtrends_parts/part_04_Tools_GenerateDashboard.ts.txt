@@ -1,0 +1,297 @@
+Tools/GenerateDashboard.ts
+#!/usr/bin/env bun
+/**
+ * GitHub Trending Dashboard Generator
+ *
+ * 生成交互式数据可视化仪表板
+ *
+ * 使用方式：
+ *   ./GenerateDashboard.ts [options]
+ *
+ * 选项：
+ *   --period       - daily | weekly (默认: weekly)
+ *   --language     - 编程语言筛选 (可选)
+ *   --limit        - 项目数量 (默认: 10)
+ *   --include-news - 包含技术新闻
+ *   --news-count   - 新闻数量 (默认: 10)
+ *   --theme        - light | dark | auto (默认: auto)
+ *   --output       - 输出文件路径 (默认: ./github-trends.html)
+ *
+ * 示例：
+ *   ./GenerateDashboard.ts
+ *   ./GenerateDashboard.ts --period daily --language TypeScript --include-news
+ *   ./GenerateDashboard.ts --limit 20 --output ~/trends.html
+ */
+
+import Handlebars from 'handlebars';
+import type { DashboardOptions, TrendingProject, TechNewsItem, TemplateData } from './Lib/types';
+import { registerHelpers, renderTemplate } from './Lib/template-helpers';
+import { analyzeData } from './Lib/visualization-helpers';
+
+// 注册 Handlebars 辅助函数
+registerHelpers();
+
+/**
+ * 构建 GitHub trending URL
+ */
+function buildTrendingUrl(options: DashboardOptions): string {
+  const baseUrl = "https://github.com/trending";
+  const since = options.period === "daily" ? "daily" : "weekly";
+  let url = `${baseUrl}?since=${since}`;
+
+  if (options.language) {
+    url += `&language=${encodeURIComponent(options.language.toLowerCase())}`;
+  }
+
+  return url;
+}
+
+/**
+ * 解析 HTML 提取 trending 项目
+ * （从 GetTrending.ts 复制的逻辑）
+ */
+async function getTrendingProjects(options: DashboardOptions): Promise<TrendingProject[]> {
+  const url = buildTrendingUrl(options);
+
+  console.error(`正在获取 GitHub trending 数据: ${url}`);
+
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+  }
+
+  const html = await response.text();
+  return parseTrendingProjects(html, options.limit);
+}
+
+/**
+ * 解析 HTML
+ */
+function parseTrendingProjects(html: string, limit: number): TrendingProject[] {
+  const projects: TrendingProject[] = [];
+
+  try {
+    const articleRegex = /<article[^>]*>([\s\S]*?)<\/article>/g;
+    const articles = html.match(articleRegex) || [];
+    const articlesToProcess = articles.slice(0, limit);
+
+    articlesToProcess.forEach((article, index) => {
+      try {
+        const headingMatch = article.match(/<h[12][^>]*>([\s\S]*?)<\/h[12]>/);
+        let repoName: string | null = null;
+
+        if (headingMatch) {
+          const headingContent = headingMatch[1];
+          const validLinkMatch = headingContent.match(
+            /<a[^>]*href="\/([^\/"\/]+\/[^\/"\/]+)"[^>]*>(?![^<]*login)/
+          );
+          if (validLinkMatch) {
+            repoName = validLinkMatch[1];
+          }
+        }
+
+        if (!repoName) {
+          const repoMatch = article.match(
+            /<a[^>]*href="\/([a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+)"[^>]*>(?!.*(?:login|stargazers|forks|issues))/
+          );
+          repoName = repoMatch ? repoMatch[1] : null;
+        }
+
+        const descMatch = article.match(/<p[^>]*class="[^"]*col-9[^"]*"[^>]*>([\s\S]*?)<\/p>/);
+        const description = descMatch
+          ? descMatch[1]
+              .replace(/<[^>]+>/g, "")
+              .replace(/&amp;/g, "&")
+              .replace(/&lt;/g, "<")
+              .replace(/&gt;/g, ">")
+              .replace(/&quot;/g, '"')
+              .trim()
+              .substring(0, 200)
+          : "No description";
+
+        const langMatch = article.match(/<span[^>]*itemprop="programmingLanguage"[^>]*>([^<]+)<\/span>/);
+        const language = langMatch ? langMatch[1].trim() : "Unknown";
+
+        // 提取stars总数 - GitHub 改了 HTML 结构，数字在 SVG 后面
+        const starsMatch = article.match(/stargazers[^>]*>[\s\S]*?<\/svg>\s*([\d,]+)/);
+        const totalStars = starsMatch ? starsMatch[1] : "0";
+
+        // 尝试提取新增stars - 格式：XXX stars today/this week
+        const starsAddedMatch = article.match(/(\d[\d,]*)\s+stars?\s+(?:today|this week)/);
+        const starsAdded = starsAddedMatch ? `+${starsAddedMatch[1]}` : "";
+
+        if (repoName && !repoName.includes("login") && !repoName.includes("return_to")) {
+          projects.push({
+            rank: index + 1,
+            name: repoName,
+            description,
+            language,
+            stars: totalStars,
+            starsThisPeriod: starsAdded,
+            url: `https://github.com/${repoName}`,
+          });
+        }
+      } catch (error) {
+        console.error(`解析第${index + 1}个项目失败:`, error);
+      }
+    });
+  } catch (error) {
+    console.error("解析trending项目失败:", error);
+  }
+
+  return projects;
+}
+
+/**
+ * 获取技术新闻
+ */
+async function getTechNews(count: number): Promise<TechNewsItem[]> {
+  const HN_API = 'https://hn.algolia.com/api/v1/search_by_date';
+
+  try {
+    const response = await fetch(`${HN_API}?tags=story&hitsPerPage=${count}`);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+
+    return data.hits.slice(0, count).map((hit: any) => ({
+      id: hit.objectID,
+      title: hit.title,
+      url: hit.url || `https://news.ycombinator.com/item?id=${hit.objectID}`,
+      source: 'hackernews',
+      points: hit.points || 0,
+      comments: hit.num_comments || 0,
+      timestamp: new Date(hit.created_at).toISOString(),
+      tags: hit._tags || []
+    }));
+  } catch (error) {
+    console.error('获取 Hacker News 失败:', error);
+    return [];
+  }
+}
+
+/**
+ * 生成仪表板
+ */
+async function generateDashboard(options: DashboardOptions): Promise<void> {
+  try {
+    console.error('🚀 开始生成 GitHub Trending Dashboard...\n');
+
+    // 1. 获取 GitHub Trending 数据
+    const projects = await getTrendingProjects(options);
+    console.error(`✅ 获取到 ${projects.length} 个项目`);
+
+    // 2. 获取技术新闻（如果启用）
+    let news: TechNewsItem[] = [];
+    if (options.includeNews) {
+      news = await getTechNews(options.newsCount);
+      console.error(`✅ 获取到 ${news.length} 条新闻`);
+    }
+
+    // 3. 分析数据
+    const analytics = analyzeData(projects);
+    console.error(`✅ 数据分析完成`);
+
+    // 4. 准备模板数据
+    const templateData: TemplateData = {
+      title: 'GitHub Trending Dashboard',
+      generatedAt: new Date().toLocaleString('zh-CN'),
+      period: options.period === 'daily' ? 'Daily' : 'Weekly',
+      projects,
+      news,
+      analytics,
+      options
+    };
+
+    // 5. 渲染模板
+    const templatePath = `${import.meta.dir}/../Templates/dashboard.hbs`;
+    const templateContent = await Bun.file(templatePath).text();
+    const template = Handlebars.compile(templateContent);
+    const html = template(templateData);
+    console.error(`✅ 模板渲染完成`);
+
+    // 6. 保存文件
+    await Bun.write(options.output, html);
+    console.error(`\n🎉 仪表板生成成功！`);
+    console.error(`📄 文件路径: ${options.output}`);
+    console.error(`\n💡 在浏览器中打开查看效果！`);
+
+  } catch (error) {
+    console.error('\n❌ 生成仪表板失败:');
+    console.error(error);
+    process.exit(1);
+  }
+}
+
+/**
+ * 解析命令行参数
+ */
+function parseArgs(): DashboardOptions {
+  const args = process.argv.slice(2);
+
+  const options: DashboardOptions = {
+    period: 'weekly',
+    limit: 10,
+    output: './github-trends.html',
+    includeNews: false,
+    newsCount: 10,
+    theme: 'auto'
+  };
+
+  for (let i = 0; i < args.length; i++) {
+    const arg = args[i];
+
+    switch (arg) {
+      case '--period':
+        options.period = args[++i] === 'daily' ? 'daily' : 'weekly';
+        break;
+      case '--language':
+        options.language = args[++i];
+        break;
+      case '--limit':
+        options.limit = parseInt(args[++i]) || 10;
+        break;
+      case '--include-news':
+        options.includeNews = true;
+        break;
+      case '--news-count':
+        options.newsCount = parseInt(args[++i]) || 10;
+        break;
+      case '--theme':
+        options.theme = args[++i] === 'light' || args[++i] === 'dark' ? args[i] : 'auto';
+        break;
+      case '--output':
+        options.output = args[++i];
+        break;
+      default:
+        if (arg.startsWith('--output=')) {
+          options.output = arg.split('=')[1];
+        } else if (arg.startsWith('--language=')) {
+          options.language = arg.split('=')[1];
+        } else if (arg.startsWith('--limit=')) {
+          options.limit = parseInt(arg.split('=')[1]) || 10;
+        }
+    }
+  }
+
+  return options;
+}
+
+/**
+ * 主函数
+ */
+async function main() {
+  const options = parseArgs();
+  await generateDashboard(options);
+}
+
+// 如果直接运行此脚本
+if (import.meta.main) {
+  main();
+}
+
+// 导出供其他模块使用
+export { generateDashboard };
+export type { DashboardOptions };

@@ -1,0 +1,411 @@
+---
+
+## 9. KIẾN TRÚC & THIẾT KẾ PHẦN MỀM
+
+### 9.1 Vi Phạm Nguyên Tắc SOLID
+- [ ] **S**ingle Responsibility (Đơn trách nhiệm): Tìm các lớp ôm đồm quá nhiều chức năng
+- [ ] **O**pen/Closed (Đóng/Mở): Tìm mã nguồn bắt buộc phải sửa đổi trực tiếp khi muốn mở rộng tính năng
+- [ ] **L**iskov Substitution (Thay thế Liskov): Tìm các lớp con vi phạm giao ước với lớp cha
+- [ ] **I**nterface Segregation (Phân tách Interface): Tìm các interface cồng kềnh chứa quá nhiều phương thức
+- [ ] **D**ependency Inversion (Đảo ngược phụ thuộc): Tìm các phụ thuộc cứng vào các lớp cụ thể thay vì trừu tượng
+
+### 9.2 Vấn Đề Về Mẫu Thiết Kế (Design Patterns)
+- [ ] Tìm tình trạng lạm dụng mẫu Singleton
+- [ ] Nhận diện thiếu mẫu Factory trong khởi tạo đối tượng phức tạp
+- [ ] Phát hiện cơ hội áp dụng mẫu Strategy để thay thế các khối if-else cồng kềnh
+- [ ] Kiểm tra việc áp dụng chuẩn xác mẫu Repository
+- [ ] Tìm kiếm anti-pattern Service Locator
+- [ ] Nhận diện thiếu cơ chế tiêm phụ thuộc (Dependency Injection)
+- [ ] Kiểm tra việc sử dụng chuẩn xác mẫu Adapter
+- [ ] Phát hiện thiếu mẫu Observer trong xử lý sự kiện bất đồng bộ
+
+### 9.3 Vi Phạm Phân Tầng Kiến Trúc (Layer Violations)
+- [ ] Tìm các Controller chứa trực tiếp logic nghiệp vụ (business logic)
+- [ ] Nhận diện Model chứa logic hiển thị giao diện (presentation logic)
+- [ ] Phát hiện View chứa trực tiếp logic nghiệp vụ hoặc truy vấn dữ liệu
+- [ ] Kiểm tra việc sử dụng đúng đắn tầng Service
+- [ ] Tìm các thao tác truy vấn trực tiếp database bên trong Controller
+- [ ] Nhận diện các phụ thuộc vòng (circular dependencies) giữa các tầng
+- [ ] Kiểm tra việc sử dụng đúng đắn các đối tượng truyền dữ liệu (DTO)
+
+### 9.4 Sử Dụng Sai Khung Làm Việc (Framework Misuse)
+- [ ] Tìm các tính năng mà framework đã có sẵn nhưng lại tự viết lại thủ công
+- [ ] Nhận diện các anti-pattern đặc thù của framework đang sử dụng
+- [ ] Phát hiện thiếu sót các thực hành tốt nhất (best practices) của framework
+- [ ] Kiểm tra việc áp dụng Middleware đúng chức năng
+- [ ] Tìm các anti-pattern trong định tuyến (routing)
+- [ ] Nhận diện các vấn đề trong Service Provider
+- [ ] Kiểm tra việc sử dụng Facade đúng chuẩn (nếu có áp dụng)
+
+---
+
+## 10. PHÂN TÍCH THƯ VIỆN PHỤ THUỘC (DEPENDENCY ANALYSIS)
+
+### 10.1 An Ninh Composer
+- [ ] Chạy `composer audit` và phân tích TẤT CẢ các lỗ hổng đã được cảnh báo
+- [ ] Kiểm tra các gói thư viện đã bị tác giả từ bỏ (abandoned packages)
+- [ ] Nhận diện các gói không có bản cập nhật mới trong hơn 2 năm qua
+- [ ] Tìm các gói thư viện đang tồn đọng lỗi nghiêm trọng (critical issues) chưa vá
+- [ ] Kiểm tra các gói không tuân thủ chuẩn phiên bản ngữ nghĩa (semver)
+- [ ] Nhận diện các phụ thuộc dạng fork tạm bợ cần tránh dùng
+- [ ] Tìm các phụ thuộc dev (require-dev) bị nạp nhầm vào môi trường production
+- [ ] Kiểm tra các ràng buộc phiên bản trong `composer.json`
+- [ ] Phát hiện các dải phiên bản quá lỏng lẻo (`*`, `>=`)
+
+### 10.2 Sức Khỏe Gói Phụ Thuộc
+- [ ] Đánh giá xu hướng thống kê lượt tải về của thư viện
+- [ ] Nhận diện các gói chỉ do một cá nhân duy nhất duy trì (nguy cơ bus factor)
+- [ ] Tìm các gói thư viện thiếu tài liệu hướng dẫn chuẩn chỉnh
+- [ ] Kiểm tra các gói có giấy phép hạn chế bản quyền (như GPL trong sản phẩm thương mại đóng)
+- [ ] Nhận diện các gói thiếu định nghĩa kiểu dữ liệu
+- [ ] Tìm các gói thư viện quá cồng kềnh có phương án thay thế nhẹ hơn
+- [ ] Kiểm tra cơ hội thay thế gói bên thứ ba bằng các hàm nội tại của PHP hiện đại
+
+### 10.3 Phân Tích Phiên Bản
+```bash
+# Chạy các lệnh này và phân tích kết quả:
+composer outdated --direct
+composer outdated --minor-only
+composer outdated --major-only
+composer why-not php 8.3  # Kiểm tra tính tương thích với phiên bản PHP mới
+```
+- [ ] Liệt kê TẤT CẢ các phụ thuộc đã lỗi thời
+- [ ] Nhận diện các thay đổi gây phá vỡ tương thích (breaking changes) khi nâng cấp
+- [ ] Kiểm tra độ tương thích với các phiên bản PHP hiện hành
+- [ ] Tìm các phụ thuộc vào extension PHP hệ thống
+- [ ] Nhận diện các vấn đề về yêu cầu nền tảng thực thi
+
+### 10.4 Tối Ưu Hóa Autoload
+- [ ] Kiểm tra việc thực thi `composer dump-autoload --optimize`
+- [ ] So sánh hiệu năng giữa classmap và PSR-4 trong dự án
+- [ ] Tìm các tệp không cần thiết bị nạp vào autoload
+- [ ] Kiểm tra việc tách bạch chuẩn xác giữa autoload và autoload-dev
+
+---
+
+## 11. KHOẢNG TRỐNG KIỂM THỬ (TESTING GAPS)
+
+### 11.1 Phân Tích Độ Bao Phủ (Coverage Analysis)
+- [ ] Tìm các phương thức public hoàn toàn chưa được viết test
+- [ ] Nhận diện các nhánh xử lý lỗi (error paths) chưa được kiểm thử
+- [ ] Phát hiện các trường hợp biên (edge cases) bị bỏ sót trong test
+- [ ] Kiểm tra thiếu kiểm thử giá trị biên (boundary tests)
+- [ ] Tìm các đoạn mã trọng yếu về an ninh nhưng chưa có test bao phủ
+- [ ] Nhận diện thiếu các bài kiểm thử tích hợp (integration tests)
+- [ ] Kiểm tra độ bao phủ kiểm thử đầu cuối (E2E tests)
+- [ ] Tìm các endpoint API chưa có test tự động
+
+### 11.2 Chất Lượng Bài Test
+- [ ] Tìm các test case không hề chứa câu lệnh assertion nào
+- [ ] Nhận diện các test case kiểm tra quá nhiều vấn đề cùng một lúc
+- [ ] Phát hiện bài test phụ thuộc vào dịch vụ mạng bên ngoài
+- [ ] Kiểm tra tính độc lập và cô lập giữa các bài test
+- [ ] Tìm các test case bị hardcode ngày/giờ cố định
+- [ ] Nhận diện các bài test chập chờn (flaky tests) lúc pass lúc fail
+- [ ] Phát hiện việc lạm dụng mock dữ liệu quá mức làm mất tính thực tế
+- [ ] Tìm các test case chỉ kiểm tra chi tiết triển khai thay vì hành vi
+
+### 11.3 Tổ Chức Thư Mục Test
+- [ ] Kiểm tra quy ước đặt tên bài test rõ ràng, dễ hiểu
+- [ ] Nhận diện thiếu tài liệu mô tả cho các bộ test phức tạp
+- [ ] Tìm các hàm helper dùng chung cho test bị mồ côi
+- [ ] Phát hiện trùng lặp mã nguồn trong các bộ test
+- [ ] Kiểm tra việc sử dụng chuẩn xác các phương thức setUp/tearDown
+- [ ] Nhận diện thiếu các nhà cung cấp dữ liệu thử nghiệm (data providers)
+
+---
+
+## 12. CẤU HÌNH & MÔI TRƯỜNG THỰC THI
+
+### 12.1 Cấu Hình PHP (php.ini)
+- [ ] Kiểm tra cấp độ `error_reporting`
+- [ ] Xác nhận `display_errors` được TẮT trên production
+- [ ] Kiểm tra `expose_php` được TẮT để không làm lộ phiên bản PHP
+- [ ] Xác minh các thiết lập an toàn cho `allow_url_fopen` và `allow_url_include`
+- [ ] Kiểm tra danh sách `disable_functions` đối với các hàm nguy hiểm
+- [ ] Xác minh các giới hạn thư mục của chỉ thị `open_basedir`
+- [ ] Kiểm tra `upload_max_filesize` và `post_max_size` hợp lý
+- [ ] Xác minh thiết lập thời gian thực thi `max_execution_time`
+- [ ] Kiểm tra giới hạn bộ nhớ `memory_limit` phù hợp
+- [ ] Xác minh các thông số `session.*` được cấu hình an toàn
+- [ ] Kiểm tra cấu hình bộ nhớ đệm mã máy OPcache
+- [ ] Xác minh kích thước bộ nhớ đệm đường dẫn `realpath_cache_size`
+
+### 12.2 Cấu Hình Ứng Dụng
+- [ ] Tìm các giá trị cấu hình bị hardcode trực tiếp trong mã nguồn
+- [ ] Nhận diện thiếu xác thực tính hợp lệ của các biến môi trường
+- [ ] Kiểm tra quy trình xử lý tệp `.env` an toàn
+- [ ] Tìm các thông tin nhạy cảm bị đưa lên hệ thống Git
+- [ ] Phát hiện chế độ debug (debug mode) đang bị bật trên production
+- [ ] Kiểm tra việc lưu cache cấu hình ứng dụng (`config:cache`)
+- [ ] Nhận diện mã nguồn chứa điều kiện phân nhánh theo môi trường cụ thể
+
+### 12.3 Cấu Hình Máy Chủ Web (Web Server)
+- [ ] Đảm bảo `index.php` là điểm truy cập duy nhất
+- [ ] Xác minh an ninh của tệp `.htaccess` hoặc cấu hình Nginx
+- [ ] Kiểm tra việc cấu hình chính sách bảo mật nội dung Content-Security-Policy (CSP)
+- [ ] Xác minh cơ chế bắt buộc sử dụng giao thức HTTPS
+- [ ] Kiểm tra cấu hình chia sẻ tài nguyên nguồn gốc chéo CORS an toàn
+- [ ] Nhận diện lỗ hổng liệt kê danh sách tệp thư mục (directory listing)
+- [ ] Kiểm tra nguy cơ làm lộ các tệp và thư mục nhạy cảm (.git, .env, v.v.)
+
+---
+
+## 13. ĐẶC THÙ FRAMEWORK (LARAVEL)
+
+### 13.1 An Ninh Laravel
+- [ ] Kiểm tra khai báo `$guarded = []` mà không có danh sách `$fillable`
+- [ ] Tìm thẻ xuất dữ liệu thô `{!! !!}` trong Blade template
+- [ ] Nhận diện các route bị vô hiệu hóa CSRF thiếu an toàn
+- [ ] Kiểm tra việc định nghĩa đầy đủ các chính sách phân quyền (Policies/Gates)
+- [ ] Tìm cơ chế route model binding trực tiếp thiếu giới hạn phạm vi (scoping)
+- [ ] Phát hiện thiếu cơ chế giới hạn tần suất yêu cầu (rate limiting)
+- [ ] Kiểm tra quy trình xác thực API an toàn (Sanctum/Passport)
+
+### 13.2 Hiệu Năng Laravel
+- [ ] Tìm các điểm thiếu tải trước dữ liệu `with()`
+- [ ] Nhận diện cơ hội chia khối `chunk()` hoặc `lazy()` cho dữ liệu lớn
+- [ ] Kiểm tra việc sử dụng hàng đợi queue cho các tác vụ tốn thời gian
+- [ ] Tìm các điểm dữ liệu cần áp dụng Cache
+- [ ] Phát hiện lỗi truy vấn N+1 thông qua Laravel Debugbar/Telescope
+- [ ] Kiểm tra việc áp dụng `config:cache`, `route:cache`, `view:cache`
+- [ ] Nhận diện cơ hội lưu bộ nhớ đệm view
+
+### 13.3 Thực Hành Tốt Nhất Trong Laravel
+- [ ] Tìm logic nghiệp vụ bị viết tràn lan trong Controller
+- [ ] Nhận diện thiếu các lớp Form Request để tách biệt xác thực
+- [ ] Kiểm tra việc áp dụng API Resource để chuẩn hóa dữ liệu trả về
+- [ ] Tìm các câu truy vấn Eloquent trực tiếp trong Controller thay vì Repository/Action
+- [ ] Phát hiện thiếu các sự kiện (Events/Listeners) cho các tác vụ phụ
+- [ ] Kiểm tra việc áp dụng Queueable Job đúng chuẩn
+- [ ] Nhận diện thiếu Model Observers cho các quy trình theo dõi thay đổi
+
+---
+
+## 14. ĐẶC THÙ FRAMEWORK (SYMFONY)
+
+### 14.1 An Ninh Symfony
+- [ ] Kiểm tra cấu hình an ninh trong tệp `security.yaml`
+- [ ] Xác minh cấu hình tường lửa (firewalls) của Symfony
+- [ ] Kiểm tra việc triển khai chuẩn xác các Voter
+- [ ] Nhận diện thiếu bảo vệ CSRF trên các Form Type
+- [ ] Kiểm tra các lỗ hổng tiêm tham số trong routing/controller
+- [ ] Xác minh cấu hình bộ mã hóa mật khẩu password hasher
+
+### 14.2 Hiệu Năng Symfony
+- [ ] Kiểm tra việc biên dịch thùng chứa dịch vụ DI Container tối ưu
+- [ ] Nhận diện thiếu bước làm ấm bộ nhớ đệm (cache warmup) khi triển khai
+- [ ] Kiểm tra hiệu năng của cơ chế tự động nạp autowiring
+- [ ] Tìm các vấn đề chuyển đổi đối tượng (hydration) trong Doctrine
+- [ ] Nhận diện thiếu bộ nhớ đệm truy vấn Doctrine (result/query cache)
+- [ ] Kiểm tra việc sử dụng chuẩn xác bộ tuần tự hóa Serializer
+
+### 14.3 Thực Hành Tốt Nhất Trong Symfony
+- [ ] Tìm các service lẽ ra nên được thiết lập private
+- [ ] Nhận diện thiếu interface cho các service quan trọng
+- [ ] Kiểm tra việc sử dụng chuẩn xác EventDispatcher
+- [ ] Tìm logic nghiệp vụ nằm sai vị trí trong Controller
+- [ ] Phát hiện thiếu các đối tượng DTO chuyên dụng
+- [ ] Kiểm tra việc sử dụng thành phần Messenger cho xử lý bất đồng bộ
+
+---
+
+## 15. AN NINH GIAO DIỆN LẬP TRÌNH (API SECURITY)
+
+### 15.1 Xác Thực API
+- [ ] Kiểm tra an ninh trong triển khai token JWT (thuật toán, khóa ký, xác thực hạn dùng)
+- [ ] Xác minh quy trình triển khai OAuth 2.0
+- [ ] Kiểm tra nguy cơ làm lộ API Key trong mã nguồn client
+- [ ] Nhận diện thiếu cơ chế hết hạn token bắt buộc
+- [ ] Tìm kiếm các lỗ hổng liên quan đến refresh token
+- [ ] Kiểm tra nơi lưu trữ token an toàn ở phía client
+
+### 15.2 Giới Hạn Tần Suất (Rate Limiting)
+- [ ] Tìm các endpoint công khai thiếu cơ chế giới hạn tần suất gọi
+- [ ] Nhận diện các kẽ hở có thể vượt qua giới hạn rate limit
+- [ ] Kiểm tra việc trả về đầy đủ các tiêu đề thông báo rate limit chuẩn
+- [ ] Phát hiện các điểm dễ bị tấn công từ chối dịch vụ (DDoS)
+
+### 15.3 Dữ Liệu Đầu Vào / Đầu Ra API
+- [ ] Tìm các yêu cầu API thiếu bước kiểm tra xác thực dữ liệu
+- [ ] Nhận diện tình trạng để lộ dữ liệu nhạy cảm quá mức trong phản hồi (Over-exposure)
+- [ ] Kiểm tra định dạng phản hồi lỗi chuẩn (tuyệt đối không để lộ stack trace)
+- [ ] Phát hiện nguy cơ gán hàng loạt thuộc tính thông qua payload API
+- [ ] Tìm các endpoint thiếu giới hạn phân trang tối đa
+- [ ] Kiểm tra việc sử dụng chuẩn xác các mã trạng thái HTTP (200, 201, 400, 401, 403, 404, 422, 500)
+
+---
+
+## 16. DANH MỤC KIỂM TRA TRƯỜNG HỢP BIÊN (EDGE CASES)
+
+### 16.1 Trường Hợp Biên Chuỗi Ký Tự
+- [ ] Chuỗi rỗng (`""`)
+- [ ] Chuỗi có độ dài cực lớn (>1MB)
+- [ ] Ký tự Unicode (emoji, văn bản viết từ phải sang trái RTL, ký tự có độ rộng bằng 0)
+- [ ] Ký tự null byte (`\0`) trong chuỗi
+- [ ] Ký tự xuống dòng và các ký tự điều khiển đặc biệt
+- [ ] Xử lý chuỗi đa byte (cần dùng các hàm `mb_*`)
+- [ ] Sự không tương thích giữa các bảng mã ký tự
+
+### 16.2 Trường Hợp Biên Số Học
+- [ ] Giá trị bằng 0
+- [ ] Số âm
+- [ ] Số nguyên cực lớn vượt ngưỡng `PHP_INT_MAX`
+- [ ] Vấn đề sai số chính xác của số thực dấu phẩy động (float precision)
+- [ ] Chuỗi chứa số ("123" so với 123)
+- [ ] Số biểu diễn theo ký hiệu khoa học
+- [ ] Các giá trị đặc biệt NAN (Not a Number) và INF (Vô cực)
+
+### 16.3 Trường Hợp Biên Mảng (Array)
+- [ ] Mảng rỗng (`[]`)
+- [ ] Mảng chỉ chứa duy nhất một phần tử
+- [ ] Phân biệt giữa mảng kết hợp (associative) và mảng tuần tự theo chỉ số (indexed)
+- [ ] Mảng thưa (sparse arrays - thiếu các khóa trung gian)
+- [ ] Mảng lồng nhau nhiều cấp độ sâu
+- [ ] Mảng có kích thước khổng lồ tiêu tốn bộ nhớ
+- [ ] Ép kiểu tự động của khóa mảng trong PHP
+
+### 16.4 Trường Hợp Biên Ngày & Giờ
+- [ ] Xử lý múi giờ (timezone) giữa máy chủ và người dùng
+- [ ] Thời điểm chuyển đổi giờ mùa hè (Daylight Saving Time)
+- [ ] Năm nhuận và ngày 29 tháng 2
+- [ ] Ranh giới chuyển tiếp cuối tháng (ngày 31)
+- [ ] Ranh giới chuyển tiếp năm mới
+- [ ] Giới hạn dấu thời gian Unix timestamp (sự cố năm 2038 trên hệ thống 32-bit)
+- [ ] Chuỗi định dạng ngày tháng không hợp lệ
+- [ ] Sự bất đồng bộ giữa các định dạng ngày giờ khác nhau
+
+### 16.5 Trường Hợp Biên Thao Tác Tệp Tin
+- [ ] Tệp có chứa khoảng trắng trong tên tệp
+- [ ] Tệp có tên chứa ký tự Unicode
+- [ ] Đường dẫn tệp có độ dài cực lớn vượt giới hạn hệ điều hành
+- [ ] Tên tệp chứa ký tự đặc biệt
+- [ ] Tệp không có phần mở rộng
+- [ ] Tệp rỗng (kích thước 0 byte)
+- [ ] Tệp nhị phân bị đọc và xử lý nhầm thành tệp văn bản
+- [ ] Các sự cố từ chối quyền truy cập tệp (permission denied)
+
+### 16.6 Trường Hợp Biên Giao Thức HTTP
+- [ ] Yêu cầu thiếu các tiêu đề HTTP cần thiết
+- [ ] Xuất hiện tiêu đề HTTP trùng lặp
+- [ ] Tiêu đề HTTP có kích thước quá lớn
+- [ ] Tiêu đề Content-Type không hợp lệ
+- [ ] Xử lý truyền dữ liệu phân đoạn (chunked transfer encoding)
+- [ ] Quá thời gian chờ kết nối mạng (connection timeouts)
+- [ ] Vòng lặp chuyển hướng vô tận (redirect loops)
+
+### 16.7 Trường Hợp Biên Cơ Sở Dữ Liệu
+- [ ] Giá trị NULL trong các cột
+- [ ] Sự khác biệt ngữ nghĩa giữa chuỗi rỗng `""` và giá trị `NULL`
+- [ ] Các trường văn bản có kích thước cực lớn
+- [ ] Cập nhật đồng thời từ nhiều phiên giao dịch
+- [ ] Giao dịch bị quá thời gian chờ (transaction timeouts)
+- [ ] Cạn kiệt kết nối trong connection pool
+- [ ] Sự không tương thích giữa bảng mã cơ sở dữ liệu và kết nối ứng dụng
+
+---
+
+## ĐỊNH DẠNG ĐẦU RA (OUTPUT FORMAT)
+
+Với mỗi vấn đề phát hiện được, hãy trình bày theo cấu trúc sau:
+
+### [MỨC ĐỘ: NGHIÊM TRỌNG / CAO / TRUNG BÌNH / THẤP] Tiêu Đề Vấn Đề
+
+**Danh mục**: [An ninh / Hiệu năng / An toàn kiểu / v.v.]  
+**Tệp**: duong/dan/toi/file.php  
+**Dòng**: 123-145  
+**CWE/CVE**: (nếu có liên quan)  
+**Tác động**: Mô tả hậu quả tiêu cực có thể xảy ra nếu không khắc phục  
+
+**Mã nguồn hiện tại**:  
+```php
+// đoạn mã có vấn đề
+```
+
+**Nguyên nhân**: Giải thích chi tiết vì sao đoạn mã này vi phạm tiêu chuẩn hoặc gây lỗi  
+
+**Giải pháp đề xuất**:  
+```php
+// đoạn mã đã được khắc phục chuẩn mực
+```
+
+**Tài liệu tham chiếu**: Liên kết dẫn tới tài liệu chính thức, tiêu chuẩn OWASP, hướng dẫn PHP  
+
+---
+
+## MA TRẬN ĐỘ ƯU TIÊN KHẮC PHỤC (PRIORITY MATRIX)
+
+1. **NGHIÊM TRỌNG (CRITICAL)** (Khắc phục ngay trong vòng 24 giờ):
+   - Lỗ hổng SQL Injection
+   - Thực thi mã từ xa (Remote Code Execution - RCE)
+   - Vượt qua cơ chế xác thực (Authentication Bypass)
+   - Đọc / ghi / tải lên tệp tùy ý trái phép
+
+2. **CAO (HIGH)** (Khắc phục trong tuần hiện tại):
+   - Lỗ hổng XSS
+   - Vấn đề CSRF
+   - Khiếm khuyết trong phân quyền truy cập (IDOR / Leo thang đặc quyền)
+   - Làm lộ dữ liệu nhạy cảm
+   - Lỗ hổng giải tuần tự hóa thiếu an toàn
+
+3. **TRUNG BÌNH (MEDIUM)** (Khắc phục trong sprint làm việc hiện tại):
+   - Vấn đề an toàn hệ thống kiểu
+   - Suy giảm hiệu năng và điểm nghẽn truy vấn
+   - Thiếu sót trong xác thực dữ liệu đầu vào
+   - Cấu hình hệ thống chưa tối ưu
+
+4. **THẤP (LOW)** (Nợ kỹ thuật - Technical Debt):
+   - Vấn đề chất lượng mã nguồn và mùi code
+   - Thiếu hụt tài liệu giải thích
+   - Không đồng nhất về phong cách viết mã
+   - Các tối ưu hóa nhỏ không ảnh hưởng lớn tới vận hành
+
+---
+
+## CÁC LỆNH CÔNG CỤ TỰ ĐỘNG HÓA
+
+Thực thi các lệnh sau và phân tích kết quả đầu ra:
+
+```bash
+# Quét An Ninh & Kiểm Tra Kiểu
+composer audit
+./vendor/bin/phpstan analyse --level=9
+./vendor/bin/psalm --show-info=true
+
+# Chất Lượng Mã Nguồn & Định Dạng
+./vendor/bin/phpcs --standard=PSR12
+./vendor/bin/php-cs-fixer fix --dry-run --diff
+./vendor/bin/phpmd src text cleancode,codesize,controversial,design,naming,unusedcode
+
+# Phân Tích Thư Viện Phụ Thuộc
+composer outdated --direct
+composer depends --tree
+
+# Phát Hiện Mã Chết & Trùng Lặp
+./vendor/bin/phpdcd src
+./vendor/bin/phpcpd src
+
+# Đo Lường Độ Phức Tạp Mã Nguồn
+./vendor/bin/phpmetrics --report-html=report src
+```
+
+---
+
+## BÁO CÁO TỔNG KẾT CUỐI CÙNG (FINAL SUMMARY)
+
+Sau khi hoàn tất toàn bộ quy trình rà soát, hãy cung cấp:
+
+1. **Tóm Tắt Dành Cho Lãnh Đạo (Executive Summary)**: Tổng quan 2–3 đoạn văn về hiện trạng codebase
+2. **Đánh Giá Rủi Ro**: Mức độ rủi ro tổng thể (Nghiêm trọng / Cao / Trung bình / Thấp)
+3. **Mức Độ Bao Phủ OWASP Top 10**: Những lỗ hổng nào trong top OWASP đã bị phát hiện
+4. **Top 10 Vấn Đề Nghiêm Trọng Nhất**: Danh sách ưu tiên giải quyết hàng đầu
+5. **Báo Cáo Sức Khỏe Thư Viện Phụ Thuộc**: Tóm tắt trạng thái của các gói Composer
+6. **Ước Tính Nợ Kỹ Thuật**: Số giờ/ngày công cần thiết để khắc phục triệt để
+7. **Lộ Trình Hành Động Khuyến Nghị**: Kế hoạch xử lý theo từng giai đoạn cụ thể
+8. **Bảng Điều Khiển Chỉ Số (Metrics Dashboard)**:
+   - Tổng số lỗi phân loại theo mức độ nghiêm trọng
+   - Điểm an ninh bảo mật (thang điểm 1-10)
+   - Điểm chất lượng mã nguồn (thang điểm 1-10)
+   - Tỷ lệ phần trăm độ bao phủ kiểm thử (test coverage)
+   - Điểm sức khỏe gói phụ thuộc (thang điểm 1-10)
+   - Trạng thái tương thích với các phiên bản PHP hiện hành

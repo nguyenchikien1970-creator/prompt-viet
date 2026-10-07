@@ -1,0 +1,119 @@
+Tools/GetTechNews.ts
+#!/usr/bin/env bun
+/**
+ * Tech News Fetcher
+ *
+ * 从 Hacker News 和其他来源获取技术新闻
+ *
+ * 使用方式：
+ *   ./GetTechNews.ts [count]
+ *
+ * 参数：
+ *   count        - 获取新闻数量 (默认: 10)
+ *
+ * 示例：
+ *   ./GetTechNews.ts
+ *   ./GetTechNews.ts 20
+ */
+
+import Parser from 'rss-parser';
+import type { TechNewsItem } from './Lib/types';
+
+const HN_API = 'https://hn.algolia.com/api/v1/search';
+const parser = new Parser();
+
+/**
+ * 从 Hacker News Algolia API 获取新闻
+ */
+async function getHackerNews(count: number): Promise<TechNewsItem[]> {
+  try {
+    const response = await fetch(`${HN_API}?tags=front_page&hits=${count}`);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+
+    return data.hits.map((hit: any) => ({
+      id: hit.objectID,
+      title: hit.title,
+      url: hit.url || `https://news.ycombinator.com/item?id=${hit.objectID}`,
+      source: 'hackernews',
+      points: hit.points || 0,
+      comments: hit.num_comments || 0,
+      timestamp: new Date(hit.created_at).toISOString(),
+      tags: hit._tags || []
+    }));
+  } catch (error) {
+    console.error('获取 Hacker News 失败:', error);
+    return [];
+  }
+}
+
+/**
+ * 从 Hacker News RSS 获取新闻（备用方案）
+ */
+async function getHackerNewsRSS(count: number): Promise<TechNewsItem[]> {
+  try {
+    const feed = await parser.parseURL('https://news.ycombinator.com/rss');
+
+    return feed.items.slice(0, count).map((item: any) => ({
+      id: item.guid || item.link,
+      title: item.title || 'No title',
+      url: item.link,
+      source: 'hackernews',
+      timestamp: item.pubDate || new Date().toISOString(),
+      tags: ['hackernews', 'rss']
+    }));
+  } catch (error) {
+    console.error('获取 Hacker News RSS 失败:', error);
+    return [];
+  }
+}
+
+/**
+ * 获取技术新闻（主函数）
+ */
+async function getTechNews(count: number = 10): Promise<TechNewsItem[]> {
+  console.error(`正在获取技术新闻（${count}条）...`);
+
+  // 优先使用 Hacker News API
+  let news = await getHackerNews(count);
+
+  // 如果失败，尝试 RSS 备用
+  if (news.length === 0) {
+    console.error('Hacker News API 失败，尝试 RSS...');
+    news = await getHackerNewsRSS(count);
+  }
+
+  console.error(`✅ 获取到 ${news.length} 条新闻`);
+  return news;
+}
+
+/**
+ * CLI 入口
+ */
+async function main() {
+  const args = process.argv.slice(2);
+  const count = parseInt(args[0]) || 10;
+
+  try {
+    const news = await getTechNews(count);
+
+    // 输出 JSON 格式（便于程序调用）
+    console.log(JSON.stringify(news, null, 2));
+  } catch (error) {
+    console.error('❌ 获取新闻失败:');
+    console.error(error);
+    process.exit(1);
+  }
+}
+
+// 如果直接运行此脚本
+if (import.meta.main) {
+  main();
+}
+
+// 导出供其他模块使用
+export { getTechNews };
+export type { TechNewsItem };

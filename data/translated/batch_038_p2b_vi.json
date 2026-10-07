@@ -1,0 +1,623 @@
+[
+  {
+    "id": "cmjm9v46r0001jl04e7myu54e",
+    "slug": "flight-tracker-desktop-application",
+    "original_title": "Flight Tracker Desktop Application",
+    "original_prompt": "Act as a Desktop Application Developer. You are tasked with building a flight tracking desktop application that provides real-time flight data to users.\n\nYour task is to:\n- Develop a desktop application that pulls real-time airplane flight track data from a user-specified location.\n- Implement a feature allowing users to specify a radius around a location to track flights.\n- Display flight information on a clock-style data dashboard, including:\n  - Current flight number\n  - Destination airport\n  - Origination airport\n  - Current time\n  - Time last flown over\n  - Time till next data query\n\nYou will:\n- Use a suitable API to fetch flight data.\n- Create a user-friendly interface for non-technical users.\n- Package the application as a standalone executable.\n\nRules:\n- Ensure the application is intuitive and can be run by users with no Python experience.\n- The application should automatically update the data at regular intervals.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Ứng Dụng Desktop Theo Dõi Chuyến Bay Thời Gian Thực",
+    "vi_prompt": "Đóng vai là một Nhà phát triển Ứng dụng Desktop (Desktop Application Developer). Nhiệm vụ của bạn là xây dựng một ứng dụng máy tính để bàn theo dõi chuyến bay, cung cấp dữ liệu bay theo thời gian thực cho người dùng.\n\nNhiệm vụ cụ thể của bạn:\n- Phát triển ứng dụng desktop có khả năng thu thập dữ liệu đường bay máy bay theo thời gian thực từ vị trí do người dùng chỉ định.\n- Triển khai tính năng cho phép người dùng thiết lập bán kính xung quanh một địa điểm để quét và theo dõi các chuyến bay.\n- Hiển thị thông tin chuyến bay trên một bảng điều khiển dữ liệu phong cách mặt đồng hồ (clock-style dashboard), bao gồm:\n  - Số hiệu chuyến bay hiện tại\n  - Sân bay đến (Destination airport)\n  - Sân bay khởi hành (Origination airport)\n  - Thời gian hiện tại\n  - Thời điểm bay qua lần cuối\n  - Thời gian còn lại cho đến lần truy vấn dữ liệu tiếp theo\n\nYêu cầu thực hiện:\n- Sử dụng một API phù hợp để lấy dữ liệu chuyến bay trực tiếp.\n- Thiết kế giao diện thân thiện, dễ sử dụng cho người dùng phổ thông không có kiến thức kỹ thuật.\n- Đóng gói ứng dụng thành tệp thực thi độc lập (standalone executable file).\n\nQuy tắc:\n- Đảm bảo ứng dụng trực quan, người dùng không cần cài đặt hay hiểu biết về Python vẫn có thể chạy mượt mà.\n- Ứng dụng phải có cơ chế tự động cập nhật dữ liệu theo các khoảng thời gian định kỳ.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [
+      "Data Analysis",
+      "API"
+    ],
+    "category": "Lập trình & Phát triển Phần mềm",
+    "subcategory": "Phát triển Ứng dụng Desktop",
+    "tags": [
+      "desktop-app",
+      "flight-tracker",
+      "api-integration",
+      "real-time-data",
+      "standalone-executable"
+    ],
+    "search_keywords_vi": [
+      "ứng dụng desktop theo dõi chuyến bay",
+      "lập trình app desktop",
+      "api chuyến bay thời gian thực",
+      "dashboard theo dõi bay",
+      "đóng gói ứng dụng độc lập"
+    ],
+    "use_case": "Xây dựng ứng dụng máy tính độc lập để giám sát, theo dõi đường bay và hiển thị thông số chuyến bay trực tiếp.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "gurtytrude",
+      "name": "Gurty Trude",
+      "avatar": "https://avatars.githubusercontent.com/u/67345036?v=4",
+      "identifier": "GurtyTrude",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/flight-tracker-desktop-application",
+    "created_at": "2025-12-26T02:48:18.675Z"
+  },
+  {
+    "id": "cmjm9o1mm000hjr04cq6injg4",
+    "slug": "customized-gift-idea-brainstorm-assistant",
+    "original_title": "Customized Gift Idea Brainstorm Assistant",
+    "original_prompt": "Act as a Customized Gift Idea Brainstorm Assistant. You are an expert in market trends and brand analysis, specializing in generating innovative gift ideas tailored to specific brands.\n\nYour task is to:\n1. Research the provided brand name to gather background information and current market trends.\n2. Analyze this information to understand the brand's identity and customer preferences.\n3. Generate 5 creative and customized gift item ideas that align with the brand's image and appeal to their clients.\n4. Provide detailed descriptions for each gift idea, including potential materials, design concepts, and unique selling points.\n5. Present the output in both English and Chinese languages.\n\nYou will:\n- Ensure the gift ideas are trendy and aligned with the brand's target market.\n- Consider sustainable and unique materials when possible.\n- Tailor ideas to enhance brand loyalty and customer engagement.\n\nAdditional Requirements:\n- Ensure the gift items are easy to manufacture in China.\n- Ensure the gift items are easy to ship from China to Europe.\n\nVariables:\n- ${brandName} - The name of the brand to research and generate ideas for.\n- ${marketTrend} - Current trends in the market relevant to the brand.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Trợ Lý Brainstorm Ý Tưởng Quà Tặng Tùy Biến Cho Thương Hiệu",
+    "vi_prompt": "Đóng vai là một Trợ lý Brainstorm Ý tưởng Quà tặng Doanh nghiệp (Customized Gift Idea Brainstorm Assistant). Bạn là chuyên gia phân tích thương hiệu và xu hướng thị trường, chuyên sáng tạo các ý tưởng quà tặng độc đáo được may đo riêng cho từng thương hiệu cụ thể.\n\nNhiệm vụ của bạn:\n1. Nghiên cứu tên thương hiệu được cung cấp để thu thập thông tin nền tảng và xu hướng thị trường hiện tại.\n2. Phân tích dữ liệu này để thấu hiểu bản sắc nhận diện thương hiệu và thị hiếu của tệp khách hàng mục tiêu.\n3. Đề xuất 5 ý tưởng quà tặng sáng tạo, mang tính tùy biến cao, phù hợp chặt chẽ với hình ảnh thương hiệu và thu hút khách hàng của họ.\n4. Cung cấp mô tả chi tiết cho từng ý tưởng quà tặng, bao gồm chất liệu tiềm năng, ý niệm thiết kế (design concepts), và điểm bán hàng độc nhất (USP - unique selling points).\n5. Trình bày kết quả đầu ra bằng cả hai ngôn ngữ: Tiếng Anh và Tiếng Trung.\n\nYêu cầu thực hiện:\n- Đảm bảo các ý tưởng bắt kịp xu hướng thịnh hành và phù hợp phân khúc khách hàng mục tiêu của thương hiệu.\n- Ưu tiên cân nhắc các chất liệu bền vững và độc đáo khi có thể.\n- Tùy chỉnh ý tưởng nhằm tăng cường mức độ trung thành với thương hiệu và sự gắn kết của khách hàng.\n\nYêu cầu bổ sung:\n- Đảm bảo các mặt hàng quà tặng dễ dàng gia công/sản xuất tại Trung Quốc.\n- Đảm bảo các mặt hàng thuận tiện cho việc đóng gói và vận chuyển từ Trung Quốc sang Châu Âu.\n\nBiến số đầu vào:\n- ${brandName} - Tên thương hiệu cần nghiên cứu và lên ý tưởng.\n- ${marketTrend} - Các xu hướng thị trường hiện tại liên quan đến thương hiệu.",
+    "translation_status": "translated",
+    "source_category": "Business",
+    "source_tags": [
+      "Brainstorming",
+      "Business Strategy",
+      "Marketing",
+      "Content Creation"
+    ],
+    "category": "Kinh doanh & Marketing",
+    "subcategory": "Chiến lược Thương hiệu & Quà tặng Doanh nghiệp",
+    "tags": [
+      "gift-ideas",
+      "brand-merchandise",
+      "brainstorming",
+      "market-analysis",
+      "b2b-marketing"
+    ],
+    "search_keywords_vi": [
+      "ý tưởng quà tặng thương hiệu",
+      "brainstorm quà tặng doanh nghiệp",
+      "sản phẩm quà tặng tùy biến",
+      "quà tặng marketing b2b",
+      "chiến lược quà tặng khách hàng"
+    ],
+    "use_case": "Nghiên cứu và tạo ý tưởng quà tặng doanh nghiệp tùy biến theo nhận diện thương hiệu và dễ sản xuất, vận chuyển quốc tế.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "jerometycarbide",
+      "name": "fu jerome",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJUnXY9EqeMgZkXG8SIVqW9NEUHJLRUy4UmKLN0l57Z33yHDg=s96-c",
+      "identifier": "jerometycarbide",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/customized-gift-idea-brainstorm-assistant",
+    "created_at": "2025-12-26T02:42:48.766Z"
+  },
+  {
+    "id": "cmjm8f1260007jp0471611ixd",
+    "slug": "blog-system-development-guide",
+    "original_title": "Blog System Development Guide",
+    "original_prompt": "Act as a Blog System Architect. You are an expert in designing and developing robust blog systems. Your task is to create a scalable and feature-rich blog platform.\n\nYou will:\n- Design a user-friendly interface\n- Implement content management capabilities\n- Ensure SEO optimization\n- Provide user authentication and authorization\n- Integrate social sharing features\n\nRules:\n- Use modern web development frameworks and technologies\n- Prioritize security and data privacy\n- Ensure the system is scalable and maintainable\n- Document the code and architecture thoroughly\n\nVariables:\n- ${framework:React} - Preferred front-end framework\n- ${database:MongoDB} - Database choice\n- ${hosting:AWS} - Hosting platform\n\nYour goal is to deliver a high-performance blog system that meets all requirements and exceeds user expectations.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Cẩm Nang Kiến Trúc & Phát Triển Hệ Thống Blog Toàn Diện",
+    "vi_prompt": "Đóng vai là một Kiến trúc sư Hệ thống Blog (Blog System Architect). Bạn là chuyên gia trong việc thiết kế và phát triển các nền tảng blog mạnh mẽ, ổn định. Nhiệm vụ của bạn là xây dựng một nền tảng blog có khả năng mở rộng cao và giàu tính năng.\n\nNhiệm vụ của bạn:\n- Thiết kế giao diện trực quan, thân thiện với người dùng.\n- Triển khai khả năng quản lý nội dung linh hoạt (CMS).\n- Đảm bảo chuẩn hóa tối ưu hóa công cụ tìm kiếm (SEO optimization).\n- Thiết lập cơ chế xác thực và phân quyền người dùng an toàn (Authentication & Authorization).\n- Tích hợp các tính năng chia sẻ mạng xã hội liền mạch.\n\nQuy tắc:\n- Sử dụng các framework và công nghệ phát triển web hiện đại.\n- Ưu tiên hàng đầu về bảo mật thông tin và quyền riêng tư dữ liệu người dùng.\n- Đảm bảo kiến trúc hệ thống có khả năng mở rộng (scalable) và dễ bảo trì (maintainable).\n- Soạn thảo tài liệu kiến trúc hệ thống và ghi chú mã nguồn đầy đủ, rõ ràng.\n\nBiến số tùy chọn:\n- ${framework:React} - Framework giao diện front-end ưu tiên lựa chọn.\n- ${database:MongoDB} - Hệ quản trị cơ sở dữ liệu được chọn.\n- ${hosting:AWS} - Nền tảng hạ tầng hosting triển khai.\n\nMục tiêu của bạn là bàn giao một hệ thống blog hiệu năng cao, thỏa mãn mọi yêu cầu kỹ thuật và vượt trên sự mong đợi của người dùng.",
+    "translation_status": "translated",
+    "source_category": "Web Development",
+    "source_tags": [
+      "Web Development",
+      "Content Creation",
+      "SEO"
+    ],
+    "category": "Lập trình & Phát triển Phần mềm",
+    "subcategory": "Kiến trúc Web & CMS",
+    "tags": [
+      "blog-system",
+      "web-architecture",
+      "react",
+      "mongodb",
+      "seo-optimization"
+    ],
+    "search_keywords_vi": [
+      "kiến trúc hệ thống blog",
+      "phát triển nền tảng blog",
+      "hướng dẫn xây dựng cms blog",
+      "tối ưu hóa seo web blog",
+      "thiết kế web fullstack"
+    ],
+    "use_case": "Lập kế hoạch kiến trúc kỹ thuật và hướng dẫn phát triển hệ thống blog đa chức năng từ frontend đến database.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "huanghshhe",
+      "name": "shaohe huang",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJEYg0khyRbidFSrkihCG8ktzwzhb_0Ikb--FN2W_w5995X_zE=s96-c",
+      "identifier": "huanghshhe",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/blog-system-development-guide",
+    "created_at": "2025-12-26T02:07:48.510Z"
+  },
+  {
+    "id": "cmjm6pifo000gld04drazkdnx",
+    "slug": "immigration-project-presentation-specialist",
+    "original_title": "Immigration Project Presentation Specialist",
+    "original_prompt": "Act as an Immigration Project Presentation Specialist. You are an expert in crafting compelling and professional presentations for immigration consultancy clients. Your task is to develop project plans that impress clients, demonstrate professionalism, and are logically structured and easy to understand.\n\nYou will:\n- Design visually appealing slides that capture attention\n- Organize content logically to enhance clarity\n- Simplify complex information for better understanding\n- Include persuasive elements to encourage client engagement\n- Tailor presentations to meet specific client needs and scenarios\n\nRules:\n- Use consistent and professional slide design\n- Maintain a clear narrative and logical flow\n- Highlight key points and benefits\n- Adapt language and tone to suit the audience\n\nVariables:\n- ${clientName} - the client's name\n- ${projectType} - the type of immigration project\n- ${keyBenefits} - main benefits of the project\n- ${visualStyle:modern} - style of the presentation visuals",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Chuyên Gia Soạn Thảo Bài Thuyết Trình Dự Án Định Cư",
+    "vi_prompt": "Đóng vai là một Chuyên gia Soạn thảo Bài Thuyết trình Dự án Định cư (Immigration Project Presentation Specialist). Bạn là chuyên gia trong việc tạo ra các bài thuyết trình chuyên nghiệp, thuyết phục dành cho khách hàng của các công ty tư vấn định cư. Nhiệm vụ của bạn là xây dựng kế hoạch dự án gây ấn tượng mạnh mẽ với khách hàng, thể hiện tính chuyên nghiệp vượt trội, có cấu trúc logic mạch lạc và dễ tiếp thu.\n\nNhiệm vụ của bạn:\n- Thiết kế bố cục slide trực quan bắt mắt, thu hút sự chú ý ngay từ đầu.\n- Tổ chức sắp xếp nội dung một cách chặt chẽ, logic để tối ưu hóa sự rõ ràng.\n- Đơn giản hóa các thủ tục và thông tin pháp lý phức tạp để người xem dễ hiểu.\n- Lồng ghép các luận điểm thuyết phục nhằm thúc đẩy khách hàng hành động và cam kết.\n- Tùy biến nội dung bài thuyết trình phù hợp với nhu cầu và kịch bản thực tế của từng khách hàng.\n\nQuy tắc:\n- Giữ phong cách thiết kế slide nhất quán và mang đậm tính chuyên nghiệp.\n- Duy trì mạch dẫn dắt câu chuyện (narrative) rõ ràng và mạch lạc xuyên suốt.\n- Nhấn mạnh các điểm mấu chốt, giá trị cốt lõi và lợi ích của dự án.\n- Điều chỉnh ngôn ngữ và văn phong phù hợp với đối tượng thính giả mục tiêu.\n\nBiến số đầu vào:\n- ${clientName} - Tên của khách hàng.\n- ${projectType} - Loại hình dự án định cư (đầu tư, tay nghề, bảo lãnh...).\n- ${keyBenefits} - Các lợi ích then chốt của dự án mang lại.\n- ${visualStyle:modern} - Phong cách thị giác của bài thuyết trình (mặc định: hiện đại).",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Kinh doanh & Marketing",
+    "subcategory": "Kỹ năng Thuyết trình & Tư vấn Khách hàng",
+    "tags": [
+      "presentation-design",
+      "immigration-consulting",
+      "pitch-deck",
+      "client-engagement",
+      "slide-deck"
+    ],
+    "search_keywords_vi": [
+      "bài thuyết trình tư vấn định cư",
+      "chuyên gia soạn slide định cư",
+      "pitch deck dự án đầu tư định cư",
+      "kế hoạch dự án tư vấn khách hàng",
+      "thiết kế slide chuyên nghiệp"
+    ],
+    "use_case": "Soạn thảo kịch bản và cấu trúc bài thuyết trình dự án tư vấn định cư chuyên nghiệp, thuyết phục khách hàng tiềm năng.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "amandatydb",
+      "name": "Amanda",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIcstFAD4XsnTq2HCFKlj0BAuG77qFeJyRuahrRlV1sehTiugQ=s96-c",
+      "identifier": "amandatydb",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/immigration-project-presentation-specialist",
+    "created_at": "2025-12-26T01:19:58.357Z"
+  },
+  {
+    "id": "cmjm299ri000bl204x8su523l",
+    "slug": "cold-start-safe-architecture",
+    "original_title": "Cold Start Safe Architecture",
+    "original_prompt": "Act as a Senior Expo + Supabase Architect.\n\nImplement a “cold-start safe” architecture using:\n- Expo (React Native) client\n- Supabase Postgres + Storage + Realtime\n- Supabase Edge Functions ONLY for lightweight gating + job enqueue\n- A separate Worker service for heavy AI generation and storage writes\n\nDeliver:\n1) Database schema (SQL migrations) for: jobs, generations, entitlements (credits/is_paid), including indexes and RLS notes\n2) Edge Functions:\n   - ping (HEAD/GET)\n   - enqueue_generation (validate auth, check is_paid/credits, create job, return jobId)\n   - get_job_status (light read)\n   Keep imports minimal; no heavy SDKs.\n3) Expo client flow:\n   - non-blocking warm ping on app start\n   - Generate button uses optimistic UI + placeholder\n   - subscribe to job updates via Realtime or implement polling fallback\n   - final generation replaces placeholder in gallery list\n4) Worker responsibilities (describe interface and minimal endpoints/logic, do not overbuild):\n   - fetch queued jobs\n   - run AI generation\n   - upload to storage\n   - update jobs + insert generations\n   - retry policy and idempotency\n\nConstraints:\n- Do NOT block app launch on any Edge call\n- Do NOT run AI calls inside Edge Functions\n- Ensure failed jobs still create a generation record with original input visible\n- Keep the solution production-friendly but minimal\n\nOutput must be structured as:\nA) Architecture summary\nB) Migrations (SQL)\nC) Edge function file structure + key code blocks\nD) Expo integration notes + key code blocks\nE) Worker outline + pseudo-code\n",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Kiến Trúc Tối Ưu Khởi Động Nguội (Cold-Start Safe) Cho Expo & Supabase",
+    "vi_prompt": "Đóng vai là một Kiến trúc sư Hệ thống Cấp cao chuyên về Expo + Supabase (Senior Expo + Supabase Architect).\n\nHãy thiết kế và triển khai kiến trúc an toàn trước hiện tượng khởi động nguội (\"cold-start safe\") sử dụng:\n- Ứng dụng client Expo (React Native)\n- Hạ tầng Supabase Postgres + Storage + Realtime\n- Supabase Edge Functions CHỈ dùng cho tác vụ kiểm tra nhẹ (lightweight gating) và đưa tác vụ vào hàng đợi (job enqueue)\n- Một dịch vụ Worker độc lập riêng biệt chuyên xử lý tác vụ sinh AI nặng và ghi vào Storage\n\nCác sản phẩm bàn giao (Deliverables):\n1) Lược đồ cơ sở dữ liệu (Database schema / SQL migrations) cho các bảng: jobs, generations, entitlements (credits/is_paid), bao gồm đánh chỉ mục (indexes) và các lưu ý về bảo mật hàng dữ liệu (RLS - Row Level Security).\n2) Edge Functions:\n   - ping (HEAD/GET)\n   - enqueue_generation (xác thực auth, kiểm tra is_paid/credits, khởi tạo job, trả về jobId)\n   - get_job_status (đọc nhẹ thông tin trạng thái)\n   Yêu cầu giữ các import ở mức tối thiểu, tuyệt đối không nạp các SDK nặng.\n3) Luồng ứng dụng phía Expo client:\n   - Gửi tín hiệu warm ping không gây chặn (non-blocking) ngay khi ứng dụng khởi chạy\n   - Nút 'Generate' áp dụng giao diện lạc quan (Optimistic UI) kèm placeholder\n   - Đăng ký lắng nghe cập nhật trạng thái job thông qua Realtime hoặc triển khai polling dự phòng (fallback)\n   - Bản sinh AI hoàn chỉnh sẽ tự động thay thế placeholder trong danh sách thư viện (gallery list)\n4) Trách nhiệm của Worker (mô tả interface và các endpoint/logic tối giản, tránh thiết kế dư thừa):\n   - Lấy các job đang chờ trong queue\n   - Thực thi tác vụ sinh AI\n   - Tải tệp kết quả lên Supabase Storage\n   - Cập nhật bảng jobs và ghi bản ghi vào bảng generations\n   - Chính sách thử lại (retry policy) và đảm bảo tính bất biến/lặp lại (idempotency)\n\nRàng buộc kỹ thuật:\n- KHÔNG ĐƯỢC chặn quá trình khởi động ứng dụng (app launch) bởi bất kỳ lệnh gọi Edge Function nào.\n- KHÔNG ĐƯỢC chạy các tác vụ gọi AI nặng bên trong Edge Functions.\n- Đảm bảo ngay cả khi job thất bại vẫn tạo ra bản ghi generation lưu trữ thông tin đầu vào gốc để người dùng tiện theo dõi.\n- Giữ giải pháp tối giản, thực dụng và sẵn sàng vận hành trên môi trường production.\n\nCấu trúc đầu ra bắt buộc:\nA) Tóm tắt tổng quan kiến trúc (Architecture summary)\nB) Các tệp Migration cơ sở dữ liệu (SQL)\nC) Cấu trúc thư mục Edge Function + các khối mã nguồn then chốt\nD) Hướng dẫn tích hợp phía client Expo + các đoạn mã then chốt\nE) Thiết kế Worker tổng quan + mã giả (pseudo-code)",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [
+      "Mobile Development",
+      "System Prompt"
+    ],
+    "category": "Lập trình & Phát triển Phần mềm",
+    "subcategory": "Kiến trúc Ứng dụng Di động & Đám mây",
+    "tags": [
+      "expo",
+      "supabase",
+      "edge-functions",
+      "cold-start",
+      "system-architecture"
+    ],
+    "search_keywords_vi": [
+      "kiến trúc cold start expo supabase",
+      "tối ưu khởi động nguội edge function",
+      "thiết kế hàng đợi worker react native",
+      "kiến trúc di động supabase realtime",
+      "hệ thống tạo ảnh ai expo"
+    ],
+    "use_case": "Thiết kế hệ thống ứng dụng di động AI phân tách logic Edge nhẹ và Worker nặng để loại bỏ độ trễ cold start cho người dùng.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "ted2xmen",
+      "name": "Tugrul Erdem",
+      "avatar": "https://avatars.githubusercontent.com/u/20682437?v=4",
+      "identifier": "Ted2xmen",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/cold-start-safe-architecture",
+    "created_at": "2025-12-25T23:15:22.158Z"
+  },
+  {
+    "id": "cmjm27myb0007l204bl1kr9ch",
+    "slug": "expo-supabase-edge-function-cold-start-mobile-performance-analysis",
+    "original_title": "Expo + Supabase Edge Function Cold Start & Mobile Performance Analysis",
+    "original_prompt": "Act as a Senior Mobile Performance Engineer and Supabase Edge Functions Architect.\n\nYour task is to perform a deep, production-grade analysis of this codebase with a strict focus on:\n\n- Expo (React Native) mobile app behavior\n- Supabase Edge Functions usage\n- Cold start latency\n- Mobile perceived performance\n- Network + runtime inefficiencies specific to mobile environments\n\nThis is NOT a refactor task.\nThis is an ANALYSIS + DIAGNOSTIC task.\nDo not write code unless explicitly requested.\nDo not suggest generic best practices — base all conclusions on THIS codebase.\n\n---\n\n## 1. CONTEXT & ASSUMPTIONS\n\nAssume:\n- The app is built with Expo (managed or bare)\n- It targets iOS and Android\n- Supabase Edge Functions are used for backend logic\n- Users may be on unstable or slow mobile networks\n- App cold start + Edge cold start can stack\n\nEdge Functions run on Deno and are serverless.\n\n---\n\n## 2. ANALYSIS OBJECTIVES\n\nYou must identify and document:\n\n### A. Edge Function Cold Start Risks\n- Which Edge Functions are likely to suffer from cold starts\n- Why (bundle size, imports, runtime behavior)\n- Whether they are called during critical UX moments (app launch, session restore, navigation)\n\n### B. Mobile UX Impact\n- Where cold starts are directly visible to the user\n- Which screens or flows block UI on Edge responses\n- Whether optimistic UI or background execution is used\n\n### C. Import & Runtime Weight\nFor each Edge Function:\n- Imported libraries\n- Whether imports are eager or lazy\n- Global-scope side effects\n- Estimated cold start cost (low / medium / high)\n\n### D. Architectural Misplacements\nIdentify logic that SHOULD NOT be in Edge Functions for a mobile app, such as:\n- Heavy AI calls\n- External API orchestration\n- Long-running tasks\n- Streaming responses\n\nExplain why each case is problematic specifically for mobile users.\n\n---\n\n## 3. EDGE FUNCTION CLASSIFICATION\n\nFor each Edge Function, classify it into ONE of these roles:\n\n- Auth / Guard\n- Validation / Policy\n- Orchestration\n- Heavy compute\n- External API proxy\n- Background job trigger\n\nThen answer:\n- Is Edge the correct runtime for this role?\n- Should it be Edge, Server, or Worker?\n\n---\n\n## 4. MOBILE-SPECIFIC FLOW ANALYSIS\n\nTrace the following flows end-to-end:\n\n- App cold start → first Edge call\n- Session restore → Edge validation\n- User-triggered action → Edge request\n- Background → foreground resume\n\nFor each flow:\n- Identify blocking calls\n- Identify cold start stacking risks\n- Identify unnecessary synchronous waits\n\n---\n\n## 5. PERFORMANCE & LATENCY BUDGET\n\nEstimate (qualitatively, not numerically):\n\n- Cold start impact per Edge Function\n- Hot start behavior\n- Worst-case perceived latency on mobile\n\nUse categories:\n- Invisible\n- Noticeable\n- UX-breaking\n\n---\n\n## 6. FINDINGS FORMAT (MANDATORY)\n\nOutput your findings in the following structure:\n\n### 🔴 Critical Issues\nIssues that directly harm mobile UX.\n\n### 🟠 Moderate Risks\nIssues that scale poorly or affect retention.\n\n### 🟢 Acceptable / Well-Designed Areas\nGood architectural decisions worth keeping.\n\n---\n\n## 7. RECOMMENDATIONS (STRICT RULES)\n\n- Recommendations must be specific to this codebase\n- Each recommendation must include:\n  - What to change\n  - Why (mobile + edge reasoning)\n  - Expected impact (UX, latency, reliability)\n\nDO NOT:\n- Rewrite code\n- Introduce new frameworks\n- Over-optimize prematurely\n\n---\n\n## 8. FINAL VERDICT\n\nAnswer explicitly:\n- Is this architecture mobile-appropriate?\n- Is Edge overused, underused, or correctly used?\n- What is the single highest-impact improvement?\n\n---\n\n## IMPORTANT RULES\n\n- Be critical and opinionated\n- Assume this app aims for production-quality UX\n- Treat cold start latency as a FIRST-CLASS problem\n- Prioritize mobile perception over backend elegance\n",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Chẩn Đoán Khởi Động Nguội Edge Function & Hiệu Năng Di Động Expo + Supabase",
+    "vi_prompt": "Đóng vai là Kỹ sư Hiệu năng Ứng dụng Di động Cấp cao kiêm Kiến trúc sư Supabase Edge Functions (Senior Mobile Performance Engineer & Supabase Edge Functions Architect).\n\nNhiệm vụ của bạn là thực hiện phân tích chuyên sâu chuẩn production đối với codebase này, tập trung nghiêm ngặt vào:\n\n- Hành vi của ứng dụng di động Expo (React Native)\n- Cách sử dụng và gọi Supabase Edge Functions\n- Độ trễ khởi động nguội (Cold start latency)\n- Hiệu năng cảm nhận của người dùng di động (Mobile perceived performance)\n- Các điểm thiếu hiệu quả về mạng và runtime đặc thù trên môi trường di động\n\nĐây KHÔNG PHẢI là tác vụ refactor (viết lại mã).\nĐây là tác vụ PHÂN TÍCH + CHẨN ĐOÁN (ANALYSIS + DIAGNOSTIC).\nKhông viết code trừ khi được yêu cầu rõ ràng.\nKhông đưa ra các lời khuyên chung chung — mọi kết luận phải bắt nguồn từ chính CODEBASE NÀY.\n\n---\n\n## 1. BỐI CẢNH & GIẢ ĐỊNH\n\nGiả định rằng:\n- Ứng dụng được xây dựng bằng Expo (managed hoặc bare workflow)\n- Nhắm tới nền tảng iOS và Android\n- Sử dụng Supabase Edge Functions cho logic backend\n- Người dùng có thể kết nối mạng di động chập chờn hoặc tốc độ thấp\n- Hiện tượng cộng dồn khởi động nguội: Cold start ứng dụng + Cold start của Edge Function có thể chồng chéo lên nhau\n\nEdge Functions chạy trên nền tảng Deno và mang tính serverless.\n\n---\n\n## 2. MỤC TIÊU PHÂN TÍCH\n\nBạn phải xác định và lập tài liệu về:\n\n### A. Rủi Ro Khởi Động Nguội Của Edge Function\n- Những Edge Function nào có nguy cơ bị cold start cao nhất\n- Nguyên nhân tại sao (kích thước bundle, thư viện import, hành vi runtime)\n- Các hàm này có bị gọi trong các thời điểm UX quan trọng không (khởi động app, khôi phục session, chuyển màn hình)\n\n### B. Tác Động Tới Trải Nghiệm Người Dùng (Mobile UX Impact)\n- Vị trí nào mà hiện tượng cold start gây khó chịu trực tiếp cho mắt người dùng\n- Những màn hình hoặc luồng nào đang chặn hiển thị giao diện (block UI) để đợi Edge phản hồi\n- Ứng dụng có áp dụng UI lạc quan (optimistic UI) hoặc xử lý ngầm (background execution) hay không\n\n### C. Trọng Lượng Thư Viện Import & Runtime\nĐối với từng Edge Function:\n- Các thư viện được nạp vào\n- Thư viện nạp theo kiểu eager (nạp ngay) hay lazy (khi cần mới nạp)\n- Các side-effect ở phạm vi toàn cục (global-scope)\n- Chi phí cold start ước tính (Thấp / Trung bình / Cao)\n\n### D. Đặt Sai Vị Trí Kiến Trúc (Architectural Misplacements)\nChỉ ra những logic KHÔNG NÊN đặt trong Edge Functions của một ứng dụng di động, ví dụ như:\n- Các lệnh gọi AI nặng\n- Điều phối nhiều API ngoài phức tạp\n- Các tác vụ chạy tốn thời gian (long-running tasks)\n- Truyền dữ liệu dạng luồng (streaming responses)\n\nGiải thích rõ vì sao từng trường hợp trên lại gây vấn đề đặc biệt nghiêm trọng cho người dùng di động.\n\n---\n\n## 3. PHÂN LOẠI EDGE FUNCTION\n\nVới mỗi Edge Function, phân loại nó vào ĐÚNG MỘT vai trò sau:\n\n- Auth / Guard (Xác thực / Bảo vệ)\n- Validation / Policy (Kiểm tra dữ liệu / Chính sách)\n- Orchestration (Điều phối tác vụ)\n- Heavy compute (Tính toán nặng)\n- External API proxy (Cầu nối API ngoài)\n- Background job trigger (Kích hoạt tác vụ ngầm)\n\nSau đó trả lời:\n- Edge runtime có phải là môi trường chuẩn xác cho vai trò này không?\n- Logic này nên thuộc về Edge, Server truyền thống, hay Worker?\n\n---\n\n## 4. PHÂN TÍCH LUỒNG ĐẶC THÙ DI ĐỘNG\n\nTruy vết toàn diện (end-to-end) các luồng sau:\n\n- App khởi động nguội → Lệnh gọi Edge đầu tiên\n- Khôi phục phiên đăng nhập (Session restore) → Xác thực tại Edge\n- Hành động do người dùng kích hoạt → Yêu cầu gửi tới Edge\n- Ứng dụng từ chạy ngầm (Background) quay lại màn hình chính (Foreground)\n\nVới mỗi luồng:\n- Xác định các lệnh gọi chặn giao diện (blocking calls)\n- Xác định rủi ro cộng dồn độ trễ cold start\n- Xác định các khoảng chờ đồng bộ (synchronous waits) không cần thiết\n\n---\n\n## 5. ĐÁNH GIÁ NGÂN SÁCH HIỆU NĂNG & ĐỘ TRỄ\n\nĐánh giá định tính (không cần con số đo đạc tuyệt đối):\n\n- Tác động khởi động nguội trên từng Edge Function\n- Hành vi khi hàm đã nóng (Hot start)\n- Độ trễ cảm nhận tồi tệ nhất (Worst-case perceived latency) trên thiết bị di động\n\nSử dụng các cấp độ:\n- Invisible (Không nhận thấy)\n- Noticeable (Nhận thấy rõ rệt)\n- UX-breaking (Gây hỏng trải nghiệm người dùng)\n\n---\n\n## 6. ĐỊNH DẠNG KẾT QUẢ BẮT BUỘC\n\nTrình bày kết quả theo đúng cấu trúc sau:\n\n### 🔴 Vấn Đề Nghiêm Trọng (Critical Issues)\nCác vấn đề gây tổn hại trực tiếp đến UX trên di động.\n\n### 🟠 Rủi Ro Trung Bình (Moderate Risks)\nCác điểm nghẽn khó mở rộng quy mô hoặc làm giảm tỷ lệ giữ chân người dùng.\n\n### 🟢 Điểm Thiết Kế Hợp Lý (Acceptable / Well-Designed Areas)\nCác quyết định kiến trúc tốt đáng được duy trì.\n\n---\n\n## 7. KHUYẾN NGHỊ (QUY TẮC NGHIÊM NGẶT)\n\n- Các khuyến nghị phải gắn liền với codebase cụ thể này\n- Mỗi khuyến nghị bắt buộc nêu rõ:\n  - Cần thay đổi điều gì\n  - Lý do tại sao (lập luận chuyên sâu về Mobile + Edge)\n  - Tác động dự kiến (UX, độ trễ, độ ổn định)\n\nTUYỆT ĐỐI KHÔNG:\n- Tự tiện viết lại mã nguồn\n- Đưa thêm các framework mới không cần thiết\n- Tối ưu hóa vi mô sớm một cách hấp tấp\n\n---\n\n## 8. PHÁN QUYẾT CUỐI CÙNG\n\nTrả lời dứt khoát:\n- Kiến trúc hiện tại có phù hợp với nền tảng di động không?\n- Edge đang bị lạm dụng, dùng thiếu, hay dùng đúng chỗ?\n- Cải tiến đơn lẻ nào sẽ mang lại tác động lớn nhất cho toàn hệ thống?\n\n---\n\n## QUY TẮC QUAN TRỌNG\n\n- Đưa ra nhận xét phản biện sắc bén và dứt khoát\n- Giả định mục tiêu của ứng dụng là đạt chuẩn trải nghiệm thương mại (production-grade UX)\n- Coi độ trễ khởi động nguội là vấn đề ưu tiên hàng đầu (First-Class Problem)\n- Luôn ưu tiên cảm nhận của người dùng di động hơn là sự thanh lịch thuần túy của mã nguồn backend",
+    "translation_status": "translated",
+    "source_category": "Mobile Development",
+    "source_tags": [
+      "Mobile Development"
+    ],
+    "category": "Lập trình & Phát triển Phần mềm",
+    "subcategory": "Hiệu năng Di động & Tối ưu Hệ thống",
+    "tags": [
+      "expo",
+      "supabase",
+      "edge-functions",
+      "performance-analysis",
+      "cold-start"
+    ],
+    "search_keywords_vi": [
+      "phân tích cold start supabase edge function",
+      "tối ưu hiệu năng react native expo",
+      "chẩn đoán độ trễ edge runtime",
+      "kiểm thử hiệu năng ứng dụng di động",
+      "kiến trúc backend serverless cho mobile"
+    ],
+    "use_case": "Phân tích, chẩn đoán toàn diện độ trễ khởi động nguội và tối ưu trải nghiệm người dùng di động cho app Expo kết nối Supabase Edge Functions.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "ted2xmen",
+      "name": "Tugrul Erdem",
+      "avatar": "https://avatars.githubusercontent.com/u/20682437?v=4",
+      "identifier": "Ted2xmen",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/expo-supabase-edge-function-cold-start-mobile-performance-analysis",
+    "created_at": "2025-12-25T23:14:05.939Z"
+  },
+  {
+    "id": "cmjlylkev0001l504eqgp3eii",
+    "slug": "protocol-2084-the-alleyway-hack",
+    "original_title": "Protocol 2084: The Alleyway Hack",
+    "original_prompt": "{\n  \"prompt\": \"You will perform an image edit transforming the male subject into a fugitive netrunner in a gritty, high-tech future. The result must be an Ultra-Photorealistic, Movie-Quality image resembling a frame from an IMAX blockbuster. The scene is set in a rain-slicked neon alleyway where the subject is hiding. Ensure the image is highly detailed, utilizing cinematic lighting and realistic physics, shot on Arri Alexa with a shallow depth of field to isolate the subject from the chaotic background.\",\n  \"details\": {\n    \"year\": \"${year:2084}\",\n    \"genre\": \"Cinematic Photorealism\",\n    \"location\": \"A narrow, debris-strewn alleyway in a vertically built cyberpunk mega-city. The ground is wet asphalt reflecting the chaotic glow of neon kanji signs from skyscrapers above.\",\n    \"lighting\": [\n      \"Volumetric neon blue and magenta backlighting\",\n      \"Soft cool fill light on face\",\n      \"High-contrast shadows\",\n      \"Specular highlights on wet surfaces\"\n    ],\n    \"camera_angle\": \"Eye-level medium shot with shallow depth of field (bokeh background) to focus on the subject's intense expression.\",\n    \"emotion\": [\n      \"Paranoid\",\n      \"Focused\",\n      \"Urgent\"\n    ],\n    \"color_palette\": [\n      \"Electric Cyan\",\n      \"Neon Pink\",\n      \"Deep Shadow Black\",\n      \"Rain Silver\",\n      \"Cold Blue\"\n    ],\n    \"atmosphere\": [\n      \"Dystopian\",\n      \"Claustrophobic\",\n      \"Wet\",\n      \"Gritty\",\n      \"High-Tech Low-Life\"\n    ],\n    \"environmental_elements\": \"Falling rain droplets frozen in time, swirling steam rising from vents, flickering holographic advertisements reflecting in muddy puddles.\",\n    \"subject1\": {\n      \"costume\": \"A heavily textured, waterproof black tech-wear windbreaker with illuminated geometric patterns, fingerless tactical gloves, and a metallic neural interface port visible on the temple.\",\n      \"subject_expression\": \"Intense concentration mixed with anxiety, sweat and rain dripping down the face.\",\n      \"subject_action\": \"Rapidly typing on a floating holographic keyboard projected from a wrist-mounted cyberdeck while glancing over his shoulder.\"\n    },\n    \"negative_prompt\": {\n      \"exclude_visuals\": [\n        \"daylight\",\n        \"sunshine\",\n        \"blue sky\",\n        \"clean surfaces\",\n        \"dryness\",\n        \"warm lighting\"\n      ],\n      \"exclude_styles\": [\n        \"cartoon\",\n        \"anime\",\n        \"3D render\",\n        \"painting\",\n        \"low resolution\",\n        \"blurry\",\n        \"sketch\"\n      ],\n      \"exclude_colors\": [\n        \"warm sepia\",\n        \"pastels\",\n        \"bright white\",\n        \"beige\"\n      ],\n      \"exclude_objects\": [\n        \"cars\",\n        \"trees\",\n        \"pets\",\n        \"flowers\"\n      ]\n    }\n  }\n}",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Giao Thức 2084: Hacker Netrunner Đào Tẩu Trong Con Hẻm Cyberpunk",
+    "vi_prompt": "{\n  \"prompt\": \"Bạn sẽ thực hiện chỉnh sửa hình ảnh để biến nhân vật nam chính thành một hacker netrunner đào tẩu trong một tương lai công nghệ cao u tối, gai góc. Kết quả phải là hình ảnh siêu thực (Ultra-Photorealistic), chuẩn điện ảnh (Movie-Quality) tựa như một khung hình trích từ phim bom tấn IMAX. Bối cảnh diễn ra trong một con hẻm hẹp ướt sũng ánh đèn neon, nơi nhân vật đang lẩn trốn. Đảm bảo hình ảnh cực kỳ chi tiết, vận dụng ánh sáng điện ảnh và vật lý ánh sáng chân thực, quay bằng máy quay Arri Alexa với độ sâu trường ảnh nông (shallow depth of field) nhằm tách biệt nhân vật nổi bật khỏi hậu cảnh hỗn loạn.\",\n  \"details\": {\n    \"year\": \"${year:2084}\",\n    \"genre\": \"Cinematic Photorealism (Ảnh siêu thực điện ảnh)\",\n    \"location\": \"Một con hẻm hẹp ngập rác trong một siêu đô thị cyberpunk phát triển theo phương thẳng đứng. Nền đường nhựa ướt sũng phản chiếu luồng sáng hỗn loạn từ các biển hiệu kanji neon từ các tòa nhà chọc trời phía trên.\",\n    \"lighting\": [\n      \"Ánh sáng ngược khối (volumetric backlighting) màu xanh neon và đỏ tươi (magenta)\",\n      \"Ánh sáng phụ (fill light) dịu mát chiếu lên khuôn mặt\",\n      \"Đổ bóng tương phản cao\",\n      \"Điểm sáng phản chiếu (specular highlights) trên các bề mặt ướt nước\"\n    ],\n    \"camera_angle\": \"Cảnh trung (medium shot) ngang tầm mắt với độ sâu trường ảnh nông (hậu cảnh xóa phông bokeh) để làm nổi bật biểu cảm căng thẳng của nhân vật.\",\n    \"emotion\": [\n      \"Hoang tưởng lo âu\",\n      \"Tập trung cao độ\",\n      \"Khẩn cấp cấp bách\"\n    ],\n    \"color_palette\": [\n      \"Xanh lơ điện quang (Electric Cyan)\",\n      \"Hồng neon\",\n      \"Đen bóng đổ sâu\",\n      \"Bạc ánh mưa\",\n      \"Xanh lạnh\"\n    ],\n    \"atmosphere\": [\n      \"Phản địa đàng (Dystopian)\",\n      \"Ngột ngạt nghẹt thở\",\n      \"Ẩm ướt\",\n      \"Gai góc trần trụi\",\n      \"High-Tech Low-Life (Công nghệ cao - Đời sống cùng cực)\"\n    ],\n    \"environmental_elements\": \"Những hạt mưa rơi đóng băng khoảnh khắc trong không gian, hơi nước xoáy bốc lên từ các lỗ thông hơi, các biển quảng cáo 3D holographic nhấp nháy phản chiếu trên vũng nước đọng.\",\n    \"subject1\": {\n      \"costume\": \"Áo khoác gió tech-wear màu đen chống nước có kết cấu bề mặt dày, họa tiết hình học phát sáng, găng tay chiến thuật hở ngón, cổng giao tiếp thần kinh kim loại (neural interface port) lộ rõ bên thái dương.\",\n      \"subject_expression\": \"Sự tập trung cao độ pha lẫn hoảng sợ, mồ hôi và nước mưa nhỏ giọt trên gò má.\",\n      \"subject_action\": \"Các ngón tay gõ thoăn thoắt trên bàn phím holographic ảo lơ lửng phóng chiếu từ thiết bị cyberdeck đeo ở cổ tay, trong khi ánh mắt liếc cảnh giác qua bờ vai.\"\n    },\n    \"negative_prompt\": {\n      \"exclude_visuals\": [\n        \"ánh sáng ban ngày\",\n        \"nắng gắt\",\n        \"bầu trời xanh\",\n        \"bề mặt sạch sẽ\",\n        \"khô ráo\",\n        \"ánh sáng ấm áp\"\n      ],\n      \"exclude_styles\": [\n        \"hoạt hình (cartoon)\",\n        \"anime\",\n        \"kỹ xảo 3D render thô\",\n        \"tranh vẽ\",\n        \"độ phân giải thấp\",\n        \"mờ nhòe\",\n        \"bản phác thảo\"\n      ],\n      \"exclude_colors\": [\n        \"nâu sepia ấm\",\n        \"màu pastel dịu\",\n        \"trắng tinh khôi\",\n        \"màu be\"\n      ],\n      \"exclude_objects\": [\n        \"ô tô hiện đại\",\n        \"cây xanh\",\n        \"thú cưng\",\n        \"hoa\"\n      ]\n    }\n  }\n}",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Nano Banana"
+    ],
+    "category": "Sáng tạo Hình ảnh & Nghệ thuật Số",
+    "subcategory": "Cyberpunk & Khoa học Viễn tưởng",
+    "tags": [
+      "cyberpunk",
+      "image-prompt",
+      "netrunner",
+      "photorealistic",
+      "cinematic-lighting"
+    ],
+    "search_keywords_vi": [
+      "prompt ảnh cyberpunk netrunner",
+      "tạo ảnh siêu thực hacker đào tẩu",
+      "cinematic photorealism hẻm neon",
+      "prompt hình ảnh phim bom tấn",
+      "nano banana tạo ảnh điện ảnh"
+    ],
+    "use_case": "Tạo prompt chi tiết cho mô hình AI tạo ảnh theo phong cách điện ảnh viễn tưởng cyberpunk với ánh sáng và bố cục chuẩn IMAX.",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "ersinkoc",
+      "name": "Ersin KOÇ",
+      "avatar": "https://avatars.githubusercontent.com/u/408479?v=4",
+      "identifier": "ersinkoc",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/protocol-2084-the-alleyway-hack",
+    "created_at": "2025-12-25T21:32:57.367Z"
+  },
+  {
+    "id": "cmjlyfm6d000hjv04prhy8hsu",
+    "slug": "create-python-dev-container",
+    "original_title": "Create Python Dev Container",
+    "original_prompt": "You are a DevOps expert setting up a Python development environment using Docker and VS Code Remote Containers.\n\nYour task is to provide and run Docker commands for a lightweight Python development container based on the official python latest slim-bookworm image.\n\nKey requirements:\n- Use interactive mode with a bash shell that does not exit immediately.\n- Override the default command to keep the container running indefinitely (use sleep infinity or similar) do not remove the container after running.\n- Name it py-dev-container\n- Mount the current working directory (.) as a volume to /workspace inside the container (read-write).\n- Run the container as a non-root user named 'vscode' with UID 1000 for seamless compatibility with VS Code Remote - Containers extension.\n- Install essential development tools inside the container if needed (git, curl, build-essential, etc.), but only via runtime commands if necessary.\n- Do not create any files on the host or inside the container beyond what's required for running.\n- Make the container suitable for attaching VS Code remotely (Remote - Containers: Attach to Running Container) to enable further Python development, debugging, and extension usage.\n\nProvide:\n1. The docker pull command (if needed).\n2. The full docker run command with all flags.\n3. Instructions on how to attach VS Code to this running container for development.\n\nAssume the user is in the root folder of their Python project on the host.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Khởi Tạo Python Dev Container Tương Thích VS Code Remote",
+    "vi_prompt": "Bạn là một chuyên gia DevOps đang thiết lập môi trường phát triển Python sử dụng Docker và tiện ích mở rộng VS Code Remote Containers.\n\nNhiệm vụ của bạn là cung cấp và thực thi các câu lệnh Docker để dựng một container phát triển Python tinh gọn dựa trên image chính thức `python:latest-slim-bookworm` (hoặc slim-bookworm).\n\nYêu cầu mấu chốt:\n- Sử dụng chế độ tương tác (interactive mode) với shell bash không bị thoát ra ngay lập tức.\n- Ghi đè câu lệnh mặc định để giữ container chạy liên tục vô thời hạn (sử dụng `sleep infinity` hoặc tương đương) và không tự động xóa container sau khi chạy (`--rm`).\n- Đặt tên container là `py-dev-container`.\n- Gắn thư mục làm việc hiện tại trên máy host (`.`) vào đường dẫn `/workspace` bên trong container (chế độ đọc - ghi read-write).\n- Chạy container dưới quyền người dùng non-root có tên `vscode` với UID 1000 để tương thích mượt mà với extension VS Code Remote - Containers (Dev Containers).\n- Cài đặt các công cụ phát triển thiết yếu bên trong container nếu cần (git, curl, build-essential...), nhưng chỉ thực hiện qua lệnh runtime khi thực sự cần thiết.\n- Tuyệt đối không tạo thêm các tệp dư thừa trên máy host hoặc bên trong container ngoài những gì cần thiết để vận hành.\n- Đảm bảo container sẵn sàng cho việc gắn VS Code từ xa (`Remote - Containers: Attach to Running Container`) để phục vụ lập trình Python, gỡ lỗi (debug) và cài đặt extension.\n\nCung cấp đầy đủ:\n1. Lệnh `docker pull` tương ứng (nếu cần).\n2. Câu lệnh `docker run` hoàn chỉnh với đầy đủ các tham số/flags.\n3. Hướng dẫn từng bước kết nối VS Code vào container đang chạy này để bắt đầu phát triển mã nguồn.\n\nGiả định rằng người dùng đang đứng tại thư mục gốc của dự án Python trên máy host.",
+    "translation_status": "translated",
+    "source_category": "DevOps",
+    "source_tags": [
+      "Agent"
+    ],
+    "category": "Lập trình & Phát triển Phần mềm",
+    "subcategory": "DevOps & Môi trường Container",
+    "tags": [
+      "devops",
+      "docker",
+      "dev-container",
+      "vs-code",
+      "python-environment"
+    ],
+    "search_keywords_vi": [
+      "tạo python dev container",
+      "cấu hình docker dev containers",
+      "kết nối vs code với docker",
+      "môi trường python slim bookworm",
+      "hướng dẫn docker run vscode uid 1000"
+    ],
+    "use_case": "Thiết lập container Docker tinh gọn cho môi trường phát triển Python tương thích hoàn hảo với VS Code Remote Containers.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "bugyboo",
+      "name": "Yasser Harbi",
+      "avatar": "https://avatars.githubusercontent.com/u/1771202?v=4",
+      "identifier": "bugyboo",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/create-python-dev-container",
+    "created_at": "2025-12-25T21:28:19.717Z"
+  },
+  {
+    "id": "cmjlyagku000djv04fhu5rvjd",
+    "slug": "a-wrinkle-in-time",
+    "original_title": "A Wrinkle in Time",
+    "original_prompt": "{\n  \"prompt\": \"You will perform an image edit using the person from the provided photo as the main subject. Preserve his core likeness. Transform Subject 1 (male) into a Victorian time traveler who has just materialized in a dense, prehistoric jungle. The image must be Ultra-Photorealistic, Movie-Quality, and highly detailed. The scene captures the moment of arrival, shot on Arri Alexa with cinematic lighting and a shallow depth of field. He stands amidst towering ferns and ancient cycads, looking completely out of place in his formal 19th-century attire, contrasting the rugged, humid environment with his refined appearance.\",\n  \"details\": {\n    \"year\": \"1895 / 65 Million BC\",\n    \"genre\": \"Cinematic Photorealism\",\n    \"location\": \"A dense, steaming Cretaceous jungle floor filled with giant ferns, ancient conifers, and thick atmospheric fog.\",\n    \"lighting\": [\n      \"Volumetric god rays piercing through the canopy\",\n      \"Dappled sunlight\",\n      \"High dynamic range\"\n    ],\n    \"camera_angle\": \"Medium close-up at eye level, focusing on the subject with the background falling into soft bokeh.\",\n    \"emotion\": [\n      \"Disbelief\",\n      \"Awe\",\n      \"Scientific curiosity\",\n      \"Fear\"\n    ],\n    \"color_palette\": [\n      \"Deep emerald greens\",\n      \"Earthy mud browns\",\n      \"Burnished brass\",\n      \"Tweed grey\"\n    ],\n    \"atmosphere\": [\n      \"Humid\",\n      \"Primordial\",\n      \"Claustrophobic\",\n      \"Mysterious\"\n    ],\n    \"environmental_elements\": \"Floating pollen particles, massive prehistoric insects buzzing in the background, a large ominous silhouette of a dinosaur visible through the thick mist.\",\n    \"subject1\": {\n      \"costume\": \"A bespoke three-piece Victorian tweed suit, a slightly askew cravat, and intricate brass steampunk goggles pushed up onto his forehead.\",\n      \"subject_expression\": \"Wide-eyed shock mixed with fascination, mouth slightly open, sweat beading on his brow.\",\n      \"subject_action\": \"Clutching a glowing, smoking brass chronometer device in one hand while tentatively reaching out to touch a massive, alien-looking fern frond with the other.\"\n    },\n    \"negative_prompt\": {\n      \"exclude_visuals\": [\n        \"modern buildings\",\n        \"paved roads\",\n        \"cars\",\n        \"cell phones\",\n        \"contemporary fashion\",\n        \"cleanliness\"\n      ],\n      \"exclude_styles\": [\n        \"cartoon\",\n        \"3D render\",\n        \"illustration\",\n        \"painting\",\n        \"low resolution\",\n        \"blur\",\n        \"sketch\"\n      ],\n      \"exclude_colors\": [\n        \"neon\",\n        \"pastel pinks\",\n        \"artificial brights\"\n      ],\n      \"exclude_objects\": [\n        \"spaceships\",\n        \"aliens\",\n        \"modern weapons\"\n      ]\n    }\n  }\n}",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Nếp Gấp Thời Gian: Nhà Du Hành Thời Gian Thời Victoria Giữa Rừng Tiền Sử",
+    "vi_prompt": "{\n  \"prompt\": \"Bạn sẽ thực hiện chỉnh sửa hình ảnh bằng cách sử dụng người trong bức ảnh được cung cấp làm chủ thể chính. Giữ nguyên những đường nét nhận diện cốt lõi của nhân vật. Biến đổi Chủ thể 1 (nam giới) thành một nhà du hành thời gian thời Victoria vừa mới dịch chuyển tức thời xuất hiện giữa một khu rừng nhiệt đới tiền sử rậm rạp. Bức ảnh phải đạt chuẩn siêu thực (Ultra-Photorealistic), chất lượng điện ảnh (Movie-Quality) và cực kỳ sắc nét. Khung cảnh ghi lại đúng khoảnh khắc vừa đáp xuống, quay bằng máy Arri Alexa với ánh sáng điện ảnh và độ sâu trường ảnh nông. Nhân vật đứng giữa những cây dương xỉ khổng lồ và loài tuế cổ đại, tạo nên sự tương phản hoàn toàn lệch điệu trong bộ âu phục trang trọng thế kỷ 19 đối lập với môi trường nguyên sinh ẩm ướt, hoang sơ.\",\n  \"details\": {\n    \"year\": \"1895 / 65 triệu năm trước Công Nguyên (Kỷ Phấn trắng)\",\n    \"genre\": \"Cinematic Photorealism (Ảnh siêu thực điện ảnh)\",\n    \"location\": \"Tầng dưới tán của một khu rừng kỷ Phấn trắng dày đặc, hơi nước bốc lên nghi ngút, tràn ngập dương xỉ khổng lồ, lá kim cổ đại và làn sương mù dày đặc huyền bí.\",\n    \"lighting\": [\n      \"Các luồng tia nắng thần thánh (volumetric god rays) xuyên qua tán lá rậm rạp\",\n      \"Ánh nắng loang lổ xen kẽ bóng râm\",\n      \"Dải tương phản động cao (HDR)\"\n    ],\n    \"camera_angle\": \"Cận vừa (medium close-up) ngang tầm mắt, lấy nét sắc sảo vào chủ thể với hậu cảnh mờ nhòe bokeh mềm mại.\",\n    \"emotion\": [\n      \"Bàng hoàng kinh ngạc\",\n      \"Kính sợ\",\n      \"Tò mò khoa học\",\n      \"Sợ hãi thảng thốt\"\n    ],\n    \"color_palette\": [\n      \"Xanh ngọc lục bảo thẫm\",\n      \"Nâu đất bùn nguyên sinh\",\n      \"Đồng thau sáng bóng\",\n      \"Xám vải tweed\"\n    ],\n    \"atmosphere\": [\n      \"Ẩm ướt\",\n      \"Nguyên thủy\",\n      \"Ngột ngạt\",\n      \"Huyền bí bí ẩn\"\n    ],\n    \"environmental_elements\": \"Các hạt phấn hoa lơ lửng trong không khí, côn trùng tiền sử khổng lồ bay vo ve phía xa, bóng dáng một con khủng long to lớn ẩn hiện lờ mờ qua màn sương dày đặc.\",\n    \"subject1\": {\n      \"costume\": \"Bộ vest tweed ba mảnh phong cách Victoria may đo chỉn chu, chiếc cà vạt cravat hơi xộc xệch, và cặp kính bảo hộ steampunk bằng đồng thau tinh xảo được đẩy ngược lên trán.\",\n      \"subject_expression\": \"Mắt mở to bàng hoàng pha lẫn say mê, miệng hơi há hốc, những giọt mồ hôi lấm tấm đọng trên trán.\",\n      \"subject_action\": \"Một tay nắm chặt thiết bị đồng hồ định thời (chronometer) bằng đồng đang phát sáng và bốc khói nhẹ, tay kia dè dặt vươn ra chạm vào một tàu lá dương xỉ kỳ dị khổng lồ.\"\n    },\n    \"negative_prompt\": {\n      \"exclude_visuals\": [\n        \"tòa nhà hiện đại\",\n        \"đường nhựa\",\n        \"ô tô\",\n        \"điện thoại di động\",\n        \"thời trang đương đại\",\n        \"sạch sẽ tươm tất\"\n      ],\n      \"exclude_styles\": [\n        \"hoạt hình (cartoon)\",\n        \"anime\",\n        \"kỹ xảo 3D render thô\",\n        \"tranh minh họa\",\n        \"tranh sơn dầu\",\n        \"độ phân giải thấp\",\n        \"mờ nhòe\",\n        \"bản phác thảo\"\n      ],\n      \"exclude_colors\": [\n        \"màu neon lòe loẹt\",\n        \"hồng phấn pastel\",\n        \"màu nhân tạo rực rỡ quá mức\"\n      ],\n      \"exclude_objects\": [\n        \"tàu vũ trụ\",\n        \"người ngoài hành tinh\",\n        \"vũ khí hiện đại\"\n      ]\n    }\n  }\n}",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Nano Banana"
+    ],
+    "category": "Sáng tạo Hình ảnh & Nghệ thuật Số",
+    "subcategory": "Khoa học Viễn tưởng & Du hành Thời gian",
+    "tags": [
+      "time-travel",
+      "victorian",
+      "prehistoric-jungle",
+      "photorealistic",
+      "cinematic-image"
+    ],
+    "search_keywords_vi": [
+      "prompt ảnh du hành thời gian",
+      "nhà thám hiểm victoria thời tiền sử",
+      "nếp gấp thời gian prompt ảnh",
+      "cinematic photorealism khủng long",
+      "nano banana tạo ảnh viễn tưởng"
+    ],
+    "use_case": "Tạo prompt chi tiết cho công cụ tạo ảnh AI khắc họa sự xuất hiện của nhà du hành thời gian thế kỷ 19 giữa rừng rậm kỷ tiền sử.",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "ersinkoc",
+      "name": "Ersin KOÇ",
+      "avatar": "https://avatars.githubusercontent.com/u/408479?v=4",
+      "identifier": "ersinkoc",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/a-wrinkle-in-time",
+    "created_at": "2025-12-25T21:24:19.182Z"
+  },
+  {
+    "id": "cmjlmun85000fl704d8paml8c",
+    "slug": "saudi-arabia",
+    "original_title": "السعوديه ",
+    "original_prompt": "# My Skill\n\nDescribe what this skill does and how the agent should use it.\n\n## Instructions\n${${variable}}\n- Step 1: ...قم بعمل صوره للامام محمد بن سعود ال سعود يبدو عليها الفخر والاعتزاز \n- Step 2: ...قم بوضع العلم والتاريخ ومعالم من السعوديه ",
+    "language_original": "ar",
+    "language_detection": "rule_based",
+    "vi_title": "Tạo Ảnh Chân Dung Lịch Sử Saudi Arabia: Imam Muhammad bin Saud",
+    "vi_prompt": "# Kỹ Năng Của Tôi (My Skill)\n\nMô tả chức năng của kỹ năng này và cách tác nhân AI sử dụng nó.\n\n## Hướng Dẫn Thực Hiện\n${${variable}}\n- Bước 1: ...Hãy tạo một bức ảnh chân dung Imam Muhammad bin Saud Al Saud với thần thái toát lên niềm tự hào, uy nghi và kiêu hãnh dân tộc.\n- Bước 2: ...Bổ sung thêm quốc kỳ, các mốc niên đại lịch sử và các địa danh biểu tượng của Vương quốc Ả Rập Xê Út (Saudi Arabia).",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Sáng tạo Hình ảnh & Nghệ thuật Số",
+    "subcategory": "Lịch sử & Biểu tượng Quốc gia",
+    "tags": [
+      "saudi-arabia",
+      "historical-portrait",
+      "image-prompt",
+      "national-landmarks",
+      "arabic-history"
+    ],
+    "search_keywords_vi": [
+      "tạo ảnh lịch sử saudi arabia",
+      "chân dung imam muhammad bin saud",
+      "prompt ảnh vương quốc ả rập xê út",
+      "biểu tượng quốc gia saudi",
+      "prompt hình ảnh văn hóa ả rập"
+    ],
+    "use_case": "Tạo prompt cho AI vẽ chân dung nhân vật lịch sử và các biểu tượng văn hóa, địa danh tiêu biểu của Saudi Arabia.",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "ok",
+    "author": {
+      "username": "s13321",
+      "name": "Fahad ALwadai",
+      "avatar": "https://avatars.githubusercontent.com/u/193636594?v=4",
+      "identifier": "S13321",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/saudi-arabia",
+    "created_at": "2025-12-25T16:04:05.526Z"
+  },
+  {
+    "id": "cmjlm5jem0005l704ytxbd9mp",
+    "slug": "vintage-invention-patent",
+    "original_title": "Vintage Invention Patent",
+    "original_prompt": "A vintage patent document for ${invention}, styled after late 1800s United States Patent Office filings. The page features precise technical drawings with numbered callouts (Fig. 1, Fig. 2, Fig. 3) showing front, side, and exploded views. Handwritten annotations in fountain-pen ink describe mechanisms. The paper is aged ivory with foxing stains and soft fold creases. An official embossed seal and red wax stamp appear in the corner. A hand-signed inventor's name and date appear at the bottom. The entire image feels like a recovered archival document—authoritative, historic, and slightly mysterious.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Bản Vẽ Bằng Sáng Chế Phát Minh Cổ Điển Thế Kỷ 19",
+    "vi_prompt": "Tạo hình ảnh một tài liệu bằng sáng chế cổ điển cho sáng chế ${invention}, mang phong cách hồ sơ lưu trữ của Cục Sáng chế và Nhãn hiệu Hoa Kỳ (USPTO) vào cuối những năm 1800. Trang tài liệu thể hiện các bản vẽ kỹ thuật cơ khí chính xác với các chú thích đánh số (Hình 1, Hình 2, Hình 3) hiển thị góc nhìn chính diện, góc nhìn bên hông và bản vẽ bóc tách từng chi tiết (exploded view). Các dòng ghi chú viết tay bằng nét mực bút máy mô tả chi tiết cơ chế hoạt động. Mặt giấy mang màu ngà ngả vàng cổ kính với các vết ố thời gian (foxing stains) và nếp gấp giấy mềm mại. Một con dấu dập nổi chính thức cùng dấu niêm phong sáp đỏ xuất hiện ở góc trang. Ở phía dưới cùng là chữ ký tay của nhà phát minh kèm ngày tháng lưu trữ. Toàn bộ hình ảnh mang cảm giác như một tài liệu lưu trữ quý giá vừa được phục chế—trang nghiêm, chuẩn mực lịch sử và phảng phất nét huyền bí.",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Art",
+      "ChatGPT",
+      "Nano Banana"
+    ],
+    "category": "Sáng tạo Hình ảnh & Nghệ thuật Số",
+    "subcategory": "Bản vẽ Kỹ thuật & Phong cách Cổ điển",
+    "tags": [
+      "vintage-patent",
+      "technical-drawing",
+      "image-prompt",
+      "antique-document",
+      "steampunk"
+    ],
+    "search_keywords_vi": [
+      "prompt ảnh bằng sáng chế cổ điển",
+      "bản vẽ kỹ thuật phát minh thế kỷ 19",
+      "tài liệu patent cổ điển mỹ",
+      "prompt tài liệu lịch sử lưu trữ",
+      "vẽ phong cách giấy cũ mực bút máy"
+    ],
+    "use_case": "Tạo prompt cho AI vẽ tài liệu bằng sáng chế cơ khí phát minh mang phong cách cổ điển cuối thế kỷ 19.",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "magejosh",
+      "name": "magejosh",
+      "avatar": "https://avatars.githubusercontent.com/u/76418140?v=4",
+      "identifier": "magejosh",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/vintage-invention-patent",
+    "created_at": "2025-12-25T15:44:34.174Z"
+  },
+  {
+    "id": "cmjlm1n690001l704i8ztolt8",
+    "slug": "one-click-design-mockup-creator",
+    "original_title": "One-Click Design Mockup Creator",
+    "original_prompt": "Act as a versatile Design Mockup Software. You are a tool that allows users to effortlessly find and create design mockups in diverse categories like ${category}, and formats such as vector and PNG. Your task is to provide:\n\n- A comprehensive search feature to discover niches in design.\n- Easy access to a variety of design templates and mockups.\n- One-click conversion capabilities to transform designs into vector or PNG formats.\n- User-friendly interface for browsing and selecting design categories.\n\nConstraints:\n- Ensure high-quality output in both vector and PNG formats.\n- Provide a seamless user experience with minimal steps required.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Phần Mềm Tạo Bản Mẫu Thiết Kế (Mockup) Một Chạm",
+    "vi_prompt": "Đóng vai là một Phần mềm Tạo Bản mẫu Thiết kế Đa năng (Design Mockup Software). Bạn là một công cụ thông minh cho phép người dùng dễ dàng tìm kiếm và tạo ra các bản mockup thiết kế theo nhiều danh mục phong phú như ${category}, hỗ trợ đa dạng định dạng như vector và PNG. Nhiệm vụ của bạn là cung cấp:\n\n- Tính năng tìm kiếm toàn diện giúp khám phá các thị trường ngách và phong cách thiết kế đặc thù.\n- Khả năng truy cập nhanh chóng vào kho mẫu thiết kế (templates) và bản dựng mockup đa dạng.\n- Khả năng chuyển đổi chỉ với 1 cú click chuột để xuất file thiết kế sang định dạng vector hoặc PNG sắc nét.\n- Giao diện người dùng trực quan, thân thiện để duyệt và lựa chọn các phân loại thiết kế.\n\nRàng buộc:\n- Đảm bảo chất lượng xuất file đạt chuẩn cao nhất ở cả hai định dạng vector và PNG.\n- Mang lại trải nghiệm người dùng liền mạch với số thao tác tối thiểu.",
+    "translation_status": "translated",
+    "source_category": "Creative",
+    "source_tags": [
+      "Automation",
+      "Content Creation"
+    ],
+    "category": "Thiết kế Đồ họa & UI/UX",
+    "subcategory": "Công cụ Tạo Mockup & Tự động hóa Thiết kế",
+    "tags": [
+      "design-mockup",
+      "vector-converter",
+      "png-export",
+      "design-automation",
+      "graphic-tools"
+    ],
+    "search_keywords_vi": [
+      "phần mềm tạo mockup thiết kế",
+      "tạo mockup một chạm",
+      "chuyển đổi vector và png",
+      "mẫu thiết kế đồ họa tự động",
+      "công cụ mockup trực quan"
+    ],
+    "use_case": "Mô phỏng phần mềm tạo mockup thiết kế tự động hỗ trợ tìm kiếm mẫu và xuất file định dạng vector, PNG nhanh chóng.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "ok",
+    "author": {
+      "username": "vynoredit",
+      "name": "Vynor",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIx_21uGASWapXBNKGgeGhyMYCG7LabBa7mhT45BNQx60AQP7E=s96-c",
+      "identifier": "vynoredit",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/one-click-design-mockup-creator",
+    "created_at": "2025-12-25T15:41:32.433Z"
+  },
+  {
+    "id": "cmjllplbk000cl7046mnllh80",
+    "slug": "personalized-technical-intelligence-briefing-for-edge-ai-in-defense",
+    "original_title": "Personalized Technical Intelligence Briefing for Edge AI in Defense",
+    "original_prompt": "{\n  \"opening\": \"${bibleVerse}\",\n  \"criticalIntelligence\": [\n    {\n      \"headline\": \"${headline1}\",\n      \"source\": \"${sourceLink1}\",\n      \"technicalSummary\": \"${technicalSummary1}\",\n      \"relevanceScore\": \"${relevanceScore1}\",\n      \"actionableInsight\": \"${actionableInsight1}\"\n    },\n    {\n      \"headline\": \"${headline2}\",\n      \"source\": \"${sourceLink2}\",\n      \"technicalSummary\": \"${technicalSummary2}\",\n      \"relevanceScore\": \"${relevanceScore2}\",\n      \"actionableInsight\": \"${actionableInsight2}\"\n    }\n    // Add up to 8 total items\n  ],\n  \"technicalDeepDive\": [\n    {\n      \"breakthroughItem\": \"${breakthrough1}\",\n      \"implementationDetails\": \"${implementationDetails1}\"\n    },\n    {\n      \"breakthroughItem\": \"${breakthrough2}\",\n      \"implementationDetails\": \"${implementationDetails2}\"\n    }\n    // Add up to 3 items\n  ],\n  \"priorityIntelligenceTargets\": {\n    \"primary\": [\n      \"False positive reduction methodologies\",\n      \"Edge AI optimization for resource-constrained hardware\",\n      \"Real-time inference benchmarks\"\n    ],\n    \"secondary\": [\n      \"Defense procurement announcements\",\n      \"SBIR/STTR opportunities\",\n      \"Counter-UAS technologies\"\n    ],\n    \"tertiary\": [\n      \"PyTorch/OpenCV updates\",\n      \"Rust embedded frameworks\",\n      \"Military robotics contracts\"\n    ]\n  },\n  \"sourcesToPrioritize\": [\n    \"arXiv (cs.CV, cs.RO, cs.LG)\",\n    \"Breaking Defense\",\n    \"The War Zone\",\n    \"NVIDIA Developer Blog\"\n  ],\n  \"exclusions\": [\n    \"Consumer tech unless directly applicable\",\n    \"Theoretical papers without implementation paths\",\n    \"Rehashed news\",\n    \"General AI hype without substance\"\n  ],\n  \"enhancedFeatures\": {\n    \"benchmarkComparisonTables\": true,\n    \"reproducibleResearchLinks\": true,\n    \"conferenceDeadlines\": true,\n    \"defenseContractAwards\": true,\n    \"weeklyTrendChart\": true\n  }\n}",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Bản Tin Tình Báo Kỹ Thuật Cá Nhân Hóa Về Edge AI Trong Quốc Phòng",
+    "vi_prompt": "{\n  \"opening\": \"${bibleVerse}\",\n  \"criticalIntelligence\": [\n    {\n      \"headline\": \"${headline1}\",\n      \"source\": \"${sourceLink1}\",\n      \"technicalSummary\": \"${technicalSummary1}\",\n      \"relevanceScore\": \"${relevanceScore1}\",\n      \"actionableInsight\": \"${actionableInsight1}\"\n    },\n    {\n      \"headline\": \"${headline2}\",\n      \"source\": \"${sourceLink2}\",\n      \"technicalSummary\": \"${technicalSummary2}\",\n      \"relevanceScore\": \"${relevanceScore2}\",\n      \"actionableInsight\": \"${actionableInsight2}\"\n    }\n    // Bổ sung tối đa 8 mục tổng cộng\n  ],\n  \"technicalDeepDive\": [\n    {\n      \"breakthroughItem\": \"${breakthrough1}\",\n      \"implementationDetails\": \"${implementationDetails1}\"\n    },\n    {\n      \"breakthroughItem\": \"${breakthrough2}\",\n      \"implementationDetails\": \"${implementationDetails2}\"\n    }\n    // Bổ sung tối đa 3 mục\n  ],\n  \"priorityIntelligenceTargets\": {\n    \"primary\": [\n      \"Phương pháp luận giảm tỷ lệ dương tính giả (False positive reduction methodologies)\",\n      \"Tối ưu hóa Edge AI cho phần cứng bị hạn chế tài nguyên phần cứng\",\n      \"Điểm chuẩn kiểm thử suy luận theo thời gian thực (Real-time inference benchmarks)\"\n    ],\n    \"secondary\": [\n      \"Các thông báo mua sắm và đấu thầu quốc phòng (Defense procurement announcements)\",\n      \"Cơ hội tài trợ SBIR/STTR\",\n      \"Công nghệ chống máy bay không người lái (Counter-UAS technologies)\"\n    ],\n    \"tertiary\": [\n      \"Các bản cập nhật PyTorch/OpenCV\",\n      \"Các framework nhúng viết bằng Rust\",\n      \"Các hợp đồng robot quân sự\"\n    ]\n  },\n  \"sourcesToPrioritize\": [\n    \"arXiv (cs.CV, cs.RO, cs.LG)\",\n    \"Breaking Defense\",\n    \"The War Zone\",\n    \"NVIDIA Developer Blog\"\n  ],\n  \"exclusions\": [\n    \"Công nghệ tiêu dùng trừ khi có thể áp dụng trực tiếp\",\n    \"Các bài báo khoa học lý thuyết thuần túy không có hướng dẫn triển khai thực tế\",\n    \"Tin tức xào lại\",\n    \"Hiện tượng thổi phồng AI nói chung thiếu thực chất\"\n  ],\n  \"enhancedFeatures\": {\n    \"benchmarkComparisonTables\": true,\n    \"reproducibleResearchLinks\": true,\n    \"conferenceDeadlines\": true,\n    \"defenseContractAwards\": true,\n    \"weeklyTrendChart\": true\n  }\n}",
+    "translation_status": "translated",
+    "source_category": "Data Science",
+    "source_tags": [
+      "AI Tools",
+      "Data Science",
+      "Machine Learning",
+      "NLP",
+      "Computer Vision"
+    ],
+    "category": "Trí tuệ Nhân tạo & Khoa học Dữ liệu",
+    "subcategory": "AI Biên (Edge AI) & Ứng dụng An ninh Quốc phòng",
+    "tags": [
+      "edge-ai",
+      "defense-tech",
+      "technical-intelligence",
+      "machine-learning",
+      "benchmark"
+    ],
+    "search_keywords_vi": [
+      "tình báo kỹ thuật edge ai",
+      "bản tin ai trong quốc phòng",
+      "tối ưu hóa edge ai phần cứng nhúng",
+      "benchmark suy luận thời gian thực",
+      "công nghệ quân sự counter uas"
+    ],
+    "use_case": "Định dạng cấu trúc bản tin tình báo công nghệ cá nhân hóa theo dõi những đột phá về Edge AI ứng dụng trong an ninh, quốc phòng.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "ezekielamitchell",
+      "name": "Ezekiel A. Mitchell",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJ7mrwKNneR5mK5eT2cRh5rYL9YeUx3Z3Cuo7hTRcO9DTuGbkmZNA=s96-c",
+      "identifier": "ezekielamitchell",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/personalized-technical-intelligence-briefing-for-edge-ai-in-defense",
+    "created_at": "2025-12-25T15:32:10.160Z"
+  }
+]

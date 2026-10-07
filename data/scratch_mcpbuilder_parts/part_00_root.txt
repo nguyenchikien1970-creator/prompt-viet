@@ -1,0 +1,236 @@
+---
+name: mcp-builder
+description: Hướng dẫn tạo các máy chủ MCP (Model Context Protocol) chất lượng cao cho phép các mô hình ngôn ngữ lớn (LLM) tương tác với các dịch vụ bên ngoài thông qua các công cụ được thiết kế chuẩn mực. Dùng khi xây dựng máy chủ MCP để tích hợp các API hoặc dịch vụ bên ngoài, cho dù bằng Python (FastMCP) hay Node/TypeScript (MCP SDK).
+license: Các điều khoản đầy đủ trong LICENSE.txt
+---
+
+# Hướng Dẫn Phát Triển Máy Chủ MCP (MCP Server Development Guide)
+
+## Tổng quan
+
+Tạo các máy chủ MCP (Model Context Protocol) cho phép các mô hình LLM tương tác với các dịch vụ bên ngoài thông qua các công cụ được thiết kế chuẩn xác. Chất lượng của một máy chủ MCP được đo lường bằng mức độ hỗ trợ LLM hoàn thành xuất sắc các tác vụ thực tế trong đời sống.
+
+---
+
+# Quy Trình Thực Hiện
+
+## 🚀 Quy Trình Cấp Cao (High-Level Workflow)
+
+Việc tạo một máy chủ MCP chất lượng cao bao gồm bốn giai đoạn chính:
+
+### Giai đoạn 1: Nghiên Cứu Sâu và Lập Kế Hoạch
+
+#### 1.1 Thấu hiểu Thiết kế MCP Hiện Đại
+
+**Độ bao phủ API so với Công cụ Quy trình (Workflow Tools):**
+Cân bằng giữa việc bao phủ toàn diện các điểm cuối API và việc tạo các công cụ quy trình chuyên biệt. Các công cụ quy trình có thể tiện lợi hơn cho các tác vụ cụ thể, trong khi độ bao phủ API toàn diện mang lại cho các agent sự linh hoạt để kết hợp các thao tác. Hiệu suất thay đổi tùy theo ứng dụng client — một số client hoạt động tốt hơn với việc thực thi mã kết hợp các công cụ cơ bản, trong khi những client khác lại tương thích tốt hơn với các quy trình cấp cao. Khi chưa chắc chắn, hãy ưu tiên bao phủ toàn diện API.
+
+**Đặt tên Công cụ và Khả năng Khám phá:**
+Tên công cụ rõ ràng, mang tính mô tả cao giúp các agent tìm thấy công cụ phù hợp một cách nhanh chóng. Sử dụng các tiền tố nhất quán (ví dụ: `github_create_issue`, `github_list_repos`) và cách đặt tên định hướng theo hành động.
+
+**Quản lý Ngữ cảnh:**
+Các agent hưởng lợi từ các mô tả công cụ ngắn gọn và khả năng lọc/phân trang kết quả. Hãy thiết kế các công cụ trả về dữ liệu tập trung, có liên quan. Một số client hỗ trợ thực thi mã giúp agent lọc và xử lý dữ liệu hiệu quả.
+
+**Thông báo Lỗi Có thể Hành động được:**
+Thông báo lỗi phải hướng dẫn agent đi đến giải pháp kèm theo các gợi ý cụ thể và các bước tiếp theo cần làm.
+
+#### 1.2 Nghiên cứu Tài liệu Đặc tả Giao thức MCP
+
+**Điều hướng Đặc tả MCP:**
+
+Bắt đầu với sitemap để tìm các trang liên quan: `https://modelcontextprotocol.io/sitemap.xml`
+
+Sau đó tải các trang cụ thể kèm hậu tố `.md` để lấy định dạng markdown (ví dụ: `https://modelcontextprotocol.io/specification/draft.md`).
+
+Các trang chính cần xem xét:
+- Tổng quan và kiến trúc đặc tả
+- Cơ chế vận chuyển (streamable HTTP, stdio)
+- Định nghĩa công cụ (tools), tài nguyên (resources) và câu lệnh (prompts)
+
+#### 1.3 Nghiên cứu Tài liệu Framework
+
+**Ngăn xếp công nghệ khuyến nghị:**
+- **Ngôn ngữ**: TypeScript (hỗ trợ SDK chất lượng cao và khả năng tương thích tốt trong nhiều môi trường thực thi như MCPB. Ngoài ra, các mô hình AI rất giỏi tạo mã TypeScript nhờ tính phổ biến, kiểu tĩnh và các công cụ linting mạnh mẽ)
+- **Vận chuyển (Transport)**: Streamable HTTP cho các máy chủ từ xa, sử dụng JSON phi trạng thái (dễ mở rộng quy mô và bảo trì hơn so với phiên có trạng thái và phản hồi dạng stream). Sử dụng stdio cho các máy chủ cục bộ.
+
+**Tải tài liệu framework:**
+
+- **Thực hành Tốt nhất MCP**: [📋 Xem Best Practices](./reference/mcp_best_practices.md) - Các nguyên tắc cốt lõi
+
+**Dành cho TypeScript (Khuyến nghị):**
+- **TypeScript SDK**: Tải từ `https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/README.md`
+- [⚡ Hướng dẫn TypeScript](./reference/node_mcp_server.md) - Các mẫu thiết kế và ví dụ TypeScript
+
+**Dành cho Python:**
+- **Python SDK**: Tải từ `https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md`
+- [🐍 Hướng dẫn Python](./reference/python_mcp_server.md) - Các mẫu thiết kế và ví dụ Python
+
+#### 1.4 Lập Kế Hoạch Triển Khai
+
+**Hiểu rõ API:**
+Xem lại tài liệu API của dịch vụ để xác định các điểm cuối quan trọng, yêu cầu xác thực và mô hình dữ liệu. Sử dụng tìm kiếm web khi cần thiết.
+
+**Lựa chọn Công cụ:**
+Ưu tiên bao phủ API toàn diện. Liệt kê các điểm cuối cần triển khai, bắt đầu với các thao tác phổ biến nhất.
+
+---
+
+### Giai đoạn 2: Triển Khai Thực Hiện
+
+#### 2.1 Thiết lập Cấu trúc Dự án
+
+Xem các hướng dẫn riêng theo từng ngôn ngữ để thiết lập dự án:
+- [⚡ Hướng dẫn TypeScript](./reference/node_mcp_server.md) - Cấu trúc dự án, package.json, tsconfig.json
+- [🐍 Hướng dẫn Python](./reference/python_mcp_server.md) - Tổ chức mô-đun, quản lý gói phụ thuộc
+
+#### 2.2 Triển khai Hạ tầng Cốt lõi
+
+Tạo các tiện ích dùng chung:
+- API client có tích hợp xác thực
+- Các hàm trợ giúp xử lý lỗi
+- Định dạng phản hồi (JSON/Markdown)
+- Hỗ trợ phân trang
+
+#### 2.3 Triển khai các Công cụ
+
+Đối với mỗi công cụ:
+
+**Lược đồ Đầu vào (Input Schema):**
+- Sử dụng Zod (TypeScript) hoặc Pydantic (Python)
+- Bao gồm các ràng buộc và mô tả rõ ràng
+- Thêm ví dụ mẫu trong phần mô tả trường dữ liệu
+
+**Lược đồ Đầu ra (Output Schema):**
+- Định nghĩa `outputSchema` khi có thể cho dữ liệu có cấu trúc
+- Sử dụng `structuredContent` trong phản hồi của công cụ (tính năng của TypeScript SDK)
+- Giúp các client hiểu và xử lý đầu ra của công cụ dễ dàng
+
+**Mô tả Công cụ:**
+- Tóm tắt ngắn gọn chức năng
+- Mô tả chi tiết từng tham số
+- Lược đồ kiểu dữ liệu trả về
+
+**Hiện thực mã lệnh:**
+- Sử dụng async/await cho các thao tác vào/ra (I/O)
+- Xử lý lỗi chuẩn xác với thông báo mang tính hành động
+- Hỗ trợ phân trang khi áp dụng
+- Trả về cả nội dung văn bản và dữ liệu có cấu trúc khi dùng các SDK hiện đại
+
+**Chú thích (Annotations):**
+- `readOnlyHint`: true/false
+- `destructiveHint`: true/false
+- `idempotentHint`: true/false
+- `openWorldHint`: true/false
+
+---
+
+### Giai đoạn 3: Rà Soát và Kiểm Thử
+
+#### 3.1 Chất lượng Mã Nguồn
+
+Rà soát các tiêu chí:
+- Không trùng lặp mã (nguyên tắc DRY)
+- Xử lý lỗi nhất quán
+- Bao phủ đầy đủ kiểu dữ liệu (type coverage)
+- Mô tả công cụ rõ ràng, mạch lạc
+
+#### 3.2 Biên Dịch và Kiểm Thử
+
+**TypeScript:**
+- Chạy `npm run build` để xác minh biên dịch
+- Kiểm thử với MCP Inspector: `npx @modelcontextprotocol/inspector`
+
+**Python:**
+- Kiểm tra cú pháp: `python -m py_compile your_server.py`
+- Kiểm thử với MCP Inspector
+
+Xem các hướng dẫn theo ngôn ngữ để biết phương pháp kiểm thử chi tiết và danh sách kiểm tra chất lượng.
+
+---
+
+### Giai đoạn 4: Xây Dựng Bộ Đánh Giá (Evaluations)
+
+Sau khi triển khai máy chủ MCP, hãy tạo các bộ đánh giá toàn diện để kiểm tra hiệu quả hoạt động của nó.
+
+**Tải [✅ Hướng Dẫn Đánh Giá](./reference/evaluation.md) để xem đầy đủ quy chuẩn đánh giá.**
+
+#### 4.1 Thấu hiểu Mục đích Đánh giá
+
+Sử dụng các bài đánh giá để kiểm tra xem LLM có thể sử dụng hiệu quả máy chủ MCP của bạn để trả lời các câu hỏi phức tạp và thực tế hay không.
+
+#### 4.2 Tạo 10 Câu Hỏi Đánh Giá
+
+Để tạo các đánh giá hiệu quả, hãy tuân theo quy trình được nêu trong tài liệu hướng dẫn:
+
+1. **Khảo sát Công cụ**: Liệt kê các công cụ khả dụng và nắm vững năng lực của chúng
+2. **Khám phá Nội dung**: Sử dụng các thao tác CHỈ ĐỌC (READ-ONLY) để khám phá dữ liệu sẵn có
+3. **Tạo Câu hỏi**: Soạn thảo 10 câu hỏi phức tạp, bám sát thực tế
+4. **Xác minh Câu trả lời**: Tự mình giải từng câu hỏi để kiểm chứng đáp án
+
+#### 4.3 Yêu cầu Đối với Đánh giá
+
+Đảm bảo mỗi câu hỏi đều:
+- **Độc lập**: Không phụ thuộc vào các câu hỏi khác
+- **Chỉ đọc**: Chỉ yêu cầu các thao tác không phá hủy
+- **Phức tạp**: Đòi hỏi nhiều lượt gọi công cụ và khám phá sâu
+- **Thực tế**: Dựa trên các trường hợp sử dụng thực tế mà con người quan tâm
+- **Có thể xác minh**: Đáp án duy nhất, rõ ràng, có thể kiểm chứng bằng so sánh chuỗi
+- **Ổn định**: Đáp án không bị thay đổi theo thời gian
+
+#### 4.4 Định dạng Đầu ra
+
+Tạo tệp XML với cấu trúc như sau:
+
+```xml
+<evaluation>
+  <qa_pair>
+    <question>Tìm kiếm các cuộc thảo luận về đợt ra mắt mô hình AI có mật danh là tên động vật. Một mô hình cần một định danh an toàn cụ thể sử dụng định dạng ASL-X. Số X nào đang được xác định cho mô hình được đặt tên theo một loài mèo hoang có đốm?</question>
+    <answer>3</answer>
+  </qa_pair>
+<!-- Các cặp qa_pair khác... -->
+</evaluation>
+```
+
+---
+
+# Các Tệp Tham Chiếu
+
+## 📚 Thư Viện Tài Liệu
+
+Tải các tài nguyên này khi cần trong quá trình phát triển:
+
+### Tài liệu MCP Cốt lõi (Tải đầu tiên)
+- **Giao thức MCP**: Bắt đầu với sitemap tại `https://modelcontextprotocol.io/sitemap.xml`, sau đó tải các trang cụ thể với hậu tố `.md`
+- [📋 Thực hành Tốt nhất MCP](./reference/mcp_best_practices.md) - Các hướng dẫn MCP phổ quát bao gồm:
+  - Quy ước đặt tên máy chủ và công cụ
+  - Hướng dẫn định dạng phản hồi (JSON so với Markdown)
+  - Thực hành tốt nhất về phân trang
+  - Lựa chọn phương thức vận chuyển (streamable HTTP so với stdio)
+  - Tiêu chuẩn bảo mật và xử lý lỗi
+
+### Tài liệu SDK (Tải trong Giai đoạn 1/2)
+- **Python SDK**: Tải từ `https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md`
+- **TypeScript SDK**: Tải từ `https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/README.md`
+
+### Hướng dẫn Triển khai theo Ngôn ngữ (Tải trong Giai đoạn 2)
+- [🐍 Hướng dẫn Triển khai Python](./reference/python_mcp_server.md) - Hướng dẫn hoàn chỉnh về Python/FastMCP với:
+  - Mẫu khởi tạo máy chủ
+  - Ví dụ về mô hình Pydantic
+  - Đăng ký công cụ với `@mcp.tool`
+  - Ví dụ hoạt động hoàn chỉnh
+  - Danh sách kiểm tra chất lượng
+
+- [⚡ Hướng dẫn Triển khai TypeScript](./reference/node_mcp_server.md) - Hướng dẫn hoàn chỉnh về TypeScript với:
+  - Cấu trúc dự án
+  - Các mẫu lược đồ Zod
+  - Đăng ký công cụ với `server.registerTool`
+  - Ví dụ hoạt động hoàn chỉnh
+  - Danh sách kiểm tra chất lượng
+
+### Hướng dẫn Đánh giá (Tải trong Giai đoạn 4)
+- [✅ Hướng dẫn Đánh giá](./reference/evaluation.md) - Hướng dẫn tạo đánh giá hoàn chỉnh với:
+  - Quy chuẩn soạn thảo câu hỏi
+  - Chiến lược xác minh câu trả lời
+  - Đặc tả định dạng XML
+  - Câu hỏi và câu trả lời mẫu
+  - Chạy đánh giá với các script được cung cấp

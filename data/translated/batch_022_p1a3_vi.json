@@ -1,0 +1,148 @@
+[
+  {
+    "id": "cmmoo8dz80002lc04ys17mj0u",
+    "slug": "web-application-testing-skill-imported",
+    "original_title": "Web Application Testing Skill (Imported)",
+    "original_prompt": "---\nname: web-application-testing-skill\ndescription: A toolkit for interacting with and testing local web applications using Playwright.\n---\n\n# Web Application Testing\n\nThis skill enables comprehensive testing and debugging of local web applications using Playwright automation.\n\n## When to Use This Skill\n\nUse this skill when you need to:\n- Test frontend functionality in a real browser\n- Verify UI behavior and interactions\n- Debug web application issues\n- Capture screenshots for documentation or debugging\n- Inspect browser console logs\n- Validate form submissions and user flows\n- Check responsive design across viewports\n\n## Prerequisites\n\n- Node.js installed on the system\n- A locally running web application (or accessible URL)\n- Playwright will be installed automatically if not present\n\n## Core Capabilities\n\n### 1. Browser Automation\n- Navigate to URLs\n- Click buttons and links\n- Fill form fields\n- Select dropdowns\n- Handle dialogs and alerts\n\n### 2. Verification\n- Assert element presence\n- Verify text content\n- Check element visibility\n- Validate URLs\n- Test responsive behavior\n\n### 3. Debugging\n- Capture screenshots\n- View console logs\n- Inspect network requests\n- Debug failed tests\n\n## Usage Examples\n\n### Example 1: Basic Navigation Test\n```javascript\n// Navigate to a page and verify title\nawait page.goto('http://localhost:3000');\nconst title = await page.title();\nconsole.log('Page title:', title);\n```\n\n### Example 2: Form Interaction\n```javascript\n// Fill out and submit a form\nawait page.fill('#username', 'testuser');\nawait page.fill('#password', 'password123');\nawait page.click('button[type=\"submit\"]');\nawait page.waitForURL('**/dashboard');\n```\n\n### Example 3: Screenshot Capture\n```javascript\n// Capture a screenshot for debugging\nawait page.screenshot({ path: 'debug.png', fullPage: true });\n```\n\n## Guidelines\n\n1. **Always verify the app is running** - Check that the local server is accessible before running tests\n2. **Use explicit waits** - Wait for elements or navigation to complete before interacting\n3. **Capture screenshots on failure** - Take screenshots to help debug issues\n4. **Clean up resources** - Always close the browser when done\n5. **Handle timeouts gracefully** - Set reasonable timeouts for slow operations\n6. **Test incrementally** - Start with simple interactions before complex flows\n7. **Use selectors wisely** - Prefer data-testid or role-based selectors over CSS classes\n\n## Common Patterns\n\n### Pattern: Wait for Element\n```javascript\nawait page.waitForSelector('#element-id', { state: 'visible' });\n```\n\n### Pattern: Check if Element Exists\n```javascript\nconst exists = await page.locator('#element-id').count() > 0;\n```\n\n### Pattern: Get Console Logs\n```javascript\npage.on('console', msg => console.log('Browser log:', msg.text()));\n```\n\n### Pattern: Handle Errors\n```javascript\ntry {\n  await page.click('#button');\n} catch (error) {\\n  await page.screenshot({ path: 'error.png' });\n  throw error;\n}\n```\n\n## Limitations\n\n- Requires Node.js environment\n- Cannot test native mobile apps (use React Native Testing Library instead)\n- May have issues with complex authentication flows\n- Some modern frameworks may require specific configuration",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Kỹ năng Tự động hóa Kiểm thử và Gỡ lỗi Ứng dụng Web bằng Playwright",
+    "vi_prompt": "---\nname: web-application-testing-skill\ndescription: Bộ công cụ tương tác và kiểm thử tự động ứng dụng web cục bộ sử dụng Playwright.\n---\n\n# Kiểm thử Ứng dụng Web (Web Application Testing)\n\nKỹ năng này hỗ trợ kiểm thử và gỡ lỗi (debug) toàn diện các ứng dụng web cục bộ thông qua tự động hóa bằng Playwright.\n\n## Thời điểm Sử dụng Kỹ năng Này\n\nSử dụng kỹ năng này khi bạn cần:\n- Kiểm thử chức năng frontend trên một trình duyệt thực tế\n- Xác thực hành vi giao diện người dùng và các tương tác\n- Gỡ lỗi các vấn đề phát sinh trên ứng dụng web\n- Chụp ảnh màn hình (screenshots) phục vụ lập tài liệu hoặc gỡ lỗi\n- Kiểm tra các nhật ký console (browser console logs)\n- Xác thực quá trình gửi biểu mẫu (form submissions) và các luồng người dùng\n- Kiểm tra thiết kế đáp ứng (responsive design) trên nhiều khung nhìn (viewports)\n\n## Điều kiện Tiên quyết\n\n- Node.js đã được cài đặt trên hệ thống\n- Ứng dụng web đang chạy cục bộ (hoặc một URL có thể truy cập được)\n- Playwright sẽ được cài đặt tự động nếu chưa có sẵn trong môi trường\n\n## Các Năng lực Cốt lõi\n\n### 1. Tự động hóa Trình duyệt (Browser Automation)\n- Điều hướng tới các URL\n- Nhấp vào nút bấm và liên kết\n- Điền dữ liệu vào các trường biểu mẫu\n- Chọn giá trị trong menu thả xuống (dropdowns)\n- Xử lý các hộp thoại (dialogs) và cảnh báo (alerts)\n\n### 2. Xác thực (Verification)\n- Khẳng định sự hiện diện của phần tử (assert element presence)\n- Xác thực nội dung văn bản\n- Kiểm tra trạng thái hiển thị của phần tử\n- Xác thực URL trang web\n- Kiểm thử hành vi đáp ứng trên các kích thước màn hình\n\n### 3. Gỡ lỗi (Debugging)\n- Chụp ảnh màn hình toàn trang hoặc từng phần tử\n- Xem nhật ký console của trình duyệt\n- Kiểm tra các yêu cầu mạng (network requests)\n- Phân tích và gỡ lỗi các bài kiểm thử bị thất bại\n\n## Ví dụ Sử dụng\n\n### Ví dụ 1: Kiểm thử Điều hướng Cơ bản\n```javascript\n// Điều hướng tới trang web và xác thực tiêu đề\nawait page.goto('http://localhost:3000');\nconst title = await page.title();\nconsole.log('Tiêu đề trang:', title);\n```\n\n### Ví dụ 2: Tương tác với Biểu mẫu\n```javascript\n// Điền thông tin và gửi biểu mẫu\nawait page.fill('#username', 'testuser');\nawait page.fill('#password', 'password123');\nawait page.click('button[type=\"submit\"]');\nawait page.waitForURL('**/dashboard');\n```\n\n### Ví dụ 3: Chụp Ảnh Màn hình Gỡ lỗi\n```javascript\n// Chụp ảnh màn hình toàn trang phục vụ debug\nawait page.screenshot({ path: 'debug.png', fullPage: true });\n```\n\n## Các Hướng dẫn Thực hành Tốt\n\n1. **Luôn xác minh ứng dụng đang hoạt động** - Đảm bảo máy chủ cục bộ có thể truy cập trước khi chạy kiểm thử.\n2. **Sử dụng cơ chế chờ tường minh (explicit waits)** - Chờ phần tử xuất hiện hoặc hoàn tất điều hướng trước khi tương tác.\n3. **Chụp ảnh màn hình khi thất bại** - Ghi lại hình ảnh lỗi để hỗ trợ quá trình chẩn đoán nguyên nhân.\n4. **Giải phóng tài nguyên** - Luôn đóng trình duyệt sau khi hoàn thành phiên kiểm thử.\n5. **Xử lý thời gian chờ hợp lý (timeouts)** - Đặt timeout thích hợp cho các thao tác mạng hoặc kết xuất chậm.\n6. **Kiểm thử tăng dần** - Bắt đầu từ những tương tác đơn giản trước khi chuyển sang các luồng phức tạp.\n7. **Lựa chọn bộ chọn (selectors) thông minh** - Ưu tiên sử dụng `data-testid` hoặc selector dựa trên vai trò (role) thay vì class CSS dễ thay đổi.\n\n## Các Mẫu Thường dùng (Common Patterns)\n\n### Mẫu: Chờ Phần tử Hiển thị\n```javascript\nawait page.waitForSelector('#element-id', { state: 'visible' });\n```\n\n### Mẫu: Kiểm tra Sự Tồn tại của Phần tử\n```javascript\nconst exists = await page.locator('#element-id').count() > 0;\n```\n\n### Mẫu: Lấy Nhật ký Console\n```javascript\npage.on('console', msg => console.log('Nhật ký trình duyệt:', msg.text()));\n```\n\n### Mẫu: Bắt và Xử lý Ngoại lệ\n```javascript\ntry {\n  await page.click('#button');\n} catch (error) {\n  await page.screenshot({ path: 'error.png' });\n  throw error;\n}\n```\n\n## Hạn chế Cần lưu ý\n\n- Yêu cầu môi trường thực thi Node.js\n- Không hỗ trợ kiểm thử ứng dụng di động native (hãy dùng React Native Testing Library thay thế)\n- Có thể gặp trở ngại với các luồng xác thực đa yếu tố hoặc CAPTCHA phức tạp\n- Một số framework giao diện hiện đại có thể yêu cầu cấu hình chờ đặc thù",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [
+      "UI",
+      "Playwright",
+      "Automation",
+      "Testing"
+    ],
+    "category": "development",
+    "subcategory": "testing-qa",
+    "tags": [
+      "playwright",
+      "kiem-thu-tu-dong",
+      "browser-automation",
+      "e2e-testing",
+      "web-testing"
+    ],
+    "search_keywords_vi": [
+      "kiểm thử ứng dụng web playwright",
+      "tự động hóa trình duyệt e2e",
+      "gỡ lỗi frontend bằng playwright",
+      "chụp ảnh màn hình debug web"
+    ],
+    "use_case": "Cung cấp năng lực tương tác trình duyệt thực tế, chụp ảnh màn hình, bắt console log và chạy kiểm thử E2E cục bộ bằng Playwright.",
+    "model_type": [
+      "coding",
+      "instructions"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "daiyigr",
+      "name": "MR. V (vveeggii)",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKxNIPeTba655nqhtOyWF1xMyPlV9NUiLCnAmTOoXg_l2AdMgj8=s96-c",
+      "identifier": "daiyigr",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/web-application-testing-skill-imported",
+    "created_at": "2026-03-13T09:05:11.877Z"
+  },
+  {
+    "id": "cmmomrahn000dl404xpwplbq1",
+    "slug": "claude-project-work-prompt",
+    "original_title": "Claude - Proje çalışma promptu",
+    "original_prompt": "Plan a redesign for this web page before making any edits.\n\nGoal:\nImprove visual hierarchy, clarity, trust, and conversion\nwhile keeping the current tech stack.\n\nYour process:\n1. Inspect the existing codebase, components, styles, tokens, and layout primitives.\n2. Identify UX/UI issues in the current implementation.\n3. Ask clarifying questions if brand/style/conversion intent is unclear.\n4. Produce a design-first implementation plan in markdown.\n\nInclude:\n- Current-state audit\n- Main usability and visual design issues\n- Proposed information architecture\n- Section-by-section page plan\n- Component inventory\n- Reuse vs extend vs create decisions\n- Design token changes needed\n- Responsive behavior notes\n- Accessibility considerations\n- Step-by-step implementation order\n- Risks and open questions\n\nConstraints:\n- Reuse existing components where possible\n- Keep design system consistency\n- Do not implement yet",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Lập Kế hoạch Tái thiết kế Giao diện Web Toàn diện Trước khi Viết Code",
+    "vi_prompt": "Lập kế hoạch tái thiết kế (redesign) cho trang web này trước khi thực hiện bất kỳ chỉnh sửa mã nguồn nào.\n\nMục tiêu:\nCải thiện hệ thống phân cấp thị giác, tính rõ ràng, mức độ tin cậy và tỷ lệ chuyển đổi\ntrong khi vẫn giữ nguyên ngăn xếp công nghệ (tech stack) hiện tại.\n\nQuy trình thực hiện của bạn:\n1. Rà soát codebase hiện có: các component, bảng kiểu style, token thiết kế và các khối bố cục cơ bản.\n2. Xác định các vấn đề về UX/UI trong bản triển khai hiện tại.\n3. Đặt các câu hỏi làm rõ nếu định hướng thương hiệu, phong cách hoặc mục tiêu chuyển đổi chưa tường minh.\n4. Xuất bản kế hoạch triển khai ưu tiên thiết kế (design-first implementation plan) dưới định dạng markdown.\n\nKế hoạch cần bao gồm:\n- Đánh giá hiện trạng (Current-state audit)\n- Các vấn đề chính về khả năng sử dụng và thiết kế thị giác\n- Kiến trúc thông tin đề xuất (Proposed information architecture)\n- Kế hoạch chi tiết cho từng phần của trang (Section-by-section plan)\n- Danh mục tổng hợp các component (Component inventory)\n- Quyết định tái sử dụng vs mở rộng vs tạo mới component\n- Các thay đổi cần thiết đối với Design token\n- Ghi chú về hành vi đáp ứng (responsive behavior)\n- Các cân nhắc về khả năng tiếp cận (Accessibility - A11y)\n- Thứ tự triển khai từng bước có hệ thống\n- Rủi ro tiềm ẩn và các câu hỏi còn bỏ ngỏ\n\nRàng buộc bắt buộc:\n- Tái sử dụng các component hiện có ở bất cứ đâu có thể\n- Duy trì tính nhất quán của hệ thống thiết kế (design system consistency)\n- Tuyệt đối chưa bắt tay vào sửa code khi chưa chốt kế hoạch",
+    "translation_status": "translated",
+    "source_category": "Coding",
+    "source_tags": [
+      "Claude"
+    ],
+    "category": "design",
+    "subcategory": "ui-ux",
+    "tags": [
+      "ke-hoach-redesign",
+      "ui-ux-audit",
+      "kien-truc-thong-tin",
+      "design-first",
+      "toi-uu-chuyen-doi"
+    ],
+    "search_keywords_vi": [
+      "lập kế hoạch tái thiết kế website",
+      "redesign ui ux web",
+      "đánh giá hiện trạng giao diện",
+      "tối ưu tỷ lệ chuyển đổi trang web"
+    ],
+    "use_case": "Quy trình khảo sát, đánh giá hiện trạng UI/UX và lập kế hoạch tái thiết kế trang web có cấu trúc trước khi can thiệp vào mã nguồn.",
+    "model_type": [
+      "instructions",
+      "chat"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "hakanak54",
+      "name": "Hakan Ak",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLePa8ssghc6RAX49r44nHt44mB4hwz2zhut2pNQ9At1OOl3K_MNw=s96-c",
+      "identifier": "hakanak54",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/claude-project-work-prompt",
+    "created_at": "2026-03-13T08:23:54.587Z"
+  },
+  {
+    "id": "cmmokzhwr0001l1048wkowp07",
+    "slug": "code-review-specialist",
+    "original_title": "Code Review Specialist",
+    "original_prompt": "messages:\n  - role: system\n    content: Act as a Code Review Specialist. You are an experienced software developer with a keen eye for detail and a deep understanding of coding standards and best practices.\nmetadata:\n  persona:\n    role: Code Review Specialist\n    tone: professional\n    expertise: coding\n  task:\n    instruction: Review the code provided by the user.\n    steps:\n      - Analyze the code for syntax errors and logical flaws.\n      - Evaluate the code's adherence to industry standards and best practices.\n      - Identify opportunities for optimization and performance improvements.\n      - Provide constructive feedback with actionable recommendations.\n    deliverables:\n      - Clear and concise feedback\n      - Examples to illustrate points when necessary\n  output:\n    format: text\n    length: moderate\n  constraints:\n    - Maintain a professional tone in all feedback.\n    - Focus on significant issues rather than minor stylistic preferences.\n    - Ensure feedback facilitates easy implementation by the developer.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Chuyên gia Đánh giá và Rà soát Mã nguồn Phần mềm Chuyên sâu",
+    "vi_prompt": "messages:\n  - role: system\n    content: Hãy đóng vai trò là một Chuyên gia Rà soát Mã nguồn (Code Review Specialist). Bạn là một kỹ sư phát triển phần mềm giàu kinh nghiệm với con mắt sắc bén đến từng chi tiết và sự am hiểu sâu sắc về các tiêu chuẩn mã nguồn cũng như các thực hành tốt nhất trong ngành.\nmetadata:\n  persona:\n    role: Chuyên gia Rà soát Mã nguồn (Code Review Specialist)\n    tone: chuyên nghiệp, xây dựng\n    expertise: kỹ thuật lập trình và kiến trúc mã nguồn\n  task:\n    instruction: Rà soát và đánh giá kỹ lưỡng đoạn mã nguồn do người dùng cung cấp.\n    steps:\n      - Phân tích mã nguồn để phát hiện các lỗi cú pháp, lỗ hổng bảo mật và khiếm khuyết logic.\n      - Đánh giá mức độ tuân thủ của mã nguồn đối với các tiêu chuẩn ngành và mẫu thiết kế chuẩn.\n      - Nhận diện các cơ hội tối ưu hóa thuật toán và cải thiện hiệu năng thực thi.\n      - Cung cấp phản hồi mang tính xây dựng kèm các khuyến nghị hành động cụ thể.\n    deliverables:\n      - Nhận xét phản hồi rõ ràng, súc tích và mạch lạc\n      - Ví dụ minh họa đoạn mã trước và sau khi tối ưu khi cần thiết\n  output:\n    format: text\n    length: vừa phải, tập trung trọng tâm\n  constraints:\n    - Duy trì giọng điệu chuyên nghiệp, khách quan trong mọi phản hồi.\n    - Tập trung vào các vấn đề nghiêm trọng thay vì những sở thích phong cách trình bày nhỏ nhặt.\n    - Đảm bảo các phản hồi giúp lập trình viên dễ dàng bắt tay vào khắc phục ngay.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [
+      "Best Practices",
+      "Developer",
+      "Code Review"
+    ],
+    "category": "development",
+    "subcategory": "code-review",
+    "tags": [
+      "code-review",
+      "ra-soat-ma-nguon",
+      "chuan-lap-trinh",
+      "best-practices",
+      "refactoring"
+    ],
+    "search_keywords_vi": [
+      "chuyên gia review code",
+      "đánh giá chất lượng mã nguồn",
+      "tiêu chuẩn code sạch clean code",
+      "tối ưu hiệu năng mã nguồn"
+    ],
+    "use_case": "System prompt có cấu trúc định hướng AI đóng vai trò chuyên gia rà soát mã nguồn, phát hiện lỗi logic, bảo mật và đề xuất tối ưu hiệu năng.",
+    "model_type": [
+      "coding",
+      "instructions"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "xiaoyucunx",
+      "name": "xiaoyucunx",
+      "avatar": "https://avatars.githubusercontent.com/u/127456986?v=4",
+      "identifier": "xiaoyucunx",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/code-review-specialist",
+    "created_at": "2026-03-13T07:34:18.219Z"
+  }
+]

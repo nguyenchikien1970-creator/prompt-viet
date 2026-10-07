@@ -1,0 +1,413 @@
+[
+  {
+    "id": "cmkr1bbjg0001ky04scjx0byh",
+    "slug": "production-grade-posthog-integration-for-nextjs-15-app-router",
+    "original_title": "Production-Grade PostHog Integration for Next.js 15 (App Router)",
+    "original_prompt": "Production-Grade PostHog Integration for Next.js 15 (App Router)\nRole\nYou are a Senior Next.js Architect & Analytics Engineer with deep expertise in Next.js 15, React 19, Supabase Auth, Polar.sh billing, and PostHog.\nYou design production-grade, privacy-aware systems that handle the strict Server/Client boundaries of Next.js 15 correctly.\nYour output must be code-first, deterministic, and suitable for a real SaaS product in 2026.\n\nGoal\nIntegrate PostHog Analytics, Session Replay, Feature Flags, and Error Tracking into a Next.js 15 App Router SaaS application with:\n- Correct Server / Client separation (Providers Pattern)\n- Type-safe, centralized analytics\n- User identity lifecycle synced with Supabase\n- Accurate billing tracking (Polar)\n- Suspense-safe SPA navigation tracking\n\nContext\n- Framework: Next.js 15 (App Router) & React 19\n- Rendering: Server Components (default), Client Components (interaction)\n- Auth: Supabase Auth\n- Billing: Polar.sh\n- State: No existing analytics\n- Environment: Web SaaS (production)\n\nCore Architectural Rules (NON-NEGOTIABLE)\n1. PostHog must ONLY run in Client Components.\n2. No PostHog calls in Server Components, Route Handlers, or API routes.\n3. Identity is controlled only by auth state.\n4. All analytics must flow through a single abstraction layer (`lib/analytics.ts`).\n\n1. Architecture & Setup (Providers Pattern)\n- Create `app/providers.tsx`.\n- Mark it as `'use client'`.\n- Initialize PostHog inside this component.\n- Wrap the application with `PostHogProvider`.\n- Configuration:\n  - Use `NEXT_PUBLIC_POSTHOG_KEY` and `NEXT_PUBLIC_POSTHOG_HOST`.\n  - `capture_pageview`: false (Handled manually to avoid App Router duplicates).\n  - `capture_pageleave`: true.\n  - Enable Session Replay (`mask_all_text_inputs: true`).\n\n2. User Identity Lifecycle (Supabase Sync)\n- Create `hooks/useAnalyticsAuth.ts`.\n- Listen to Supabase `onAuthStateChange`.\n- Logic:\n  - SIGNED_IN: Call `posthog.identify`.\n  - SIGNED_OUT: Call `posthog.reset()`.\n  - Use appropriate React 19 hooks if applicable for state, but standard `useEffect` is fine for listeners.\n\n3. Billing & Revenue (Polar)\n- PostHog `distinct_id` must match Supabase User ID.\n- Set `polar_customer_id` as a user property.\n- Track events: `CHECKOUT_STARTED`, `SUBSCRIPTION_CREATED`.\n- Ensure `SUBSCRIPTION_CREATED` includes `{ revenue: number, currency: string }` for PostHog Revenue dashboards.\n\n4. Type-Safe Analytics Layer\n- Create `lib/analytics.ts`.\n- Define strict Enum `AnalyticsEvents`.\n- Export typed `trackEvent` wrapper.\n- Check `if (typeof window === 'undefined')` to prevent SSR errors.\n\n5. SPA Navigation Tracking (Next.js 15 & Suspense Safe)\n- Create `components/PostHogPageView.tsx`.\n- Use `usePathname` and `useSearchParams`.\n- CRITICAL: Because `useSearchParams` causes client-side rendering de-opt in Next.js 15 if not handled, you MUST wrap this component in a `<Suspense>` boundary when mounting it in `app/providers.tsx`.\n- Trigger pageviews on route changes.\n\n6. Error Tracking\n- Capture errors explicitly: `posthog.capture('$exception', { message, stack })`.\n\nDeliverables (MANDATORY)\nReturn ONLY the following files:\n1. `package.json` (Dependencies: `posthog-js`).\n2. `app/providers.tsx` (With Suspense wrapper).\n3. `lib/analytics.ts` (Type-safe layer).\n4. `hooks/useAnalyticsAuth.ts` (Auth sync).\n5. `components/PostHogPageView.tsx` (Navigation tracking).\n6. `app/layout.tsx` (Root layout integration example).\n\n🚫 No extra files.\n🚫 No prose explanations outside code comments.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Web Development",
+    "source_tags": [
+      "Web Development",
+      "Coding"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "ted2xmen",
+      "name": "Tugrul Erdem",
+      "avatar": "https://avatars.githubusercontent.com/u/20682437?v=4",
+      "identifier": "Ted2xmen",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/production-grade-posthog-integration-for-nextjs-15-app-router",
+    "created_at": "2026-01-23T15:27:31.372Z"
+  },
+  {
+    "id": "cmkqy81gs0001l704ey0sul0u",
+    "slug": "elements",
+    "original_title": "Elements ",
+    "original_prompt": "I want to create a 4k image of 3D character of each element in the periodic table. I want them to look cute but has distinct features ",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Video Generation",
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "image"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "rodj3881",
+      "name": "RODEL JIMENEZ",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKliEz49KqfOf106MWc7GbHksBWCWnSPsdf4GddMChBLhlygL8u=s96-c",
+      "identifier": "rodj3881",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/elements",
+    "created_at": "2026-01-23T14:00:59.500Z"
+  },
+  {
+    "id": "cmkqvwms6000hlb04f7cbruio",
+    "slug": "removal",
+    "original_title": "Remotion",
+    "original_prompt": "Minimal Countdown Scene:\nCount down from 3 → 2 → 1 using a clean, modern font.\nApply left-to-right color transitions with subtle background gradients.\nKeep the design minimal — shift font and background colors smoothly between counts.\n\nStart with a pure white background,\nThen transition quickly into lively, elegant tones: yellow, pink, blue, orange — fast, energetic transitions to build excitement.\n\nAfter the countdown, display\n“Introducing”\nIn a monospace font with a sleek text animation.\n\nNext Scene:\nCenter the Mitte.ai and Remotion logos on a white background.\nPlace them side by side — Mitte.ai on the left, Remotion on the right.\n\nFirst, fade in both logos.\nThen animate a vertical line drawing from bottom to top between them.\n\nFinal Moment:\nSlowly zoom into the logo section while shifting background colors\nWith left-to-right and right-to-left transitions in a celebratory motion.\n\nOverall Style:\nStartup vibes — elegant, creative, modern, and confident.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Video Generation",
+    "source_tags": [
+      "AI Tools",
+      "Art",
+      "Marketing",
+      "Productivity",
+      "Entertainment"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "video"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "semih",
+      "name": "semih",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLf_ZOGbjwY5PuCyLrRnN0xBinzNayQ2E8JytIdnK1biWOXIQ=s96-c",
+      "identifier": "semih",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/removal",
+    "created_at": "2026-01-23T12:56:08.022Z"
+  },
+  {
+    "id": "cmkqvgpjf0004lb04byhgx7n1",
+    "slug": "storyboard-grid",
+    "original_title": "Storyboard Grid",
+    "original_prompt": "A clean 3×3 [ratio] storyboard grid with nine equal [ratio] sized panels on [4:5] ratio. \n\nUse the reference image as the base product reference. Keep the same product, packaging design, branding, materials, colors, proportions and overall identity across all nine panels exactly as the reference. The product must remain clearly recognizable in every frame. The label, logo and proportions must stay exactly the same.\n\nThis storyboard is a high-end designer mockup presentation for a branding portfolio. The focus is on form, composition, materiality and visual rhythm rather than realism or lifestyle narrative. The overall look should feel curated, editorial and design-driven.\n\nFRAME 1:\nFront-facing hero shot of the product in a clean studio setup. Neutral background, balanced composition, calm and confident presentation of the product.\n\nFRAME 2:\nClose-up shot with the focus centered on the middle of the product. Focusing on surface texture, materials and print details.\n\nFRAME 3:\nShows the reference product placed in an environment that naturally fits the brand and product category. Studio setting inspired by the product design elements and colours. \n\nFRAME 4:\nProduct shown in use or interaction on a neutral studio background. Hands and interaction elements are minimal and restrained, the look matches the style of the package. \n\nFRAME 5:\nIsometric composition showing multiple products arranged in a precise geometric order from the top isometric angle. All products are placed at the same isometric top angle, evenly spaced, clean, structured and graphic.\n\nFRAME 6:\nProduct levitating slightly tilted on a neutral background that matches the reference image color palette. Floating position is angled and intentional, the product is floating naturally in space.\n\nFRAME 7:\nis an extreme close-up focusing on a specific detail of the label, edge, texture or material behavior.\n\nFRAME 8:\nThe product in an unexpected yet aesthetically strong setting that feels bold, editorial and visually striking.\nUnexpected but highly stylized setting. Studio-based, and designer-driven. Bold composition that elevates the brand.\n\nFRAME 9:\nWide composition showing the product in use, placed within a refined designer setup. Clean props, controlled styling, cohesive with the rest of the series.\n\nCAMERA & STYLE:\nUltra high-quality studio imagery with a real camera look. Different camera angles and framings across frames. Controlled depth of field, precise lighting, accurate materials and reflections. Lighting logic, color palette, mood and visual language must remain consistent across all nine panels as one cohesive series.\n\nOUTPUT:\nA clean 3×3 grid with no borders, no text, no captions and no watermarks.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Nano Banana",
+      "AI Tools",
+      "Art",
+      "Benefits",
+      "Entertainment"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "image"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "semih",
+      "name": "semih",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLf_ZOGbjwY5PuCyLrRnN0xBinzNayQ2E8JytIdnK1biWOXIQ=s96-c",
+      "identifier": "semih",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/storyboard-grid",
+    "created_at": "2026-01-23T12:43:45.099Z"
+  },
+  {
+    "id": "cmkqqarkf0004jr04k77sjt41",
+    "slug": "underwater-veo-3-video",
+    "original_title": "Underwater Veo 3 video",
+    "original_prompt": "Ultra-realistic 6-second cinematic underwater video: A sleek predator fish darts through a vibrant coral reef, scattering a school of colorful tropical fish. The camera follows from a low FPV angle just behind the predator, weaving smoothly between corals and rocks with dynamic, fast-paced motion. The camera occasionally tilts and rolls slightly, emphasizing speed and depth, while sunlight filters through the water, creating shimmering rays and sparkling reflections. Tiny bubbles and particles float in the water for immersive realism. Ultra-realistic textures, cinematic lighting, dramatic depth of field. Audio: bubbling water, swishing fins, subtle underwater ambience.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Video Generation",
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "video"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "Veo_tutorials",
+      "name": "Veo_tutorials ",
+      "avatar": "https://avatars.githubusercontent.com/u/256758317?v=4",
+      "identifier": "mathdeueb",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/underwater-veo-3-video",
+    "created_at": "2026-01-23T10:19:09.711Z"
+  },
+  {
+    "id": "cmmkqhi6v6sqdxcgv5fib",
+    "slug": "idea-generation-step-6-publication",
+    "original_title": "Step 6: Publication",
+    "original_prompt": "Prepare the final deliverable for publication.\n\nFinal steps:\n- Format for target platform\n- Create accompanying materials\n- Set up distribution\n- Prepare announcement\n- Schedule publication\n- Monitor initial reception\n\nCongratulations on completing the workflow!",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Workflows",
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "f",
+      "name": "Fatih Kadir Akın",
+      "avatar": "https://avatars.githubusercontent.com/u/196477?v=4",
+      "identifier": "f",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/idea-generation-step-6-publication",
+    "created_at": "2026-01-23T06:13:00.455Z"
+  },
+  {
+    "id": "cmmkqhi6v60ecimdg0ze37",
+    "slug": "idea-generation-step-5-final-review",
+    "original_title": "Step 5: Final Review",
+    "original_prompt": "Perform a comprehensive final review merging all work streams.\n\nReview checklist:\n- Technical feasibility confirmed\n- Creative vision aligned\n- All requirements met\n- Quality standards achieved\n- Consistency across all elements\n- Ready for publication\n\nProvide a final assessment with any last recommendations.",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Workflows",
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "f",
+      "name": "Fatih Kadir Akın",
+      "avatar": "https://avatars.githubusercontent.com/u/196477?v=4",
+      "identifier": "f",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/idea-generation-step-5-final-review",
+    "created_at": "2026-01-23T06:13:00.352Z"
+  },
+  {
+    "id": "cmmkqhi6v61fwz9zp8msb",
+    "slug": "idea-generation-step-4b-story-development",
+    "original_title": "Step 4b: Story Development",
+    "original_prompt": "Develop the full story and content based on the creative exploration.\n\nDevelop:\n- Complete narrative arc\n- Character or element descriptions\n- Key scenes or moments\n- Dialogue or copy\n- Visual descriptions\n- Emotional beats\n\nCreate compelling, engaging content.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Workflows",
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "f",
+      "name": "Fatih Kadir Akın",
+      "avatar": "https://avatars.githubusercontent.com/u/196477?v=4",
+      "identifier": "f",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/idea-generation-step-4b-story-development",
+    "created_at": "2026-01-23T06:13:00.248Z"
+  },
+  {
+    "id": "cmmkqhi6v67n0iqasedvj",
+    "slug": "idea-generation-step-4a-implementation-plan",
+    "original_title": "Step 4a: Implementation Plan",
+    "original_prompt": "Create a comprehensive implementation plan.\n\nInclude:\n- Phase breakdown with milestones\n- Task list with priorities\n- Resource allocation\n- Risk mitigation strategies\n- Timeline estimates\n- Success metrics\n\nFormat as an actionable project plan.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Workflows",
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "f",
+      "name": "Fatih Kadir Akın",
+      "avatar": "https://avatars.githubusercontent.com/u/196477?v=4",
+      "identifier": "f",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/idea-generation-step-4a-implementation-plan",
+    "created_at": "2026-01-23T06:13:00.147Z"
+  },
+  {
+    "id": "cmmkqhi6v6t6miwxxxq5k",
+    "slug": "idea-generation-step-3b-creative-exploration",
+    "original_title": "Step 3b: Creative Exploration",
+    "original_prompt": "Explore the creative dimensions of the outlined project.\n\nFocus on:\n- Narrative and storytelling elements\n- Visual and aesthetic considerations\n- Emotional impact and user engagement\n- Unique creative angles\n- Inspiration from other works\n\nGenerate creative concepts that bring the project to life.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Workflows",
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "f",
+      "name": "Fatih Kadir Akın",
+      "avatar": "https://avatars.githubusercontent.com/u/196477?v=4",
+      "identifier": "f",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/idea-generation-step-3b-creative-exploration",
+    "created_at": "2026-01-23T06:13:00.045Z"
+  },
+  {
+    "id": "cmmkqhi6v6bln3rxsv91e",
+    "slug": "idea-generation-step-3a-technical-deep-dive",
+    "original_title": "Step 3a: Technical Deep Dive",
+    "original_prompt": "Perform a technical analysis of the outlined project.\n\nAnalyze:\n- Technical requirements and dependencies\n- Architecture considerations\n- Potential technical challenges\n- Required tools and technologies\n- Performance implications\n\nProvide a detailed technical assessment with recommendations.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Workflows",
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "f",
+      "name": "Fatih Kadir Akın",
+      "avatar": "https://avatars.githubusercontent.com/u/196477?v=4",
+      "identifier": "f",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/idea-generation-step-3a-technical-deep-dive",
+    "created_at": "2026-01-23T06:12:59.944Z"
+  },
+  {
+    "id": "cmmkqhi6v6fssm58ij07t",
+    "slug": "idea-generation-step-2-outline-creation",
+    "original_title": "Step 2: Outline Creation",
+    "original_prompt": "Based on the ideas generated in the previous step, create a detailed outline.\n\nStructure your outline with:\n- Main sections and subsections\n- Key points to cover\n- Estimated time/effort for each section\n- Dependencies between sections\n\nFormat the outline in a clear, hierarchical structure.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Workflows",
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "f",
+      "name": "Fatih Kadir Akın",
+      "avatar": "https://avatars.githubusercontent.com/u/196477?v=4",
+      "identifier": "f",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/idea-generation-step-2-outline-creation",
+    "created_at": "2026-01-23T06:12:59.840Z"
+  }
+]

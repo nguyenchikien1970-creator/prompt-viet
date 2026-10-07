@@ -1,0 +1,207 @@
+references/prompt-engineering-guide.md
+# Music Prompt Engineering Guide
+
+## The 8-Component Formula
+
+Build prompts by combining these components. Not all are required — use 4-6 for typical requests.
+
+```
+[Genre/Style], [Era/Reference], [Mood/Emotion], [Vocal Type], [Tempo/BPM], [Instruments], [Production Style], [Atmosphere]
+```
+
+### Component Details
+
+**1. Genre/Style**
+Indie folk, Progressive house, Soulful blues, Pop ballad, Jazz fusion, Synthwave, Ambient electronic, Country rock, Hip-hop boom bap, Classical orchestral, R&B, Disco funk, Lo-fi indie, Metal
+
+**2. Era/Reference**
+1960s Motown, 70s disco, 80s synthwave, 90s grunge, 2000s pop-punk, modern, retro, vintage, contemporary, classic
+
+**3. Mood/Emotion**
+melancholic, euphoric, nostalgic, hopeful, bittersweet, triumphant, yearning, peaceful, brooding, playful, intense, dreamy, defiant, tender, wistful, anthemic
+
+**4. Vocal Type**
+breathy female alto, powerful soprano, raspy male tenor, warm baritone, deep resonant bass, falsetto, husky, crystal clear, choir harmonies, a cappella, duet, operatic
+
+**5. Tempo/BPM**
+slow 60 BPM, ballad tempo 70 BPM, mid-tempo 100 BPM, upbeat 120 BPM, driving 128 BPM, fast-paced 140 BPM, energetic 160 BPM
+
+**6. Instruments**
+acoustic guitar, electric guitar, fingerpicked guitar, piano, Rhodes piano, upright bass, electric bass, drums, brushed snare, synthesizer, strings, violin, cello, trumpet, saxophone, harmonica, ukulele, banjo, mandolin, flute, organ, harp, percussion, congas, tambourine, vibraphone, steel drums
+
+**7. Production Style**
+lo-fi, polished pop production, raw live recording, studio quality, bedroom recording, vinyl warmth, analog tape, digital crisp, spacious reverb, dry and intimate, heavily compressed, minimalist
+
+**8. Atmosphere**
+intimate, epic, dreamy, cinematic, ethereal, gritty, lush, sparse, warm, cold, dark, bright, urban, pastoral, cosmic, underground
+
+---
+
+## Genre-Specific Prompt Templates
+
+### Pop
+```
+Upbeat pop, catchy chorus, synthesizer, four-on-the-floor beat, bright female vocals, radio-ready production, energetic 120 BPM
+```
+
+### Pop Ballad
+```
+Pop ballad, emotional, piano-driven, powerful female vocals with vibrato, sweeping strings, slow tempo 70 BPM, polished production, heartfelt
+```
+
+### Indie Folk
+```
+Indie folk, melancholic, introspective, acoustic fingerpicking guitar, soft piano, gentle male vocals, intimate bedroom recording, 90 BPM
+```
+
+### Soulful Blues
+```
+Soulful blues, rainy night, melancholy, raspy male vocals, slow tempo 65 BPM, electric guitar, upright bass, harmonica, warm analog feel
+```
+
+### Jazz
+```
+Jazz ballad, warm and intimate, upright bass, brushed snare, piano, muted trumpet, 1950s club atmosphere, smooth male vocals, 80 BPM
+```
+
+### Electronic / Dance
+```
+Progressive house, euphoric, driving bassline, 128 BPM, synthesizer pads, arpeggiated leads, modern production, festival energy, build-ups and drops
+```
+
+### Rock
+```
+Indie rock, anthemic, distorted electric guitar, powerful drum kit, passionate male vocals, stadium feel, energetic 140 BPM, raw energy
+```
+
+### Classical / Orchestral
+```
+Orchestral, sweeping strings, French horn, dramatic tension, cinematic, full symphony, dynamic crescendos, epic and majestic
+```
+
+### Hip-Hop
+```
+Lo-fi hip hop, boom bap, vinyl crackle, jazzy piano sample, relaxed beat 85 BPM, introspective mood, head-nodding groove
+```
+
+### R&B
+```
+Contemporary R&B, smooth, falsetto male vocals, Rhodes piano, muted guitar, late night urban feel, 90 BPM, lush production
+```
+
+### Country / Americana
+```
+Appalachian folk, storytelling, acoustic fingerpicking, fiddle, raw and honest, dusty americana, warm male vocals, 100 BPM
+```
+
+### Metal
+```
+Heavy metal, distorted riffs, double kick drum, aggressive powerful vocals, dark atmosphere, intense and relentless, 160 BPM
+```
+
+### Synthwave / 80s
+```
+Synthwave, 80s retro, pulsing synthesizers, gated reverb drums, neon-lit atmosphere, driving arpeggios, nostalgic and cinematic, 110 BPM
+```
+
+### Lo-fi Indie
+```
+Lo-fi indie pop, mellow 92 BPM, soft female vocals airy and intimate, clean electric guitar, lo-fi drums, vinyl warmth, bedroom recording aesthetic, late night melancholy
+```
+
+### Disco Funk
+```
+Disco funk, groovy bassline, wah-wah guitar, brass section, four-on-the-floor kick, 115 BPM, energetic female vocals, sparkling production, dancefloor energy
+```
+
+---
+
+## Vocal Descriptor Catalog
+
+### Female Vocals
+- `breathy female vocal with emotional delivery and subtle vibrato`
+- `powerful soprano, clear and soaring, with controlled dynamics`
+- `soft, intimate female alto, whispery and gentle`
+- `sassy, confident female voice with rhythmic phrasing`
+- `ethereal, angelic female vocal with layered harmonies`
+- `raspy, soulful female voice with blues inflection`
+
+### Male Vocals
+- `warm baritone, smooth and resonant, with emotional depth`
+- `raspy male tenor with rock edge and raw power`
+- `deep, resonant bass voice, commanding and rich`
+- `falsetto male vocal, airy and delicate, R&B style`
+- `gravelly crooner, vintage jazz feel, intimate delivery`
+- `powerful tenor with soaring high notes and controlled vibrato`
+
+### Ensemble / Special
+- `male-female duet with harmonized chorus`
+- `choir harmonies, layered voices, cathedral reverb`
+- `a cappella vocal arrangement, no instruments`
+- `spoken word with musical backing`
+- `vocal ad-libs and runs between main phrases`
+
+---
+
+## Mood/Emotion Vocabulary
+
+These descriptors map well to Minimax's training:
+
+| Category | Words |
+| --- | --- |
+| Sad | melancholic, bittersweet, yearning, wistful, somber, mournful, lonely |
+| Happy | euphoric, joyful, uplifting, celebratory, playful, carefree, sunny |
+| Intense | driving, powerful, fierce, relentless, urgent, explosive, raw |
+| Calm | peaceful, serene, meditative, tranquil, floating, gentle, soothing |
+| Dark | brooding, ominous, haunting, sinister, shadowy, tense, mysterious |
+| Romantic | tender, intimate, warm, passionate, longing, devoted, sensual |
+| Epic | triumphant, majestic, anthemic, soaring, grandiose, cinematic, sweeping |
+| Nostalgic | retro, vintage, throwback, reminiscent, dreamy, hazy, faded |
+
+---
+
+## Anti-Patterns to Avoid
+
+### Negations (DON'T USE)
+The model does not reliably process negative instructions.
+
+| Bad | Good |
+| --- | --- |
+| "no drums" | "acoustic guitar and piano only" |
+| "without vocals" | use `[Inst]` tags in lyrics |
+| "not too fast" | "slow tempo 70 BPM" |
+| "don't use autotune" | "raw, natural vocal delivery" |
+
+### Conflicting Styles
+Do not combine contradictory aesthetics:
+
+| Conflict | Why |
+| --- | --- |
+| "vintage lo-fi" + "crisp modern production" | lo-fi and crisp are opposites |
+| "intimate whisper" + "powerful belting" | can't be both simultaneously |
+| "minimalist" + "full orchestra" | sparse vs. dense |
+| "raw punk" + "polished pop production" | production styles clash |
+
+### Overly Generic (Too Vague)
+
+| Weak | Strong |
+| --- | --- |
+| "sad song with guitar" | "melancholic indie folk, fingerpicked acoustic guitar, male vocals, intimate, 85 BPM" |
+| "happy music" | "upbeat pop, bright female vocals, synth and piano, 120 BPM, radio-ready" |
+| "rock song" | "indie rock, anthemic, distorted electric guitar, driving drums, passionate vocals, 140 BPM" |
+| "electronic music" | "progressive house, euphoric, 128 BPM, synthesizer pads, driving bassline" |
+
+---
+
+## Prompt Refinement Checklist
+
+When reviewing a prompt, check:
+
+1. Does it specify a genre? (e.g., "indie folk" not just "folk")
+2. Does it include mood/emotion? (at least one descriptor)
+3. Does it name specific instruments? (not just "music")
+4. Does it indicate tempo or energy level? (BPM or descriptor)
+5. Does it describe the vocal style? (if the song has vocals)
+6. Is it under 2000 characters?
+7. Are there any negations to rewrite?
+8. Are there any conflicting style combinations?

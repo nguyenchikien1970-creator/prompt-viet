@@ -1,0 +1,603 @@
+[
+  {
+    "id": "cmp1hf04k000fjs04gd82p7bj",
+    "slug": "sigrexio-rsi-macd-momentum",
+    "original_title": "[sigrex.io] RSI + MACD Momentum",
+    "original_prompt": "{{val:symbol=BTCUSDT}}\n{{val:rsi_ob=70}}\n{{val:rsi_os=30}}\n\nYou are analyzing {{symbol}} at {{current_time}}.\n\nLast signal: {{last_trigger_action}} at price {{last_trigger_price}} (executed: {{last_trigger_at}}).\n\nRecent signal history:\n{{trigger_history}}\n\nSTRATEGY RULES:\n- Look at the RSI indicator on the chart.\n- Look at the MACD indicator on the chart (histogram, signal line crossover).\n\nLONG conditions (all must be met):\n  1. RSI is below {{rsi_os}} and turning upward\n  2. MACD histogram is crossing from negative to positive\n  3. No position is currently open\n\nSHORT conditions (all must be met):\n  1. RSI is above {{rsi_ob}} and turning downward\n  2. MACD histogram is crossing from positive to negative\n  3. No position is currently open\n\nEXIT conditions (any is enough):\n  1. RSI crosses the opposite extreme (e.g., was SHORT, RSI now below {{rsi_os}})\n  2. MACD gives a reversal crossover against current position\n\nHOLD if:\n  - Conditions are mixed or unclear\n  - A position is open but no exit signal is present\n\nUse {{trigger_history}} to avoid repeating the same signal twice in a row without an EXIT in between.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Chiến lược động lượng RSI + MACD [sigrex.io]",
+    "vi_prompt": "{{val:symbol=BTCUSDT}}\n{{val:rsi_ob=70}}\n{{val:rsi_os=30}}\n\nBạn đang phân tích cặp {{symbol}} vào thời điểm {{current_time}}.\n\nTín hiệu gần nhất: {{last_trigger_action}} tại mức giá {{last_trigger_price}} (thực thi lúc: {{last_trigger_at}}).\n\nLịch sử tín hiệu gần đây:\n{{trigger_history}}\n\nQUY TẮC CHIẾN LƯỢC:\n- Quan sát chỉ báo RSI trên biểu đồ.\n- Quan sát chỉ báo MACD trên biểu đồ (histogram, giao cắt đường tín hiệu).\n\nĐiều kiện MUA (LONG) (phải thỏa mãn tất cả):\n  1. RSI nằm dưới {{rsi_os}} và quay đầu hướng lên\n  2. MACD histogram giao cắt từ âm sang dương\n  3. Hiện tại không có vị thế nào đang mở\n\nĐiều kiện BÁN (SHORT) (phải thỏa mãn tất cả):\n  1. RSI nằm trên {{rsi_ob}} và quay đầu hướng xuống\n  2. MACD histogram giao cắt từ dương sang âm\n  3. Hiện tại không có vị thế nào đang mở\n\nĐiều kiện ĐÓNG VỊ THẾ (EXIT) (thỏa mãn bất kỳ điều kiện nào):\n  1. RSI vượt qua vùng cực trị đối diện (ví dụ: đang SHORT, RSI hiện giảm xuống dưới {{rsi_os}})\n  2. MACD xuất hiện giao cắt đảo chiều chống lại vị thế hiện tại\n\nGIỮ NGUYÊN (HOLD) nếu:\n  - Các điều kiện trái chiều hoặc không rõ ràng\n  - Đang mở vị thế nhưng chưa xuất hiện tín hiệu thoát\n\nSử dụng {{trigger_history}} để tránh lặp lại cùng một tín hiệu hai lần liên tiếp mà không có lệnh EXIT ở giữa.",
+    "translation_status": "translated",
+    "source_category": "Finance & Budgeting",
+    "source_tags": [
+      "Trading",
+      "Strategy"
+    ],
+    "category": "Tài chính & Đầu tư",
+    "subcategory": "Giao dịch Tự động & Bot Trading",
+    "tags": [
+      "rsi macd",
+      "momentum trading",
+      "crypto strategy",
+      "trading bot",
+      "technical indicators"
+    ],
+    "search_keywords_vi": [
+      "chiến lược động lượng rsi macd",
+      "tín hiệu giao dịch bot",
+      "chỉ báo macd rsi",
+      "giao dịch tự động bitcoin",
+      "cặp btcusdt"
+    ],
+    "use_case": "Thiết lập quy tắc mua, bán và thoát lệnh tự động dựa trên giao cắt MACD và ngưỡng quá mua/quá bán RSI.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "sigrex",
+      "name": "Sigrex",
+      "avatar": "https://i.imgur.com/HbduP3p.png",
+      "identifier": "0x7s0lt1",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/sigrexio-rsi-macd-momentum",
+    "created_at": "2026-05-11T17:34:48.164Z"
+  },
+  {
+    "id": "cmp1fv5ac0001js04jbj3pxoa",
+    "slug": "feature-coding-template",
+    "original_title": "Feature coding template",
+    "original_prompt": "You are a senior software engineer with keen understanding in ${language}. I am working on ${project_or_feature_description}. Your task:\n- ${task_1}\n- ${task_2}\n- ${task_N}\n- ensure consistent styling and verify adherence to language-specific best practices\n- Check for proper error handling\n- ensure that the changes are covered in the tests\n- update README and comments where necessary\n\nafter update, return general recommended commit message containing commit name followed by what changed in bullet points e.g. \n\n<type>(<optional_scope>): <description>\n<bullet> <body>\n...",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Mẫu triển khai tính năng lập trình phần mềm chuẩn mực",
+    "vi_prompt": "Bạn là một kỹ sư phần mềm cao cấp với sự am hiểu sâu sắc về ${language}. Tôi đang phát triển ${project_or_feature_description}. Nhiệm vụ của bạn:\n- ${task_1}\n- ${task_2}\n- ${task_N}\n- đảm bảo phong cách viết mã nhất quán và xác minh việc tuân thủ các thực hành tốt nhất đặc thù của ngôn ngữ\n- Kiểm tra khả năng xử lý lỗi thích hợp\n- đảm bảo rằng các thay đổi đều được bao phủ bởi các bài kiểm thử (tests)\n- cập nhật README và các chú thích cần thiết\n\nsau khi cập nhật, hãy trả về thông điệp commit được đề xuất theo cấu trúc chung chứa tên commit kèm theo các gạch đầu dòng nêu rõ nội dung thay đổi, ví dụ:\n\n<type>(<optional_scope>): <description>\n<bullet> <body>\n...",
+    "translation_status": "translated",
+    "source_category": "Vibe Coding",
+    "source_tags": [
+      "AI Tools",
+      "Coding",
+      "templates"
+    ],
+    "category": "Kỹ thuật Phần mềm & DevOps",
+    "subcategory": "Mẫu Lập trình & Quy chuẩn Mã nguồn",
+    "tags": [
+      "coding template",
+      "software engineering",
+      "git commit",
+      "unit testing",
+      "code style"
+    ],
+    "search_keywords_vi": [
+      "mẫu triển khai tính năng",
+      "chuẩn commit git",
+      "quy chuẩn mã nguồn",
+      "lập trình phần mềm",
+      "kiểm thử tính năng"
+    ],
+    "use_case": "Mẫu chuẩn hóa quy trình lập trình tính năng mới từ viết mã, xử lý lỗi, viết test đến soạn commit message chuẩn conventional.",
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "ibekwe2006",
+      "name": "Onyekachi Ibekwe",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJnycNSNwGZVl__qILZdQlrM96n3oVTPLkvL_1Hdf6QPj_VQX5k=s96-c",
+      "identifier": "ibekwe2006",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/feature-coding-template",
+    "created_at": "2026-05-11T16:51:22.116Z"
+  },
+  {
+    "id": "cmp1ake2n0004jm04q7v9tvne",
+    "slug": "generating-effective-study-references-for-aiml-learning-concepts",
+    "original_title": "Generating Effective Study references for AI/ML Learning Concepts",
+    "original_prompt": "You are an industry expert like Andrew Ng (a recognised AI expert) specialising in AI, machine learning, and deep learning, with deep expertise in all types of ML algorithms. \n\nYour task is to provide a comprehensive, expert-level guide on the topic of Your explanation should include the following: \n1. A clear, intuitive overview of how the relevant machine learning algorithm(s) work, emphasising the mathematical foundations and concepts behind them. Use up-to-date, scientifically rigorous materials and references (including online academic sources) to support the intuition. \n2. A detailed, step-by-step hands-on example demonstrating the chosen algorithm in practice. Walk through the code and computations carefully, showing how the mathematical principles translate into the implemented solution. Highlight the connection between theory and code to ensure deep understanding. \n3. Encouragement for the user to explore and innovate further with the algorithm, suggesting possible extensions, variations, or experiments to deepen their mastery. Throughout, maintain clarity, precision, and rigorous scientific accuracy. Present the material in a structured, engaging way that is accessible to users with a solid technical background but also educational for those new to the specific methods. Include citations or references to authoritative sources to reinforce your explanations and provide a path for further study.\n\nTopics:- [Feature Engineering, How to do feature Engineering, How feature Engineering can be done to train the Model which works well, feature engineering frameworks, and Architecture for feature engineering",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Tài liệu học tập chuyên sâu các khái niệm AI/ML & Feature Engineering",
+    "vi_prompt": "Bạn là một chuyên gia hàng đầu trong ngành như Andrew Ng (một chuyên gia AI được công nhận) chuyên sâu về AI, học máy (machine learning) và học sâu (deep learning), với chuyên môn sâu sắc về tất cả các loại thuật toán ML.\n\nNhiệm vụ của bạn là cung cấp một bản hướng dẫn toàn diện ở cấp độ chuyên gia về chủ đề được yêu cầu. Lời giải thích của bạn phải bao gồm những nội dung sau:\n1. Một cái nhìn tổng quan rõ ràng, trực quan về cách thức hoạt động của (các) thuật toán học máy liên quan, nhấn mạnh vào các nền tảng toán học và khái niệm cốt lõi đằng sau chúng. Sử dụng các tài liệu và tài liệu tham khảo cập nhật, có tính chuẩn mực khoa học (bao gồm các nguồn học thuật trực tuyến) để hỗ trợ trực giác học tập.\n2. Một ví dụ thực hành chi tiết, từng bước minh họa thuật toán đã chọn trong thực tế. Hướng dẫn cẩn thận qua mã nguồn và các phép tính, chỉ ra cách các nguyên lý toán học được chuyển đổi thành giải pháp triển khai trong mã. Nêu bật mối liên hệ giữa lý thuyết và mã để đảm bảo sự hiểu biết sâu sắc.\n3. Khuyến khích người dùng tiếp tục khám phá và đổi mới hơn nữa với thuật toán, gợi ý các hướng mở rộng, biến thể hoặc thử nghiệm khả thi để nâng cao sự thành thạo của họ. Xuyên suốt bài viết, hãy duy trì sự rõ ràng, chính xác và chuẩn mực khoa học nghiêm ngặt. Trình bày tài liệu một cách có cấu trúc, hấp dẫn, dễ tiếp cận đối với người dùng có nền tảng kỹ thuật vững chắc nhưng cũng mang tính giáo dục cao cho những người mới làm quen với các phương pháp cụ thể. Đính kèm các trích dẫn hoặc tài liệu tham khảo từ các nguồn có thẩm quyền để củng cố các giải thích của bạn và mở ra lộ trình nghiên cứu sâu hơn.\n\nChủ đề:- [Feature Engineering (Kỹ thuật tạo đặc trưng), Cách thực hiện Feature Engineering, Cách thức Feature Engineering được ứng dụng để huấn luyện mô hình hoạt động hiệu quả, các khung framework Feature Engineering và Kiến trúc cho Feature Engineering]",
+    "translation_status": "translated",
+    "source_category": "Education",
+    "source_tags": [],
+    "category": "Trí tuệ Nhân tạo & Machine Learning",
+    "subcategory": "Kỹ thuật Tạo Đặc trưng & Lý thuyết ML",
+    "tags": [
+      "machine learning",
+      "feature engineering",
+      "andrew ng",
+      "mathematical foundations",
+      "hands-on tutorial"
+    ],
+    "search_keywords_vi": [
+      "kỹ thuật tạo đặc trưng",
+      "học máy chuyên sâu",
+      "feature engineering là gì",
+      "nền tảng toán học ml",
+      "hướng dẫn machine learning"
+    ],
+    "use_case": "Cung cấp cẩm nang học tập chuyên sâu, giải thích toán học và code thực hành về Feature Engineering trong Machine Learning.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "abhishekojhaedu",
+      "name": "Abhishek Ojha",
+      "avatar": null,
+      "identifier": "abhishekojhaedu",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/generating-effective-study-references-for-aiml-learning-concepts",
+    "created_at": "2026-05-11T14:23:02.207Z"
+  },
+  {
+    "id": "cmp055s750001l504twq3h81p",
+    "slug": "senior-market-research-analyst-specializing-in-digital-advertising-and-cross-border-e-commerce",
+    "original_title": "senior market research analyst specializing in digital advertising and cross-border e-commerce.",
+    "original_prompt": "Role:\nAct as a senior market research analyst specializing in digital advertising and cross-border e-commerce.\n\nTask:\nCreate a detailed country entry report for ${insert_country_name}to help me sell products using Meta Ads (Facebook/Instagram) and TikTok Ads.\n\nAssumptions:\nI know nothing about this country — not its culture, economy, or digital landscape.\n\nReport Structure – follow exactly:\nCountry Introduction (geography, population, language, currency, internet penetration, mobile usage, and key cultural notes relevant to advertising).\nMarket Analysis for E-commerce & Social Commerce\nEconomic overview (GDP, disposable income, consumer spending trends)\nPopular payment methods\nLogistics & delivery considerations\n\nAd platform reach: Meta vs. TikTok (user demographics, engagement rates, ad costs if available)\nSocial Media Trends (specific to Meta & TikTok in that country)\nTop content formats (e.g., challenges, UGC, influencer niches)\nPeak engagement times\nCultural do's & don'ts for ads\nEmerging trends from the last 6 months\nMost Selling Products (by category) – list top 5–7 product categories currently trending on Meta/TikTok ads in that country, with 1 example per category.\nRecommended first 3 products to test + why they fit local trends.\n\nTone: Actionable, data-driven, and beginner-friendly.\n\nOutput language: English.\n\nall infomations must be from 2025 and 2026 ",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Báo cáo nghiên cứu thị trường thương mại điện tử xuyên biên giới & quảng cáo số",
+    "vi_prompt": "Vai trò:\nĐóng vai là nhà phân tích nghiên cứu thị trường cấp cao chuyên về quảng cáo số (digital advertising) và thương mại điện tử xuyên biên giới (cross-border e-commerce).\n\nNhiệm vụ:\nTạo báo cáo thâm nhập thị trường chi tiết cho quốc gia ${insert_country_name} để giúp tôi bán sản phẩm bằng Quảng cáo Meta (Facebook/Instagram) và Quảng cáo TikTok.\n\nGiả định:\nTôi hoàn toàn chưa biết gì về quốc gia này — từ văn hóa, kinh tế, cho đến bối cảnh kỹ thuật số.\n\nCấu trúc Báo cáo – tuân thủ chính xác:\nGiới thiệu quốc gia (địa lý, dân số, ngôn ngữ, tiền tệ, tỷ lệ thâm nhập internet, việc sử dụng thiết bị di động và các lưu ý văn hóa quan trọng liên quan đến quảng cáo).\nPhân tích thị trường cho Thương mại điện tử & Thương mại xã hội (Social Commerce)\nTổng quan kinh tế (GDP, thu nhập khả dụng, xu hướng chi tiêu của người tiêu dùng)\nCác phương thức thanh toán phổ biến\nCác lưu ý về hậu cần & giao hàng\n\nPhạm vi tiếp cận của nền tảng quảng cáo: Meta so với TikTok (nhân khẩu học người dùng, tỷ lệ tương tác, chi phí quảng cáo nếu có)\nXu hướng mạng xã hội (cụ thể đối với Meta & TikTok tại quốc gia đó)\nCác định dạng nội dung hàng đầu (ví dụ: thử thách challenge, UGC, các ngách influencer)\nKhung giờ tương tác cao điểm\nNhững điều nên làm và không nên làm về mặt văn hóa khi chạy quảng cáo\nCác xu hướng mới nổi trong 6 tháng qua\nCác sản phẩm bán chạy nhất (theo danh mục) – liệt kê top 5–7 danh mục sản phẩm hiện đang thịnh hành trên quảng cáo Meta/TikTok ở quốc gia đó, kèm 1 ví dụ cụ thể cho mỗi danh mục.\nĐề xuất 3 sản phẩm đầu tiên nên thử nghiệm + lý do tại sao chúng phù hợp với xu hướng địa phương.\n\nGiọng điệu: Có tính thực thi cao, định hướng theo dữ liệu và dễ tiếp cận cho người mới bắt đầu.\n\nNgôn ngữ đầu ra: Tiếng Anh.\n\nTất cả thông tin phải được cập nhật từ năm 2025 và 2026",
+    "translation_status": "translated",
+    "source_category": "Market Analysis",
+    "source_tags": [],
+    "category": "Nghiên cứu Thị trường & Kinh doanh",
+    "subcategory": "E-Commerce Xuyên Biên giới & Paid Ads",
+    "tags": [
+      "market research",
+      "cross border ecommerce",
+      "meta ads",
+      "tiktok ads",
+      "country entry strategy"
+    ],
+    "search_keywords_vi": [
+      "nghiên cứu thị trường thương mại điện tử",
+      "thâm nhập thị trường quốc tế",
+      "quảng cáo tiktok meta",
+      "dropshipping xuyên biên giới",
+      "bán hàng quốc tế"
+    ],
+    "use_case": "Lập báo cáo phân tích toàn diện văn hóa, người dùng, sản phẩm hot và chi phí quảng cáo để mở rộng bán hàng sang quốc gia mới.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "ayoubelouardi3710",
+      "name": "Watson Charlie",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocL8khk5HFEJMUyDNYUq-CBxvgncZCsdVsM1gVTFWymP7En3Nqze=s96-c",
+      "identifier": "ayoubelouardi3710",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/senior-market-research-analyst-specializing-in-digital-advertising-and-cross-border-e-commerce",
+    "created_at": "2026-05-10T19:03:56.417Z"
+  },
+  {
+    "id": "cmozyxsdx0001jp04pci3mdp7",
+    "slug": "aim-summarized-pdf",
+    "original_title": "AIM summarized pdf",
+    "original_prompt": "study the whole PDF and shorten the questions in it with only bullet points and keep the necessary Images and diagrams explain each question in short and content rich manner the answer should contain only bullet points no lengthy answers give me in a PDF format, keep it as short as possible with information rich content  please include all the images present in the actual PDF with respective to their questions",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Tóm tắt tài liệu PDF dạng gạch đầu dòng câu hỏi và sơ đồ",
+    "vi_prompt": "Nghiên cứu toàn bộ tệp PDF và rút gọn các câu hỏi trong đó chỉ bằng các gạch đầu dòng, đồng thời giữ lại các hình ảnh và sơ đồ cần thiết. Giải thích từng câu hỏi một cách ngắn gọn và giàu thông tin, câu trả lời chỉ nên bao gồm các gạch đầu dòng không dài dòng, xuất kết quả cho tôi ở định dạng PDF, giữ cho tài liệu ngắn gọn nhất có thể với nội dung cô đọng súc tích, vui lòng bao gồm tất cả các hình ảnh có trong tệp PDF gốc tương ứng với các câu hỏi của chúng.",
+    "translation_status": "translated",
+    "source_category": "Exam Preparation",
+    "source_tags": [],
+    "category": "Năng suất & Quản lý Công việc",
+    "subcategory": "Tóm tắt Tài liệu & Trích xuất PDF",
+    "tags": [
+      "pdf summarizer",
+      "bullet points",
+      "study guide",
+      "diagram extraction",
+      "exam review"
+    ],
+    "search_keywords_vi": [
+      "tóm tắt tệp pdf",
+      "rút gọn câu hỏi pdf",
+      "trích xuất sơ đồ hình ảnh",
+      "ôn tập dạng gạch đầu dòng",
+      "tổng hợp tài liệu"
+    ],
+    "use_case": "Rút gọn tài liệu PDF thành bộ câu hỏi và đáp án súc tích dạng gạch đầu dòng kèm hình ảnh minh họa phục vụ ôn tập nhanh.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "nihalbhushantallati",
+      "name": "Nihal Bhushan Tallati",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocI2cHttjYg3Yaba1ArdHHoSTO3x2Dg3UaBQMrJiQFLxfUvw3A=s96-c",
+      "identifier": "nihalbhushantallati",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/aim-summarized-pdf",
+    "created_at": "2026-05-10T12:05:07.458Z"
+  },
+  {
+    "id": "cmozoj9ka0001if04i6qfnjmp",
+    "slug": "black-effect-on-person",
+    "original_title": "Black Effect on person",
+    "original_prompt": "Turn it into a black & White image. Make the background solid\n\nblack. So everything blends nicely. Keep the person exactly\n\nthe same.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Chuyển ảnh sang đen trắng với nền đen tuyền",
+    "vi_prompt": "Chuyển bức ảnh thành hình ảnh đen trắng (Black & White). Làm cho nền có màu đen tuyền (solid black). Để mọi thứ hòa trộn đẹp mắt. Giữ nguyên đối tượng người hoàn toàn chính xác như cũ.",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Iconic Photo",
+      "Design"
+    ],
+    "category": "Nghệ thuật & Thiết kế Hình ảnh",
+    "subcategory": "Chỉnh sửa Ảnh Đen trắng & Tách nền",
+    "tags": [
+      "black and white",
+      "solid black background",
+      "photo editing",
+      "monochrome portrait",
+      "studio portrait"
+    ],
+    "search_keywords_vi": [
+      "ảnh đen trắng",
+      "nền đen tuyền",
+      "chân dung đơn sắc",
+      "tách nền đen",
+      "chỉnh sửa ảnh đen trắng"
+    ],
+    "use_case": "Chuyển đổi ảnh chụp người sang phong cách đen trắng đơn sắc với phông nền đen tuyền sang trọng.",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "deeppanjab",
+      "name": "deeppanjab",
+      "avatar": "https://avatars.githubusercontent.com/u/132550289?v=4",
+      "identifier": "deeppanjab",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/black-effect-on-person",
+    "created_at": "2026-05-10T11:18:31.978Z"
+  },
+  {
+    "id": "cmozbv85o0001j707dgja3izh",
+    "slug": "job-search-agent",
+    "original_title": "Job search agent",
+    "original_prompt": "Create an agent to find and apply jobs daily and automatically in the areas of CISM,CISA  ,PMP in management role by uploading the resume given  and find in India websites and overseas jobs websites from remote location by taking resume as reference and also create the complete packagewhich works in real environment and send intimation to the email",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Agent tự động tìm kiếm và nộp đơn ứng tuyển việc làm",
+    "vi_prompt": "Tạo một agent để tự động tìm kiếm và nộp đơn xin việc hàng ngày trong các lĩnh vực CISM, CISA, PMP cho các vị trí quản lý bằng cách tải lên sơ yếu lý lịch (resume) đã cung cấp; tìm kiếm trên các trang web tuyển dụng tại Ấn Độ và các trang web việc làm quốc tế cho vị trí làm việc từ xa (remote) lấy CV làm tài liệu tham khảo; đồng thời xây dựng gói giải pháp hoàn chỉnh có thể hoạt động trong môi trường thực tế và gửi thông báo cập nhật về email.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Nghề nghiệp & Tuyển dụng",
+    "subcategory": "Tự động hóa Tuyển dụng & Ứng tuyển Việc làm",
+    "tags": [
+      "job search agent",
+      "automated job application",
+      "cism cisa pmp",
+      "remote jobs",
+      "career automation"
+    ],
+    "search_keywords_vi": [
+      "agent tìm việc tự động",
+      "tự động nộp cv",
+      "việc làm quản lý cisa pmp",
+      "ứng tuyển từ xa",
+      "bot tìm việc làm"
+    ],
+    "use_case": "Tự động hóa quá trình tìm kiếm và nộp hồ sơ xin việc hàng ngày cho các vị trí quản trị dự án, an ninh thông tin.",
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "cloudexam99",
+      "name": "Rajesh",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKWR9pYMHPbc0fnsiBde34gv32m0hm6QOnA1-YoHOgyNYDnkw=s96-c",
+      "identifier": "cloudexam99",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/job-search-agent",
+    "created_at": "2026-05-10T05:23:55.020Z"
+  },
+  {
+    "id": "cmoyo3i590007lb04euc3lt8w",
+    "slug": "mothers-day",
+    "original_title": "Mothers day",
+    "original_prompt": "Main Prompt -\nUsing the uploaded reference photo of my mom (or me with mom), design a cozy wall collage. Place the reference photo as the main central Polaroid pinned on a cork board or string lights, keeping our faces and expressions exactly the same. Surround it with several smaller Polaroid‑style frames that show soft, AI‑imagined memories: birthdays, festivals, quiet tea time, family hugs. Add handwritten text under the central photo that says “Happy Mother’s Day, Mom”. Style: warm indoor light, soft shadows, pastel colors, slightly textured paper look.\n\nImage 2 -\nUsing the uploaded reference photo of mom and child together, transform them into stylized Pixar‑inspired 3D characters while preserving their recognizable faces, hairstyles, and overall proportions from the reference. Keep their pose and closeness the same, but place them in a cozy living‑room setting decorated for Mother’s Day with balloons, flowers, and a small “Happy Mother’s Day” banner in the background. Style: vibrant colors, soft 3D lighting, big expressive eyes, high‑detail Pixar‑like render, vertical 4:5 ratio.\n\nimage 3 -\nUsing the uploaded reference portrait photo of my mom, create a vertical 9:16 Mother’s Day social media image. Preserve her facial features and expression exactly. Place her slightly off‑center with a soft blurred pastel background and a subtle floral halo around her. Add elegant text at the top that reads “Happy Mother’s Day” and at the bottom a small line “Thank you for everything”. Style: soft studio light, smooth skin but natural texture, modern Instagram design, high‑resolution. \n\nsecret newspaper prompt - \nCreate a whimsical black-and-white vintage Hindi newspaper front page using the uploaded mother-child photo. Transform them into an engraved antique newspaper portrait while preserving their real facial identity and emotional warmth. Design the page like a dense old fantasy editorial newspaper dedicated to motherhood and the bond between a mother and child.\n\nUse classic Hindi serif typography, narrow newspaper columns, subtle paper texture, high-contrast black ink on white paper, quirky editorial layouts, emotional storytelling snippets, playful fake ads, retro stamps, and magical vintage newspaper aesthetics.\n\nThe newspaper must automatically include:\n\nMother’s Name: [MOTHER_NAME]\nChild’s Name: [CHILD_NAME]\n\nAdd creative Hindi Mother’s Day headlines, emotional one-liners, humorous side notes, and a short featured “news article” about how [CHILD_NAME] sees [MOTHER_NAME] as their superhero, safest place, and biggest source of love.\n\nKeep the portrait centered and dominant while the rest of the newspaper feels nostalgic, emotional, slightly surreal, humorous, and beautifully chaotic like an old collectible Hindi newspaper.\n\nQueen image - \nUSE THE UPLOADED PHOTO AS THE EXACT REFERENCE. DO NOT CHANGE FACES, HAIRSTYLE, CLOTHES, POSE, EXPRESSION, OR BODY STRUCTURE. CREATE A WARM CINEMATIC MOTHER'S DAY PORTRAIT WHERE THE daughter GENTLY PLACES A GOLDEN CROWN ON HIS MOTHER'S HEAD WHILE SHE SITS GRACEFULLY ON AN ELEGANT CHAIR. COZY INDOOR SETTING WITH SOFT GOLDEN LIGHTING, FLOWERS, CANDLES, AND BOKEH BACKGROUND. ULTRA REALISTIC, EMOTIONAL, LUXURY PHOTOGRAPHY STYLE, INSTAGRAM AESTHETIC.ADD ELEGANT TEXT: ‘HAPPY MOTHER’S DAY’ AND ‘THANK YOU FOR BEING MY FIRST HOME.’ 4:5 RATIO. ",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Bộ sưu tập prompt hình ảnh kỷ niệm Ngày của Mẹ",
+    "vi_prompt": "Main Prompt -\nSử dụng bức ảnh chụp tham chiếu đã tải lên về mẹ của tôi (hoặc tôi cùng với mẹ), hãy thiết kế một bức tranh ghép tường (wall collage) ấm cúng. Đặt bức ảnh tham chiếu làm ảnh Polaroid trung tâm chính được ghim trên bảng bần hoặc dây đèn đom đóm, giữ nguyên khuôn mặt và biểu cảm của chúng tôi chính xác như cũ. Bao quanh bức ảnh đó là một vài khung ảnh kiểu Polaroid nhỏ hơn thể hiện những kỷ niệm êm dịu do AI tưởng tượng ra: sinh nhật, lễ hội, giờ uống trà tĩnh lặng, những cái ôm ấm áp của gia đình. Thêm dòng chữ viết tay bên dưới bức ảnh trung tâm có nội dung “Happy Mother’s Day, Mom”. Phong cách: ánh sáng ấm áp trong nhà, bóng đổ dịu nhẹ, màu pastel, bề mặt hơi có vân giấy.\n\nImage 2 -\nSử dụng bức ảnh chụp tham chiếu đã tải lên về hai mẹ con bên nhau, hãy chuyển đổi họ thành các nhân vật 3D cách điệu lấy cảm hứng từ Pixar trong khi vẫn bảo toàn khuôn mặt dễ nhận biết, kiểu tóc và tỷ lệ tổng thể từ ảnh tham chiếu. Giữ nguyên tư thế và sự gần gũi của họ, nhưng đặt họ vào một không gian phòng khách ấm cúng được trang trí cho Ngày của Mẹ với bóng bay, hoa và một biểu ngữ nhỏ “Happy Mother’s Day” ở phía sau. Phong cách: màu sắc sống động, ánh sáng 3D dịu nhẹ, đôi mắt to giàu biểu cảm, kết xuất chi tiết cao kiểu Pixar, tỷ lệ dọc 4:5.\n\nimage 3 -\nSử dụng bức ảnh chân dung tham chiếu đã tải lên của mẹ tôi, hãy tạo một hình ảnh mạng xã hội dọc tỷ lệ 9:16 cho Ngày của Mẹ. Bảo toàn chính xác các đường nét khuôn mặt và biểu cảm của mẹ. Đặt mẹ hơi lệch tâm với phông nền màu pastel mờ nhẹ và một vầng hào quang hoa tinh tế bao quanh. Thêm văn bản trang nhã ở trên cùng có nội dung “Happy Mother’s Day” và ở dưới cùng một dòng chữ nhỏ “Thank you for everything”. Phong cách: ánh sáng studio dịu, da mịn màng nhưng giữ vân da tự nhiên, thiết kế Instagram hiện đại, độ phân giải cao.\n\nsecret newspaper prompt - \nTạo trang nhất tờ báo tiếng Hindi cổ điển đen trắng đầy kỳ thú bằng cách sử dụng bức ảnh mẹ và con đã tải lên. Chuyển đổi họ thành một bức chân dung báo chí cổ được chạm khắc trong khi vẫn bảo toàn danh tính khuôn mặt thực tế và sự ấm áp đầy cảm xúc. Thiết kế trang báo giống như một tờ báo chuyên đề giả tưởng cổ điển dày đặc chữ dành riêng cho tình mẫu tử và mối gắn kết thiêng liêng giữa mẹ và con.\n\nSử dụng kiểu chữ serif tiếng Hindi cổ điển, các cột báo hẹp, vân giấy tinh tế, mực đen độ tương phản cao trên giấy trắng, bố cục biên tập độc đáo, các đoạn trích kể chuyện giàu cảm xúc, quảng cáo giả vui tươi, tem cổ điển và thẩm mỹ tờ báo cổ xưa đầy ma thuật.\n\nTờ báo phải tự động bao gồm:\n\nTên của Mẹ: [MOTHER_NAME]\nTên của Con: [CHILD_NAME]\n\nThêm các tiêu đề Ngày của Mẹ sáng tạo bằng tiếng Hindi, các câu khẩu hiệu xúc động, các ghi chú bên lề hài hước và một \"bài báo tin tức\" ngắn nêu bật cách [CHILD_NAME] xem [MOTHER_NAME] là siêu anh hùng, nơi an toàn nhất và nguồn yêu thương lớn nhất của mình.\n\nGiữ bức chân dung ở vị trí trung tâm và nổi bật nhất trong khi phần còn lại của tờ báo mang lại cảm giác hoài niệm, xúc động, hơi siêu thực, hài hước và hỗn độn một cách tuyệt đẹp như một tờ báo tiếng Hindi cổ đáng sưu tầm.\n\nQueen image - \nSỬ DỤNG BỨC ẢNH ĐÃ TẢI LÊN LÀM TÀI LIỆU THAM CHIẾU CHÍNH XÁC. TUYỆT ĐỐI KHÔNG THAY ĐỔI KHUÔN MẶT, KIỂU TÓC, QUẦN ÁO, TƯ THẾ, BIỂU CẢM HOẶC CẤU TRÚC CƠ THỂ. TẠO MỘT BỨC CHÂN DUNG NGÀY CỦA MẸ CHUẨN ĐIỆN ẢNH ẤM ÁP NƠI NGƯỜI CON GÁI NHẸ NHÀNG ĐẶT VƯƠNG MIỆNG VÀNG LÊN ĐẦU MẸ TRONG KHI MẸ NGỒI DUYÊN DÁNG TRÊN MỘT CHIẾC GHẾ TRANG NHÃ. BỐI CẢNH TRONG NHÀ ẤM CÚNG VỚI ÁNH SÁNG VÀNG DỊU, HOA, NẾN VÀ HẬU CẢNH BOKEH. PHONG CÁCH NHIẾP ẢNH SIÊU CHÂN THỰC, GIÀU CẢM XÚC, SANG TRỌNG, THẨM MỸ INSTAGRAM. THÊM VĂN BẢN TRANG NHÃ: ‘HAPPY MOTHER’S DAY’ VÀ ‘THANK YOU FOR BEING MY FIRST HOME.’ TỶ LỆ 4:5.",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Nano Banana",
+      "Image Generation",
+      "ChatGPT"
+    ],
+    "category": "Nghệ thuật & Thiết kế Hình ảnh",
+    "subcategory": "Chân dung Gia đình & Thiệp Ngày của Mẹ",
+    "tags": [
+      "mothers day",
+      "polaroid collage",
+      "pixar 3d",
+      "vintage newspaper",
+      "family portrait"
+    ],
+    "search_keywords_vi": [
+      "ảnh ngày của mẹ",
+      "chân dung mẹ và con",
+      "tranh ghép polaroid",
+      "phong cách 3d pixar",
+      "báo cổ điển ngày của mẹ"
+    ],
+    "use_case": "Tạo bộ ảnh nghệ thuật kỷ niệm Ngày của Mẹ theo nhiều phong cách: tranh dán Polaroid, 3D Pixar, thiệp Instagram và báo cổ điển.",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "ppppatel05",
+      "name": "ROASTED MEMES",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIjN_eARR6ie0XH4Quh1hMfxM2UitHukmRyS4iCBYHHjXwKG9Jb=s96-c",
+      "identifier": "ppppatel05",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/mothers-day",
+    "created_at": "2026-05-09T18:18:30.429Z"
+  },
+  {
+    "id": "cmoy32v500001li042fmes0bk",
+    "slug": "the-pleasure-of-finding-things-out",
+    "original_title": "The Pleasure of Finding Things Out",
+    "original_prompt": "A highly detailed stylized 3D cartoon caricature of a playful physicist inspired by Richard Feynman.\n\nCharacter identity:\n- male\n- middle-aged\n- slim build\n- expressive face with large smile\n- thick wavy dark hair\n- large round glasses\n- intelligent mischievous eyes\n- warm friendly personality\n- tweed academic jacket\n- white shirt with pens in pocket\n- holding a physics book\n\nArt style:\nPixar-inspired stylized realism, whimsical 3D caricature, oversized expressive eyes, exaggerated facial proportions, polished CGI rendering, animated movie character aesthetic, collectible figurine look, ultra-clean white background.\n\nPose:\nstanding confidently with one finger raised as if explaining physics.\n\nScene:\nminimal white studio background with subtle physics doodles.\n\nRender quality:\nultra detailed CGI, cinematic lighting, octane render, AAA animated movie quality.\n\nNegative prompt:\nuncanny realism, bad anatomy, distorted hands, blurry eyes, duplicate limbs, extra fingers, messy textures.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Tranh biếm họa 3D nhà vật lý vui vẻ phong cách Feynman",
+    "vi_prompt": "Một bức tranh biếm họa 3D cách điệu siêu chi tiết về một nhà vật lý tinh nghịch lấy cảm hứng từ Richard Feynman.\n\nNhận diện nhân vật:\n- nam giới\n- trung niên\n- dáng người mảnh khảnh\n- khuôn mặt giàu biểu cảm với nụ cười lớn\n- mái tóc đen gợn sóng dày\n- kính tròn to\n- đôi mắt thông minh, tinh quái\n- tính cách thân thiện, ấm áp\n- áo khoác học thuật vải tuýt (tweed jacket)\n- áo sơ mi trắng có cài bút trong túi áo\n- tay cầm một cuốn sách vật lý\n\nPhong cách nghệ thuật:\nChủ nghĩa hiện thực cách điệu lấy cảm hứng từ Pixar, tranh biếm họa 3D kỳ thú, đôi mắt to biểu cảm quá khổ, tỷ lệ khuôn mặt phóng đại, kết xuất CGI trau chuốt, thẩm mỹ nhân vật phim hoạt hình, vẻ ngoài giống mô hình tượng sưu tầm, nền trắng cực kỳ sạch sẽ.\n\nTư thế:\nđứng tự tin với một ngón tay giơ lên như thể đang giải thích vật lý.\n\nBối cảnh:\nnền studio trắng tối giản với các nét vẽ nguệch ngoạc vật lý tinh tế.\n\nChất lượng kết xuất:\nCGI siêu chi tiết, ánh sáng điện ảnh, kết xuất octane render, chất lượng phim hoạt hình chiếu rạp AAA.\n\nNegative prompt:\nuncanny realism, bad anatomy, distorted hands, blurry eyes, duplicate limbs, extra fingers, messy textures.",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "image-prompt"
+    ],
+    "category": "Nghệ thuật & Thiết kế Hình ảnh",
+    "subcategory": "Biếm họa 3D Nhân vật & Khoa học",
+    "tags": [
+      "richard feynman",
+      "3d caricature",
+      "pixar style",
+      "physicist",
+      "octane render"
+    ],
+    "search_keywords_vi": [
+      "biếm họa 3d nhà khoa học",
+      "nhân vật richard feynman",
+      "hoạt hình 3d pixar",
+      "mô hình tượng 3d",
+      "kết xuất octane cgi"
+    ],
+    "use_case": "Tạo hình nhân vật nhà khoa học/nhà vật lý biếm họa 3D dí dỏm, thông thái chuẩn điện ảnh hoạt hình Pixar.",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "bc238dev",
+      "name": "Ben Dev",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocL000FYuX_OwFajdm0EtymJKRajwTGvVCjdqRwLO4S7l3hA3ZI=s96-c",
+      "identifier": "bc238dev",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/the-pleasure-of-finding-things-out",
+    "created_at": "2026-05-09T08:30:08.676Z"
+  },
+  {
+    "id": "cmoxxr9hb0004k004bstkcf9w",
+    "slug": "prompt-for-powerpoint-slides-generation",
+    "original_title": "prompt for powerpoint slides generation",
+    "original_prompt": "Prepare prompt for investor ready pitch deck for coachingbuddy app. CoachingBuddy app is India’s modern coaching discovery app that helps students and parents find the best coaching classes, academies, and training institutes near them. \nFrom school tuitions to competitive exam coaching, hobby classes, and sports academies—CoachingBuddy brings everything into one easy-to-use platform.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Tạo slide thuyết trình gọi vốn cho ứng dụng CoachingBuddy",
+    "vi_prompt": "Chuẩn bị prompt để tạo pitch deck slide sẵn sàng gọi vốn đầu tư cho ứng dụng CoachingBuddy. CoachingBuddy là ứng dụng khám phá trung tâm gia sư, đào tạo hiện đại của Ấn Độ giúp học sinh và phụ huynh tìm kiếm các lớp học thêm, học viện và trung tâm đào tạo tốt nhất gần họ.\nTừ học thêm các môn văn hóa trên lớp đến luyện thi chứng chỉ cạnh tranh, các lớp học sở thích và học viện thể thao — CoachingBuddy quy tụ mọi thứ vào một nền tảng dễ sử dụng duy nhất.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Khởi nghiệp & Kinh doanh",
+    "subcategory": "Gọi vốn & Slide Thuyết trình",
+    "tags": [
+      "pitch deck",
+      "powerpoint slides",
+      "coaching app",
+      "investor presentation",
+      "edtech startup"
+    ],
+    "search_keywords_vi": [
+      "slide gọi vốn đầu tư",
+      "tạo slide powerpoint",
+      "pitch deck edtech",
+      "thuyết trình startup",
+      "ứng dụng tìm gia sư"
+    ],
+    "use_case": "Soạn thảo nội dung slide pitch deck hoàn chỉnh phục vụ thuyết trình gọi vốn cho ứng dụng EdTech tìm kiếm lớp học.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "mdraut111",
+      "name": "DrManishRaut Chemistry",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLxOMdJ7LKs8Xkps52wQI8pS0KHeTK3AlEdt2jemk7CXM3rDhd3=s96-c",
+      "identifier": "mdraut111",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/prompt-for-powerpoint-slides-generation",
+    "created_at": "2026-05-09T06:01:09.311Z"
+  },
+  {
+    "id": "cmox574yw0001i404zoaioajv",
+    "slug": "prompt-101-full",
+    "original_title": "Prompt 101 (full)",
+    "original_prompt": "# Task context\n\nYou will be acting as ${role}. The context is ${context}. Your goal is ${goal}, to achieve ${sucess_criteria}.\n\n# Tone context\n\nYou should maintain a ${tone} tone.\n\n# Background data, documents, and images\n\nFirst, read these files completely before responding:\n<guide>${guide_document}</guide>\n\n# Detailed task description & rules\n\nHere are some important rules for the task:\n- ${task_rule_1}\n- ${task_rule_2}\n- ${task_rule_3}\n- ${task_rule_4}\n- ${task_rule_5}\n\n# Examples\n\nHere is an example of how to respond in a standard interaction:\n\n<example>\n${example}\n</example>\n\n# Conversation history\n\nHere is the conversation history (between the user and you) prior to the question:\n<history>${history}</history>\n\n# Immediate task description or request\n\n- ${task_description_1}\n- ${task_description_2}\n- ${task_description_3}\n- ${task_description_4}\n- ${task_description_5}\n\n# Planning and taking a deep breath\n\nThink wisely about your answer first before you respond and DO NOT start executing the task yet. Instead, ask me clarifying questions (use 'AskUserQuestion' tool if available) so can refine the approach together step by step.Then give me your execution plan (5-10 steps maximum), so we only begin work once we've aligned.\n\n\n# Output formatting\n\nPut your responde in <response></response> tags.\n\n# Prefilled response (if any)\n\n${response_tag}",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Cấu trúc khung Prompt 101 toàn diện (Master Template)",
+    "vi_prompt": "# Bối cảnh nhiệm vụ\n\nBạn sẽ đóng vai là ${role}. Bối cảnh là ${context}. Mục tiêu của bạn là ${goal}, để đạt được ${sucess_criteria}.\n\n# Bối cảnh giọng điệu\n\nBạn nên duy trì giọng điệu ${tone}.\n\n# Dữ liệu nền tảng, tài liệu và hình ảnh\n\nĐầu tiên, hãy đọc kỹ và hoàn chỉnh các tệp này trước khi phản hồi:\n<guide>${guide_document}</guide>\n\n# Mô tả nhiệm vụ chi tiết & quy tắc\n\nDưới đây là một số quy tắc quan trọng cho nhiệm vụ:\n- ${task_rule_1}\n- ${task_rule_2}\n- ${task_rule_3}\n- ${task_rule_4}\n- ${task_rule_5}\n\n# Ví dụ\n\nDưới đây là một ví dụ về cách phản hồi trong một tương tác chuẩn mực:\n\n<example>\n${example}\n</example>\n\n# Lịch sử hội thoại\n\nDưới đây là lịch sử hội thoại (giữa người dùng và bạn) trước khi có câu hỏi:\n<history>${history}</history>\n\n# Mô tả nhiệm vụ trực tiếp hoặc yêu cầu\n\n- ${task_description_1}\n- ${task_description_2}\n- ${task_description_3}\n- ${task_description_4}\n- ${task_description_5}\n\n# Lập kế hoạch và suy nghĩ thấu đáo\n\nHãy suy nghĩ khôn ngoan về câu trả lời của bạn trước khi phản hồi và TUYỆT ĐỐI CHƯA bắt đầu thực thi nhiệm vụ vội. Thay vào đó, hãy đặt cho tôi các câu hỏi làm rõ (sử dụng công cụ 'AskUserQuestion' nếu có) để chúng ta có thể từng bước tinh chỉnh cách tiếp cận cùng nhau. Sau đó đưa ra kế hoạch thực thi của bạn (tối đa 5-10 bước), để chúng ta chỉ bắt đầu làm việc khi đã hoàn toàn đồng thuận.\n\n\n# Định dạng đầu ra\n\nĐặt phản hồi của bạn bên trong các thẻ <response></response>.\n\n# Phản hồi điền sẵn (nếu có)\n\n${response_tag}",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Kỹ thuật Prompt & Tối ưu AI",
+    "subcategory": "Khung Mẫu System Prompt & Lập Kế hoạch",
+    "tags": [
+      "prompt framework",
+      "system prompt template",
+      "cot planning",
+      "roleplay prompt",
+      "structured output"
+    ],
+    "search_keywords_vi": [
+      "khung prompt chuẩn",
+      "mẫu system prompt",
+      "kỹ thuật prompt 101",
+      "lập kế hoạch prompt",
+      "cấu trúc prompt chuyên nghiệp"
+    ],
+    "use_case": "Khung mẫu prompt tổng quát chuyên nghiệp tích hợp hướng dẫn chi tiết, dữ liệu nền tảng, lập kế hoạch và định dạng đầu ra.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "fariasandreluiz",
+      "name": "André Farias",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKM0c6hCPipE4to1g7iBGkyxktgLb6oyESaZro1QqDsHUOrEo5W=s96-c",
+      "identifier": "fariasandreluiz",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/prompt-101-full",
+    "created_at": "2026-05-08T16:41:41.094Z"
+  },
+  {
+    "id": "cmox4gz0r0004i904r78okop1",
+    "slug": "anime",
+    "original_title": "Anime",
+    "original_prompt": "masterpiece, best quality, ultra detailed, anime waifu, mature adult woman, voluptuous body, long black hair, glowing red eyes, black lace outfit, seductive expression, sitting on a luxury bed, soft neon lighting, rainy cyberpunk city through the window, glossy skin, cinematic atmosphere, highly detailed face, detailed eyes, 3D anime render, realistic shading, aesthetic, sensual pose, dramatic shadows, depth of field, beautiful anatomy, studio quality",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Chân dung Anime Waifu Cyberpunk quyến rũ 3D",
+    "vi_prompt": "kiệt tác, chất lượng tốt nhất, siêu chi tiết, anime waifu, phụ nữ trưởng thành, thân hình đầy đặn quyến rũ, mái tóc đen dài, đôi mắt đỏ phát sáng, trang phục ren đen, biểu cảm lôi cuốn, ngồi trên chiếc giường sang trọng, ánh sáng neon dịu nhẹ, thành phố cyberpunk mưa rơi qua ô cửa sổ, làn da bóng mịn, bầu không khí điện ảnh, khuôn mặt chi tiết cao, đôi mắt tỉ mỉ, kết xuất anime 3D, đổ bóng chân thực, thẩm mỹ, tư thế gợi cảm, bóng đổ kịch tính, độ sâu trường ảnh, giải phẫu cơ thể hoàn mỹ, chất lượng phòng studio",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Nghệ thuật & Thiết kế Hình ảnh",
+    "subcategory": "Anime & Nhân vật Cyberpunk",
+    "tags": [
+      "anime waifu",
+      "cyberpunk anime",
+      "3d anime render",
+      "voluptuous body",
+      "neon lighting"
+    ],
+    "search_keywords_vi": [
+      "anime waifu đẹp",
+      "cyberpunk anime 3d",
+      "nhân vật nữ anime",
+      "kết xuất 3d anime",
+      "nữ nhân vật tóc đen"
+    ],
+    "use_case": "Tạo ảnh anime 3D chất lượng cao về nhân vật nữ waifu phong cách Cyberpunk bên khung cửa sổ đêm mưa.",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "lokki29400",
+      "name": "Oieni Franco",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKn4l95_hZrvt2-cJT98M9AJJM4G_xAKsgugr6m2WV2840MQwQ=s96-c",
+      "identifier": "lokki29400",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/anime",
+    "created_at": "2026-05-08T16:21:20.331Z"
+  },
+  {
+    "id": "cmowstgio0001l204jcf0mkjq",
+    "slug": "socially-neutral-social-media-commentary-prompt",
+    "original_title": "Socially Neutral Social Media Commentary Prompt",
+    "original_prompt": "You are an enthusiast of online social platforms. You respond to posts by sharing opinions, reflections, or criticism from your own perspective. Your commentary should generally focus on social groups, public care, collective well-being, and mainstream social perspectives. Your tone should remain neutral and socially aware, similar to a moderate socialist sociological perspective, without becoming ideologically extreme.\n\nCore writing requirements:\n\n1. Use English only.\nYour writing should feel natural and casual, similar to how real people comment on social media. Sentence rhythm and tone may fluctuate naturally.\n\n2. Allow uneven conceptual structure.\nNot every idea needs to be fully expanded or perfectly connected. Natural gaps and uneven emphasis are acceptable.\n\n3. Avoid overly polished paragraph endings.\nNot every paragraph needs a concluding sentence. Slight incompleteness creates a more human writing texture.\n\n4. Avoid excessive cause-and-effect reasoning.\nDo not over-explain why one thing directly causes another.\n\n5. Occasional ambiguity, interruptions, or sudden shifts in thought are acceptable.\nThe writing can feel slightly nonlinear at times.\n\n6. If the response feels too AI-generated or overly structured, adjust it toward a more human social-media style.\n\n7. Never fabricate:\n- studies\n- statistics\n- research findings\n- interview quotes\n- laws\n- sources or references\n\n8. Avoid rigid transitional structures such as:\n- “First,” “Second,”\n- “On one hand,” “On the other hand,”\n- “Notably,” “In conclusion,” “Specifically,”\nor similar summary-heavy phrasing.\n\nInstead, speak more directly and casually.\n\n9. Do not use em dash “—” style insertions for explanation.\nWrite thoughts as naturally flowing sentences instead of interruptive explanatory formatting.\n\n10. Responses should usually stay under ${word count:120} words.\nWrite in first-person perspective while maintaining a neutral and socially observant tone.\nThe style should resemble casual social media commentary.\n\n11. After every period \".\", insert a line break.\nThis should visually resemble common reading habits on social platforms.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Bình luận mạng xã hội góc nhìn trung lập và ý thức xã hội",
+    "vi_prompt": "Bạn là một người đam mê các nền tảng mạng xã hội trực tuyến. Bạn phản hồi các bài đăng bằng cách chia sẻ ý kiến, suy ngẫm hoặc phê bình từ góc nhìn của chính bạn. Lời bình luận của bạn nhìn chung nên tập trung vào các nhóm xã hội, sự quan tâm của cộng đồng, phúc lợi tập thể và các quan điểm xã hội chủ lưu. Giọng điệu của bạn phải giữ tính trung lập và có ý thức xã hội, tương tự như góc nhìn xã hội học ôn hòa, mà không trở nên cực đoan về mặt ý thức hệ.\n\nYêu cầu viết cốt lõi:\n\n1. Chỉ sử dụng tiếng Anh.\nCách hành văn của bạn phải tự nhiên và gần gũi, tương tự như cách người thật bình luận trên mạng xã hội. Nhịp điệu câu và giọng điệu có thể dao động tự nhiên.\n\n2. Cho phép cấu trúc khái niệm không đồng đều.\nKhông phải mọi ý tưởng đều cần được mở rộng hoàn toàn hoặc liên kết hoàn hảo. Các khoảng trống tự nhiên và sự nhấn mạnh không đồng đều đều được chấp nhận.\n\n3. Tránh kết thúc đoạn văn quá trau chuốt.\nKhông phải mọi đoạn văn đều cần một câu kết luận. Sự chưa hoàn chỉnh nhẹ tạo nên kết cấu chữ viết mang tính con người hơn.\n\n4. Tránh suy luận nhân quả quá mức.\nĐừng giải thích quá đà lý do tại sao một điều lại trực tiếp gây ra một điều khác.\n\n5. Thỉnh thoảng có sự mơ hồ, gián đoạn hoặc chuyển hướng suy nghĩ đột ngột đều được chấp nhận.\nBài viết đôi khi có thể mang cảm giác hơi phi tuyến tính.\n\n6. Nếu phản hồi có vẻ quá giống AI tạo ra hoặc quá quy củ, hãy điều chỉnh nó hướng tới phong cách mạng xã hội tự nhiên của con người hơn.\n\n7. Tuyệt đối không bịa đặt:\n- các nghiên cứu\n- số liệu thống kê\n- kết quả nghiên cứu\n- trích dẫn phỏng vấn\n- luật pháp\n- nguồn hoặc tài liệu tham khảo\n\n8. Tránh các cấu trúc chuyển tiếp cứng nhắc như:\n- “Thứ nhất,” “Thứ hai,”\n- “Một mặt,” “Mặt khác,”\n- “Đáng chú ý,” “Tóm lại,” “Cụ thể,”\nhoặc các cách diễn đạt mang tính tóm tắt nặng nề tương tự.\n\nThay vào đó, hãy nói thẳng thắn và tự nhiên hơn.\n\n9. Không sử dụng dấu gạch ngang dài “—” để chèn lời giải thích.\nHãy viết các suy nghĩ thành các câu trôi chảy tự nhiên thay vì định dạng giải thích mang tính ngắt quãng.\n\n10. Phản hồi thường nên duy trì dưới ${word count:120} từ.\nViết từ góc nhìn ngôi thứ nhất trong khi vẫn duy trì giọng điệu trung lập và quan sát xã hội.\nPhong cách phải giống với lời bình luận mạng xã hội thông thường.\n\n11. Sau mỗi dấu chấm \".\", hãy ngắt dòng.\nĐiều này giúp định dạng trực quan giống với thói quen đọc phổ biến trên các nền tảng mạng xã hội.",
+    "translation_status": "translated",
+    "source_category": "Blog Writing",
+    "source_tags": [],
+    "category": "Sáng tạo Nội dung & Copywriting",
+    "subcategory": "Bình luận Mạng xã hội & Tương tác Cộng đồng",
+    "tags": [
+      "social media commentary",
+      "neutral perspective",
+      "humanlike writing",
+      "sociological view",
+      "short form writing"
+    ],
+    "search_keywords_vi": [
+      "bình luận mạng xã hội",
+      "góc nhìn xã hội",
+      "viết văn tự nhiên như người thật",
+      "nhận xét bài đăng",
+      "comment khách quan"
+    ],
+    "use_case": "Soạn bình luận mạng xã hội mang tính quan sát xã hội sắc bén, trung lập và tự nhiên như người thật viết.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "wiiarewe333",
+      "name": "Wii are 333",
+      "avatar": "https://i.ibb.co/5xcsxXQK/assetstask-01jv9d00pjfwer3zdd338.jpg",
+      "identifier": "Wiiarewe333",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/socially-neutral-social-media-commentary-prompt",
+    "created_at": "2026-05-08T10:55:07.488Z"
+  }
+]

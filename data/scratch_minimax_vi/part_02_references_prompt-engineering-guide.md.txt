@@ -1,0 +1,70 @@
+references/prompt-engineering-guide.md 
+# Cẩm nang kỹ thuật soạn thảo Prompt âm nhạc (Music Prompt Engineering Guide)
+
+## Công thức 8 thành phần (The 8-Component Formula)
+
+Xây dựng prompt bằng cách kết hợp các thành phần dưới đây. Không nhất thiết phải dùng toàn bộ — thông thường chỉ cần kết hợp từ 4-6 thành phần là đạt hiệu quả:
+
+```
+[Thể loại/Phong cách], [Kỷ nguyên/Tham chiếu], [Tâm trạng/Cảm xúc], [Loại giọng hát], [Tiết tấu/BPM], [Nhạc cụ], [Phong cách sản xuất], [Bầu không khí]
+```
+
+### Chi tiết từng thành phần
+
+**1. Thể loại / Phong cách (Genre/Style)**
+Indie folk, Progressive house, Soulful blues, Pop ballad, Jazz fusion, Synthwave, Ambient electronic, Country rock, Hip-hop boom bap, Classical orchestral, R&B, Disco funk, Lo-fi indie, Metal
+
+**2. Kỷ nguyên / Tham chiếu (Era/Reference)**
+1960s Motown, 70s disco, 80s synthwave, 90s grunge, 2000s pop-punk, modern (hiện đại), retro (hoài cổ), vintage, contemporary, classic
+
+**3. Tâm trạng / Cảm xúc (Mood/Emotion)**
+melancholic (u sầu), euphoric (hưng phấn), nostalgic (hoài niệm), hopeful (hy vọng), bittersweet (vui buồn lẫn lộn), triumphant (khải hoàn), yearning (khao khát), peaceful (thanh bình), brooding (trầm tư), playful (tươi vui nhí nhảnh), intense (mãnh liệt), dreamy (mơ màng), defiant (bất khuất), tender (dịu dàng), wistful (bâng khuâng), anthemic (hùng tráng)
+
+**4. Loại giọng hát (Vocal Type)**
+breathy female alto (nữ alto trầm thở nhẹ), powerful soprano (nữ cao nội lực), raspy male tenor (nam cao khàn ấm), warm baritone (nam trung ấm áp), deep resonant bass (nam trầm vang rền), falsetto (giọng gió), husky (khàn quyến rũ), crystal clear (trong vắt), choir harmonies (hòa âm hợp xướng), a cappella (hát mộc không nhạc đệm), duet (song ca), operatic (phong cách thính phòng opera)
+
+**5. Tiết tấu / BPM (Tempo/BPM)**
+chậm 60 BPM (slow 60 BPM), nhịp ballad 70 BPM, vừa phải 100 BPM (mid-tempo 100 BPM), sôi động 120 BPM (upbeat 120 BPM), dồn dập 128 BPM (driving 128 BPM), nhịp nhanh 140 BPM (fast-paced 140 BPM), tràn đầy năng lượng 160 BPM (energetic 160 BPM)
+
+**6. Nhạc cụ (Instruments)**
+acoustic guitar (guitar thùng), electric guitar (guitar điện), fingerpicked guitar (guitar gảy ngón), piano (dương cầm), Rhodes piano, upright bass (contrabass), electric bass, drums (bộ trống), brushed snare (trống quét chổi), synthesizer (đàn synth), strings (dàn dây), violin, cello, trumpet, saxophone, harmonica (kèn ac-mô-ni-ca), ukulele, banjo, mandolin, flute (sáo), organ, harp (đàn hạc), percussion (bộ gõ), congas, tambourine, vibraphone, steel drums
+
+**7. Phong cách sản xuất (Production Style)**
+lo-fi, polished pop production (sản xuất pop bóng bẩy), raw live recording (thu âm mộc trực tiếp), studio quality (chất lượng phòng thu), bedroom recording (thu âm phòng ngủ), vinyl warmth (độ ấm đĩa than), analog tape (băng từ analog), digital crisp (sắc nét kỹ thuật số), spacious reverb (tiếng vang không gian rộng), dry and intimate (khô và thân mật), heavily compressed (nén âm thanh mạnh), minimalist (tối giản)
+
+**8. Bầu không khí (Atmosphere)**
+intimate (thân mật), epic (hùng tráng), dreamy (mơ màng), cinematic (chuẩn điện ảnh), ethereal (thanh thoát thoát tục), gritty (gai góc bụi bặm), lush (dày dặn phong phú), sparse (thưa thớt tối giản), warm (ấm áp), cold (lạnh lẽo), dark (u tối), bright (tươi sáng), urban (đô thị hiện đại), pastoral (đồng quê thanh bình), cosmic (vũ trụ huyền ảo), underground
+
+---
+
+## Các mẫu Prompt chuẩn theo từng thể loại
+
+### Pop
+```
+Upbeat pop, catchy chorus, synthesizer, four-on-the-floor beat, bright female vocals, radio-ready production, energetic 120 BPM
+```
+
+### Pop Ballad
+```
+Pop ballad, emotional, piano-driven, powerful female vocals with vibrato, sweeping strings, slow tempo 70 BPM, polished production, heartfelt
+```
+
+### Indie Folk
+```
+Indie folk, melancholic, introspective, acoustic fingerpicking guitar, soft piano, gentle male vocals, intimate bedroom recording, 90 BPM
+```
+
+### Soulful Blues
+```
+Soulful blues, rainy night, melancholy, raspy male vocals, slow tempo 65 BPM, electric guitar, upright bass, harmonica, warm analog feel
+```
+
+### Synthwave / Retrowave
+```
+80s synthwave, nostalgic, driving bassline, analog synthesizers, gated reverb drums, neon atmosphere, night drive, 120 BPM
+```
+
+### Cinematic Epic
+```
+Cinematic orchestral, triumphant, massive brass, soaring strings, thunderous percussion, epic choir harmonies, building intensity, 130 BPM
+```

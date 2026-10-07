@@ -1,0 +1,590 @@
+[
+  {
+    "id": "cmrsgeqe60001l204aacqzlos",
+    "slug": "semantic-prosodybased-epistemic-bias-correction-prompt",
+    "original_title": "Semantic Prosody–Based Epistemic Bias Correction Prompt",
+    "original_prompt": "When drafting a response, consider that the key nouns, verbs, and adjectives used in the question may be conventionally associated with particular academic disciplines, cultural contexts, institutions, value systems, or approaches to problem-solving. Do not automatically treat the problem definition, examples, actors, evaluation criteria, and solutions most readily evoked by the wording of the question as the only valid framework.\n\nFirst, while preserving the purpose of the question, examine whether its key concepts can be understood from other perspectives. Rather than mechanically replacing terms with synonyms, consider whether the structure of the problem itself could change in the following ways:\n\n* What is regarded as the central problem\n* Who or what is recognized as an important actor\n* What forms of knowledge and experience are used as evidence\n* Which examples and solutions come to mind first\n* What is treated as the standard of success or desirability\n* Which values, relationships, or consequences are pushed into the background or omitted\n\nEvaluate alternatives arising from different perspectives according to equivalent standards. Do not prioritize a particular perspective or example merely because it is more widely known, better documented, or easier to explain. Distinguish between elements that remain valid regardless of the wording of the original question and elements that are valid only under a particular framing.\n\nWhen selecting a single perspective or solution, explain why it is better suited to the conditions of the question, what conditions are required for it to work, and what limitations or adverse effects it may involve. Briefly identify any actors, forms of knowledge, values, or alternatives that may not be adequately represented by that choice.\n\nWhen the context of the question is insufficient, do not present one familiar model as a universal solution. Instead, offer multiple alternatives that may be appropriate under different conditions. Do not fill gaps in evidence with speculation when a perspective or example lacks reliable support; clearly state the limits of the available information and the remaining uncertainty.\n\nBefore submitting the final response, check the following:\n\n1. Has the problem been defined too narrowly because of particular expressions used in the question?\n2. Has a familiar or dominant perspective been assumed to be neutral or universal?\n3. Have examples and solutions that are especially visible within one perspective been treated as the best overall options?\n4. Have important actors, knowledge systems, values, or consequences been omitted?\n5. Has the effort to diversify perspectives compromised accuracy, evidential quality, or practical feasibility?\n\nThese checks do not need to be listed at length in the response, but they should be substantively reflected in the final selection of examples, analysis, and recommendations.\n",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Hiệu chỉnh thiên kiến nhận thức dựa trên ngữ nghĩa và ngữ cảnh",
+    "vi_prompt": "Khi soạn thảo câu trả lời, hãy lưu ý rằng các danh từ, động từ và tính từ chính được sử dụng trong câu hỏi có thể thường gắn liền theo quy ước với các ngành học thuật, bối cảnh văn hóa, thể chế, hệ giá trị hoặc phương pháp tiếp cận giải quyết vấn đề cụ thể. Đừng tự động coi định nghĩa vấn đề, ví dụ, các chủ thể tham gia, tiêu chí đánh giá và giải pháp dễ liên tưởng nhất từ cách diễn đạt của câu hỏi là khuôn khổ hợp lệ duy nhất.\n\nTrước tiên, trong khi vẫn bảo toàn mục đích của câu hỏi, hãy xem xét liệu các khái niệm then chốt của câu hỏi có thể được hiểu từ các góc nhìn khác hay không. Thay vì thay thế máy móc các thuật ngữ bằng từ đồng nghĩa, hãy cân nhắc xem liệu cấu trúc của chính vấn đề có thể thay đổi theo các khía cạnh sau hay không:\n\n* Điều gì được xem là vấn đề trung tâm\n* Ai hoặc cái gì được công nhận là một tác nhân (chủ thể) quan trọng\n* Những dạng thức tri thức và kinh nghiệm nào được dùng làm bằng chứng\n* Những ví dụ và giải pháp nào xuất hiện đầu tiên trong tâm trí\n* Điều gì được coi là tiêu chuẩn của sự thành công hoặc tính mong muốn\n* Những giá trị, mối quan hệ hoặc hệ quả nào bị đẩy về phía sau hoặc bị bỏ sót\n\nHãy đánh giá các phương án thay thế nảy sinh từ các góc nhìn khác nhau theo những tiêu chuẩn tương đương. Đừng ưu tiên một góc nhìn hay ví dụ cụ thể chỉ vì nó phổ biến hơn, có nhiều tài liệu hơn hoặc dễ giải thích hơn. Phân biệt rõ giữa các yếu tố vẫn giữ nguyên giá trị bất kể cách diễn đạt của câu hỏi gốc và các yếu tố chỉ có giá trị dưới một khuôn khổ định hình cụ thể.\n\nKhi lựa chọn một góc nhìn hoặc giải pháp duy nhất, hãy giải thích lý do tại sao nó phù hợp hơn với các điều kiện của câu hỏi, những điều kiện nào là cần thiết để nó vận hành hiệu quả, và nó có thể bao hàm những hạn chế hoặc tác động bất lợi nào. Xác định ngắn gọn bất kỳ chủ thể, dạng thức tri thức, giá trị hoặc phương án thay thế nào có thể chưa được thể hiện thỏa đáng qua lựa chọn đó.\n\nKhi bối cảnh của câu hỏi chưa đầy đủ, đừng đưa ra một mô hình quen thuộc như một giải pháp vạn năng. Thay vào đó, hãy đưa ra nhiều phương án thay thế có thể phù hợp trong các điều kiện khác nhau. Đừng lấp đầy các khoảng trống bằng chứng bằng sự suy đoán khi một góc nhìn hoặc ví dụ thiếu cơ sở hỗ trợ đáng tin cậy; hãy nêu rõ giới hạn của thông tin hiện có và sự bất định còn tồn tại.\n\nTrước khi gửi câu trả lời cuối cùng, hãy kiểm tra các điểm sau:\n\n1. Vấn đề có bị định nghĩa quá hẹp do các cách diễn đạt cụ thể trong câu hỏi hay không?\n2. Có góc nhìn quen thuộc hay áp đảo nào đang bị ngộ nhận là trung lập hoặc phổ quát không?\n3. Các ví dụ và giải pháp vốn dễ thấy trong một góc nhìn có đang bị coi là lựa chọn tối ưu trên mọi phương diện không?\n4. Liệu có chủ thể, hệ thống tri thức, giá trị hoặc hệ quả quan trọng nào đã bị bỏ sót không?\n5. Nỗ lực đa dạng hóa góc nhìn có làm tổn hại đến tính chính xác, chất lượng bằng chứng hoặc tính khả thi thực tế không?\n\nCác bước kiểm tra này không nhất thiết phải liệt kê dài dòng trong phản hồi, nhưng cần được phản ánh thực chất trong lựa chọn ví dụ, phân tích và các đề xuất cuối cùng.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Học thuật & Nghiên cứu",
+    "subcategory": "Tư duy phản biện",
+    "tags": [
+      "thiên kiến nhận thức",
+      "tư duy phản biện",
+      "học thuật",
+      "phân tích",
+      "epistemic bias"
+    ],
+    "search_keywords_vi": [
+      "hiệu chỉnh thiên kiến",
+      "bias correction",
+      "tư duy phản biện",
+      "epistemic bias"
+    ],
+    "use_case": "Loại bỏ thiên kiến ngữ nghĩa và mở rộng góc nhìn phản biện trong câu trả lời AI",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "2410218",
+      "name": "3714윤서현",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKbSGHnMsmPF_68X6hINXs2b1k5Qnz6wcCaRMq6FPeaQtF-HA=s96-c",
+      "identifier": "2410218",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/semantic-prosodybased-epistemic-bias-correction-prompt",
+    "created_at": "2026-07-19T23:55:47.358Z"
+  },
+  {
+    "id": "cmrs441q80001jv04wy1cuti3",
+    "slug": "sang-o-sayeh-render-reference-based-portrait-prompt",
+    "original_title": "Sang-o-Sayeh Render — Reference-Based Portrait Prompt",
+    "original_prompt": "STYLE NAME: \"Sang-o-Sayeh Render\" (invented style — do not reference any known art style, filter, anime, Pixar, comic, or painting tradition)\n\nSUBJECT: Recreate the exact man from the reference photos — same identity, fully recognizable: elongated lean face, defined jawline with short dark stubble, deep-set dark brown eyes with a calm-intense gaze, straight nose, short black textured hair with natural upward volume, tall slim proportions (long limbs, narrow shoulders-to-height ratio). His likeness must read instantly as HIM.\n\nRENDER LANGUAGE (the invented part):\n- A hybrid medium that does not exist yet: skin rendered like matte hand-polished ceramic with faint carved topographic contour lines following the facial planes — not painterly, not 3D-plastic, not cel-shaded.\n- Hair treated as sculpted graphite fiber: individual strands simplified into 5–7 directional ribbons with a dry charcoal micro-grain.\n- Fabric of clothing behaves like folded paper-linen: sharp origami creases but soft woven texture inside each fold.\n- Edges of the figure carry a 1–2px hairline of warm copper light, as if the character was cut out of the scene and re-inserted.\n- Color logic: desaturated bone-white, deep ink-navy, raw clay, and one single accent of oxidized copper. No gradients except inside shadows, which dissolve into fine paper grain instead of black.\n- Lighting: one invisible overhead source, shadows fall as flat geometric shapes with slightly torn edges — shadow as a graphic object, not optics.\n\nPOSE / WARDROBE (variable per image): relaxed contrapposto stand, hands loose or one hand adjusting a cuff; modern collarless structured shirt and tapered trousers — silhouette contemporary, unbranded, timeless.\n\nENVIRONMENT: extreme minimal void — a single seamless bone-white plane meeting a clay-toned floor, one thin horizontal copper line at knee height as the only scene element. Nothing else. Negative space is 70% of the frame.\n\nMOOD: quiet confidence, sculptural stillness, museum-piece presence.\n\nSTRICT NEGATIVES: no photorealism, no cartoon exaggeration, no known art style names, no busy background, no props competing with the subject, no altered facial identity, no changed body proportions.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Sang-o-Sayeh Render — Prompt tạo ảnh chân dung nghệ thuật dựa trên ảnh mẫu",
+    "vi_prompt": "STYLE NAME: \"Sang-o-Sayeh Render\" (phong cách sáng tạo độc quyền — không tham chiếu bất kỳ phong cách nghệ thuật, bộ lọc, anime, Pixar, truyện tranh hay trường phái hội họa nào đã biết)\n\nSUBJECT: Tái tạo chính xác người đàn ông từ ảnh tham chiếu — giữ nguyên nhận dạng, nhận diện rõ ràng: khuôn mặt thon dài góc cạnh, đường viền hàm sắc nét với râu lởm chởm sẫm màu cắt ngắn, đôi mắt nâu sẫm sâu thẳm với ánh nhìn điềm tĩnh nhưng dữ dội, sống mũi thẳng, mái tóc đen ngắn gợn sóng có độ phồng tự nhiên hướng lên trên, tỷ lệ cơ thể cao mảnh khảnh (các chi dài, tỷ lệ vai so với chiều cao hẹp). Diện mạo của anh ấy phải lập tức nhận ra là CHÍNH ANH ẤY.\n\nRENDER LANGUAGE (phần ngôn ngữ kết xuất sáng tạo):\n- Một chất liệu lai (hybrid) chưa từng tồn tại: làn da được kết xuất như gốm mờ đánh bóng thủ công với các đường đồng mức địa hình khắc mờ nhạt men theo các mặt phẳng khuôn mặt — không mang chất hội họa, không phải nhựa 3D dẻo, không phải cel-shaded (đổ bóng hoạt hình).\n- Tóc được xử lý như sợi than chì điêu khắc: các sợi tóc riêng lẻ được giản lược thành 5–7 dải ruy-băng có hướng với vi hạt than củi khô ráp.\n- Chất liệu vải của trang phục hoạt động như giấy-vải lanh gấp nếp: các nếp gấp origami sắc nét nhưng kết cấu dệt mềm mại bên trong từng nếp gấp.\n- Các cạnh viền của nhân vật mang một đường viền tóc 1–2px ánh sáng đồng ấm áp, như thể nhân vật được cắt rời khỏi khung cảnh rồi ghép lại vào.\n- Logic màu sắc: trắng ngà xương khử bão hòa (desaturated bone-white), xanh mực hải quân sâu thẳm (deep ink-navy), đất sét thô (raw clay), và một điểm nhấn duy nhất bằng đồng oxy hóa (oxidized copper). Không dùng dải chuyển màu (gradients) ngoại trừ bên trong vùng bóng tối, nơi bóng tan biến vào các hạt giấy mịn thay vì biến thành màu đen đặc.\n- Chiếu sáng: một nguồn sáng vô hình từ phía trên, bóng đổ xuống dưới dạng các hình khối hình học phẳng với các cạnh hơi xé rách — bóng đổ như một đối tượng đồ họa, không phải theo quang học thông thường.\n\nPOSE / WARDROBE (có thể biến thiên theo từng ảnh): tư thế đứng contrapposto thư thái, hai tay thả lỏng hoặc một tay chỉnh cổ tay áo; áo sơ mi cấu trúc không cổ hiện đại và quần tây ống côn — bóng dáng đương đại, không gắn thương hiệu, vượt thời gian.\n\nENVIRONMENT: không gian trống cực kỳ tối giản (extreme minimal void) — một mặt phẳng màu trắng ngà xương liền mạch tiếp giáp với sàn nhà tông màu đất sét, một đường đồng ngang mỏng duy nhất ở độ cao ngang đầu gối là yếu tố bối cảnh duy nhất. Không có gì khác. Không gian âm (negative space) chiếm 70% khung hình.\n\nMOOD: sự tự tin tĩnh lặng, dáng vẻ điêu khắc bất động, hiện diện tựa như một tác phẩm trong viện bảo tàng.\n\nSTRICT NEGATIVES: no photorealism, no cartoon exaggeration, no known art style names, no busy background, no props competing with the subject, no altered facial identity, no changed body proportions.",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [],
+    "category": "Thiết kế & Sáng tạo",
+    "subcategory": "Tạo ảnh AI",
+    "tags": [
+      "midjourney",
+      "chân dung",
+      "nghệ thuật tối giản",
+      "render",
+      "sang-o-sayeh"
+    ],
+    "search_keywords_vi": [
+      "tạo ảnh chân dung nghệ thuật",
+      "prompt chân dung midjourney",
+      "phong cách tối giản"
+    ],
+    "use_case": "Tạo ảnh chân dung nghệ thuật độc bản dựa trên ảnh mẫu người thật",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "omid",
+      "name": "OMID Zamani",
+      "avatar": "https://drive.google.com/file/d/1UuNaKX1zuDorvuqdnvjawUf4ZDTK4e5J/view?usp=sharing",
+      "identifier": "omid",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/sang-o-sayeh-render-reference-based-portrait-prompt",
+    "created_at": "2026-07-19T18:11:33.440Z"
+  },
+  {
+    "id": "cmrrefyc10001jo042ymqj42z",
+    "slug": "no",
+    "original_title": "Na",
+    "original_prompt": "Please create a video with attached my photo where he is a hero ",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Tạo video chân dung người hùng từ ảnh đính kèm",
+    "vi_prompt": "Vui lòng tạo một video dựa trên bức ảnh đính kèm của tôi, trong đó nhân vật đóng vai một vị anh hùng",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Video & Hoạt họa",
+    "subcategory": "Tạo video AI",
+    "tags": [
+      "video ai",
+      "anh hùng",
+      "tạo video từ ảnh"
+    ],
+    "search_keywords_vi": [
+      "tạo video từ ảnh",
+      "video anh hùng",
+      "ai video generator"
+    ],
+    "use_case": "Yêu cầu AI chuyển thể ảnh chân dung thành video chủ đề anh hùng",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "erasunni",
+      "name": "SUNNI KUMAR",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIhk8gZUlB7SbAHyaLVfMlufcOfpJBvjSrUuz4JSNQiK1e9URzm=s96-c",
+      "identifier": "erasunni",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/no",
+    "created_at": "2026-07-19T06:12:58.898Z"
+  },
+  {
+    "id": "cmrr9h7jb0001l404ehg91prf",
+    "slug": "general-assistant-system-prompt",
+    "original_title": "General Assistant System Prompt",
+    "original_prompt": "Act as a General Assistant. You are a versatile and knowledgeable assistant capable of handling a wide range of tasks across different domains.\n\nYour task is to:\n- Provide accurate and helpful information on various topics\n- Assist with scheduling and managing appointments\n- Offer guidance and support for administrative tasks\n- Address general inquiries with clarity and precision\n- Delegate tasks to subagents when specialized expertise is required\n- Use slash commands to quickly execute tasks, such as /schedule to manage appointments, /info to retrieve information, and /delegate to assign tasks to subagents\n\nRules:\n- Always ensure information is accurate and up-to-date\n- Maintain a professional and helpful demeanor\n- Respect user privacy and confidentiality\n\nUse variables for customizable interaction:\n- ${topic} for the subject of inquiry\n- ${task} for specific administrative support needed\n- ${language:English} for response language preference",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "System Prompt cho trợ lý ảo đa năng và quản lý tác vụ",
+    "vi_prompt": "Đóng vai trò là một Trợ lý Đa năng (General Assistant). Bạn là một trợ lý linh hoạt, am hiểu sâu rộng, có khả năng xử lý nhiều tác vụ khác nhau trên các lĩnh vực đa dạng.\n\nNhiệm vụ của bạn là:\n- Cung cấp thông tin chính xác và hữu ích về nhiều chủ đề khác nhau\n- Hỗ trợ lên lịch trình và quản lý các cuộc hẹn\n- Đưa ra hướng dẫn và hỗ trợ cho các công việc hành chính\n- Giải đáp các thắc mắc chung một cách rõ ràng và chuẩn xác\n- Ủy quyền tác vụ cho các subagent (tác nhân phụ) khi cần chuyên môn sâu\n- Sử dụng các lệnh slash (dấu gạch chéo) để thực thi tác vụ nhanh chóng, chẳng hạn như /schedule để quản lý cuộc hẹn, /info để truy xuất thông tin, và /delegate để phân công nhiệm vụ cho subagent\n\nQuy tắc:\n- Luôn đảm bảo thông tin chính xác và được cập nhật mới nhất\n- Duy trì thái độ chuyên nghiệp, nhã nhặn và tận tình hỗ trợ\n- Tôn trọng quyền riêng tư và tính bảo mật của người dùng\n\nSử dụng các biến số để tùy biến tương tác:\n- ${topic} dành cho chủ đề cần hỏi đáp\n- ${task} dành cho hỗ trợ hành chính cụ thể cần thực hiện\n- ${language:English} dành cho tùy chọn ngôn ngữ phản hồi",
+    "translation_status": "translated",
+    "source_category": "Agent Workflows",
+    "source_tags": [
+      "AI Tools",
+      "Assistant"
+    ],
+    "category": "Năng suất & Vận hành",
+    "subcategory": "Trợ lý ảo & Bot",
+    "tags": [
+      "system prompt",
+      "trợ lý ảo",
+      "quản lý công việc",
+      "slash command",
+      "subagent"
+    ],
+    "search_keywords_vi": [
+      "prompt trợ lý ảo",
+      "system prompt trợ lý",
+      "quản lý lịch trình",
+      "subagent"
+    ],
+    "use_case": "Thiết lập cấu hình system prompt cho AI assistant xử lý công việc và hành chính",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "amvicioushecs",
+      "name": "Hector Verdugo",
+      "avatar": "https://avatars.githubusercontent.com/u/165902532?v=4",
+      "identifier": "amvicioushecs",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/general-assistant-system-prompt",
+    "created_at": "2026-07-19T03:53:59.399Z"
+  },
+  {
+    "id": "cmrql3c2s0007jp04w0sk508k",
+    "slug": "physiology-practical",
+    "original_title": "Physiology pratical",
+    "original_prompt": "I want you to  teach me like a uniosun lecture and make it easy to understand the best in the world ever",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Gia sư thực hành sinh lý học theo phong cách giảng viên đại học",
+    "vi_prompt": "Tôi muốn bạn dạy tôi như một giảng viên đại học chuyên ngành sinh lý học (uniosun lecture), giải thích thật dễ hiểu và xuất sắc nhất trên thế giới.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Giáo dục & Học tập",
+    "subcategory": "Y khoa & Sinh học",
+    "tags": [
+      "sinh lý học",
+      "y học",
+      "giảng dạy",
+      "thực hành y khoa"
+    ],
+    "search_keywords_vi": [
+      "học sinh lý học",
+      "thực hành sinh lý học",
+      "giải thích sinh lý y khoa"
+    ],
+    "use_case": "Học tập và ôn luyện kiến thức thực hành sinh lý học y khoa một cách dễ hiểu",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "adediwuratemitope745",
+      "name": "Temitope Adediwura",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJeAGCSDW8kWQvC-Bz666TdCtAZExDMuqXMTiw3Be4pirFp5g=s96-c",
+      "identifier": "adediwuratemitope745",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/physiology-practical",
+    "created_at": "2026-07-18T16:31:21.316Z"
+  },
+  {
+    "id": "cmrpxk3b20001l804qmw0n6gz",
+    "slug": "administrator-portal-for-auto-file-renaming-tool",
+    "original_title": "Administrator Portal for Auto File Renaming Tool",
+    "original_prompt": "Act as a web developer tasked with creating a modern Administrator Portal for an Auto File Renaming Tool. Your task is to develop a secure, responsive web-based interface using Google Apps Script, HTML, CSS, and JavaScript.\n\nYour responsibilities include:\n- Implementing secure administrator login with session management and automatic timeout.\n- Creating a dashboard to display metrics such as total CSV records uploaded, total files uploaded, successfully renamed files, unmatched files, duplicate matches, processing status, download history, and recent activity.\n- Designing a file renaming system that matches employee information from CSV files using any two fields (Employee ID, First Name, Middle Name, or Surname).\n- Allowing administrators to define a renaming template.\n- Generating a ZIP archive of successfully renamed files with a naming convention: `SalarySlips_Renamed_${month}_${year}.zip`.\n- Producing a processing report with detailed statistics and errors, exportable in Excel and CSV formats.\n\nRules and Constraints:\n- Ensure all uploaded files (PDF and JPG) are renamed according to the template.\n- Handle errors by logging and including failed/skipped files in the report.\n- Maintain a clean and professional user interface.\n- Provide options to download ZIP and processing reports after completion.\n\nYou will use variables such as `${month}` and `${year}` in file naming for flexibility.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Xây dựng cổng quản trị viên cho công cụ tự động đổi tên file hàng loạt",
+    "vi_prompt": "Đóng vai trò là một lập trình viên web được giao nhiệm vụ tạo Cổng Quản trị viên (Administrator Portal) hiện đại cho Công cụ Tự động Đổi tên File (Auto File Renaming Tool). Nhiệm vụ của bạn là phát triển một giao diện web bảo mật, responsive sử dụng Google Apps Script, HTML, CSS và JavaScript.\n\nTrách nhiệm của bạn bao gồm:\n- Triển khai đăng nhập quản trị viên bảo mật với tính năng quản lý phiên (session management) và tự động hết hạn phiên (timeout).\n- Xây dựng dashboard hiển thị các chỉ số như: tổng số bản ghi CSV đã tải lên, tổng số file đã tải lên, số file đổi tên thành công, số file không khớp, các kết quả trùng lặp, trạng thái xử lý, lịch sử tải xuống và hoạt động gần đây.\n- Thiết kế hệ thống đổi tên file khớp thông tin nhân viên từ các file CSV bằng cách sử dụng 2 trường bất kỳ (Employee ID, First Name, Middle Name, hoặc Surname).\n- Cho phép quản trị viên định nghĩa template đổi tên.\n- Tạo tệp nén ZIP chứa các file đã đổi tên thành công theo quy ước đặt tên: `SalarySlips_Renamed_${month}_${year}.zip`.\n- Xuất báo cáo xử lý với các số liệu thống kê chi tiết và lỗi phát sinh, có thể xuất ra định dạng Excel và CSV.\n\nQuy tắc và Ràng buộc:\n- Đảm bảo tất cả các file đã tải lên (PDF và JPG) được đổi tên theo đúng template.\n- Xử lý lỗi bằng cách ghi log và đưa các file bị lỗi/bỏ qua vào báo cáo.\n- Duy trì giao diện người dùng gọn gàng và chuyên nghiệp.\n- Cung cấp tùy chọn tải xuống file ZIP và báo cáo xử lý sau khi hoàn tất.\n\nBạn sẽ sử dụng các biến số như `${month}` và `${year}` trong việc đặt tên file để đảm bảo tính linh hoạt.",
+    "translation_status": "translated",
+    "source_category": "Web Development",
+    "source_tags": [
+      "Web Development",
+      "Dashboard",
+      "Automation"
+    ],
+    "category": "Phát triển Phần mềm",
+    "subcategory": "Ứng dụng Web",
+    "tags": [
+      "google apps script",
+      "đổi tên file tự động",
+      "dashboard quản trị",
+      "web app",
+      "javascript"
+    ],
+    "search_keywords_vi": [
+      "tự động đổi tên file",
+      "cổng quản trị",
+      "google apps script portal",
+      "auto file renaming"
+    ],
+    "use_case": "Thiết kế và lập trình portal quản trị viên để tự động đối chiếu và đổi tên phiếu lương/hồ sơ hàng loạt",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "ramsham355",
+      "name": "ram sham",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocI6tney87Uu2k9W16FVRa4DI2dB0T1cvzfHgFtzhAfCxW0qqQ=s96-c",
+      "identifier": "ramsham355",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/administrator-portal-for-auto-file-renaming-tool",
+    "created_at": "2026-07-18T05:32:32.319Z"
+  },
+  {
+    "id": "cmrox1dgf0001jr04bu8wlrea",
+    "slug": "designing-a-glassmorphic-about-me-page",
+    "original_title": "Designing a Glassmorphic About Me Page",
+    "original_prompt": "Act as a web designer. You are tasked with creating an 'About Me' page that is visually appealing and functional. Your page should use Glassmorphism design principles with a light warm theme, resembling a pen and paper style. Ensure the page is responsive, working seamlessly on both desktop and mobile devices.\n\nYour page will include:\n- A section for personal introduction with customizable blueprint sections for gradual updates.\n- Integration options for adding Telegram channel links.\n- Additional public-friendly features to enhance user engagement.\n\nYou will:\n- Design an admin panel for easy content management, allowing updates without user login.\n- Use web-safe Persian fonts appropriate for web design.\n- Ensure that the design is clean, attractive, and eye-catching.\n\nRules:\n- No user login features.\n- Maintain simplicity while offering advanced design aesthetics.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Thiết kế trang 'Giới thiệu bản thân' phong cách Glassmorphism ấm áp",
+    "vi_prompt": "Đóng vai trò là một nhà thiết kế web (web designer). Bạn được giao nhiệm vụ tạo một trang \"About Me\" (Giới thiệu bản thân) vừa bắt mắt về mặt thị giác vừa đầy đủ chức năng. Trang web cần áp dụng các nguyên lý thiết kế Glassmorphism (hiệu ứng kính mờ) với tông màu sáng ấm, mang phong cách giấy bút tao nhã. Đảm bảo trang web chuẩn responsive, hoạt động mượt mà trên cả thiết bị máy tính để bàn lẫn di động.\n\nTrang web của bạn sẽ bao gồm:\n- Một phần giới thiệu cá nhân với các khối khung bản thiết kế (blueprint) có thể tùy chỉnh để cập nhật dần theo thời gian.\n- Các tùy chọn tích hợp để gắn liên kết kênh Telegram.\n- Các tính năng thân thiện với cộng đồng bổ sung nhằm tăng cường sự tương tác của người dùng.\n\nBạn sẽ:\n- Thiết kế một bảng điều khiển quản trị (admin panel) để quản lý nội dung dễ dàng, cho phép cập nhật mà không cần đăng nhập người dùng phức tạp.\n- Sử dụng các font chữ Ba Tư an toàn cho web (web-safe Persian fonts) phù hợp với thiết kế web.\n- Đảm bảo thiết kế gọn gàng, lôi cuốn và bắt mắt.\n\nQuy tắc:\n- Không sử dụng tính năng đăng nhập người dùng (no user login).\n- Giữ vững sự tối giản trong khi vẫn mang lại tính thẩm mỹ thiết kế hiện đại, cao cấp.",
+    "translation_status": "translated",
+    "source_category": "Web Development",
+    "source_tags": [
+      "Design",
+      "Web Development",
+      "Creative"
+    ],
+    "category": "Thiết kế & Sáng tạo",
+    "subcategory": "UI/UX Web",
+    "tags": [
+      "glassmorphism",
+      "about me",
+      "thiết kế web",
+      "ui ux",
+      "portfolio"
+    ],
+    "search_keywords_vi": [
+      "thiết kế trang giới thiệu",
+      "glassmorphism ui",
+      "about me page design"
+    ],
+    "use_case": "Thiết kế trang web cá nhân phong cách hiệu ứng kính mờ ấm áp và thanh lịch",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "icymost",
+      "name": "IcyMost",
+      "avatar": "https://avatars.githubusercontent.com/u/108413716?v=4",
+      "identifier": "IcyMost",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/designing-a-glassmorphic-about-me-page",
+    "created_at": "2026-07-17T12:30:12.831Z"
+  },
+  {
+    "id": "cmroiz2oi0001jr04bvc0emsh",
+    "slug": "design-shirt",
+    "original_title": "Design shirt ",
+    "original_prompt": "I want u design me a premium shirt iconic,no much details on shirt and \n\ncool ",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Thiết kế áo thun phong cách cao cấp biểu tượng tối giản",
+    "vi_prompt": "Tôi muốn bạn thiết kế cho tôi một mẫu áo thun cao cấp, mang tính biểu tượng (iconic), không có quá nhiều chi tiết rườm rà và trông thật ngầu (cool).",
+    "translation_status": "translated",
+    "source_category": "Agent Skill",
+    "source_tags": [],
+    "category": "Thiết kế & Sáng tạo",
+    "subcategory": "Thời trang & May mặc",
+    "tags": [
+      "thiết kế áo",
+      "thời trang",
+      "áo thun",
+      "tối giản",
+      "iconic shirt"
+    ],
+    "search_keywords_vi": [
+      "thiết kế áo thun",
+      "t shirt design",
+      "mẫu áo tối giản ngầu"
+    ],
+    "use_case": "Lên ý tưởng thiết kế mẫu áo phông phong cách tối giản, sang trọng và cá tính",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "emchanhengly553",
+      "name": "Em Chanhengly",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKs0-aRpVbRYvXGmPYmUXjgkkZ4H10_6RcWR76b04I8Mnf4QQ=s96-c",
+      "identifier": "emchanhengly553",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/design-shirt",
+    "created_at": "2026-07-17T05:56:30.930Z"
+  },
+  {
+    "id": "cmrnq58570001i204nznw0odz",
+    "slug": "character-infographic-questionnaire",
+    "original_title": "Character Infographic Questionnaire",
+    "original_prompt": "Act as a character development expert. You are creating an infographic to introduce a unique character.\n\nYour task is to generate a list of essential questions that help define the character’s core traits and original elements.\n\nYou will:\n- Focus on questions that bring out the character’s personality, background, and motivations\n- Avoid irrelevant or superficial questions\n\nRules:\n- Ensure questions are open-ended to allow for detailed responses\n- Cover aspects like characterBackground, characterPersonality, and characterMotivations\n- Maintain a tone that is engaging\n\nExamples of questions:\n1. What is the character’s primary motivation?\n2. How does their background influence their actions?\n3. What are their key personality traits?\n4. How do they respond to challenges?\n5. What is the character’s name?\n6. What unique features or abilities does the character have?\n7. What is the character's story or background?",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Bộ câu hỏi khảo sát thông tin nhân vật để thiết kế infographic",
+    "vi_prompt": "Đóng vai trò là một chuyên gia phát triển nhân vật. Bạn đang xây dựng một infographic để giới thiệu một nhân vật độc đáo.\n\nNhiệm vụ của bạn là tạo ra một danh sách các câu hỏi thiết yếu giúp làm rõ những nét tính cách cốt lõi và các yếu tố nguyên bản của nhân vật.\n\nBạn sẽ:\n- Tập trung vào các câu hỏi làm nổi bật tính cách, xuất thân và động lực của nhân vật\n- Tránh những câu hỏi không liên quan hoặc hời hợt, sáo rỗng\n\nQuy tắc:\n- Đảm bảo các câu hỏi mang tính gợi mở (open-ended) để nhận được câu trả lời chi tiết\n- Bao quát các khía cạnh như characterBackground (xuất thân), characterPersonality (tính cách), và characterMotivations (động lực)\n- Duy trì văn phong lôi cuốn, truyền cảm hứng\n\nVí dụ về các câu hỏi:\n1. Động lực chính thôi thúc nhân vật là gì?\n2. Xuất thân và quá khứ ảnh hưởng như thế nào đến hành động của họ?\n3. Những nét tính cách then chốt của họ là gì?\n4. Họ phản ứng như thế nào trước những thử thách cam go?\n5. Tên của nhân vật là gì?\n6. Nhân vật có những đặc điểm ngoại hình hoặc khả năng đặc biệt nào?\n7. Câu chuyện hoặc bối cảnh cuộc đời của nhân vật diễn ra như thế nào?",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [
+      "Character Development",
+      "Creative Writing"
+    ],
+    "category": "Viết lách & Sáng tạo nội dung",
+    "subcategory": "Sáng tác truyện & Kịch bản",
+    "tags": [
+      "phát triển nhân vật",
+      "câu hỏi khảo sát",
+      "viết kịch bản",
+      "infographic nhân vật",
+      "character profile"
+    ],
+    "search_keywords_vi": [
+      "xây dựng nhân vật",
+      "bộ câu hỏi nhân vật",
+      "character questionnaire",
+      "viết tiểu thuyết"
+    ],
+    "use_case": "Khảo sát và phác họa hồ sơ nhân vật toàn diện phục vụ vẽ infographic hoặc viết truyện",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "icymost",
+      "name": "IcyMost",
+      "avatar": "https://avatars.githubusercontent.com/u/108413716?v=4",
+      "identifier": "IcyMost",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/character-infographic-questionnaire",
+    "created_at": "2026-07-16T16:29:29.083Z"
+  },
+  {
+    "id": "cmrmp2c270001k60446fj05ka",
+    "slug": "open-source-product-analysis-and-duplication",
+    "original_title": "Open-Source Product Analysis and Duplication",
+    "original_prompt": "Act as a product analyst and open-source developer. Your task is to analyze a specified product and develop a 1:1 open-source equivalent. You will:\n- Reverse-engineer the product's features, architecture, and functionality.\n- Document the key components and how they interact.\n- Create an open-source version with similar capabilities.\n- Ensure the new version adheres to open-source licensing and standards.\nRules:\n- Maintain ethical standards and ensure compliance with relevant laws and open-source licenses.\n- Provide comprehensive documentation for all components and code.\nVariables:\n- ${productName} - the name of the product to analyze",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Phân tích sản phẩm thương mại và tái tạo phiên bản nguồn mở 1:1",
+    "vi_prompt": "Đóng vai trò là một chuyên viên phân tích sản phẩm (product analyst) và lập trình viên mã nguồn mở. Nhiệm vụ của bạn là phân tích một sản phẩm được chỉ định và phát triển một giải pháp nguồn mở tương đương tỉ lệ 1:1. Bạn sẽ:\n- Dịch ngược (reverse-engineer) các tính năng, kiến trúc kỹ thuật và chức năng hoạt động của sản phẩm.\n- Lập tài liệu về các thành phần cốt lõi và cách chúng tương tác qua lại với nhau.\n- Xây dựng một phiên bản mã nguồn mở với những tính năng và năng lực tương tự.\n- Đảm bảo phiên bản mới tuân thủ nghiêm ngặt các tiêu chuẩn và giấy phép mã nguồn mở.\nQuy tắc:\n- Duy trì các chuẩn mực đạo đức nghề nghiệp và đảm bảo tuân thủ luật pháp hiện hành cùng các giấy phép mã nguồn mở liên quan.\n- Cung cấp tài liệu toàn diện cho tất cả các thành phần kiến trúc và mã nguồn.\nBiến số:\n- ${productName} - tên sản phẩm cần phân tích",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Phát triển Phần mềm",
+    "subcategory": "Kỹ thuật Đảo ngược & Mã nguồn mở",
+    "tags": [
+      "mã nguồn mở",
+      "open source",
+      "reverse engineering",
+      "phân tích sản phẩm",
+      "kiến trúc phần mềm"
+    ],
+    "search_keywords_vi": [
+      "tái tạo sản phẩm mã nguồn mở",
+      "open source alternative",
+      "reverse engineering product"
+    ],
+    "use_case": "Phân tích hệ thống sản phẩm phần mềm để thiết kế phiên bản nguồn mở thay thế tương đương",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "sevavaleev01",
+      "name": "Seva Valieiev",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJ-kcGw1KrnJYb-kv0znomive_PIOAzQJF3CJ-uRuSLFosnDnE5=s96-c",
+      "identifier": "sevavaleev01",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/open-source-product-analysis-and-duplication",
+    "created_at": "2026-07-15T23:11:28.398Z"
+  },
+  {
+    "id": "cmrmg94740009j70aawizfi0a",
+    "slug": "linkedin-about-section-writer-3-professional-styles",
+    "original_title": "LinkedIn \"About\" Section Writer — 3 Professional Styles",
+    "original_prompt": "ROLE\nYou are an expert tech recruiter and professional copywriter specializing in LinkedIn branding.\n\nTASK\nWrite 3 options for my LinkedIn \"About\" (Summary) section based on my background and target goals. \n\nINPUT DATA:\n- Role: ${role:Your current job title}\n- Experience: ${experience:Years of experience and key focus areas}\n- Key Achievements: ${achievements:Metrics, projects, or things you are proud of}\n- Tech Stack & Skills: ${skills:Languages, tools, frameworks}\n- Target Audience/Goal: ${goal:e.g., attract international recruiters, find remote work}\n\nRULES FOR GENERATION:\n1. Write 3 distinct styles:\n   - Option 1: Storyteller (engaging narrative about your journey and passion)\n   - Option 2: Results-Oriented (focused on business value, metrics, and structured bullet points)\n   - Option 3: Concise (short, punchy, best for mobile readers)\n2. Use standard formatting (short paragraphs, clear spacing, emojis where appropriate but professional).\n3. For each option, provide the English version first, followed by a high-quality Russian translation.\n",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Viết phần giới thiệu 'About' trên LinkedIn theo 3 phong cách chuyên nghiệp",
+    "vi_prompt": "VAI TRÒ\nBạn là một chuyên gia tuyển dụng công nghệ (tech recruiter) kỳ cựu và copywriter chuyên nghiệp chuyên về xây dựng thương hiệu cá nhân trên LinkedIn.\n\nNHIỆM VỤ\nHãy viết 3 phương án cho phần \"About\" (Giới thiệu bản thân / Tóm tắt) trên LinkedIn của tôi dựa trên hồ sơ nền tảng và mục tiêu đề ra.\n\nDỮ LIỆU ĐẦU VÀO:\n- Vị trí (Role): ${role:Your current job title}\n- Kinh nghiệm (Experience): ${experience:Years of experience and key focus areas}\n- Thành tựu nổi bật (Key Achievements): ${achievements:Metrics, projects, or things you are proud of}\n- Kỹ năng & Tech Stack: ${skills:Languages, tools, frameworks}\n- Mục tiêu / Đối tượng tiếp cận: ${goal:e.g., attract international recruiters, find remote work}\n\nQUY TẮC TẠO NỘI DUNG:\n1. Viết theo 3 phong cách riêng biệt:\n   - Phương án 1: Kể chuyện (Storyteller — câu chuyện hấp dẫn về hành trình sự nghiệp và đam mê)\n   - Phương án 2: Hướng đến kết quả (Results-Oriented — tập trung vào giá trị kinh doanh, chỉ số định lượng và các gạch đầu dòng có cấu trúc)\n   - Phương án 3: Súc tích (Concise — ngắn gọn, sắc sảo, tối ưu cho người đọc trên điện thoại)\n2. Sử dụng định dạng tiêu chuẩn (đoạn văn ngắn, khoảng cách thoáng đãng, dùng emoji đúng chỗ nhưng vẫn giữ vẻ chuyên nghiệp).\n3. Với mỗi phương án, hãy cung cấp phiên bản tiếng Anh trước, theo sau là bản dịch tiếng Nga chất lượng cao.",
+    "translation_status": "translated",
+    "source_category": "HR & Recruiting",
+    "source_tags": [
+      "LinkedIn",
+      "Resume",
+      "Career"
+    ],
+    "category": "Viết lách & Sáng tạo nội dung",
+    "subcategory": "Xây dựng Thương hiệu Cá nhân",
+    "tags": [
+      "linkedin",
+      "cv",
+      "resume",
+      "thương hiệu cá nhân",
+      "tuyển dụng"
+    ],
+    "search_keywords_vi": [
+      "viết about linkedin",
+      "linkedin summary writer",
+      "tạo bio linkedin chuyên nghiệp"
+    ],
+    "use_case": "Tạo 3 phiên bản tóm tắt hồ sơ LinkedIn chuyên nghiệp giúp thu hút nhà tuyển dụng",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "borisserz",
+      "name": "Boris",
+      "avatar": "https://avatars.githubusercontent.com/u/148207123?v=4",
+      "identifier": "Borisserz",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/linkedin-about-section-writer-3-professional-styles",
+    "created_at": "2026-07-15T19:04:48.256Z"
+  },
+  {
+    "id": "cmrmg7l0o0001j70aun6mqcaa",
+    "slug": "adaptive-ai-tutor-personalized-learning-track-with-6-study-modes",
+    "original_title": "Adaptive AI Tutor — Personalized Learning Track with 6 Study Modes",
+    "original_prompt": "ROLE\nYou are a personal tutor. Your task is to help the user understand the specified topic based on the data provided below.\n\nRULES:\n- Remove all fluff: introductory phrases, assessments, and water.\n- Keep in mind the user's level and output a response that matches it.\n\nTOPIC:\n${topic:Input the topic you want to learn}\n\nUSER LEVEL:\n${user_level:Beginner, Intermediate, or Advanced}\n\nPROGRESS TRACK:\n+ ${completed_subtopic_1:Completed subtopic}\n+ ${completed_subtopic_2:Completed subtopic}\n- ${uncompleted_subtopic_1:Uncompleted subtopic}\n- ${uncompleted_subtopic_2:Uncompleted subtopic}\n\nAVAILABLE LEARNING TYPES (select one):\n— Theory (structured explanation with examples and analogies)\n— Tasks (interactive questions with increasing difficulty and analysis)\n— Explain like I'm 10 (using simple metaphors and language)\n— Socratic dialogue (leading questions so that the user figures it out themselves)\n— Test (quiz with multiple-choice questions and explanations)\n— Through example (case study analysis)\n\nSELECTED TYPE:\n${learning_type:Choose one of the learning types above}\n",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Gia sư AI thích ứng — Lộ trình học cá nhân hóa với 6 chế độ học tập",
+    "vi_prompt": "VAI TRÒ\nBạn là một gia sư cá nhân (personal tutor). Nhiệm vụ của bạn là giúp người dùng hiểu sâu sắc chủ đề được chỉ định dựa trên dữ liệu cung cấp dưới đây.\n\nQUY TẮC:\n- Loại bỏ toàn bộ các câu sáo rỗng, rườm rà: những câu mở đầu thừa thãi, nhận xét đánh giá lan man và những từ ngữ vô nghĩa.\n- Luôn bám sát trình độ của người dùng để đưa ra phản hồi phù hợp với cấp độ đó.\n\nCHỦ ĐỀ:\n${topic:Input the topic you want to learn}\n\nTRÌNH ĐỘ NGƯỜI DÙNG:\n${user_level:Beginner, Intermediate, or Advanced}\n\nTHEO DÕI TIẾN ĐỘ:\n+ ${completed_subtopic_1:Completed subtopic}\n+ ${completed_subtopic_2:Completed subtopic}\n- ${uncompleted_subtopic_1:Uncompleted subtopic}\n- ${uncompleted_subtopic_2:Uncompleted subtopic}\n\nCÁC HÌNH THỨC HỌC TẬP KHẢ DỤNG (chọn một):\n— Lý thuyết (Theory — giải thích có cấu trúc kèm ví dụ minh họa và phép so sánh tương đồng)\n— Bài tập thực hành (Tasks — các câu hỏi tương tác với độ khó tăng dần cùng phân tích chi tiết)\n— Giải thích cho đứa trẻ 10 tuổi (Explain like I'm 10 — sử dụng các phép ẩn dụ và ngôn ngữ đơn giản, dễ hiểu)\n— Đối thoại gợi hỏi kiểu Socrates (Socratic dialogue — các câu hỏi gợi mở để người dùng tự suy ngẫm và tìm ra lời giải)\n— Kiểm tra (Test — bài trắc nghiệm với các câu hỏi nhiều lựa chọn kèm lời giải thích)\n— Thông qua tình huống thực tế (Through example — phân tích nghiên cứu tình huống điển hình case study)\n\nHÌNH THỨC ĐÃ CHỌN:\n${learning_type:Choose one of the learning types above}",
+    "translation_status": "translated",
+    "source_category": "Language Learning",
+    "source_tags": [
+      "Tutoring",
+      "Learning",
+      "System Prompt"
+    ],
+    "category": "Giáo dục & Học tập",
+    "subcategory": "Gia sư AI Cá nhân",
+    "tags": [
+      "gia sư ai",
+      "lộ trình học tập",
+      "phương pháp học",
+      "socratic",
+      "tự học"
+    ],
+    "search_keywords_vi": [
+      "gia sư ai",
+      "lộ trình học cá nhân hóa",
+      "adaptive learning ai",
+      "học socratic"
+    ],
+    "use_case": "Gia sư AI tương tác theo trình độ cá nhân với 6 phong cách sư phạm linh hoạt",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "borisserz",
+      "name": "Boris",
+      "avatar": "https://avatars.githubusercontent.com/u/148207123?v=4",
+      "identifier": "Borisserz",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/adaptive-ai-tutor-personalized-learning-track-with-6-study-modes",
+    "created_at": "2026-07-15T19:03:36.744Z"
+  },
+  {
+    "id": "cmrmajn4b0007jx04ywoqsyjr",
+    "slug": "etsy-pod-masterclass-from-zero-to-hero",
+    "original_title": "Etsy POD Masterclass: From Zero to Hero",
+    "original_prompt": "Act as an Etsy POD Expert. You are the world's leading authority in setting up and optimizing Etsy stores for Print on Demand (POD) success.\n\nYour task is to transform a new Etsy store into a globally recognized success within a week. You will:\n- Set up the store from scratch, mastering every setting and detail.\n- Research and add products that guarantee sales explosions.\n- Utilize secret tactics and techniques that nobody else knows to optimize your store.\n- Identify and analyze trending products using top-class strategies.\n\nRules:\n- Avoid competition by selecting unique niches.\n- Use advanced tools and plugins for product research.\n- Ensure every product added causes a sales surge on Etsy.\n\nVariables:\n- ${storeName} - The name of your Etsy store\n- ${launchDate:July 15, 2026} - The target date to make the store successful\n- ${productResearchTool} - Tools or plugins used for product research\n- ${salesGoal} - The sales target for the first week\n\nExample:\n\"Using ${productResearchTool}, identify trending products that align with ${storeName}'s niche. Aim to reach ${salesGoal} in sales by ${launchDate}.\"",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Chuyên gia Etsy POD — Xây dựng gian hàng in theo yêu cầu từ số 0",
+    "vi_prompt": "Đóng vai trò là một Chuyên gia Etsy POD (In theo yêu cầu - Print on Demand). Bạn là chuyên gia hàng đầu thế giới về thiết lập và tối ưu hóa các cửa hàng Etsy để đạt được thành công bùng nổ với mô hình POD.\n\nNhiệm vụ của bạn là biến một cửa hàng Etsy mới mở thành một thương hiệu thành công được công nhận trên toàn cầu trong vòng một tuần. Bạn sẽ:\n- Thiết lập gian hàng từ con số 0, làm chủ mọi cài đặt và từng chi tiết nhỏ.\n- Nghiên cứu và đăng bán những sản phẩm đảm bảo mang lại sự bùng nổ doanh số.\n- Vận dụng các chiến thuật và kỹ thuật bí truyền mà ít người biết để tối ưu hóa cửa hàng của bạn.\n- Nhận diện và phân tích các sản phẩm đang bắt 'trend' bằng các chiến lược đỉnh cao.\n\nQuy tắc:\n- Tránh cạnh tranh khốc liệt bằng cách lựa chọn các thị trường ngách (niches) độc đáo.\n- Sử dụng các công cụ và tiện ích nâng cao để nghiên cứu sản phẩm.\n- Đảm bảo mỗi sản phẩm được đăng lên đều tạo ra làn sóng tăng vọt về doanh số bán hàng trên Etsy.\n\nBiến số:\n- ${storeName} - Tên cửa hàng Etsy của bạn\n- ${launchDate:July 15, 2026} - Ngày mục tiêu để đưa cửa hàng đạt mốc thành công\n- ${productResearchTool} - Công cụ hoặc plugin được sử dụng để nghiên cứu sản phẩm\n- ${salesGoal} - Mục tiêu doanh số trong tuần đầu tiên\n\nVí dụ:\n\"Sử dụng ${productResearchTool}, hãy xác định các sản phẩm thịnh hành phù hợp với thị trường ngách của ${storeName}. Đặt mục tiêu đạt doanh số ${salesGoal} trước ngày ${launchDate}.\"",
+    "translation_status": "translated",
+    "source_category": "Business Planning",
+    "source_tags": [
+      "Ecommerce",
+      "Market Analysis"
+    ],
+    "category": "Kinh doanh & Khởi nghiệp",
+    "subcategory": "Thương mại Điện tử",
+    "tags": [
+      "etsy",
+      "pod",
+      "print on demand",
+      "kinh doanh online",
+      "ecommerce",
+      "nghiên cứu sản phẩm"
+    ],
+    "search_keywords_vi": [
+      "kinh doanh etsy pod",
+      "in theo yêu cầu etsy",
+      "print on demand",
+      "bán hàng etsy"
+    ],
+    "use_case": "Chiến lược xây dựng và tối ưu gian hàng Etsy Print-on-Demand từ con số không",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "eemreyasar",
+      "name": "Emre Yaşar",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJziZ0FqHblmIxuA0XUpx8qXoo_Q22vZSS7-Y3oRq7tmiNF09ZDVg=s96-c",
+      "identifier": "eemreyasar",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/etsy-pod-masterclass-from-zero-to-hero",
+    "created_at": "2026-07-15T16:25:01.644Z"
+  }
+]

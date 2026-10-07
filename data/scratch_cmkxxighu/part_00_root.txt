@@ -1,0 +1,178 @@
+---
+name: claude-md-master
+description: Kỹ năng chuyên sâu quản lý vòng đời tệp CLAUDE.md - tạo mới, cập nhật, cải tiến với nội dung được xác thực từ kho mã nguồn và hỗ trợ cấu trúc đa mô-đun. Sử dụng khi tạo mới hoặc cập nhật các tệp CLAUDE.md.
+---
+
+# CLAUDE.md Master (Tạo Mới / Cập Nhật / Cải Tiến)
+
+## Khi nào nên sử dụng
+- Người dùng yêu cầu tạo mới, cải tiến, cập nhật hoặc chuẩn hóa các tệp CLAUDE.md.
+
+## Quy tắc cốt lõi
+- Chỉ đưa vào các thông tin đã được kiểm chứng thực tế trong kho mã nguồn (repo) hoặc tệp cấu hình.
+- Tuyệt đối không đưa mã bí mật, token, thông tin xác thực hoặc dữ liệu người dùng vào tệp.
+- Không đưa vào các chỉ dẫn tạm thời hoặc chỉ thị riêng cho một tác vụ duy nhất.
+- Giữ nội dung súc tích: tệp gốc (root) <= 200 dòng, tệp mô-đun <= 120 dòng.
+- Sử dụng danh sách gạch đầu dòng; tránh viết các đoạn văn xuôi dài dòng.
+- Các lệnh dòng lệnh phải có thể sao chép và chạy ngay (copy-pasteable), trích xuất từ tài liệu, script hoặc cấu hình CI của dự án.
+- Bỏ qua các mục trống; tránh dùng nội dung đệm sáo rỗng.
+
+## Đầu vào bắt buộc (phải phân tích trước khi tạo)
+- Cấu hình build/package liên quan đến nền tảng được phát hiện (thư mục gốc + các mô-đun).
+- Cấu hình phân tích tĩnh (static analysis/linter) được sử dụng trong repo (nếu có).
+- Cấu trúc mô-đun thực tế và các mẫu mã nguồn (quét thư mục/tệp thực tế).
+- Thư mục gốc mã nguồn tiêu biểu cho từng mô-đun để trích xuất:
+  cấu trúc package/feature, các kiểu dữ liệu chính và annotation đang dùng.
+
+## Quy Trình Khám Phá (Nhanh + Có Trọng Tâm)
+1. Xác định vị trí các biến thể CLAUDE.md hiện có: `CLAUDE.md`, `.claude.md`, `.claude.local.md`.
+2. Nhận diện nền tảng công nghệ và các điểm vào (entry points) qua việc đọc tối thiểu:
+   - `README.md`, tài liệu liên quan trong `docs/*`
+   - Các tệp build/package (xem tài liệu tham khảo theo stack)
+   - Cấu hình runtime/môi trường: `Dockerfile`, `docker-compose.yml`, `.env.example`, `config/*`
+   - CI/CD: `.github/workflows/*`, `.gitlab-ci.yml`, `.circleci/*`
+3. Chỉ trích xuất các lệnh nếu chúng thực sự tồn tại trong script, cấu hình hoặc docs của repo.
+4. Phát hiện cấu trúc đa mô-đun (multi-module):
+   - Android/Gradle: đọc includes trong `settings.gradle` hoặc `settings.gradle.kts`.
+   - iOS: phát hiện nhiều targets/workspaces trong `*.xcodeproj`/`*.xcworkspace`.
+   - Nếu có nhiều hơn một mô-đun/target sở hữu thư mục `src/` hoặc tệp cấu hình build riêng, hãy lên kế hoạch tạo tệp CLAUDE.md riêng cho từng mô-đun.
+5. Với mỗi mô-đun tiềm năng, đọc tệp build và tài liệu tối thiểu để nắm bắt mục đích, điểm vào và câu lệnh riêng của mô-đun đó.
+6. Quét thư mục gốc mã nguồn để tìm:
+   - Các thư mục tính năng/package cấp cao nhất và quy ước phân lớp.
+   - Các annotation/kiểu dữ liệu chính đang được sử dụng (theo stack reference).
+   - Quy ước đặt tên được áp dụng trong codebase.
+7. Ghi nhận các quy trình làm việc đặc thù hoặc lưu ý bẫy lỗi (gotchas) từ tài liệu hoặc mẫu code.
+
+Hiệu năng:
+- Ưu tiên liệt kê tệp + đọc có chọn lọc mục tiêu.
+- Tránh đọc toàn bộ tệp khi chỉ cần một phần hoặc một ký hiệu.
+- Bỏ qua các thư mục lớn: `node_modules`, `vendor`, `build`, `dist`.
+
+## Tài Liệu Tham Khảo Theo Nền Tảng (Mẫu 2)
+Chỉ đọc tài liệu tham khảo phù hợp khi xuất hiện dấu hiệu nhận diện:
+- Android/Gradle → `references/android.md`
+- iOS/Xcode/Swift → `references/ios.md`
+- PHP → `references/php.md`
+- Go → `references/go.md`
+- React (web) → `references/react-web.md`
+- React Native → `references/react-native.md`
+- Rust → `references/rust.md`
+- Python → `references/python.md`
+- Java/JVM → `references/java.md`
+- Công cụ Node → `references/node.md`
+- .NET/C# → `references/dotnet.md`
+- Dart/Flutter → `references/flutter.md`
+- Ruby/Rails → `references/ruby.md`
+- Elixir/Erlang → `references/elixir.md`
+- C/C++/CMake → `references/cpp.md`
+- Khác/Chưa rõ → `references/generic.md` (phương án dự phòng khi không khớp stack cụ thể)
+
+Nếu phát hiện nhiều stack, đọc nhiều tài liệu tham khảo tương ứng.
+Nếu không nhận diện được stack nào, dùng tài liệu generic.
+
+## Chính Sách Đầu Ra Đa Mô-Đun (Bắt buộc khi phát hiện)
+- Luôn tạo một tệp `CLAUDE.md` ở thư mục gốc.
+- Đồng thời tạo `CLAUDE.md` bên trong thư mục gốc của từng mô-đun/target có ý nghĩa.
+  - "Có ý nghĩa" = có cấu hình build riêng và thư mục `src/` (hoặc tương đương).
+  - Bỏ qua các thư mục chỉ phục vụ công cụ như `buildSrc`, `gradle`, `scripts`, `tools`.
+- Tệp mô-đun phải mang tính đặc thù riêng và tránh trùng lặp:
+  - Nêu rõ mục đích, đường dẫn chính, điểm vào, bộ kiểm thử và lệnh riêng của mô-đun (nếu có).
+  - Tham chiếu các thông tin dùng chung thông qua `@/CLAUDE.md`.
+
+## Chính Sách CLAUDE.md Cho Mô-Đun Nghiệp Vụ (Mọi Stack)
+Đối với các thư mục chứa logic nghiệp vụ trong monorepo (`src/`, `lib/`, `packages/`, `internal/`):
+- Tạo `CLAUDE.md` cho các mô-đun có trên 5 tệp HOẶC có README riêng.
+- Bỏ qua các thư mục chỉ chứa tiện ích: `Helper`, `Utils`, `Common`, `Shared`, `Exception`, `Trait`, `Constants`.
+- Không bắt buộc cấu trúc phân tầng; cung cấp thông tin mô-đun bất kể mô hình kiến trúc nào.
+- Tối đa 120 dòng cho mỗi tệp CLAUDE.md mô-đun.
+- Tham chiếu tệp gốc qua `@/CLAUDE.md` để dùng chung kiến trúc và quy ước.
+- Bao gồm: mục đích, cấu trúc, các class quan trọng, phần phụ thuộc, điểm vào.
+
+## Các Mục Bắt Buộc Ở Đầu Ra (Cho CLAUDE.md Mô-đun)
+Bao gồm các mục này nếu phát hiện thấy trong codebase (chỉ bỏ qua nếu thực sự không có):
+- **Danh mục tính năng/thành phần (Feature/component inventory)**: liệt kê các thư mục cấp cao nhất dưới thư mục nguồn
+- **Mô-đun cốt lõi/dùng chung (Core/shared modules)**: các thư mục chứa code dùng chung hoặc tiện ích
+- **Cấu trúc điều hướng/định tuyến (Navigation/routing structure)**: đồ thị điều hướng, routes hoặc routers
+- **Mô hình tầng mạng/API (Network/API layer pattern)**: API clients, endpoints, response wrappers
+- **Mô hình tiêm phụ thuộc DI (DI/injection pattern)**: modules, containers hoặc cấu hình injection
+- **Tệp build/cấu hình (Build/config files)**: cấu hình riêng của mô-đun (proguard, manifests, v.v.)
+
+Xem tài liệu tham khảo theo stack để biết chính xác các mẫu cần phát hiện và báo cáo.
+
+## Quy Trình Cập Nhật (Bắt buộc tuân thủ)
+1. Chỉ đề xuất các phần bổ sung có mục tiêu rõ ràng; hiển thị bản so sánh diff theo từng tệp.
+
+2. Xin phê duyệt trước khi áp dụng cập nhật:
+
+**Cursor IDE:**
+Sử dụng công cụ AskQuestion với các tùy chọn:
+- id: "approval"
+- prompt: "Áp dụng các cập nhật này cho CLAUDE.md?"
+- options: [{"id": "yes", "label": "Có, áp dụng"}, {"id": "no", "label": "Không, hủy bỏ"}]
+
+**Claude Code (Terminal):**
+Xuất các thay đổi đề xuất và hỏi:
+"Bạn có duyệt các cập nhật này không? (yes/no)"
+Dừng lại và chờ người dùng phản hồi trước khi tiếp tục.
+
+**Các môi trường khác (Dự phòng):**
+Nếu không có công cụ hỏi đáp cấu trúc:
+1. Hiển thị rõ ràng các thay đổi được đề xuất
+2. Hỏi: "Bạn có duyệt các cập nhật này không? Trả lời 'yes' để áp dụng hoặc 'no' để hủy."
+3. Chờ xác nhận rõ ràng từ người dùng trước khi tiến hành.
+
+3. Áp dụng các cập nhật, giữ nguyên các nội dung tùy biến của người dùng.
+
+Nếu chưa có tệp CLAUDE.md nào, đề xuất tạo tệp mới để xin phê duyệt.
+
+## Quy Tắc Trích Xuất Nội Dung (Bắt buộc)
+- Chỉ trích xuất từ codebase:
+  - Trích xuất: tên kiểu/class/annotation được dùng, mẫu đường dẫn thực tế, quy ước đặt tên.
+  - Tuyệt đối không: giá trị hardcode, bí mật, API key, logic nghiệp vụ chuyên biệt.
+  - Tuyệt đối không: đoạn mã mẫu trong các quy tắc Nên/Không nên làm.
+
+## Kiểm Tra Trước Khi Ghi Tệp
+- [ ] Mọi quy tắc đều tham chiếu đến các class/đường dẫn thực tế trong codebase
+- [ ] Không có đoạn mã ví dụ nào trong các mục Nên/Không nên làm
+- [ ] Các mẫu khớp chính xác với những gì đang có trong codebase (không bị lỗi thời)
+
+## Quy Tắc Nội Dung
+- Bao gồm: câu lệnh, tóm tắt kiến trúc, đường dẫn trọng yếu, kiểm thử, các lưu ý quan trọng, đặc thù quy trình.
+- Loại trừ: các thực hành tốt chung chung, thông tin hiển nhiên, phát biểu chưa được kiểm chứng.
+- Sử dụng import dạng `@path/to/file` để tránh trùng lặp nội dung.
+- Định dạng Nên/Không nên (Do/Do Not) là tùy chọn; chỉ giữ lại nếu tệp đã sử dụng sẵn.
+- Tránh đưa ví dụ code ngoại trừ các lệnh ngắn sao chép được ngay.
+
+## Chiến Lược Xử Lý Tệp Hiện Có
+Nhận diện:
+- Nếu tồn tại chuỗi `<!-- Generated by claude-md-editor skill -->` → lần chạy tiếp theo
+- Ngược lại → lần chạy đầu tiên
+
+Lần chạy đầu tiên + tệp đã tồn tại:
+- Sao lưu `CLAUDE.md` → `CLAUDE.md.bak`
+- Sử dụng `.bak` làm nguồn và chỉ trích xuất thông tin có thể tái sử dụng, đặc thù cho dự án
+- Tạo tệp mới súc tích và thêm điểm đánh dấu
+
+Lần chạy tiếp theo:
+- Giữ nguyên các phần tùy biến và cách diễn đạt của người dùng trừ khi bị lỗi thời hoặc không chính xác
+- Chỉ cập nhật những gì xung đột với trạng thái hiện tại của repo
+- Chỉ bổ sung các phần còn thiếu nếu chúng mang lại giá trị thực tế
+
+Tuyệt đối không chỉnh sửa tệp `.claude.local.md`.
+
+## Đầu Ra Báo Cáo
+Sau khi cập nhật, in báo cáo ngắn gọn:
+```
+## CLAUDE.md Update Report
+- /CLAUDE.md [CREATED | BACKED_UP+CREATED | UPDATED]
+- /<module>/CLAUDE.md [CREATED | UPDATED]
+- Backups: danh sách các tệp `.bak` nếu có
+```
+
+## Bảng Kiểm Tra Hợp Lệ (Validation Checklist)
+- Phần mô tả rõ ràng, cụ thể và chứa các thuật ngữ kích hoạt
+- Không còn sót lại các đoạn giữ chỗ
+- Không chứa mã bí mật hay thông tin nhạy cảm
+- Các câu lệnh là thực tế và sao chép chạy được ngay
+- Tuân thủ nguyên tắc báo cáo trước khi sửa
+- Các liên kết tham chiếu chỉ sâu 1 cấp

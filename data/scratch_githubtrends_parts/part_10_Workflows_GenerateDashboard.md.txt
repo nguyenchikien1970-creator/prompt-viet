@@ -1,0 +1,196 @@
+Workflows/GenerateDashboard.md 
+# Quy trình GenerateDashboard (GenerateDashboard Workflow)
+
+Quy trình tạo bảng điều khiển trực quan hóa dữ liệu có tính tương tác.
+
+## Mô tả (Description)
+
+Quy trình này sử dụng công cụ GenerateDashboard.ts để lấy các dự án trending từ GitHub và tạo bảng điều khiển HTML có tính tương tác cao, hỗ trợ:
+- Trình bày thẻ dự án đẹp mắt
+- Biểu đồ tròn phân bố ngôn ngữ
+- Biểu đồ cột tăng trưởng Stars
+- Danh sách tin tức công nghệ
+- Tính năng lọc, sắp xếp và tìm kiếm theo thời gian thực
+
+## Khi nào nên dùng (When to Use)
+
+Sử dụng quy trình này khi người dùng yêu cầu bất kỳ điều gì sau:
+- "tạo dashboard GitHub trending"
+- "tạo trang web xu hướng"
+- "tạo báo cáo trực quan hóa"
+- "export trending dashboard"
+- "tạo trang web tương tác"
+
+## Các bước thực hiện (Workflow Steps)
+
+### Bước 1: Xác định tham số
+Xác nhận với người dùng hoặc suy luận các tham số sau:
+- **Chu kỳ thời gian**: daily (hàng ngày) hoặc weekly (hàng tuần, mặc định)
+- **Ngôn ngữ lập trình**: Tùy chọn (ví dụ: TypeScript, Python, Go, Rust, v.v.)
+- **Số lượng dự án**: Mặc định 10 dự án
+- **Kèm tin tức**: Có kèm tin tức công nghệ hay không
+- **Số lượng tin tức**: Mặc định 10 tin
+- **Đường dẫn xuất file**: Mặc định ./github-trends.html
+
+### Bước 2: Thực thi công cụ
+Chạy công cụ GenerateDashboard.ts:
+
+```bash
+# Cách dùng cơ bản (hàng tuần, 10 dự án)
+bun ~/.claude/skills/GitHubTrends/Tools/GenerateDashboard.ts
+
+# Chỉ định ngôn ngữ và kèm tin tức
+bun ~/.claude/skills/GitHubTrends/Tools/GenerateDashboard.ts \
+  --period weekly \
+  --language TypeScript \
+  --limit 20 \
+  --include-news \
+  --news-count 15 \
+  --output ~/trends.html
+
+# Xu hướng hàng ngày
+bun ~/.claude/skills/GitHubTrends/Tools/GenerateDashboard.ts \
+  --period daily \
+  --output ~/daily-trends.html
+```
+
+### Bước 3: Hiển thị kết quả
+Công cụ sẽ tự động:
+1. Lấy dữ liệu GitHub trending
+2. Lấy tin tức công nghệ (nếu được bật)
+3. Phân tích dữ liệu và tạo thông tin thống kê
+4. Render giao diện từ mẫu HTML Handlebars
+5. Lưu vào đường dẫn chỉ định
+
+### Bước 4: Xác thực và mở
+Tệp HTML được tạo bao gồm:
+- ✅ Bố cục thích ứng (responsive)
+- ✅ Thẻ hiển thị dự án
+- ✅ Biểu đồ tròn phân bố ngôn ngữ
+- ✅ Biểu đồ cột tăng trưởng Stars
+- ✅ Bộ lọc thời gian thực
+- ✅ Tính năng sắp xếp
+- ✅ Tính năng tìm kiếm
+- ✅ Danh sách tin tức công nghệ
+
+## Ví dụ sử dụng (Example Usage)
+
+### Ví dụ 1: Dashboard cơ bản
+```
+User: "Tạo dashboard GitHub trending tuần này"
+
+Assistant:
+Chạy công cụ GenerateDashboard...
+[Thực thi lệnh, tạo /tmp/github-trends.html]
+✅ Dashboard đã được tạo thành công! Đã mở trên trình duyệt.
+```
+
+### Ví dụ 2: Dashboard kèm tin tức
+```
+User: "Tạo xu hướng hàng ngày cho các dự án TypeScript, kèm tin tức"
+
+Assistant:
+Tạo dashboard xu hướng hàng ngày của TypeScript, kèm tin tức công nghệ...
+[Thực thi lệnh: --period daily --language TypeScript --include-news]
+✅ Dashboard đã được xuất ra ~/Downloads/ts-daily-trends.html
+```
+
+### Ví dụ 3: Tùy chỉnh đường dẫn đầu ra
+```
+User: "Tạo bảng điều khiển với 20 dự án, lưu ra Desktop"
+
+Assistant:
+Đang tạo bảng điều khiển xu hướng với 20 dự án...
+[Thực thi lệnh: --limit 20 --output ~/Desktop/github-trends.html]
+✅ Hoàn thành! Tệp đã được lưu tại Desktop.
+```
+
+## Tùy chọn công cụ (Tool Options)
+
+| Tham số | Ý nghĩa | Mặc định | Giá trị khả dụng |
+|---------|---------|----------|-------------------|
+| `--period` | Chu kỳ thời gian | `weekly` | `daily`, `weekly` |
+| `--language` | Lọc ngôn ngữ lập trình | Tất cả | TypeScript, Python, Go, Rust, v.v. |
+| `--limit` | Số lượng dự án trả về | 10 | Số nguyên dương bất kỳ |
+| `--include-news` | Kèm tin tức công nghệ | false | - |
+| `--news-count` | Số lượng tin tức | 10 | Số nguyên dương bất kỳ |
+| `--theme` | Giao diện màu | `auto` | `light`, `dark`, `auto` |
+| `--output` | Đường dẫn tệp xuất ra | `./github-trends.html` | Đường dẫn bất kỳ |
+
+## Tính năng đầu ra (Output Features)
+
+### Trực quan hóa dữ liệu
+- **Biểu đồ tròn phân bố ngôn ngữ**: Thể hiện tỷ trọng các ngôn ngữ lập trình
+- **Biểu đồ cột tăng trưởng Stars**: Thể hiện mức tăng stars của top 10 dự án
+
+### Tính năng tương tác
+- **Tìm kiếm**: Tìm theo tên dự án hoặc mô tả
+- **Bộ lọc**: Lọc theo ngôn ngữ lập trình
+- **Sắp xếp**: Sắp xếp theo thứ hạng, tổng stars, mức tăng theo chu kỳ
+
+### Thiết kế thích ứng
+- Hỗ trợ máy tính bàn, máy tính bảng, điện thoại
+- Dùng Tailwind CSS xây dựng giao diện hiện đại
+- Màu sắc đồng bộ theo phong cách GitHub
+
+## Xử lý lỗi (Error Handling)
+
+Nếu gặp lỗi:
+1. **Lỗi mạng**: Kiểm tra kết nối mạng, đảm bảo truy cập được GitHub
+2. **Phân tích thất bại**: Cấu trúc trang GitHub có thể thay đổi, công cụ sẽ hiển thị thông tin gỡ lỗi
+3. **Ghi tệp thất bại**: Kiểm tra quyền ghi tại thư mục đích
+
+## Thông báo bằng giọng nói (Voice Notification)
+
+Gửi thông báo giọng nói khi thực thi quy trình này:
+
+```bash
+curl -s -X POST http://localhost:8888/notify \
+  -H "Content-Type: application/json" \
+  -d '{"message": "Đang tạo GitHub Trending Dashboard..."}' \
+  > /dev/null 2>&1 &
+```
+
+Đồng thời xuất thông báo văn bản:
+```
+Running the **GenerateDashboard** workflow from the **GitHubTrends** skill...
+```
+
+## Tích hợp với các Skill khác
+
+- **Browser**: Xác thực và xem kết quả trang HTML được tạo
+- **System**: Lưu snapshot bảng điều khiển vào MEMORY/
+- **OSINT**: Phân tích xu hướng hệ sinh thái công nghệ
+
+## Lưu ý (Notes)
+
+- Dữ liệu được làm mới theo chu kỳ mỗi giờ của GitHub trending
+- Tệp HTML được tạo hoàn toàn độc lập, không cần web server
+- Tất cả thư viện phụ thuộc đều tải qua CDN (Tailwind CSS, Chart.js)
+- Hỗ trợ xem offline sau khi tải xong CDN
+
+## Sử dụng nâng cao (Advanced Usage)
+
+### Tạo hàng loạt (Batch Generation)
+```bash
+# Tạo dashboard cho nhiều ngôn ngữ
+for lang in TypeScript Python Go Rust; do
+  bun Tools/GenerateDashboard.ts \
+    --language $lang \
+    --output ~/trends-$lang.html
+done
+```
+
+### Lên lịch định kỳ (Cron Job)
+```bash
+# Tạo snapshot mỗi giờ một lần
+# Thêm vào crontab:
+0 * * * * cd ~/.claude/skills/GitHubTrends && bun Tools/GenerateDashboard.ts --output ~/trends-$(date +%H).html
+```
+
+### Tùy biến giao diện
+Thông qua chỉnh sửa `Templates/dashboard.hbs` có thể tùy biến:
+- Bảng màu
+- Cấu trúc bố cục
+- Thêm biểu đồ mới
+- Bổ sung tính năng tương tác mới

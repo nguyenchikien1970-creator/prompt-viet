@@ -1,0 +1,29 @@
+references/workflows.md 
+# Các Khuôn Mẫu Quy Trình (Workflow Patterns)
+
+## Quy Trình Tuần Tự (Sequential Workflows)
+
+Đối với các tác vụ phức tạp, hãy chia nhỏ các thao tác thành các bước tuần tự, rõ ràng. Việc cung cấp cho Claude cái nhìn tổng quan về quy trình ở phần đầu của SKILL.md thường rất hữu ích:
+
+```markdown
+Điền biểu mẫu PDF bao gồm các bước sau:
+
+1. Phân tích biểu mẫu (chạy analyze_form.py)
+2. Tạo ánh xạ trường dữ liệu (chỉnh sửa fields.json)
+3. Xác thực ánh xạ (chạy validate_fields.py)
+4. Điền biểu mẫu (chạy fill_form.py)
+5. Xác minh kết quả đầu ra (chạy verify_output.py)
+```
+
+## Quy Trình Có Điều Kiện (Conditional Workflows)
+
+Đối với các tác vụ có logic rẽ nhánh, hãy hướng dẫn Claude qua các điểm quyết định:
+
+```markdown
+1. Xác định loại hình sửa đổi:
+   **Tạo nội dung mới?** → Thực hiện theo "Quy trình tạo mới" bên dưới
+   **Chỉnh sửa nội dung hiện có?** → Thực hiện theo "Quy trình chỉnh sửa" bên dưới
+
+2. Quy trình tạo mới: [các bước]
+3. Quy trình chỉnh sửa: [các bước]
+```

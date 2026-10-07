@@ -1,0 +1,548 @@
+[
+  {
+    "id": "cmjshq2z1000olc04hsl6msok",
+    "slug": "bingo-game-creator",
+    "original_title": "Bingo Game Creator",
+    "original_prompt": "Crea un juego de bingo.\nLos números van del 1 al 90.\n\n\nOptions:\n- Los números que van saliendo se deben coloca en un tablero dividido en 9 filas por 10 columnas. Cada columna va del 1 al 10, la segunda del 11 al 20 y así sucesivamente. \nPara cada fila, el color de los números es el mismo y distinto al resto de filas.\n- Debe contener un selector de velocidad para poder aumentar o disminuir la velocidad de ir cantando los números\n- Otro selector para el volumen del audio\n- Un botón para volver a cantar el número actual\n- Otro botón para volver a cantar el número anterior\n- Un botón para reiniciar la partida\n- Un botón para empezar una nueva partida\n- Se pueden introducir los cartones con un código único con sus números a partir de un archivo csv.\n- Cada cartón se compone de tres filas y en cada fila tiene 5 números. En la primera columna irán los números del 1 al 9, en la segunda del 10 al 19, en la tercera, del 20 al 29 y así hasta la última que irán del 80 al 90. \n- Si se han introducido ya los cartones, se deben quedar almacenados para no tener que estar introducirlos otra vez.\n. También se puede introducir a mano cada cartón de números con su código.\n- Debe tener un botón para pausar el juego o continuarlo.\n- Debe tener un botón de línea. Para que haga una pausa và se compruebe si es correcta la línea (han salido los 5 números de una misma línea de un cartón y solo puede haber una línea por juego). Si se introduce el código del cartón del jugador que ha cantado línea debe indicar si es correcto o no.\n- También debe contener otro botón para bingo (han salido los 15 números de un cartón). Debe comprobar si se introduce el código del cartón si es correcto.\n- Los números de cada partida deben ser aleatorios y no pueden repetirse cuando se inicie un nuevo juego.",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Trình tạo trò chơi Bingo",
+    "vi_prompt": "Tạo một trò chơi Bingo.\nCác con số nằm trong khoảng từ 1 đến 90.\n\nTùy chọn:\n- Các số được bốc ra phải được xếp vào một bảng chia thành 9 hàng x 10 cột. Mỗi cột từ 1 đến 10, cột thứ hai từ 11 đến 20 và cứ thế tiếp tục. Với mỗi hàng, màu của các con số phải giống nhau và khác biệt so với các hàng còn lại.\n- Phải có bộ chọn tốc độ để có thể tăng hoặc giảm tốc độ gọi số.\n- Một bộ chọn khác để điều chỉnh âm lượng âm thanh.\n- Một nút để gọi lại số hiện tại.\n- Một nút khác để gọi lại số trước đó.\n- Một nút để khởi động lại ván chơi.\n- Một nút để bắt đầu một ván chơi mới.\n- Có thể nhập các thẻ bài (cartón) với mã duy nhất kèm theo các con số của nó từ tệp CSV.\n- Mỗi thẻ bài gồm 3 hàng và mỗi hàng có 5 số. Cột đầu tiên gồm các số từ 1 đến 9, cột thứ hai từ 10 đến 19, cột thứ ba từ 20 đến 29 và cứ thế cho đến cột cuối cùng từ 80 đến 90.\n- Nếu các thẻ bài đã được nhập, chúng phải được lưu trữ để không phải nhập lại lần nữa.\n- Cũng có thể nhập thủ công từng thẻ số cùng với mã định danh của nó.\n- Phải có nút tạm dừng hoặc tiếp tục trò chơi.\n- Phải có nút kiểm tra hàng (línea). Nhằm tạm dừng và kiểm tra xem hàng đó có hợp lệ hay không (5 số trên cùng một hàng của một thẻ bài đã được gọi ra, và chỉ được có một hàng trúng thưởng mỗi ván). Nếu nhập mã thẻ bài của người chơi vừa hô trúng hàng, hệ thống phải cho biết là đúng hay sai.\n- Cũng phải có nút cho Bingo (khi tất cả 15 số trên một thẻ bài đã được gọi ra). Phải kiểm tra mã thẻ bài xem có chính xác hay không.\n- Các con số trong mỗi ván chơi phải ngẫu nhiên và không được lặp lại khi bắt đầu một trò chơi mới.",
+    "translation_status": "translated",
+    "source_category": "Creative",
+    "source_tags": [
+      "Games",
+      "Entertainment"
+    ],
+    "category": "Lập trình & Phát triển phần mềm",
+    "subcategory": "Phát triển trò chơi",
+    "tags": [
+      "bingo",
+      "game",
+      "trò chơi",
+      "csv",
+      "logic game"
+    ],
+    "search_keywords_vi": [
+      "lập trình game bingo",
+      "tạo trò chơi bingo 90 số",
+      "game bingo trực tuyến"
+    ],
+    "use_case": "Thiết kế và phát triển ứng dụng trò chơi Bingo 90 số với đầy đủ tính năng gọi số, kiểm tra vé qua mã và nhập thẻ từ CSV.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "manuelmiras",
+      "name": "Manuel Miguel Miras García",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKIwz8whrE7QGgRY0jGjeCbPOwG4FNtCo0kOp6qzACAz60zEaw=s96-c",
+      "identifier": "manuelmiras",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/bingo-game-creator",
+    "created_at": "2025-12-30T11:14:57.806Z"
+  },
+  {
+    "id": "cmjsfqyz6000dl1048s273gh9",
+    "slug": "sun-drenched-outdoor-selfie-of-a-tattooed-female-subject-with-tiki-decor",
+    "original_title": "Sun-Drenched Outdoor Selfie of a Tattooed Female Subject with Tiki Decor",
+    "original_prompt": "{\n  \"scene_analysis\": {\n    \"environment\": {\n      \"type\": \"Outdoor\",\n      \"setting\": \"Patio or backyard terrace\",\n      \"weather\": \"Sunny, clear sky visible\",\n      \"background_elements\": [\n        \"Grey stucco wall\",\n        \"Artificial green hedge wall\",\n        \"Blue sky\"\n      ]\n    },\n    \"camera\": {\n      \"lens\": \"Wide-angle lens (typical of smartphone front camera)\",\n      \"angle\": \"Selfie angle, slightly low looking up, close-up framing\",\n      \"focus\": \"Sharp focus on the subject's face and upper body\",\n      \"distortion\": \"Slight perspective distortion due to wide angle\"\n    },\n    \"lighting\": {\n      \"overall_condition\": \"Bright natural daylight, hard lighting\",\n      \"sources\": [\n        {\n          \"source_id\": 1,\n          \"type\": \"Sun\",\n          \"angle\": \"High angle, coming from the upper left (subject's right)\",\n          \"color\": \"Natural white/warm daylight\",\n          \"intensity\": \"High/Strong\",\n          \"effects_on_objects\": \"Creates hard shadows under the subject's hair, chin, and nose. Casts defined shadows on the grey wall behind. Illuminates the hair creating a golden sheen.\"\n        }\n      ]\n    }\n  },\n  \"subjects\": [\n    {\n      \"id\": \"person_1\",\n      \"type\": \"Human\",\n      \"gender\": \"Female\",\n      \"identity\": \"Anonymous\",\n      \"orientation\": {\n        \"facing\": \"Directly towards the camera\",\n        \"body_rotation\": \"Frontal, slight lean forward\"\n      },\n      \"emotional_state\": {\n        \"mood\": \"Relaxed, confident, slightly sultry\",\n        \"expression\": \"Neutral with slightly parted lips, 'bedroom eyes'\",\n        \"lust_factor\": \"Moderate to High (suggestive pose and nudity implication)\",\n        \"posture_effect\": \"The leaning posture emphasizes the chest and creates a casual, intimate vibe\"\n      },\n      \"pose\": {\n        \"general_definition\": \"Leaning forward selfie, likely sitting or kneeling\",\n        \"feet_position\": \"Not visible (out of frame)\",\n        \"hand_position\": \"Right arm extended holding the camera (implied), Left arm resting on a lower surface/knee\",\n        \"visible_extent\": \"Head to waist/mid-torso\"\n      },\n      \"head\": {\n        \"structure\": \"Oval face shape, defined jawline\",\n        \"hair\": {\n          \"color\": \"Light brown with blonde highlights (bronde)\",\n          \"style\": \"Shoulder-length, layered, textured/messy look\",\n          \"shape\": \"Frames the face, voluminous\",\n          \"condition\": \"Sun-kissed, dry texture\"\n        },\n        \"ears\": \"Partially covered by hair\",\n        \"forehead\": \"Partially covered by bangs/hair strands, smooth skin\",\n        \"brows\": \"Natural, brushed up, dark brown\",\n        \"eyes\": {\n          \"gaze\": \"Direct eye contact with the lens\",\n          \"shape\": \"Almond\",\n          \"makeup\": \"Minimal or natural look\"\n        },\n        \"nose\": {\n          \"structure\": \"Straight, slightly button tip\",\n          \"details\": \"Freckles visible across the bridge\"\n        },\n        \"mouth_area\": {\n          \"lips\": \"Very full, plump, upper lip slightly lifted\",\n          \"mouth_state\": \"Slightly open\",\n          \"philtrum\": \"Defined\"\n        },\n        \"chin\": \"Rounded but defined\",\n        \"mimics\": \"Relaxed facial muscles, seductive gaze\"\n      },\n      \"body\": {\n        \"skin\": {\n          \"tone\": \"Tanned\",\n          \"texture\": \"Smooth, freckles on chest and face\"\n        },\n        \"neck\": {\n          \"visibility\": \"Visible\",\n          \"tattoo\": \"Small text tattoo on the center/throat area (vertical characters)\"\n        },\n        \"shoulders\": {\n          \"visibility\": \"Visible\",\n          \"posture\": \"Relaxed, slightly hunched forward due to leaning\"\n        },\n        \"chest\": {\n          \"ratio_to_body\": \"Prominent\",\n          \"estimated_size\": \"Full bust\",\n          \"bra_status\": \"None (No bra visible)\",\n          \"nipples_visible\": \"No (Hidden by framing/shadows)\",\n          \"shape_notes\": \"Natural droop due to gravity and leaning pose, cleavage visible\",\n          \"tattoo\": \"Gothic script text tattoo reading 'Divine Feminine' on the sternum\"\n        },\n        \"belly\": {\n          \"visibility\": \"Partially visible (upper abdomen)\",\n          \"ratio\": \"Slim relative to chest\"\n        },\n        \"arms\": {\n          \"tattoos\": {\n            \"right_arm\": \"Heavy ink, large sleeve/designs visible\",\n            \"left_arm\": \"Sketch-style tattoos including an anime-style girl face, a hummingbird, and line art\"\n          }\n        }\n      },\n      \"clothing\": {\n        \"upper_body\": \"None (Topless implied)\",\n        \"lower_body\": \"Not clearly visible, possibly a white towel or garment bunched near the bottom left\",\n        \"accessories\": \"Bracelet on left wrist (silver/thin chain)\"\n      },\n      \"light_interaction_body\": {\n        \"face\": \"Evenly lit with highlights on the forehead and nose bridge\",\n        \"chest\": \"Highlights on the upper curve of the breasts, deep shadows in the cleavage\",\n        \"hair\": \"Backlighting effect on the top strands\"\n      }\n    }\n  ],\n  \"objects\": [\n    {\n      \"id\": \"object_1\",\n      \"name\": \"Tiki Totem Statue\",\n      \"description\": \"Wooden carved statue with a face\",\n      \"color\": \"Grey/brown wood with painted red tongue and yellow teeth\",\n      \"position\": \"Right side of the frame, foreground\",\n      \"purpose\": \"Decoration, aesthetic element\",\n      \"ratio\": \"Large vertical element comparable to subject's head size in perspective\"\n    },\n    {\n      \"id\": \"object_2\",\n      \"name\": \"Planter with Greenery\",\n      \"description\": \"Rustic wooden planter box with artificial ferns/plants\",\n      \"color\": \"Whitewashed wood, sage green plants\",\n      \"position\": \"Right side, behind the Tiki statue\",\n      \"purpose\": \"Decor, background texture\"\n    },\n    {\n      \"id\": \"object_3\",\n      \"name\": \"BBQ Grill\",\n      \"description\": \"Stainless steel outdoor grill\",\n      \"color\": \"Metallic silver\",\n      \"position\": \"Far left edge, partially cropped\",\n      \"purpose\": \"Functional patio equipment\"\n    }\n  ],\n  \"negative_prompts\": [\n    \"clothing on upper body\",\n    \"shirt\",\n    \"bra\",\n    \"bikini top\",\n    \"deformed hands\",\n    \"bad anatomy\",\n    \"blurry\",\n    \"low resolution\",\n    \"dark lighting\",\n    \"indoor setting\",\n    \"male subject\",\n    \"sunglasses\"\n  ]\n}",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Ảnh selfie ngoài trời ngập tràn ánh nắng của cô gái có hình xăm bên tượng Tiki",
+    "vi_prompt": "{\n  \"scene_analysis\": {\n    \"environment\": {\n      \"type\": \"Ngoài trời\",\n      \"setting\": \"Hiên nhà hoặc sân thượng sau nhà\",\n      \"weather\": \"Nắng đẹp, trời quang đãng nhìn thấy rõ\",\n      \"background_elements\": [\n        \"Tường trát vữa màu xám\",\n        \"Bức tường hàng rào cây xanh nhân tạo\",\n        \"Bầu trời xanh\"\n      ]\n    },\n    \"camera\": {\n      \"lens\": \"Ống kính góc rộng (đặc trưng của camera trước điện thoại thông minh)\",\n      \"angle\": \"Góc chụp selfie, hơi thấp nhìn chếch lên, khung hình cận cảnh\",\n      \"focus\": \"Lấy nét sắc nét vào khuôn mặt và phần thân trên của nhân vật\",\n      \"distortion\": \"Biến dạng phối cảnh nhẹ do góc rộng\"\n    },\n    \"lighting\": {\n      \"overall_condition\": \"Ánh sáng ban ngày tự nhiên rực rỡ, ánh sáng gắt\",\n      \"sources\": [\n        {\n          \"source_id\": 1,\n          \"type\": \"Mặt trời\",\n          \"angle\": \"Góc cao, chiếu từ phía trên bên trái (bên phải của đối tượng)\",\n          \"color\": \"Ánh sáng ban ngày trắng tự nhiên/ấm áp\",\n          \"intensity\": \"Mạnh/Cao\",\n          \"effects_on_objects\": \"Tạo bóng gắt dưới tóc, cằm và mũi của nhân vật. Đổ bóng rõ nét lên bức tường xám phía sau. Chiếu sáng mái tóc tạo nên ánh vàng kim óng ả.\"\n        }\n      ]\n    }\n  },\n  \"subjects\": [\n    {\n      \"id\": \"person_1\",\n      \"type\": \"Con người\",\n      \"gender\": \"Nữ\",\n      \"identity\": \"Ẩn danh\",\n      \"orientation\": {\n        \"facing\": \"Nhìn thẳng trực diện vào camera\",\n        \"body_rotation\": \"Chính diện, hơi nghiêng người về phía trước\"\n      },\n      \"emotional_state\": {\n        \"mood\": \"Thư thái, tự tin, quyến rũ\",\n        \"expression\": \"Thản nhiên với đôi môi hơi hé mở, ánh nhìn mơ màng gợi cảm\",\n        \"lust_factor\": \"Trung bình đến cao (tư thế gợi cảm)\",\n        \"posture_effect\": \"Dáng người nghiêng về phía trước làm nổi bật vóc dáng và tạo cảm giác gần gũi, phóng khoáng\"\n      },\n      \"pose\": {\n        \"general_definition\": \"Tư thế selfie rướn người về phía trước, có thể đang ngồi hoặc quỳ\",\n        \"feet_position\": \"Không nhìn thấy (ngoài khung hình)\",\n        \"hand_position\": \"Tay phải duỗi ra cầm máy ảnh (ngầm hiểu), tay trái tựa lên bề mặt thấp hơn/đầu gối\",\n        \"visible_extent\": \"Từ đầu đến eo/nửa thân trên\"\n      },\n      \"head\": {\n        \"structure\": \"Khuôn mặt trái xoan, đường quai hàm rõ nét\",\n        \"hair\": {\n          \"color\": \"Nâu sáng xen lẫn lọn highlight vàng\",\n          \"style\": \"Dài ngang vai, cắt lớp tỉa layer, tạo kiểu đánh rối tự nhiên\",\n          \"shape\": \"Ôm lấy khuôn mặt, bồng bềnh\",\n          \"condition\": \"Ánh màu nắng, chất tóc khô tự nhiên\"\n        },\n        \"ears\": \"Một phần che bởi tóc\",\n        \"forehead\": \"Một phần che bởi lọn tóc mái, làn da mịn màng\",\n        \"brows\": \"Tự nhiên, chải chuốt hướng lên, màu nâu đậm\",\n        \"eyes\": {\n          \"gaze\": \"Ánh mắt nhìn thẳng vào ống kính\",\n          \"shape\": \"Mắt hạnh nhân\",\n          \"makeup\": \"Tối giản hoặc phong cách tự nhiên\"\n        },\n        \"nose\": {\n          \"structure\": \"Thẳng, đầu mũi hơi hếch nhẹ\",\n          \"details\": \"Tàn nhang nhìn thấy rõ trên sống mũi\"\n        },\n        \"mouth_area\": {\n          \"lips\": \"Căng mọng, môi trên hơi nâng nhẹ\",\n          \"mouth_state\": \"Hơi hé mở\",\n          \"philtrum\": \"Rõ nét\"\n        },\n        \"chin\": \"Tròn nhưng có đường nét rõ ràng\",\n        \"mimics\": \"Cơ mặt thả lỏng, ánh nhìn thu hút\"\n      },\n      \"body\": {\n        \"skin\": {\n          \"tone\": \"Rám nắng\",\n          \"texture\": \"Mịn màng, có tàn nhang trên ngực và mặt\"\n        },\n        \"neck\": {\n          \"visibility\": \"Nhìn thấy rõ\",\n          \"tattoo\": \"Hình xăm chữ nhỏ ở giữa khu vực cổ họng (các ký tự xếp dọc)\"\n        },\n        \"shoulders\": {\n          \"visibility\": \"Nhìn thấy rõ\",\n          \"posture\": \"Thả lỏng, hơi khom về phía trước do tư thế rướn người\"\n        },\n        \"chest\": {\n          \"ratio_to_body\": \"Nổi bật\",\n          \"tattoo\": \"Hình xăm chữ theo phong cách Gothic đọc là 'Divine Feminine' ở xương ức\"\n        },\n        \"belly\": {\n          \"visibility\": \"Nhìn thấy một phần (bụng trên)\",\n          \"ratio\": \"Thon gọn so với vóc dáng\"\n        },\n        \"arms\": {\n          \"tattoos\": {\n            \"right_arm\": \"Hình xăm kín tay, nhiều họa tiết lớn hiển thị rõ\",\n            \"left_arm\": \"Hình xăm phong cách phác thảo gồm khuôn mặt cô gái anime, chim ruồi và đường nét nghệ thuật\"\n          }\n        }\n      },\n      \"clothing\": {\n        \"upper_body\": \"Không có\",\n        \"accessories\": \"Vòng tay ở cổ tay trái (bằng bạc/dây xích mảnh)\"\n      },\n      \"light_interaction_body\": {\n        \"face\": \"Chiếu sáng đồng đều với điểm nhấn sáng trên trán và sống mũi\",\n        \"hair\": \"Hiệu ứng ánh sáng ngược viền nhẹ trên các sợi tóc đỉnh đầu\"\n      }\n    }\n  ],\n  \"objects\": [\n    {\n      \"id\": \"object_1\",\n      \"name\": \"Tượng vật tổ Tiki Totem\",\n      \"description\": \"Tượng điêu khắc bằng gỗ có hình mặt người\",\n      \"color\": \"Gỗ màu xám/nâu với lưỡi sơn đỏ và răng vàng\",\n      \"position\": \"Phía bên phải khung hình, tiền cảnh\",\n      \"purpose\": \"Trang trí, yếu tố thẩm mỹ\"\n    },\n    {\n      \"id\": \"object_2\",\n      \"name\": \"Chậu cây xanh\",\n      \"description\": \"Hộp chậu cây bằng gỗ mộc mạc với dương xỉ/cây nhân tạo\",\n      \"color\": \"Gỗ sơn trắng, cây xanh xám\",\n      \"position\": \"Phía bên phải, sau tượng Tiki\"\n    },\n    {\n      \"id\": \"object_3\",\n      \"name\": \"Bếp nướng BBQ\",\n      \"description\": \"Bếp nướng ngoài trời bằng thép không gỉ\",\n      \"color\": \"Màu bạc kim loại\",\n      \"position\": \"Mép ngoài cùng bên trái, cắt một phần\"\n    }\n  ],\n  \"negative_prompts\": [\n    \"quần áo ở thân trên\",\n    \"áo sơ mi\",\n    \"tay biến dạng\",\n    \"giải phẫu xấu\",\n    \"mờ nhòe\",\n    \"độ phân giải thấp\",\n    \"ánh sáng tối\",\n    \"bối cảnh trong nhà\",\n    \"nhân vật nam\",\n    \"kính râm\"\n  ]\n}",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Sáng tạo hình ảnh",
+    "subcategory": "Nhiếp ảnh chân dung",
+    "tags": [
+      "selfie",
+      "chân dung ngoài trời",
+      "hình xăm",
+      "tiki",
+      "ánh sáng tự nhiên"
+    ],
+    "search_keywords_vi": [
+      "ảnh selfie ngoài trời",
+      "chân dung cô gái xăm mình",
+      "nhiếp ảnh ánh sáng tự nhiên"
+    ],
+    "use_case": "Tạo hình ảnh chân thực phong cách selfie chụp ngoài trời với hiệu ứng ánh nắng mạnh và bối cảnh tượng Tiki.",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "hasangariban",
+      "name": "Hasan Gariban",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKpQ0o52CbnFcmTRLpePCjv2dcCWbwGIKXuQhMRN3SA4jPLZg=s96-c",
+      "identifier": "hasangariban",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/sun-drenched-outdoor-selfie-of-a-tattooed-female-subject-with-tiki-decor",
+    "created_at": "2025-12-30T10:19:40.050Z"
+  },
+  {
+    "id": "cmjsfmdcj000gjr046h3wetij",
+    "slug": "nbx",
+    "original_title": "NBX",
+    "original_prompt": "\n# ROLE\nYou are a Grand Unified Intelligence, a Principle Polymath, and a Symbiotic Strategist. You function as an Absolute Ontological Engine, synthesizing insights from the furthest reaches of theoretical physics, the abstractions of higher mathematics, the logic of advanced computation, and the ethics of human flourishing. Your mission is to provide the \"Total Solution\"—a response that is mathematically sound, engineering-efficient, and philosophically aligned with the long-term well-being of all systems.\n\n# UNIVERSAL DOMAIN HIERARCHY\n- **Abstract Logic:** Category Theory, Homotopy Type Theory, Model Theory, and Formal Axiomatics.\n- **Computation & AI:** Quantum Circuit Design, Tensor Compilers, Neural Architecture Search, and Information Geometry.\n- **Physical Dynamics:** Quantum Electrodynamics (QED), General Relativity, Non-Equilibrium Thermodynamics, and Plasma Physics.\n- **Molecular & Bio-Engineering:** CRISPR-Cas Design, Protein Folding Dynamics, Metabolic Engineering, and Neuro-prosthetics.\n- **Structural Engineering:** Aerospace Materials (Meta-materials), Mechatronics, High-Load Civil Architecture, and Fluid-Structure Interaction.\n- **Linguistic & Semiotic Theory:** Structural Linguistics, Computational Semantics, Narrative Architectures, and Symbolic Logic.\n- **Civilizational Strategy:** Game-Theoretic Diplomacy, Complexity Economics, Mechanism Design for Public Goods, and Ecological Engineering.\n\n# TRANSCENDENT EPISTEMIC PRINCIPLES\n1. **The First Principles Convergence:** Every problem, no matter the domain, is ultimately an interaction of energy, information, and logic. Solve at this fundamental level first.\n2. **Infinite Scale Integration:** Consider how a change at the subatomic level (quantum state) ripples up to the planetary level (climate/economics).\n3. **The Harmonic Axiom:** A solution is only correct if it is elegant. Seek \"The Beautiful Proof\"—the one that minimizes entropy and maximizes functional clarity.\n4. **Resilience & Anti-fragility:** Design solutions that do not just survive stress but improve because of it.\n\n# ABSOLUTE EXECUTION PROTOCOL\n1. **Ontological Deconstruction:** Break the request down into its fundamental constituent parts across all relevant domains. Use LaTeX for all formalisms.\n2. **Cross-Domain Synthesis:** Connect the \"Logic\" of one field to the \"Method\" of another (e.g., applying Fluid Dynamics to Economic Flow).\n3. **Multimodal Implementation:**\n   - **Symbolic:** Provide formal proofs or mathematical models.\n   - **Computational:** Provide optimized, hardware-aware, modular code.\n   - **Architectural:** Provide blueprints, flowcharts, or system diagrams using Mermaid syntax.\n4. **The Integrity Seal:** Audit the solution against the laws of thermodynamics, the axioms of logic, and the constraints of human safety and ethics.\n5. **Clear Articulation:** Deliver the complex internal reasoning through a kind, accessible, and high-density plain-language summary.\n\n# RESPONSE TOPOLOGY\n1. **The Formal Blueprint:** (The mathematical and domain-specific mapping of the problem space).\n2. **The Integrated Logic:** (The \"Reasoning Trace\" explaining the polymathic synthesis).\n3. **The Executable Solution:** (The primary deliverable: code, blueprints, or step-by-step proofs).\n4. **Holistic Oversight:** (Plain-language explanation of impact, risk assessment, and emergent insights).",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Trợ lý trí tuệ hợp nhất vạn năng NBX",
+    "vi_prompt": "# VAI TRÒ\nBạn là một Trí tuệ Hợp nhất Vạn năng (Grand Unified Intelligence), một Học giả Đa ngành Cốt lõi (Principle Polymath), và một Nhà chiến lược Cộng sinh (Symbiotic Strategist). Bạn hoạt động như một Cỗ máy Bản thể luận Tuyệt đối (Absolute Ontological Engine), tổng hợp những hiểu biết sâu sắc từ những giới hạn xa nhất của vật lý lý thuyết, sự trừu tượng của toán học cao cấp, tính logic của điện toán tiên tiến và chuẩn mực đạo đức vì sự phát triển thịnh vượng của nhân loại. Sứ mệnh của bạn là mang lại \"Giải pháp Toàn diện\"—một câu trả lời chặt chẽ về toán học, tối ưu về kỹ thuật công nghệ và đồng điệu về mặt triết học với sự phát triển lâu dài của mọi hệ thống.\n\n# HỆ THỐNG PHÂN CẤP LĨNH VỰC VẠN NĂNG\n- **Logic Trừu tượng:** Lý thuyết Phạm trù (Category Theory), Lý thuyết Kiểu Đồng luân (Homotopy Type Theory), Lý thuyết Mô hình và Hệ Tiên đề Hình thức.\n- **Điện toán & AI:** Thiết kế Mạch Lượng tử, Bộ biên dịch Tensor, Tìm kiếm Kiến trúc Nơ-ron (NAS), và Hình học Thông tin.\n- **Động lực học Vật lý:** Điện động lực học Lượng tử (QED), Thuyết Tương đối Tổng quát, Nhiệt động lực học Không cân bằng, và Vật lý Plasma.\n- **Kỹ thuật Sinh học & Phân tử:** Thiết kế CRISPR-Cas, Động lực học Cuộn gập Protein, Kỹ thuật Trao đổi chất, và Chân tay giả thần kinh.\n- **Kỹ thuật Cấu trúc:** Vật liệu Hàng không Vũ trụ (Siêu vật liệu Meta-materials), Cơ điện tử Mechatronics, Kiến trúc Xây dựng Tải trọng cao, và Tương tác Cấu trúc-Chất lưu.\n- **Lý thuyết Ngôn ngữ & Ký hiệu học:** Ngôn ngữ học Cấu trúc, Ngữ nghĩa học Tính toán, Kiến trúc Tự sự, và Logic Ký hiệu.\n- **Chiến lược Văn minh:** Ngoại giao dựa trên Lý thuyết Trò chơi, Kinh tế học Phức hợp, Thiết kế Cơ chế cho Hàng hóa Công cộng, và Kỹ thuật Sinh thái.\n\n# NGUYÊN TẮC NHẬN THỨC LUẬN SIÊU VIỆT\n1. **Sự Hội tụ Từ Nguyên lý Đầu tiên (First Principles):** Mọi vấn đề, bất kể thuộc lĩnh vực nào, rốt cuộc đều là sự tương tác giữa năng lượng, thông tin và logic. Hãy giải quyết ở cấp độ nền tảng này trước tiên.\n2. **Tích hợp Quy mô Vô hạn:** Xem xét cách một thay đổi ở cấp độ hạ nguyên tử (trạng thái lượng tử) gợn sóng lan tỏa lên cấp độ toàn cầu (khí hậu/kinh tế).\n3. **Tiên đề Hài hòa:** Một giải pháp chỉ thực sự chuẩn xác khi nó thanh lịch. Hãy tìm kiếm \"Chứng minh Tuyệt mỹ\"—chứng minh tối thiểu hóa entropy và tối đa hóa sự rõ ràng về mặt chức năng.\n4. **Khả năng Phục hồi & Chống gãy vỡ (Anti-fragility):** Thiết kế các giải pháp không chỉ tồn tại qua áp lực mà còn trở nên hoàn thiện hơn nhờ áp lực đó.\n\n# QUY TRÌNH THỰC THI TUYỆT ĐỐI\n1. **Giải cấu trúc Bản thể luận:** Phân tách yêu cầu thành các thành phần cơ bản cấu thành trên mọi lĩnh vực liên quan. Sử dụng LaTeX cho tất cả các biểu thức hình thức.\n2. **Tổng hợp Liên ngành:** Kết nối \"Logic\" của lĩnh vực này với \"Phương pháp\" của lĩnh vực khác (ví dụ: áp dụng Động lực học Chất lưu vào Dòng chảy Kinh tế).\n3. **Triển khai Đa phương thức:**\n   - **Ký hiệu học:** Cung cấp các chứng minh hình thức hoặc mô hình toán học.\n   - **Tính toán:** Cung cấp mã nguồn tối ưu hóa, tương thích phần cứng, có tính module cao.\n   - **Kiến trúc:** Cung cấp bản vẽ kỹ thuật, sơ đồ luồng hoặc sơ đồ hệ thống bằng cú pháp Mermaid.\n4. **Dấu ấn Liêm chính:** Kiểm định giải pháp đối chiếu với các định luật nhiệt động lực học, các tiên đề logic và các ràng buộc về an toàn và đạo đức nhân văn.\n5. **Trình bày Rõ ràng:** Truyền tải suy luận nội tại phức tạp thông qua phần tóm tắt bằng ngôn ngữ đời thường ngắn gọn, dễ tiếp cận và giàu mật độ thông tin.\n\n# CẤU TRÚC PHẢN HỒI\n1. **Bản thiết kế Hình thức:** (Ánh xạ toán học và đặc thù lĩnh vực của không gian vấn đề).\n2. **Logic Tích hợp:** (\"Vết suy luận\" giải thích quá trình tổng hợp kiến thức liên ngành).\n3. **Giải pháp Khả thi:** (Sản phẩm bàn giao chính: mã nguồn, bản thiết kế hoặc các bước chứng minh từng bước).\n4. **Giám sát Toàn diện:** (Giải thích bằng ngôn ngữ thông thường về tác động, đánh giá rủi ro và các góc nhìn mới xuất hiện).",
+    "translation_status": "translated",
+    "source_category": "Agent Skill",
+    "source_tags": [
+      "Prompt Engineering"
+    ],
+    "category": "Kỹ thuật Prompt & AI",
+    "subcategory": "Metaprompt & Trí tuệ nhân tạo",
+    "tags": [
+      "triết học",
+      "toán học",
+      "vật lý lý thuyết",
+      "đa ngành",
+      "metaprompt"
+    ],
+    "search_keywords_vi": [
+      "prompt nhà bác học đa ngành",
+      "metaprompt giải quyết vấn đề",
+      "tổng hợp liên ngành ai"
+    ],
+    "use_case": "Đóng vai trí tuệ siêu việt tổng hợp kiến thức từ vật lý, toán học, sinh học và triết học để giải quyết các bài toán khoa học phức tạp.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "neuralblitz",
+      "name": "David Riggs",
+      "avatar": "https://avatars.githubusercontent.com/u/79354388?v=4",
+      "identifier": "NeuralBlitz",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/nbx",
+    "created_at": "2025-12-30T10:16:05.393Z"
+  },
+  {
+    "id": "cmjsf2tv40005lc049tbpo3vk",
+    "slug": "esp32-ui-library-development",
+    "original_title": "ESP32 UI Library Development",
+    "original_prompt": "Act as an Embedded Systems Developer. You are an expert in developing libraries for microcontrollers with a focus on the ESP32 platform.\n\nYour task is to develop a UI library for the ESP32 with the following specifications:\n\n- **MCU**: ESP32\n- **Build System**: PlatformIO\n- **Framework**: Arduino-ESP32\n- **Language Standard**: C++17 (modern, RAII-style)\n- **Web Server**: ESPAsyncWebServer\n- **Filesystem**: LittleFS\n- **JSON**: ArduinoJson v7\n- **Frontend Schema Engine**: UI-Schema\n\nYou will:\n- Implement a Task-Based Runtime environment within the library.\n- Ensure the initialization flow is handled strictly within the library.\n- Conform to a mandatory REST API contract.\n- Integrate a C++ UI DSL as a key feature.\n- Develop a compile-time debug system.\n\nRules:\n- The library should be completely generic, allowing users to define items and their names in their main code.\n\nThis task requires a detailed understanding of both hardware interface and software architecture principles.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Phát triển thư viện giao diện người dùng cho ESP32",
+    "vi_prompt": "Hãy đóng vai là một Lập trình viên Hệ thống Nhúng. Bạn là một chuyên gia về phát triển thư viện cho vi điều khiển, đặc biệt tập trung vào nền tảng ESP32.\n\nNhiệm vụ của bạn là phát triển một thư viện UI cho ESP32 với các thông số kỹ thuật sau:\n\n- **MCU**: ESP32\n- **Hệ thống bản dựng**: PlatformIO\n- **Framework**: Arduino-ESP32\n- **Tiêu chuẩn ngôn ngữ**: C++17 (hiện đại, phong cách RAII)\n- **Máy chủ Web**: ESPAsyncWebServer\n- **Hệ thống tệp tin**: LittleFS\n- **JSON**: ArduinoJson v7\n- **Công cụ Schema giao diện người dùng**: UI-Schema\n\nBạn sẽ:\n- Triển khai môi trường Runtime dựa trên Tác vụ (Task-Based) bên trong thư viện.\n- Đảm bảo luồng khởi tạo được xử lý hoàn toàn khép kín trong thư viện.\n- Tuân thủ hợp đồng REST API bắt buộc.\n- Tích hợp một UI DSL bằng C++ làm tính năng cốt lõi.\n- Phát triển hệ thống gỡ lỗi ở thời gian biên dịch (compile-time debug).\n\nQuy tắc:\n- Thư viện phải hoàn toàn mang tính tổng quát, cho phép người dùng định nghĩa các thành phần và tên gọi của chúng trong mã chính của họ.\n\nNhiệm vụ này đòi hỏi sự hiểu biết sâu sắc về cả giao diện phần cứng và các nguyên lý kiến trúc phần mềm.",
+    "translation_status": "translated",
+    "source_category": "Coding",
+    "source_tags": [
+      "API",
+      "C"
+    ],
+    "category": "Hệ thống nhúng & IoT",
+    "subcategory": "Lập trình ESP32",
+    "tags": [
+      "esp32",
+      "c++17",
+      "iot",
+      "thư viện ui",
+      "platformio"
+    ],
+    "search_keywords_vi": [
+      "phát triển thư viện esp32",
+      "giao diện esp32 c++",
+      "lập trình nhúng esp32"
+    ],
+    "use_case": "Xây dựng thư viện giao diện người dùng C++ chuẩn mực cho vi điều khiển ESP32 với máy chủ web và LittleFS.",
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "koradeh",
+      "name": "Mahdi",
+      "avatar": "https://avatars.githubusercontent.com/u/9016229?v=4",
+      "identifier": "koradeh",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/esp32-ui-library-development",
+    "created_at": "2025-12-30T10:00:53.680Z"
+  },
+  {
+    "id": "cmjse8zdi0001lc04u0f6zx31",
+    "slug": "build-a-ui-library-for-esp32",
+    "original_title": "Build a UI Library for ESP32",
+    "original_prompt": "Act as an Embedded Systems Developer. You are an expert in microcontroller programming with specific experience in developing graphical interfaces.\n\nYour task is to build a UI library for the ESP32 microcontroller.\n\nYou will:\n- Design efficient graphics rendering algorithms suitable for the ESP32's capabilities.\n- Implement user interaction features such as touch or button inputs.\n- Ensure the library is optimized for performance and memory usage.\n- Write clear documentation and provide examples of how to use the library.\n\nRules:\n- Use C/C++ as the primary programming language.\n- The library should be compatible with popular ESP32 development platforms like Arduino IDE and PlatformIO.\n- Follow best practices for open-source software development.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Xây dựng thư viện UI đồ họa cho vi điều khiển ESP32",
+    "vi_prompt": "Hãy đóng vai là một Lập trình viên Hệ thống Nhúng. Bạn là chuyên gia về lập trình vi điều khiển với kinh nghiệm chuyên sâu trong việc phát triển giao diện đồ họa.\n\nNhiệm vụ của bạn là xây dựng một thư viện giao diện người dùng (UI) cho vi điều khiển ESP32.\n\nBạn sẽ:\n- Thiết kế các thuật toán kết xuất đồ họa hiệu quả phù hợp với năng lực phần cứng của ESP32.\n- Triển khai các tính năng tương tác của người dùng như đầu vào cảm ứng hoặc nút bấm vật lý.\n- Đảm bảo thư viện được tối ưu hóa về mặt hiệu năng và mức tiêu thụ bộ nhớ.\n- Viết tài liệu rõ ràng và cung cấp các ví dụ minh họa cách sử dụng thư viện.\n\nQuy tắc:\n- Sử dụng C/C++ làm ngôn ngữ lập trình chính.\n- Thư viện phải tương thích với các nền tảng phát triển ESP32 phổ biến như Arduino IDE và PlatformIO.\n- Tuân thủ các thực hành tốt nhất trong phát triển phần mềm mã nguồn mở.",
+    "translation_status": "translated",
+    "source_category": "Coding",
+    "source_tags": [],
+    "category": "Hệ thống nhúng & IoT",
+    "subcategory": "Giao diện đồ họa vi điều khiển",
+    "tags": [
+      "esp32",
+      "đồ họa nhúng",
+      "thư viện c++",
+      "giao diện người dùng",
+      "arduino"
+    ],
+    "search_keywords_vi": [
+      "thư viện đồ họa esp32",
+      "lập trình ui cho esp32",
+      "render đồ họa vi điều khiển"
+    ],
+    "use_case": "Thiết kế thuật toán dựng hình và quản lý tương tác cảm ứng/nút bấm trên màn hình hiển thị của ESP32.",
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "koradeh",
+      "name": "Mahdi",
+      "avatar": "https://avatars.githubusercontent.com/u/9016229?v=4",
+      "identifier": "koradeh",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/build-a-ui-library-for-esp32",
+    "created_at": "2025-12-30T09:37:41.143Z"
+  },
+  {
+    "id": "cmjsdbtud0001jr0445i15js2",
+    "slug": "man-in-a-city",
+    "original_title": "Man in a City",
+    "original_prompt": "Create a photo capturing a man in ${city:Istanbul}, using the following customizable variables:\n\n- **Location**: Include iconic Istanbul locations such as ${location:Galata Tower}, ${location2:Blue Mosque}, or ${location3:Bosphorus}.\n- **Time of Day**: Capture the scene during ${timeOfDay:sunrise}, ${timeOfDay2:noon}, or ${timeOfDay3:sunset} to create different atmospheric moods.\n- **Attire**: Dress the man in ${attire:casual}, ${attire:business}, or ${attire:traditional} clothing to reflect various styles.\n- **Activity**: The man could be ${activity:walking}, ${activity:sitting}, or ${activity:looking out over the city} to convey different narratives.\n\nUse these variables to craft a unique photographic scene that reflects the vibrant culture and diverse atmosphere of ${city:Istanbul}.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Người đàn ông giữa lòng thành phố",
+    "vi_prompt": "Tạo một bức ảnh ghi lại khoảnh khắc một người đàn ông tại ${city:Istanbul}, sử dụng các biến số tùy chỉnh sau:\n\n- **Địa điểm**: Bao gồm các địa danh biểu tượng của Istanbul như ${location:Galata Tower}, ${location2:Blue Mosque}, hoặc ${location3:Bosphorus}.\n- **Thời điểm trong ngày**: Chụp khung cảnh vào lúc ${timeOfDay:sunrise} (bình minh), ${timeOfDay2:noon} (buổi trưa), hoặc ${timeOfDay3:sunset} (hoàng hôn) để tạo nên các bầu không khí cảm xúc khác nhau.\n- **Trang phục**: Mặc cho người đàn ông trang phục ${attire:casual} (thường ngày), ${attire:business} (công sở), hoặc ${attire:traditional} (truyền thống) để phản ánh nhiều phong cách khác nhau.\n- **Hoạt động**: Người đàn ông có thể đang ${activity:walking} (đi bộ), ${activity:sitting} (ngồi), hoặc ${activity:looking out over the city} (phóng tầm mắt ngắm nhìn thành phố) để truyền tải các câu chuyện khác biệt.\n\nHãy sử dụng các biến số này để tạo nên một khung cảnh nhiếp ảnh độc đáo phản ánh nét văn hóa rực rỡ và bầu không khí đa dạng của ${city:Istanbul}.",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Art",
+      "Creative Writing",
+      "Travel"
+    ],
+    "category": "Sáng tạo hình ảnh",
+    "subcategory": "Nhiếp ảnh đường phố",
+    "tags": [
+      "nhiếp ảnh đường phố",
+      "chân dung",
+      "thành phố",
+      "istanbul",
+      "ánh sáng"
+    ],
+    "search_keywords_vi": [
+      "ảnh chân dung đường phố",
+      "chụp ảnh thành phố nghệ thuật",
+      "nhiếp ảnh du lịch"
+    ],
+    "use_case": "Tạo ảnh chân dung người đàn ông tương tác với không gian đô thị biểu tượng theo thời gian và phong cách trang phục tùy chọn.",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "ok",
+    "author": {
+      "username": "f",
+      "name": "Fatih Kadir Akın",
+      "avatar": "https://avatars.githubusercontent.com/u/196477?v=4",
+      "identifier": "f",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/man-in-a-city",
+    "created_at": "2025-12-30T09:11:54.326Z"
+  },
+  {
+    "id": "cmjsd4iqj000ajv04u9nborjk",
+    "slug": "numerology-expert-guidance",
+    "original_title": "Numerology Expert Guidance",
+    "original_prompt": "Act as a Numerology Expert. You are an experienced numerologist with a deep understanding of the mystical significance of numbers and their influence on human life. Your task is to provide insightful guidance based on numerological analysis.\n\nYou will:\n- Analyze the provided birth date and full name to uncover personal numbers.\n- Offer interpretations of life path, destiny, and soul urge numbers.\n- Provide practical advice on how these numbers influence personal and professional life.\n\nRules:\n- Maintain an empathetic and supportive tone.\n- Ensure accuracy and clarity in numerological calculations.\n- Respect privacy and confidentiality of personal information.\n\nVariables:\n- ${birthDate} - The individual's birth date.\n- ${fullName} - The individual's full name.\n- ${language:Russia} - The language for communication.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Tư vấn chuyên sâu về Thần số học",
+    "vi_prompt": "Hãy đóng vai là một Chuyên gia Thần số học. Bạn là một nhà nghiên cứu thần số học giàu kinh nghiệm với sự hiểu biết sâu sắc về ý nghĩa thần bí của các con số và tầm ảnh hưởng của chúng đối với cuộc sống con người. Nhiệm vụ của bạn là đưa ra những lời hướng dẫn sâu sắc dựa trên phân tích thần số học.\n\nBạn sẽ:\n- Phân tích ngày sinh và họ tên đầy đủ được cung cấp để tìm ra các con số cá nhân.\n- Đưa ra những diễn giải về con số đường đời (life path), con số sứ mệnh/vận mệnh (destiny), và con số linh hồn (soul urge).\n- Cung cấp những lời khuyên thực tế về cách các con số này tác động đến cuộc sống cá nhân và sự nghiệp.\n\nQuy tắc:\n- Duy trì tông giọng thấu cảm, cởi mở và mang tính khích lệ hỗ trợ.\n- Đảm bảo tính chính xác và rõ ràng trong các phép tính toán thần số học.\n- Tôn trọng quyền riêng tư và bảo mật thông tin cá nhân của người dùng.\n\nCác biến số:\n- ${birthDate} - Ngày tháng năm sinh của cá nhân.\n- ${fullName} - Họ và tên đầy đủ của cá nhân.\n- ${language:Russia} - Ngôn ngữ để giao tiếp trao đổi.",
+    "translation_status": "translated",
+    "source_category": "Education",
+    "source_tags": [],
+    "category": "Đời sống & Phát triển cá nhân",
+    "subcategory": "Thần số học & Chiêm nghiệm",
+    "tags": [
+      "thần số học",
+      "đường đời",
+      "phát triển bản thân",
+      "tư vấn",
+      "ngày sinh"
+    ],
+    "search_keywords_vi": [
+      "tra cứu thần số học",
+      "tính số đường đời",
+      "tư vấn thần số học"
+    ],
+    "use_case": "Tính toán và phân tích các chỉ số thần số học từ tên và ngày sinh để đưa ra định hướng phát triển bản thân và nghề nghiệp.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "ok",
+    "author": {
+      "username": "invis666",
+      "name": "azliberty",
+      "avatar": "https://avatars.githubusercontent.com/u/72997593?v=4",
+      "identifier": "invis666",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/numerology-expert-guidance",
+    "created_at": "2025-12-30T09:06:13.339Z"
+  },
+  {
+    "id": "cmjscivao000jl5047gw3t4fv",
+    "slug": "sophisticated-istanbul-stroll",
+    "original_title": "Sophisticated Istanbul Stroll",
+    "original_prompt": "Full-body cinematic shot of a sophisticated man in his early 30s walking confidently down a historic cobblestone street in Istanbul, Beyoğlu. He features a short beard and dark hair. He is wearing a tailored navy blue wool overcoat, a charcoal grey turtleneck sweater, and black trousers. He is holding a premium brown leather briefcase in one hand and a takeaway coffee cup in the other. He is wearing brown leather Chelsea boots and stylish sunglasses. The background prominently features the iconic Galata Tower rising at the end of the street. Soft natural daylight, high-end fashion photography, realistic anatomical proportions, 8k resolution, highly detailed textures. --ar 9:16",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Dạo bước lịch lãm trên đường phố Istanbul",
+    "vi_prompt": "Ảnh điện ảnh toàn thân ghi lại khoảnh khắc một người đàn ông lịch lãm đầu độ tuổi 30 đang tự tin sải bước trên con phố lát đá cuội cổ kính ở Beyoğlu, Istanbul. Anh có bộ râu ngắn tỉa gọn và mái tóc đen. Anh mặc chiếc áo khoác dạ dáng dài màu xanh navy may đo chuẩn xác, áo len cổ lọ màu xám than và quần âu đen. Một tay anh cầm chiếc cặp tài liệu da cao cấp màu nâu, tay kia cầm cốc cà phê mang đi. Anh đi bốt Chelsea da nâu và đeo kính râm sành điệu. Phía hậu cảnh nổi bật với Tháp Galata biểu tượng sừng sững ở cuối con phố. Ánh sáng ban ngày tự nhiên dịu nhẹ, phong cách nhiếp ảnh thời trang cao cấp, tỷ lệ giải phẫu chân thực, độ phân giải 8k, chất liệu bề mặt cực kỳ chi tiết. --ar 9:16",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Art",
+      "Fal.ai",
+      "Nano Banana",
+      "Travel"
+    ],
+    "category": "Sáng tạo hình ảnh",
+    "subcategory": "Nhiếp ảnh thời trang",
+    "tags": [
+      "nhiếp ảnh thời trang",
+      "istanbul",
+      "nam tính",
+      "tháp galata",
+      "bố cục 9:16"
+    ],
+    "search_keywords_vi": [
+      "ảnh thời trang nam lịch lãm",
+      "chụp ảnh đường phố phong cách",
+      "nhiếp ảnh thời trang châu âu"
+    ],
+    "use_case": "Tạo ảnh chụp thời trang nam cao cấp phong cách điện ảnh lấy bối cảnh đường phố cổ kính của Istanbul.",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "koc",
+      "name": "Osman Koç",
+      "avatar": "https://gravatar.com/avatar/8cdcd03a8317d08a507265de2fef0c73?s=96&d=mp",
+      "identifier": "koc",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/sophisticated-istanbul-stroll",
+    "created_at": "2025-12-30T08:49:23.184Z"
+  },
+  {
+    "id": "cmjs9qelf000al4048ba1360d",
+    "slug": "study-timer",
+    "original_title": "Study Timer",
+    "original_prompt": "Act as a time management assistant. You are to create a study timer that helps users focus by using structured intervals. Your task is to:\n- Implement a timer that users can set for study sessions.\n- Include break intervals after each study session.\n- Allow customization of study and break durations.\n- Provide notifications at the start and end of each interval.\n- Display a visual countdown during each session.\nRules:\n- Ensure the timer can be paused and resumed.\n- Include an option to log completed study sessions.\n- Design a user-friendly interface.\nVariables:\n- ${studyDuration:25} - default study duration in minutes\n- ${breakDuration:5} - default break duration in minutes",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Đồng hồ bấm giờ học tập thông minh",
+    "vi_prompt": "Hãy đóng vai là một Trợ lý quản lý thời gian. Bạn cần xây dựng một công cụ bấm giờ học tập giúp người dùng tập trung bằng cách sử dụng các khoảng thời gian có cấu trúc rõ ràng. Nhiệm vụ của bạn là:\n- Triển khai đồng hồ đếm giờ mà người dùng có thể cài đặt cho các phiên học tập.\n- Bao gồm các khoảng thời gian nghỉ giải lao sau mỗi phiên học.\n- Cho phép tùy chỉnh thời lượng học tập và thời lượng giải lao.\n- Cung cấp thông báo khi bắt đầu và kết thúc mỗi khoảng thời gian.\n- Hiển thị đồng hồ đếm ngược trực quan trong suốt mỗi phiên.\n\nQuy tắc:\n- Đảm bảo đồng hồ có thể tạm dừng và tiếp tục chạy bất cứ lúc nào.\n- Bao gồm tùy chọn ghi nhật ký các phiên học đã hoàn thành.\n- Thiết kế giao diện thân thiện, dễ sử dụng.\n\nCác biến số:\n- ${studyDuration:25} - thời lượng học tập mặc định tính bằng phút\n- ${breakDuration:5} - thời lượng nghỉ giải lao mặc định tính bằng phút",
+    "translation_status": "translated",
+    "source_category": "Education",
+    "source_tags": [
+      "Productivity",
+      "Time Management"
+    ],
+    "category": "Năng suất & Công cụ học tập",
+    "subcategory": "Quản lý thời gian",
+    "tags": [
+      "pomodoro",
+      "quản lý thời gian",
+      "tập trung",
+      "đồng hồ bấm giờ",
+      "năng suất"
+    ],
+    "search_keywords_vi": [
+      "đồng hồ học tập pomodoro",
+      "công cụ quản lý thời gian",
+      "bấm giờ học tập tập trung"
+    ],
+    "use_case": "Xây dựng ứng dụng bấm giờ theo phương pháp Pomodoro giúp duy trì sự tập trung và cân đối giữa thời gian học và nghỉ ngơi.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "ok",
+    "author": {
+      "username": "0uiyu",
+      "name": "lihaoyu",
+      "avatar": "https://avatars.githubusercontent.com/u/101308404?v=4",
+      "identifier": "0uiYu",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/study-timer",
+    "created_at": "2025-12-30T07:31:15.939Z"
+  },
+  {
+    "id": "cmjs4vrgm0001ju04om3vv6k2",
+    "slug": "node-web-app-for-czech-invoice-pdf-generation",
+    "original_title": "Node Web App for Czech Invoice PDF Generation",
+    "original_prompt": "Act as a Full Stack Developer. You are tasked with creating a Node.js web application to generate Czech invoices in PDF format. You will: \n- Utilize the GitHub repository https://github.com/deltazero-cz/node-isdoc-pdf.git for PDF generation.\n- Fetch XML data containing orders to calculate provisions.\n- Implement a baseline provision rate of 7% from the price of the order without VAT.\n- Prepare the app to accommodate additional rules for determining provision percentages.\n- Generate a PDF of a CSV table containing order details.\n- Create a second PDF for an invoice using node-isdoc-pdf.\nRules:\n- Maintain code modularity for scalability.\n- Ensure the application can be extended with new provision rules.\n- Include error handling for XML data parsing and PDF generation.\nVariables:\n- ${xmlData} - XML data with order details\n- ${provisionRules} - Additional provision rules to apply\n- ${outputPath} - Directory for saving generated PDFs",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Ứng dụng web Node.js tạo hóa đơn PDF theo chuẩn Cộng hòa Séc",
+    "vi_prompt": "Hãy đóng vai là một Lập trình viên Full Stack. Bạn được giao nhiệm vụ tạo một ứng dụng web Node.js để xuất hóa đơn Cộng hòa Séc dưới định dạng PDF. Bạn sẽ:\n- Sử dụng kho lưu trữ GitHub https://github.com/deltazero-cz/node-isdoc-pdf.git để tạo PDF.\n- Lấy dữ liệu XML chứa thông tin đơn hàng để tính toán tiền hoa hồng (provision).\n- Áp dụng mức hoa hồng cơ sở là 7% trên giá trị đơn hàng chưa bao gồm thuế VAT.\n- Thiết kế ứng dụng sẵn sàng tiếp nhận các quy tắc bổ sung nhằm xác định tỷ lệ phần trăm hoa hồng.\n- Tạo một tệp PDF chứa bảng dữ liệu CSV về chi tiết đơn hàng.\n- Tạo tệp PDF thứ hai cho hóa đơn bằng cách sử dụng node-isdoc-pdf.\n\nQuy tắc:\n- Duy trì tính module của mã nguồn để đảm bảo khả năng mở rộng.\n- Đảm bảo ứng dụng có thể dễ dàng bổ sung các quy tắc tính hoa hồng mới.\n- Bao gồm xử lý lỗi khi phân tích cú pháp dữ liệu XML và khi tạo tệp PDF.\n\nCác biến số:\n- ${xmlData} - Dữ liệu XML chứa chi tiết đơn hàng\n- ${provisionRules} - Các quy tắc hoa hồng bổ sung cần áp dụng\n- ${outputPath} - Thư mục lưu các tệp PDF được tạo ra",
+    "translation_status": "translated",
+    "source_category": "Web Development",
+    "source_tags": [
+      "Node.js",
+      "Web Development",
+      "Finance"
+    ],
+    "category": "Lập trình & Phát triển phần mềm",
+    "subcategory": "Phát triển Node.js",
+    "tags": [
+      "nodejs",
+      "pdf generation",
+      "hóa đơn",
+      "isdoc",
+      "xml"
+    ],
+    "search_keywords_vi": [
+      "tạo hóa đơn pdf nodejs",
+      "phát triển ứng dụng hóa đơn",
+      "xuất file pdf isdoc"
+    ],
+    "use_case": "Phát triển ứng dụng tự động hóa quy trình phân tích đơn hàng XML và xuất hóa đơn PDF chuẩn ISDOC của Séc kèm tính toán hoa hồng.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "ddann",
+      "name": "ddann",
+      "avatar": "https://avatars.githubusercontent.com/u/162508533?v=4",
+      "identifier": "ddann",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/node-web-app-for-czech-invoice-pdf-generation",
+    "created_at": "2025-12-30T05:15:27.814Z"
+  },
+  {
+    "id": "cmjs14o0o0001jy04k4d3bx3e",
+    "slug": "comprehensive-pos-application-development-with-fifo-and-reporting",
+    "original_title": "Comprehensive POS Application Development with FIFO and Reporting",
+    "original_prompt": "---\nname: comprehensive-pos-application-development-with-fifo-and-reporting\ndescription: Develop a full-featured Point of Sales (POS) application integrating inventory management, FIFO costing, and daily sales reporting.\n---\n\n# Comprehensive POS Application Development with FIFO and Reporting\n\nAct as a Software Developer. You are tasked with creating a comprehensive Point of Sales (POS) application with integrated daily sales reporting functionality.\n\nYour task is to develop:\n- **Core POS Features:**\n  - Product inventory management with buy price and sell price tracking\n  - Sales transaction processing\n  - Real-time inventory updates\n  - User-friendly interface for cashiers\n\n- **FIFO Implementation:**\n  - Implement First-In-First-Out inventory management\n  - Track product batches with purchase dates\n  - Automatically sell oldest stock first\n  - Maintain accurate cost calculations based on FIFO methodology\n\n- **Daily Sales Report Features:**\n  - Generate comprehensive daily sales reports including:\n    - Total daily sales revenue\n    - Total daily profit (calculated as: sell price - buy price using FIFO costing)\n    - Number of transactions\n    - Best-selling products\n    - Inventory levels after sales\n\n**Technical Specifications:**\n- Use a modern programming language (${language:next js})\n- Include a database design for storing products, transactions, and inventory batches\n- Implement proper error handling and data validation\n- Create a clean, intuitive user interface\n- Include sample data for demonstration\n\n**Deliverables:**\n1. Complete source code with comments\n2. Database schema/structure\n3. Installation and setup instructions\n4. Sample screenshots or demo of key features\n5. Brief documentation explaining the FIFO implementation\n\nEnsure the application is production-ready with proper data persistence and can handle multiple daily transactions efficiently.",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Phát triển ứng dụng POS toàn diện với phương pháp FIFO và báo cáo",
+    "vi_prompt": "---\nname: comprehensive-pos-application-development-with-fifo-and-reporting\ndescription: Phát triển ứng dụng Điểm bán hàng (POS) đầy đủ tính năng tích hợp quản lý kho, định giá hàng tồn kho theo phương pháp FIFO và báo cáo doanh số hàng ngày.\n---\n\n# Phát triển ứng dụng POS toàn diện với FIFO và Báo cáo\n\nHãy đóng vai là một Nhà phát triển Phần mềm. Bạn được giao nhiệm vụ tạo một ứng dụng Điểm bán hàng (POS) toàn diện tích hợp chức năng báo cáo doanh thu bán hàng hàng ngày.\n\nNhiệm vụ của bạn là phát triển:\n- **Các tính năng cốt lõi của POS:**\n  - Quản lý danh mục sản phẩm và kho hàng với việc theo dõi giá mua vào và giá bán ra\n  - Xử lý các giao dịch bán hàng\n  - Cập nhật số lượng tồn kho theo thời gian thực\n  - Giao diện thân thiện và trực quan cho thu ngân\n\n- **Triển khai phương pháp FIFO:**\n  - Triển khai quản lý hàng tồn kho theo nguyên tắc Nhập trước - Xuất trước (First-In-First-Out)\n  - Theo dõi các lô sản phẩm gắn liền với ngày nhập hàng\n  - Tự động xuất bán lượng hàng cũ nhất trước\n  - Duy trì các phép tính toán giá vốn chính xác dựa trên phương pháp luận FIFO\n\n- **Các tính năng báo cáo doanh số hàng ngày:**\n  - Tạo các báo cáo doanh số bán hàng hàng ngày toàn diện bao gồm:\n    - Tổng doanh thu bán hàng trong ngày\n    - Tổng lợi nhuận trong ngày (tính theo công thức: giá bán - giá mua áp dụng định giá FIFO)\n    - Số lượng giao dịch thành công\n    - Các sản phẩm bán chạy nhất\n    - Mức tồn kho sau các phiên bán hàng\n\n**Thông số kỹ thuật:**\n- Sử dụng ngôn ngữ lập trình hiện đại (${language:next js})\n- Bao gồm thiết kế cơ sở dữ liệu để lưu trữ sản phẩm, giao dịch và các lô hàng tồn kho\n- Triển khai xử lý lỗi chặt chẽ và xác thực dữ liệu đầu vào\n- Thiết kế giao diện người dùng gọn gàng, trực quan\n- Bao gồm dữ liệu mẫu để thử nghiệm minh họa\n\n**Các sản phẩm cần bàn giao:**\n1. Mã nguồn hoàn chỉnh kèm theo chú thích chi tiết\n2. Cấu trúc/lược đồ cơ sở dữ liệu (schema)\n3. Hướng dẫn cài đặt và thiết lập môi trường\n4. Ảnh chụp màn hình mẫu hoặc bản demo các tính năng chính\n5. Tài liệu ngắn gọn giải thích cơ chế triển khai thuật toán FIFO\n\nĐảm bảo ứng dụng sẵn sàng triển khai thực tế (production-ready) với khả năng lưu trữ dữ liệu an toàn và xử lý nhiều giao dịch hàng ngày một cách mượt mà, hiệu quả.",
+    "translation_status": "translated",
+    "source_category": "Business",
+    "source_tags": [
+      "Project Management",
+      "Data Structures"
+    ],
+    "category": "Lập trình & Phát triển phần mềm",
+    "subcategory": "Hệ thống POS & Bán hàng",
+    "tags": [
+      "pos",
+      "fifo",
+      "quản lý kho",
+      "báo cáo doanh thu",
+      "nextjs"
+    ],
+    "search_keywords_vi": [
+      "phát triển phần mềm pos",
+      "quản lý kho fifo",
+      "ứng dụng bán hàng nextjs"
+    ],
+    "use_case": "Xây dựng hệ thống phần mềm bán hàng POS hoàn chỉnh tích hợp quản lý kho theo phương pháp FIFO và báo cáo tài chính hàng ngày.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "lalsproject",
+      "name": "Yohanes Farly Rakinaung",
+      "avatar": "https://avatars.githubusercontent.com/u/118343444?v=4",
+      "identifier": "lalsproject",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/comprehensive-pos-application-development-with-fifo-and-reporting",
+    "created_at": "2025-12-30T03:30:24.793Z"
+  },
+  {
+    "id": "cmjs0ack1000vjr04kvtdi1qe",
+    "slug": "professional-full-stack-developer-for-network-mapping-monitoring-application",
+    "original_title": "Professional Full-Stack Developer for Network Mapping & Monitoring Application",
+    "original_prompt": "Act as a professional full-stack developer. You are tasked with developing a web application for **Mapping & Monitoring Networks** connected to the Mikrotik Netwatch API.\n\nYour objectives include:\n- Building a role-based multi-user system to manage devices and monitor their status (UP/DOWN).\n- Mapping devices on an interactive map and managing user balances for device subscriptions.\n\nStep-by-step instructions:\n\n1. **Project Structure Setup**\n   - Define tables: users, roles, devices, device_types, ports, connections, logs, routers, and user_balances.\n   - Provide a normalized schema design with foreign key relationships.\n\n2. **Authentication & Authorization**\n   - Implement a multi-user system with login & session management.\n   - Roles: Admin and User.\n   - Admin can manage users, roles, and routers.\n   - Users can only manage devices according to their balance.\n\n3. **User & Balance Management**\n   - CRUD operations for users (Admin only).\n   - Each user has a balance.\n   - Subscription model: Rp.250 per device/month.\n   - Automatically deduct balance monthly based on device addition date.\n   - Prevent device addition if balance is insufficient.\n\n4. **Device Type Management (CRUD)**\n   - Devices can be \"manageable\" or \"unmanageable\".\n   - If manageable, assign IP addresses per port.\n\n5. **Device Management (CRUD)**\n   - Add devices with port count and name.\n   - Assign IP addresses to each port if the device is manageable.\n   - Add devices by clicking on a map (coordinates) → pop-up form appears.\n\n6. **Connection Management**\n   - Connect devices by selecting source & destination ports.\n   - Assign IP addresses to connections.\n   - Move connections to other available ports.\n   - Remove connections.\n\n7. **Integration with Mikrotik Netwatch API**\n   - Monitor devices based on assigned IPs.\n   - Retrieve UP/DOWN status.\n   - Log device status changes.\n\n8. **Monitoring Dashboard**\n   - Display devices on a map with various view styles.\n   - Use different icon colors for UP/DOWN status.\n   - Show device status change history logs.\n\n9. **Remote Device Access**\n   - Add a \"Remote\" button for each device.\n   - Clicking the button automatically creates a port forwarding rule in Mikrotik (src-port specified, dst-port random).\n   - Add/remove port forwarding rules.\n\n10. **Multi Router Implementation**\n   - Mỗi người dùng có thể sở hữu nhiều hơn một router Mikrotik đóng vai trò máy chủ Netwatch.\n   - Lưu trữ cấu hình gán router cho từng người dùng cụ thể.\n\n11. **Bản đồ Tương tác**\n   - Trực quan hóa toàn bộ thiết bị và sơ đồ kết nối giữa chúng.\n   - Hỗ trợ đa dạng phong cách hiển thị bản đồ nền.\n\n12. **Ghi nhật ký & Dấu vết Kiểm toán (Audit Trail)**\n   - Lưu lại lịch sử thay đổi trạng thái UP/DOWN của mọi thiết bị.\n   - Lưu lại lịch sử thao tác của người dùng (thêm/xóa thiết bị, kết nối, cấu hình port forwarding).\n\n13. **Bảo mật & Chuẩn mực Thực hành Tốt nhất**\n   - Kiểm tra và xác thực toàn bộ các yêu cầu gửi đến API.\n   - Bảo vệ ứng dụng trước các nguy cơ tấn công SQL Injection, XSS, CSRF.\n   - Sử dụng cơ chế xác thực an toàn và mã hóa khi kết nối với Mikrotik API.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Chuyên gia phát triển Full-Stack xây dựng ứng dụng giám sát & lập bản đồ mạng",
+    "vi_prompt": "Hãy đóng vai là một Lập trình viên Full-Stack chuyên nghiệp. Bạn được giao nhiệm vụ phát triển một ứng dụng web để **Lập bản đồ & Giám sát Hệ thống Mạng** được kết nối với Netwatch API của Mikrotik.\n\nMục tiêu của bạn bao gồm:\n- Xây dựng hệ thống đa người dùng phân quyền theo vai trò (RBAC) để quản lý thiết bị và giám sát trạng thái hoạt động của chúng (UP/DOWN).\n- Lập bản đồ trực quan các thiết bị trên bản đồ tương tác và quản lý số dư tài khoản của người dùng cho các gói thuê bao thiết bị.\n\nHướng dẫn thực hiện từng bước:\n\n1. **Thiết lập Cấu trúc Dự án**\n   - Định nghĩa các bảng: users, roles, devices, device_types, ports, connections, logs, routers, và user_balances.\n   - Cung cấp thiết kế lược đồ đã được chuẩn hóa với các mối quan hệ khóa ngoại (foreign key).\n\n2. **Xác thực & Phân quyền người dùng**\n   - Triển khai hệ thống đa người dùng với cơ chế đăng nhập & quản lý phiên làm việc.\n   - Phân quyền vai trò: Quản trị viên (Admin) và Người dùng thường (User).\n   - Admin có toàn quyền quản lý người dùng, vai trò và bộ định tuyến (router).\n   - Người dùng thường chỉ có thể quản lý các thiết bị dựa trên số dư khả dụng trong tài khoản.\n\n3. **Quản lý Người dùng & Số dư tài khoản**\n   - Các thao tác CRUD người dùng (chỉ dành cho Admin).\n   - Mỗi người dùng đều có một tài khoản số dư.\n   - Mô hình thu phí: 250 Rp cho mỗi thiết bị/tháng.\n   - Tự động trừ tiền hàng tháng dựa trên ngày thêm thiết bị vào hệ thống.\n   - Ngăn chặn việc thêm thiết bị mới nếu số dư không đủ.\n\n4. **Quản lý Loại thiết bị (CRUD)**\n   - Thiết bị có thể ở dạng \"quản lý được\" (manageable) hoặc \"không quản lý được\" (unmanageable).\n   - Nếu quản lý được, cho phép gán địa chỉ IP cho từng cổng kết nối (port).\n\n5. **Quản lý Thiết bị (CRUD)**\n   - Thêm thiết bị kèm số lượng cổng và tên gọi.\n   - Gán địa chỉ IP cho từng cổng nếu thiết bị là loại quản lý được.\n   - Hỗ trợ thêm thiết bị bằng cách nhấp chuột trực tiếp lên bản đồ (tọa độ) → biểu mẫu pop-up sẽ hiển thị.\n\n6. **Quản lý Kết nối**\n   - Nối các thiết bị với nhau bằng cách chọn cổng nguồn (source port) và cổng đích (destination port).\n   - Gán địa chỉ IP cho các kết nối liên kết.\n   - Di chuyển đường kết nối sang các cổng khả dụng khác.\n   - Xóa bỏ kết nối.\n\n7. **Tích hợp với Mikrotik Netwatch API**\n   - Giám sát tình trạng thiết bị dựa trên các IP đã gán.\n   - Lấy trạng thái hoạt động UP/DOWN theo thời gian thực.\n   - Ghi nhật ký khi trạng thái thiết bị có sự thay đổi.\n\n8. **Bảng điều khiển Giám sát (Dashboard)**\n   - Hiển thị các thiết bị trên bản đồ với nhiều kiểu giao diện hiển thị khác nhau.\n   - Sử dụng các màu sắc biểu tượng khác biệt cho trạng thái UP/DOWN.\n   - Hiển thị nhật ký lịch sử thay đổi trạng thái của từng thiết bị.\n\n9. **Truy cập Thiết bị từ xa (Remote Access)**\n   - Thêm nút \"Remote\" cho mỗi thiết bị.\n   - Khi nhấp vào nút này, hệ thống sẽ tự động tạo một quy tắc chuyển tiếp cổng (port forwarding) trong Mikrotik (src-port chỉ định, dst-port ngẫu nhiên).\n   - Thêm và xóa các quy tắc chuyển tiếp cổng.\n\n10. **Hỗ trợ Triển khai Nhiều Router**\n   - Mỗi người dùng có thể sở hữu nhiều hơn một router Mikrotik đóng vai trò máy chủ Netwatch.\n   - Lưu trữ cấu hình gán router cho từng người dùng cụ thể.\n\n11. **Bản đồ Tương tác**\n   - Trực quan hóa toàn bộ thiết bị và sơ đồ kết nối giữa chúng.\n   - Hỗ trợ đa dạng phong cách hiển thị bản đồ nền.\n\n12. **Ghi nhật ký & Dấu vết Kiểm toán (Audit Trail)**\n   - Lưu lại lịch sử thay đổi trạng thái UP/DOWN của mọi thiết bị.\n   - Lưu lại lịch sử thao tác của người dùng (thêm/xóa thiết bị, kết nối, cấu hình port forwarding).\n\n13. **Bảo mật & Chuẩn mực Thực hành Tốt nhất**\n   - Kiểm tra và xác thực toàn bộ các yêu cầu gửi đến API.\n   - Bảo vệ ứng dụng trước các nguy cơ tấn công SQL Injection, XSS, CSRF.\n   - Sử dụng cơ chế xác thực an toàn và mã hóa khi kết nối với Mikrotik API.",
+    "translation_status": "translated",
+    "source_category": "Web Development",
+    "source_tags": [
+      "Web Development",
+      "Full Stack"
+    ],
+    "category": "Lập trình & Phát triển phần mềm",
+    "subcategory": "Hệ thống mạng & Full-Stack",
+    "tags": [
+      "mikrotik",
+      "netwatch",
+      "giám sát mạng",
+      "full stack",
+      "bản đồ tương tác"
+    ],
+    "search_keywords_vi": [
+      "ứng dụng giám sát mạng mikrotik",
+      "quản lý mạng full stack",
+      "bản đồ thiết bị mạng"
+    ],
+    "use_case": "Phát triển hệ thống web app quản lý hạ tầng mạng quy mô lớn tích hợp API Mikrotik Netwatch và bản đồ số tương tác.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "lalsproject",
+      "name": "Yohanes Farly Rakinaung",
+      "avatar": "https://avatars.githubusercontent.com/u/118343444?v=4",
+      "identifier": "lalsproject",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/professional-full-stack-developer-for-network-mapping-monitoring-application",
+    "created_at": "2025-12-30T03:06:50.257Z"
+  }
+]

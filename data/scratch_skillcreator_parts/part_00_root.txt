@@ -1,0 +1,143 @@
+---
+name: skill-creator
+description: Hướng dẫn tạo các kỹ năng (Skills) hiệu quả cho Claude. Kỹ năng này nên được sử dụng khi người dùng muốn tạo một kỹ năng mới (hoặc cập nhật kỹ năng hiện có) nhằm mở rộng năng lực của Claude với tri thức chuyên ngành, quy trình công việc hoặc tích hợp công cụ.
+license: Các điều khoản đầy đủ trong LICENSE.txt
+---
+
+# Bộ Tạo Kỹ Năng (Skill Creator)
+
+Kỹ năng này cung cấp hướng dẫn toàn diện để tạo ra các kỹ năng hiệu quả cho Claude.
+
+## Về Kỹ Năng (Skills)
+
+Kỹ năng là các gói mô-đun, khép kín, mở rộng năng lực của Claude bằng cách cung cấp
+tri thức chuyên biệt, quy trình làm việc và công cụ. Hãy coi chúng như những "tài liệu hướng dẫn hội nhập" cho các
+lĩnh vực hoặc tác vụ cụ thể — chúng chuyển đổi Claude từ một agent đa năng thành một agent chuyên biệt
+được trang bị tri thức thủ tục mà không mô hình đơn lẻ nào có thể nắm trọn vẹn.
+
+### Những gì Kỹ Năng mang lại
+
+1. Các quy trình chuyên biệt - Quy trình gồm nhiều bước cho các lĩnh vực cụ thể
+2. Tích hợp công cụ - Hướng dẫn làm việc với các định dạng tệp hoặc API cụ thể
+3. Chuyên môn ngành - Tri thức đặc thù của doanh nghiệp, lược đồ (schemas), logic nghiệp vụ
+4. Tài nguyên đi kèm - Các đoạn mã (scripts), tài liệu tham chiếu và tài sản cho các tác vụ lặp đi lặp lại phức tạp
+
+## Các Nguyên Tắc Cốt Lõi
+
+### Ngắn gọn súc tích là Chìa khóa
+
+Cửa sổ ngữ cảnh (context window) là tài nguyên chung. Các kỹ năng phải chia sẻ cửa sổ ngữ cảnh với mọi thứ khác mà Claude cần: system prompt, lịch sử hội thoại, siêu dữ liệu của các kỹ năng khác và yêu cầu thực tế của người dùng.
+
+**Giả định mặc định: Claude vốn đã rất thông minh.** Chỉ bổ sung ngữ cảnh mà Claude chưa có. Hãy tự chất vấn với từng mẩu thông tin: "Claude có thực sự cần lời giải thích này không?" và "Đoạn văn này có xứng đáng với chi phí token của nó không?"
+
+Ưu tiên các ví dụ ngắn gọn hơn là giải thích dài dòng.
+
+### Thiết lập Mức độ Tự do Phù hợp
+
+Điều chỉnh mức độ cụ thể tương ứng với tính mong manh và sự biến thiên của tác vụ:
+
+**Tự do cao (chỉ dẫn dạng văn bản)**: Dùng khi có nhiều cách tiếp cận hợp lệ, các quyết định phụ thuộc vào ngữ cảnh hoặc dựa trên kinh nghiệm (heuristics).
+
+**Tự do trung bình (mã giả hoặc scripts kèm tham số)**: Dùng khi đã có khuôn mẫu ưu tiên, cho phép một số biến thể hoặc cấu hình ảnh hưởng đến hành vi.
+
+**Tự do thấp (scripts cụ thể, ít tham số)**: Dùng khi các thao tác dễ phát sinh lỗi và nhạy cảm, tính nhất quán là tối quan trọng hoặc bắt buộc phải tuân thủ một trình tự nghiêm ngặt.
+
+Hãy hình dung Claude như người đang khám phá một con đường: cây cầu hẹp với vách đá dựng đứng cần rào chắn cụ thể (tự do thấp), trong khi cánh đồng rộng mở cho phép chọn nhiều lối đi (tự do cao).
+
+### Cấu trúc Giải phẫu của một Kỹ năng
+
+Mỗi kỹ năng bao gồm tệp SKILL.md bắt buộc và các tài nguyên đi kèm tùy chọn:
+
+```
+skill-name/
+├── SKILL.md (bắt buộc)
+│   ├── Siêu dữ liệu YAML frontmatter (bắt buộc)
+│   │   ├── name: (bắt buộc)
+│   │   └── description: (bắt buộc)
+│   └── Hướng dẫn Markdown (bắt buộc)
+└── Tài nguyên đi kèm (tùy chọn)
+    ├── scripts/          - Mã thực thi (Python/Bash/v.v.)
+    ├── references/       - Tài liệu hướng dẫn tải vào ngữ cảnh khi cần
+    └── assets/           - Các tệp dùng trong đầu ra (mẫu template, biểu tượng, phông chữ, v.v.)
+```
+
+#### SKILL.md (bắt buộc)
+
+Mỗi tệp SKILL.md bao gồm:
+
+- **Frontmatter** (YAML): Chứa các trường `name` và `description`. Đây là các trường DUY NHẤT mà Claude đọc để xác định thời điểm kích hoạt kỹ năng, vì vậy việc mô tả rõ ràng, bao quát về kỹ năng là gì và khi nào nên dùng là cực kỳ quan trọng.
+- **Phần thân** (Markdown): Các chỉ dẫn và hướng dẫn sử dụng kỹ năng. Chỉ được tải SAU KHI kỹ năng được kích hoạt.
+
+#### Tài nguyên đi kèm (tùy chọn)
+
+##### Mã lệnh (`scripts/`)
+
+Mã thực thi (Python/Bash/v.v.) cho các tác vụ đòi hỏi độ tin cậy tất định hoặc thường xuyên phải viết đi viết lại.
+
+- **Khi nào nên đưa vào**: Khi cùng một đoạn mã liên tục phải viết lại hoặc cần độ tin cậy chính xác tuyệt đối
+- **Ví dụ**: `scripts/rotate_pdf.py` cho tác vụ xoay tệp PDF
+- **Lợi ích**: Tiết kiệm token, hoạt động tất định, có thể thực thi mà không cần tải toàn bộ vào ngữ cảnh
+- **Lưu ý**: Claude vẫn có thể cần đọc script để vá lỗi hoặc điều chỉnh cho phù hợp với môi trường
+
+##### Tài liệu tham chiếu (`references/`)
+
+Tài liệu và dữ liệu tham khảo được thiết kế để tải vào ngữ cảnh khi cần thiết nhằm cung cấp thông tin cho quy trình tư duy của Claude.
+
+- **Khi nào nên đưa vào**: Đối với tài liệu mà Claude nên tra cứu trong quá trình làm việc
+- **Ví dụ**: `references/finance.md` cho lược đồ tài chính, `references/mnda.md` cho mẫu thỏa thuận bảo mật, `references/policies.md` cho chính sách công ty, `references/api_docs.md` cho đặc tả API
+- **Trường hợp sử dụng**: Lược đồ cơ sở dữ liệu, tài liệu API, tri thức chuyên ngành, chính sách công ty, hướng dẫn quy trình chi tiết
+- **Lợi ích**: Giúp SKILL.md luôn gọn nhẹ, chỉ tải khi Claude thấy thực sự cần thiết
+- **Thực hành tốt nhất**: Nếu tệp có kích thước lớn (>10k từ), hãy kèm theo mẫu tìm kiếm grep trong SKILL.md
+- **Tránh trùng lặp**: Thông tin chỉ nên nằm trong SKILL.md hoặc trong các tệp tham chiếu, không để ở cả hai nơi.
+
+##### Tài sản (`assets/`)
+
+Các tệp không nhằm mục đích tải vào ngữ cảnh, mà được sử dụng trực tiếp trong sản phẩm đầu ra mà Claude tạo ra.
+
+- **Khi nào nên đưa vào**: Khi kỹ năng cần các tệp sẽ được chèn vào kết quả cuối cùng
+- **Ví dụ**: `assets/logo.png` cho tài sản thương hiệu, `assets/slides.pptx` cho mẫu bài thuyết trình PowerPoint
+- **Trường hợp sử dụng**: Bản mẫu (templates), hình ảnh, biểu tượng, mã khung khởi tạo (boilerplate), phông chữ, tài liệu mẫu
+
+### Nguyên tắc Thiết kế Tiết lộ Tăng dần (Progressive Disclosure)
+
+Các kỹ năng áp dụng hệ thống tải ba cấp để quản lý ngữ cảnh hiệu quả:
+
+1. **Siêu dữ liệu (tên + mô tả)** - Luôn thường trực trong ngữ cảnh (~100 từ)
+2. **Nội dung SKILL.md** - Chỉ tải khi kỹ năng được kích hoạt (<5k từ)
+3. **Tài nguyên đi kèm** - Tải theo nhu cầu phát sinh của Claude
+
+Giữ phần thân SKILL.md tập trung vào các điểm thiết yếu và dưới 500 dòng để giảm thiểu phình to ngữ cảnh.
+
+## Quy Trình Tạo Kỹ Năng
+
+Quy trình tạo kỹ năng bao gồm các bước sau:
+
+1. Thấu hiểu kỹ năng thông qua các ví dụ cụ thể
+2. Lập kế hoạch các nội dung tái sử dụng (scripts, tài liệu tham chiếu, tài sản)
+3. Khởi tạo kỹ năng (chạy init_skill.py)
+4. Chỉnh sửa kỹ năng (triển khai tài nguyên và viết SKILL.md)
+5. Đóng gói kỹ năng (chạy package_skill.py)
+6. Tinh chỉnh lặp lại dựa trên việc sử dụng thực tế
+
+### Bước 3: Khởi tạo Kỹ năng
+
+Khi tạo một kỹ năng mới từ đầu, luôn chạy script `init_skill.py`:
+
+```bash
+scripts/init_skill.py <skill-name> --path <output-directory>
+```
+
+### Bước 4: Chỉnh sửa Kỹ năng
+
+Tham khảo các hướng dẫn hữu ích sau tùy theo nhu cầu của kỹ năng:
+
+- **Quy trình nhiều bước**: Xem references/workflows.md để biết các quy trình tuần tự và logic rẽ nhánh có điều kiện
+- **Định dạng đầu ra hoặc tiêu chuẩn chất lượng cụ thể**: Xem references/output-patterns.md để biết các mẫu khuôn bản và ví dụ đối sánh
+
+### Bước 5: Đóng gói Kỹ năng
+
+```bash
+scripts/package_skill.py <path/to/skill-folder>
+```
+
+Script đóng gói sẽ xác thực tính hợp lệ và tạo tệp .skill hoàn chỉnh để phân phối.

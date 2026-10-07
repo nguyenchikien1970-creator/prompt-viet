@@ -1,0 +1,260 @@
+---
+name: GitHubTrends
+description: Hiển thị xu hướng các dự án GitHub thịnh hành, tạo bảng điều khiển trực quan. DÙNG KHI github trends, trending projects, hot repositories, popular github projects, generate dashboard, create webpage.
+version: 2.0.0
+---
+
+## Tùy biến (Customization)
+
+**Trước khi thực thi, hãy kiểm tra tùy biến người dùng tại:**
+`~/.claude/skills/CORE/USER/SKILLCUSTOMIZATIONS/GitHubTrends/`
+
+Nếu thư mục này tồn tại, hãy tải và áp dụng mọi tệp PREFERENCES.md, cấu hình hoặc tài nguyên tìm thấy tại đó. Các tệp này sẽ ghi đè hành vi mặc định. Nếu thư mục không tồn tại, hãy tiếp tục với cấu hình mặc định của skill.
+
+# GitHubTrends - Xu hướng dự án GitHub thịnh hành
+
+**Nhanh chóng khám phá các dự án mã nguồn mở được yêu thích nhất trên GitHub.**
+
+---
+
+## Triết lý (Philosophy)
+
+GitHub trending là con đường tốt nhất để khám phá các dự án mã nguồn mở chất lượng cao. Kỹ năng này giúp nhanh chóng nắm bắt danh sách các dự án hot nhất hiện tại, lọc theo chu kỳ thời gian (hàng ngày/hàng tuần) và ngôn ngữ lập trình, giúp tìm ra các dự án đáng học hỏi và đóng góp.
+
+---
+
+## Bắt đầu nhanh (Quick Start)
+
+```bash
+# Xem các dự án thịnh hành nhất trong tuần (mặc định)
+bun ~/.claude/skills/GitHubTrends/Tools/GetTrending.ts weekly
+
+# Xem các dự án thịnh hành nhất hôm nay
+bun ~/.claude/skills/GitHubTrends/Tools/GetTrending.ts daily
+
+# Lọc theo ngôn ngữ
+bun ~/.claude/skills/GitHubTrends/Tools/GetTrending.ts weekly --language=TypeScript
+bun ~/.claude/skills/GitHubTrends/Tools/GetTrending.ts weekly --language=Python
+
+# Chỉ định số lượng hiển thị
+bun ~/.claude/skills/GitHubTrends/Tools/GetTrending.ts weekly --limit=20
+```
+
+---
+
+## Khi nào nên dùng Skill này
+
+**Các kích hoạt cốt lõi - Dùng skill này khi người dùng nói:**
+
+### Yêu cầu trực tiếp
+- "show github trends" hoặc "github trending"
+- "hiển thị dự án hot" hoặc "xem có dự án nào đang thịnh hành"
+- "what's trending on github" hoặc "github hot projects"
+- "dự án hot tuần này" hoặc "weekly trending"
+- "dự án hot hôm nay" hoặc "daily trending"
+
+### Yêu cầu khám phá
+- "discover popular projects" hoặc "khám phá dự án phổ biến"
+- "show repositories trending" hoặc "hiển thị các repo trending"
+- "github có gì hot nhất" hoặc "what's hot on github"
+- "tìm dự án hay để xem" hoặc "find good projects"
+
+### Theo ngôn ngữ cụ thể
+- "TypeScript trending projects" hoặc "dự án TypeScript hot"
+- "Python trending" hoặc "dự án Python hot"
+- "show trending Rust projects" hoặc "hiển thị dự án Rust hot"
+- "dự án Go hot" hoặc "trending Go projects"
+
+### Bảng điều khiển & Trực quan hóa
+- "tạo dashboard GitHub trending" hoặc "generate trending dashboard"
+- "tạo trang web xu hướng" hoặc "create trending webpage"
+- "tạo báo cáo tương tác" hoặc "generate interactive report"
+- "export trending dashboard" hoặc "xuất bảng điều khiển"
+- "trực quan hóa xu hướng GitHub" hoặc "visualize github trends"
+
+---
+
+## Khả năng cốt lõi (Core Capabilities)
+
+### Lấy danh sách xu hướng
+- **Xu hướng hàng ngày** - Các dự án hot nhất trong 24 giờ qua
+- **Xu hướng hàng tuần** - Các dự án hot nhất trong 7 ngày qua (mặc định)
+- **Lọc ngôn ngữ** - Lọc theo ngôn ngữ lập trình (TypeScript, Python, Go, Rust, v.v.)
+- **Tùy chỉnh số lượng** - Chỉ định số dự án trả về (mặc định 10)
+
+### Tạo bảng điều khiển trực quan 🆕
+- **HTML tương tác** - Tạo bảng điều khiển trang web có thể tương tác
+- **Trực quan hóa dữ liệu** - Biểu đồ tròn phân bố ngôn ngữ, biểu đồ cột tăng trưởng Stars
+- **Tin tức công nghệ** - Tích hợp tin tức mới nhất từ Hacker News
+- **Bộ lọc thời gian thực** - Lọc theo ngôn ngữ, sắp xếp và tìm kiếm trực tiếp
+- **Thiết kế thích ứng (Responsive)** - Hỗ trợ máy tính bảng, máy tính để bàn, điện thoại
+
+### Thông tin dự án
+- Tên dự án và mô tả
+- Số lượng Star và mức tăng trưởng
+- Ngôn ngữ lập trình chính
+- URL liên kết tới GitHub
+
+---
+
+## Cách sử dụng công cụ (Tool Usage)
+
+### GetTrending.ts
+
+**Vị trí:** `Tools/GetTrending.ts`
+
+**Chức năng:** Lấy danh sách các dự án trending từ GitHub
+
+**Tham số:**
+- `period` - Chu kỳ thời gian: `daily` hoặc `weekly` (mặc định: weekly)
+- `--language` - Lọc ngôn ngữ lập trình (tùy chọn)
+- `--limit` - Số lượng dự án trả về (mặc định: 10)
+
+**Ví dụ sử dụng:**
+```bash
+# Cách dùng cơ bản
+bun ~/.claude/skills/GitHubTrends/Tools/GetTrending.ts weekly
+
+# Kèm tham số
+bun ~/.claude/skills/GitHubTrends/Tools/GetTrending.ts weekly --language=TypeScript --limit=15
+
+# Viết tắt
+bun ~/.claude/skills/GitHubTrends/Tools/GetTrending.ts daily -l=Python
+```
+
+**Cách thức hiện thực:**
+Sử dụng trang trending chính thức của GitHub: https://github.com/trending
+Đọc và phân tích cú pháp HTML thông qua fetch API.
+
+---
+
+### GenerateDashboard.ts 🆕
+
+**Vị trí:** `Tools/GenerateDashboard.ts`
+
+**Chức năng:** Tạo tệp HTML bảng điều khiển trực quan hóa dữ liệu có tính tương tác cao
+
+**Tham số:**
+- `--period` - Chu kỳ thời gian: `daily` hoặc `weekly` (mặc định: weekly)
+- `--language` - Lọc ngôn ngữ lập trình (tùy chọn)
+- `--limit` - Số lượng dự án trả về (mặc định: 10)
+- `--include-news` - Kèm tin tức công nghệ
+- `--news-count` - Số lượng tin tức (mặc định: 10)
+- `--output` - Đường dẫn tệp xuất ra (mặc định: ./github-trends.html)
+
+**Ví dụ sử dụng:**
+```bash
+# Cơ bản - tạo dashboard tuần này
+bun ~/.claude/skills/GitHubTrends/Tools/GenerateDashboard.ts
+
+# Kèm tin tức công nghệ
+bun ~/.claude/skills/GitHubTrends/Tools/GenerateDashboard.ts --include-news
+
+# Dashboard hàng ngày cho các dự án TypeScript
+bun ~/.claude/skills/GitHubTrends/Tools/GenerateDashboard.ts \
+  --period daily \
+  --language TypeScript \
+  --limit 20 \
+  --include-news \
+  --output ~/ts-daily.html
+```
+
+**Cách thức hiện thực:**
+- Lấy dữ liệu dự án trending từ GitHub
+- Lấy tin tức công nghệ từ Hacker News
+- Dùng Handlebars template engine để render HTML
+- Tích hợp Tailwind CSS và Chart.js
+- Tạo tệp HTML hoàn toàn độc lập (tải thư viện qua CDN)
+
+---
+
+## Định dạng đầu ra (Output Format)
+
+```markdown
+# GitHub Trending Projects - Weekly (2025-01-19)
+
+## 1. vercel/next.js - ⭐ 125,342 (+1,234 this week)
+**Language:** TypeScript
+**Description:** The React Framework for the Web
+**URL:** https://github.com/vercel/next.js
+
+## 2. microsoft/vscode - ⭐ 160,890 (+987 this week)
+**Language:** TypeScript
+**Description:** Visual Studio Code
+**URL:** https://github.com/microsoft/vscode
+
+...
+
+---
+📊 Total: 10 projects | Language: All | Period: Weekly
+```
+
+---
+
+## Ngôn ngữ được hỗ trợ (Supported Languages)
+
+Bộ lọc các ngôn ngữ phổ biến:
+- **TypeScript** - Các dự án TypeScript
+- **JavaScript** - Các dự án JavaScript
+- **Python** - Các dự án Python
+- **Go** - Các dự án Go
+- **Rust** - Các dự án Rust
+- **Java** - Các dự án Java
+- **C++** - Các dự án C++
+- **Ruby** - Các dự án Ruby
+- **Swift** - Các dự án Swift
+- **Kotlin** - Các dự án Kotlin
+
+---
+
+## Tích hợp quy trình (Workflow Integration)
+
+Kỹ năng này có thể được gọi bởi các kỹ năng khác:
+- **OSINT** - Khám phá các công cụ hot khi điều tra công nghệ
+- **Research** - Nghiên cứu xu hướng hệ sinh thái ngôn ngữ cụ thể
+- **System** - Khám phá các dự án PAI hữu ích
+
+---
+
+## Ghi chú kỹ thuật (Technical Notes)
+
+**Nguồn dữ liệu:** Trang trending chính thức của GitHub
+**Tần suất cập nhật:** Cập nhật mỗi giờ
+**Không cần xác thực:** Dùng trang công khai, không cần GitHub API token
+**Phương thức phân tích:** Trích xuất thông tin qua HTML parsing
+
+**Xử lý lỗi:**
+- Hiển thị thông báo thân thiện khi gặp lỗi mạng
+- Phân tích cú pháp thất bại sẽ trả về HTML gốc để gỡ lỗi
+- Tham số ngôn ngữ không phân biệt chữ hoa/thường
+
+---
+
+## Cải tiến tương lai (Future Enhancements)
+
+Các tính năng tiềm năng trong tương lai:
+- Hỗ trợ xu hướng theo tháng (nếu GitHub cung cấp)
+- Lọc theo khoảng stars (1k+, 10k+, 100k+)
+- Lưu lịch sử dữ liệu để phân tích xu hướng dài hạn
+- Tích hợp vào quy trình tự động của các skill khác
+
+---
+
+## Thông báo bằng giọng nói (Voice Notification)
+
+**Khi thực thi workflow, hãy thực hiện CẢ HAI:**
+
+1. **Gửi thông báo giọng nói:**
+   ```bash
+   curl -s -X POST http://localhost:8888/notify \
+     -H "Content-Type: application/json" \
+     -d '{"message": "Running the GitHubTrends workflow"}' \
+     > /dev/null 2>&1 &
+   ```
+
+2. **Xuất thông báo văn bản:**
+   ```
+   Running the **GitHubTrends** workflow...
+   ```
+
+**Tài liệu đầy đủ:** `~/.claude/skills/CORE/SkillNotifications.md`

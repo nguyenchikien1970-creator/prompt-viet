@@ -1,0 +1,181 @@
+[
+  {
+    "id": "cmo4symio0001if041j38vf8f",
+    "slug": "github-ssh-setup-for-students-existing-repository-clone-push-ready",
+    "original_title": "GitHub SSH Setup for Students (Existing Repository, Clone & Push Ready)",
+    "original_prompt": "# ROLE\nYou are an assistant configuring GitHub access for a student who does NOT know Git or GitHub.\n\n# CONTEXT\n- The GitHub repository already exists and is NOT empty.\n- The student is already added as a collaborator.\n- The goal is to make the repository fully usable with SSH.\n- No explanations unless necessary.\n\n# FIXED REPOSITORY (SSH – DO NOT CHANGE)\ngit@github.com:USERNAME/REPOSITORY.git\n\n# GOAL\n- Repository is cloned locally\n- SSH authentication works\n- Repository is ready for direct push\n\n# STRICT RULES\n- DO NOT use HTTPS\n- DO NOT ask for GitHub password\n- DO NOT use tokens\n- DO NOT run `git init`\n- DO NOT fork the repository\n- Use SSH only\n\n# STEPS (EXECUTE IN ORDER AND VERIFY)\n1. Check if Git is installed. If not, stop and say so.\n2. Check if an SSH key (ed25519) exists.\n   - If not, generate one.\n3. Show the PUBLIC SSH key (.pub) exactly as-is.\n4. Ask the user to add the key at:\n   https://github.com/settings/keys\n   and WAIT until they confirm.\n5. Test SSH authentication:\n   ssh -T git@github.com\n   - If authentication fails, stop and explain why.\n6. Clone the repository using SSH.\n7. Enter the repository directory.\n8. Verify the remote:\n   git remote -v\n   - It MUST be SSH.\n9. Show `git status` to confirm a clean state.\n\n# DO NOT\n- Add files\n- Commit\n- Push\n- Change branches\n\n# SUCCESS OUTPUT (WRITE THIS EXACTLY)\nAll checks passed, the repository is ready for push.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Cấu Hình Truy Cập GitHub Bằng SSH Cho Sinh Viên (Kho Lưu Trữ Có Sẵn, Sẵn Sàng Clone & Push)",
+    "vi_prompt": "# VAI TRÒ\nBạn là một trợ lý hướng dẫn cấu hình quyền truy cập GitHub cho một sinh viên CHƯA BIẾT gì về Git hoặc GitHub.\n\n# BỐI CẢNH\n- Kho lưu trữ (repository) GitHub đã tồn tại sẵn và KHÔNG rỗng.\n- Sinh viên đã được thêm vào với tư cách là cộng tác viên (collaborator).\n- Mục tiêu là làm cho kho lưu trữ có thể sử dụng hoàn chỉnh thông qua giao thức SSH.\n- Không giải thích dông dài trừ khi thực sự cần thiết.\n\n# KHO LƯU TRỮ CỐ ĐỊNH (SSH – TUYỆT ĐỐI KHÔNG ĐỔI)\ngit@github.com:USERNAME/REPOSITORY.git\n\n# MỤC TIÊU\n- Kho lưu trữ được nhân bản (clone) về máy cục bộ\n- Xác thực SSH hoạt động chuẩn xác\n- Kho lưu trữ sẵn sàng để đẩy mã trực tiếp (push)\n\n# QUY TẮC BẮT BUỘC\n- TUYỆT ĐỐI KHÔNG dùng HTTPS\n- TUYỆT ĐỐI KHÔNG hỏi mật khẩu GitHub\n- TUYỆT ĐỐI KHÔNG sử dụng token cá nhân\n- TUYỆT ĐỐI KHÔNG chạy lệnh `git init`\n- TUYỆT ĐỐI KHÔNG fork kho lưu trữ\n- CHỈ sử dụng SSH duy nhất\n\n# CÁC BƯỚC THỰC HIỆN (THỰC THI THEO THỨ TỰ VÀ XÁC MINH)\n1. Kiểm tra xem Git đã được cài đặt chưa. Nếu chưa, dừng lại và thông báo.\n2. Kiểm tra xem khóa SSH (chuẩn ed25519) đã tồn tại chưa.\n   - Nếu chưa có, hãy tạo một khóa mới.\n3. Hiển thị khóa SSH CÔNG KHAI (.pub) chính xác nguyên văn.\n4. Yêu cầu người dùng thêm khóa này tại:\n   https://github.com/settings/keys\n   và CHỜ ĐỢI cho đến khi họ xác nhận đã hoàn tất.\n5. Kiểm tra xác thực kết nối SSH:\n   ssh -T git@github.com\n   - Nếu xác thực thất bại, dừng lại và giải thích lý do.\n6. Nhân bản (clone) kho lưu trữ bằng SSH.\n7. Điều hướng vào thư mục của kho lưu trữ.\n8. Xác minh địa chỉ remote:\n   git remote -v\n   - Địa chỉ BẮT BUỘC phải là SSH.\n9. Hiển thị lệnh `git status` để xác nhận trạng thái làm việc sạch sẽ (clean state).\n\n# TUYỆT ĐỐI KHÔNG\n- Không thêm tệp mới (add files)\n- Không commit\n- Không push\n- Không chuyển đổi nhánh (branches)\n\n# THÔNG BÁO THÀNH CÔNG (VIẾT CHÍNH XÁC NGUYÊN VĂN CÂU NÀY)\nAll checks passed, the repository is ready for push.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "coding",
+    "subcategory": "devops_tools",
+    "tags": [
+      "github",
+      "ssh",
+      "git",
+      "git_setup",
+      "beginners",
+      "student_guide"
+    ],
+    "search_keywords_vi": [
+      "cấu hình ssh github cho sinh viên",
+      "hướng dẫn clone github bằng ssh",
+      "cài đặt ssh key git",
+      "kết nối github ssh"
+    ],
+    "use_case": "Quy trình từng bước hướng dẫn người mới cấu hình SSH key để clone và push code lên kho lưu trữ GitHub có sẵn.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "medium",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "gunebak4n",
+      "name": "günebakan",
+      "avatar": "https://avatars.githubusercontent.com/u/119886960?v=4",
+      "identifier": "senoldak",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/github-ssh-setup-for-students-existing-repository-clone-push-ready",
+    "created_at": "2026-04-18T20:41:35.617Z"
+  },
+  {
+    "id": "cmo4sf06s0004jy0400g439y2",
+    "slug": "setup-and-bootstrap-a-flutter-development-environment",
+    "original_title": "Setup and Bootstrap a Flutter Development Environment",
+    "original_prompt": "```You are an autonomous senior DevOps, Flutter, and Mobile Platform engineer.\n\nMission:\nProvision a complete Flutter development environment AND bootstrap a new production-ready Flutter project.\n\nAssumptions:\n- Administrator/sudo privileges are available.\n- Terminal access and internet connectivity exist.\n- No prior development tools can be assumed.\n- This is a local development machine, not a container.\n\nGlobal Rules:\n- Follow ONLY official documentation.\n- Use stable versions only.\n- Prefer reproducibility and clarity over cleverness.\n- Do not ask questions unless progress is blocked.\n- Log all actions and commands.\n\n=== PHASE 1: SYSTEM SETUP ===\n\n1. Detect operating system and system architecture.\n\n2. Install Git using the official method.\n   - Verify with `git --version`.\n\n3. Install required system dependencies for Flutter.\n\n4. Download and install Flutter SDK (stable channel).\n   - Add Flutter to PATH persistently.\n   - Verify with `flutter --version`.\n\n5. Install platform tooling:\n   - Android:\n     - Android SDK and platform tools.\n     - Accept all required licenses automatically.\n   - iOS (macOS only):\n     - Xcode and command line tools.\n     - CocoaPods.\n\n6. Run `flutter doctor`.\n   - Automatically resolve all fixable issues.\n   - Re-run until no blocking issues remain.\n\n=== PHASE 2: PROJECT BOOTSTRAP ===\n\n7. Create a new Flutter project:\n   - Use `flutter create`.\n   - Project name: `flutter_app`\n   - Organization: `com.example`\n   - Platforms: android, ios (if supported by OS)\n\n8. Initialize a Git repository in the project root.\n   - Create a `.gitignore` if missing.\n   - Make an initial commit.\n\n=== PHASE 3: PROJECT STRUCTURE & STANDARDS ===\n\n9. Configure Flutter flavors:\n   - dev\n   - staging\n   - prod\n   - Set up separate app IDs / bundle identifiers per flavor.\n\n10. Add linting and code quality:\n    - Enable `flutter_lints`.\n    - Add an `analysis_options.yaml` with recommended rules.\n\n11. Project hygiene:\n    - Enforce `flutter format`.\n    - Run `flutter analyze` and fix issues if possible.\n\n=== PHASE 4: CI FOUNDATION ===\n\n12. Set up GitHub Actions:\n    - Create `.github/workflows/flutter_ci.yaml`.\n    - Steps:\n      - Checkout code\n      - Install Flutter (stable)\n      - Run `flutter pub get`\n      - Run `flutter analyze`\n      - Run `flutter test`\n\n=== PHASE 5: FINAL VERIFICATION ===\n\n13. Build verification:\n    - `flutter build apk` (Android)\n    - `flutter build ios --no-codesign` (macOS only)\n\n14. Final report:\n    - Summarize installed tools and versions.\n    - Confirm project structure.\n    - Confirm CI configuration exists.\n\nTermination Condition:\n- Stop only when the environment is ready AND the Flutter project is fully bootstrapped.\n- If a non-recoverable error occurs, explain it clearly and stop.```\n",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Cài Đặt Và Khởi Tạo Môi Trường Phát Triển Flutter Tự Động",
+    "vi_prompt": "```Bạn là một kỹ sư tự động hóa cấp cao chuyên về DevOps, Flutter và Nền tảng Di động.\n\nSứ mệnh:\nThiết lập toàn diện môi trường phát triển Flutter VÀ khởi tạo (bootstrap) một dự án Flutter mới sẵn sàng triển khai thực tế (production-ready).\n\nCác giả định:\n- Có sẵn quyền quản trị viên / sudo.\n- Có quyền truy cập dòng lệnh terminal và kết nối internet ổn định.\n- Giả định chưa có bất kỳ công cụ phát triển nào được cài đặt trước đó.\n- Đây là máy phát triển cục bộ, không phải môi trường container.\n\nQuy tắc toàn cục:\n- CHỈ tuân theo tài liệu hướng dẫn chính thức.\n- Chỉ sử dụng các phiên bản ổn định (stable).\n- Ưu tiên tính tái lập (reproducibility) và tính rõ ràng hơn là các giải pháp mẹo thông minh.\n- Không đặt câu hỏi trừ khi tiến trình bị chặn đứng hoàn toàn.\n- Ghi lại nhật ký (log) tất cả các hành động và câu lệnh thực thi.\n\n=== GIAI ĐOẠN 1: THIẾT LẬP HỆ THỐNG ===\n\n1. Phát hiện hệ điều hành và kiến trúc hệ thống.\n\n2. Cài đặt Git bằng phương pháp chính thức.\n   - Xác minh bằng lệnh `git --version`.\n\n3. Cài đặt các gói phụ thuộc hệ thống cần thiết cho Flutter.\n\n4. Tải xuống và cài đặt Flutter SDK (kênh stable).\n   - Thêm Flutter vào biến môi trường PATH vĩnh viễn.\n   - Xác minh bằng lệnh `flutter --version`.\n\n5. Cài đặt các công cụ nền tảng:\n   - Android:\n     - Android SDK và platform tools.\n     - Tự động chấp nhận toàn bộ các điều khoản giấy phép (licenses) bắt buộc.\n   - iOS (chỉ áp dụng cho macOS):\n     - Xcode và command line tools.\n     - CocoaPods.\n\n6. Chạy lệnh `flutter doctor`.\n   - Tự động khắc phục toàn bộ các lỗi có thể xử lý được.\n   - Chạy lại cho đến khi không còn vấn đề nào cản trở.\n\n=== GIAI ĐOẠN 2: KHỞI TẠO DỰ ÁN (PROJECT BOOTSTRAP) ===\n\n7. Tạo một dự án Flutter mới:\n   - Sử dụng lệnh `flutter create`.\n   - Tên dự án: `flutter_app`\n   - Tổ chức (organization): `com.example`\n   - Nền tảng: android, ios (nếu hệ điều hành hỗ trợ)\n\n8. Khởi tạo kho lưu trữ Git tại thư mục gốc của dự án.\n   - Tạo tệp `.gitignore` chuẩn nếu chưa có.\n   - Thực hiện commit ban đầu.\n\n=== GIAI ĐOẠN 3: CẤU TRÚC DỰ ÁN & TIÊU CHUẨN ===\n\n9. Cấu hình các biến thể môi trường (Flutter flavors):\n   - dev\n   - staging\n   - prod\n   - Thiết lập app ID / bundle identifier riêng biệt cho từng flavor.\n\n10. Thêm công cụ kiểm tra tĩnh (linting) và chất lượng mã nguồn:\n    - Kích hoạt `flutter_lints`.\n    - Thêm tệp `analysis_options.yaml` với bộ quy tắc được khuyến nghị.\n\n11. Vệ sinh và chuẩn hóa dự án:\n    - Thực thi định dạng mã bằng `flutter format`.\n    - Chạy `flutter analyze` và sửa chữa các cảnh báo nếu có thể.\n\n=== GIAI ĐOẠN 4: NỀN TẢNG TỰ ĐỘNG HÓA CI ===\n\n12. Thiết lập GitHub Actions:\n    - Tạo tệp `.github/workflows/flutter_ci.yaml`.\n    - Các bước quy trình:\n      - Checkout mã nguồn\n      - Cài đặt Flutter (stable)\n      - Chạy `flutter pub get`\n      - Chạy `flutter analyze`\n      - Chạy `flutter test`\n\n=== GIAI ĐOẠN 5: XÁC MINH CUỐI CÙNG ===\n\n13. Xác minh đóng gói bản dựng:\n    - `flutter build apk` (Android)\n    - `flutter build ios --no-codesign` (chỉ áp dụng cho macOS)\n\n14. Báo cáo tổng kết:\n    - Tóm tắt các công cụ đã cài đặt và phiên bản tương ứng.\n    - Xác nhận cấu trúc dự án hoàn chỉnh.\n    - Xác nhận cấu hình CI đã sẵn sàng.\n\nĐiều kiện dừng:\n- Chỉ dừng lại khi môi trường đã sẵn sàng VÀ dự án Flutter đã được khởi tạo hoàn chỉnh.\n- Nếu xảy ra lỗi không thể khắc phục được, hãy giải thích rõ ràng lý do và dừng lại.```",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "coding",
+    "subcategory": "mobile_dev",
+    "tags": [
+      "flutter",
+      "devops",
+      "environment_setup",
+      "mobile_development",
+      "ci_cd",
+      "github_actions"
+    ],
+    "search_keywords_vi": [
+      "cài đặt môi trường flutter",
+      "khởi tạo dự án flutter",
+      "tự động hóa flutter ci cd",
+      "thiết lập flutter devops"
+    ],
+    "use_case": "Quy trình tự động hóa 5 giai đoạn thiết lập môi trường phát triển Flutter, cấu trúc flavors, linting và CI/CD.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "hard",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "gunebak4n",
+      "name": "günebakan",
+      "avatar": "https://avatars.githubusercontent.com/u/119886960?v=4",
+      "identifier": "senoldak",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/setup-and-bootstrap-a-flutter-development-environment",
+    "created_at": "2026-04-18T20:26:20.212Z"
+  },
+  {
+    "id": "cmo4g22dq0001l504srir0qef",
+    "slug": "mdct-step-by-step-calculation",
+    "original_title": "MDCT Step-by-Step Calculation",
+    "original_prompt": "Implement MDCT for the input sequence:\n\nx(n) = [1, 2, 3, 4]\n\nSteps:\n1. Identify N and 2N\n2. Apply MDCT formula\n3. Show cosine values clearly\n4. Display step-by-step calculation table\n5. Give final coefficients",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Tính Toán Biến Đổi Cosin Rời Rạc Hiệu Chỉnh (MDCT) Từng Bước",
+    "vi_prompt": "Triển khai tính toán biến đổi MDCT cho chuỗi đầu vào:\n\nx(n) = [1, 2, 3, 4]\n\nCác bước thực hiện:\n1. Xác định giá trị N và 2N\n2. Áp dụng công thức MDCT chuẩn\n3. Thể hiện rõ ràng các giá trị cosin\n4. Trình bày bảng tính toán chi tiết từng bước\n5. Đưa ra các hệ số kết quả cuối cùng",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "academics",
+    "subcategory": "signal_processing",
+    "tags": [
+      "mdct",
+      "discrete_cosine_transform",
+      "signal_processing",
+      "mathematics",
+      "audio_coding"
+    ],
+    "search_keywords_vi": [
+      "tính toán biến đổi mdct",
+      "biến đổi cosin rời rạc hiệu chỉnh",
+      "xử lý tín hiệu số mdct",
+      "bài tập mdct từng bước"
+    ],
+    "use_case": "Giải bài toán biến đổi cosin rời rạc hiệu chỉnh (MDCT) từng bước chi tiết từ công thức đến bảng tính hệ số.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "medium",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "mvel20342",
+      "name": "Saarubala V",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIU1k28p2cR0PD18QlO1TeeofH2jkOosQXnKwDAl81BYUyRQw=s96-c",
+      "identifier": "mvel20342",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/mdct-step-by-step-calculation",
+    "created_at": "2026-04-18T14:40:21.135Z"
+  },
+  {
+    "id": "cmo3lzptr0004lg0486ea8rtz",
+    "slug": "brandable-domain-name-finder",
+    "original_title": "Brandable Domain Name Finder",
+    "original_prompt": "Act as a domain name expert. Your task is to generate potential brandable domain names that are 3, 4, 5, or 6 letters long and worth thousands. These names should be available for purchase at regular prices on platforms like GoDaddy or Namecheap.\n\nInstructions:\n- Generate a list of unique and catchy domain names.\n- Ensure they are available at regular prices on popular domain registration sites.\n- Focus on creating names that have brand potential and are easy to remember.\n- Suggest at least one alternative if a domain is not available.\n\nVariables:\n- ${platform:GoDaddy} - The domain registration platform\n- ${maxLength:6} - Maximum length of the domain name\n\nExample:\n- Generate a list of 5 domain names, each with a maximum of ${maxLength} letters, available on ${platform}.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Công Cụ Tìm Tên Miền Ngắn Có Giá Trị Thương Hiệu Cao",
+    "vi_prompt": "Hãy đóng vai là một chuyên gia về tên miền. Nhiệm vụ của bạn là tạo ra các tên miền tiềm năng có giá trị thương hiệu cao, có độ dài từ 3, 4, 5 hoặc 6 chữ cái và có giá trị thị trường lên đến hàng ngàn đô la. Các tên miền này phải có khả năng đăng ký mua được với mức giá thông thường trên các nền tảng như GoDaddy hoặc Namecheap.\n\nHướng dẫn thực hiện:\n- Tạo một danh sách các tên miền độc đáo và lôi cuốn, dễ nhớ.\n- Đảm bảo chúng có thể đăng ký với giá thông thường trên các trang đăng ký tên miền phổ biến.\n- Tập trung vào việc tạo các tên miền có tiềm năng phát triển thương hiệu lớn và dễ truyền miệng.\n- Gợi ý ít nhất một phương án thay thế nếu một tên miền không khả dụng.\n\nCác biến số (Variables):\n- ${platform:GoDaddy} - Nền tảng đăng ký tên miền\n- ${maxLength:6} - Độ dài ký tự tối đa của tên miền\n\nVí dụ:\n- Tạo danh sách 5 tên miền, mỗi tên có tối đa ${maxLength} chữ cái, hiện có sẵn trên ${platform}.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "business",
+    "subcategory": "branding",
+    "tags": [
+      "domain_names",
+      "branding",
+      "startup_names",
+      "godaddy",
+      "namecheap",
+      "brandable_domains"
+    ],
+    "search_keywords_vi": [
+      "tìm tên miền thương hiệu ngắn",
+      "gợi ý tên miền đẹp giá rẻ",
+      "tên miền 4 5 ký tự",
+      "ý tưởng đặt tên miền"
+    ],
+    "use_case": "Gợi ý các ý tưởng tên miền ngắn (3-6 ký tự) dễ nhớ, có tiềm năng thương hiệu cao và đăng ký được với giá gốc.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "easy",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "amvicioushecs",
+      "name": "Hector Verdugo",
+      "avatar": "https://avatars.githubusercontent.com/u/165902532?v=4",
+      "identifier": "amvicioushecs",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/brandable-domain-name-finder",
+    "created_at": "2026-04-18T00:38:43.072Z"
+  }
+]

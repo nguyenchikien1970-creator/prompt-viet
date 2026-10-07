@@ -1,0 +1,121 @@
+references/api-reference.md 
+# Tài liệu tham khảo API Minimax Music (Minimax Music API Reference)
+
+## Xác thực (Authentication)
+
+Tất cả các yêu cầu gọi API đều yêu cầu cung cấp Bearer token trong header Authorization.
+
+```
+Authorization: Bearer <MINIMAX_API_KEY>
+Content-Type: application/json
+```
+
+**Base URL:** `https://api.minimax.io/v1/`
+
+Lấy khóa API tại [platform.minimax.io](https://platform.minimax.io) > Quản lý tài khoản (Account Management) > API Keys. Hãy sử dụng loại khóa **Trả phí theo dung lượng (Pay-as-you-go)** — các khóa thuộc gói Coding Plan KHÔNG áp dụng cho API tạo âm nhạc.
+
+---
+
+## Endpoint tạo âm nhạc (Music Generation Endpoint)
+
+```
+POST https://api.minimax.io/v1/music_generation
+```
+
+### Thân yêu cầu (Request Body)
+
+```json
+{
+  "model": "music-2.5",
+  "prompt": "Indie folk, melancholic, acoustic guitar, soft piano, female vocals",
+  "lyrics": "[Verse]\nWalking through the autumn leaves\nNobody knows where I've been\n\n[Chorus]\nEvery road leads back to you",
+  "audio_setting": {
+    "sample_rate": 44100,
+    "bitrate": 256000,
+    "format": "mp3"
+  },
+  "output_format": "url",
+  "stream": false
+}
+```
+
+### Bảng tham số (Parameter Reference)
+
+| Tham số | Kiểu dữ liệu | Bắt buộc | Mặc định | Giới hạn | Mô tả |
+| --- | --- | --- | --- | --- | --- |
+| `model` | string | Có | — | `"music-2.5"` | Định danh phiên bản mô hình |
+| `lyrics` | string | Có | — | 1-3500 ký tự | Lời bài hát kèm thẻ cấu trúc và dấu xuống dòng `\n` |
+| `prompt` | string | Không | `""` | 0-2000 ký tự | Mô tả phong cách, tâm trạng, thể loại, nhạc cụ |
+| `audio_setting` | object | Không | xem bên dưới | — | Cấu hình chất lượng âm thanh |
+| `output_format` | string | Không | `"hex"` | `"hex"` hoặc `"url"` | Định dạng dữ liệu âm thanh trả về |
+| `stream` | boolean | Không | `false` | — | Bật chế độ streaming (chỉ hỗ trợ định dạng hex) |
+
+### Đối tượng audio_setting
+
+| Trường | Kiểu | Giá trị hợp lệ | Mặc định | Mô tả |
+| --- | --- | --- | --- | --- |
+| `sample_rate` | integer | `16000`, `24000`, `32000`, `44100` | `44100` | Tần số lấy mẫu tính bằng Hz |
+| `bitrate` | integer | `32000`, `64000`, `128000`, `256000` | `256000` | Tốc độ bit tính bằng bps |
+| `format` | string | `"mp3"`, `"wav"`, `"pcm"` | `"mp3"` | Định dạng tệp âm thanh đầu ra |
+
+### Cấu trúc phản hồi (Response Body)
+
+```json
+{
+  "base_resp": {
+    "status_code": 0,
+    "status_msg": "success"
+  },
+  "data": {
+    "audio": "https://minimax-audio-cdn.../output.mp3",
+    "status": 2
+  },
+  "extra_info": {
+    "bitrate": 256000,
+    "music_channel": 2,
+    "music_duration": 182.4,
+    "music_sample_rate": 44100,
+    "music_size": 5836800
+  }
+}
+```
+
+---
+
+## Endpoint tạo lời bài hát (Lyrics Generation Endpoint)
+
+```
+POST https://api.minimax.io/v1/lyrics_generation
+```
+
+### Thân yêu cầu (Request Body)
+
+```json
+{
+  "mode": "write_full_song",
+  "prompt": "Một bản ballad buồn nói về việc chia tay dưới cơn mưa mùa thu, gợi cảm giác nhớ nhung và cô đơn"
+}
+```
+
+### Bảng tham số (Parameter Reference)
+
+| Tham số | Kiểu | Bắt buộc | Mặc định | Giá trị hợp lệ | Mô tả |
+| --- | --- | --- | --- | --- | --- |
+| `mode` | string | Có | — | `"write_full_song"` | Chế độ tạo lời bài hát |
+| `prompt` | string | Có | — | 1-2000 ký tự | Mô tả chủ đề, ý niệm hoặc cốt truyện bài hát |
+
+### Cấu trúc phản hồi (Response Body)
+
+```json
+{
+  "base_resp": {
+    "status_code": 0,
+    "status_msg": "success"
+  },
+  "data": {
+    "song_title": "Mưa Tháng Mười (October Rain)",
+    "style_tags": "Ballad, Melancholic, Acoustic, Emotional",
+    "lyrics": "[Intro]\n\n[Verse]\nHạt mưa rơi trên phố vắng chiều nay...\n\n[Chorus]\nNgười đi mang theo hết những yêu thương..."
+  }
+}
+```

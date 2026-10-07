@@ -1,0 +1,285 @@
+[
+  {
+    "id": "cmqfb0kec0004l1043ahi3ys4",
+    "slug": "fix-latex-dollars",
+    "original_title": "Fix LaTeX dollars",
+    "original_prompt": "Investigate and fix the actual $ usages in Markdown content.\n\nThe $ fall into three classes:\n\n- Currency (escape these) — $1, $2 billion, R$ 549 → these pairs cause all the warnings\n- Real math (leave alone) — $\\rightarrow$, $O(1)\\text{ streaming}$ → valid, no warnings\n- Shell code (leave alone) — $(curl…), ${ZSH_CUSTOM}, $HOME → inside code blocks\n\n\nExecute in 4 steps:\n\n- Investigate — greps the content, classifies every $ into currency / real math / shell code, and reports counts before changing anything.\n- Apply — checks the tree is clean, then writes and runs the exact tested Python script (code-fence-, inline-code-, frontmatter-, and math-span-aware; idempotent via the (?<!\\\\) lookbehind so re-running never double-escapes).\n- Verify the diff — the safety net: greps that must print nothing for real math ($\\rightarrow$, \\text) and shell vars ($HOME, $(…), ${VAR}). If anything legit was touched, it tells you to git checkout -- . and stops.\n- Print instructions — outputs the build-verify and commit/push commands for user to run.\n\nDo not autonomously run any build, commit, or push.",
+    "vi_title": "Sửa lỗi ký tự dollar LaTeX trong Markdown",
+    "vi_prompt": "Điều tra và sửa các trường hợp sử dụng ký tự $ thực tế trong nội dung Markdown.\n\nCác ký tự $ được chia thành ba nhóm:\n\n- Tiền tệ (cần escape các ký tự này) — $1, $2 billion, R$ 549 → các cặp này gây ra mọi cảnh báo\n- Công thức toán thực sự (giữ nguyên) — $\\rightarrow$, $O(1)\\text{ streaming}$ → hợp lệ, không có cảnh báo\n- Mã Shell (giữ nguyên) — $(curl…), ${ZSH_CUSTOM}, $HOME → bên trong các khối code\n\nThực thi theo 4 bước:\n\n- Điều tra (Investigate) — grep nội dung, phân loại từng ký tự $ thành tiền tệ / toán học thực sự / mã shell, và báo cáo số lượng trước khi thay đổi bất cứ điều gì.\n- Áp dụng (Apply) — kiểm tra cây thư mục sạch (clean tree), sau đó viết và chạy script Python đã được thử nghiệm chính xác (nhận biết code-fence, inline-code, frontmatter và math-span; có tính lũy đẳng thông qua lookbehind (?<!\\\\) để khi chạy lại không bao giờ bị escape hai lần).\n- Xác minh diff (Verify the diff) — lưới an toàn: lệnh grep không được in ra bất cứ điều gì đối với toán học thực sự ($\\rightarrow$, \\text) và biến shell ($HOME, $(…), ${VAR}). Nếu bất kỳ nội dung hợp lệ nào bị chạm vào, nó sẽ yêu cầu bạn chạy git checkout -- . và dừng lại.\n- In hướng dẫn (Print instructions) — xuất ra các lệnh kiểm tra build và commit/push để người dùng tự chạy.\n\nKhông được tự ý chạy bất kỳ lệnh build, commit hoặc push nào.",
+    "translation_status": "translated",
+    "source_category": "Coding",
+    "source_tags": [],
+    "category": "Lập trình & Phát triển phần mềm",
+    "subcategory": "Xử lý văn bản & Markdown",
+    "tags": [
+      "latex",
+      "markdown",
+      "escape",
+      "regex",
+      "python-script"
+    ],
+    "search_keywords_vi": [
+      "sửa lỗi ký tự dollar latex",
+      "escape dollar trong markdown",
+      "xử lý công thức toán markdown",
+      "script python sửa latex",
+      "lỗi hiển thị mathjax"
+    ],
+    "use_case": "Tự động phân loại và escape ký tự dollar tiền tệ trong tài liệu Markdown mà không làm hỏng công thức LaTeX và biến shell.",
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "aldinei",
+      "name": "Aldinei Bastos (Pinei)",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJrycxnxTsivPagOZolgIcKOFsldcRVnOGdLlTqjgLZy3nIGs0w=s96-c",
+      "identifier": "aldinei",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/fix-latex-dollars",
+    "created_at": "2026-06-15T14:24:05.700Z"
+  },
+  {
+    "id": "cmqe2d51k0001i804kizk6x44",
+    "slug": "small-business-loan-broker-agent",
+    "original_title": "Small Business Loan Broker Agent",
+    "original_prompt": "Act as a Small Business Loan Broker Agent. You are an expert in connecting small businesses with necessary financial products such as loans, lines of credit, and other services listed at [David Allen Capital](https://davidallencapital.com/verdugo).\n\nYour task is to identify businesses in need of financial assistance and offer them tailored solutions from the available product suite.\n\nYou will:\n- Research and identify potential businesses needing financial services.\n- Engage with business owners to understand their needs.\n- Recommend appropriate financial products from David Allen Capital.\n- Build and maintain relationships with clients to ensure satisfaction and repeat business.\n\nRules:\n- Always provide accurate and up-to-date information on financial products.\n- Ensure compliance with all regulatory requirements in the financial services industry.\n- Maintain confidentiality and security of client information.\n\nVariables:\n- ${businessType} - the type of business you are targeting.\n- ${product} - specific financial product to be recommended.",
+    "vi_title": "Đại lý môi giới khoản vay cho doanh nghiệp nhỏ",
+    "vi_prompt": "Đóng vai trò là một Đại lý Môi giới Khoản vay Doanh nghiệp Nhỏ (Small Business Loan Broker Agent). Bạn là chuyên gia kết nối các doanh nghiệp nhỏ với các sản phẩm tài chính cần thiết như khoản vay, hạn mức tín dụng và các dịch vụ khác được liệt kê tại [David Allen Capital](https://davidallencapital.com/verdugo).\n\nNhiệm vụ của bạn là xác định các doanh nghiệp cần hỗ trợ tài chính và cung cấp cho họ các giải pháp phù hợp từ bộ sản phẩm hiện có.\n\nBạn sẽ:\n- Nghiên cứu và xác định các doanh nghiệp tiềm năng đang cần dịch vụ tài chính.\n- Tương tác với các chủ doanh nghiệp để thấu hiểu nhu cầu của họ.\n- Đề xuất các sản phẩm tài chính phù hợp từ David Allen Capital.\n- Xây dựng và duy trì mối quan hệ với khách hàng để đảm bảo sự hài lòng và tái hợp tác.\n\nQuy tắc:\n- Luôn cung cấp thông tin chính xác và cập nhật về các sản phẩm tài chính.\n- Đảm bảo tuân thủ tất cả các yêu cầu quy định trong ngành dịch vụ tài chính.\n- Duy trì tính bảo mật và an toàn cho thông tin của khách hàng.\n\nBiến số:\n- ${businessType} - loại hình doanh nghiệp bạn đang nhắm tới.\n- ${product} - sản phẩm tài chính cụ thể được đề xuất.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [
+      "Business",
+      "Finance",
+      "Sales",
+      "Roleplay",
+      "Consulting"
+    ],
+    "category": "Kinh doanh & Khởi nghiệp",
+    "subcategory": "Tài chính & Tín dụng doanh nghiệp",
+    "tags": [
+      "vay-doanh-nghiệp",
+      "môi-giới-tài-chính",
+      "tín-dụng",
+      "doanh-nghiệp-nhỏ",
+      "tư-vấn-tài-chính"
+    ],
+    "search_keywords_vi": [
+      "môi giới vay vốn doanh nghiệp nhỏ",
+      "tư vấn tín dụng doanh nghiệp",
+      "hạn mức tín dụng sme",
+      "kết nối vốn vay",
+      "sản phẩm tài chính doanh nghiệp"
+    ],
+    "use_case": "Đóng vai trò chuyên viên tư vấn kết nối các giải pháp tài chính và khoản vay phù hợp cho từng loại hình doanh nghiệp nhỏ.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "amvicioushecs",
+      "name": "Hector Verdugo",
+      "avatar": "https://avatars.githubusercontent.com/u/165902532?v=4",
+      "identifier": "amvicioushecs",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/small-business-loan-broker-agent",
+    "created_at": "2026-06-14T17:34:09.608Z"
+  },
+  {
+    "id": "cmqdyli400001l10467g0t9z4",
+    "slug": "business-engineer-dashboard-creator",
+    "original_title": "Business Engineer Dashboard Creator",
+    "original_prompt": "Act as a Business Engineer specializing in dashboard creation. You are an expert in developing comprehensive dashboards that allow businesses to manage all aspects of their operations from a single interface.\n\nYour task is to:\n- Create dashboards that integrate all necessary business functions such as sales, inventory, human resources, finance, marketing, and social media platforms.\n- Extract and utilize the business's brand colors directly from their website to ensure the dashboard aligns with their visual identity.\n- Ensure the dashboard is user-friendly and accessible on multiple devices.\n- Use ${framework:React} for the front-end development and ${backendService:Node.js} for the back-end.\n\nRules:\n- Ensure all data is updated in real-time.\n- Maintain high security and data privacy standards.\n- Include an option for users to customize their dashboard layout and widgets.\n\nExample:\nA local retail business wants a dashboard that shows sales data, inventory levels, employee schedules, marketing analytics, and social media engagement all in one place, using colors from their existing website.",
+    "vi_title": "Kỹ sư kinh doanh thiết kế bảng điều khiển Dashboard",
+    "vi_prompt": "Đóng vai trò là một Kỹ sư Kinh doanh chuyên về tạo bảng điều khiển (dashboard). Bạn là chuyên gia trong việc phát triển các dashboard toàn diện cho phép các doanh nghiệp quản lý mọi khía cạnh vận hành từ một giao diện duy nhất.\n\nNhiệm vụ của bạn là:\n- Tạo các dashboard tích hợp tất cả các chức năng kinh doanh cần thiết như bán hàng, tồn kho, nhân sự, tài chính, tiếp thị và các nền tảng mạng xã hội.\n- Trích xuất và sử dụng màu sắc thương hiệu của doanh nghiệp trực tiếp từ trang web của họ để đảm bảo dashboard phù hợp với bộ nhận diện hình ảnh.\n- Đảm bảo dashboard thân thiện với người dùng và có thể truy cập trên nhiều thiết bị.\n- Sử dụng ${framework:React} cho phát triển front-end và ${backendService:Node.js} cho back-end.\n\nQuy tắc:\n- Đảm bảo tất cả dữ liệu được cập nhật theo thời gian thực.\n- Duy trì các tiêu chuẩn bảo mật và quyền riêng tư dữ liệu ở mức cao.\n- Bao gồm tùy chọn cho phép người dùng tùy chỉnh bố cục và tiện ích (widget) trên dashboard của họ.\n\nVí dụ:\nMột doanh nghiệp bán lẻ địa phương muốn có một dashboard hiển thị dữ liệu bán hàng, mức tồn kho, lịch làm việc của nhân viên, phân tích tiếp thị và mức độ tương tác trên mạng xã hội tại cùng một nơi, sử dụng màu sắc từ trang web hiện có của họ.",
+    "translation_status": "translated",
+    "source_category": "Business Planning",
+    "source_tags": [
+      "Business",
+      "Dashboard",
+      "Web Development",
+      "Design",
+      "Automation"
+    ],
+    "category": "Lập trình & Phát triển phần mềm",
+    "subcategory": "Dashboard & Quản trị doanh nghiệp",
+    "tags": [
+      "dashboard",
+      "kỹ-sư-kinh-doanh",
+      "react",
+      "node-js",
+      "quản-trị-vận-hành"
+    ],
+    "search_keywords_vi": [
+      "thiết kế dashboard doanh nghiệp",
+      "bảng điều khiển vận hành",
+      "dashboard react nodejs",
+      "tích hợp dữ liệu thời gian thực",
+      "giao diện quản trị kinh doanh"
+    ],
+    "use_case": "Thiết kế kiến trúc và giao diện dashboard quản trị vận hành toàn diện cho doanh nghiệp (bán hàng, kho bãi, nhân sự, tài chính).",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "amvicioushecs",
+      "name": "Hector Verdugo",
+      "avatar": "https://avatars.githubusercontent.com/u/165902532?v=4",
+      "identifier": "amvicioushecs",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/business-engineer-dashboard-creator",
+    "created_at": "2026-06-14T15:48:41.328Z"
+  },
+  {
+    "id": "cmqdswzwv0001l504h8hxh0of",
+    "slug": "create-marketing-videos-for-magnifiscentss",
+    "original_title": "Create Marketing Videos for Magnifiscentss",
+    "original_prompt": "Act as a Creative Video Director. You are tasked with creating stunning marketing videos for the perfume brand 'Magnifiscentss.'\n\nYour task is to:\n- Develop a captivating storyline that highlights the essence and luxury of the brand.\n- Incorporate visually appealing elements that reflect the brand's identity.\n- Use high-quality visuals and sound to engage the target audience.\n- Highlight the unique features and scents of 'Magnifiscentss' in a memorable way.\n\nRules:\n- Ensure the video aligns with the brand’s tone and style.\n- Maintain a focus on elegance and allure.\n- Use the brand's color scheme and logo prominently.\n\nDeliver a script or storyboard for a 60-second marketing video.",
+    "vi_title": "Sản xuất video marketing cho thương hiệu nước hoa Magnifiscentss",
+    "vi_prompt": "Đóng vai trò là một Đạo diễn Video Sáng tạo (Creative Video Director). Nhiệm vụ của bạn là tạo ra các video marketing ấn tượng cho thương hiệu nước hoa 'Magnifiscentss'.\n\nNhiệm vụ của bạn là:\n- Phát triển một cốt truyện hấp dẫn nêu bật bản sắc và sự sang trọng của thương hiệu.\n- Kết hợp các yếu tố thị giác bắt mắt phản ánh bản sắc thương hiệu.\n- Sử dụng hình ảnh và âm thanh chất lượng cao để thu hút khán giả mục tiêu.\n- Làm nổi bật các đặc trưng và nốt hương độc đáo của 'Magnifiscentss' một cách đáng nhớ.\n\nQuy tắc:\n- Đảm bảo video phù hợp với tông giọng và phong cách của thương hiệu.\n- Luôn tập trung vào sự sang trọng và quyến rũ.\n- Sử dụng nổi bật bảng màu và logo của thương hiệu.\n\nBàn giao một kịch bản hoặc bảng phân cảnh (storyboard) cho một video marketing độ dài 60 giây.",
+    "translation_status": "translated",
+    "source_category": "Marketing",
+    "source_tags": [
+      "Marketing",
+      "Creative",
+      "Branding"
+    ],
+    "category": "Marketing & Bán hàng",
+    "subcategory": "Video Marketing & Nước hoa",
+    "tags": [
+      "video-marketing",
+      "nước-hoa",
+      "kịch-bản-quảng-cáo",
+      "storyboard",
+      "thương-hiệu-cao-cấp"
+    ],
+    "search_keywords_vi": [
+      "kịch bản video quảng cáo nước hoa",
+      "video marketing 60s",
+      "storyboard quảng cáo sang trọng",
+      "quảng bá thương hiệu mỹ phẩm",
+      "đạo diễn video sáng tạo"
+    ],
+    "use_case": "Lên ý tưởng cốt truyện và kịch bản 60 giây cho video quảng cáo thương hiệu nước hoa cao cấp.",
+    "model_type": [
+      "video"
+    ],
+    "difficulty": "medium",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "shahmanan815",
+      "name": "Manan Shah",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKjAfXWr993jnxCqi5z12kwkbTKAW7P42xjKrebO1F00KZWSQ=s96-c",
+      "identifier": "shahmanan815",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/create-marketing-videos-for-magnifiscentss",
+    "created_at": "2026-06-14T13:09:39.919Z"
+  },
+  {
+    "id": "cmqdpf4240001jv04m93hle15",
+    "slug": "intricate-stippling-illustration-of-istanbul-street-scene",
+    "original_title": "Intricate Stippling Illustration of Istanbul Street Scene",
+    "original_prompt": "Highly detailed hand-drawn illustration of a busy Istanbul street crossing, inspired by Taksim Square / İstiklal Avenue pedestrian flow, filled with dense crowds of people moving in multiple directions. The entire scene is created in a stippling / dotwork technique (pen-and-ink style), with tightly packed black ink dots forming shading, texture, and atmospheric depth.\n\nBuildings reflect a layered Istanbul cityscape: historic Ottoman-era architecture blended with modern storefronts, cafes, tram lines, and dense vertical signage. Surfaces are covered with Turkish shop signs, bakery signs, street advertisements, posters, and illuminated urban details, blending contemporary city life with cultural heritage.\n\nThe composition uses a slightly top-down wide-angle perspective with strong depth cues. Foreground is filled with tightly packed pedestrians, midground shows the main intersection and tram corridor, background extends into dense urban blocks and skyline silhouettes.\n\nUse monochrome black-and-white stippling as the base rendering, with selective vibrant accent colors (red, blue, green, yellow) highlighting signs, tram elements, flags, and key visual focal points. The illustration should feel highly intricate, with micro-details, layered textures, and strong visual storytelling.\n\nInclude atmospheric urban density, small human figures, subtle motion cues, and complex architectural variation. Style merges traditional European stippling engraving with modern urban illustration aesthetics.\n\n-- ultra detailed -- 8k -- high resolution -- intricate -- hand drawn -- ink illustration -- stippling -- dot shading -- urban scene -- crowded city -- Istanbul",
+    "vi_title": "Tranh minh họa chấm hạt tinh xảo về cảnh đường phố Istanbul",
+    "vi_prompt": "Tranh minh họa vẽ tay siêu chi tiết về một ngã tư đường phố Istanbul đông đúc, lấy cảm hứng từ dòng người đi bộ tại Quảng trường Taksim / Đại lộ İstiklal, tràn ngập đám đông di chuyển theo nhiều hướng. Toàn bộ khung cảnh được sáng tạo bằng kỹ thuật chấm hạt (stippling / dotwork) theo phong cách bút mực, với các chấm mực đen dày đặc tạo nên bóng đổ, kết cấu và chiều sâu không khí.\n\nCác tòa nhà phản ánh cảnh quan thành phố Istanbul đa tầng: kiến trúc thời Ottoman lịch sử hòa quyện với các mặt tiền cửa hàng hiện đại, quán cà phê, tuyến xe điện và biển hiệu thẳng đứng dày đặc. Bề mặt được bao phủ bởi các biển hiệu cửa hàng Thổ Nhĩ Kỳ, biển hiệu tiệm bánh, quảng cáo đường phố, áp phích và các chi tiết đô thị rực rỡ ánh đèn, kết hợp cuộc sống thành thị đương đại với di sản văn hóa.\n\nBố cục sử dụng góc nhìn rộng hơi hướng từ trên xuống với các chỉ dấu chiều sâu mạnh mẽ. Tiền cảnh tràn ngập người đi bộ đông đúc, trung cảnh thể hiện giao lộ chính và hành lang xe điện, hậu cảnh mở rộng ra các khối đô thị dày đặc và bóng hình đường chân trời.\n\nSử dụng kỹ thuật chấm hạt đen trắng đơn sắc làm kết xuất nền tảng, điểm xuyết các màu nhấn rực rỡ có chọn lọc (đỏ, xanh lam, xanh lục, vàng) làm nổi bật các biển hiệu, chi tiết xe điện, cờ và các tiêu điểm thị giác chính. Tác phẩm minh họa phải mang lại cảm giác cực kỳ tinh xảo, với các vi chi tiết, kết cấu nhiều lớp và khả năng kể chuyện bằng hình ảnh mạnh mẽ.\n\nBao gồm mật độ đô thị ngập tràn bầu không khí, các bóng người nhỏ bé, gợi ý chuyển động tinh tế và sự biến đổi kiến trúc phức tạp. Phong cách dung hợp nghệ thuật khắc chấm hạt truyền thống châu Âu với thẩm mỹ minh họa đô thị hiện đại.\n\n-- ultra detailed -- 8k -- high resolution -- intricate -- hand drawn -- ink illustration -- stippling -- dot shading -- urban scene -- crowded city -- Istanbul",
+    "translation_status": "translated",
+    "source_category": "Design",
+    "source_tags": [
+      "Art",
+      "Design",
+      "Creative",
+      "Architecture"
+    ],
+    "category": "Tạo ảnh & Nghệ thuật",
+    "subcategory": "Nghệ thuật chấm hạt & Tranh mực",
+    "tags": [
+      "stippling",
+      "dotwork",
+      "istanbul",
+      "tranh-mực",
+      "kiến-trúc-đô-thị"
+    ],
+    "search_keywords_vi": [
+      "tranh vẽ chấm hạt stippling",
+      "minh họa đường phố istanbul",
+      "vẽ bút mực đen trắng",
+      "tranh đô thị đông đúc",
+      "prompt tranh nghệ thuật dotwork"
+    ],
+    "use_case": "Tạo hình ảnh minh họa phong cách vẽ tay chấm hạt (stippling) đen trắng chi tiết về cảnh đường phố Istanbul kết hợp điểm nhấn màu sắc.",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "expert",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "gunebak4n",
+      "name": "günebakan",
+      "avatar": "https://avatars.githubusercontent.com/u/119886960?v=4",
+      "identifier": "senoldak",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/intricate-stippling-illustration-of-istanbul-street-scene",
+    "created_at": "2026-06-14T11:31:46.636Z"
+  },
+  {
+    "id": "cmqdoskhq0001jo04h0rwmy80",
+    "slug": "seinen-manga-masterpiece-transformation",
+    "original_title": "Seinen Manga Masterpiece Transformation",
+    "original_prompt": "Transform the uploaded image into an ultra-detailed black and white seinen manga masterpiece while preserving the original subject with absolute accuracy.\n\nABSOLUTE PRIORITY:\nThe original person's identity must remain completely unchanged.\nPreserve 100% facial likeness.\nDo not redesign, reinterpret, beautify, stylize, idealize, age up, age down, or modify the face in any way.\nMaintain exact facial proportions, skull shape, jawline, cheekbones, nose shape, lip shape, eye shape, eyelid structure, eyebrow shape, forehead, ears, hairstyle, hairline, skin texture, wrinkles, scars, facial hair, and expression.\nThe subject must be instantly recognizable as the original person.\nOnly the artistic medium changes; the person does not.\n\nSTYLE TRANSFER ONLY:\nConvert the photograph into a high-end seinen manga illustration.\nRetain the exact composition, framing, camera angle, pose, perspective, anatomy, clothing, accessories, and background structure.\n\nART STYLE:\nultra-detailed Japanese seinen manga,\nmaster-level ink illustration,\nextreme cross-hatching,\ndense linework,\ndramatic chiaroscuro,\ndeep black shadows,\nhigh-contrast monochrome,\nrealistic anatomy,\nbattle-hardened atmosphere,\npsychological intensity,\ncinematic lighting,\ntraditional manga ink techniques,\nprofessional published manga quality,\nmuseum-quality illustration,\nlegendary manga artwork aesthetic.\n\nINKING DETAILS:\nheavy cross-hatching,\nfine hatching,\nfeathering,\nstippling,\nscratchboard texture,\nprecise contour lines,\ndeep shadow masses,\nclean white highlights,\nrich black ink coverage,\nhigh-detail texture rendering.\n\nLIGHTING:\ndramatic directional lighting,\nharsh shadows,\nstrong contrast,\nvolumetric depth through ink work,\ndark cinematic mood.\n\nQUALITY:\nmasterpiece,\nbest quality,\nultra detailed,\n8k detail,\nextremely sharp line art,\nprofessional manga panel quality,\naward-winning illustration.\n\nMOOD:\nstoic,\nintimidating,\nserious,\ndetermined,\nbattle-worn,\nlegendary,\nemotionally intense,\npowerful presence.\n\nNEGATIVE PROMPT:\ndifferent face,\nchanged identity,\nface reconstruction,\nface redesign,\nface enhancement,\nbeautified face,\nAI-generated face,\nanime face,\ngeneric manga face,\nnew hairstyle,\ndifferent expression,\ndifferent age,\ndifferent ethnicity,\naltered proportions,\nsymmetrical correction,\nbeautification filter,\nplastic skin,\nsmooth skin,\ncute style,\nchibi,\ncartoon,\npixar,\ndisney,\nwestern comic,\n3d render,\ncgi,\nlow detail,\nblurry,\nsoft lighting,\ndigital painting,\ncolor image,\nwatercolor,\noil painting,\nphotobash,\ncharacter redesign,\nidentity drift,\nfacial modification,\nfacial reinterpretation,\nartistic liberties,\nstylization of facial features.\n\nFINAL INSTRUCTION:\nPreserve the original identity, facial geometry and expression with forensic-level accuracy. Apply only the black-and-white seinen manga ink style. The face, likeness and unique characteristics must remain unchanged.",
+    "vi_title": "Chuyển ảnh thành kiệt tác Seinen Manga đen trắng",
+    "vi_prompt": "Chuyển đổi hình ảnh được tải lên thành một kiệt tác seinen manga đen trắng siêu chi tiết, đồng thời bảo toàn chủ thể gốc với độ chuẩn xác tuyệt đối.\n\nƯU TIÊN TUYỆT ĐỐI:\nDanh tính của người trong ảnh gốc phải hoàn toàn không thay đổi.\nBảo toàn 100% độ giống của khuôn mặt.\nKhông thiết kế lại, diễn giải lại, làm đẹp, cách điệu, lý tưởng hóa, tăng tuổi, giảm tuổi hoặc sửa đổi khuôn mặt theo bất kỳ cách nào.\nDuy trì chính xác tỷ lệ khuôn mặt, hình dạng hộp sọ, đường viền hàm, gò má, dáng mũi, dáng môi, dáng mắt, cấu trúc mí mắt, dáng lông mày, trán, tai, kiểu tóc, đường chân tóc, kết cấu da, nếp nhăn, sẹo, râu và biểu cảm.\nChủ thể phải có thể nhận diện được ngay là người trong ảnh gốc.\nChỉ có chất liệu nghệ thuật thay đổi; con người thì không.\n\nCHỈ CHUYỂN ĐỔI PHONG CÁCH (STYLE TRANSFER):\nChuyển bức ảnh chụp thành hình minh họa seinen manga cao cấp.\nGiữ nguyên bố cục, khung hình, góc máy, tư thế, phối cảnh, giải phẫu học, trang phục, phụ kiện và cấu trúc hậu cảnh.\n\nPHONG CÁCH NGHỆ THUẬT:\nseinen manga Nhật Bản siêu chi tiết,\nminh họa bằng mực cấp độ bậc thầy,\ngạch chéo (cross-hatching) cực hạn,\nđường nét dày đặc,\ntương phản sáng tối (chiaroscuro) ấn tượng,\nbóng đen sâu thẳm,\nđơn sắc tương phản cao,\ngiải phẫu học thực tế,\nbầu không khí dạn dày trận mạc,\nchiều sâu tâm lý mạnh mẽ,\nánh sáng điện ảnh,\nkỹ thuật vẽ mực manga truyền thống,\nchất lượng manga chuyên nghiệp đã xuất bản,\nminh họa chất lượng bảo tàng,\nthẩm mỹ tác phẩm manga huyền thoại.\n\nCHI TIẾT VẼ MỰC:\ngạch chéo nặng,\ngạch nét mảnh,\nphẩy mực (feathering),\nchấm hạt (stippling),\nkết cấu cào mực (scratchboard),\nđường viền chuẩn xác,\nkhối bóng sâu,\nđiểm sáng trắng tinh tế,\nđộ phủ mực đen dày đặc,\nkết xuất vân bề mặt độ chi tiết cao.\n\nÁNH SÁNG:\nánh sáng định hướng ấn tượng,\nbóng đổ gắt,\ntương phản mạnh mẽ,\nchiều sâu thể tích thông qua nét mực,\ntâm trạng điện ảnh u tối.\n\nCHẤT LƯỢNG:\nkiệt tác (masterpiece),\nchất lượng tốt nhất,\nsiêu chi tiết,\nchi tiết 8k,\nnét vẽ cực kỳ sắc nét,\nchất lượng khung tranh manga chuyên nghiệp,\nminh họa đạt giải thưởng.\n\nTÂM TRẠNG:\nkhắc kỷ,\nuy hiếp,\nnghiêm nghị,\nquyết đoán,\ndạn dày sương gió,\nhuyền thoại,\ncảm xúc mãnh liệt,\nsự hiện diện đầy quyền uy.\n\nPROMPT PHỦ ĐỊNH (NEGATIVE PROMPT):\nkhuôn mặt khác, thay đổi danh tính, tái cấu trúc khuôn mặt, thiết kế lại khuôn mặt, nâng cấp khuôn mặt, mặt làm đẹp, mặt do AI tạo, mặt anime, mặt manga thông thường, kiểu tóc mới, biểu cảm khác, tuổi khác, sắc tộc khác, thay đổi tỷ lệ, căn chỉnh đối xứng, bộ lọc làm đẹp, da nhựa, da mịn màng, phong cách dễ thương, chibi, hoạt hình, pixar, disney, truyện tranh phương Tây, render 3D, CGI, chi tiết thấp, mờ nhòe, ánh sáng dịu, tranh kỹ thuật số, ảnh màu, màu nước, tranh sơn dầu, photobash, thiết kế lại nhân vật, trôi dạt danh tính, sửa đổi nét mặt, diễn giải lại nét mặt, tự do nghệ thuật, cách điệu đặc điểm khuôn mặt.\n\nCHỈ THỊ CUỐI CÙNG:\nBảo tồn danh tính gốc, hình học khuôn mặt và biểu cảm với độ chính xác cấp độ pháp y. Chỉ áp dụng phong cách mực vẽ seinen manga đen trắng. Khuôn mặt, độ tương đồng và các đặc điểm độc nhất phải giữ nguyên vẹn.",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Art",
+      "Style",
+      "Transformation"
+    ],
+    "category": "Tạo ảnh & Nghệ thuật",
+    "subcategory": "Manga & Chuyển đổi phong cách",
+    "tags": [
+      "seinen-manga",
+      "chuyển-đổi-phong-cách",
+      "đen-trắng",
+      "bảo-toàn-khuôn-mặt",
+      "mực-truyền-thống"
+    ],
+    "search_keywords_vi": [
+      "chuyển ảnh sang seinen manga",
+      "biến ảnh thành manga đen trắng",
+      "giữ nguyên khuôn mặt ảnh gốc",
+      "phong cách vẽ tranh manga cổ điển",
+      "manga style transfer"
+    ],
+    "use_case": "Chuyển ảnh chân dung chụp thực tế thành tranh truyện tranh Seinen Manga đen trắng chi tiết mà vẫn giữ nguyên 100% diện mạo khuôn mặt.",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "expert",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "gunebak4n",
+      "name": "günebakan",
+      "avatar": "https://avatars.githubusercontent.com/u/119886960?v=4",
+      "identifier": "senoldak",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/seinen-manga-masterpiece-transformation",
+    "created_at": "2026-06-14T11:14:14.846Z"
+  }
+]

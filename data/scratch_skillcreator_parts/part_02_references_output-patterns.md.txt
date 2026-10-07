@@ -1,0 +1,83 @@
+references/output-patterns.md 
+# Các Khuôn Mẫu Đầu Ra (Output Patterns)
+
+Sử dụng các mẫu này khi kỹ năng cần tạo ra kết quả đầu ra đồng nhất và chất lượng cao.
+
+## Khuôn Mẫu Bản Mẫu (Template Pattern)
+
+Cung cấp khuôn mẫu định dạng đầu ra. Điều chỉnh mức độ nghiêm ngặt phù hợp với nhu cầu của bạn.
+
+**Đối với các yêu cầu nghiêm ngặt (như phản hồi API hoặc định dạng dữ liệu):**
+
+```markdown
+## Cấu trúc báo cáo
+
+LUÔN LUÔN sử dụng chính xác cấu trúc mẫu này:
+
+# [Tiêu đề phân tích]
+
+## Tóm tắt điều hành
+[Một đoạn văn tổng quan về các phát hiện chính]
+
+## Phát hiện chính
+- Phát hiện 1 kèm dữ liệu minh chứng
+- Phát hiện 2 kèm dữ liệu minh chứng
+- Phát hiện 3 kèm dữ liệu minh chứng
+
+## Khuyến nghị
+1. Khuyến nghị hành động cụ thể
+2. Khuyến nghị hành động cụ thể
+```
+
+**Đối với hướng dẫn linh hoạt (khi việc thích ứng có lợi hơn):**
+
+```markdown
+## Cấu trúc báo cáo
+
+Dưới đây là định dạng mặc định hợp lý, nhưng hãy linh hoạt vận dụng:
+
+# [Tiêu đề phân tích]
+
+## Tóm tắt điều hành
+[Tổng quan]
+
+## Phát hiện chính
+[Điều chỉnh các mục dựa trên những gì bạn khám phá]
+
+## Khuyến nghị
+[Tùy chỉnh theo ngữ cảnh cụ thể]
+
+Điều chỉnh các phần khi cần thiết cho loại hình phân tích cụ thể.
+```
+
+## Khuôn Mẫu Ví Dụ (Examples Pattern)
+
+Đối với các kỹ năng mà chất lượng đầu ra phụ thuộc vào việc quan sát các ví dụ mẫu, hãy cung cấp các cặp đầu vào/đầu ra:
+
+```markdown
+## Định dạng thông điệp commit
+
+Tạo thông điệp commit theo các ví dụ sau:
+
+**Ví dụ 1:**
+Đầu vào: Thêm xác thực người dùng bằng JWT tokens
+Đầu ra:
+```
+feat(auth): implement JWT-based authentication
+
+Add login endpoint and token validation middleware
+```
+
+**Ví dụ 2:**
+Đầu vào: Sửa lỗi hiển thị ngày tháng không đúng trong báo cáo
+Đầu ra:
+```
+fix(reports): correct date formatting in timezone conversion
+
+Use UTC timestamps consistently across report generation
+```
+
+Tuân thủ phong cách này: type(scope): mô tả ngắn gọn, sau đó là giải thích chi tiết.
+```
+
+Các ví dụ mẫu giúp Claude hiểu rõ phong cách mong muốn và mức độ chi tiết một cách trực quan hơn nhiều so với chỉ dùng mô tả.

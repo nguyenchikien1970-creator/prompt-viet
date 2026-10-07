@@ -1,0 +1,166 @@
+Tools/GetTrending.ts
+#!/usr/bin/env bun
+/**
+ * GitHub Trending Projects Fetcher
+ *
+ * 从GitHub获取trending项目列表
+ * 支持每日/每周趋势，按语言筛选
+ */
+
+import { $ } from "bun";
+
+interface TrendingProject {
+  rank: number;
+  name: string;
+  description: string;
+  language: string;
+  stars: string;
+  starsThisPeriod: string;
+  url: string;
+}
+
+interface TrendingOptions {
+  period: "daily" | "weekly";
+  language?: string;
+  limit: number;
+}
+
+function buildTrendingUrl(options: TrendingOptions): string {
+  const baseUrl = "https://github.com/trending";
+  const since = options.period === "daily" ? "daily" : "weekly";
+  let url = `${baseUrl}?since=${since}`;
+  if (options.language) {
+    url += `&language=${encodeURIComponent(options.language.toLowerCase())}`;
+  }
+  return url;
+}
+
+function parseTrendingProjects(html: string, limit: number): TrendingProject[] {
+  const projects: TrendingProject[] = [];
+  try {
+    const articleRegex = /<article[^>]*>([\s\S]*?)<\/article>/g;
+    const articles = html.match(articleRegex) || [];
+    const articlesToProcess = articles.slice(0, limit);
+    articlesToProcess.forEach((article, index) => {
+      try {
+        const headingMatch = article.match(/<h[12][^>]*>([\s\S]*?)<\/h[12]>/);
+        let repoName: string | null = null;
+        if (headingMatch) {
+          const headingContent = headingMatch[1];
+          const validLinkMatch = headingContent.match(
+            /<a[^>]*href="\/([^\/"\/]+\/[^\/"\/]+)"[^>]*>(?![^<]*login)/
+          );
+          if (validLinkMatch) {
+            repoName = validLinkMatch[1];
+          }
+        }
+        if (!repoName) {
+          const repoMatch = article.match(
+            /<a[^>]*href="\/([a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+)"[^>]*>(?!.*(?:login|stargazers|forks|issues))/
+          );
+          repoName = repoMatch ? repoMatch[1] : null;
+        }
+        const descMatch = article.match(/<p[^>]*class="[^"]*col-9[^"]*"[^>]*>([\s\S]*?)<\/p>/);
+        const description = descMatch
+          ? descMatch[1]
+              .replace(/<[^>]+>/g, "")
+              .replace(/&amp;/g, "&")
+              .replace(/&lt;/g, "<")
+              .replace(/&gt;/g, ">")
+              .replace(/&quot;/g, '"')
+              .trim()
+              .substring(0, 200)
+          : "No description";
+        const langMatch = article.match(/<span[^>]*itemprop="programmingLanguage"[^>]*>([^<]+)<\/span>/);
+        const language = langMatch ? langMatch[1].trim() : "Unknown";
+        const starsMatch = article.match(/<a[^>]*href="\/[^"]+\/stargazers"[^>]*>(\d[\d,]*)\s*stars?/);
+        const totalStars = starsMatch ? starsMatch[1] : "0";
+        const starsAddedMatch = article.match(/(\d[\d,]*)\s*stars?\s*(?:today|this week)/i);
+        const starsAdded = starsAddedMatch ? `+${starsAddedMatch[1]}` : "";
+        if (repoName && !repoName.includes("login") && !repoName.includes("return_to")) {
+          projects.push({
+            rank: index + 1,
+            name: repoName,
+            description,
+            language,
+            stars: totalStars,
+            starsThisPeriod: starsAdded,
+            url: `https://github.com/${repoName}`,
+          });
+        }
+      } catch (error) {
+        console.error(`解析第${index + 1}个项目失败:`, error);
+      }
+    });
+  } catch (error) {
+    console.error("解析trending项目失败:", error);
+  }
+  return projects;
+}
+
+function formatProjects(projects: TrendingProject[], options: TrendingOptions): string {
+  if (projects.length === 0) {
+    return "# GitHub Trending - No Projects Found\n\n没有找到trending项目，可能是网络问题或页面结构变化。";
+  }
+  const periodLabel = options.period === "daily" ? "Daily" : "Weekly";
+  const languageLabel = options.language ? `Language: ${options.language}` : "Language: All";
+  const today = new Date().toISOString().split("T")[0];
+  let output = `# GitHub Trending Projects - ${periodLabel} (${today})\n\n`;
+  output += `📊 **Total:** ${projects.length} projects | **${languageLabel}** | **Period:** ${periodLabel}\n\n`;
+  output += `---\n\n`;
+  projects.forEach((project) => {
+    output += `## ${project.rank}. ${project.name} - ⭐ ${project.stars}`;
+    if (project.starsThisPeriod) {
+      output += ` (${project.starsThisPeriod} this ${options.period})`;
+    }
+    output += `\n`;
+    output += `**Language:** ${project.language}\n`;
+    output += `**Description:** ${project.description}\n`;
+    output += `**URL:** ${project.url}\n\n`;
+  });
+  output += `---\n`;
+  output += `📊 Data from: https://github.com/trending\n`;
+  return output;
+}
+
+async function main() {
+  const args = process.argv.slice(2);
+  let period: "daily" | "weekly" = "weekly";
+  let language: string | undefined;
+  let limit = 10;
+  for (const arg of args) {
+    if (arg === "daily" || arg === "weekly") {
+      period = arg;
+    } else if (arg.startsWith("--language=")) {
+      language = arg.split("=")[1];
+    } else if (arg.startsWith("-l=")) {
+      language = arg.split("=")[1];
+    } else if (arg.startsWith("--limit=")) {
+      limit = parseInt(arg.split("=")[1]) || 10;
+    }
+  }
+  const options: TrendingOptions = { period, language, limit };
+  try {
+    const url = buildTrendingUrl(options);
+    console.error(`正在获取 GitHub trending 数据: ${url}`);
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+    const html = await response.text();
+    const projects = parseTrendingProjects(html, limit);
+    const formatted = formatProjects(projects, options);
+    console.log(formatted);
+    if (projects.length === 0) {
+      const debugFile = `/tmp/github-trending-debug-${Date.now()}.html`;
+      await Bun.write(debugFile, html);
+      console.error(`\n调试: 原始HTML已保存到 ${debugFile}`);
+    }
+  } catch (error) {
+    console.error("❌ 获取trending数据失败:");
+    console.error(error);
+    process.exit(1);
+  }
+}
+
+main();

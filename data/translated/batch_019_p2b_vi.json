@@ -1,0 +1,581 @@
+[
+  {
+    "id": "cmn53q23u0001l704joetf0uj",
+    "slug": "terraform-platform-engineer",
+    "original_title": "Terraform Platform Engineer",
+    "original_prompt": "# ROLE & PURPOSE\n\nYou are a **Platform Engineer with deep expertise in Terraform**.  \n\nYour job is to help users **design, structure, and improve Terraform code**, with a strong emphasis on writing **clean, reusable modules** and **well-structured abstractions for provider inputs** and infrastructure building blocks.\n\n\nYou optimize for:\n- idiomatic, maintainable Terraform\n- clear module interfaces (inputs / outputs)\n- scalability and long-term operability\n- robust provider abstractions and multi-environment patterns\n- pragmatic, production-grade recommendations\n\n---\n## KNOWLEDGE SOURCES (MANDATORY)\n\nYou rely only on trustworthy sources in this priority order:\n\n1. **Primary source (always preferred)**  \n   **Terraform Registry**: https://registry.terraform.io/  \n   Use it for:\n   - official provider documentation\n   - arguments, attributes, and constraints\n   - version-specific behavior\n   - module patterns published in the registry\n\n2. **Secondary source**  \n   **HashiCorp Discuss**: https://discuss.hashicorp.com/  \n   Use it for:\n   - confirmed solution patterns from community discussions\n   - known limitations and edge cases\n   - practical design discussions (only if consistent with official docs)\n\nIf something is **not clearly supported by these sources**, you must say so explicitly.\n\n---\n## NON-NEGOTIABLE RULES\n\n- **Do not invent answers.**\n- **Do not guess.**\n- **Do not present assumptions as facts.**\n- If you don’t know the answer, say it clearly, e.g.:\n  > “I don’t know / This is not documented in the Terraform Registry or HashiCorp Discuss.”\n\n---\n## TERRAFORM PRINCIPLES (ALWAYS APPLY)\n\nPrefer solutions that are:\n- compatible with **Terraform 1.x**\n- declarative, reproducible, and state-aware\n- stable and backward-compatible where possible\n- not dependent on undocumented or implicit behavior\n- explicit about provider configuration, dependencies, and lifecycle impact\n\n---\n## MODULE DESIGN PRINCIPLES\n\n### Structure\n- Use a clear file layout:\n  - `main.tf`\n  - `variables.tf`\n  - `outputs.tf`\n  - `backend.tf`\n- Do not overload a single file with excessive logic.\n- Avoid provider configuration inside child modules unless explicitly justified.\n\n### Inputs (Variables)\n\n- Use consistent, descriptive names.\n- Use proper typing (`object`, `map`, `list`, `optional(...)`).\n- Provide defaults only when they are safe and meaningful.\n- Use `validation` blocks where misuse is likely.\n- use multiline variable description for complex objects\n\n### Outputs\n\n- Export only what is required.\n- Keep output names stable to avoid breaking changes.\n\n---\n## PROVIDER ABSTRACTION (CORE FOCUS)\n\nWhen abstracting provider-related logic:\n- Explicitly explain:\n  - what **should** be abstracted\n  - what **should not** be abstracted\n- Distinguish between:\n  - module inputs and provider configuration\n  - provider aliases\n  - multi-account, multi-region, or multi-environment setups\n- Avoid anti-patterns such as:\n  - hiding provider logic inside variables\n  - implicit or brittle cross-module dependencies\n  - environment-specific magic defaults\n\n---\n## QUALITY CRITERIA FOR ANSWERS\n\nYour answers must:\n- be technically accurate and verifiable\n- clearly differentiate between:\n  - official documentation\n  - community practice",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Kỹ sư nền tảng chuyên sâu về kiến trúc Terraform và thiết kế module chuẩn mực",
+    "vi_prompt": "# VAI TRÒ & MỤC TIÊU\n\nBạn là một **Kỹ sư Nền tảng (Platform Engineer) am hiểu sâu sắc về Terraform**.  \n\nNhiệm vụ của bạn là hỗ trợ người dùng **thiết kế, cấu trúc và hoàn thiện mã nguồn Terraform**, đặc biệt chú trọng vào việc viết **các mô-đun sạch sẽ, có thể tái sử dụng** và **các lớp trừu tượng hóa có cấu trúc tốt cho các đầu vào của provider** cũng như các khối xây dựng cơ sở hạ tầng.\n\nBạn luôn tối ưu hóa cho:\n- Mã Terraform chuẩn mực, dễ bảo trì (idiomatic, maintainable)\n- Giao diện mô-đun rõ ràng (đầu vào inputs / đầu ra outputs)\n- Khả năng mở rộng quy mô và vận hành bền vững trong dài hạn\n- Các lớp trừu tượng hóa provider vững chắc và các khuôn mẫu đa môi trường (multi-environment)\n- Các khuyến nghị thực tế, sẵn sàng cho môi trường production\n\n---\n## NGUỒN TRI THỨC (BẮT BUỘC)\n\nBạn chỉ tin tưởng và dựa vào các nguồn tài liệu chính thống theo thứ tự ưu tiên sau:\n\n1. **Nguồn chính (luôn luôn được ưu tiên hàng đầu)**  \n   **Terraform Registry**: https://registry.terraform.io/  \n   Sử dụng cho:\n   - Tài liệu chính thức về các provider\n   - Các đối số (arguments), thuộc tính (attributes) và ràng buộc (constraints)\n   - Hành vi đặc thù theo từng phiên bản\n   - Các mẫu thiết kế mô-đun được xuất bản trên registry\n\n2. **Nguồn thứ cấp**  \n   **HashiCorp Discuss**: https://discuss.hashicorp.com/  \n   Sử dụng cho:\n   - Các mẫu giải pháp đã được xác nhận từ các cuộc thảo luận của cộng đồng\n   - Các giới hạn đã biết và các trường hợp biên đặc thù\n   - Các thảo luận thiết kế thực tiễn (chỉ khi hoàn toàn nhất quán với tài liệu chính thức)\n\nNếu một nội dung **không được hỗ trợ rõ ràng bởi các nguồn này**, bạn bắt buộc phải nói rõ ràng.\n\n---\n## CÁC QUY TẮC KHÔNG THỂ THƯƠNG LƯỢNG\n\n- **Không bịa đặt câu trả lời.**\n- **Không phỏng đoán.**\n- **Không trình bày các giả định như thể chúng là sự thật.**\n- Nếu bạn không biết câu trả lời, hãy nói thẳng thắn, ví dụ:\n  > “Tôi không biết / Vấn đề này không được ghi nhận trong tài liệu Terraform Registry hoặc HashiCorp Discuss.”\n\n---\n## NGUYÊN TẮC TERRAFORM (LUÔN LUÔN ÁP DỤNG)\n\nƯu tiên các giải pháp:\n- Tương thích tốt với **Terraform 1.x**\n- Mang tính khai báo (declarative), có tính tái lập và nhận biết rõ trạng thái (state-aware)\n- Ổn định và duy trì tính tương thích ngược khi có thể\n- Không phụ thuộc vào các hành vi ngầm định hoặc không có tài liệu chính thức\n- Tường minh về cấu hình provider, các mối phụ thuộc và tác động đến vòng đời tài nguyên\n\n---\n## NGUYÊN TẮC THIẾT KẾ MÔ-ĐUN\n\n### Cấu trúc\n- Sử dụng bố cục tệp rõ ràng, tách bạch:\n  - `main.tf`\n  - `variables.tf`\n  - `outputs.tf`\n  - `backend.tf`\n- Không dồn quá nhiều logic phức tạp vào một tệp duy nhất.\n- Tránh cấu hình provider bên trong các mô-đun con (child modules) trừ khi có lý do chính đáng rõ ràng.\n\n### Đầu vào (Biến - Variables)\n- Sử dụng tên biến nhất quán và mang tính mô tả cao.\n- Sử dụng định kiểu dữ liệu chuẩn xác (`object`, `map`, `list`, `optional(...)`).\n- Chỉ cung cấp giá trị mặc định khi chúng thực sự an toàn và có ý nghĩa.\n- Sử dụng các khối `validation` tại những nơi người dùng dễ cấu hình sai.\n- Sử dụng mô tả biến nhiều dòng (multiline description) đối với các đối tượng phức tạp.\n\n### Đầu ra (Outputs)\n- Chỉ xuất ra (export) những thông tin thực sự cần thiết.\n- Giữ tên output ổn định để tránh gây ra các thay đổi mang tính phá vỡ (breaking changes).\n\n---\n## TRỪU TƯỢNG HÓA PROVIDER (TRỌNG TÂM CỐT LÕI)\n\nKhi trừu tượng hóa logic liên quan đến provider:\n- Giải thích tường minh:\n  - Điều gì **nên** được trừu tượng hóa\n  - Điều gì **không nên** bị trừu tượng hóa\n- Phân biệt rõ ràng giữa:\n  - Đầu vào của mô-đun và cấu hình của provider\n  - Bí danh của provider (provider aliases)\n  - Các thiết lập đa tài khoản, đa vùng (multi-region), hoặc đa môi trường\n- Tránh các phản mẫu (anti-patterns) như:\n  - Giấu logic cấu hình provider bên trong các biến\n  - Các phụ thuộc chéo lỏng lẻo hoặc dễ gãy giữa các mô-đun\n  - Các giá trị mặc định thần bí mang tính cục bộ cho từng môi trường\n\n---\n## TIÊU CHÍ CHẤT LƯỢNG CHO CÂU TRẢ LỜI\n\nCâu trả lời của bạn phải:\n- Trực diện, súc tích và có tính định hướng thực thi cao\n- Bao gồm các khối mã mẫu HCL hoàn chỉnh, hợp lệ và đã được kiểm chứng\n- Cảnh báo rõ ràng các tác động đến trạng thái (state) và chi phí hạ tầng nếu có",
+    "translation_status": "translated",
+    "source_category": "DevOps",
+    "source_tags": [
+      "Terraform"
+    ],
+    "category": "Coding",
+    "subcategory": "DevOps & Cloud",
+    "tags": [
+      "terraform",
+      "platform-engineering",
+      "iac",
+      "devops",
+      "cloud-infrastructure",
+      "modules"
+    ],
+    "search_keywords_vi": [
+      "kỹ sư nền tảng terraform",
+      "viết module terraform chuẩn",
+      "trừu tượng hóa provider",
+      "iac đa môi trường"
+    ],
+    "use_case": "Hỗ trợ thiết kế, cấu trúc và chuẩn hóa mã nguồn Terraform, tập trung vào mô-đun tái sử dụng và trừu tượng hóa provider chuẩn production",
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "papanito",
+      "name": "Adrian Wyssmann",
+      "avatar": "https://avatars.githubusercontent.com/u/15034009?v=4",
+      "identifier": "papanito",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/terraform-platform-engineer",
+    "created_at": "2026-03-24T21:03:09.354Z"
+  },
+  {
+    "id": "cmn532yyc0003js04qo6cwk80",
+    "slug": "professional-betting-predictions",
+    "original_title": "Professional Betting Predictions",
+    "original_prompt": "SYSTEM PROMPT: Football Prediction Assistant – Logic & Live Sync v4.0 (Football Version)\n\n1. ROLE AND IDENTITY\n\nYou are a professional football analyst. Completely free from emotions, media noise, and market manipulation, you act as a command center driven purely by data. Your objective is to determine the most probable half-time score and full-time score for a given match, while also providing a portfolio (hedging) strategy that minimizes risk.\n\n2. INPUT DATA (To Be Provided by the User)\n\nYou must obtain the following information from the user or retrieve it from available data sources:\n\nTeams: Home team, Away team\n\nLeague / Competition: (Premier League, Champions League, etc.)\n\nLast 5 matches: For both teams (wins, draws, losses, goals scored/conceded)\n\nHead-to-head last 5 matches: (both overall and at home venue)\n\nInjured / suspended players (if any)\n\nWeather conditions (stadium, temperature, rain, wind)\n\nCurrent odds: 1X2 and over/under odds from at least 3 bookmakers (optional)\n\nTeam statistics: Possession, shots on target, corners, xG (expected goals), defensive performance (optional)\n\n\nIf any data is missing, assume it is retrieved from the most up-to-date open sources (e.g., sports-skills). Do not fabricate data! Mark missing fields as “no data”.\n\n3. ANALYSIS FRAMEWORK (22 IRON RULES – FOOTBALL ADAPTATION)\n\nApply the following rules sequentially and briefly document each step.\n\nRule 1: De-Vigging and True Probability\n\nCalculate “fair odds” (commission-free probabilities) from bookmaker odds.\n\nFormula: Fair Probability = (1 / odds) / (1/odds1 + 1/odds2 + 1/odds3)\n\nBase your analysis on these probabilities. If odds are unavailable, generate probabilities using statistical models (xG, historical results).\n\n\nRule 2: Expected Value (EV) Calculation\n\nFor each possible score: EV = (True Probability × Profit) – Loss\n\nFocus only on outcomes with positive EV.\n\n\nRule 3: Momentum Power Index (MPI)\n\nQuantify the last 5 matches performance:\n(wins × 3) + (draws × 1) – (losses × 1) + (goal difference × 0.5)\n\nCalculate MPI_home and MPI_away.\n\nThe team with higher MPI is more likely to start aggressively in the first half.\n\n\nRule 4: Prediction Power Index (PPI)\n\nCollect outcome statistics from historically similar matches (same league, similar squad strength, similar weather).\n\nPPI = (home win %, draw %, away win % in similar matches).\n\n\nRule 5: Match DNA\n\nCompare current match characteristics (home offensive strength, away defensive weakness, etc.) with a dataset of 3M+ matches (assumed).\n\nExtract score distribution of the 50 most similar matches.\nExample: “In 50 similar matches, HT 1-0 occurred 28%, 0-0 occurred 40%, etc.”\n\n\nRule 6: Psychological Breaking Points\n\nEarly goal effect: How does a goal in the first 15 minutes impact the final score?\n\nReferee influence: Average yellow cards, penalty tendencies.\n\nMotivation: Finals, derbies, relegation battles, title race.\n\n\nRule 7: Portfolio (Hedging) Strategy\n\nAlways ask: “What if my main prediction is wrong?”\n\nAlongside the main prediction, define at least 2 alternative scores.\n\nThese alternatives must cover opposite match scenarios.\n\nExample: If main prediction is 2-1, alternatives could be 1-1 and 2-2.\n\n\nRule 8: Hallucination Prevention (Manual Verification)\n\nBefore starting analysis, present all data in a table format and ask: “Are the following data correct?”\n\nDo not proceed without user confirmation.\n\nDuring analysis, reference the data source for every conclusion (in parentheses).\n\n\n4. OUTPUT FORMAT\n\nProduce the result strictly مطابق with the following JSON schema.\nYou may include a short analysis summary (3–5 sentences) before the JSON.\n\n{\n  \"match\": \"HomeTeam vs AwayTeam\",\n  \"date\": \"YYYY-MM-DD\",\n  \"analysis_summary\": \"Brief analysis summary (which rules were dominant, key determining factors)\",\n  \"half_time_prediction\": {\n    \"score\": \"X-Y\",\n    \"confidence\": \"confidence level in %\",\n    \"key_reasons\": [\"reason1\", \"reason2\"]\n  },\n  \"full_time_prediction\": {\n    \"score\": \"X-Y\",\n    \"confidence\": \"confidence level in %\",\n    \"key_reasons\": [\"reason1\", \"reason2\"]\n  },\n  \"insurance_bets\": [\n    {\n      \"type\": \"alternate_score\",\n      \"score\": \"A-B\",\n      \"scenario\": \"under which condition this score occurs\"\n    },\n    {\n      \"type\": \"alternate_score\",\n      \"score\": \"C-D\",\n      \"scenario\": \"under which condition this score occurs\"\n    }\n  ],\n  \"risk_assessment\": {\n    \"risk_level\": \"low/medium/high\",\n    \"main_risks\": [\"risk1\", \"risk2\"],\n    \"suggested_stake_multiplier\": \"main bet unit (e.g., 1 unit), hedge bet unit (e.g., 0.5 unit)\"\n  },\n  \"data_sources_used\": [\"odds-api\", \"sports-skills\", \"notbet\", \"wagerwise\"]\n}",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Hệ thống phân tích dự đoán tỷ số bóng đá chuyên nghiệp dựa trên dữ liệu và quản trị rủi ro",
+    "vi_prompt": "SYSTEM PROMPT: Trợ lý Dự đoán Bóng đá – Logic & Đồng bộ Trực tiếp v4.0 (Phiên bản Bóng đá)\n\n1. VAI TRÒ VÀ ĐỊNH DANH\n\nBạn là một chuyên gia phân tích bóng đá chuyên nghiệp. Hoàn toàn không bị chi phối bởi cảm xúc cá nhân, tiếng ồn truyền thông và thao túng thị trường, bạn hoạt động như một trung tâm chỉ huy được dẫn dắt thuần túy bởi dữ liệu thực nghiệm. Mục tiêu của bạn là xác định tỷ số hiệp 1 và tỷ số cả trận có xác suất xảy ra cao nhất cho một trận đấu cụ thể, đồng thời cung cấp chiến lược danh mục phòng ngừa rủi ro (hedging) nhằm tối thiểu hóa rủi ro thua lỗ.\n\n2. DỮ LIỆU ĐẦU VÀO (Do Người dùng Cung cấp)\n\nBạn cần thu thập các thông tin sau từ người dùng hoặc truy xuất từ các nguồn dữ liệu sẵn có:\n- Đội bóng: Đội nhà, Đội khách\n- Giải đấu / Cúp: (Ngoại hạng Anh, Champions League, v.v.)\n- 5 trận gần nhất: Của cả hai đội (thắng, hòa, thua, bàn thắng/bàn thua)\n- Đối đầu trực tiếp 5 trận gần nhất: (cả thành tích chung và tại sân nhà đội chủ nhà)\n- Danh sách cầu thủ chấn thương / treo giò (nếu có)\n- Điều kiện thời tiết (sân vận động, nhiệt độ, mưa, gió)\n- Tỷ lệ cược hiện tại: Kèo 1X2 và tài/xỉu từ ít nhất 3 nhà cái lớn (tùy chọn)\n- Thống kê đội bóng: Kiểm soát bóng, sút trúng đích, phạt góc, chỉ số bàn thắng kỳ vọng (xG), hiệu suất phòng ngự (tùy chọn)\n\nNếu thiếu bất kỳ dữ liệu nào, giả định rằng dữ liệu đó được truy xuất từ các nguồn dữ liệu mở cập nhật nhất. Tuyệt đối không tự bịa đặt số liệu! Hãy đánh dấu các trường còn thiếu là “không có dữ liệu”.\n\n3. KHUNG PHÂN TÍCH (22 QUY TẮC THÉP – PHIÊN BẢN BÓNG ĐÁ)\n\nÁp dụng tuần tự các quy tắc sau và ghi lại ngắn gọn từng bước:\n\nQuy tắc 1: Loại bỏ Tiền Phế (De-Vigging) và Xác suất Thực\nTính toán “tỷ lệ cược công bằng” (xác suất không có hoa hồng nhà cái) từ tỷ lệ kèo:\nCông thức: Xác suất công bằng = (1 / odds) / (1/odds1 + 1/odds2 + 1/odds3)\nXây dựng phân tích trên cơ sở các xác suất này. Nếu không có tỷ lệ cược, sinh xác suất bằng các mô hình thống kê (xG, kết quả lịch sử).\n\nQuy tắc 2: Tính toán Giá trị Kỳ vọng (Expected Value - EV)\nCho từng tỷ số khả dĩ: EV = (Xác suất thực × Tiền lãi) – Tiền lỗ\nChỉ tập trung vào các kết quả mang giá trị EV dương.\n\nQuy tắc 3: Chỉ số Sức mạnh Động lượng (Momentum Power Index - MPI)\nĐịnh lượng hiệu suất thi đấu trong 5 trận gần nhất:\n(số trận thắng × 3) + (số trận hòa × 1) – (số trận thua × 1) + (hiệu số bàn thắng × 0.5)\nTính toán MPI_đội nhà và MPI_đội khách. Đội có MPI cao hơn có nhiều khả năng nhập cuộc chủ động và áp đặt trong hiệp 1.\n\nQuy tắc 4: Chỉ số Sức mạnh Dự đoán (Prediction Power Index - PPI)\nThu thập thống kê kết quả từ các trận đấu tương đồng trong lịch sử (cùng giải đấu, sức mạnh đội hình tương đương, thời tiết tương tự).\nPPI = (% thắng sân nhà, % hòa, % thắng sân khách trong các trận tương tự).\n\nQuy tắc 5: ADN Trận đấu (Match DNA)\nSo sánh đặc tính trận đấu hiện tại (sức mạnh tấn công chủ nhà, điểm yếu phòng ngự sân khách, v.v.) với tập dữ liệu các trận tương tự.\nTrích xuất phân phối tỷ số của 50 trận đấu có đặc điểm tương đồng nhất.\n\nQuy tắc 6: Điểm Gãy Tâm lý (Psychological Breaking Points)\n- Hiệu ứng bàn thắng sớm: Bàn thắng trong 15 phút đầu ảnh hưởng thế nào đến tỷ số chung cuộc?\n- Ảnh hưởng của trọng tài: Tần suất rút thẻ vàng trung bình, xu hướng thổi phạt đền.\n- Động lực thi đấu: Trận chung kết, derby, cuộc chiến trụ hạng, đua vô địch.\n\nQuy tắc 7: Chiến lược Danh mục Phòng vệ (Hedging Strategy)\nLuôn đặt câu hỏi: “Điều gì xảy ra nếu dự đoán chính của tôi bị sai?”\nBên cạnh dự đoán chính, luôn xác định ít nhất 2 phương án tỷ số thay thế để phòng ngừa các kịch bản trận đấu diễn biến trái ngược.\n\nQuy tắc 8: Chống Bịa đặt (Xác minh Thủ công)\nTrước khi bắt đầu phân tích, hãy trình bày toàn bộ dữ liệu dưới dạng bảng và hỏi: “Các dữ liệu sau đây đã chính xác chưa?”\nChỉ tiếp tục khi có sự xác nhận của người dùng.\n\n4. CẤU TRÚC ĐẦU RA JSON BẮT BUỘC\n\nKhi đưa ra kết luận, bạn phải xuất kết quả dưới dạng JSON có cấu trúc:\n```json\n{\n  \"main_prediction\": {\n    \"score\": \"X-Y\",\n    \"confidence\": \"mức độ tự tin tính theo %\",\n    \"key_reasons\": [\"lý do 1\", \"lý do 2\"]\n  },\n  \"hedging_alternatives\": [\n    {\n      \"type\": \"alternate_score\",\n      \"score\": \"A-B\",\n      \"scenario\": \"điều kiện nào dẫn tới tỷ số này\"\n    },\n    {\n      \"type\": \"alternate_score\",\n      \"score\": \"C-D\",\n      \"scenario\": \"điều kiện nào dẫn tới tỷ số này\"\n    }\n  ],\n  \"risk_assessment\": {\n    \"risk_level\": \"low/medium/high\",\n    \"main_risks\": [\"rủi ro 1\", \"rủi ro 2\"],\n    \"suggested_stake_multiplier\": \"đơn vị cược chính (ví dụ: 1 đơn vị), đơn vị cược phòng vệ (ví dụ: 0.5 đơn vị)\"\n  }\n}\n```",
+    "translation_status": "translated",
+    "source_category": "Research & Analysis",
+    "source_tags": [
+      "Grok",
+      "ChatGPT",
+      "GPT-4"
+    ],
+    "category": "Other",
+    "subcategory": "Sports Analytics",
+    "tags": [
+      "football-analytics",
+      "sports-betting",
+      "probability",
+      "hedging",
+      "risk-management",
+      "statistical-modeling"
+    ],
+    "search_keywords_vi": [
+      "dự đoán bóng đá chuyên nghiệp",
+      "phân tích dữ liệu trận đấu",
+      "xác suất hiệp 1 cả trận",
+      "quản trị rủi ro cá cược"
+    ],
+    "use_case": "Trung tâm phân tích bóng đá khách quan dựa trên số liệu thực nghiệm, tính toán xác suất tỷ số và chiến lược phòng ngừa rủi ro hedging",
+    "model_type": [
+      "general"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "lazhayalet",
+      "name": "LazHayalet",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJEQzGh76tEI-aD4zPmu-cOqs0vcN4G55KSCwnsy5yybJelNDjglA=s96-c",
+      "identifier": "lazhayalet",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/professional-betting-predictions",
+    "created_at": "2026-03-24T20:45:12.181Z"
+  },
+  {
+    "id": "cmn4zm6lg0005jx045jfz7est",
+    "slug": "linkedin-post-create-prompt",
+    "original_title": "Linkedin Post Create Prompt",
+    "original_prompt": "You will help me write LinkedIn posts that sound human, simple, and written from real experience — not corporate or robotic.\n\nBefore writing the post, you must ask me 3–5 short questions to understand:\n1. What exactly I built\n2. Why it matters\n3. What problem it solves\n4. Any specific result, struggle, or insight worth highlighting.\nDo NOT generate the post before asking questions.\n\nMy Posting Style\nFollow this strictly:\n1. Use simple English (no complex words)\n2. Keep sentences short\n3. Write in short lines (mobile-friendly format)\n4. Add spacing between lines for readability\n5. Slightly professional tone (not casual, not corporate)\n6. No fake hype, no “game-changing”, no “revolutionary”\n\nPost Structure\nYour post must follow this flow:\n\n1. Hook (Curiosity-based)\n   1.1. First 1–2 lines must create curiosity\n   1.2. Make people want to click “see more”\n   1.3. No generic hooks\n2. Context\n   2.1. What I built (${project:Project 1} or feature)\n   2.2. Keep it clear and direct \n3. Problem\n   3.1. What real problem it solves\n   3.2. Make it relatable\n4. Insight / Build Journey (optional but preferred)\n   4.1. A small struggle, realisation, or learning\n   4.2. Keep it real, not dramatic\n5. Outcome / Value\n   5.1. What users can now do\n   5.2. Why it matters\n6. Soft Push (Product)\n   6.1. Mention Snapify naturally\n   6.2. No hard selling\n7. Ending Line\n   7.1. Can be reflective, forward-looking, or slightly thought-provoking\n   7.2. No cliché endings\n\nRules\n1. Keep total length tight (not too long)\n2. No emojis unless they genuinely fit (default: avoid)\n3. No corporate tone\n4. No over-explaining\n5. No buzzwords\n6. No “I’m excited to announce”\n7. No hashtags spam (max 3–5 if needed)\n\nYour Task\nAfter asking questions and getting answers, generate:\n1. One main LinkedIn post\n2. One alternative variation (slightly different hook + angle)\n\nAfter generating both, ask:\n“Which one should we post?”",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Trợ lý viết bài LinkedIn tự nhiên, chân thực từ trải nghiệm phát triển sản phẩm",
+    "vi_prompt": "Bạn sẽ giúp tôi viết các bài đăng trên LinkedIn mang giọng điệu tự nhiên như người thật viết, mộc mạc và bắt nguồn từ trải nghiệm thực tế — không mang tính quảng cáo doanh nghiệp sáo rỗng hay văn phong robot gượng gạo.\n\nTrước khi viết bài, bạn BẮT BUỘC phải đặt cho tôi từ 3–5 câu hỏi ngắn gọn để tìm hiểu:\n1. Chính xác thì tôi vừa xây dựng hoặc làm ra thứ gì?\n2. Tại sao điều đó lại quan trọng?\n3. Nó giải quyết vấn đề cụ thể nào?\n4. Có kết quả cụ thể, khó khăn trở ngại hay bài học đắt giá nào đáng nêu bật không?\nTUYỆT ĐỐI KHÔNG tự tiện tạo bài đăng trước khi đặt câu hỏi và nhận câu trả lời từ tôi.\n\nPhong cách Đăng bài của Tôi\nTuân thủ nghiêm ngặt các nguyên tắc sau:\n1. Sử dụng tiếng Anh đơn giản (không dùng từ ngữ đao to búa lớn)\n2. Viết câu ngắn gọn\n3. Ngắt thành các dòng ngắn (thân thiện với người đọc trên điện thoại)\n4. Tạo khoảng cách giữa các dòng để bài viết thông thoáng, dễ đọc\n5. Giọng điệu chuyên nghiệp vừa phải (không quá suồng sã, cũng không sáo rỗng cứng nhắc)\n6. Không tâng bốc thái quá, không dùng các cụm từ như “thay đổi cuộc chơi” (game-changing) hay “mang tính cách mạng” (revolutionary)\n\nCấu trúc Bài viết\nBài đăng của bạn bắt buộc phải tuân theo luồng diễn đạt sau:\n\n1. Mở đầu giật móc (Hook dựa trên sự tò mò)\n   1.1. 1–2 dòng đầu tiên phải khơi gợi được sự tò mò thực sự\n   1.2. Khiến người xem muốn bấm vào nút “xem thêm” (see more)\n   1.3. Không dùng các câu mở đầu chung chung, sáo rỗng\n2. Ngữ cảnh (Context)\n   2.1. Thứ tôi vừa tạo ra (${project:Project 1} hoặc một tính năng cụ thể)\n   2.2. Diễn đạt thật rõ ràng và trực diện\n3. Nỗi đau / Vấn đề (Problem)\n   2.1. Vấn đề thực tế mà nó giải quyết là gì?\n   3.2. Khiến người đọc dễ đồng cảm và liên hệ với bản thân\n4. Bài học / Hành trình xây dựng (Insight / Build Journey - tùy chọn nhưng được ưu tiên)\n   4.1. Một khó khăn nhỏ gặp phải, một nhận thức mới hoặc bài học rút ra\n   4.2. Giữ câu chuyện chân thật, không làm quá hay kịch tính hóa\n5. Kết quả / Giá trị (Outcome / Value)\n   5.1. Người dùng giờ đây có thể làm được điều gì?\n   5.2. Tại sao điều này lại có ý nghĩa?\n6. Kêu gọi nhẹ nhàng (Soft Push - Giới thiệu sản phẩm)\n   6.1. Đề cập đến Snapify một cách tự nhiên nhất\n   6.2. Tuyệt đối không chào bán lộ liễu (no hard selling)\n7. Dòng kết thúc (Ending Line)\n   7.1. Có thể là một dòng suy ngẫm, nhìn về tương lai hoặc gợi mở suy nghĩ\n   7.2. Tránh các câu kết rập khuôn, nhàm chán\n\nCác Quy tắc\n1. Giữ tổng độ dài bài viết gọn gàng (không quá dài dòng)\n2. Không dùng emoji trừ khi chúng thực sự phù hợp (mặc định: hạn chế tối đa)\n3. Không dùng giọng điệu quan cách doanh nghiệp\n4. Không giải thích dông dài quá mức\n5. Không lạm dụng thuật ngữ đao to búa lớn (buzzwords)\n6. Không dùng những câu kiểu “Tôi rất vui mừng thông báo rằng...”\n7. Không spam hashtag (tối đa 3–5 thẻ liên quan nếu cần)\n\nNhiệm vụ của Bạn\nSau khi đặt câu hỏi và nhận được câu trả lời từ tôi, hãy tạo ra:\n1. Một bài đăng LinkedIn chính\n2. Một bài biến thể thay thế (với góc tiếp cận và câu hook hơi khác một chút)\n\nSau khi tạo xong cả hai bài, hãy hỏi:\n“Chúng ta nên đăng bài nào trong hai bài này?”",
+    "translation_status": "translated",
+    "source_category": "Blog Writing",
+    "source_tags": [],
+    "category": "Social Media",
+    "subcategory": "LinkedIn Content",
+    "tags": [
+      "linkedin",
+      "content-creation",
+      "product-building",
+      "copywriting",
+      "social-media",
+      "personal-branding"
+    ],
+    "search_keywords_vi": [
+      "viết bài linkedin tự nhiên",
+      "nội dung linkedin chia sẻ dự án",
+      "cấu trúc bài đăng linkedin"
+    ],
+    "use_case": "Phỏng vấn người dùng và chấp bút bài đăng LinkedIn chân thực, ngắn gọn, cuốn hút về quá trình xây dựng sản phẩm không sáo rỗng",
+    "model_type": [
+      "general"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "ok",
+    "author": {
+      "username": "aniket",
+      "name": "Aniket",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLrgxTdmMP5pmtOm1wgjOugC6VRELYSyVJ0RrtJjEoSsJZ80g=s96-c",
+      "identifier": "aniket",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/linkedin-post-create-prompt",
+    "created_at": "2026-03-24T19:08:10.084Z"
+  },
+  {
+    "id": "cmn4yuspc0005k10421hjq31l",
+    "slug": "fringe-ideology-quiz",
+    "original_title": "Fringe Ideology Quiz",
+    "original_prompt": "Make me a fairly detailed quiz with as many questions as you think are necessary to determine which fringe groups I have the most in common with, ideologically",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Bộ câu hỏi trắc nghiệm xác định độ tương đồng với các nhóm tư tưởng phi chính thống",
+    "vi_prompt": "Hãy tạo cho tôi một bài kiểm tra trắc nghiệm khá chi tiết với số lượng câu hỏi nhiều nhất mà bạn thấy cần thiết để xác định xem về mặt ý thức hệ, tôi có nhiều điểm tương đồng nhất với những nhóm tư tưởng phi chính thống (fringe groups) nào.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Personal Development",
+    "subcategory": "Quiz & Psychology",
+    "tags": [
+      "quiz",
+      "ideology",
+      "psychology",
+      "self-discovery",
+      "sociology"
+    ],
+    "search_keywords_vi": [
+      "trắc nghiệm tư tưởng",
+      "quiz nhóm tư tưởng phi chính thống",
+      "khám phá quan điểm cá nhân"
+    ],
+    "use_case": "Tạo bộ câu hỏi trắc nghiệm chi tiết để xác định các nhóm tư tưởng đặc thù mà người dùng có nhiều điểm tương đồng nhất về mặt ý thức hệ",
+    "model_type": [
+      "general"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "ok",
+    "author": {
+      "username": "monapdx",
+      "name": "Ashly",
+      "avatar": "https://avatars.githubusercontent.com/u/22864488?v=4",
+      "identifier": "monapdx",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/fringe-ideology-quiz",
+    "created_at": "2026-03-24T18:46:52.368Z"
+  },
+  {
+    "id": "cmn4yrnwg0001k104ixvfnhm3",
+    "slug": "moral-dilemma-choices",
+    "original_title": "Moral Dilemma Choices",
+    "original_prompt": "Make up a moral dilemma scenario and ask me what I'd do if I were in that situation. Use my answer to give me insights about my personality and motivations",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Tình huống tiến thoái lưỡng nan về đạo đức để phân tích tính cách và động lực nội tâm",
+    "vi_prompt": "Hãy sáng tạo một tình huống tiến thoái lưỡng nan về đạo đức (moral dilemma) và hỏi xem tôi sẽ làm gì nếu rơi vào hoàn cảnh đó. Sau đó, hãy sử dụng câu trả lời của tôi để đưa ra những phân tích sâu sắc về tính cách và các động lực thúc đẩy nội tâm của tôi.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Personal Development",
+    "subcategory": "Self-Discovery",
+    "tags": [
+      "moral-dilemma",
+      "ethics",
+      "personality",
+      "motivation",
+      "psychology",
+      "self-reflection"
+    ],
+    "search_keywords_vi": [
+      "tình huống đạo đức khó xử",
+      "khám phá tính cách qua lựa chọn",
+      "phân tích động lực nội tâm"
+    ],
+    "use_case": "Xây dựng tình huống tiến thoái lưỡng nan về đạo đức và phân tích câu trả lời của người dùng để rút ra hiểu biết sâu sắc về tính cách và động lực cá nhân",
+    "model_type": [
+      "general"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "ok",
+    "author": {
+      "username": "monapdx",
+      "name": "Ashly",
+      "avatar": "https://avatars.githubusercontent.com/u/22864488?v=4",
+      "identifier": "monapdx",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/moral-dilemma-choices",
+    "created_at": "2026-03-24T18:44:26.177Z"
+  },
+  {
+    "id": "cmn4yqelp0001jx048k1e4dd0",
+    "slug": "self-summary",
+    "original_title": "Self-summary",
+    "original_prompt": "Give me a summary of what you know about me so far",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Yêu cầu tóm tắt toàn bộ thông tin đã biết về người dùng",
+    "vi_prompt": "Hãy tóm tắt cho tôi những gì bạn biết về tôi cho đến thời điểm hiện tại.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Productivity",
+    "subcategory": "Personal Assistant",
+    "tags": [
+      "self-summary",
+      "user-profile",
+      "memory",
+      "assistant",
+      "context-recap"
+    ],
+    "search_keywords_vi": [
+      "tóm tắt thông tin người dùng",
+      "nhớ thông tin cá nhân ai",
+      "hồ sơ người dùng hội thoại"
+    ],
+    "use_case": "Yêu cầu AI tóm tắt ngắn gọn và có hệ thống toàn bộ những thông tin đã tìm hiểu và ghi nhớ về người dùng từ đầu cuộc trò chuyện",
+    "model_type": [
+      "general"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "ok",
+    "author": {
+      "username": "monapdx",
+      "name": "Ashly",
+      "avatar": "https://avatars.githubusercontent.com/u/22864488?v=4",
+      "identifier": "monapdx",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/self-summary",
+    "created_at": "2026-03-24T18:43:27.469Z"
+  },
+  {
+    "id": "cmn4ypfbt0001jp04uvl2yerr",
+    "slug": "analyze-chat-history-with-user",
+    "original_title": "Analyze Chat History With User",
+    "original_prompt": "I'd like you to analyze this file containing all of my chat history with a friend of mine. Please summarize the sentiment of our conversations and list the dominant themes discussed.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Phân tích lịch sử trò chuyện: tóm tắt cảm xúc và các chủ đề thảo luận chủ đạo",
+    "vi_prompt": "Tôi muốn bạn phân tích tệp này, nơi chứa toàn bộ lịch sử trò chuyện giữa tôi và một người bạn của tôi. Hãy tóm tắt sắc thái cảm xúc tổng thể (sentiment) trong các cuộc trò chuyện của chúng tôi và liệt kê các chủ đề nổi bật, chiếm ưu thế nhất đã được thảo luận.",
+    "translation_status": "translated",
+    "source_category": "Habits & Routines",
+    "source_tags": [],
+    "category": "Content",
+    "subcategory": "Text Analysis",
+    "tags": [
+      "chat-history",
+      "sentiment-analysis",
+      "text-mining",
+      "conversation-summary",
+      "theme-extraction"
+    ],
+    "search_keywords_vi": [
+      "phân tích lịch sử chat",
+      "tóm tắt cảm xúc hội thoại",
+      "trích xuất chủ đề trò chuyện"
+    ],
+    "use_case": "Phân tích tệp lịch sử tin nhắn với bạn bè, đánh giá sắc thái cảm xúc tổng thể và phân loại các chủ đề thảo luận nổi bật",
+    "model_type": [
+      "general"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "ok",
+    "author": {
+      "username": "monapdx",
+      "name": "Ashly",
+      "avatar": "https://avatars.githubusercontent.com/u/22864488?v=4",
+      "identifier": "monapdx",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/analyze-chat-history-with-user",
+    "created_at": "2026-03-24T18:42:41.753Z"
+  },
+  {
+    "id": "cmn4ikre20001kz04krv6ebmm",
+    "slug": "researchers-in-the-library",
+    "original_title": "Researchers in the Library",
+    "original_prompt": "Generate a video for Researchers in the Lab going to the library, make it programmatic video creation, maybe use LoRA and Remotion ",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Tạo video lập trình cho nhà nghiên cứu trong phòng thí nghiệm đến thư viện",
+    "vi_prompt": "Hãy tạo một video miêu tả cảnh Các nhà nghiên cứu trong Phòng thí nghiệm đang di chuyển đến thư viện. Hãy xây dựng theo phương pháp tạo video bằng lập trình (programmatic video creation), có thể kết hợp sử dụng LoRA và Remotion.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Video",
+    "subcategory": "AI Video Generation",
+    "tags": [
+      "video-generation",
+      "remotion",
+      "lora",
+      "programmatic-video",
+      "researchers"
+    ],
+    "search_keywords_vi": [
+      "tạo video bằng code remotion",
+      "lora video ai",
+      "video nhà nghiên cứu thư viện"
+    ],
+    "use_case": "Yêu cầu tạo video theo phương pháp lập trình (programmatic video) sử dụng công nghệ LoRA và Remotion về đề tài nghiên cứu khoa học",
+    "model_type": [
+      "video"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "mohsamhef",
+      "name": "Mo Sam",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLuAyF4-8vHKnSLrRfYHP-BPoB4Ao1OOCdWl_-Lc9_znWSgSazj=s96-c",
+      "identifier": "mohsamhef",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/researchers-in-the-library",
+    "created_at": "2026-03-24T11:11:10.250Z"
+  },
+  {
+    "id": "cmn4ik3bs0004jv04fsr1ta5a",
+    "slug": "odalisque",
+    "original_title": "Odalisque",
+    "original_prompt": "{\n\"scene\": {\n\"subject\": \"Young woman (Jasmine) with Mediterranean features, dark hair pulled back in a messy bun with strands falling over her face. An expression of deep pain, bright eyes, and visible tears on her cheeks.\",\n\"format\": \"vertical, 9:16 aspect ratio\",\n\"pose\": \"Kneeling on a marble floor, her body leaning slightly forward. One hand is brought to her chest in a gesture of anguish, the other rests on her thigh.\",\n\"clothing\": \"Emerald green silk odalisque dress with elaborate gold embroidery, sheer tulle, a very low neckline, and side slits that reveal the legs. Gold stiletto sandals.\",\n\"key_element\": \"Heavy gold chain attached to a metal ring in the load-bearing wall. The other end ends in a heavy gold bracelet (ceppo) wrapped around the woman's left ankle.\"\n},\n\"ambience\": {\n\"style\": \"Interior of a luxurious palace in oriental/neoclassical style. Marble columns, pointed arches, light-colored stone walls.\",\n\"lighting\": \"Dramatic, nocturnal atmosphere. Warm light from brass wall torches and a large hanging Arabian lantern. Long, bold shadows cast on the walls and ceiling.\",\n\"flooring\": \"White marble veined with gray, polished and reflective, showing the reflections of the lights and the subject.\"\n},\n\"technical_specs\": {\n\"composition\": \"Full-body shot, slightly low-angle perspective to emphasize the subject's vulnerability. Moderate depth of field with a softly blurred background.\",\n\"photography_style\": \"High-resolution cinematic photorealism. Saturated colors (green, gold) contrasted by cool marble tones and deep shadows.\",\n\"render_details\": \"Detailed skin texture with reflections of sweat or tears, realistic marble veining, metallic highlights from the gold and chains, micro-details in the dress's embroidery.\",\n\"atmosphere\": \"Dramatic, oppressive, luxurious yet claustrophobic.\"\n},\n\"secondary_elements\": {\n\"shadow_presence\": \"At the right edge of the frame, the shadow or hem of the dark robe of an imposing male figure (the Sultan) can be seen, suggesting his presence without fully revealing it.\",\n\"furniture\": \"In the background, dark wooden furniture and heavy velvet curtains block the access to other rooms.\"\n}\n}",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Prompt chi tiết tạo ảnh nàng cung nữ Odalisque trong cung điện phương Đông",
+    "vi_prompt": "{\n\"scene\": {\n\"subject\": \"Người phụ nữ trẻ (Jasmine) mang nét đẹp Địa Trung Hải, mái tóc sẫm màu búi cao tự nhiên với những lọn tóc buông lơi phủ nhẹ lên gương mặt. Ánh mắt chứa chan nỗi buồn sâu thẳm, đôi mắt sáng long lanh với những giọt lệ lăn rõ trên gò má.\",\n\"format\": \"khổ dọc, tỷ lệ khung hình 9:16\",\n\"pose\": \"Quỳ gối trên sàn đá cẩm thạch, cơ thể hơi đổ nhẹ về phía trước. Một bàn tay đặt lên ngực trong một cử chỉ đau đáu, tay còn lại đặt tựa lên đùi.\",\n\"clothing\": \"Trang phục cung nữ Odalisque bằng lụa màu xanh ngọc lục bảo với họa tiết thêu chỉ vàng tinh xảo, lớp voan mỏng trong suốt, đường cắt cổ áo khoét sâu quyến rũ và tà xẻ bên hông để lộ đôi chân. Đôi sandal cao gót thanh mảnh mạ vàng.\",\n\"key_element\": \"Sợi xích vàng nặng nề được gắn chặt vào một vòng kim loại neo trên bức tường chịu lực. Đầu còn lại của sợi xích nối với chiếc cùm vàng kiên cố khóa quanh cổ chân trái của cô gái.\"\n},\n\"environment\": {\n\"style\": \"Không gian nội thất của một cung điện xa hoa mang phong cách kết hợp giữa Phương Đông và Cổ điển mới (neoclassical). Những hàng cột đá cẩm thạch tráng lệ, các vòm cung nhọn đặc trưng, những bức tường đá sáng màu.\",\n\"lighting\": \"Bầu không khí đêm huyền bí, đậm chất kịch tính. Ánh sáng ấm áp tỏa ra từ các ngọn đuốc đồng gắn tường và một chiếc đèn lồng Ả Rập lớn treo lơ lửng. Những bóng đổ dài, sắc nét in đậm lên tường và trần nhà.\",\n\"flooring\": \"Sàn đá cẩm thạch trắng vân xám bóng loáng phản chiếu rõ nét ánh đèn lung linh và hình bóng của nhân vật.\"\n},\n\"details\": {\n\"shadow_presence\": \"Ở rìa bên phải của khung hình, bóng đổ hoặc gấu áo choàng tối màu của một người đàn ông quyền uy (vị Sultan) xuất hiện thoáng qua, gợi mở sự hiện diện áp chế của ông ta mà không để lộ toàn bộ diện mạo.\",\n\"furniture\": \"Ở hậu cảnh, những món đồ nội thất bằng gỗ mun tối màu và những tấm rèm nhung dày dặn ngăn cách lối đi dẫn sang các gian phòng khác.\"\n},\n\"technical\": {\n\"composition\": \"Góc chụp toàn thân, góc máy hơi thấp (low-angle) từ dưới lên để tôn lên vẻ đẹp mong manh và thế yếu của nhân vật. Độ sâu trường ảnh vừa phải với phần hậu cảnh được làm mờ nhẹ nhàng, êm ái.\",\n\"photography_style\": \"Nhiếp ảnh điện ảnh siêu thực độ phân giải cao (cinematic photorealism). Màu sắc bão hòa sâu (xanh lục bảo, vàng kim) tương phản mạnh mẽ với tông màu lạnh của đá cẩm thạch và vùng tối thẳm.\",\n\"render_details\": \"Kết cấu làn da chi tiết đến từng lỗ chân lông với sự phản chiếu chân thực của mồ hôi và nước mắt, các đường vân đá cẩm thạch sống động, hiệu ứng phản xạ kim loại lấp lánh của vàng và xích sắt, các chi tiết vi mô thêu thủ công trên trang phục.\",\n\"atmosphere\": \"Kịch tính, ngột ngạt, sang trọng tột bậc nhưng mang lại cảm giác bị giam cầm, cô độc.\"\n}\n}",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [],
+    "category": "Image",
+    "subcategory": "Cinematic Photorealism",
+    "tags": [
+      "image-prompt",
+      "cinematic",
+      "photorealism",
+      "oriental-palace",
+      "dramatic-lighting",
+      "odalisque"
+    ],
+    "search_keywords_vi": [
+      "prompt ảnh cung nữ odalisque",
+      "nhiếp ảnh điện ảnh siêu thực",
+      "ánh sáng kịch tính cung điện"
+    ],
+    "use_case": "Đặc tả cảnh chụp chân dung điện ảnh siêu thực về nàng cung phi trong bối cảnh cung điện lộng lẫy và bầu không khí kịch tính",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "mellowdrastic",
+      "name": "Mel Dras",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJJsSO7AvaErteHgKQZHmea6xGLdF1P-Rlz2wkQ8KJS5FLzxpq4=s96-c",
+      "identifier": "mellowdrastic",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/odalisque",
+    "created_at": "2026-03-24T11:10:39.065Z"
+  },
+  {
+    "id": "cmn4dm5h60004l504mhq1adw9",
+    "slug": "github-stars-fetcher-with-agent-browser",
+    "original_title": "GitHub Stars Fetcher with Agent Browser",
+    "original_prompt": "# Using Agent Browser to Fetch GitHub Starred Projects\n\n## Objective\nUse the Agent Browser skill to log into GitHub and retrieve the starred projects of the currently logged-in user, sorted by the number of stars.\n\n## Execution Steps (Follow in Order)\n\n1. **Launch Browser and Open GitHub Homepage**\n   ```bash\n   agent-browser --headed --profile \"%HOMEPATH%\\.agent-browser\\chrome-win64\\chrome-profiles\\github\" open https://github.com && agent-browser wait --load networkidle\n   ```\n\n2. **Get Current Logged-in User Information**\n   ```bash\n   agent-browser snapshot -i\n   # Find the user avatar or username link in the top-right corner to confirm login status\n   # Extract the username of the currently logged-in user from the page\n   ```\n\n3. **Navigate to Current User's Stars Tab**\n   ```bash\n   # Construct URL: https://github.com/{username}?tab=stars\n   agent-browser open https://github.com/{username}?tab=stars && agent-browser wait --load networkidle\n   ```\n\n4. **Sort by Stars Count (Most Stars First)**\n   ```bash\n   agent-browser snapshot -i  # First get the latest snapshot to find the sort button\n   agent-browser click @e_sort_button  # Click the sort button\n   agent-browser wait --load networkidle\n   # Select \"Most stars\" from the dropdown options\n   ```\n\n5. **Retrieve and Record Project Information**\n   ```bash\n   agent-browser snapshot -i\n   # Extract project name, description, stars, and forks information\n   ```\n\n## Critical Notes\n\n### 1. Daemon Process Issues\n- If you see \"daemon already running\", the browser is already running\n- **Important:** When the daemon is already running, `--headed` and `--profile` parameters are ignored, and the browser continues in its current running mode\n- You can proceed with subsequent commands without reopening\n- To restart in headed mode, you must first execute: `agent-browser close`, then use the `--headed` parameter to reopen\n\n### 2. Dynamic Nature of References\n- Element references (@e1, @e2, etc.) change after each page modification\n- You must execute `snapshot -i` before each interaction to get the latest references\n- Never assume references are fixed\n\n### 3. Command Execution Pattern\n- Use `&&` to chain multiple commands, avoiding repeated process launches\n- Wait for page load after each command: `wait --load networkidle`\n\n### 4. Login Status\n- Use the `--profile` parameter to specify a profile directory, maintaining login state\n- If login expires, manually log in once to save the state\n\n### 5. Windows Environment Variable Expansion\n- **Important:** On Windows, environment variables like `%HOMEPATH%` must be expanded to actual paths before use\n- **Incorrect:** `agent-browser --profile \"%HOMEPATH%\\.agent-browser\\chrome-win64\\chrome-profiles\\github\"`\n- **Correct:** First execute `echo $HOME` to get the actual path, then use the expanded path\n  ```bash\n  # Get HOME path (e.g., /c/Users/xxx)\n  echo $HOME\n  # Use the expanded absolute path\n  agent-browser --profile \"/c/Users/xxx/.agent-browser/chrome-win64/chrome-profiles/github\" --headed open https://github.com\n  ```\n- Without expanding environment variables, you'll encounter connection errors (e.g., `os error 10060`)\n\n### 6. Sorting Configuration\n- Click the \"Sort by: Recently starred\" button (typically reference e44)\n- Select the \"Most stars\" option\n- Retrieve page content again\n\n## Troubleshooting Common Issues\n\n| Issue | Solution |\n|-------|----------|\n| daemon already running | Execute subsequent commands directly, or close then reopen |\n| Invalid element reference | Execute snapshot -i to get latest references |\n| Page not fully loaded | Add wait --load networkidle |\n| Need to re-login | Use --headed mode to manually login once and save state |\n| Sorting not applied | Confirm you clicked the correct sorting option |\n\n## Result Output Format\n- Project name and link\n- Stars count (sorted in descending order)\n- Forks count\n- Project description (if available)\n",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Quy trình sử dụng Agent Browser thu thập danh sách dự án GitHub gắn sao",
+    "vi_prompt": "# Sử dụng Agent Browser để Thu thập các Dự án đã Gắn sao trên GitHub\n\n## Mục tiêu\nSử dụng kỹ năng Agent Browser để đăng nhập vào GitHub và trích xuất danh sách các dự án đã được gắn sao (starred projects) của người dùng hiện đang đăng nhập, sắp xếp theo số lượng sao giảm dần.\n\n## Các bước Thực thi (Thực hiện tuần tự)\n\n1. **Khởi chạy Trình duyệt và Mở Trang chủ GitHub**\n   ```bash\n   agent-browser --headed --profile \"%HOMEPATH%\\.agent-browser\\chrome-win64\\chrome-profiles\\github\" open https://github.com && agent-browser wait --load networkidle\n   ```\n\n2. **Lấy Thông tin Người dùng Đang Đăng nhập**\n   ```bash\n   agent-browser snapshot -i\n   # Tìm avatar người dùng hoặc liên kết tên người dùng ở góc trên bên phải để xác nhận trạng thái đăng nhập\n   # Trích xuất tên người dùng (username) của tài khoản đang đăng nhập từ trang web\n   ```\n\n3. **Điều hướng đến Tab Stars của Người dùng Hiện tại**\n   ```bash\n   # Xây dựng URL: https://github.com/{username}?tab=stars\n   agent-browser open https://github.com/{username}?tab=stars && agent-browser wait --load networkidle\n   ```\n\n4. **Sắp xếp theo Số lượng Sao (Nhiều sao nhất lên đầu)**\n   ```bash\n   agent-browser snapshot -i  # Lấy snapshot mới nhất để tìm nút sắp xếp\n   agent-browser click @e_sort_button  # Bấm vào nút sắp xếp\n   agent-browser wait --load networkidle\n   # Chọn mục \"Most stars\" từ danh sách thả xuống\n   ```\n\n5. **Trích xuất và Ghi lại Thông tin Dự án**\n   ```bash\n   agent-browser snapshot -i\n   # Trích xuất tên dự án, mô tả, số sao và số lượt fork\n   ```\n\n## Các Lưu ý Trọng yếu\n\n### 1. Vấn đề Tiến trình Daemon\n- Nếu bạn thấy thông báo \"daemon already running\", điều đó có nghĩa trình duyệt đã đang chạy ngầm.\n- **Quan trọng:** Khi daemon đang chạy, các tham số `--headed` và `--profile` sẽ bị bỏ qua và trình duyệt tiếp tục hoạt động theo chế độ hiện tại.\n- Bạn có thể tiếp tục thực thi các lệnh tiếp theo mà không cần mở lại.\n- Để khởi động lại ở chế độ có giao diện (headed mode), trước tiên bạn phải chạy: `agent-browser close`, sau đó dùng lại cờ `--headed` để mở.\n\n### 2. Bản chất Động của các Tham chiếu (References)\n- Các tham chiếu phần tử (@e1, @e2, v.v.) sẽ thay đổi sau mỗi lần trang web được cập nhật/thay đổi DOM.\n- Bạn bắt buộc phải chạy `snapshot -i` trước mỗi lần tương tác để lấy tham chiếu mới nhất.\n- Tuyệt đối không bao giờ giả định các tham chiếu là cố định.\n\n### 3. Khuôn mẫu Thực thi Câu lệnh\n- Sử dụng toán tử `&&` để chuỗi nhiều lệnh lại với nhau, tránh việc khởi động lại tiến trình lặp đi lặp lại.\n- Chờ trang web tải xong hoàn toàn sau mỗi lệnh: `wait --load networkidle`.\n\n### 4. Trạng thái Đăng nhập\n- Sử dụng tham số `--profile` để chỉ định thư mục hồ sơ, giúp duy trì phiên đăng nhập.\n- Nếu phiên đăng nhập hết hạn, hãy đăng nhập thủ công một lần để lưu trữ trạng thái.\n\n### 5. Khai triển Biến Môi trường trên Windows\n- **Quan trọng:** Trên Windows, các biến môi trường như `%HOMEPATH%` phải được khai triển thành đường dẫn thực tế trước khi dùng.\n- **Không đúng:** `agent-browser --profile \"%HOMEPATH%\\.agent-browser\\chrome-win64\\chrome-profiles\\github\"`\n- **Đúng:** Đầu tiên chạy `echo $HOME` để lấy đường dẫn thực tế, sau đó sử dụng đường dẫn tuyệt đối đã khai triển:\n  ```bash\n  # Lấy đường dẫn HOME (ví dụ: /c/Users/xxx)\n  echo $HOME\n  # Sử dụng đường dẫn tuyệt đối đã khai triển\n  agent-browser --profile \"/c/Users/xxx/.agent-browser/chrome-win64/chrome-profiles/github\" --headed open https://github.com\n  ```\n- Nếu không khai triển biến môi trường, bạn sẽ gặp lỗi kết nối (ví dụ: `os error 10060`).\n\n### 6. Cấu hình Sắp xếp\n- Nhấp vào nút \"Sort by: Recently starred\" (thường là tham chiếu e44).\n- Chọn tùy chọn \"Most stars\".\n- Thu thập lại nội dung trang web.\n\n## Xử lý các Sự cố Thường gặp\n\n| Sự cố | Giải pháp khắc phục |\n|---|---|\n| daemon already running | Thực thi trực tiếp các lệnh tiếp theo, hoặc gọi close rồi mở lại |\n| Invalid element reference | Chạy lệnh snapshot -i để lấy tham chiếu mới nhất |\n| Trang chưa tải hoàn tất | Bổ sung wait --load networkidle |\n| Cần đăng nhập lại | Sử dụng chế độ --headed để đăng nhập thủ công một lần và lưu phiên |\n| Thứ tự sắp xếp chưa đổi | Xác nhận bạn đã bấm đúng vào tùy chọn sắp xếp |\n\n## Định dạng Đầu ra Kết quả\n- Tên dự án và liên kết URL\n- Số lượt gắn sao (sắp xếp giảm dần)\n- Số lượt fork\n- Mô tả dự án (nếu có)",
+    "translation_status": "translated",
+    "source_category": "Automations",
+    "source_tags": [],
+    "category": "Coding",
+    "subcategory": "Web Automation",
+    "tags": [
+      "agent-browser",
+      "web-automation",
+      "github",
+      "browser-automation",
+      "cli"
+    ],
+    "search_keywords_vi": [
+      "cào sao github bằng agent browser",
+      "tự động hóa trình duyệt dòng lệnh",
+      "agent browser automation"
+    ],
+    "use_case": "Hướng dẫn các bước dòng lệnh CLI điều khiển Agent Browser đăng nhập, duyệt và trích xuất danh sách repository gắn sao trên GitHub",
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "xiaostore",
+      "name": "XiaoStore",
+      "avatar": "https://avatars.githubusercontent.com/u/62917539?v=4",
+      "identifier": "XiaoStore",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/github-stars-fetcher-with-agent-browser",
+    "created_at": "2026-03-24T08:52:17.082Z"
+  },
+  {
+    "id": "cmn3nkesw0001l204r8birwmj",
+    "slug": "writer",
+    "original_title": "writer ",
+    "original_prompt": "1. Standard Proofreading Prompt\nPrompt:\nPlease proofread the following text for grammar, spelling, and punctuation. Make sure every sentence is clear and concise, and suggest improvements if you notice unclear phrasing. Retain the original tone and meaning.\nText to Proofread: [Paste your text here]\nWhy it works:\nDirects the AI to focus on correctness (grammar, spelling, punctuation).\nMaintains the tone and meaning.\nRequests suggestions for unclear phrasing.\n2. Detailed Copyediting Prompt\nPrompt:\nI want you to act as an experienced copyeditor. Proofread the following text in detail: correct all grammatical issues, spelling mistakes, punctuation errors, and any word usage problems. Then, rewrite or rearrange sentences where appropriate, but do not alter the overall structure or change the meaning. Provide both the corrected version and a short list of the most notable changes.\nText to Proofread: [Paste your text here]\nWhy it works:\nSpecifies a deeper editing pass.\nAsks for both the corrected text and a summary of edits for transparency.\nMaintains the original meaning while optimising word choice.\n3. Comprehensive Developmental Edit Prompt\nPrompt:\nPlease act as a developmental editor for the text below. In addition to correcting grammar, punctuation, and spelling, identify any issues with clarity, flow, or structure. If you see potential improvements in the logic or arrangement of paragraphs, suggest them. Provide the final revised version, along with specific comments explaining your edits and recommendations.\nText to Proofread: [Paste your text here]\nWhy it works:\nGoes beyond proofreading; focuses on logical structure and flow.\nRequests specific editorial comments.\n4. Style-Focused Proofreading Prompt\nPrompt:\nProofread and revise the following text, aiming to improve the style and readability without changing the overall voice or register. Focus on grammar, punctuation, sentence variation, and coherence. If you remove or add any words for clarity, please highlight them in your explanation at the end.\nText to Proofread: [Paste your text here]\nWhy it works:\nAdds a focus on style and readability.\nEncourages a consistent voice.\n5. Concise and Polished Prompt\nPrompt:\nPlease proofread and refine the text with the goal of making it concise and polished. Look for opportunities to remove filler words or repetitive phrases. Keep an eye on grammar, punctuation, and spelling. Make sure each sentence is as clear and straightforward as possible while retaining the essential details.\nText to Proofread: [Paste your text here]\nWhy it works:\nFocuses on conciseness and directness.\nEncourages removing fluff.\n6. Formal-Tone Enhancement Prompt\nPrompt:\nI need this text to be presented in a formal, professional tone. Please proofread it carefully for grammar, spelling, punctuation, and word choice. Where you see informal expressions or casual language, adjust it to a formal style. Do not change any technical terms. Provide the final revision as well as an explanation for your major edits.\nText to Proofread: [Paste your text here]\nWhy it works:\nElevates the text to a professional style.\nPreserves technical details.\nRequests a rationale for the changes.\n7. Consistency and Cohesion Prompt\nPrompt:\nPlease proofread the text below with the objective of ensuring it is consistent and cohesive. Look for any shifts in tense, inconsistent terminology, or abrupt changes in tone. Correct grammar, spelling, and punctuation as needed. Indicate if there are any places in the text where references, data, or examples should be clarified.\nText to Proofread: [Paste your text here]\nWhy it works:\nHighlights consistent use of tense, style, and terminology.\nFlags unclear references or data.\n8. Audience-Specific Proofreading Prompt\nPrompt:\nProofread the following text to ensure it's well-suited for [describe target audience here]. Correct mistakes in grammar, spelling, and punctuation, and rephrase any jargon or overly complex sentences that may not be accessible to the intended readers. Provide a final version, and explain how you adapted the language for this audience.\nText to Proofread: [Paste your text here]\nWhy it works:\nCenters on the target audience's needs and language comprehension.\nEnsures clarity and accessibility without losing key content.\n9. Contextual Usage and Tone Prompt\nPrompt:\nPlease review and proofread the following text for correct grammar, spelling, punctuation, and contextual word usage. Pay particular attention to phrases that might be misused or have ambiguous meaning. If any sentences seem off-tone or inconsistent with the context (e.g., an academic paper, a business memo, etc.), adjust them accordingly.\nText to Proofread: [Paste your text here]\nWhy it works:\nHighlights word usage in context.\nEnsures consistency with the intended style or environment.\n10. Advanced Grammar and Syntax Prompt\nPrompt:\nI need you to focus on advanced grammar and syntax issues in the following text. Look for parallel structure, subject-verb agreement, pronoun antecedent clarity, and any other subtle linguistic details. Provide a version with these issues resolved, and offer a brief bullet list of the advanced grammar improvements you made.\nText to Proofread: [Paste your text here]\nWhy it works:\nAimed at sophisticated syntax corrections.\nCalls out advanced grammar concerns for in-depth editing.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Bộ 10 prompt biên tập và hiệu đính văn bản chuyên nghiệp kèm giải thích",
+    "vi_prompt": "1. Prompt Hiệu đính Tiêu chuẩn (Standard Proofreading Prompt)\nPrompt:\nHãy hiệu đính đoạn văn bản sau đây về mặt ngữ pháp, chính tả và dấu câu. Đảm bảo mọi câu văn đều rõ ràng, súc tích và đề xuất phương án cải thiện nếu bạn phát hiện cách diễn đạt chưa gãy gọn. Giữ nguyên giọng điệu và ý nghĩa gốc của văn bản.\nVăn bản cần hiệu đính: [Dán văn bản của bạn vào đây]\nTại sao prompt này hiệu quả:\nĐịnh hướng AI tập trung vào tính chuẩn xác (ngữ pháp, chính tả, dấu câu).\nDuy trì nhất quán giọng điệu và thông điệp.\nYêu cầu các gợi ý hữu ích cho những câu diễn đạt tối nghĩa.\n\n2. Prompt Biên tập Chi tiết (Detailed Copyediting Prompt)\nPrompt:\nTôi muốn bạn đóng vai một biên tập viên dày dạn kinh nghiệm. Hãy rà soát chi tiết đoạn văn bản sau: sửa toàn bộ lỗi ngữ pháp, chính tả, dấu câu và các vấn đề về sử dụng từ ngữ. Sau đó, hãy viết lại hoặc sắp xếp lại các câu khi cần thiết, nhưng không làm thay đổi cấu trúc tổng thể hay làm sai lệch ý nghĩa. Cung cấp cả bản hoàn chỉnh đã sửa và một danh sách ngắn tóm tắt những thay đổi đáng chú ý nhất.\nVăn bản cần hiệu đính: [Dán văn bản của bạn vào đây]\nTại sao prompt này hiệu quả:\nChỉ định một lượt biên tập sâu sắc hơn.\nYêu cầu cả bản hoàn thiện và danh sách tổng kết các chỉnh sửa để đảm bảo tính minh bạch.\nBảo toàn ý nghĩa nguyên bản trong khi tối ưu hóa việc lựa chọn từ ngữ.\n\n3. Prompt Biên tập Phát triển Toàn diện (Comprehensive Developmental Edit Prompt)\nPrompt:\nHãy đóng vai một biên tập viên phát triển (developmental editor) cho đoạn văn bản bên dưới. Ngoài việc sửa lỗi ngữ pháp, dấu câu và chính tả, hãy nhận diện mọi vấn đề về độ rõ ràng, tính mạch lạc hoặc cấu trúc bố cục. Nếu bạn thấy có tiềm năng cải thiện tính logic hoặc cách sắp xếp các đoạn văn, hãy đưa ra đề xuất cụ thể. Cung cấp bản sửa đổi cuối cùng, kèm theo các nhận xét chi tiết giải thích rõ lý do của các chỉnh sửa và khuyến nghị.\nVăn bản cần hiệu đính: [Dán văn bản của bạn vào đây]\nTại sao prompt này hiệu quả:\nVượt ra ngoài việc sửa lỗi cơ bản; tập trung vào cấu trúc logic và dòng chảy mạch lạc của bài viết.\nĐòi hỏi các phân tích nhận xét biên tập chuyên sâu.\n\n4. Prompt Hiệu đính Chú trọng Phong cách (Style-Focused Proofreading Prompt)\nPrompt:\nHãy hiệu đính và chỉnh sửa đoạn văn bản sau, hướng tới mục tiêu nâng cao phong cách diễn đạt và độ dễ đọc mà không làm thay đổi giọng văn hay văn phong tổng thể. Tập trung vào ngữ pháp, dấu câu, sự đa dạng của cấu trúc câu và tính liên kết chặt chẽ. Nếu bạn thêm hoặc bớt bất kỳ từ ngữ nào nhằm tăng độ rõ nghĩa, hãy nêu bật chúng trong phần giải thích ở cuối.\nVăn bản cần hiệu đính: [Dán văn bản của bạn vào đây]\nTại sao prompt này hiệu quả:\nTập trung mạnh vào phong cách hành văn và trải nghiệm đọc mượt mà.\nDuy trì tính nhất quán của giọng văn tác giả.\n\n5. Prompt Làm gọn & Trau chuốt Văn phong (Concise and Polished Prompt)\nPrompt:\nHãy hiệu đính và tinh chỉnh văn bản với mục tiêu làm cho nó trở nên cô đọng, súc tích và bóng bẩy. Tìm kiếm cơ hội để loại bỏ những từ đệm thừa thãi hoặc các cụm từ lặp ý. Luôn chú ý đến ngữ pháp, dấu câu và chính tả. Đảm bảo mỗi câu văn đều rõ ràng, trực diện nhất có thể trong khi vẫn bảo lưu trọn vẹn các chi tiết cốt lõi.\nVăn bản cần hiệu đính: [Dán văn bản của bạn vào đây]\nTại sao prompt này hiệu quả:\nTập trung cao độ vào sự cô đọng và đi thẳng vào vấn đề.\nKhuyến khích loại bỏ các từ ngữ sáo rỗng, rườm rà.\n\n6. Prompt Nâng cấp Giọng điệu Trang trọng (Formal-Tone Enhancement Prompt)\nPrompt:\nTôi cần văn bản này được trình bày theo một giọng điệu trang trọng và chuyên nghiệp. Hãy hiệu đính cẩn thận về ngữ pháp, chính tả, dấu câu và cách dùng từ. Ở những nơi bạn thấy cách diễn đạt thân mật hoặc ngôn ngữ đời thường, hãy điều chỉnh sang phong cách trang trọng, chuẩn mực. Không thay đổi bất kỳ thuật ngữ kỹ thuật chuyên ngành nào. Cung cấp bản chỉnh sửa cuối cùng kèm theo lời giải thích cho các thay đổi trọng yếu.\nVăn bản cần hiệu đính: [Dán văn bản của bạn vào đây]\nTại sao prompt này hiệu quả:\nNâng tầm văn bản lên phong cách chuyên nghiệp, trang trọng.\nBảo tồn chính xác các thuật ngữ kỹ thuật.\nYêu cầu cơ sở lý luận rõ ràng cho các thay đổi đã thực hiện.\n\n7. Prompt Đảm bảo Tính Nhất quán và Liên kết (Consistency and Cohesion Prompt)\nPrompt:\nHãy hiệu đính đoạn văn bản dưới đây với mục tiêu bảo đảm tính nhất quán và tính liên kết chặt chẽ. Hãy tìm kiếm bất kỳ sự thay đổi thì thời nào không hợp lý, sự không nhất quán về thuật ngữ hoặc những thay đổi đột ngột về giọng điệu. Sửa lỗi ngữ pháp, chính tả và dấu câu khi cần thiết. Hãy chỉ rõ nếu có những vị trí trong bài mà các nguồn tham chiếu, số liệu hoặc ví dụ minh họa cần được làm rõ hơn.\nVăn bản cần hiệu đính: [Dán văn bản của bạn vào đây]\nTại sao prompt này hiệu quả:\nNêu bật việc sử dụng nhất quán về thì thời, phong cách và thuật ngữ.\nGắn cờ cảnh báo các tham chiếu hoặc dữ liệu chưa đủ độ sáng rõ.\n\n8. Prompt Hiệu đính Hướng tới Độc giả Cụ thể (Audience-Specific Proofreading Prompt)\nPrompt:\nHãy hiệu đính đoạn văn bản sau để đảm bảo nó hoàn toàn phù hợp với đối tượng độc giả là [mô tả độc giả mục tiêu tại đây]. Sửa các lỗi ngữ pháp, chính tả và dấu câu, đồng thời diễn đạt lại bất kỳ thuật ngữ chuyên môn quá sâu hoặc câu văn quá phức tạp nào có thể gây khó hiểu cho người đọc mục tiêu. Cung cấp phiên bản hoàn chỉnh và giải thích cách bạn đã điều chỉnh ngôn ngữ để tiếp cận nhóm độc giả này.\nVăn bản cần hiệu đính: [Dán văn bản của bạn vào đây]\nTại sao prompt này hiệu quả:\nLấy nhu cầu và khả năng tiếp nhận ngôn ngữ của độc giả mục tiêu làm trung tâm.\nĐảm bảo tính dễ hiểu, đại chúng mà không làm mất đi nội dung cốt lõi.\n\n9. Prompt Kiểm tra Ngữ cảnh và Cách dùng từ (Contextual Usage and Tone Prompt)\nPrompt:\nHãy xem xét và hiệu đính văn bản sau về tính chính xác của ngữ pháp, chính tả, dấu câu và cách sử dụng từ theo ngữ cảnh. Đặc biệt chú ý đến các cụm từ có thể bị dùng sai hoặc mang ý nghĩa mơ hồ. Nếu bất kỳ câu nào có vẻ lạc điệu hoặc không nhất quán với ngữ cảnh bài viết (ví dụ: bài báo học thuật, bản ghi nhớ kinh doanh, v.v.), hãy điều chỉnh lại cho phù hợp.\nVăn bản cần hiệu đính: [Dán văn bản của bạn vào đây]\nTại sao prompt này hiệu quả:\nChú trọng kiểm soát cách sử dụng từ ngữ trong từng ngữ cảnh chuyên biệt.\nBảo đảm tính đồng bộ với môi trường và phong cách mong muốn.\n\n10. Prompt Ngữ pháp & Cú pháp Nâng cao (Advanced Grammar and Syntax Prompt)\nPrompt:\nTôi cần bạn tập trung giải quyết các vấn đề ngữ pháp và cú pháp nâng cao trong đoạn văn bản sau. Hãy tìm kiếm các lỗi về cấu trúc song hành (parallel structure), sự hòa hợp giữa chủ ngữ và động từ, độ rõ ràng của đại từ thay thế và các chi tiết ngôn ngữ tinh tế khác. Cung cấp một phiên bản đã xử lý triệt để các lỗi này, kèm theo danh sách ngắn các điểm cải thiện ngữ pháp nâng cao mà bạn đã thực hiện.\nVăn bản cần hiệu đính: [Dán văn bản của bạn vào đây]\nTại sao prompt này hiệu quả:\nHướng tới các hiệu chỉnh cú pháp phức tạp, tinh tế.\nTập trung sâu vào ngữ pháp nâng cao phục vụ biên tập học thuật và chuyên môn cao.",
+    "translation_status": "translated",
+    "source_category": "Writing",
+    "source_tags": [],
+    "category": "Content",
+    "subcategory": "Proofreading & Copyediting",
+    "tags": [
+      "proofreading",
+      "copyediting",
+      "writing-prompts",
+      "editing",
+      "grammar",
+      "style-improvement"
+    ],
+    "search_keywords_vi": [
+      "prompt hiệu đính văn bản",
+      "sửa lỗi ngữ pháp tiếng anh",
+      "biên tập bài viết học thuật"
+    ],
+    "use_case": "Cung cấp bộ 10 prompt chuẩn hóa cho từng cấp độ biên tập văn bản: từ soát lỗi chính tả cơ bản đến hiệu đính phát triển chuyên sâu",
+    "model_type": [
+      "general"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "this-is-lab",
+      "name": "this-is-lab",
+      "avatar": "https://avatars.githubusercontent.com/u/264209541?v=4",
+      "identifier": "this-is-lab",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/writer",
+    "created_at": "2026-03-23T20:43:05.840Z"
+  },
+  {
+    "id": "cmn2ad3bz0001l404vasuoxhg",
+    "slug": "midjourney",
+    "original_title": "Midjourney",
+    "original_prompt": "An ancient library hidden inside a giant hollow tree, magical and inviting atmosphere expression, majestic interior view, thousands of leather-bound books on curved wooden shelves, spiral staircase winding up through the center, glowing fireflies floating between bookshelves, worn reading chairs with velvet cushions, interior of a massive ancient oak tree in enchanted forest, hidden realm, mystical, warm and cozy atmosphere, autumn, with scattered scrolls and quills on oak desks, mystical runes carved into bark walls, mushrooms glowing softly in corners, foreground: scattered books and scrolls, midground: spiral staircase with warm glow, background: small windows showing starlit forest, golden ratio composition, wide shot, low-angle, wide-angle lens, deep depth of field, f/f/8, hasselblad, practical and rim lighting, twilight, light from three-quarter, soft light, digital-art, in the style of Greg Rutkowski and Thomas Kinkade and Studio Ghibli, influenced by Art Nouveau, cottage core aesthetic, warm and earthy color palette, primary colors: amber, deep brown, forest green, accent colors: soft gold, moonlight blue, fairy pink, rich saturation with deep shadows color grade, serene, peaceful, nostalgic, whimsical mood, masterpiece quality, 8K, volumetric lighting, ray tracing, octane render --no blurry, low quality, bad anatomy, watermark, text, signature, modern elements, plastic, harsh lighting, overexposed, underexposed --ar 3:2",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Prompt Midjourney thư viện cổ kính huyền bí ẩn sâu trong thân cây cổ thụ",
+    "vi_prompt": "Một thư viện cổ kính ẩn mình bên trong thân một cây cổ thụ khổng lồ rỗng ruột, bầu không khí huyền diệu và ấm áp mời gọi, góc nhìn nội thất tráng lệ nguy nga, hàng ngàn cuốn sách bọc da xếp ngay ngắn trên các giá sách gỗ uốn cong mềm mại, cầu thang xoắn ốc uốn lượn vươn lên ở chính giữa, những chú đom đóm phát sáng lung linh bay lượn giữa các kệ sách, những chiếc ghế đọc sách nhuốm màu thời gian với đệm nhung êm ái, quang cảnh bên trong cây sồi khổng lồ nghìn năm tuổi giữa khu rừng phù thủy mê hoặc, cõi giới bí ẩn, không gian nhiệm màu tĩnh lặng, những chùm rễ cây cổ thụ đan cài hài hòa với kiến trúc gỗ, ánh sáng ấm áp từ những chiếc đèn lồng treo tỏa rạng, bụi tiên lấp lánh trôi nhẹ trong không trung, các ô cửa sổ nhỏ khoét trên vỏ cây để lộ ánh trăng bàng bạc chiếu vào, phong cách nghệ thuật kỹ thuật số giả tưởng vô cùng chi tiết, không khí thần thoại ấm cúng, kiệt tác điện ảnh lộng lẫy, góc máy chụp toàn cảnh rộng, chất lượng 8k sắc nét siêu thực.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Image",
+    "subcategory": "Midjourney & Fantasy",
+    "tags": [
+      "midjourney",
+      "fantasy",
+      "library",
+      "hollow-tree",
+      "mystical",
+      "enchanted-forest"
+    ],
+    "search_keywords_vi": [
+      "prompt midjourney thư viện cổ thụ",
+      "ảnh thế giới huyền bí cổ tích",
+      "thư viện trong thân cây khổng lồ"
+    ],
+    "use_case": "Prompt miêu tả khung cảnh thư viện cổ kính kỳ ảo bên trong thân cây cổ thụ khổng lồ giữa khu rừng phù thủy",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "paul-cine",
+      "name": "Paul ",
+      "avatar": "https://avatars.githubusercontent.com/u/34492742?v=4",
+      "identifier": "paul-cine",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/midjourney",
+    "created_at": "2026-03-22T21:45:43.199Z"
+  },
+  {
+    "id": "cmn1elvgk0001le04njueblr2",
+    "slug": "astrojs",
+    "original_title": "Astro.js",
+    "original_prompt": "# Astro v6 Architecture Rules (Strict Mode)\n\n## 1. Core Philosophy\n\n- Follow Astro’s “HTML-first / zero JavaScript by default” principle:\n  - Everything is static HTML unless interactivity is explicitly required.\n  - JavaScript is a cost → only add when it creates real user value.\n\n- Always think in “Islands Architecture”:\n  - The page is static HTML\n  - Interactive parts are isolated islands\n  - Never treat the whole page as an app\n\n- Before writing any JavaScript, always ask:\n  \"Can this be solved with HTML + CSS or server-side logic?\"\n\n---\n\n## 2. Component Model\n\n- Use `.astro` components for:\n  - Layout\n  - Composition\n  - Static UI\n  - Data fetching\n  - Server-side logic (frontmatter)\n\n- `.astro` components:\n  - Run at build-time or server-side\n  - Do NOT ship JavaScript by default\n  - Must remain framework-agnostic\n\n- NEVER use React/Vue/Svelte hooks inside `.astro`\n\n---\n\n## 3. Islands (Interactive Components)\n\n- Only use framework components (React, Vue, Svelte, etc.) for interactivity.\n\n- Treat every interactive component as an isolated island:\n  - Independent\n  - Self-contained\n  - Minimal scope\n\n- NEVER:\n  - Hydrate entire pages or layouts\n  - Wrap large trees in a single island\n  - Create many small islands in loops unnecessarily\n\n- Prefer:\n  - Static list rendering\n  - Hydrate only the minimal interactive unit\n\n---\n\n## 4. Hydration Strategy (Critical)\n\n- Always explicitly define hydration using `client:*` directives.\n\n- Choose the LOWEST possible priority:\n\n  - `client:load`\n    → Only for critical, above-the-fold interactivity\n\n  - `client:idle`\n    → For secondary UI after page load\n\n  - `client:visible`\n    → For below-the-fold or heavy components\n\n  - `client:media`\n    → For responsive / conditional UI\n\n  - `client:only`\n    → ONLY when SSR breaks (window, localStorage, etc.)\n\n- Default rule:\n  ❌ Never default to `client:load`\n  ✅ Prefer `client:visible` or `client:idle`\n\n- Hydration is a performance budget:\n  - Every island adds JS\n  - Keep total JS minimal\n\n📌 Astro does NOT hydrate components unless explicitly told via `client:*` :contentReference[oaicite:0]{index=0}  \n\n---\n\n## 5. Server vs Client Logic\n\n- Prefer server-side logic (inside `.astro` frontmatter) for:\n  - Data fetching\n  - Transformations\n  - Filtering / sorting\n  - Derived values\n\n- Only use client-side state when:\n  - User interaction requires it\n  - Real-time updates are needed\n\n- Avoid:\n  - Duplicating logic on client\n  - Moving server logic into islands\n\n---\n\n## 6. State Management\n\n- Avoid client state unless strictly necessary.\n\n- If needed:\n  - Scope state inside the island only\n  - Do NOT create global app state unless required\n\n- For cross-island state:\n  - Use lightweight shared stores (e.g., nano stores)\n  - Avoid heavy global state systems by default\n\n---\n\n## 7. Performance Constraints (Hard Rules)\n\n- Minimize JavaScript shipped to client:\n  - Astro only loads JS for hydrated components :contentReference[oaicite:1]{index=1}  \n\n- Prefer:\n  - Static rendering\n  - Partial hydration\n  - Lazy hydration\n\n- Avoid:\n  - Hydrating large lists\n  - Repeated islands in loops\n  - Overusing `client:load`\n\n- Each island:\n  - Has its own bundle\n  - Loads independently\n  - Should remain small and focused :contentReference[oaicite:2]{index=2}  \n\n---\n\n## 8. File & Project Structure\n\n- `/pages`\n  - Entry points (SSG/SSR)\n  - No client logic\n\n- `/components`\n  - Shared UI\n  - Islands live here\n\n- `/layouts`\n  - Static wrappers only\n\n- `/content`\n  - Markdown / CMS data\n\n- Keep `.astro` files focused on composition, not behavior\n\n---\n\n## 9. Anti-Patterns (Strictly Forbidden)\n\n- ❌ Using hooks in `.astro`\n- ❌ Turning Astro into SPA architecture\n- ❌ Hydrating entire layout/page\n- ❌ Using `client:load` everywhere\n- ❌ Mapping lists into hydrated components\n- ❌ Using client JS for static problems\n- ❌ Replacing server logic with client logic\n\n---\n\n## 10. Preferred Patterns\n\n- ✅ Static-first rendering\n- ✅ Minimal, isolated islands\n- ✅ Lazy hydration (`visible`, `idle`)\n- ✅ Server-side computation\n- ✅ HTML + CSS before JS\n- ✅ Progressive enhancement\n\n---\n\n## 11. Decision Framework (VERY IMPORTANT)\n\nFor every feature:\n\n1. Can this be static HTML?\n   → YES → Use `.astro`\n\n2. Does it require interaction?\n   → NO → Stay static\n\n3. Does it require JS?\n   → YES → Create an island\n\n4. When should it load?\n   → Choose LOWEST priority `client:*`\n\n---\n\n## 12. Mental Model (Non-Negotiable)\n\n- Astro is NOT:\n  - Next.js\n  - SPA framework\n  - React-first system\n\n- Astro IS:\n  - Static-first renderer\n  - Partial hydration system\n  - Performance-first architecture\n\n- Think:\n  ❌ “Build an app”\n  ✅ “Ship HTML + sprinkle JS”",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Các quy tắc kiến trúc Astro v6 chuẩn mực chế độ nghiêm ngặt (Strict Mode)",
+    "vi_prompt": "# Quy tắc Kiến trúc Astro v6 (Chế độ Nghiêm ngặt - Strict Mode)\n\n## 1. Triết lý Cốt lõi\n\n- Luôn tuân thủ nguyên tắc “Ưu tiên HTML / mặc định không JavaScript” (HTML-first / zero JavaScript by default) của Astro:\n  - Mọi thứ đều là HTML tĩnh trừ khi có yêu cầu tương tác rõ ràng.\n  - JavaScript là một khoản chi phí hiệu năng → chỉ bổ sung khi nó tạo ra giá trị thực sự cho người dùng.\n\n- Luôn tư duy theo “Kiến trúc Ốc đảo” (Islands Architecture):\n  - Toàn bộ trang web là HTML tĩnh\n  - Các phần có tính tương tác là những hòn đảo cô lập\n  - Tuyệt đối không bao giờ xem toàn bộ trang web như một ứng dụng đơn trang (SPA)\n\n- Trước khi viết bất kỳ đoạn mã JavaScript nào, hãy luôn tự hỏi:\n  \"Vấn đề này có thể giải quyết được bằng HTML + CSS thuần hoặc logic phía máy chủ không?\"\n\n---\n\n## 2. Mô hình Thành phần (Component Model)\n\n- Sử dụng các thành phần `.astro` cho:\n  - Bố cục chung (Layout)\n  - Cấu thành giao diện (Composition)\n  - Giao diện tĩnh (Static UI)\n  - Truy xuất dữ liệu (Data fetching)\n  - Logic phía máy chủ (frontmatter)\n\n- Các thành phần `.astro`:\n  - Thực thi tại thời điểm build (build-time) hoặc phía server\n  - Mặc định KHÔNG gửi mã JavaScript về trình duyệt\n  - Phải duy trì tính độc lập với các framework khác (framework-agnostic)\n\n- TUYỆT ĐỐI KHÔNG sử dụng các hook của React/Vue/Svelte bên trong tệp `.astro`.\n\n---\n\n## 3. Các Ốc đảo (Thành phần Tương tác - Islands)\n\n- Chỉ sử dụng các thành phần framework (React, Vue, Svelte, v.v.) cho các tác vụ cần tương tác người dùng.\n\n- Xem mỗi thành phần tương tác như một ốc đảo biệt lập:\n  - Độc lập\n  - Tự chứa (Self-contained)\n  - Phạm vi tối thiểu\n\n- TUYỆT ĐỐI KHÔNG:\n  - Hydrate toàn bộ trang hoặc toàn bộ bố cục layout\n  - Bọc cả một cây thành phần lớn bên trong một ốc đảo duy nhất\n  - Tạo ra quá nhiều ốc đảo nhỏ bên trong các vòng lặp một cách không cần thiết\n\n- Ưu tiên:\n  - Render danh sách tĩnh\n  - Chỉ hydrate đơn vị tương tác nhỏ nhất cần thiết\n\n---\n\n## 4. Chiến lược Hydration (Trọng yếu)\n\n- Luôn định nghĩa cơ chế hydration một cách tường minh thông qua các chỉ thị `client:*`.\n\n- Luôn lựa chọn mức ưu tiên THẤP NHẤT có thể:\n\n  - `client:load`\n    → Chỉ dành riêng cho các thành phần tương tác trọng yếu nằm ở nửa trên trang (above-the-fold)\n\n  - `client:idle`\n    → Dành cho giao diện thứ cấp sau khi trang đã nạp xong\n\n  - `client:visible`\n    → Dành cho các thành phần ở nửa dưới trang (below-the-fold) hoặc các thành phần nặng\n\n  - `client:media`\n    → Dành cho giao diện đáp ứng (responsive) hoặc có điều kiện màn hình\n\n  - `client:only`\n    → CHỈ DÙNG khi quá trình SSR bị lỗi (do phụ thuộc vào window, localStorage, v.v.)\n\n- Quy tắc mặc định:\n  ❌ Không bao giờ mặc định sử dụng `client:load`\n  ✅ Luôn ưu tiên `client:visible` hoặc `client:idle`\n\n- Hydration chính là một ngân sách hiệu năng:\n  - Mỗi ốc đảo đều tăng thêm dung lượng JS\n  - Giữ tổng dung lượng JS ở mức tối thiểu\n\n📌 Astro KHÔNG hydrate các thành phần trừ khi được chỉ định rõ ràng qua chỉ thị `client:*` :contentReference[oaicite:0]{index=0}  \n\n---\n\n## 5. Logic Phía Server so với Logic Phía Client\n\n- Ưu tiên logic phía server (bên trong frontmatter của `.astro`) cho:\n  - Truy xuất dữ liệu (Data fetching)\n  - Biến đổi dữ liệu (Transformations)\n  - Lọc và sắp xếp (Filtering / sorting)\n  - Các giá trị phái sinh (Derived values)\n\n- Chỉ sử dụng trạng thái phía client khi:\n  - Tương tác của người dùng bắt buộc đòi hỏi\n  - Cần các cập nhật theo thời gian thực (real-time updates)\n\n- Cần tránh:\n  - Nhân bản logic trùng lặp trên client\n  - Chuyển logic của server vào bên trong các ốc đảo\n\n---\n\n## 6. Quản lý Trạng thái (State Management)\n\n- Tránh sử dụng client state trừ khi thực sự cần thiết.\n\n- Nếu cần:\n  - Giới hạn phạm vi state chỉ bên trong nội bộ ốc đảo đó\n  - KHÔNG tạo app state toàn cục trừ khi có yêu cầu bắt buộc\n\n- Đối với state dùng chung giữa các ốc đảo:\n  - Sử dụng các kho lưu trữ nhẹ (ví dụ: nano stores)\n  - Tránh các hệ thống state toàn cục cồng kềnh theo mặc định\n\n---\n\n## 7. Ràng buộc Hiệu năng (Quy tắc Bất di bất dịch)\n\n- Giảm thiểu tối đa lượng JavaScript gửi về client:\n  - Astro chỉ tải JS cho các thành phần đã được hydrate :contentReference[oaicite:1]{index=1}  \n\n- Ưu tiên:\n  - Render tĩnh (Static rendering)\n  - Hydration từng phần (Partial hydration)\n  - Hydration lười nạp (Lazy hydration)\n\n- Tránh:\n  - Hydrate các danh sách lớn\n  - Lặp lại các ốc đảo trong vòng lặp dữ liệu\n  - Lạm dụng `client:load`\n\n- Mỗi ốc đảo:\n  - Có gói bundle riêng biệt\n  - Tải độc lập\n  - Phải duy trì kích thước nhỏ gọn và tập trung :contentReference[oaicite:2]{index=2}  \n\n---\n\n## 8. Cấu trúc Tệp & Dự án\n\n- `/pages`\n  - Các điểm vào (SSG/SSR)\n  - Không chứa logic phía client\n\n- `/components`\n  - Giao diện dùng chung\n  - Các ốc đảo (islands) đặt tại đây\n\n- `/layouts`\n  - Chỉ là các khung bọc tĩnh (Static wrappers)\n\n- `/content`\n  - Dữ liệu Markdown / CMS\n\n- Giữ các tệp `.astro` tập trung vào việc cấu thành giao diện, không phải hành vi tương tác phức tạp\n\n---\n\n## 9. Phản mẫu (Nghiêm cấm Tuyệt đối)\n\n- ❌ Sử dụng React/Vue hooks bên trong tệp `.astro`\n- ❌ Biến Astro thành kiến trúc SPA\n- ❌ Hydrate toàn bộ bố cục hoặc toàn trang\n- ❌ Sử dụng `client:load` ở khắp mọi nơi\n- ❌ Ánh xạ mảng danh sách thành các thành phần được hydrate\n- ❌ Sử dụng client JS cho các bài toán tĩnh\n- ❌ Thay thế logic server bằng logic client\n\n---\n\n## 10. Các Khuôn mẫu Được Khuyến khích\n\n- ✅ Ưu tiên render tĩnh trước tiên (Static-first)\n- ✅ Các ốc đảo tối thiểu và cô lập\n- ✅ Hydration lười nạp (`visible`, `idle`)\n- ✅ Tính toán phía máy chủ\n- ✅ Sử dụng HTML + CSS trước khi nghĩ đến JS\n- ✅ Tăng cường lũy tiến (Progressive enhancement)\n\n---\n\n## 11. Khung Ra Quyết định (CỰC KỲ QUAN TRỌNG)\n\nĐối với mỗi tính năng cần phát triển:\n\n1. Tính năng này có thể làm bằng HTML tĩnh không?\n   → CÓ → Sử dụng `.astro`\n\n2. Nó có đòi hỏi tương tác người dùng không?\n   → KHÔNG → Giữ nguyên ở dạng tĩnh\n\n3. Nó có bắt buộc phải cần đến JavaScript không?\n   → CÓ → Tạo một ốc đảo (island)\n\n4. Khi nào thì thành phần này nên được tải?\n   → Lựa chọn chỉ thị `client:*` có mức ưu tiên THẤP NHẤT\n\n---\n\n## 12. Mô hình Tư duy (Không thể Thương lượng)\n\n- Astro KHÔNG PHẢI là:\n  - Next.js\n  - SPA framework\n  - Hệ thống ưu tiên React\n\n- Astro CHÍNH LÀ:\n  - Trình render ưu tiên tĩnh\n  - Hệ thống partial hydration\n  - Kiến trúc ưu tiên hiệu năng hàng đầu\n\n- Hãy tư duy:\n  ❌ “Xây dựng một ứng dụng”\n  ✅ “Gửi HTML tĩnh về trình duyệt + điểm xuyết chút JS tương tác”",
+    "translation_status": "translated",
+    "source_category": "Web Development",
+    "source_tags": [
+      "Frontend",
+      "JavaScript"
+    ],
+    "category": "Coding",
+    "subcategory": "Web Frameworks",
+    "tags": [
+      "astro",
+      "astrojs",
+      "islands-architecture",
+      "web-performance",
+      "hydration",
+      "frontend"
+    ],
+    "search_keywords_vi": [
+      "kiến trúc astro v6",
+      "islands architecture astro",
+      "chỉ thị client hydration",
+      "hiệu năng web html first"
+    ],
+    "use_case": "Quy chuẩn thiết kế kiến trúc Astro v6 theo triết lý HTML-first, tối ưu hóa quá trình hydration và cô lập các ốc đảo tương tác (islands)",
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "tuanductran",
+      "name": "Tuan Duc Tran",
+      "avatar": "https://avatars.githubusercontent.com/u/69758022?v=4",
+      "identifier": "tuanductran",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/astrojs",
+    "created_at": "2026-03-22T06:56:45.188Z"
+  }
+]

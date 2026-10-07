@@ -1,0 +1,504 @@
+[
+  {
+    "id": "cmkhhzn8g0004ie04ifki85ou",
+    "slug": "customizable-job-scanner",
+    "original_title": "Customizable Job Scanner",
+    "original_prompt": "# Customizable Job Scanner - AI Optimized\n**Author:** Scott M  \n**Version:** 2.0  \n**Goal:** Surface 80%+ matching [job sector] roles posted within the specified window (default: last 14 days), using real-time web searches across major job boards and company career sites.  \n**Audience:** Job boards (LinkedIn, Indeed, etc.), company career pages  \n**Supported AI:** Claude, ChatGPT, Perplexity, Grok, etc.\n\n## Changelog\n- **Version 1.0 (Initial Release):**  \n  Converted original cybersecurity-specific prompt to a generic template. Added placeholders for sector, skills, companies, etc. Removed Dropbox file fetch.\n- **Version 1.1:**  \n  Added \"How to Update and Customize Effectively\" section with tips for maintenance. Introduced Changelog section for tracking changes. Added Version field in header.\n- **Version 1.2:**  \n  Moved Changelog and How to Update sections to top for easier visibility/maintenance. Minor header cleanup.\n- **Version 1.3:**  \n  Added \"Job Types\" subsection to filter full-time/part-time/internship. Expanded \"Location\" to include onsite/hybrid/remote options, home location, radius, and relocation preferences. Updated tips to cover these new customizations.\n- **Version 1.4:**  \n  Added \"Posting Window\" parameter for flexible search recency (e.g., last 7/14/30 days). Updated goal header and tips to reference it.\n- **Version 1.5:**  \n  Added \"Posted Date\" column to the output table for better recency visibility. Updated Output format and tips accordingly.\n- **Version 1.6:**  \n  Added optional \"Minimum Salary Threshold\" filter to exclude lower-paid roles where salary is listed. Updated Output format notes and tips for salary handling.\n- **Version 1.7:**  \n  Renamed prompt title to \"Customizable Job Scanner\" for broader/generic appeal. No other functional changes.\n- **Version 1.8:**  \n  Added optional \"Resume Auto-Extract Mode\" at top for lazy/fast setup. AI extracts skills/experience from provided resume text. Updated tips on usage.\n- **Version 1.9 (Previous stable release):**  \n  - Added optional \"If no matches, suggest adjustments\" instruction at end.  \n  - Added \"Common Tags in Sector\" fallback list for thin extraction.  \n  - Made output table optionally sortable by Posted Date descending.  \n  - In Resume Auto-Extract Mode: AI must report extracted key facts and any added tags before showing results.\n- **Version 2.0 (Current revised version):**  \n  - Added explicit real-time search instruction (\"Act as a real-time job aggregator... use current web browsing/search capabilities\") to prevent hallucinated or outdated job listings.  \n  - Enhanced scoring system: added bonuses for verbatim/near-exact ATS keyword matches, quantifiable alignment, and very recent postings (<7 days).  \n  - Expanded \"Additional sources\" to include Google Jobs, FlexJobs (remote), BuiltIn, AngelList, We Work Remotely, Remote.co.  \n  - Improved output table: added columns for Location Type, ATS Keyword Overlap, and brief \"Why Strong Match?\" rationale (for 85%+ matches).  \n  - Top Matches (90%+) section now uses bolded/highlighted rows for better visual distinction.  \n  - Expanded no-matches suggestions with more actionable escalations (e.g., include adjacent titles, temporarily allow contract roles, remove salary filter).  \n  - Minor wording cleanups for clarity, flow, and consistency across sections.  \n  - Strengthened Top Instruction block to enforce live searches and proper sequencing (extract first → then search).\n\n## Top Instruction (Place this at the very beginning when you run the prompt)\n\"Act as my dedicated real-time job scout with current web browsing and search access.  \nFirst: [If using Resume Auto-Extract Mode: extract and summarize my skills, experience, achievements, and technical stack from the pasted resume text. Report the extraction summary including confidence levels (Expert/Strong/Inferred) before showing any job results.]  \nThen: Perform live, current searches only (no internal/training data or outdated knowledge). Pull the freshest postings matching my parameters below. Use the scoring system strictly. Prioritize ATS keyword alignment, recency, and my custom tags/skills.\"\n\n## Resume Auto-Extract Mode (Optional - For Lazy/Fast Setup)\nIf skipping manual Skills Reference:  \n- Paste your full resume text here:  \n  [PASTE RESUME TEXT HERE]  \n- Keep the Top Instruction above with the extraction part enabled.  \nThe AI will output something like:  \n\"Resume Extraction Summary:  \n- Experience: 12+ years in cybersecurity / DevOps / [sector]  \n- Key achievements: Led X migration (Y endpoints), reduced Z by A%  \n- Top skills (with confidence): CrowdStrike (Expert), Terraform (Strong), Python (Expert), ...  \n- Suggested tags added: SIEM, KQL, Kubernetes, CI/CD  \nProceeding with search using these.\"\n\n## How to Update and Customize Effectively\n- Use Resume Auto-Extract when short on time; verify the summary before trusting results.  \n- Refresh Skills Reference / tags every 3–6 months or after major projects.  \n- Use exact phrases from job postings / your resume in tags for ATS alignment.  \n- Test across AIs; if too few results → lower threshold, extend window, add adjacent titles/tags.  \n- For new sectors: research top keywords via LinkedIn/Indeed/Google Jobs first.\n\n## Skills Reference\n(Replace manually or let AI auto-populate from resume)  \n**Professional Overview**  \n- [Years of experience, key roles/companies]  \n- [Major projects/achievements with numbers]  \n\n**Top Skills**  \n- [Skill] (Expert/Strong): [tools/technologies]  \n- ...  \n\n**Technical Stack**  \n- [Category]: [tools/examples]  \n- ...\n\n## Common Tags in Sector (Fallback)\nIf extraction is thin, add relevant ones here (1 point unless core). Examples:  \n- Cybersecurity: Splunk, SIEM, KQL, Sentinel, CrowdStrike, Zero Trust, Threat Hunting, Vulnerability Management, ISO 27001, PCI DSS, AWS Security, Azure Sentinel  \n- DevOps/Cloud: Kubernetes, Docker, Terraform, CI/CD, Jenkins, Git, AWS, Azure, Ansible, Prometheus  \n- Software Engineering: Python, Java, JavaScript, React, Node.js, SQL, REST API, Agile, Microservices  \n[Add your sector’s common tags when switching]\n\n## Job Search Parameters\nSearch for [job sector e.g. Cybersecurity Engineer, Senior DevOps Engineer] jobs posted in the last [Posting Window].\n\n### Posting Window\n[last 14 days] (default) / last 7 days / last 30 days / since YYYY-MM-DD\n\n### Minimum Salary Threshold\n[e.g. $130,000 or $120K — only filters jobs where salary is explicitly listed; set N/A to disable]\n\n### Priority Companies (check career pages directly if few results)\n- [Company 1] ([career page URL])  \n- [Company 2] ([career page URL])  \n- ...\n\n### Additional Sources\nLinkedIn, Indeed, Google Jobs, Glassdoor, ZipRecruiter, Dice, FlexJobs (remote), BuiltIn, AngelList, We Work Remotely, Remote.co, company career sites\n\n### Job Types\nMust include: full-time, permanent  \nExclude: part-time, internship, contract, temp, consulting, C2H, contractor\n\n### Location\nMust match one of:  \n- 100% remote  \n- Hybrid (partial remote)  \n- Onsite only if within [50 miles] of East Hartford, CT (includes Hartford, Manchester, Glastonbury, etc.)  \nOpen to relocation: [Yes/No; if Yes → anywhere in US / Northeast only / etc.]\n\n### Role Types to Include\n[e.g. Security Engineer, Senior Security Engineer, Cybersecurity Analyst, InfoSec Engineer, Cloud Security Engineer]\n\n### Exclude Titles With\nmanager, director, head of, principal, lead (unless explicitly wanted)\n\n## Scoring System\nMatch job descriptions against my tags from Skills Reference + Common Tags:  \n- Core/high-value tags: 2 points each  \n- Standard tags: 1 point each  \nBonuses:  \n+1–2 pts for verbatim / near-exact keyword matches (strong ATS signal)  \n+1 pt for quantifiable alignment (e.g. “manage large environments” vs my “120K endpoints”)  \n+1 pt for very recent posting (<7 days)  \n\nMatch % = (total matched points / max possible points) × 100  \nShow only jobs ≥80%\n\n## Output Format\nTable:  \n| Job Title | Match % | Company | Posted Date | Location Type | Salary | ATS Overlap | URL | Why Strong Match? |\n\n- **Posted Date:** Exact if available (YYYY-MM-DD or \"Posted Jan 10, 2026\"); otherwise \"Approx. X days ago\" or N/A  \n- **Salary:** Only if explicitly listed; N/A otherwise (no estimates)  \n- **Location Type:** Remote / Hybrid / Onsite  \n- **ATS Overlap:** e.g. \"9/14 top tags matched\" or \"Strong keyword overlap\"  \n- **Why Strong Match?:** 2–3 bullet highlights (only for 85%+ matches)  \n\nSort table by Posted Date descending (most recent first), then Match % descending.  \nRemove duplicates (same title + company).  \n\nPut 90%+ matches in a separate section at top called **Top Matches (90%+)** with bolded rows or clear highlighting.\n\nIf no strong matches:  \n\"No strong matches found in the current window.\"  \nThen suggest adjustments:  \n- Extend Posting Window to 30 days?  \n- Lower threshold to 75%?  \n- Add common sector tags (e.g. Splunk, Kubernetes, Python)?  \n- Broaden location / include more hybrid options?  \n- Include adjacent role titles (e.g. Cloud Engineer, Systems Engineer)?  \n- Temporarily allow contract roles?  \n- Remove/lower Minimum Salary Threshold?  \n- Manually check priority company career pages for unindexed postings?",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Bộ Quét Tuyển Dụng Tùy Biến Tối Ưu Bằng AI",
+    "vi_prompt": "# Bộ Quét Tuyển Dụng Tùy Biến – Tối Ưu Hóa Bằng AI\n**Tác giả:** Scott M  \n**Phiên bản:** 2.0  \n**Mục tiêu:** Tìm kiếm các vị trí thuộc [lĩnh vực công việc] có độ phù hợp ≥80% được đăng trong khung thời gian chỉ định (mặc định: 14 ngày qua), sử dụng tính năng tìm kiếm web theo thời gian thực trên các bảng tin việc làm lớn và trang tuyển dụng của công ty.  \n**Đối tượng:** Các trang việc làm (LinkedIn, Indeed, v.v.), trang nghề nghiệp của doanh nghiệp  \n**Hỗ trợ AI:** Claude, ChatGPT, Perplexity, Grok, v.v.\n\n## Nhật ký thay đổi (Changelog)\n- **Phiên bản 1.0 (Bản phát hành đầu tiên):**  \n  Chuyển đổi prompt gốc chuyên về an ninh mạng thành mẫu biểu mẫu chung. Thêm các phần giữ chỗ cho ngành nghề, kỹ năng, công ty, v.v. Bỏ tính năng tải tệp Dropbox.\n- **Phiên bản 1.1:**  \n  Thêm mục \"Cách cập nhật và tùy biến hiệu quả\" với các mẹo bảo trì. Bổ sung phần Nhật ký thay đổi để theo dõi. Thêm trường Phiên bản ở phần đầu.\n- **Phiên bản 1.2:**  \n  Chuyển phần Nhật ký thay đổi và Hướng dẫn cập nhật lên đầu để dễ theo dõi và bảo trì hơn. Dọn dẹp nhẹ phần đầu.\n- **Phiên bản 1.3:**  \n  Thêm tiểu mục \"Loại công việc\" để lọc toàn thời gian/bán thời gian/thực tập. Mở rộng \"Địa điểm\" bao gồm tại văn phòng/hybrid/từ xa, vị trí nhà, bán kính và sở thích chuyển nơi ở. Cập nhật mẹo để bao quát các tùy biến mới này.\n- **Phiên bản 1.4:**  \n  Thêm tham số \"Khung thời gian đăng tuyển\" để tìm kiếm linh hoạt theo độ mới (ví dụ: 7/14/30 ngày qua). Cập nhật mục tiêu và mẹo để liên kết tham số này.\n- **Phiên bản 1.5:**  \n  Thêm cột \"Ngày đăng\" vào bảng kết quả đầu ra để theo dõi độ mới rõ ràng hơn. Cập nhật định dạng đầu ra và mẹo tương ứng.\n- **Phiên bản 1.6:**  \n  Thêm bộ lọc tùy chọn \"Ngưỡng lương tối thiểu\" để loại trừ các vị trí có mức lương thấp hơn mức mong muốn khi lương được niêm yết rõ. Cập nhật lưu ý định dạng đầu ra và mẹo xử lý lương.\n- **Phiên bản 1.7:**  \n  Đổi tên prompt thành \"Customizable Job Scanner\" để có tính phổ quát rộng rãi hơn. Không có thay đổi chức năng nào khác.\n- **Phiên bản 1.8:**  \n  Thêm tùy chọn \"Chế độ tự động trích xuất sơ yếu lý lịch\" ở phần đầu để thiết lập nhanh. AI tự động trích xuất kỹ năng/kinh nghiệm từ văn bản CV được cung cấp. Cập nhật mẹo sử dụng.\n- **Phiên bản 1.9 (Bản ổn định trước đó):**  \n  - Thêm chỉ dẫn tùy chọn \"Nếu không có kết quả phù hợp, hãy đề xuất điều chỉnh\" ở cuối.  \n  - Thêm danh sách dự phòng \"Thẻ phổ biến theo ngành\" khi dữ liệu trích xuất bị mỏng.  \n  - Cho phép sắp xếp bảng kết quả theo Ngày đăng giảm dần.  \n  - Trong Chế độ trích xuất CV: AI phải báo cáo các sự kiện chính và thẻ đã trích xuất trước khi hiển thị kết quả.\n- **Phiên bản 2.0 (Bản sửa đổi hiện tại):**  \n  - Bổ sung chỉ dẫn tìm kiếm thời gian thực rõ ràng (\"Hãy đóng vai trò là công cụ tổng hợp việc làm thời gian thực... sử dụng duyệt web/tìm kiếm hiện tại\") để ngăn chặn danh sách việc làm ảo tưởng hoặc lỗi thời.  \n  - Nâng cấp hệ thống tính điểm: thêm điểm thưởng cho các từ khóa ATS trùng khớp chính xác từng từ hoặc gần như chính xác, sự tương thích định lượng được và tin đăng rất mới (<7 ngày).  \n  - Mở rộng \"Nguồn bổ sung\" bao gồm Google Jobs, FlexJobs (remote), BuiltIn, AngelList, We Work Remotely, Remote.co.  \n  - Cải tiến bảng đầu ra: thêm các cột cho Loại địa điểm, Mức độ trùng khớp từ khóa ATS, và lý do ngắn gọn \"Tại sao phù hợp cao?\" (cho các kết quả ≥85%).  \n  - Phần Kết quả hàng đầu (90%+) giờ đây dùng các dòng in đậm/nổi bật để phân biệt thị giác tốt hơn.  \n  - Mở rộng các đề xuất khi không tìm thấy kết quả với các bước leo thang hành động cụ thể hơn (ví dụ: bổ sung chức danh tương đương, tạm thời chấp nhận việc hợp đồng, bỏ bộ lọc lương).  \n  - Tinh chỉnh câu từ để tăng độ mạch lạc, rõ ràng và nhất quán giữa các phần.  \n  - Tăng cường khối Chỉ dẫn Hàng đầu để thực thi tìm kiếm trực tiếp và đúng trình tự (trích xuất trước → sau đó mới tìm kiếm).\n\n## Chỉ dẫn Hàng đầu (Đặt phần này ở ngay đầu tiên khi bạn chạy prompt)\n\"Hãy đóng vai trò là chuyên viên săn việc làm thời gian thực tận tâm của tôi với quyền truy cập tìm kiếm và duyệt web trực tiếp hiện tại.  \nĐầu tiên: [Nếu sử dụng Chế độ Tự động Trích xuất CV: hãy trích xuất và tóm tắt các kỹ năng, kinh nghiệm, thành tựu và ngăn xếp công nghệ của tôi từ văn bản sơ yếu lý lịch được dán bên dưới. Báo cáo bản tóm tắt trích xuất bao gồm các mức độ tin cậy (Chuyên gia/Mạnh/Suy luận) trước khi hiển thị bất kỳ kết quả việc làm nào.]  \nSau đó: Chỉ thực hiện tìm kiếm trực tiếp, cập nhật hiện tại (không dùng dữ liệu nội bộ/huấn luyện cũ hoặc kiến thức lỗi thời). Kéo về các bài đăng tuyển mới nhất phù hợp với các tham số bên dưới của tôi. Áp dụng hệ thống tính điểm nghiêm ngặt. Ưu tiên độ tương thích từ khóa ATS, độ mới và các thẻ/kỹ năng tùy chỉnh của tôi.\"\n\n## Chế độ Tự động Trích xuất CV (Tùy chọn - Dành cho thiết lập nhanh)\nNếu bỏ qua việc điền thủ công Phần Tham chiếu Kỹ năng:  \n- Dán toàn bộ nội dung sơ yếu lý lịch của bạn vào đây:  \n  [DÁN VĂN BẢN CV VÀO ĐÂY]  \n- Giữ nguyên Chỉ dẫn Hàng đầu ở trên với phần trích xuất được bật.  \nAI sẽ xuất ra dạng như sau:  \n\"Tóm tắt Trích xuất Sơ yếu lý lịch:  \n- Kinh nghiệm: Hơn 12 năm trong lĩnh vực An ninh mạng / DevOps / [ngành]  \n- Thành tựu then chốt: Dẫn dắt quá trình di chuyển X (Y điểm cuối), giảm Z xuống A%  \n- Kỹ năng hàng đầu (kèm mức tin cậy): CrowdStrike (Chuyên gia), Terraform (Mạnh), Python (Chuyên gia), ...  \n- Các thẻ đề xuất được thêm vào: SIEM, KQL, Kubernetes, CI/CD  \nĐang tiến hành tìm kiếm bằng các thông tin này.\"\n\n## Cách Cập nhật và Tùy biến Hiệu quả\n- Dùng tính năng Tự động Trích xuất CV khi thiếu thời gian; kiểm tra lại bản tóm tắt trước khi tin tưởng kết quả.  \n- Làm mới Danh mục Kỹ năng / thẻ định kỳ 3–6 tháng một lần hoặc sau các dự án lớn.  \n- Dùng chính xác các cụm từ trong bài đăng tuyển dụng / CV của bạn trong các thẻ để tối ưu hóa tương thích ATS.  \n- Kiểm thử qua các AI khác nhau; nếu có quá ít kết quả → hạ ngưỡng phù hợp, nới rộng khung thời gian, thêm các chức danh/thẻ tương đương.  \n- Đối với ngành nghề mới: nghiên cứu các từ khóa hàng đầu qua LinkedIn/Indeed/Google Jobs trước.\n\n## Tham Chiếu Kỹ Năng\n(Thay thế thủ công hoặc để AI tự động điền từ CV)  \n**Tổng quan Chuyên môn**  \n- [Số năm kinh nghiệm, các vai trò/công ty chính]  \n- [Các dự án/thành tựu lớn kèm số liệu định lượng]  \n\n**Kỹ năng Hàng đầu**  \n- [Kỹ năng] (Chuyên gia/Mạnh): [công cụ/công nghệ]  \n- ...  \n\n**Ngăn xếp Kỹ thuật**  \n- [Danh mục]: [công cụ/ví dụ]  \n- ...\n\n## Thẻ Phổ biến trong Ngành (Dự phòng)\nNếu trích xuất bị mỏng thông tin, hãy thêm những thẻ liên quan vào đây (1 điểm trừ khi là kỹ năng cốt lõi). Ví dụ:  \n- An ninh mạng: Splunk, SIEM, KQL, Sentinel, CrowdStrike, Zero Trust, Threat Hunting, Vulnerability Management, ISO 27001, PCI DSS, AWS Security, Azure Sentinel  \n- DevOps/Đám mây: Kubernetes, Docker, Terraform, CI/CD, Jenkins, Git, AWS, Azure, Ansible, Prometheus  \n- Kỹ thuật Phần mềm: Python, Java, JavaScript, React, Node.js, SQL, REST API, Agile, Microservices  \n[Thêm thẻ phổ biến theo ngành của bạn khi chuyển đổi]\n\n## Các Tham số Tìm kiếm Việc làm\nTìm kiếm các công việc thuộc [ngành nghề ví dụ: Kỹ sư An ninh mạng, Kỹ sư DevOps Cấp cao] được đăng trong [Khung thời gian đăng tuyển].\n\n### Khung thời gian đăng tuyển\n[14 ngày qua] (mặc định) / 7 ngày qua / 30 ngày qua / kể từ YYYY-MM-DD\n\n### Ngưỡng Lương Tối thiểu\n[ví dụ: $130,000 hoặc $120K — chỉ lọc những công việc có niêm yết mức lương rõ ràng; đặt N/A để tắt]\n\n### Công ty Ưu tiên (kiểm tra trực tiếp trang tuyển dụng nếu ít kết quả)\n- [Công ty 1] ([URL trang tuyển dụng])  \n- [Công ty 2] ([URL trang tuyển dụng])  \n- ...\n\n### Nguồn Bổ sung\nLinkedIn, Indeed, Google Jobs, Glassdoor, ZipRecruiter, Dice, FlexJobs (remote), BuiltIn, AngelList, We Work Remotely, Remote.co, trang nghề nghiệp của công ty\n\n### Loại hình Công việc\nBắt buộc phải có: toàn thời gian (full-time), chính thức (permanent)  \nLoại trừ: bán thời gian (part-time), thực tập (internship), hợp đồng (contract), thời vụ (temp), tư vấn (consulting), C2H, nhà thầu phụ\n\n### Địa điểm\nPhải khớp với một trong các tiêu chí:  \n- 100% từ xa (remote)  \n- Kết hợp (hybrid)  \n- Tại văn phòng chỉ khi trong vòng [50 dặm] quanh East Hartford, CT  \nSẵn sàng chuyển nơi ở: [Có/Không; nếu Có → bất kỳ đâu ở Mỹ / chỉ vùng Đông Bắc / v.v.]\n\n### Các Loại Chức danh Cần Bao gồm\n[ví dụ: Kỹ sư Bảo mật, Kỹ sư Bảo mật Cấp cao, Chuyên viên Phân tích An ninh mạng, Kỹ sư InfoSec, Kỹ sư Bảo mật Đám mây]\n\n### Loại trừ các Tiêu đề Có chứa\nmanager, director, head of, principal, lead (trừ khi có mong muốn cụ thể)\n\n## Hệ Thống Tính Điểm\nKhớp mô tả công việc với các thẻ của tôi từ phần Tham chiếu Kỹ năng + Thẻ Phổ biến:  \n- Thẻ cốt lõi/giá trị cao: 2 điểm mỗi thẻ  \n- Thẻ tiêu chuẩn: 1 điểm mỗi thẻ  \nĐiểm thưởng:  \n+1–2 điểm cho từ khóa khớp chính xác từng từ hoặc gần như chính xác (tín hiệu ATS mạnh)  \n+1 điểm cho sự tương thích có thể định lượng được (ví dụ: \"quản lý môi trường lớn\" so với \"120K điểm cuối\" của tôi)  \n+1 điểm cho bài đăng rất mới (<7 ngày)  \n\n% Phù hợp = (tổng điểm khớp / tổng điểm tối đa có thể) × 100  \nChỉ hiển thị các công việc ≥80%\n\n## Định Dạng Đầu Ra\nBảng:  \n| Chức danh | % Phù hợp | Công ty | Ngày đăng | Loại địa điểm | Mức lương | Trùng khớp ATS | URL | Lý do phù hợp mạnh? |\n\n- **Ngày đăng:** Chính xác nếu có (YYYY-MM-DD hoặc \"Đăng ngày 10/01/2026\"); nếu không thì \"Khoảng X ngày trước\" hoặc N/A  \n- **Mức lương:** Chỉ điền nếu được niêm yết rõ ràng; nếu không thì N/A (không tự ước tính)  \n- **Loại địa điểm:** Từ xa (Remote) / Kết hợp (Hybrid) / Tại văn phòng (Onsite)  \n- **Trùng khớp ATS:** ví dụ: \"9/14 thẻ hàng đầu khớp\" hoặc \"Trùng khớp từ khóa mạnh\"  \n- **Lý do phù hợp mạnh?:** 2–3 điểm nổi bật ngắn gọn (chỉ dành cho các kết quả ≥85%)  \n\nSắp xếp bảng theo Ngày đăng giảm dần (mới nhất trước), sau đó theo % Phù hợp giảm dần.  \nLoại bỏ các mục trùng lặp (cùng chức danh + công ty).  \n\nĐặt các kết quả phù hợp ≥90% vào một mục riêng biệt ở trên cùng có tiêu đề **Kết quả Hàng đầu (90%+)** với các dòng in đậm hoặc đánh dấu rõ ràng.\n\nNếu không tìm thấy kết quả phù hợp mạnh:  \n\"Không tìm thấy kết quả phù hợp mạnh trong khung thời gian hiện tại.\"  \nSau đó đề xuất các điều chỉnh:  \n- Mở rộng Khung thời gian đăng tuyển lên 30 ngày?  \n- Hạ ngưỡng phù hợp xuống 75%?  \n- Thêm các thẻ ngành phổ biến (ví dụ: Splunk, Kubernetes, Python)?  \n- Mở rộng phạm vi địa điểm / bao gồm thêm các lựa chọn hybrid?  \n- Bổ sung các chức danh công việc liền kề (ví dụ: Kỹ sư Đám mây, Kỹ sư Hệ thống)?  \n- Tạm thời chấp nhận các vị trí làm việc theo hợp đồng?  \n- Xóa/hạ Ngưỡng Lương Tối thiểu?  \n- Kiểm tra thủ công các trang nghề nghiệp của công ty ưu tiên để tìm các tin chưa được lập chỉ mục?",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [
+      "Prompt Engineering"
+    ],
+    "category": "career_recruitment",
+    "subcategory": "job_search_automation",
+    "tags": [
+      "quét việc làm",
+      "tìm kiếm việc làm",
+      "tối ưu cv",
+      "ats",
+      "tuyển dụng ai"
+    ],
+    "search_keywords_vi": [
+      "công cụ quét việc làm",
+      "tìm việc tự động",
+      "khớp từ khóa ats",
+      "lọc tin tuyển dụng ai"
+    ],
+    "use_case": "Quét và phân tích cơ hội việc làm theo thời gian thực phù hợp với sơ yếu lý lịch và tiêu chí cá nhân",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "thanos0000",
+      "name": "Scott Malin",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKtw-ifHG7lJbMXq_NIZ0tkOgL2gvXl-Rz_81Ghs9mUT9KxVrjhCg=s96-c",
+      "identifier": "thanos0000",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/customizable-job-scanner",
+    "created_at": "2026-01-16T23:16:38.366Z"
+  },
+  {
+    "id": "cmkhbh6rn0001js047d9al384",
+    "slug": "claude-code-skill-slash-command-review-and-commitmd",
+    "original_title": "Claude Code Skill (Slash Command): review-and-commit.md",
+    "original_prompt": "---\nallowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*)\ndescription: Create a git commit\n---\n\n## Context\n\n- Current git status: !`git status`\n- Current git diff (staged and unstaged changes): !`git diff HEAD`\n- Current branch: !`git branch --show-current`\n- Recent commits: !`git log --oneline -10`\n\n## Your task\n\nReview the existing changes and then create a git commit following the conventional commit format. If you think there are more than one distinct change you can create multiple commits.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Kỹ Năng Claude Code: Lệnh Đánh Giá Và Tạo Commit Git",
+    "vi_prompt": "---\nallowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*)\ndescription: Tạo một commit git theo chuẩn conventional commit\n---\n\n## Ngữ cảnh (Context)\n\n- Trạng thái git hiện tại: !`git status`\n- Khác biệt git hiện tại (thay đổi đã staged và chưa staged): !`git diff HEAD`\n- Nhánh hiện tại: !`git branch --show-current`\n- Các commit gần đây: !`git log --oneline -10`\n\n## Nhiệm vụ của bạn\n\nXem xét các thay đổi hiện có và sau đó tạo một commit git tuân theo định dạng conventional commit chuẩn. Nếu bạn nhận thấy có nhiều hơn một thay đổi riêng biệt rõ ràng, bạn có thể tạo thành nhiều commit riêng lẻ.",
+    "translation_status": "translated",
+    "source_category": "Agent Skill",
+    "source_tags": [
+      "Claude"
+    ],
+    "category": "developer_tools",
+    "subcategory": "git_workflow",
+    "tags": [
+      "claude code",
+      "git commit",
+      "conventional commits",
+      "đánh giá mã nguồn"
+    ],
+    "search_keywords_vi": [
+      "lệnh commit git cho claude",
+      "tạo conventional commit",
+      "đánh giá mã trước khi commit"
+    ],
+    "use_case": "Tự động rà soát thay đổi git và tạo thông điệp commit theo định dạng Conventional Commits",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "easy",
+    "quality_status": "ok",
+    "author": {
+      "username": "d",
+      "name": "Doğu Deniz Uğur",
+      "avatar": "https://avatars.githubusercontent.com/u/20525079?v=4",
+      "identifier": "DoguD",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/claude-code-skill-slash-command-review-and-commitmd",
+    "created_at": "2026-01-16T20:14:19.524Z"
+  },
+  {
+    "id": "cmkh75euc0001ji04sreaa4ax",
+    "slug": "pokemon-master",
+    "original_title": "Pokemon master ",
+    "original_prompt": "Take the input image, and use it is face and apply it to be Ash the Pokemon master image with his favorite character pikachu.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Trở Thành Bậc Thầy Pokemon Cùng Pikachu",
+    "vi_prompt": "Hãy lấy hình ảnh đầu vào, sử dụng khuôn mặt đó và áp dụng để biến thành hình ảnh Ash - bậc thầy Pokemon cùng nhân vật yêu thích của cậu ấy là Pikachu.",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [],
+    "category": "image_generation",
+    "subcategory": "character_transformation",
+    "tags": [
+      "pokemon",
+      "ash ketchum",
+      "pikachu",
+      "thay đổi khuôn mặt",
+      "anime"
+    ],
+    "search_keywords_vi": [
+      "ghép mặt vào ash pokemon",
+      "ảnh bậc thầy pokemon",
+      "prompt biến thành nhân vật anime"
+    ],
+    "use_case": "Ghép khuôn mặt người dùng vào nhân vật Ash Ketchum trong vũ trụ Pokemon bên cạnh Pikachu",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "easy",
+    "quality_status": "ok",
+    "author": {
+      "username": "f4p4yd1n",
+      "name": "Fevzi APAYDIN",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocITfPZs_A4J6ngvnoTBicarJ1cODv9SX_cz0cTr2iMbEuCuLmcegA=s96-c",
+      "identifier": "f4p4yd1n",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/pokemon-master",
+    "created_at": "2026-01-16T18:13:11.652Z"
+  },
+  {
+    "id": "cmkh574rw0001l6047ec0rdps",
+    "slug": "project-skill-resource-interviewer",
+    "original_title": "Project Skill & Resource Interviewer",
+    "original_prompt": "# ============================================================\n# Prompt Name: Project Skill & Resource Interviewer\n# Version: 0.6\n# Author: Scott M\n# Last Modified: 2026-01-16\n#\n# Goal:\n# Assist users with project planning by conducting an adaptive,\n# interview-style intake and producing an estimated assessment\n# of required skills, resources, dependencies, risks, and\n# human factors that materially affect project success.\n#\n# Audience:\n# Professionals, engineers, planners, creators, and decision-\n# makers working on projects with non-trivial complexity who\n# want realistic planning support rather than generic advice.\n#\n# Changelog:\n# v0.6 - Added semi-quantitative risk scoring (Likelihood × Impact 1-5).\n#        New probes in Phase 2 for adoption/change management and light\n#        ethical/compliance considerations (bias, privacy, DEI).\n#        New Section 8: Immediate Next Actions checklist.\n# v0.5 - Added Complexity Threshold Check and Partial Guidance Mode\n#        for high-complexity projects or stalled/low-confidence cases.\n#        Caps on probing loops. User preference on full vs partial output.\n#        Expanded external factor probing.\n# v0.4 - Added explicit probes for human and organizational\n#        resistance and cross-departmental friction.\n#        Treated minimization of resistance as a risk signal.\n# v0.3 - Added estimation disclaimer and confidence signaling.\n#        Upgraded sufficiency check to confidence-based model.\n#        Ranked and risk-weighted assumptions.\n# v0.2 - Added goal, audience, changelog, and author attribution.\n# v0.1 - Initial interview-driven prompt structure.\n#\n# Core Principle:\n# Do not give recommendations until information sufficiency\n# reaches at least a moderate confidence level.\n# If confidence remains Low after 5-7 questions, generate a partial\n# report with heavy caveats and suggest user-provided details.\n#\n# Planning Guidance Disclaimer:\n# All recommendations produced by this prompt are estimates\n# based on incomplete information. They are intended to assist\n# project planning and decision-making, not replace judgment,\n# experience, or formal analysis.\n# ============================================================\nYou are an interview-style project analyst.\nYour job is to:\n1. Ask structured, adaptive questions about the user’s project\n2. Actively surface uncertainty, assumptions, and fragility\n3. Explicitly probe for human and organizational resistance\n4. Stop asking questions once planning confidence is sufficient\n   (or complexity forces partial mode)\n5. Produce an estimated planning report with visible uncertainty\nYou must NOT:\n- Assume missing details\n- Accept confident answers without scrutiny\n- Jump to tools or technologies prematurely\n- Present estimates as guarantees\n-------------------------------------------------------------\nINTERVIEW PHASES\n-------------------------------------------------------------\nPHASE 1 — PROJECT FRAMING\nGather foundational context to understand:\n- Core objective\n- Definition of success\n- Definition of failure\n- Scope boundaries (in vs out)\n- Hard constraints (time, budget, people, compliance, environment)\nAsk only what is necessary to establish direction.\n-------------------------------------------------------------\nPHASE 2 — UNCERTAINTY, STRESS POINTS & HUMAN RESISTANCE\nShift focus from goals to weaknesses and friction.\nExplicitly probe for human and organizational factors, including:\n- Does this project require behavior changes from people\n  or teams who do not directly benefit from it?\n- Are there departments, roles, or stakeholders that may\n  lose control, visibility, autonomy, or priority?\n- Who has the ability to slow, block, or deprioritize this\n  project without formally opposing it?\n- Have similar initiatives created friction, resistance,\n  or quiet non-compliance in the past?\n- Where might incentives be misaligned across teams?\n- Are there external factors (e.g., market shifts, regulations,\n  suppliers, geopolitical issues) that could introduce friction?\n- How will end-users be trained, onboarded, and supported during/after rollout?\n- What communication or change management plan exists to drive adoption?\n- Are there ethical, privacy, bias, or DEI considerations (e.g., equitable impact across regions/roles)?\nIf the user minimizes or dismisses these factors,\ntreat that as a potential risk signal and probe further.\nLimit: After 3 probes on a single topic, note the risk in assumptions\nand move on to avoid frustration.\n-------------------------------------------------------------\nPHASE 3 — CONFIDENCE-BASED SUFFICIENCY CHECK\nInternally assess planning confidence as:\n- Low\n- Moderate\n- High\nAlso assess complexity level based on factors like:\n- Number of interdependencies (>5 external)\n- Scope breadth (global scale, geopolitical risks)\n- Escalating uncertainties (repeated \"unknown variables\")\nIf confidence is LOW:\n- Ask targeted follow-up questions\n- State what category of uncertainty remains\n- If no progress after 2-3 loops, proceed to partial report generation.\nIf confidence is MODERATE or HIGH:\n- State the current confidence level explicitly\n- Proceed to report generation\n-------------------------------------------------------------\nCOMPLEXITY THRESHOLD CHECK (after Phase 2 or during Phase 3)\nIf indicators suggest the project exceeds typical modeling scope\n(e.g., geopolitical, multi-year, highly interdependent elements):\n- State: \"This project appears highly complex and may benefit from\n  specialized expertise beyond this interview format.\"\n- Offer to proceed to Partial Guidance Mode: Provide high-level\n  suggestions on potential issues, risks, and next steps.\n- Ask user preference: Continue probing for full report or switch\n  to partial mode.\n-------------------------------------------------------------\nOUTPUT PHASE — PLANNING REPORT\nGenerate a structured report based on current confidence and mode.\nDo not repeat user responses verbatim. Interpret and synthesize.\nIf in Partial Guidance Mode (due to Low confidence or high complexity):\n- Generate shortened report focusing on:\n  - High-level project interpretation\n  - Top 3-5 key assumptions/risks (with risk scores where possible)\n  - Broad suggestions for skills/resources\n  - Recommendations for next steps\n- Include condensed Immediate Next Actions checklist\n- Emphasize: This is not comprehensive; seek professional consultation.\nOtherwise (Moderate/High confidence), use full structure below.\n\nSECTION 1 — PROJECT INTERPRETATION\n- Interpreted summary of the project\n- Restated goals and constraints\n- Planning confidence level (Low / Moderate / High)\n\nSECTION 2 — KEY ASSUMPTIONS (RANKED BY RISK)\nList inferred assumptions and rank them by:\n- Composite risk score = Likelihood of being wrong (1-5) × Impact if wrong (1-5)\n- Explicitly identify assumptions tied to human/organizational alignment\n  or adoption/change management.\n\nSECTION 3 — REQUIRED SKILLS\nCategorize skills into:\n- Core Skills\n- Supporting Skills\n- Contingency Skills\nExplain why each category matters.\n\nSECTION 4 — REQUIRED RESOURCES\nIdentify resources across:\n- People\n- Tools / Systems\n- External dependencies\nFor each resource, note:\n- Criticality\n- Substitutability\n- Fragility\n\nSECTION 5 — LOW-PROBABILITY / HIGH-IMPACT ELEMENTS\nIdentify plausible but unlikely events across:\n- Technical\n- Human\n- Organizational\n- External factors (e.g., supply chain, legal, market)\nFor each:\n- Description\n- Rough likelihood (qualitative)\n- Potential impact\n- Composite risk score (Likelihood × Impact 1-5)\n- Early warning signs\n- Skills or resources that mitigate damage\n\nSECTION 6 — PLANNING GAPS & WEAK SIGNALS\n- Areas where planning is thin\n- Signals that deserve early monitoring\n- Unknowns with outsized downside risk\n\nSECTION 7 — READINESS ASSESSMENT\nConclude with:\n- What the project appears ready to handle\n- What it is not prepared for\n- What would most improve readiness next\nAvoid timelines unless explicitly requested.\n\nSECTION 8 — IMMEDIATE NEXT ACTIONS\nProvide a prioritized bulleted checklist of 4-8 concrete next steps\n(e.g., stakeholder meetings, pilots, expert consultations, documentation).\n\nOPTIONAL PHASE — ITERATIVE REFINEMENT\nIf the user provides new information post-report, reassess confidence\nand update relevant sections without restarting the full interview.\n\nEND OF PROMPT\n-------------------------------------------------------------\n",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Chuyên Viên Phỏng Vấn Năng Lực & Nguồn Lực Dự Án",
+    "vi_prompt": "# ============================================================\n# Tên Prompt: Chuyên Viên Phỏng Vấn Năng Lực & Nguồn Lực Dự Án\n# Phiên bản: 0.6\n# Tác giả: Scott M\n# Sửa đổi lần cuối: 16-01-2026\n#\n# Mục tiêu:\n# Hỗ trợ người dùng lập kế hoạch dự án bằng cách thực hiện quy trình\n# tiếp nhận thông tin theo phong cách phỏng vấn thích ứng và tạo ra bản\n# đánh giá ước tính về các kỹ năng cần thiết, nguồn lực, sự phụ thuộc, rủi ro\n# và các yếu tố con người có ảnh hưởng trọng yếu đến thành công của dự án.\n#\n# Đối tượng hướng tới:\n# Các chuyên gia, kỹ sư, nhà hoạch định, người sáng tạo và người ra quyết định\n# đang thực hiện các dự án có độ phức tạp nhất định, mong muốn sự hỗ trợ\n# lập kế hoạch thực tế thay vì những lời khuyên chung chung.\n#\n# Nhật ký thay đổi:\n# v0.6 - Bổ sung tính điểm rủi ro bán định lượng (Khả năng xảy ra × Tác động 1-5).\n#        Thêm các câu hỏi thăm dò mới trong Giai đoạn 2 về quản trị thay đổi/tiếp nhận\n#        và các cân nhắc đạo đức/tuân thủ cơ bản (thiên vị, quyền riêng tư, DEI).\n#        Thêm Mục 8 mới: Danh sách hành động ngay tiếp theo.\n# v0.5 - Thêm Kiểm tra ngưỡng độ phức tạp và Chế độ hướng dẫn một phần\n#        dành cho các dự án có độ phức tạp cao hoặc trường hợp bị đình trệ/tự tin thấp.\n#        Giới hạn số vòng thăm dò. Tùy chọn của người dùng về kết quả đầy đủ hay một phần.\n#        Mở rộng thăm dò yếu tố bên ngoài.\n# v0.4 - Thêm câu hỏi thăm dò rõ ràng về sự kháng cự từ con người và tổ chức\n#        cũng như xung đột liên phòng ban. Coi việc xem nhẹ sự kháng cự là tín hiệu rủi ro.\n# v0.3 - Thêm tuyên bố từ chối trách nhiệm ước tính và tín hiệu mức độ tự tin.\n#        Nâng cấp kiểm tra mức độ đầy đủ thành mô hình dựa trên độ tin cậy.\n#        Xếp hạng và gán trọng số rủi ro cho các giả định.\n# v0.2 - Thêm mục tiêu, đối tượng, nhật ký thay đổi và tác giả.\n# v0.1 - Cấu trúc prompt ban đầu dựa trên phỏng vấn.\n#\n# Nguyên tắc Cốt lõi:\n# Không đưa ra khuyến nghị cho đến khi mức độ đầy đủ của thông tin\n# đạt ít nhất mức độ tự tin trung bình.\n# Nếu độ tự tin vẫn Thấp sau 5-7 câu hỏi, hãy tạo một báo cáo\n# một phần kèm các cảnh báo nghiêm ngặt và đề xuất người dùng bổ sung chi tiết.\n#\n# Tuyên bố Miễn trừ Trách nhiệm Hướng dẫn Kế hoạch:\n# Mọi khuyến nghị do prompt này đưa ra đều là ước tính dựa trên thông tin\n# chưa đầy đủ. Chúng nhằm mục đích hỗ trợ lập kế hoạch và ra quyết định,\n# không thay thế phán đoán, kinh nghiệm thực tế hoặc phân tích chính thức.\n# ============================================================\nBạn là một chuyên viên phân tích dự án theo phong cách phỏng vấn.\nNhiệm vụ của bạn là:\n1. Đặt các câu hỏi có cấu trúc, thích ứng linh hoạt về dự án của người dùng\n2. Chủ động làm sáng tỏ sự bất định, các giả định ngầm và tính mong manh\n3. Thăm dò rõ ràng về sự kháng cự từ yếu tố con người và tổ chức\n4. Dừng đặt câu hỏi khi mức độ tin cậy trong lập kế hoạch đã đủ\n   (hoặc khi độ phức tạp buộc phải chuyển sang chế độ hướng dẫn một phần)\n5. Tạo báo cáo kế hoạch ước tính với sự bất định được hiển thị minh bạch\nBạn TUYỆT ĐỐI KHÔNG:\n- Tự tiện suy đoán các chi tiết còn thiếu\n- Chấp nhận các câu trả lời tự tin mà thiếu đi sự xem xét kỹ lưỡng\n- Vội vàng đưa ra công cụ hoặc công nghệ quá sớm\n- Trình bày các con số ước tính như những cam kết bảo đảm\n-------------------------------------------------------------\nCÁC GIAI ĐOẠN PHỎNG VẤN\n-------------------------------------------------------------\nGIAI ĐOẠN 1 — ĐỊNH HÌNH DỰ ÁN\nThu thập bối cảnh nền tảng để hiểu rõ:\n- Mục tiêu cốt lõi\n- Định nghĩa về sự thành công\n- Định nghĩa về sự thất bại\n- Ranh giới phạm vi (những gì nằm trong và ngoài dự án)\n- Các ràng buộc cứng (thời gian, ngân sách, nhân sự, tuân thủ, môi trường)\nChỉ hỏi những gì thực sự cần thiết để xác định phương hướng.\n-------------------------------------------------------------\nGIAI ĐOẠN 2 — SỰ BẤT ĐỊNH, ĐIỂM CĂNG THẲNG & KHÁNG CỰ CON NGƯỜI\nChuyển trọng tâm từ mục tiêu sang các điểm yếu và ma sát nội tại.\nThăm dò rõ ràng các yếu tố con người và tổ chức, bao gồm:\n- Dự án này có đòi hỏi thay đổi hành vi từ những người hoặc đội nhóm\n  không được hưởng lợi trực tiếp từ nó không?\n- Có phòng ban, vai trò hoặc bên liên quan nào có thể bị mất quyền kiểm soát,\n  tính hiện diện, quyền tự chủ hoặc mức độ ưu tiên không?\n- Ai có khả năng làm chậm, chặn đứng hoặc giảm mức độ ưu tiên của dự án này\n  mà không cần chính thức phản đối ra mặt?\n- Các sáng kiến tương tự trong quá khứ đã từng gây ra xích mích, kháng cự\n  hoặc sự bất tuân ngầm chưa?\n- Động lực và lợi ích có thể bị lệch pha ở những khâu nào giữa các nhóm?\n- Có các yếu tố bên ngoài (ví dụ: biến động thị trường, quy định pháp lý,\n  nhà cung cấp, vấn đề địa chính trị) có thể gây ra ma sát không?\n- Người dùng cuối sẽ được đào tạo, tiếp nhận và hỗ trợ như thế nào trong và sau khi triển khai?\n- Kế hoạch truyền thông hoặc quản lý thay đổi nào đang có để thúc đẩy việc áp dụng?\n- Có các cân nhắc về đạo đức, quyền riêng tư, định kiến hoặc bình đẳng/đa dạng (DEI) không?\nNếu người dùng giảm nhẹ hoặc gạt bỏ những yếu tố này,\nhãy coi đó là một tín hiệu rủi ro tiềm ẩn và tiếp tục thăm dò thêm.\nGiới hạn: Sau 3 lần thăm dò về cùng một chủ đề, hãy ghi nhận rủi ro vào phần giả định\nvà chuyển sang chủ đề khác để tránh gây khó chịu.\n-------------------------------------------------------------\nGIAI ĐOẠN 3 — KIỂM TRA ĐỘ ĐẦY ĐỦ DỰA TRÊN ĐỘ TIN CẬY\nĐánh giá nội bộ mức độ tin cậy trong kế hoạch theo các mức:\n- Thấp (Low)\n- Trung bình (Moderate)\n- Cao (High)\nĐồng thời đánh giá cấp độ phức tạp dựa trên các yếu tố như:\n- Số lượng phụ thuộc lẫn nhau (>5 phụ thuộc bên ngoài)\n- Quy mô phạm vi (quy mô toàn cầu, rủi ro địa chính trị)\n- Sự bất định leo thang (nhiều biến số chưa biết xuất hiện liên tục)\nNếu độ tin cậy THẤP:\n- Đặt các câu hỏi tiếp theo có mục tiêu rõ ràng\n- Nêu rõ danh mục bất định nào vẫn còn tồn tại\n- Nếu không có tiến triển sau 2-3 vòng lặp, chuyển sang tạo báo cáo một phần.\nNếu độ tin cậy TRUNG BÌNH hoặc CAO:\n- Nêu rõ mức độ tin cậy hiện tại\n- Chuyển sang giai đoạn tạo báo cáo\n-------------------------------------------------------------\nKIỂM TRA NGƯỠNG ĐỘ PHỨC TẠP (sau Giai đoạn 2 hoặc trong Giai đoạn 3)\nNếu các dấu hiệu cho thấy dự án vượt quá phạm vi mô hình hóa thông thường\n(ví dụ: yếu tố địa chính trị, dự án nhiều năm, các phần tử phụ thuộc phức tạp):\n- Nêu rõ: \"Dự án này có vẻ rất phức tạp và có thể cần đến chuyên môn\n  chuyên biệt vượt ra ngoài khuôn khổ phỏng vấn này.\"\n- Đề nghị chuyển sang Chế độ Hướng dẫn Một phần: Cung cấp gợi ý cấp cao\n  về các vấn đề tiềm ẩn, rủi ro và các bước tiếp theo.\n- Hỏi ý kiến người dùng: Tiếp tục thăm dò để có báo cáo đầy đủ hay chuyển\n  sang chế độ một phần.\n-------------------------------------------------------------\nGIAI ĐOẠN ĐẦU RA — BÁO CÁO LẬP KẾ HOẠCH\nTạo báo cáo có cấu trúc dựa trên mức độ tin cậy và chế độ hiện tại.\nKhông lặp lại nguyên văn câu trả lời của người dùng. Hãy diễn giải và tổng hợp.\nNếu ở Chế độ Hướng dẫn Một phần (do độ tin cậy Thấp hoặc độ phức tạp cao):\n- Tạo báo cáo rút gọn tập trung vào:\n  - Diễn giải dự án cấp cao\n  - 3-5 giả định/rủi ro then chốt hàng đầu (kèm điểm rủi ro khi có thể)\n  - Gợi ý khái quát về kỹ năng/nguồn lực\n  - Khuyến nghị cho các bước tiếp theo\n- Bao gồm danh sách Hành động Ngay tiếp theo cô đọng\n- Nhấn mạnh: Đây không phải là phân tích toàn diện; hãy tìm kiếm tư vấn chuyên nghiệp.\nNếu không (độ tin cậy Trung bình/Cao), sử dụng cấu trúc đầy đủ dưới đây.\n\nMỤC 1 — DIỄN GIẢI DỰ ÁN\n- Tóm tắt diễn giải về dự án\n- Tái khẳng định các mục tiêu và ràng buộc\n- Mức độ tin cậy của kế hoạch (Thấp / Trung bình / Cao)\n\nMỤC 2 — CÁC GIẢ ĐỊNH THEN CHỐT (XẾP HẠNG THEO RỦI RO)\nLiệt kê các giả định được suy luận và xếp hạng theo:\n- Điểm rủi ro tổng hợp = Khả năng sai lầm (1-5) × Mức độ tác động nếu sai (1-5)\n- Chỉ rõ các giả định gắn liền với sự đồng thuận con người/tổ chức\n  hoặc quản trị tiếp nhận/thay đổi.\n\nMỤC 3 — KỸ NĂNG YÊU CẦU\nPhân loại kỹ năng thành:\n- Kỹ năng Cốt lõi (Core Skills)\n- Kỹ năng Hỗ trợ (Supporting Skills)\n- Kỹ năng Dự phòng (Contingency Skills)\nGiải thích lý do tại sao từng danh mục lại quan trọng.\n\nMỤC 4 — NGUỒN LỰC YÊU CẦU\nXác định các nguồn lực trên các phương diện:\n- Con người\n- Công cụ / Hệ thống\n- Sự phụ thuộc bên ngoài\nĐối với từng nguồn lực, hãy lưu ý:\n- Mức độ quan trọng (Criticality)\n- Khả năng thay thế (Substitutability)\n- Tính mong manh dễ tổn thương (Fragility)\n\nMỤC 5 — CÁC YẾU TỐ XÁC SUẤT THẤP / TÁC ĐỘNG CAO\nXác định các sự kiện hợp lý nhưng khó xảy ra trên các phương diện:\n- Kỹ thuật\n- Con người\n- Tổ chức\n- Yếu tố bên ngoài (ví dụ: chuỗi cung ứng, pháp lý, thị trường)\nĐối với mỗi yếu tố:\n- Mô tả\n- Khả năng xảy ra sơ bộ (định tính)\n- Tác động tiềm tàng\n- Điểm rủi ro tổng hợp (Khả năng × Tác động 1-5)\n- Các dấu hiệu cảnh báo sớm\n- Kỹ năng hoặc nguồn lực giúp giảm thiểu thiệt hại\n\nMỤC 6 — LỖ HỔNG KẾ HOẠCH & TÍN HIỆU YẾU\n- Các khía cạnh mà kế hoạch còn mỏng\n- Các tín hiệu cần được giám sát sớm\n- Các yếu tố chưa biết có nguy cơ gây thiệt hại lớn\n\nMỤC 7 — ĐÁNH GIÁ MỨC ĐỘ SẴN SÀNG\nKết luận với:\n- Những gì dự án có vẻ đã sẵn sàng xử lý\n- Những gì dự án chưa sẵn sàng đối mặt\n- Điều gì sẽ cải thiện tốt nhất mức độ sẵn sàng tiếp theo\nTránh đưa ra mốc thời gian trừ khi được yêu cầu rõ ràng.\n\nMỤC 8 — HÀNH ĐỘNG NGAY TIẾP THEO\nCung cấp danh sách kiểm tra có thứ tự ưu tiên gồm 4-8 bước tiếp theo cụ thể\n(ví dụ: họp các bên liên quan, triển khai thử nghiệm pilot, tham vấn chuyên gia, lập tài liệu).\n\nGIAI ĐOẠN TÙY CHỌN — TINH CHỈNH LẶP LẠI\nNếu người dùng cung cấp thông tin mới sau báo cáo, hãy đánh giá lại độ tin cậy\nvà cập nhật các phần liên quan mà không cần khởi động lại toàn bộ cuộc phỏng vấn.\n\nKẾT THÚC PROMPT\n-------------------------------------------------------------\n",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [
+      "Product Management",
+      "Planning",
+      "Prompt Engineering"
+    ],
+    "category": "project_management",
+    "subcategory": "project_planning",
+    "tags": [
+      "quản lý dự án",
+      "phỏng vấn dự án",
+      "đánh giá rủi ro",
+      "nguồn lực",
+      "lập kế hoạch"
+    ],
+    "search_keywords_vi": [
+      "phỏng vấn nguồn lực dự án",
+      "lập kế hoạch dự án thực tế",
+      "phân tích kháng cự tổ chức",
+      "đánh giá rủi ro dự án"
+    ],
+    "use_case": "Phỏng vấn và phân tích đa chiều nguồn lực, kỹ năng, rủi ro tổ chức và sự bất định trước khi triển khai dự án",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "thanos0000",
+      "name": "Scott Malin",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKtw-ifHG7lJbMXq_NIZ0tkOgL2gvXl-Rz_81Ghs9mUT9KxVrjhCg=s96-c",
+      "identifier": "thanos0000",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/project-skill-resource-interviewer",
+    "created_at": "2026-01-16T17:18:32.682Z"
+  },
+  {
+    "id": "cmkgw4vgf000aju04cr9wclff",
+    "slug": "identify-the-key-skills-needed-for-effective-project-planning-and-proposal-writing",
+    "original_title": "identify the key skills needed for effective project planning and proposal writing ",
+    "original_prompt": "identify the key skills needed for effective project planning and",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Xác Định Các Kỹ Năng Cốt Lõi Để Lập Kế Hoạch Dự Án Và Viết Đề Xuất Hiệu Quả",
+    "vi_prompt": "Xác định các kỹ năng then chốt cần thiết để lập kế hoạch dự án hiệu quả và viết đề xuất dự án thành công.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "project_management",
+    "subcategory": "skills_development",
+    "tags": [
+      "kỹ năng lập kế hoạch",
+      "viết đề xuất",
+      "quản lý dự án",
+      "phát triển chuyên môn"
+    ],
+    "search_keywords_vi": [
+      "kỹ năng viết proposal",
+      "kỹ năng lập kế hoạch dự án",
+      "đề xuất dự án hiệu quả"
+    ],
+    "use_case": "Liệt kê và phân tích các kỹ năng cần thiết cho việc lên kế hoạch và soạn thảo đề xuất dự án chuyên nghiệp",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "easy",
+    "quality_status": "ok",
+    "author": {
+      "username": "barrelgas",
+      "name": "Barrel Gas",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKjzplvD9bTWFS3_czplG51L2uJfz-NBGKYZxtuIbo6b7UJEA=s96-c",
+      "identifier": "barrelgas",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/identify-the-key-skills-needed-for-effective-project-planning-and-proposal-writing",
+    "created_at": "2026-01-16T13:04:50.751Z"
+  },
+  {
+    "id": "cmkgm6qus0004i304vx1hpbr7",
+    "slug": "the-tyrant-king",
+    "original_title": "The tyrant King",
+    "original_prompt": "Capture a night life , when a tyrant king discussing with his daughter on the brutal conditions a suitors has to fulfil to be  eligible to marry her(princess)",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Vị Vua Bạo Chúa Và Điều Kiện Cầu Hôn Khắc Nghiệt",
+    "vi_prompt": "Hãy tái hiện một cảnh đêm khuya đầy kịch tính, khi vị vua bạo chúa đang bàn bạc với con gái về những điều kiện tàn bạo mà bất kỳ người cầu hôn nào cũng phải vượt qua để có đủ tư cách kết hôn với nàng công chúa.",
+    "translation_status": "translated",
+    "source_category": "Creative",
+    "source_tags": [
+      "AI Tools"
+    ],
+    "category": "creative_writing",
+    "subcategory": "story_scene",
+    "tags": [
+      "viết truyện",
+      "bạo chúa",
+      "công chúa",
+      "cầu hôn",
+      "kịch tính cổ phong"
+    ],
+    "search_keywords_vi": [
+      "kịch bản vị vua bạo chúa",
+      "câu chuyện cầu hôn công chúa",
+      "sáng tác văn học kịch tính"
+    ],
+    "use_case": "Viết phân cảnh truyện kỳ ảo hoặc lịch sử về cuộc đối thoại gay gắt giữa vị vua độc tài và công chúa về điều kiện hôn nhân",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "medium",
+    "quality_status": "ok",
+    "author": {
+      "username": "edosastephen",
+      "name": "stephen edosa",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIlC0kfSYqdQGqpjWTFbT4niZqwcSw5GvOHNbxUlUfpP_nsbA=s96-c",
+      "identifier": "edosastephen",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/the-tyrant-king",
+    "created_at": "2026-01-16T08:26:21.940Z"
+  },
+  {
+    "id": "cmkg3lgqr0001lb04p3uxoz5l",
+    "slug": "universal-context-document-ucd-generator",
+    "original_title": "Universal Context Document (UCD) Generator",
+    "original_prompt": "# Optimized Universal Context Document Generator Prompt\n\n**v1.1** 2026-01-20  \nInitial comprehensive version focused on zero-loss portable context capture\n\n## Role/Persona\nAct as a **Senior Technical Documentation Architect and Knowledge Transfer Specialist** with deep expertise in:  \n- AI-assisted software development and multi-agent collaboration  \n- Cross-platform AI context preservation and portability  \n- Agile methodologies and incremental delivery frameworks  \n- Technical writing for developer audiences  \n- Cybersecurity domain knowledge (relevant to user's background)\n\n## Task/Action\nGenerate a comprehensive, **platform-agnostic Universal Context Document (UCD)** that captures the complete conversational history, technical decisions, and project state between the user and any AI system. This document must function as a **zero-information-loss knowledge transfer artifact** that enables seamless conversation continuation across different AI platforms (ChatGPT, Claude, Gemini, Grok, etc.) days, weeks, or months later.\n\n## Context: The Problem This Solves\n**Challenge:** Extended brainstorming, coding, debugging, architecture, and development sessions cause valuable context (dialogue, decisions, code changes, rejected ideas, implicit assumptions) to accumulate. Breaks or platform switches erase this state, forcing costly re-onboarding.  \n**Solution:** The UCD is a \"save state + audit trail\" — complete, portable, versioned, and immediately actionable.\n\n**Domain Focus:** Primarily software development, system architecture, cybersecurity, AI workflows; flexible enough to handle mixed-topic or occasional non-technical digressions by clearly delineating them.\n\n## Critical Rules/Constraints\n### 1. Completeness Over Brevity\n- No detail is too small. Capture nuances, definitions, rejections, rationales, metaphors, assumptions, risk tolerance, time constraints.  \n- When uncertain or contradictory information appears in history → mark clearly with `[POTENTIAL INCONSISTENCY – VERIFY]` or `[CONFIDENCE: LOW – AI MAY HAVE HALLUCINATED]`.\n\n### 2. Platform Portability\n- Use only declarative, AI-agnostic language (\"User stated...\", \"Decision was made because...\").  \n- Never reference platform-specific features or memory mechanisms.\n\n### 3. Update Triggers (when to generate new version)\nGenerate v[N+1] when **any** of these occur:  \n- ≥ 12 meaningful user–AI exchanges since last UCD  \n- Session duration > 90 minutes  \n- Major pivot, architecture change, or critical decision  \n- User explicitly requests update  \n- Before a planned long break (> 4 hours or overnight)\n\n### Optional Modes\n- **Full mode** (default): maximum detail  \n- **Lite mode**: only when user requests or session < 30 min → reduce to Executive Summary, Current Phase, Next Steps, Pending Decisions, and minimal decision log\n\n## Output Format Structure\n```markdown\n# Universal Context Document: [Project Name or Working Title]\n**Version:** v[N]|[model]|[YYYY-MM-DD]\n**Previous Version:** v[N-1]|[model]|[YYYY-MM-DD] (if applicable)\n**Changelog Since Previous Version:** Brief bullet list of major additions/changes\n**Session Duration:** [Start] – [End] (timezone if relevant)\n**Total Conversational Exchanges:** [Number] (one exchange = one user message + one AI response)\n**Generation Confidence:** High / Medium / Low (with brief explanation if < High)\n---\n## 1. Executive Summary\n   ### 1.1 Project Vision and End Goal\n   ### 1.2 Current Phase and Immediate Objectives\n   ### 1.3 Key Accomplishments & Changes Since Last UCD\n   ### 1.4 Critical Decisions Made (This Session)\n\n## 2. Project Overview\n   (unchanged from original – vision, success criteria, timeline, stakeholders)\n\n## 3. Established Rules and Agreements\n   (unchanged – methodology, stack, agent roles, code quality)\n\n## 4. Detailed Feature Context: [Current Feature / Epic Name]\n   (unchanged – description, requirements, architecture, status, debt)\n\n## 5. Conversation Journey: Decision History\n   (unchanged – timeline, terminology evolution, rejections, trade-offs)\n\n## 6. Next Steps and Pending Actions\n   (unchanged – tasks, research, user info needed, blockers)\n\n## 7. User Communication and Working Style\n   (unchanged – preferences, explanations, feedback style)\n\n## 8. Technical Architecture Reference\n   (unchanged)\n\n## 9. Tools, Resources, and References\n   (unchanged)\n\n## 10. Open Questions and Ambiguities\n   (unchanged)\n\n## 11. Glossary and Terminology\n   (unchanged)\n\n## 12. Continuation Instructions for AI Assistants\n   (unchanged – how to use, immediate actions, red flags)\n\n## 13. Meta: About This Document\n   ### 13.1 Document Generation Context\n   ### 13.2 Confidence Assessment\n      - Overall confidence level\n      - Specific areas of uncertainty or low confidence\n      - Any suspected hallucinations or contradictions from history\n   ### 13.3 Next UCD Update Trigger (reminder of rules)\n   ### 13.4 Document Maintenance & Storage Advice\n\n## 14. Changelog (Prompt-Level)\n   - Summary of changes to *this prompt* since last major version (for traceability)\n\n---\n## Appendices (If Applicable)\n### Appendix A: Code Snippets & Diffs\n   - Key snippets\n   - **Git-style diffs** when major changes occurred (optional but recommended)\n### Appendix B: Data Schemas\n### Appendix C: UI Mockups (Textual)\n### Appendix D: External Research / Meeting Notes\n### Appendix E: Non-Technical or Tangential Discussions\n   - Clearly separated if conversation veered off primary topic",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Bộ Tạo Tài Liệu Ngữ Cảnh Phổ Quát (UCD Generator)",
+    "vi_prompt": "# Prompt Bộ Tạo Tài Liệu Ngữ Cảnh Phổ Quát (UCD) Tối Ưu Hóa\n\n**v1.1** 20-01-2026  \nPhiên bản toàn diện ban đầu tập trung vào việc lưu giữ ngữ cảnh di động không mất mát thông tin (zero-loss)\n\n## Vai trò / Hình tượng (Role/Persona)\nĐóng vai trò là một **Kiến Trúc Sư Tài Liệu Kỹ Thuật Cấp Cao kiêm Chuyên Gia Chuyển Giao Tri Thức** với chuyên môn sâu về:  \n- Phát triển phần mềm có AI hỗ trợ và cộng tác đa agent (multi-agent)  \n- Bảo toàn và chuyển đổi ngữ cảnh AI đa nền tảng linh hoạt  \n- Phương pháp luận Agile và các khung chuyển giao tăng dần (incremental delivery)  \n- Viết tài liệu kỹ thuật chuyên nghiệp cho đối tượng lập trình viên  \n- Tri thức chuyên ngành an ninh mạng (phù hợp với nền tảng người dùng)\n\n## Nhiệm vụ / Hành động (Task/Action)\nTạo một **Tài Liệu Ngữ Cảnh Phổ Quát (Universal Context Document - UCD) độc lập với nền tảng**, bao quát toàn diện lịch sử trò chuyện, các quyết định kỹ thuật và trạng thái dự án giữa người dùng và bất kỳ hệ thống AI nào. Tài liệu này phải hoạt động như một **tài sản chuyển giao tri thức không mất mát thông tin**, cho phép tiếp tục cuộc trò chuyện liền mạch trên các nền tảng AI khác nhau (ChatGPT, Claude, Gemini, Grok, v.v.) sau nhiều ngày, nhiều tuần hoặc nhiều tháng.\n\n## Bối cảnh: Vấn đề được giải quyết\n**Thách thức:** Các phiên thảo luận, lập trình, gỡ lỗi, thiết kế kiến trúc và phát triển kéo dài làm tích lũy một lượng lớn ngữ cảnh giá trị (đối thoại, quyết định, thay đổi mã, ý tưởng bị loại bỏ, giả định ngầm). Khi nghỉ giải lao hoặc chuyển đổi nền tảng, trạng thái này bị xóa sạch, buộc phải thực hiện lại quy trình làm quen tốn kém.  \n**Giải pháp:** UCD đóng vai trò như một \"trạng thái lưu (save state) + nhật ký kiểm toán (audit trail)\" — hoàn chỉnh, có thể mang đi mọi nơi, có đánh số phiên bản và có thể hành động được ngay tức thì.\n\n**Trọng tâm lĩnh vực:** Chủ yếu là phát triển phần mềm, kiến trúc hệ thống, an ninh mạng, quy trình làm việc với AI; đủ linh hoạt để xử lý các chủ đề hỗn hợp hoặc các cuộc trao đổi phi kỹ thuật bằng cách phân định ranh giới rõ ràng.\n\n## Các Quy Tắc / Ràng Buộc Quan Trọng\n### 1. Tính Đầy Đủ Quan Trọng Hơn Tính Ngắn Gọn\n- Không có chi tiết nào là quá nhỏ. Ghi lại mọi sắc thái, định nghĩa, lý do từ chối, giải trình hợp lý, phép ẩn dụ, giả định, khả năng chấp nhận rủi ro và giới hạn thời gian.  \n- Khi xuất hiện thông tin chưa chắc chắn hoặc mâu thuẫn trong lịch sử → đánh dấu rõ ràng với `[TIỀM ẨN MÂU THUẪN – CẦN XÁC MINH]` hoặc `[ĐỘ TIN CẬY: THẤP – AI CÓ THỂ ĐÃ ẢO TƯỞNG]`.\n\n### 2. Tính Di Động Đa Nền Tảng\n- Chỉ sử dụng ngôn ngữ tường thuật, trung lập với AI (\"Người dùng đã tuyên bố...\", \"Quyết định được đưa ra vì...\").  \n- Không bao giờ đề cập đến các tính năng riêng biệt hoặc cơ chế ghi nhớ đặc thù của bất kỳ nền tảng nào.\n\n### 3. Điều Kiện Kích Hoạt Cập Nhật (Khi nào cần tạo phiên bản mới)\nTạo phiên bản v[N+1] khi xảy ra **bất kỳ** điều kiện nào sau đây:  \n- Có ≥ 12 lượt trao đổi có ý nghĩa giữa người dùng và AI kể từ bản UCD gần nhất  \n- Thời lượng phiên làm việc kéo dài > 90 phút  \n- Có sự thay đổi hướng đi lớn, thay đổi kiến trúc hoặc quyết định quan trọng  \n- Người dùng yêu cầu cập nhật rõ ràng  \n- Trước một kỳ nghỉ dài đã lên kế hoạch (> 4 giờ hoặc qua đêm)\n\n### Các Chế Độ Tùy Chọn\n- **Chế độ Đầy đủ (mặc định):** Chi tiết tối đa  \n- **Chế độ Rút gọn:** Chỉ khi người dùng yêu cầu hoặc phiên làm việc < 30 phút → thu gọn thành Tóm tắt điều hành, Giai đoạn hiện tại, Các bước tiếp theo, Quyết định đang chờ xử lý và nhật ký quyết định tối thiểu\n\n## Cấu Trúc Định Dạng Đầu Ra\n```markdown\n# Tài Liệu Ngữ Cảnh Phổ Quát: [Tên Dự Án hoặc Tên Tạm Thời]\n**Phiên bản:** v[N]|[mô hình]|[YYYY-MM-DD]\n**Phiên bản trước:** v[N-1]|[mô hình]|[YYYY-MM-DD] (nếu áp dụng)\n**Nhật ký thay đổi so với phiên bản trước:** Danh sách gạch đầu dòng ngắn gọn về các bổ sung/thay đổi chính\n**Thời lượng phiên:** [Bắt đầu] – [Kết thúc] (múi giờ nếu liên quan)\n**Tổng số lượt trao đổi hội thoại:** [Số lượng] (một lượt trao đổi = một tin nhắn người dùng + một phản hồi AI)\n**Độ tin cậy khởi tạo:** Cao / Trung bình / Thấp (kèm giải thích ngắn gọn nếu < Cao)\n---\n## 1. Tóm Tắt Điều Hành\n   ### 1.1 Tầm Nhìn Dự Án và Mục Tiêu Cuối Cùng\n   ### 1.2 Giai Đoạn Hiện Tại và Mục Tiêu Trước Mắt\n   ### 1.3 Thành Tựu Then Chốt & Thay Đổi Kể Từ Bản UCD Trước\n   ### 1.4 Các Quyết Định Quan Trọng Đã Đưa Ra (Trong Phiên Này)\n\n## 2. Tổng Quan Dự Án\n   (giữ nguyên – tầm nhìn, tiêu chí thành công, lộ trình thời gian, các bên liên quan)\n\n## 3. Các Quy Tắc và Thỏa Thuận Đã Xác Lập\n   (giữ nguyên – phương pháp luận, ngăn xếp công nghệ, vai trò agent, chất lượng mã)\n\n## 4. Ngữ Cảnh Tính Năng Chi Tiết: [Tên Tính Năng Hiện Tại / Tên Epic]\n   (giữ nguyên – mô tả, yêu cầu, kiến trúc, trạng thái, nợ kỹ thuật)\n\n## 5. Hành Trình Trò Chuyện: Lịch Sử Ra Quyết Định\n   (giữ nguyên – dòng thời gian, sự phát triển thuật ngữ, phương án bị loại bỏ, sự đánh đổi)\n\n## 6. Các Bước Tiếp Theo và Hành Động Đang Chờ Xử Lý\n   (giữ nguyên – tác vụ, nghiên cứu, thông tin cần từ người dùng, yếu tố cản trở)\n\n## 7. Phong Cách Giao Tiếp và Làm Việc Của Người Dùng\n   (giữ nguyên – sở thích, cách giải thích, phong cách phản hồi)\n\n## 8. Tham Chiếu Kiến Trúc Kỹ Thuật\n   (giữ nguyên)\n\n## 9. Công Cụ, Nguồn Lực và Tài Liệu Tham Khảo\n   (giữ nguyên)\n\n## 10. Các Câu Hỏi Mở và Điểm Mơ Hồ\n   (giữ nguyên)\n\n## 11. Bảng Thuật Ngữ và Định Nghĩa\n   (giữ nguyên)\n\n## 12. Hướng Dẫn Tiếp Tục Dành Cho Trợ Lý AI\n   (giữ nguyên – cách sử dụng, hành động tức thì, cờ đỏ cảnh báo)\n\n## 13. Siêu Dữ Liệu: Về Tài Liệu Này\n   ### 13.1 Ngữ Cảnh Tạo Tài Liệu\n   ### 13.2 Đánh Giá Độ Tin Cậy\n      - Mức độ tin cậy tổng thể\n      - Các khía cạnh cụ thể còn bất định hoặc độ tin cậy thấp\n      - Nghi ngờ ảo tưởng hoặc mâu thuẫn từ lịch sử\n   ### 13.3 Điều Kiện Kích Hoạt Cập Nhật UCD Tiếp Theo (nhắc lại quy tắc)\n   ### 13.4 Lời Khuyên Lưu Trữ & Bảo Trì Tài Liệu\n\n## 14. Nhật Ký Thay Đổi Của Prompt\n   - Tóm tắt thay đổi đối với *chính prompt này* kể từ phiên bản lớn gần nhất (để truy xuất nguồn gốc)\n\n---\n## Phụ Lục (Nếu Áp Dụng)\n### Phụ lục A: Đoạn Mã Mẫu & Diffs\n   - Các đoạn mã quan trọng\n   - **Diffs theo phong cách Git** khi có thay đổi lớn (tùy chọn nhưng khuyến nghị)\n### Phụ lục B: Lược Đồ Dữ Liệu (Data Schemas)\n### Phụ lục C: Bản Vẽ Giao Diện Dạng Văn Bản (Textual UI Mockups)\n### Phụ lục D: Nghiên Cứu Ngoài / Ghi Chú Cuộc Họp\n### Phụ lục E: Thảo Luận Phi Kỹ Thuật Hoặc Ngoài Lề\n   - Phân tách rõ ràng nếu cuộc trò chuyện đi lệch khỏi chủ đề chính",
+    "translation_status": "translated",
+    "source_category": "Technical Writing",
+    "source_tags": [
+      "AI Tools",
+      "Advanced",
+      "Best Practices",
+      "System Prompt"
+    ],
+    "category": "developer_tools",
+    "subcategory": "ai_context_management",
+    "tags": [
+      "ucd",
+      "lưu trữ ngữ cảnh",
+      "ai workflow",
+      "chuyển giao tri thức",
+      "prompt engineering"
+    ],
+    "search_keywords_vi": [
+      "tạo tài liệu ngữ cảnh ucd",
+      "bảo toàn ngữ cảnh hội thoại ai",
+      "chuyển giao dự án giữa các ai",
+      "universal context document"
+    ],
+    "use_case": "Tạo tài liệu ngữ cảnh toàn diện, độc lập nền tảng để lưu giữ trọn vẹn tiến trình hội thoại và quyết định kỹ thuật giữa người dùng và AI",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "joembolinas",
+      "name": "Joem Bolinas",
+      "avatar": "https://avatars.githubusercontent.com/u/176102268?v=4",
+      "identifier": "joembolinas",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/universal-context-document-ucd-generator",
+    "created_at": "2026-01-15T23:45:55.971Z"
+  },
+  {
+    "id": "cmkg1crz50001jo04okziebaq",
+    "slug": "ultimate-inpainting-reference-prompt",
+    "original_title": "Ultimate Inpainting / Reference Prompt",
+    "original_prompt": "\nA luxurious warm interior scene based on the provided reference image. Maintain exact composition, proportions, and camera angle.\n\nKitchen bar:\n\t•\tCountertop must strictly use the provided marble reference image.\n\t•\tMatch exact color, pattern, veining, and realistic scale relative to the bar.\n\t•\tDo not stylize, alter, or reinterpret the marble.\n\t•\tMarble should integrate naturally with bar edges, reflections, and ambient lighting.\n\nBar base: warm natural wood.\n\nAccent wall: vertical strip cladding in light gray, fully rounded cylindrical profiles (round, not square, no sharp edges).\n\nWall division:\n\t•\tVertically:\n\t•\tUpper section: top 2/3 of wall height, strips 0.5 cm diameter\n\t•\tLower section: bottom 1/3 of wall height, strips 1 cm diameter\n\t•\tHorizontally (along wall width):\n\t•\tUpper section spans first two-thirds of wall width\n\t•\tLower section spans remaining one-third\n\t•\tSmooth transitions, precise spacing, architectural accuracy.\n\nFlooring: polished white Carrara marble.\nWarm ambient lighting, soft indirect hidden lighting, cozy yet luxurious Italian-style high-end interior. Ultra-realistic architectural visualization.\n\nStrict instructions for AI: exact material matching, follow reference image exactly, maintain proportions, do not reinterpret or create new patterns, marble must appear natural and realistic in scale.\n\n⸻\n\nMidjourney / Inpainting Parameters:\n\n--v 6 --style raw --ar 3:4 --quality 2 --iw 2 --no artistic interpretation",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Prompt Inpainting Tham Chiếu Kiến Trúc Nội Thất Đẳng Cấp",
+    "vi_prompt": "Một không gian nội thất ấm áp sang trọng dựa trên hình ảnh tham chiếu được cung cấp. Duy trì chính xác bố cục, tỷ lệ và góc máy ảnh.\n\nQuầy bar bếp:\n\t•\tMặt bàn bếp phải sử dụng nghiêm ngặt theo hình ảnh tham chiếu đá cẩm thạch được cung cấp.\n\t•\tKhớp chính xác màu sắc, hoa văn, đường vân và tỷ lệ thực tế tương quan với quầy bar.\n\t•\tKhông cách điệu, thay đổi hoặc diễn giải lại chất liệu đá cẩm thạch.\n\t•\tĐá cẩm thạch phải hòa quyện tự nhiên với các cạnh quầy bar, hình ảnh phản chiếu và ánh sáng môi trường xung quanh.\n\nChân quầy bar: gỗ tự nhiên tông màu ấm.\n\nTường tạo điểm nhấn: ốp thanh nan dọc màu xám nhạt, biên dạng hình trụ tròn hoàn toàn (tròn, không vuông, không có cạnh sắc nhọn).\n\nPhân chia mảng tường:\n\t•\tTheo chiều dọc:\n\t•\tPhần trên: 2/3 chiều cao tường phía trên, các thanh đường kính 0.5 cm\n\t•\tPhần dưới: 1/3 chiều cao tường phía dưới, các thanh đường kính 1 cm\n\t•\tTheo chiều ngang (dọc theo chiều rộng của tường):\n\t•\tPhần trên trải dài 2/3 chiều rộng tường đầu tiên\n\t•\tPhần dưới trải dài 1/3 còn lại\n\t•\tChuyển tiếp mượt mà, khoảng cách chuẩn xác, độ chính xác cao về mặt kiến trúc.\n\nSàn nhà: đá cẩm thạch Carrara trắng đánh bóng.\nÁnh sáng môi trường ấm áp, ánh sáng gián tiếp âm trần dịu nhẹ, nội thất cao cấp phong cách Ý vừa ấm cúng vừa sang trọng. Trực quan hóa kiến trúc siêu chân thực.\n\nChỉ dẫn nghiêm ngặt cho AI: khớp vật liệu chính xác, bám sát hình ảnh tham chiếu, duy trì tỷ lệ hình học, không tự ý diễn giải hoặc tạo hoa văn mới, đá cẩm thạch phải thể hiện tự nhiên và đúng tỷ lệ thực tế.\n\n⸻\n\nTham số Midjourney / Inpainting:\n\n--v 6 --style raw --ar 3:4 --quality 2 --iw 2 --no artistic interpretation",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "image_generation",
+    "subcategory": "architectural_interior",
+    "tags": [
+      "inpainting",
+      "nội thất sang trọng",
+      "đá cẩm thạch carrara",
+      "midjourney v6",
+      "kiến trúc"
+    ],
+    "search_keywords_vi": [
+      "prompt inpainting nội thất",
+      "quầy bar đá cẩm thạch",
+      "nội thất phong cách ý",
+      "trực quan hóa kiến trúc"
+    ],
+    "use_case": "Chỉnh sửa inpainting vùng chọn nội thất quầy bar sang trọng theo vật liệu tham chiếu chuẩn xác",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "medium",
+    "quality_status": "ok",
+    "author": {
+      "username": "rehamhabibrh",
+      "name": "Hama Habib",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIpgkR2qEUS4tJCcHsF59k_AaDRjryZL4ocxBi_cSg3z6Hqq1Va=s96-c",
+      "identifier": "rehamhabibrh",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/ultimate-inpainting-reference-prompt",
+    "created_at": "2026-01-15T22:43:11.393Z"
+  },
+  {
+    "id": "cmkfm57b70001jv04vyoumgxz",
+    "slug": "cinematic-close-up-portrait-generation",
+    "original_title": "Cinematic Close-Up Portrait Generation",
+    "original_prompt": "{\n  \"colors\": {\n    \"color_temperature\": \"warm\",\n    \"contrast_level\": \"high\",\n    \"dominant_palette\": [\n      \"burnt orange\",\n      \"deep teal\",\n      \"black\",\n      \"tan\"\n    ]\n  },\n  \"composition\": {\n    \"camera_angle\": \"close-up\",\n    \"depth_of_field\": \"medium\",\n    \"focus\": \"Man's face in profile\",\n    \"framing\": \"The subject is tightly framed on the left, looking towards the right side of the frame, creating negative space for his gaze.\"\n  },\n  \"description_short\": \"A dramatic and gritty close-up portrait of a man in profile, illuminated by warm side-lighting against a cool, textured dark background.\",\n  \"environment\": {\n    \"location_type\": \"studio\",\n    \"setting_details\": \"The background is a solid, dark, textured surface, possibly a wall, with a moody, dark teal color.\",\n    \"time_of_day\": \"unknown\",\n    \"weather\": \"none\"\n  },\n  \"lighting\": {\n    \"intensity\": \"strong\",\n    \"source_direction\": \"side\",\n    \"type\": \"cinematic\"\n  },\n  \"mood\": {\n    \"atmosphere\": \"Introspective and somber\",\n    \"emotional_tone\": \"melancholic\"\n  },\n  \"narrative_elements\": {\n    \"character_interactions\": \"The man is alone, seemingly lost in thought, creating a sense of isolation and introspection.\",\n    \"environmental_storytelling\": \"The dark, textured, and minimalist background serves to isolate the subject, focusing all attention on his emotional state and the detailed texture of his features.\",\n    \"implied_action\": \"The subject is in a still moment of deep contemplation, gazing at something unseen off-camera.\"\n  },\n  \"objects\": [\n    \"Man\",\n    \"Jacket collar\"\n  ],\n  \"people\": {\n    \"ages\": [\n      \"young adult\"\n    ],\n    \"clothing_style\": \"The dark collar of a jacket or coat is visible.\",\n    \"count\": \"1\",\n    \"genders\": [\n      \"male\"\n    ]\n  },\n  \"prompt\": \"A dramatic, cinematic close-up portrait of a pensive young man in profile. Intense, warm side lighting from the left illuminates the rugged texture of his skin, stubble, and wavy dark hair. His blue eye gazes off into the distance with a melancholic expression. The background is a dark, textured teal wall, creating a moody and introspective atmosphere. The style is gritty and photographic, with high contrast and a noticeable film grain effect, evoking a feeling of raw emotion and deep thought.\",\n  \"style\": {\n    \"art_style\": \"realistic\",\n    \"influences\": [\n      \"cinematic portraiture\",\n      \"fine art photography\"\n    ],\n    \"medium\": \"photography\"\n  },\n  \"technical_tags\": [\n    \"close-up\",\n    \"portrait\",\n    \"profile shot\",\n    \"side lighting\",\n    \"high contrast\",\n    \"film grain\",\n    \"textured\",\n    \"moody lighting\",\n    \"cinematic\",\n    \"chiaroscuro\"\n  ],\n  \"use_case\": \"Training AI models for emotional portrait generation, cinematic lighting styles, and realistic skin texture rendering.\",\n  \"uuid\": \"6f682e5f-149f-475a-8285-7318abc5959f\"\n}\n",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Chân Dung Cận Cảnh Điện Ảnh Sâu Lắng Của Người Đàn Ông",
+    "vi_prompt": "{\n  \"colors\": {\n    \"color_temperature\": \"Ấm áp\",\n    \"contrast_level\": \"Tương phản cao\",\n    \"dominant_palette\": [\n      \"Cam cháy\",\n      \"Xanh mòng két trầm\",\n      \"Đen sâu thẳm\",\n      \"Nâu da rám nắng\"\n    ]\n  },\n  \"composition\": {\n    \"camera_angle\": \"Cận cảnh (close-up)\",\n    \"depth_of_field\": \"Độ sâu trường ảnh trung bình\",\n    \"focus\": \"Góc nghiêng khuôn mặt người đàn ông\",\n    \"framing\": \"Chủ thể được đóng khung chặt chẽ ở bên trái, hướng ánh nhìn về phía bên phải khung hình, tạo không gian âm cho ánh mắt.\"\n  },\n  \"description_short\": \"Bức ảnh chân dung cận cảnh đầy kịch tính và gai góc của một người đàn ông nhìn nghiêng, được chiếu sáng bằng ánh sáng ấm bên sườn trên nền tối màu xanh mòng két có kết cấu.\",\n  \"environment\": {\n    \"location_type\": \"Studio\",\n    \"setting_details\": \"Phông nền là một bề mặt tối, đồng màu có kết cấu thô, có thể là một bức tường, mang sắc xanh mòng két u tối đầy tâm trạng.\",\n    \"time_of_day\": \"Không xác định\",\n    \"weather\": \"Không có\"\n  },\n  \"lighting\": {\n    \"intensity\": \"Mạnh mẽ\",\n    \"source_direction\": \"Chiếu từ bên sườn\",\n    \"type\": \"Ánh sáng điện ảnh\"\n  },\n  \"mood\": {\n    \"atmosphere\": \"Trầm tư và u buồn\",\n    \"emotional_tone\": \"Man mác hoài niệm\"\n  },\n  \"narrative_elements\": {\n    \"character_interactions\": \"Người đàn ông ở một mình, dường như chìm đắm trong suy nghĩ, tạo cảm giác cô lập và tự soi rọi nội tâm.\",\n    \"environmental_storytelling\": \"Phông nền tối, có kết cấu và tối giản nhằm tách biệt chủ thể, dồn mọi sự chú ý vào trạng thái cảm xúc và kết cấu chi tiết từng đường nét khuôn mặt anh.\",\n    \"implied_action\": \"Chủ thể đang trong một khoảnh khắc tĩnh lặng chiêm nghiệm sâu sắc, phóng tầm mắt nhìn về một điều gì đó vô hình ngoài khung hình.\"\n  },\n  \"objects\": [\n    \"Người đàn ông\",\n    \"Cổ áo khoác\"\n  ],\n  \"people\": {\n    \"ages\": [\n      \"Thanh niên trưởng thành\"\n    ],\n    \"clothing_style\": \"Nhìn thấy phần cổ áo khoác hoặc áo choàng sẫm màu.\",\n    \"count\": \"1\",\n    \"genders\": [\n      \"Nam giới\"\n    ]\n  },\n  \"prompt\": \"Bức chân dung cận cảnh phong cách điện ảnh đầy kịch tính về một chàng trai trẻ trầm ngâm nhìn nghiêng. Ánh sáng mạnh mẽ, ấm áp từ bên trái chiếu rọi làm nổi bật kết cấu gồ ghề của làn da, râu lún phún và mái tóc xoăn sẫm màu. Đôi mắt xanh của anh nhìn xa xăm với vẻ đượm buồn man mác. Phông nền là bức tường màu xanh mòng két tối có kết cấu, tạo bầu không khí u hoài và hướng nội. Phong cách gai góc và đậm chất nhiếp ảnh, với độ tương phản cao và hiệu ứng hạt phim rõ rệt, khơi gợi cảm xúc chân thực và sự suy tư sâu lắng.\",\n  \"style\": {\n    \"art_style\": \"Hiện thực chân thực\",\n    \"influences\": [\n      \"Chân dung điện ảnh\",\n      \"Nhiếp ảnh mỹ thuật\"\n    ],\n    \"medium\": \"Nhiếp ảnh\"\n  },\n  \"technical_tags\": [\n    \"Cận cảnh\",\n    \"Chân dung\",\n    \"Góc chụp nghiêng\",\n    \"Ánh sáng ven sườn\",\n    \"Tương phản cao\",\n    \"Hạt phim\",\n    \"Có kết cấu\",\n    \"Ánh sáng tâm trạng\",\n    \"Điện ảnh\",\n    \"Chiaroscuro\"\n  ],\n  \"use_case\": \"Huấn luyện mô hình AI để tạo chân dung cảm xúc, phong cách chiếu sáng điện ảnh và kết cấu da chân thực.\",\n  \"uuid\": \"6f682e5f-149f-475a-8285-7318abc5959f\"\n}",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Art",
+      "AI Tools",
+      "Computer Vision"
+    ],
+    "category": "image_generation",
+    "subcategory": "cinematic_portrait",
+    "tags": [
+      "chân dung điện ảnh",
+      "cận cảnh",
+      "chiaroscuro",
+      "nội tâm",
+      "ánh sáng nghiêng"
+    ],
+    "search_keywords_vi": [
+      "prompt ảnh chân dung điện ảnh",
+      "chân dung nam cận cảnh",
+      "ánh sáng chiaroscuro",
+      "nhiếp ảnh nghệ thuật"
+    ],
+    "use_case": "Tạo prompt ảnh chân dung nam giới cận cảnh góc nghiêng với ánh sáng điện ảnh kịch tính và chiều sâu nội tâm",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "medium",
+    "quality_status": "ok",
+    "author": {
+      "username": "gunebak4n",
+      "name": "günebakan",
+      "avatar": "https://avatars.githubusercontent.com/u/119886960?v=4",
+      "identifier": "senoldak",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/cinematic-close-up-portrait-generation",
+    "created_at": "2026-01-15T15:37:23.779Z"
+  },
+  {
+    "id": "cmkfm3ba40001jx04pli0hcnr",
+    "slug": "surreal-miniature-cityscape-with-giant-observer",
+    "original_title": "Surreal Miniature Cityscape with Giant Observer",
+    "original_prompt": "{\n  \"colors\": {\n    \"color_temperature\": \"neutral\",\n    \"contrast_level\": \"high\",\n    \"dominant_palette\": [\n      \"blue\",\n      \"red\",\n      \"green\",\n      \"yellow\",\n      \"brown\"\n    ]\n  },\n  \"composition\": {\n    \"camera_angle\": \"eye-level\",\n    \"depth_of_field\": \"deep\",\n    \"focus\": \"The miniature city diorama held by the woman\",\n    \"framing\": \"The woman's hands frame the central diorama, creating a scene-within-a-scene effect. The composition is dense and layered, guiding the eye through numerous details.\"\n  },\n  \"description_short\": \"A surreal digital artwork depicting a giant young woman holding a complex, multi-level cross-section of a vibrant, futuristic city that blends traditional East Asian architecture with modern technology.\",\n  \"environment\": {\n    \"location_type\": \"cityscape\",\n    \"setting_details\": \"A fantastical, sprawling metropolis featuring a mix of traditional East Asian architecture, such as pagodas and arched bridges, alongside futuristic elements like flying vehicles and dense, multi-story buildings with neon signs. The scene is presented as a miniature world held by a giant figure, with a larger version of the city extending into the background.\",\n    \"time_of_day\": \"daytime\",\n    \"weather\": \"clear\"\n  },\n  \"lighting\": {\n    \"intensity\": \"strong\",\n    \"source_direction\": \"mixed\",\n    \"type\": \"cinematic\"\n  },\n  \"mood\": {\n    \"atmosphere\": \"Whimsical urban fantasy\",\n    \"emotional_tone\": \"surreal\"\n  },\n  \"narrative_elements\": {\n    \"character_interactions\": \"The main giant woman is observing the miniature world. Within the diorama, tiny figures are engaged in daily life activities: a man sits in a room, others stand on a balcony, and two figures in traditional dress stand atop the structure.\",\n    \"environmental_storytelling\": \"The juxtaposition of the giant figure holding a miniature world suggests themes of creation, control, or observation, as if she is a god or dreamer interacting with her own reality. The blend of old and new architecture tells a story of a culture that has advanced technologically while preserving its heritage.\",\n    \"implied_action\": \"The woman is intently studying the miniature world she holds, suggesting a moment of contemplation or decision. The city itself is bustling with the implied motion of vehicles and people.\"\n  },\n  \"objects\": [\n    \"woman\",\n    \"miniature city diorama\",\n    \"buildings\",\n    \"flying vehicles\",\n    \"neon signs\",\n    \"vintage car\",\n    \"bridge\",\n    \"pagoda\"\n  ],\n  \"people\": {\n    \"ages\": [\n      \"young adult\"\n    ],\n    \"clothing_style\": \"A mix of modern casual wear, business suits, and traditional East Asian attire.\",\n    \"count\": \"unknown\",\n    \"genders\": [\n      \"female\",\n      \"male\"\n    ]\n  },\n  \"prompt\": \"A hyper-detailed, surreal digital painting of a giant, beautiful young woman with dark bangs and striking eyes, holding a complex, multi-layered miniature city diorama. The diorama is a vibrant cross-section of a futuristic East Asian metropolis, filled with tiny people, neon-lit signs in Asian script, a vintage green car, and traditional pagodas. In the background, a sprawling version of the city expands under a clear blue sky, with floating transport pods and intricate bridges. The style is a blend of magical realism and cyberpunk, with cinematic lighting.\",\n  \"style\": {\n    \"art_style\": \"surreal\",\n    \"influences\": [\n      \"cyberpunk\",\n      \"magical realism\",\n      \"collage art\",\n      \"Studio Ghibli\"\n    ],\n    \"medium\": \"digital art\"\n  },\n  \"technical_tags\": [\n    \"hyper-detailed\",\n    \"intricate\",\n    \"surrealism\",\n    \"digital illustration\",\n    \"cityscape\",\n    \"fantasy\",\n    \"miniature\",\n    \"scene-within-a-scene\",\n    \"vibrant colors\"\n  ],\n  \"use_case\": \"Concept art for a science-fiction or fantasy film, book cover illustration, or a dataset for training AI on complex, detailed scenes.\",\n  \"uuid\": \"a00cdac4-bdcc-4e93-8d00-b158f09e95db\"\n}\n",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Cảnh Quan Đô Thị Thu Nhỏ Siêu Thực Dưới Góc Nhìn Người Quan Sát Khổng Lồ",
+    "vi_prompt": "{\n  \"colors\": {\n    \"color_temperature\": \"Trung tính\",\n    \"contrast_level\": \"Tương phản cao\",\n    \"dominant_palette\": [\n      \"Xanh lam\",\n      \"Đỏ\",\n      \"Xanh lục\",\n      \"Vàng\",\n      \"Nâu\"\n    ]\n  },\n  \"composition\": {\n    \"camera_angle\": \"Ngang tầm mắt (eye-level)\",\n    \"depth_of_field\": \"Độ sâu trường ảnh sâu (deep focus)\",\n    \"focus\": \"Mô hình sa bàn thành phố thu nhỏ được cô gái nâng niu trên tay\",\n    \"framing\": \"Đôi bàn tay cô gái ôm trọn sa bàn trung tâm, tạo hiệu ứng 'khung cảnh trong khung cảnh'. Bố cục dày đặc và phân tầng, dẫn dắt ánh nhìn qua vô số chi tiết tinh xảo.\"\n  },\n  \"description_short\": \"Một tác phẩm nghệ thuật kỹ thuật số siêu thực mô tả một thiếu nữ khổng lồ đang nâng niu mặt cắt đa tầng phức tạp của một thành phố tương lai rực rỡ, hòa quyện giữa kiến trúc Đông Á truyền thống và công nghệ hiện đại.\",\n  \"environment\": {\n    \"location_type\": \"Cảnh quan đô thị\",\n    \"setting_details\": \"Một đại đô thị kỳ ảo, rộng lớn kết hợp giữa kiến trúc Đông Á truyền thống như chùa chiền, cầu vòm, xen lẫn các yếu tố tương lai như phương tiện bay và những tòa nhà chọc trời nhiều tầng gắn biển hiệu neon. Khung cảnh được trình bày như một thế giới thu nhỏ do người khổng lồ nâng đỡ, với phiên bản thành phố rộng lớn hơn trải dài ra tận hậu cảnh.\",\n    \"time_of_day\": \"Ban ngày\",\n    \"weather\": \"Trời quang đãng\"\n  },\n  \"lighting\": {\n    \"intensity\": \"Mạnh mẽ\",\n    \"source_direction\": \"Đa hướng hỗn hợp\",\n    \"type\": \"Ánh sáng điện ảnh\"\n  },\n  \"mood\": {\n    \"atmosphere\": \"Kỳ ảo đô thị diệu kỳ (Whimsical urban fantasy)\",\n    \"emotional_tone\": \"Siêu thực\"\n  },\n  \"narrative_elements\": {\n    \"character_interactions\": \"Nhân vật nữ khổng lồ chính đang chăm chú quan sát thế giới thu nhỏ. Bên trong sa bàn, những con người tí hon đang sinh hoạt thường nhật: một người đàn ông ngồi trong phòng, những người khác đứng trên ban công, và hai bóng hình mặc trang phục truyền thống đứng trên đỉnh công trình.\",\n    \"environmental_storytelling\": \"Sự đối lập giữa người khổng lồ nâng niu thế giới tí hon gợi mở các chủ đề về sự sáng tạo, quyền năng kiểm soát hoặc sự quan sát thần thánh, như thể nàng là một vị thần hoặc một kẻ mộng mơ đang tương tác với chính thực tại của mình. Sự pha trộn giữa kiến trúc xưa và nay kể câu chuyện về một nền văn hóa tiến bộ vượt bậc về công nghệ trong khi vẫn gìn giữ vẹn nguyên di sản cốt lõi.\",\n    \"implied_action\": \"Người phụ nữ đang chăm chú nghiên cứu thế giới thu nhỏ mà nàng nâng trên tay, gợi mở khoảnh khắc chiêm nghiệm hoặc đưa ra quyết định trọng đại. Bản thân thành phố nhộn nhịp với chuyển động ngụ ý của các phương tiện và dòng người.\"\n  },\n  \"objects\": [\n    \"Người phụ nữ\",\n    \"Sa bàn thành phố thu nhỏ\",\n    \"Tòa nhà cao tầng\",\n    \"Phương tiện bay\",\n    \"Biển hiệu đèn neon\",\n    \"Xe hơi cổ điển\",\n    \"Cầu vòm\",\n    \"Chùa tháp\"\n  ],\n  \"people\": {\n    \"ages\": [\n      \"Thanh niên trẻ\"\n    ],\n    \"clothing_style\": \"Hỗn hợp trang phục thường ngày hiện đại, âu phục công sở và cổ phục truyền thống Đông Á.\",\n    \"count\": \"Không xác định\",\n    \"genders\": [\n      \"Nữ\",\n      \"Nam\"\n    ]\n  },\n  \"prompt\": \"Bức tranh kỹ thuật số siêu thực, siêu chi tiết về một thiếu nữ xinh đẹp khổng lồ với mái tóc mái bằng sẫm màu và đôi mắt hút hồn, đang nâng niu một sa bàn thành phố thu nhỏ nhiều tầng phức tạp. Sa bàn là mặt cắt sống động của một đại đô thị Đông Á tương lai, tràn ngập những con người tí hon, biển hiệu neon bằng chữ tượng hình Á Đông, một chiếc ô tô màu xanh lá cổ điển và những ngôi chùa tháp truyền thống. Ở hậu cảnh, phiên bản trải rộng của thành phố mở rộng dưới bầu trời xanh trong vắt, với các khoang vận chuyển bay lơ lửng và những cây cầu phức tạp. Phong cách là sự pha trộn giữa chủ nghĩa hiện thực huyền ảo và cyberpunk, cùng ánh sáng điện ảnh kỳ ảo.\",\n  \"style\": {\n    \"art_style\": \"Siêu thực\",\n    \"influences\": [\n      \"Cyberpunk\",\n      \"Hiện thực huyền ảo (Magical realism)\",\n      \"Nghệ thuật cắt dán (Collage art)\",\n      \"Studio Ghibli\"\n    ],\n    \"medium\": \"Nghệ thuật kỹ thuật số\"\n  },\n  \"technical_tags\": [\n    \"Siêu chi tiết\",\n    \"Phức tạp\",\n    \"Chủ nghĩa siêu thực\",\n    \"Minh họa kỹ thuật số\",\n    \"Cảnh quan thành phố\",\n    \"Kỳ ảo\",\n    \"Mô hình thu nhỏ\",\n    \"Cảnh trong cảnh\",\n    \"Màu sắc rực rỡ\"\n  ],\n  \"use_case\": \"Concept art cho phim khoa học viễn tưởng hoặc kỳ ảo, minh họa bìa sách, hoặc tập dữ liệu để huấn luyện AI trên các cảnh phức tạp, giàu chi tiết.\",\n  \"uuid\": \"a00cdac4-bdcc-4e93-8d00-b158f09e95db\"\n}",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Art",
+      "Worldbuilding"
+    ],
+    "category": "image_generation",
+    "subcategory": "surreal_digital_art",
+    "tags": [
+      "siêu thực",
+      "thành phố thu nhỏ",
+      "người khổng lồ",
+      "cyberpunk",
+      "studio ghibli"
+    ],
+    "search_keywords_vi": [
+      "tranh kỹ thuật số siêu thực",
+      "thành phố thu nhỏ trên tay",
+      "kỳ ảo đô thị",
+      "concept art viễn tưởng"
+    ],
+    "use_case": "Tạo prompt tranh nghệ thuật số siêu thực mô tả cô gái khổng lồ nâng niu mô hình thành phố tương lai Á Đông đa tầng",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "gunebak4n",
+      "name": "günebakan",
+      "avatar": "https://avatars.githubusercontent.com/u/119886960?v=4",
+      "identifier": "senoldak",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/surreal-miniature-cityscape-with-giant-observer",
+    "created_at": "2026-01-15T15:35:55.612Z"
+  },
+  {
+    "id": "cmkfm177y0001js04q6tcvgif",
+    "slug": "dreamy-artistic-photograph-of-a-young-woman-in-a-meadow",
+    "original_title": "Dreamy Artistic Photograph of a Young Woman in a Meadow",
+    "original_prompt": "{\n  \"colors\": {\n    \"color_temperature\": \"warm\",\n    \"contrast_level\": \"medium\",\n    \"dominant_palette\": [\n      \"deep red\",\n      \"olive green\",\n      \"cream\",\n      \"pale yellow\"\n    ]\n  },\n  \"composition\": {\n    \"camera_angle\": \"eye-level shot\",\n    \"depth_of_field\": \"shallow\",\n    \"focus\": \"A young woman in a red dress\",\n    \"framing\": \"The woman is framed slightly off-center, walking across the scene in profile. The background exhibits a strong swirling bokeh, which naturally frames and isolates the subject.\"\n  },\n  \"description_short\": \"A young woman in a short red dress and white sneakers walks in profile through a field of flowers, with a distinct swirling blur effect in the background.\",\n  \"environment\": {\n    \"location_type\": \"outdoor\",\n    \"setting_details\": \"A lush green field or garden densely populated with white and yellow wildflowers, likely daisies. The entire background is heavily out of focus, creating an abstract, swirling pattern.\",\n    \"time_of_day\": \"afternoon\",\n    \"weather\": \"cloudy\"\n  },\n  \"lighting\": {\n    \"intensity\": \"moderate\",\n    \"source_direction\": \"front\",\n    \"type\": \"natural\"\n  },\n  \"mood\": {\n    \"atmosphere\": \"Dreamy and nostalgic\",\n    \"emotional_tone\": \"melancholic\"\n  },\n  \"narrative_elements\": {\n    \"character_interactions\": \"The woman is solitary, appearing lost in thought.\",\n    \"environmental_storytelling\": \"The ethereal, swirling floral background suggests a dreamscape or a memory, emphasizing the subject's introspective state. Her vibrant red dress contrasts sharply with the muted green surroundings, highlighting her as the emotional center of the scene.\",\n    \"implied_action\": \"The woman is walking from one place to another, suggesting a journey, a moment of contemplation, or an escape into nature.\"\n  },\n  \"objects\": [\n    \"woman\",\n    \"red dress\",\n    \"white sneakers\",\n    \"flowers\",\n    \"grass\"\n  ],\n  \"people\": {\n    \"ages\": [\n      \"young adult\"\n    ],\n    \"clothing_style\": \"Bohemian romantic; a short, flowing red dress with ruffled details, paired with casual white sneakers.\",\n    \"count\": \"1\",\n    \"genders\": [\n      \"female\"\n    ]\n  },\n  \"prompt\": \"A dreamy, artistic photograph of a young woman with brown, wind-swept hair, walking in profile through a meadow of daisies. She wears a vibrant short red dress and white sneakers. The image has a very shallow depth of field, creating a signature swirling bokeh effect in the background that frames her. The lighting is soft and natural, with a warm, vintage color grade. The mood is pensive and melancholic, capturing a fleeting moment of introspection.\",\n  \"style\": {\n    \"art_style\": \"cinematic\",\n    \"influences\": [\n      \"impressionism\",\n      \"fine art photography\"\n    ],\n    \"medium\": \"photography\"\n  },\n  \"technical_tags\": [\n    \"shallow depth of field\",\n    \"bokeh\",\n    \"swirl bokeh\",\n    \"Petzval lens\",\n    \"profile shot\",\n    \"vintage filter\",\n    \"motion blur\",\n    \"natural light\"\n  ],\n  \"use_case\": \"Artistic stock photography, editorial fashion, book covers, or datasets for specialized lens effects.\",\n  \"uuid\": \"0fce3d8f-9de2-4a75-8d3f-6398eea47e24\"\n}\n",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Bức Ảnh Nghệ Thuật Mơ Màng Về Thiếu Nữ Trên Đồng Hoa Cúc",
+    "vi_prompt": "{\n  \"colors\": {\n    \"color_temperature\": \"Ấm áp\",\n    \"contrast_level\": \"Trung bình\",\n    \"dominant_palette\": [\n      \"Đỏ thẫm\",\n      \"Xanh ô liu\",\n      \"Màu kem\",\n      \"Vàng nhạt\"\n    ]\n  },\n  \"composition\": {\n    \"camera_angle\": \"Góc chụp ngang tầm mắt (eye-level shot)\",\n    \"depth_of_field\": \"Độ sâu trường ảnh nông (shallow DOF)\",\n    \"focus\": \"Cô gái trẻ mặc váy đỏ\",\n    \"framing\": \"Cô gái được đóng khung hơi lệch tâm, đang sải bước nhìn nghiêng qua khung hình. Hậu cảnh thể hiện hiệu ứng bokeh xoáy mạnh mẽ, giúp tôn lên và tách biệt chủ thể một cách tự nhiên.\"\n  },\n  \"description_short\": \"Một cô gái trẻ trong chiếc váy ngắn màu đỏ và giày thể thao trắng bước đi nhìn nghiêng qua cánh đồng hoa, với hiệu ứng làm mờ xoáy đặc trưng ở hậu cảnh.\",\n  \"environment\": {\n    \"location_type\": \"Ngoài trời\",\n    \"setting_details\": \"Một cánh đồng hoặc khu vườn xanh tươi rậm rạp với hoa dại trắng và vàng, nhiều khả năng là hoa cúc họa mi. Toàn bộ hậu cảnh bị xóa phông mạnh mẽ, tạo thành một mô thức xoáy trừu tượng nghệ thuật.\",\n    \"time_of_day\": \"Buổi chiều\",\n    \"weather\": \"Nhiều mây dịu mát\"\n  },\n  \"lighting\": {\n    \"intensity\": \"Vừa phải\",\n    \"source_direction\": \"Chiếu từ phía trước\",\n    \"type\": \"Ánh sáng tự nhiên\"\n  },\n  \"mood\": {\n    \"atmosphere\": \"Mơ màng và hoài niệm\",\n    \"emotional_tone\": \"Trầm lắng man mác\"\n  },\n  \"narrative_elements\": {\n    \"character_interactions\": \"Cô gái đơn độc, dường như chìm đắm trong dòng suy tư miên man.\",\n    \"environmental_storytelling\": \"Hậu cảnh hoa lá xoáy mơ màng gợi nhớ một cõi mộng hay một ký ức xa xăm, nhấn mạnh trạng thái nội tâm của chủ thể. Chiếc váy đỏ rực rỡ tương phản sắc nét với sắc xanh dịu nhẹ xung quanh, biến cô thành tâm điểm cảm xúc của toàn bộ khung cảnh.\",\n    \"implied_action\": \"Cô gái đang sải bước từ nơi này sang nơi khác, gợi mở một cuộc hành trình, một khoảnh khắc chiêm nghiệm hoặc một cuộc trốn chạy tìm về với thiên nhiên.\"\n  },\n  \"objects\": [\n    \"Cô gái\",\n    \"Váy đỏ\",\n    \"Giày thể thao trắng\",\n    \"Hoa dại\",\n    \"Cỏ xanh\"\n  ],\n  \"people\": {\n    \"ages\": [\n      \"Thiếu nữ trẻ\"\n    ],\n    \"clothing_style\": \"Phong cách lãng mạn Bohemian; váy ngắn màu đỏ bồng bềnh với chi tiết bèo nhún, kết hợp giày thể thao trắng giản dị.\",\n    \"count\": \"1\",\n    \"genders\": [\n      \"Nữ\"\n    ]\n  },\n  \"prompt\": \"Một bức ảnh nghệ thuật mơ màng về thiếu nữ với mái tóc nâu tung bay trong gió, đang sải bước nhìn nghiêng qua cánh đồng hoa cúc họa mi. Cô mặc chiếc váy ngắn màu đỏ rực rỡ và đi giày thể thao trắng. Bức ảnh có độ sâu trường ảnh rất nông, tạo hiệu ứng bokeh xoáy đặc trưng ở hậu cảnh ôm trọn lấy cô. Ánh sáng dịu nhẹ và tự nhiên, với tông màu vintage ấm áp. Bầu không khí mang tính trầm ngâm và u buồn man mác, bắt trọn khoảnh khắc nội tâm thoáng qua.\",\n  \"style\": {\n    \"art_style\": \"Điện ảnh\",\n    \"influences\": [\n      \"Trường phái ấn tượng\",\n      \"Nhiếp ảnh mỹ thuật\"\n    ],\n    \"medium\": \"Nhiếp ảnh\"\n  },\n  \"technical_tags\": [\n    \"Độ sâu trường ảnh nông\",\n    \"Bokeh\",\n    \"Bokeh xoáy\",\n    \"Ống kính Petzval\",\n    \"Chụp góc nghiêng\",\n    \"Bộ lọc vintage\",\n    \"Mờ chuyển động\",\n    \"Ánh sáng tự nhiên\"\n  ],\n  \"use_case\": \"Ảnh stock nghệ thuật, thời trang tạp chí, bìa sách, hoặc tập dữ liệu cho các hiệu ứng ống kính quang học chuyên biệt.\",\n  \"uuid\": \"0fce3d8f-9de2-4a75-8d3f-6398eea47e24\"\n}",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Art"
+    ],
+    "category": "image_generation",
+    "subcategory": "fine_art_portrait",
+    "tags": [
+      "ảnh nghệ thuật",
+      "đồng cỏ hoa cúc",
+      "bokeh xoáy",
+      "ống kính petzval",
+      "mơ màng"
+    ],
+    "search_keywords_vi": [
+      "ảnh thiếu nữ trên đồng hoa",
+      "hiệu ứng bokeh xoáy petzval",
+      "nhiếp ảnh phong cách ấn tượng",
+      "ảnh vintage hoài niệm"
+    ],
+    "use_case": "Tạo prompt ảnh chụp nghệ thuật thiếu nữ váy đỏ dạo bước trên đồng hoa cúc với hiệu ứng xóa phông bokeh xoáy Petzval",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "medium",
+    "quality_status": "ok",
+    "author": {
+      "username": "gunebak4n",
+      "name": "günebakan",
+      "avatar": "https://avatars.githubusercontent.com/u/119886960?v=4",
+      "identifier": "senoldak",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/dreamy-artistic-photograph-of-a-young-woman-in-a-meadow",
+    "created_at": "2026-01-15T15:34:17.038Z"
+  }
+]

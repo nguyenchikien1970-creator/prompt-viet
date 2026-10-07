@@ -1,0 +1,544 @@
+[
+  {
+    "id": "cmkr1bbjg0001ky04scjx0byh",
+    "slug": "production-grade-posthog-integration-for-nextjs-15-app-router",
+    "original_title": "Production-Grade PostHog Integration for Next.js 15 (App Router)",
+    "original_prompt": "Production-Grade PostHog Integration for Next.js 15 (App Router)\nRole\nYou are a Senior Next.js Architect & Analytics Engineer with deep expertise in Next.js 15, React 19, Supabase Auth, Polar.sh billing, and PostHog.\nYou design production-grade, privacy-aware systems that handle the strict Server/Client boundaries of Next.js 15 correctly.\nYour output must be code-first, deterministic, and suitable for a real SaaS product in 2026.\n\nGoal\nIntegrate PostHog Analytics, Session Replay, Feature Flags, and Error Tracking into a Next.js 15 App Router SaaS application with:\n- Correct Server / Client separation (Providers Pattern)\n- Type-safe, centralized analytics\n- User identity lifecycle synced with Supabase\n- Accurate billing tracking (Polar)\n- Suspense-safe SPA navigation tracking\n\nContext\n- Framework: Next.js 15 (App Router) & React 19\n- Rendering: Server Components (default), Client Components (interaction)\n- Auth: Supabase Auth\n- Billing: Polar.sh\n- State: No existing analytics\n- Environment: Web SaaS (production)\n\nCore Architectural Rules (NON-NEGOTIABLE)\n1. PostHog must ONLY run in Client Components.\n2. No PostHog calls in Server Components, Route Handlers, or API routes.\n3. Identity is controlled only by auth state.\n4. All analytics must flow through a single abstraction layer (`lib/analytics.ts`).\n\n1. Architecture & Setup (Providers Pattern)\n- Create `app/providers.tsx`.\n- Mark it as `'use client'`.\n- Initialize PostHog inside this component.\n- Wrap the application with `PostHogProvider`.\n- Configuration:\n  - Use `NEXT_PUBLIC_POSTHOG_KEY` and `NEXT_PUBLIC_POSTHOG_HOST`.\n  - `capture_pageview`: false (Handled manually to avoid App Router duplicates).\n  - `capture_pageleave`: true.\n  - Enable Session Replay (`mask_all_text_inputs: true`).\n\n2. User Identity Lifecycle (Supabase Sync)\n- Create `hooks/useAnalyticsAuth.ts`.\n- Listen to Supabase `onAuthStateChange`.\n- Logic:\n  - SIGNED_IN: Call `posthog.identify`.\n  - SIGNED_OUT: Call `posthog.reset()`.\n  - Use appropriate React 19 hooks if applicable for state, but standard `useEffect` is fine for listeners.\n\n3. Billing & Revenue (Polar)\n- PostHog `distinct_id` must match Supabase User ID.\n- Set `polar_customer_id` as a user property.\n- Track events: `CHECKOUT_STARTED`, `SUBSCRIPTION_CREATED`.\n- Ensure `SUBSCRIPTION_CREATED` includes `{ revenue: number, currency: string }` for PostHog Revenue dashboards.\n\n4. Type-Safe Analytics Layer\n- Create `lib/analytics.ts`.\n- Define strict Enum `AnalyticsEvents`.\n- Export typed `trackEvent` wrapper.\n- Check `if (typeof window === 'undefined')` to prevent SSR errors.\n\n5. SPA Navigation Tracking (Next.js 15 & Suspense Safe)\n- Create `components/PostHogPageView.tsx`.\n- Use `usePathname` and `useSearchParams`.\n- CRITICAL: Because `useSearchParams` causes client-side rendering de-opt in Next.js 15 if not handled, you MUST wrap this component in a `<Suspense>` boundary when mounting it in `app/providers.tsx`.\n- Trigger pageviews on route changes.\n\n6. Error Tracking\n- Capture errors explicitly: `posthog.capture('$exception', { message, stack })`.\n\nDeliverables (MANDATORY)\nReturn ONLY the following files:\n1. `package.json` (Dependencies: `posthog-js`).\n2. `app/providers.tsx` (With Suspense wrapper).\n3. `lib/analytics.ts` (Type-safe layer).\n4. `hooks/useAnalyticsAuth.ts` (Auth sync).\n5. `components/PostHogPageView.tsx` (Navigation tracking).\n6. `app/layout.tsx` (Root layout integration example).\n\n🚫 No extra files.\n🚫 No prose explanations outside code comments.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Tích hợp PostHog chuẩn Production cho Next.js 15 App Router",
+    "vi_prompt": "Tích hợp PostHog chuẩn Production cho Next.js 15 (App Router)\nVai trò\nBạn là một Kiến trúc sư Next.js & Kỹ sư Phân tích Dữ liệu Cao cấp với chuyên môn sâu về Next.js 15, React 19, Supabase Auth, thanh toán Polar.sh và PostHog.\nBạn thiết kế các hệ thống cấp doanh nghiệp chuẩn production, bảo vệ quyền riêng tư, xử lý ranh giới nghiêm ngặt giữa Server/Client của Next.js 15 một cách chuẩn xác.\nKết quả đầu ra của bạn phải tập trung hoàn toàn vào mã nguồn (code-first), có tính tất định và phù hợp trực tiếp cho một sản phẩm SaaS thực tế trong năm 2026.\n\nMục tiêu\nTích hợp PostHog Analytics, Session Replay, Feature Flags và Error Tracking vào một ứng dụng SaaS Next.js 15 App Router với:\n- Tách biệt ranh giới Server / Client chuẩn xác (mô hình Providers Pattern)\n- Lớp phân tích dữ liệu tập trung, type-safe an toàn kiểu dữ liệu\n- Vòng đời danh tính người dùng được đồng bộ hóa với Supabase\n- Theo dõi thanh toán doanh thu chính xác (Polar)\n- Theo dõi điều hướng SPA an toàn với Suspense boundary\n\nNgữ cảnh dự án\n- Framework: Next.js 15 (App Router) & React 19\n- Kết xuất Rendering: Server Components (mặc định), Client Components (tương tác)\n- Xác thực Auth: Supabase Auth\n- Thanh toán Billing: Polar.sh\n- Trạng thái hiện tại: Chưa có hệ thống phân tích dữ liệu nào\n- Môi trường: Web SaaS (production)\n\nQuy tắc kiến trúc cốt lõi (BẮT BUỘC TUÂN THỦ - KHÔNG THỂ THƯƠNG LƯỢNG)\n1. PostHog CHỈ ĐƯỢC PHÉP chạy trong Client Components.\n2. Tuyệt đối không gọi PostHog trong Server Components, Route Handlers hoặc API routes.\n3. Danh tính người dùng chỉ được điều khiển bởi trạng thái xác thực auth.\n4. Mọi sự kiện phân tích phải đi qua một lớp trừu tượng duy nhất (`lib/analytics.ts`).\n\n1. Kiến trúc & Thiết lập (Providers Pattern)\n- Tạo tệp `app/providers.tsx`.\n- Khai báo chỉ thị `'use client'` ở đầu tệp.\n- Khởi tạo PostHog bên trong component này.\n- Bao bọc toàn bộ ứng dụng bằng `PostHogProvider`.\n- Cấu hình:\n  - Sử dụng `NEXT_PUBLIC_POSTHOG_KEY` và `NEXT_PUBLIC_POSTHOG_HOST`.\n  - `capture_pageview`: false (Xử lý thủ công để tránh trùng lặp lượt xem trong App Router).\n  - `capture_pageleave`: true.\n  - Bật tính năng ghi lại phiên Session Replay (`mask_all_text_inputs: true`).\n\n2. Vòng đời danh tính người dùng (Đồng bộ hóa với Supabase)\n- Tạo hook `hooks/useAnalyticsAuth.ts`.\n- Lắng nghe sự kiện Supabase `onAuthStateChange`.\n- Logic xử lý:\n  - SIGNED_IN: Gọi `posthog.identify`.\n  - SIGNED_OUT: Gọi `posthog.reset()`.\n  - Sử dụng các hook React 19 phù hợp nếu cần cho state, nhưng `useEffect` tiêu chuẩn là đủ cho các hàm lắng nghe sự kiện.\n\n3. Thanh toán & Doanh thu (Polar)\n- Thuộc tính `distinct_id` của PostHog phải trùng khớp với User ID của Supabase.\n- Gán `polar_customer_id` làm thuộc tính người dùng (user property).\n- Theo dõi các sự kiện: `CHECKOUT_STARTED`, `SUBSCRIPTION_CREATED`.\n- Đảm bảo sự kiện `SUBSCRIPTION_CREATED` bao gồm `{ revenue: number, currency: string }` phục vụ biểu đồ doanh thu Revenue của PostHog.\n\n4. Lớp phân tích dữ liệu Type-Safe\n- Tạo tệp `lib/analytics.ts`.\n- Định nghĩa Enum nghiêm ngặt `AnalyticsEvents`.\n- Xuất hàm bọc `trackEvent` có định kiểu dữ liệu rõ ràng.\n- Kiểm tra `if (typeof window === 'undefined')` để ngăn ngừa lỗi trong môi trường Server-Side Rendering (SSR).\n\n5. Theo dõi điều hướng SPA (An toàn với Next.js 15 & Suspense)\n- Tạo component `components/PostHogPageView.tsx`.\n- Sử dụng `usePathname` và `useSearchParams`.\n- ĐIỀU QUAN TRỌNG CỐT YẾU: Vì `useSearchParams` sẽ gây ra hiện tượng de-opt render phía client trong Next.js 15 nếu không được xử lý đúng, bạn BẮT BUỘC phải bao bọc component này trong một ranh giới `<Suspense>` khi gắn vào `app/providers.tsx`.\n- Kích hoạt sự kiện pageviews mỗi khi thay đổi đường dẫn route.\n\n6. Theo dõi lỗi (Error Tracking)\n- Bắt lỗi rõ ràng: `posthog.capture('$exception', { message, stack })`.\n\nSản phẩm bàn giao (BẮT BUỘC)\nCHỈ trả về đúng các tệp sau:\n1. `package.json` (Gói phụ thuộc: `posthog-js`).\n2. `app/providers.tsx` (Có Suspense wrapper).\n3. `lib/analytics.ts` (Lớp xử lý an toàn kiểu dữ liệu).\n4. `hooks/useAnalyticsAuth.ts` (Đồng bộ hóa xác thực auth).\n5. `components/PostHogPageView.tsx` (Theo dõi chuyển trang navigation).\n6. `app/layout.tsx` (Ví dụ tích hợp vào Root layout).\n\n🚫 Không tạo thêm tệp nào khác ngoài danh sách.\n🚫 Không giải thích dài dòng bằng văn xuôi bên ngoài các chú thích code.",
+    "translation_status": "translated",
+    "source_category": "Web Development",
+    "source_tags": [
+      "Web Development",
+      "Coding"
+    ],
+    "category": "Lập trình",
+    "subcategory": "Phát triển Web (Frontend)",
+    "tags": [
+      "nextjs 15",
+      "posthog",
+      "react 19",
+      "app router",
+      "analytics"
+    ],
+    "search_keywords_vi": [
+      "tích hợp posthog nextjs 15",
+      "app router analytics nextjs",
+      "cấu hình posthog react 19",
+      "theo dõi sự kiện posthog"
+    ],
+    "use_case": "Tích hợp hoàn chỉnh hệ thống phân tích sự kiện PostHog, Session Replay và Suspense PageView cho ứng dụng Next.js 15 App Router.",
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "ted2xmen",
+      "name": "Tugrul Erdem",
+      "avatar": "https://avatars.githubusercontent.com/u/20682437?v=4",
+      "identifier": "Ted2xmen",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/production-grade-posthog-integration-for-nextjs-15-app-router",
+    "created_at": "2026-01-23T15:27:31.372Z"
+  },
+  {
+    "id": "cmkqy81gs0001l704ey0sul0u",
+    "slug": "elements",
+    "original_title": "Elements ",
+    "original_prompt": "I want to create a 4k image of 3D character of each element in the periodic table. I want them to look cute but has distinct features ",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Tạo hình nhân vật 3D các nguyên tố trong bảng tuần hoàn hóa học",
+    "vi_prompt": "Tôi muốn tạo một bức ảnh chất lượng 4K về nhân vật hoạt hình 3D đại diện cho từng nguyên tố hóa học trong bảng tuần hoàn. Tôi muốn các nhân vật trông thật dễ thương, đáng yêu nhưng vẫn sở hữu những đặc điểm nhận diện riêng biệt và độc đáo phản ánh tính chất của nguyên tố đó.",
+    "translation_status": "translated",
+    "source_category": "Video Generation",
+    "source_tags": [],
+    "category": "Hình ảnh & Đồ họa",
+    "subcategory": "Thiết kế nhân vật 3D",
+    "tags": [
+      "nhân vật 3d",
+      "bảng tuần hoàn",
+      "nguyên tố hóa học",
+      "dễ thương",
+      "render 4k"
+    ],
+    "search_keywords_vi": [
+      "vẽ nhân vật 3d nguyên tố hóa học",
+      "nhân vật bảng tuần hoàn dễ thương",
+      "3d character cute 4k"
+    ],
+    "use_case": "Tạo các nhân vật 3D ngộ nghĩnh mô phỏng nguyên tố hóa học phục vụ giáo dục và minh họa khoa học.",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "ok",
+    "author": {
+      "username": "rodj3881",
+      "name": "RODEL JIMENEZ",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKliEz49KqfOf106MWc7GbHksBWCWnSPsdf4GddMChBLhlygL8u=s96-c",
+      "identifier": "rodj3881",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/elements",
+    "created_at": "2026-01-23T14:00:59.500Z"
+  },
+  {
+    "id": "cmkqvwms6000hlb04f7cbruio",
+    "slug": "removal",
+    "original_title": "Remotion",
+    "original_prompt": "Minimal Countdown Scene:\nCount down from 3 → 2 → 1 using a clean, modern font.\nApply left-to-right color transitions with subtle background gradients.\nKeep the design minimal — shift font and background colors smoothly between counts.\n\nStart with a pure white background,\nThen transition quickly into lively, elegant tones: yellow, pink, blue, orange — fast, energetic transitions to build excitement.\n\nAfter the countdown, display\n“Introducing”\nIn a monospace font with a sleek text animation.\n\nNext Scene:\nCenter the Mitte.ai and Remotion logos on a white background.\nPlace them side by side — Mitte.ai on the left, Remotion on the right.\n\nFirst, fade in both logos.\nThen animate a vertical line drawing from bottom to top between them.\n\nFinal Moment:\nSlowly zoom into the logo section while shifting background colors\nWith left-to-right and right-to-left transitions in a celebratory motion.\n\nOverall Style:\nStartup vibes — elegant, creative, modern, and confident.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Video đếm ngược tối giản và giới thiệu hợp tác bằng Remotion",
+    "vi_prompt": "Phân cảnh Đếm ngược Tối giản (Minimal Countdown Scene):\nĐếm ngược từ 3 → 2 → 1 sử dụng phông chữ hiện đại, gãy gọn.\nÁp dụng hiệu ứng chuyển đổi màu từ trái sang phải với dải gradient nền tinh tế.\nGiữ phong cách thiết kế tối giản — chuyển đổi màu sắc chữ và màu nền mượt mà giữa các nhịp đếm.\n\nBắt đầu với phông nền trắng tinh khiết,\nSau đó chuyển đổi nhanh chóng sang các tông màu sống động, thanh lịch: vàng, hồng, xanh dương, cam — hiệu ứng chuyển màu nhanh, giàu năng lượng để khơi gợi sự phấn khích.\n\nSau khi kết thúc đếm ngược, hiển thị dòng chữ:\n“Introducing” (Xin giới thiệu)\nBằng phông chữ đơn cách (monospace) với hoạt ảnh chữ bóng bẩy, mượt mà.\n\nPhân cảnh tiếp theo (Next Scene):\nCăn giữa logo Mitte.ai và Remotion trên nền trắng.\nĐặt hai logo nằm cạnh nhau — Mitte.ai ở bên trái, Remotion ở bên phải.\n\nĐầu tiên, làm mờ hiện dần (fade in) cả hai logo.\nSau đó chạy hoạt ảnh vẽ một đường kẻ dọc từ dưới lên trên ngăn cách giữa hai logo.\n\nKhoảnh khắc kết thúc (Final Moment):\nTừ từ phóng to (zoom in) vào khu vực logo đồng thời chuyển đổi màu nền\nVề các chuyển động màu từ trái sang phải và từ phải sang trái trong nhịp điệu chúc mừng rộn ràng.\n\nPhong cách tổng thể:\nĐậm chất phong cách công ty khởi nghiệp công nghệ (Startup vibes) — thanh lịch, sáng tạo, hiện đại và tràn đầy tự tin.",
+    "translation_status": "translated",
+    "source_category": "Video Generation",
+    "source_tags": [
+      "AI Tools",
+      "Art",
+      "Marketing",
+      "Productivity",
+      "Entertainment"
+    ],
+    "category": "Video & Hoạt họa",
+    "subcategory": "Video Intro & Motion Graphics",
+    "tags": [
+      "remotion",
+      "đếm ngược countdown",
+      "motion graphics",
+      "startup video",
+      "hiệu ứng logo"
+    ],
+    "search_keywords_vi": [
+      "làm video đếm ngược remotion",
+      "motion graphics giới thiệu đối tác",
+      "video intro phong cách startup",
+      "hoạt ảnh chữ tối giản"
+    ],
+    "use_case": "Tạo video intro mở màn đếm ngược tối giản và giới thiệu thương hiệu đối tác chuẩn phong cách công nghệ bằng Remotion.",
+    "model_type": [
+      "video"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "semih",
+      "name": "semih",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLf_ZOGbjwY5PuCyLrRnN0xBinzNayQ2E8JytIdnK1biWOXIQ=s96-c",
+      "identifier": "semih",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/removal",
+    "created_at": "2026-01-23T12:56:08.022Z"
+  },
+  {
+    "id": "cmkqvgpjf0004lb04byhgx7n1",
+    "slug": "storyboard-grid",
+    "original_title": "Storyboard Grid",
+    "original_prompt": "A clean 3×3 [ratio] storyboard grid with nine equal [ratio] sized panels on [4:5] ratio. \n\nUse the reference image as the base product reference. Keep the same product, packaging design, branding, materials, colors, proportions and overall identity across all nine panels exactly as the reference. The product must remain clearly recognizable in every frame. The label, logo and proportions must stay exactly the same.\n\nThis storyboard is a high-end designer mockup presentation for a branding portfolio. The focus is on form, composition, materiality and visual rhythm rather than realism or lifestyle narrative. The overall look should feel curated, editorial and design-driven.\n\nFRAME 1:\nFront-facing hero shot of the product in a clean studio setup. Neutral background, balanced composition, calm and confident presentation of the product.\n\nFRAME 2:\nClose-up shot with the focus centered on the middle of the product. Focusing on surface texture, materials and print details.\n\nFRAME 3:\nShows the reference product placed in an environment that naturally fits the brand and product category. Studio setting inspired by the product design elements and colours. \n\nFRAME 4:\nProduct shown in use or interaction on a neutral studio background. Hands and interaction elements are minimal and restrained, the look matches the style of the package. \n\nFRAME 5:\nIsometric composition showing multiple products arranged in a precise geometric order from the top isometric angle. All products are placed at the same isometric top angle, evenly spaced, clean, structured and graphic.\n\nFRAME 6:\nProduct levitating slightly tilted on a neutral background that matches the reference image color palette. Floating position is angled and intentional, the product is floating naturally in space.\n\nFRAME 7:\nis an extreme close-up focusing on a specific detail of the label, edge, texture or material behavior.\n\nFRAME 8:\nThe product in an unexpected yet aesthetically strong setting that feels bold, editorial and visually striking.\nUnexpected but highly stylized setting. Studio-based, and designer-driven. Bold composition that elevates the brand.\n\nFRAME 9:\nWide composition showing the product in use, placed within a refined designer setup. Clean props, controlled styling, cohesive with the rest of the series.\n\nCAMERA & STYLE:\nUltra high-quality studio imagery with a real camera look. Different camera angles and framings across frames. Controlled depth of field, precise lighting, accurate materials and reflections. Lighting logic, color palette, mood and visual language must remain consistent across all nine panels as one cohesive series.\n\nOUTPUT:\nA clean 3×3 grid with no borders, no text, no captions and no watermarks.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Lưới Storyboard 3x3 giới thiệu Mockup bao bì và thương hiệu sản phẩm",
+    "vi_prompt": "Một lưới storyboard 3×3 [tỷ lệ] chỉn chu gồm chín ô có kích thước bằng nhau trên tỷ lệ khung hình [4:5].\n\nSử dụng hình ảnh tham chiếu làm sản phẩm đối chiếu gốc. Duy trì cùng một sản phẩm, thiết kế bao bì, nhận diện thương hiệu, vật liệu chất liệu, màu sắc, tỷ lệ kích thước và bộ nhận diện tổng thể trên toàn bộ chín khung hình chuẩn xác tuyệt đối như ảnh tham chiếu. Sản phẩm phải luôn nhận diện rõ ràng trong từng khung hình. Nhãn mác, logo và tỷ lệ kích thước phải giữ nguyên vẹn.\n\nStoryboard này là một bản trình bày mockup thiết kế cao cấp dành cho hồ sơ năng lực thương hiệu (branding portfolio). Trọng tâm đặt vào hình khối, bố cục, tính chất vật liệu và nhịp điệu thị giác hơn là câu chuyện đời thường. Diện mạo tổng thể phải mang phong cách tuyển chọn, biên tập tạp chí và định hướng thiết kế sắc sảo.\n\nKHUNG HÌNH 1:\nGóc chụp trực diện trung tâm (hero shot) của sản phẩm trong studio sạch sẽ. Nền trung tính, bố cục cân đối, phong thái sản phẩm tự tin và điềm tĩnh.\n\nKHUNG HÌNH 2:\nGóc cận cảnh tập trung vào phần giữa của sản phẩm. Làm nổi bật vân bề mặt, chất liệu cấu thành và chi tiết in ấn sắc sảo.\n\nKHUNG HÌNH 3:\nĐặt sản phẩm tham chiếu trong một môi trường phù hợp tự nhiên với thương hiệu và danh mục sản phẩm. Bối cảnh studio lấy cảm hứng từ các yếu tố thiết kế và màu sắc của sản phẩm.\n\nKHUNG HÌNH 4:\nSản phẩm trong quá trình sử dụng hoặc tương tác trên nền studio trung tính. Bàn tay và yếu tố tương tác tối giản, tiết chế, phong cách ăn khớp với thiết kế bao bì.\n\nKHUNG HÌNH 5:\nBố cục đẳng cự (isometric) hiển thị nhiều sản phẩm được xếp theo trật tự hình học chuẩn xác từ góc nhìn đẳng cự phía trên. Tất cả sản phẩm đặt cùng một góc, khoảng cách đều đặn, sạch sẽ, có cấu trúc đồ họa mạnh mẽ.\n\nKHUNG HÌNH 6:\nSản phẩm lơ lửng hơi nghiêng trên nền trung tính tệp màu với ảnh tham chiếu. Tư thế bay lơ lửng có chủ đích, tự nhiên trong không gian.\n\nKHUNG HÌNH 7:\nGóc siêu cận cảnh (extreme close-up) tập trung vào một chi tiết nhãn mác cụ thể, mép cạnh, đường vân hoặc phản xạ của chất liệu.\n\nKHUNG HÌNH 8:\nSản phẩm đặt trong một bối cảnh bất ngờ nhưng giàu tính thẩm mỹ, táo bạo, mang đậm chất tạp chí thời trang và bắt mắt thị giác.\n\nKHUNG HÌNH 9:\nBố cục góc rộng thể hiện sản phẩm trong bối cảnh sử dụng, đặt trong một bài trí thiết kế tinh tế. Đạo cụ gọn gàng, định hình phong cách chặt chẽ, đồng nhất với toàn bộ loạt ảnh.\n\nỐNG KÍNH & PHONG CÁCH:\nHình ảnh studio chất lượng cực cao như chụp từ máy ảnh thật. Thay đổi góc máy và khung hình linh hoạt qua các ô. Kiểm soát độ sâu trường ảnh, ánh sáng chuẩn xác, chất liệu và phản xạ trung thực. Logic ánh sáng, bảng màu, tâm trạng và ngôn ngữ thị giác phải nhất quán xuyên suốt chín khung hình như một bộ sưu tập duy nhất.\n\nĐẦU RA:\nLưới 3×3 sạch sẽ, không viền, không văn bản chữ, không chú thích và không đóng dấu bản quyền.",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Nano Banana",
+      "AI Tools",
+      "Art",
+      "Benefits",
+      "Entertainment"
+    ],
+    "category": "Hình ảnh & Đồ họa",
+    "subcategory": "Mockup sản phẩm & Storyboard",
+    "tags": [
+      "storyboard grid",
+      "mockup bao bì",
+      "nhận diện thương hiệu",
+      "lưới 3x3",
+      "chụp ảnh studio"
+    ],
+    "search_keywords_vi": [
+      "lưới storyboard sản phẩm 3x3",
+      "mockup bao bì thương hiệu",
+      "chụp ảnh sản phẩm chuyên nghiệp",
+      "portfolio thiết kế nhận diện"
+    ],
+    "use_case": "Tạo lưới bố cục 3x3 gồm 9 góc máy nghệ thuật phục vụ thuyết trình thiết kế bao bì và nhận diện thương hiệu sản phẩm.",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "semih",
+      "name": "semih",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLf_ZOGbjwY5PuCyLrRnN0xBinzNayQ2E8JytIdnK1biWOXIQ=s96-c",
+      "identifier": "semih",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/storyboard-grid",
+    "created_at": "2026-01-23T12:43:45.099Z"
+  },
+  {
+    "id": "cmkqqarkf0004jr04k77sjt41",
+    "slug": "underwater-veo-3-video",
+    "original_title": "Underwater Veo 3 video",
+    "original_prompt": "Ultra-realistic 6-second cinematic underwater video: A sleek predator fish darts through a vibrant coral reef, scattering a school of colorful tropical fish. The camera follows from a low FPV angle just behind the predator, weaving smoothly between corals and rocks with dynamic, fast-paced motion. The camera occasionally tilts and rolls slightly, emphasizing speed and depth, while sunlight filters through the water, creating shimmering rays and sparkling reflections. Tiny bubbles and particles float in the water for immersive realism. Ultra-realistic textures, cinematic lighting, dramatic depth of field. Audio: bubbling water, swishing fins, subtle underwater ambience.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Video đại dương 6 giây siêu thực tạo bằng Veo 3 – Cú rượt đuổi dưới đáy biển",
+    "vi_prompt": "Video quay dưới nước chuẩn điện ảnh 6 giây siêu chân thực: Một chú cá săn mồi thon dài lao vun vút qua rạn san hô rực rỡ sắc màu, làm tản mác một đàn cá nhiệt đới đủ màu sặc sỡ. Máy quay bám theo góc nhìn thứ nhất (FPV) từ phía sau con cá săn mồi, lượn lách mượt mà giữa các nhánh san hô và vách đá với chuyển động nhanh, năng động. Máy quay thỉnh thoảng hơi nghiêng và lắc nhẹ nhằm nhấn mạnh tốc độ và chiều sâu không gian, trong khi ánh nắng mặt trời xuyên qua làn nước trong xanh, tạo nên những luồng sáng lung linh và tia sáng lấp lánh phản chiếu. Những bọt khí nhỏ li ti và hạt lơ lửng trong nước tạo cảm giác chân thực sống động. Bề mặt chi tiết siêu thực tế, ánh sáng điện ảnh, độ sâu trường ảnh ấn tượng. Âm thanh: tiếng nước sủi bọt, tiếng vây cá quẫy rẽ nước và âm thanh môi trường đại dương trầm lắng.",
+    "translation_status": "translated",
+    "source_category": "Video Generation",
+    "source_tags": [],
+    "category": "Video & Hoạt họa",
+    "subcategory": "Video thiên nhiên & Động vật",
+    "tags": [
+      "veo 3",
+      "video dưới nước",
+      "rạn san hô",
+      "góc máy fpv",
+      "điện ảnh 6 giây"
+    ],
+    "search_keywords_vi": [
+      "prompt video đáy biển veo 3",
+      "video cá săn mồi fpv",
+      "tạo video đại dương bằng ai",
+      "video chuyển động san hô"
+    ],
+    "use_case": "Tạo video ngắn 6 giây mô tả cảnh săn mồi dưới đáy biển với góc quay FPV tốc độ cao bằng mô hình sinh video Google Veo 3.",
+    "model_type": [
+      "video"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "Veo_tutorials",
+      "name": "Veo_tutorials ",
+      "avatar": "https://avatars.githubusercontent.com/u/256758317?v=4",
+      "identifier": "mathdeueb",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/underwater-veo-3-video",
+    "created_at": "2026-01-23T10:19:09.711Z"
+  },
+  {
+    "id": "cmmkqhi6v6sqdxcgv5fib",
+    "slug": "idea-generation-step-6-publication",
+    "original_title": "Step 6: Publication",
+    "original_prompt": "Prepare the final deliverable for publication.\n\nFinal steps:\n- Format for target platform\n- Create accompanying materials\n- Set up distribution\n- Prepare announcement\n- Schedule publication\n- Monitor initial reception\n\nCongratulations on completing the workflow!",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Quy trình phát triển ý tưởng – Bước 6: Xuất bản và Phát hành",
+    "vi_prompt": "Chuẩn bị sản phẩm bàn giao cuối cùng để sẵn sàng xuất bản.\n\nCác bước hoàn thiện cuối cùng:\n- Định dạng cho nền tảng đích\n- Tạo các tài liệu bổ trợ đi kèm\n- Thiết lập các kênh phân phối\n- Chuẩn bị thông báo phát hành\n- Lên lịch xuất bản chính thức\n- Theo dõi phản hồi ban đầu của người dùng\n\nChúc mừng bạn đã hoàn thành trọn vẹn quy trình làm việc!",
+    "translation_status": "translated",
+    "source_category": "Workflows",
+    "source_tags": [],
+    "category": "Năng suất & Tổ chức",
+    "subcategory": "Quy trình sáng tạo & Quản lý ý tưởng",
+    "tags": [
+      "quy trình ý tưởng",
+      "xuất bản",
+      "phát hành nội dung",
+      "kế hoạch truyền thông",
+      "workflow bước 6"
+    ],
+    "search_keywords_vi": [
+      "quy trình xuất bản dự án",
+      "lên lịch phát hành nội dung",
+      "chuẩn bị tài liệu công bố",
+      "bước hoàn thiện dự án"
+    ],
+    "use_case": "Bước cuối cùng trong quy trình phát triển ý tưởng: chuẩn bị tài liệu, định dạng và lịch phát hành sản phẩm.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "ok",
+    "author": {
+      "username": "f",
+      "name": "Fatih Kadir Akın",
+      "avatar": "https://avatars.githubusercontent.com/u/196477?v=4",
+      "identifier": "f",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/idea-generation-step-6-publication",
+    "created_at": "2026-01-23T06:13:00.455Z"
+  },
+  {
+    "id": "cmmkqhi6v60ecimdg0ze37",
+    "slug": "idea-generation-step-5-final-review",
+    "original_title": "Step 5: Final Review",
+    "original_prompt": "Perform a comprehensive final review merging all work streams.\n\nReview checklist:\n- Technical feasibility confirmed\n- Creative vision aligned\n- All requirements met\n- Quality standards achieved\n- Consistency across all elements\n- Ready for publication\n\nProvide a final assessment with any last recommendations.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Quy trình phát triển ý tưởng – Bước 5: Đánh giá tổng kết cuối cùng",
+    "vi_prompt": "Tiến hành một đợt đánh giá tổng kết toàn diện, hợp nhất tất cả các luồng công việc.\n\nDanh sách kiểm tra đánh giá (Review checklist):\n- Tính khả thi về mặt kỹ thuật đã được xác nhận\n- Tầm nhìn sáng tạo được liên kết chặt chẽ\n- Toàn bộ các yêu cầu bài toán được đáp ứng đầy đủ\n- Đạt tiêu chuẩn chất lượng đã đề ra\n- Tính nhất quán xuyên suốt tất cả các thành phần\n- Đã sẵn sàng cho việc xuất bản\n\nĐưa ra bản đánh giá tổng kết kèm theo bất kỳ khuyến nghị hoàn thiện cuối cùng nào.",
+    "translation_status": "translated",
+    "source_category": "Workflows",
+    "source_tags": [],
+    "category": "Năng suất & Tổ chức",
+    "subcategory": "Quy trình sáng tạo & Quản lý ý tưởng",
+    "tags": [
+      "quy trình ý tưởng",
+      "đánh giá cuối cùng",
+      "kiểm thử chất lượng",
+      "tính khả thi",
+      "workflow bước 5"
+    ],
+    "search_keywords_vi": [
+      "đánh giá tổng kết dự án",
+      "danh sách kiểm tra chất lượng",
+      "review cuối cùng sản phẩm",
+      "hợp nhất luồng công việc"
+    ],
+    "use_case": "Rà soát tính khả thi kỹ thuật, độ thống nhất sáng tạo và tiêu chuẩn chất lượng trước khi phát hành chính thức.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "ok",
+    "author": {
+      "username": "f",
+      "name": "Fatih Kadir Akın",
+      "avatar": "https://avatars.githubusercontent.com/u/196477?v=4",
+      "identifier": "f",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/idea-generation-step-5-final-review",
+    "created_at": "2026-01-23T06:13:00.352Z"
+  },
+  {
+    "id": "cmmkqhi6v61fwz9zp8msb",
+    "slug": "idea-generation-step-4b-story-development",
+    "original_title": "Step 4b: Story Development",
+    "original_prompt": "Develop the full story and content based on the creative exploration.\n\nDevelop:\n- Complete narrative arc\n- Character or element descriptions\n- Key scenes or moments\n- Dialogue or copy\n- Visual descriptions\n- Emotional beats\n\nCreate compelling, engaging content.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Quy trình phát triển ý tưởng – Bước 4b: Phát triển câu chuyện và nội dung",
+    "vi_prompt": "Phát triển toàn bộ câu chuyện và nội dung chi tiết dựa trên phần khám phá sáng tạo trước đó.\n\nPhát triển:\n- Cung bậc cốt truyện hoàn chỉnh (narrative arc)\n- Mô tả nhân vật hoặc các yếu tố trọng tâm\n- Các phân cảnh hoặc khoảnh khắc then chốt\n- Lời thoại hoặc văn bản nội dung (copywriting)\n- Mô tả yếu tố thị giác, hình ảnh\n- Các nhịp chạm cảm xúc (emotional beats)\n\nTạo ra nội dung cuốn hút, hấp dẫn và giàu sức lôi cuốn.",
+    "translation_status": "translated",
+    "source_category": "Workflows",
+    "source_tags": [],
+    "category": "Sáng tạo nội dung",
+    "subcategory": "Kể chuyện & Phát triển nội dung",
+    "tags": [
+      "kể chuyện",
+      "phát triển cốt truyện",
+      "xây dựng nhân vật",
+      "storytelling",
+      "workflow bước 4b"
+    ],
+    "search_keywords_vi": [
+      "phát triển kịch bản câu chuyện",
+      "xây dựng cốt truyện chi tiết",
+      "tạo nội dung sáng tạo hấp dẫn",
+      "story development prompt"
+    ],
+    "use_case": "Phát triển cốt truyện hoàn chỉnh, lời thoại và nhịp cảm xúc dựa trên ý tưởng sáng tạo ban đầu.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "f",
+      "name": "Fatih Kadir Akın",
+      "avatar": "https://avatars.githubusercontent.com/u/196477?v=4",
+      "identifier": "f",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/idea-generation-step-4b-story-development",
+    "created_at": "2026-01-23T06:13:00.248Z"
+  },
+  {
+    "id": "cmmkqhi6v67n0iqasedvj",
+    "slug": "idea-generation-step-4a-implementation-plan",
+    "original_title": "Step 4a: Implementation Plan",
+    "original_prompt": "Create a comprehensive implementation plan.\n\nInclude:\n- Phase breakdown with milestones\n- Task list with priorities\n- Resource allocation\n- Risk mitigation strategies\n- Timeline estimates\n- Success metrics\n\nFormat as an actionable project plan.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Quy trình phát triển ý tưởng – Bước 4a: Lập kế hoạch triển khai thực hiện",
+    "vi_prompt": "Xây dựng một kế hoạch triển khai thực hiện toàn diện.\n\nBao gồm:\n- Phân chia các giai đoạn kèm theo các cột mốc quan trọng (milestones)\n- Danh sách nhiệm vụ cụ thể cùng mức độ ưu tiên\n- Phân bổ nguồn lực và nhân sự\n- Chiến lược giảm thiểu rủi ro\n- Ước tính tiến độ thời gian (timeline)\n- Các chỉ số đo lường thành công (success metrics)\n\nTrình bày dưới dạng một kế hoạch dự án có tính thực thi cao.",
+    "translation_status": "translated",
+    "source_category": "Workflows",
+    "source_tags": [],
+    "category": "Kinh doanh & Quản lý",
+    "subcategory": "Quản lý dự án & Kế hoạch",
+    "tags": [
+      "kế hoạch triển khai",
+      "quản lý dự án",
+      "phân bổ nguồn lực",
+      "quản trị rủi ro",
+      "workflow bước 4a"
+    ],
+    "search_keywords_vi": [
+      "lập kế hoạch triển khai dự án",
+      "bảng phân chia công việc dự án",
+      "project implementation plan",
+      "kế hoạch hành động chi tiết"
+    ],
+    "use_case": "Chuyển đổi ý tưởng thành kế hoạch hành động cụ thể với các mốc tiến độ, nguồn lực và chỉ số thành công.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "f",
+      "name": "Fatih Kadir Akın",
+      "avatar": "https://avatars.githubusercontent.com/u/196477?v=4",
+      "identifier": "f",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/idea-generation-step-4a-implementation-plan",
+    "created_at": "2026-01-23T06:13:00.147Z"
+  },
+  {
+    "id": "cmmkqhi6v6t6miwxxxq5k",
+    "slug": "idea-generation-step-3b-creative-exploration",
+    "original_title": "Step 3b: Creative Exploration",
+    "original_prompt": "Explore the creative dimensions of the outlined project.\n\nFocus on:\n- Narrative and storytelling elements\n- Visual and aesthetic considerations\n- Emotional impact and user engagement\n- Unique creative angles\n- Inspiration from other works\n\nGenerate creative concepts that bring the project to life.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Quy trình phát triển ý tưởng – Bước 3b: Khám phá sáng tạo",
+    "vi_prompt": "Khám phá các chiều không gian sáng tạo của dự án đã được lập dàn ý.\n\nTập trung vào:\n- Yếu tố tự sự và nghệ thuật kể chuyện (storytelling)\n- Cân nhắc về mặt thị giác và thẩm mỹ\n- Tác động cảm xúc và sự gắn kết của người dùng\n- Các góc nhìn sáng tạo độc đáo, mới lạ\n- Nguồn cảm hứng từ các tác phẩm khác\n\nTạo ra các ý niệm sáng tạo giúp thổi hồn sức sống vào dự án.",
+    "translation_status": "translated",
+    "source_category": "Workflows",
+    "source_tags": [],
+    "category": "Sáng tạo nội dung",
+    "subcategory": "Khởi tạo ý tưởng & Đổi mới",
+    "tags": [
+      "khám phá sáng tạo",
+      "nghệ thuật kể chuyện",
+      "thẩm mỹ thị giác",
+      "cảm hứng sáng tác",
+      "workflow bước 3b"
+    ],
+    "search_keywords_vi": [
+      "khám phá ý tưởng sáng tạo",
+      "tìm cảm hứng nghệ thuật",
+      "ý tưởng thị giác độc đáo",
+      "creative exploration prompt"
+    ],
+    "use_case": "Khai phóng các góc nhìn nghệ thuật, cảm xúc và thẩm mỹ để làm phong phú thêm cho ý tưởng dự án.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "ok",
+    "author": {
+      "username": "f",
+      "name": "Fatih Kadir Akın",
+      "avatar": "https://avatars.githubusercontent.com/u/196477?v=4",
+      "identifier": "f",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/idea-generation-step-3b-creative-exploration",
+    "created_at": "2026-01-23T06:13:00.045Z"
+  },
+  {
+    "id": "cmmkqhi6v6bln3rxsv91e",
+    "slug": "idea-generation-step-3a-technical-deep-dive",
+    "original_title": "Step 3a: Technical Deep Dive",
+    "original_prompt": "Perform a technical analysis of the outlined project.\n\nAnalyze:\n- Technical requirements and dependencies\n- Architecture considerations\n- Potential technical challenges\n- Required tools and technologies\n- Performance implications\n\nProvide a detailed technical assessment with recommendations.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Quy trình phát triển ý tưởng – Bước 3a: Phân tích kỹ thuật chuyên sâu",
+    "vi_prompt": "Tiến hành phân tích kỹ thuật chuyên sâu cho dự án đã được lập dàn ý.\n\nPhân tích:\n- Các yêu cầu kỹ thuật và sự phụ thuộc hệ thống (dependencies)\n- Cân nhắc về kiến trúc giải pháp\n- Các thách thức kỹ thuật tiềm ẩn\n- Công cụ và ngăn xếp công nghệ cần thiết\n- Các ảnh hưởng tới hiệu năng hệ thống\n\nCung cấp một bản đánh giá kỹ thuật chi tiết kèm theo các đề xuất giải pháp tối ưu.",
+    "translation_status": "translated",
+    "source_category": "Workflows",
+    "source_tags": [],
+    "category": "Lập trình",
+    "subcategory": "Kiến trúc hệ thống & Đánh giá kỹ thuật",
+    "tags": [
+      "phân tích kỹ thuật",
+      "kiến trúc phần mềm",
+      "đánh giá khả thi",
+      "hiệu năng hệ thống",
+      "workflow bước 3a"
+    ],
+    "search_keywords_vi": [
+      "phân tích kỹ thuật dự án",
+      "đánh giá kiến trúc hệ thống",
+      "nghiên cứu khả thi công nghệ",
+      "technical deep dive"
+    ],
+    "use_case": "Phân tích kiến trúc, thách thức công nghệ và yêu cầu kỹ thuật trước khi bước vào giai đoạn triển khai chi tiết.",
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "f",
+      "name": "Fatih Kadir Akın",
+      "avatar": "https://avatars.githubusercontent.com/u/196477?v=4",
+      "identifier": "f",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/idea-generation-step-3a-technical-deep-dive",
+    "created_at": "2026-01-23T06:12:59.944Z"
+  },
+  {
+    "id": "cmmkqhi6v6fssm58ij07t",
+    "slug": "idea-generation-step-2-outline-creation",
+    "original_title": "Step 2: Outline Creation",
+    "original_prompt": "Based on the ideas generated in the previous step, create a detailed outline.\n\nStructure your outline with:\n- Main sections and subsections\n- Key points to cover\n- Estimated time/effort for each section\n- Dependencies between sections\n\nFormat the outline in a clear, hierarchical structure.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Quy trình phát triển ý tưởng – Bước 2: Thiết lập dàn ý chi tiết",
+    "vi_prompt": "Dựa trên các ý tưởng đã được hình thành ở bước trước, hãy lập một dàn ý chi tiết.\n\nCấu trúc dàn ý của bạn với:\n- Các phần chính và các phần phụ\n- Các luận điểm trọng tâm cần giải quyết\n- Ước tính thời gian/công sức cho từng phần\n- Sự phụ thuộc lẫn nhau giữa các phần\n\nĐịnh dạng dàn ý theo một cấu trúc phân cấp rõ ràng, mạch lạc.",
+    "translation_status": "translated",
+    "source_category": "Workflows",
+    "source_tags": [],
+    "category": "Năng suất & Tổ chức",
+    "subcategory": "Quy trình sáng tạo & Quản lý ý tưởng",
+    "tags": [
+      "lập dàn ý",
+      "cấu trúc ý tưởng",
+      "quản lý nội dung",
+      "phân cấp thông tin",
+      "workflow bước 2"
+    ],
+    "search_keywords_vi": [
+      "lập dàn ý dự án",
+      "xây dựng outline chi tiết",
+      "cấu trúc hóa ý tưởng",
+      "outline creation prompt"
+    ],
+    "use_case": "Chuyển các ý tưởng thô thành một dàn ý phân cấp có cấu trúc mạch lạc, rõ ràng và ước tính thời gian.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "ok",
+    "author": {
+      "username": "f",
+      "name": "Fatih Kadir Akın",
+      "avatar": "https://avatars.githubusercontent.com/u/196477?v=4",
+      "identifier": "f",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/idea-generation-step-2-outline-creation",
+    "created_at": "2026-01-23T06:12:59.840Z"
+  }
+]

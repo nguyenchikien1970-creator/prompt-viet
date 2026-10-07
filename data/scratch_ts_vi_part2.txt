@@ -1,0 +1,227 @@
+---
+
+## 7. CÁC VẤN ĐỀ CHẤT LƯỢNG MÃ NGUỒN
+
+### 7.1 Phát Hiện Mã Nguồn Chết (Dead Code)
+- [ ] Tìm các thành phần được export nhưng không bao giờ được import sử dụng
+- [ ] Nhận diện mã nguồn không thể chạm tới sau các lệnh return / throw / break
+- [ ] Phát hiện các tham số hàm không bao giờ được sử dụng đến
+- [ ] Tìm các thành viên private của class không được dùng
+- [ ] Nhận diện các câu lệnh import thừa thãi
+- [ ] Kiểm tra các khối mã nguồn bị chú thích khóa lại
+- [ ] Tìm các định nghĩa kiểu dữ liệu (types/interfaces) không dùng
+- [ ] Phát hiện các feature flags dành cho những tính năng đã bị gỡ bỏ
+- [ ] Nhận diện các tùy chọn cấu hình không còn tác dụng
+- [ ] Tìm các tiện ích hỗ trợ kiểm thử bị bỏ quên (orphaned test utilities)
+
+### 7.2 Trùng Lặp Mã Nguồn (Code Duplication)
+- [ ] Tìm các triển khai hàm bị trùng lặp logic
+- [ ] Nhận diện các đoạn mã sao chép - dán chỉ khác nhau vài biến thể nhỏ
+- [ ] Phát hiện logic tương đồng cần được trừu tượng hóa
+- [ ] Tìm các định nghĩa kiểu dữ liệu bị lặp lại nhiều lần
+- [ ] Nhận diện logic xác thực bị viết trùng lặp
+- [ ] Kiểm tra các mẫu xử lý lỗi trùng lặp thiếu chuẩn hóa
+- [ ] Tìm các lời gọi API tương tự nhau có thể tổng quát hóa
+- [ ] Phát hiện các hằng số bị khai báo trùng lặp qua nhiều tệp
+
+### 7.3 Mùi Mã Nguồn (Code Smells)
+- [ ] Tìm các hàm nhận quá nhiều tham số (>4 tham số)
+- [ ] Nhận diện các hàm có độ dài vượt quá 50 dòng
+- [ ] Phát hiện các tệp mã nguồn lớn hơn 500 dòng
+- [ ] Tìm các cấu trúc điều kiện lồng nhau quá sâu (>3 cấp lồng)
+- [ ] Nhận diện các lớp/mô-đun khổng lồ ôm đồm quá nhiều trách nhiệm (God objects)
+- [ ] Kiểm tra hiện tượng ghen tị tính năng (Feature Envy)
+- [ ] Tìm mối liên hệ thân mật không phù hợp giữa các mô-đun
+- [ ] Phát hiện ám ảnh kiểu nguyên thủy (cần dùng value objects)
+- [ ] Nhận diện các cụm dữ liệu luôn xuất hiện cùng nhau (Data Clumps)
+- [ ] Tìm sự tổng quát hóa phỏng đoán thừa thãi (Speculative Generality)
+
+### 7.4 Vấn Đề Về Đặt Tên
+- [ ] Tìm các tên biến hoặc tên hàm gây hiểu lầm
+- [ ] Nhận diện quy ước đặt tên thiếu nhất quán
+- [ ] Phát hiện tên biến chỉ gồm một chữ cái (ngoại trừ các biến đếm vòng lặp)
+- [ ] Tìm các từ viết tắt làm giảm tính dễ đọc của mã nguồn
+- [ ] Nhận diện các biến boolean thiếu tiền tố is / has / should
+- [ ] Kiểm tra các tên hàm không mô tả đúng các tác dụng phụ (side effects) của chúng
+- [ ] Tìm các tên chung chung vô nghĩa (data, info, item, thing)
+- [ ] Phát hiện các tên biến che khuất biến ở phạm vi bên ngoài (variable shadowing)
+
+---
+
+## 8. KIẾN TRÚC & THIẾT KẾ PHẦN MỀM
+
+### 8.1 Vi Phạm Nguyên Tắc SOLID
+- [ ] **Single Responsibility**: Tìm các lớp/mô-đun làm quá nhiều việc khác nhau
+- [ ] **Open/Closed**: Tìm mã nguồn bắt buộc phải chỉnh sửa trực tiếp khi mở rộng
+- [ ] **Liskov Substitution**: Tìm các lớp con vi phạm giao ước của lớp cha
+- [ ] **Interface Segregation**: Tìm các interface cồng kềnh cần được chia nhỏ
+- [ ] **Dependency Inversion**: Tìm các mô-đun cấp cao phụ thuộc vào chi tiết cấp thấp
+
+### 8.2 Vấn Đề Về Mẫu Thiết Kế (Design Patterns)
+- [ ] Tìm các mẫu Singleton gây khó khăn cho việc viết kiểm thử tự động
+- [ ] Nhận diện thiếu mẫu Factory cho việc khởi tạo đối tượng phức tạp
+- [ ] Phát hiện cơ hội áp dụng mẫu Strategy
+- [ ] Tìm các triển khai mẫu Observer có nguy cơ rò rỉ bộ nhớ
+- [ ] Nhận diện các vị trí thiếu cơ chế tiêm phụ thuộc (Dependency Injection)
+- [ ] Kiểm tra việc triển khai chuẩn mực mẫu Repository
+- [ ] Tìm các vi phạm phân tách trách nhiệm giữa lệnh và truy vấn (CQRS)
+- [ ] Phát hiện thiếu mẫu Adapter khi tích hợp các phụ thuộc bên ngoài
+
+### 8.3 Cấu Trúc Mô-Đun
+- [ ] Tìm các phụ thuộc vòng (circular dependencies) giữa các mô-đun
+- [ ] Nhận diện vi phạm phân tầng kiến trúc (tầng giao diện gọi thẳng cơ sở dữ liệu)
+- [ ] Phát hiện các ranh giới mô-đun được phân chia mập mờ, thiếu rõ ràng
+
+---
+
+## 9. QUY CHUẨN TYPESCRIPT & BEST PRACTICES
+
+### 9.1 Tính Năng Ngôn Ngữ Hiện Đại
+- [ ] Kiểm tra việc sử dụng toán tử nullish coalescing (`??`) thay vì toán tử logic OR (`||`) cho giá trị mặc định
+- [ ] Xác minh việc áp dụng cú pháp chuỗi tùy chọn (`?.`)
+- [ ] Tìm các vị trí áp dụng toán tử gán logic (`&&=`, `||=`, `??=`)
+- [ ] Kiểm tra việc sử dụng chuẩn xác các trường và phương thức private thực thụ (`#field`)
+- [ ] Nhận diện cơ hội áp dụng hàm `structuredClone()` thay cho các kỹ thuật sao chép sâu cũ
+- [ ] Kiểm tra việc áp dụng `Object.hasOwn()` thay vì `Object.prototype.hasOwnProperty`
+
+### 9.2 Cấu Hình Trình Biên Dịch (tsconfig.json)
+- [ ] Xác minh chế độ kiểm tra nghiêm ngặt `strict: true` đã được bật
+- [ ] Kiểm tra việc kích hoạt cờ `noUncheckedIndexedAccess`
+- [ ] Đảm bảo cờ `exactOptionalPropertyTypes` được kích hoạt nếu phù hợp
+- [ ] Xác minh việc bật `noImplicitReturns` và `noFallthroughCasesInSwitch`
+- [ ] Kiểm tra cờ `skipLibCheck` và đánh giá tác động thực tế của nó
+- [ ] Đảm bảo cờ `isolatedModules` được kích hoạt cho các bộ biên dịch hiện đại (esbuild, swc)
+
+---
+
+## 10. KHOẢNG TRỐNG KIỂM THỬ (TESTING)
+
+### 10.1 Độ Bao Phủ & Thiết Kế Test
+- [ ] Tìm các hàm và phương thức nghiệp vụ hoàn toàn chưa có unit test
+- [ ] Nhận diện các kịch bản xử lý lỗi và ngoại lệ chưa được kiểm thử
+- [ ] Phát hiện thiếu các bài test cho các trường hợp biên và dữ liệu ranh giới
+- [ ] Kiểm tra việc kiểm thử bất đồng bộ (async tests) có chờ hoàn tất đúng cách hay không
+- [ ] Tìm các bài test chập chờn (flaky tests) phụ thuộc vào thời gian thực hoặc thứ tự chạy
+- [ ] Phát hiện việc lạm dụng mock dữ liệu quá mức làm sai lệch bản chất hành vi
+
+---
+
+## 11. CẤU HÌNH & MÔI TRƯỜNG THỰC THI
+
+### 11.1 Cấu Hình Môi Trường
+- [ ] Tìm các giá trị cấu hình phụ thuộc môi trường bị hardcode
+- [ ] Nhận diện thiếu kiểm tra và xác thực tính hợp lệ của biến môi trường (dùng Zod/Valibot)
+- [ ] Phát hiện giá trị dự phòng thiếu an toàn cho các biến môi trường quan trọng
+- [ ] Kiểm tra quy trình xử lý tệp `.env` an toàn
+- [ ] Tìm các biến môi trường thiếu định nghĩa kiểu dữ liệu chặt chẽ
+- [ ] Nhận diện các giá trị nhạy cảm không được lưu trữ trong trình quản lý bí mật (secrets manager)
+
+---
+
+## 12. KHOẢNG TRỐNG TÀI LIỆU (DOCUMENTATION)
+
+### 12.1 Tài Liệu Hóa Mã Nguồn
+- [ ] Tìm các API public thiếu chú thích giải thích JSDoc/TSDoc
+- [ ] Nhận diện các hàm có logic nghiệp vụ phức tạp nhưng hoàn toàn không có lời bình luận giải thích
+- [ ] Phát hiện thiếu mô tả cho các tham số và kiểu dữ liệu trả về
+- [ ] Tìm các ghi chú TODO / FIXME / HACK tồn đọng chưa được giải quyết
+- [ ] Nhận diện các \"con số ma thuật\" (magic numbers) xuất hiện mà không có giải thích ý nghĩa
+
+---
+
+## 13. DANH MỤC KIỂM TRA TRƯỜNG HỢP BIÊN (EDGE CASES)
+
+### 13.1 Trường Hợp Biên Dữ Liệu Đầu Vào
+- [ ] Chuỗi rỗng, mảng rỗng, đối tượng rỗng
+- [ ] Số cực lớn vượt ngưỡng an toàn (`Number.MAX_SAFE_INTEGER`)
+- [ ] Số âm tại các vị trí chỉ chấp nhận số dương
+- [ ] Giá trị bằng 0
+- [ ] Các giá trị đặc biệt `NaN` và `Infinity`
+- [ ] Ký tự Unicode, emoji và văn bản đa byte
+- [ ] Chuỗi văn bản cực lớn (>1MB)
+- [ ] Đối tượng lồng nhau nhiều cấp độ sâu
+- [ ] Đối tượng có tham chiếu vòng (circular references)
+- [ ] Các nỗ lực tấn công ô nhiễm nguyên mẫu (Prototype Pollution)
+
+### 13.2 Trường Hợp Biên Về Thời Gian
+- [ ] Năm nhuận và thời điểm chuyển đổi giờ mùa hè
+- [ ] Sự khác biệt múi giờ giữa client và server
+- [ ] Điều kiện ranh giới ngày tháng (cuối tháng, cuối năm)
+- [ ] Chuỗi định dạng ngày tháng không hợp lệ
+- [ ] Vấn đề sai số độ chính xác của dấu thời gian (timestamps)
+
+### 13.3 Trường Hợp Biên Về Trạng Thái
+- [ ] Trạng thái khởi tạo ban đầu trước khi có bất kỳ thao tác nào diễn ra
+- [ ] Trạng thái ứng dụng sau khi hứng chịu chuỗi thao tác liên tục tốc độ cao
+- [ ] Trạng thái trong quá trình đồng thời chỉnh sửa
+- [ ] Trạng thái phục hồi sau khi phát sinh sự cố ngoại lệ
+- [ ] Trạng thái sau các thất bại cục bộ một phần
+- [ ] Dữ liệu trạng thái cũ hỏng phát sinh do cơ chế lưu cache
+
+---
+
+## ĐỊNH DẠNG ĐẦU RA (OUTPUT FORMAT)
+
+Với mỗi vấn đề phát hiện được, hãy trình bày chi tiết theo cấu trúc sau:
+
+### [MỨC ĐỘ: NGHIÊM TRỌNG / CAO / TRUNG BÌNH / THẤP] Tiêu Đề Vấn Đề
+
+**Danh mục**: [Hệ thống kiểu / An ninh / Hiệu năng / v.v.]  
+**Tệp**: duong/dan/toi/file.ts  
+**Dòng**: 123-145  
+**Tác động**: Mô tả cụ thể hậu quả tiêu cực có thể xảy ra nếu không xử lý  
+
+**Mã nguồn hiện tại**:  
+```typescript
+// đoạn mã có vấn đề
+```
+
+**Nguyên nhân**: Giải thích chi tiết vì sao đoạn mã này vi phạm tiêu chuẩn hoặc gây rủi ro  
+
+**Giải pháp đề xuất**:  
+```typescript
+// đoạn mã đã được khắc phục chuẩn mực
+```
+
+**Tài liệu tham chiếu**: Liên kết dẫn tới tài liệu chính thức, CVE, hoặc hướng dẫn thực hành tốt nhất  
+
+---
+
+## MA TRẬN ĐỘ ƯU TIÊN KHẮC PHỤC (PRIORITY MATRIX)
+
+1. **NGHIÊM TRỌNG (CRITICAL)** (Khắc phục ngay lập tức):
+   - Các lỗ hổng an ninh bảo mật
+   - Rủi ro làm mất mát hoặc sai lệch dữ liệu
+   - Các lỗi làm sụp đổ hệ thống trên môi trường production
+
+2. **CAO (HIGH)** (Khắc phục trong sprint hiện tại):
+   - Các vi phạm nghiêm trọng về an toàn kiểu dữ liệu
+   - Hiện tượng rò rỉ bộ nhớ (memory leaks)
+   - Các điểm nghẽn hiệu năng thực thi nghiêm trọng
+
+3. **TRUNG BÌNH (MEDIUM)** (Khắc phục sớm):
+   - Các vấn đề về chất lượng và cấu trúc mã nguồn
+   - Khoảng trống trong độ bao phủ kiểm thử tự động
+   - Thiếu sót tài liệu hướng dẫn kỹ thuật
+
+4. **THẤP (LOW)** (Nợ kỹ thuật - Technical Debt):
+   - Không đồng nhất về phong cách viết mã
+   - Các tối ưu hóa nhỏ không ảnh hưởng trực tiếp đến người dùng
+   - Các cải tiến mang tính thẩm mỹ mã nguồn
+
+---
+
+## BÁO CÁO TỔNG KẾT CUỐI CÙNG (FINAL SUMMARY)
+
+Sau khi hoàn tất rà soát toàn bộ codebase, hãy cung cấp:
+
+1. **Tóm Tắt Dành Cho Lãnh Đạo (Executive Summary)**: Đánh giá tổng quan 2–3 đoạn văn về hiện trạng chất lượng mã nguồn
+2. **Đánh Giá Rủi Ro**: Mức độ rủi ro tổng thể kèm theo luận cứ xác đáng
+3. **Top 10 Vấn Đề Nghiêm Trọng Nhất**: Danh sách các lỗi ưu tiên giải quyết hàng đầu
+4. **Lộ Trình Hành Động Khuyến Nghị**: Kế hoạch khắc phục theo từng giai đoạn rõ ràng
+5. **Ước Tính Nỗ Lực**: Dự toán thời gian và nguồn lực cần thiết để khắc phục
+6. **Bảng Chỉ Số Đo Lường (Metrics)**:
+   - Tổng số lỗi phát hiện phân loại theo mức độ nghiêm trọng
+   - Điểm sức khỏe mã nguồn (thang điểm 1-10)
+   - Điểm an ninh bảo mật (thang điểm 1-10)
+   - Điểm khả năng bảo trì (thang điểm 1-10)

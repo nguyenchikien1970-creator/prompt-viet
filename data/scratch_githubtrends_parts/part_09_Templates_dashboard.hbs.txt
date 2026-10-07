@@ -1,0 +1,365 @@
+Templates/dashboard.hbs
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Trending Dashboard - {{period}}</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            github: {
+              dark: '#0d1117',
+              light: '#161b22',
+              border: '#30363d',
+              accent: '#58a6ff'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+    .project-card {
+      transition: all 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    .stat-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .news-item {
+      border-left: 3px solid #58a6ff;
+      padding-left: 1rem;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+  <!-- 页头 -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center">
+        <div>
+          <h1 class="text-3xl font-bold text-gray-900">🚀 GitHub Trending Dashboard</h1>
+          <p class="text-gray-600 mt-1">
+            周期: <span class="font-semibold text-github-accent">{{period}}</span> |
+            生成时间: <span class="text-gray-500">{{generatedAt}}</span>
+          </p>
+        </div>
+        <div class="flex gap-2">
+          <button onclick="window.print()" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium">
+            🖨️ Print
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+
+    <!-- 统计概览 -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div class="stat-card rounded-xl p-6 text-white shadow-lg">
+        <h3 class="text-lg font-semibold opacity-90">项目总数</h3>
+        <p class="text-4xl font-bold mt-2">{{projects.length}}</p>
+        <p class="text-sm opacity-75 mt-1">{{period}} 热门趋势</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl p-6 text-white shadow-lg">
+        <h3 class="text-lg font-semibold opacity-90">总 Stars 数</h3>
+        <p class="text-4xl font-bold mt-2">{{analytics.totalStars}}</p>
+        <p class="text-sm opacity-75 mt-1">所有项目总计</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-orange-500 to-red-500 rounded-xl p-6 text-white shadow-lg">
+        <h3 class="text-lg font-semibold opacity-90">最热项目</h3>
+        <p class="text-xl font-bold mt-2 truncate">{{analytics.topProject.name}}</p>
+        <p class="text-sm opacity-75 mt-1">{{analytics.topProject.stars}} stars</p>
+      </div>
+    </section>
+
+    <!-- 筛选和搜索 -->
+    <section class="bg-white rounded-xl shadow-sm p-6 mb-8">
+      <div class="flex flex-wrap gap-4 items-center">
+        <div class="flex-1 min-w-64">
+          <label class="block text-sm font-medium text-gray-700 mb-1">搜索项目</label>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="按名称或描述搜索..."
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-github-accent focus:border-transparent"
+            oninput="filterProjects()"
+          >
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">语言筛选</label>
+          <select
+            id="languageFilter"
+            class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-github-accent focus:border-transparent"
+            onchange="filterProjects()"
+          >
+            <option value="all">全部语言</option>
+            {{#each analytics.languages}}
+              <option value="{{this}}">{{this}}</option>
+            {{/each}}
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">排序方式</label>
+          <select
+            id="sortSelect"
+            class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-github-accent focus:border-transparent"
+            onchange="sortProjects()"
+          >
+            <option value="rank">排名</option>
+            <option value="stars">总 Stars</option>
+            <option value="growth">本期增长</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- 语言分布图表 -->
+    <section class="bg-white rounded-xl shadow-sm p-6 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">📊 语言分布</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div>
+          <canvas id="languageChart"></canvas>
+        </div>
+        <div>
+          <canvas id="growthChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending Projects -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">🔥 热门项目</h2>
+      <div id="projects-container" class="grid grid-cols-1 gap-4">
+        {{#each projects}}
+        <div class="project-card bg-white rounded-xl shadow-sm p-6 border border-gray-200"
+             data-rank="{{rank}}"
+             data-language="{{language}}"
+             data-stars="{{stars}}"
+             data-growth="{{starsThisPeriod}}"
+             data-name="{{name}}"
+             data-description="{{description}}">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-2xl font-bold text-github-accent">#{{rank}}</span>
+                <h3 class="text-xl font-semibold text-gray-900">
+                  <a href="{{url}}" target="_blank" class="hover:text-github-accent">{{name}}</a>
+                </h3>
+                <span class="badge bg-blue-100 text-blue-800">{{language}}</span>
+              </div>
+              <p class="text-gray-600 mb-3">{{description}}</p>
+              <div class="flex items-center gap-4 text-sm text-gray-500">
+                <span>⭐ {{stars}} stars</span>
+                {{#if starsThisPeriod}}
+                  <span class="text-green-600 font-semibold">(+{{starsThisPeriod}} this {{../period}})</span>
+                {{/if}}
+              </div>
+            </div>
+            <a href="{{url}}" target="_blank" class="px-4 py-2 bg-github-accent text-white rounded-lg hover:bg-blue-600 transition font-medium">
+              View →
+            </a>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </section>
+
+    <!-- Tech News -->
+    {{#if news}}
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">📰 技术资讯</h2>
+      <div class="grid grid-cols-1 gap-4">
+        {{#each news}}
+        <div class="news-item bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-gray-900 mb-1">
+                <a href="{{url}}" target="_blank" class="hover:text-github-accent">{{title}}</a>
+              </h3>
+              <div class="flex items-center gap-4 text-sm text-gray-500">
+                <span class="text-orange-600">📰 {{source}}</span>
+                {{#if points}}
+                  <span>⬆️ {{points}} points</span>
+                {{/if}}
+                {{#if comments}}
+                  <span>💬 {{comments}} comments</span>
+                {{/if}}
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </section>
+    {{/if}}
+
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="bg-white border-t border-gray-200 mt-12">
+    <div class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+      <p class="text-center text-gray-500 text-sm">
+        由 GitHubTrends Skill 生成 | 数据来源：GitHub 和 Hacker News
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // 注入数据
+    window.dashboardData = {
+      projects: {{{json projects}}},
+      analytics: {
+        languageDistribution: {{{json analytics.languageDistribution}}},
+        growthData: {{{json analytics.growthData}}}
+      }
+    };
+
+    // 初始化图表
+    document.addEventListener('DOMContentLoaded', function() {
+      initLanguageChart();
+      initGrowthChart();
+    });
+
+    // 语言分布饼图
+    function initLanguageChart() {
+      const ctx = document.getElementById('languageChart').getContext('2d');
+      const data = window.dashboardData.analytics.languageDistribution;
+
+      new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: Object.keys(data),
+          datasets: [{
+            data: Object.values(data),
+            backgroundColor: [
+              '#58a6ff', '#238636', '#f1e05a', '#d73a49',
+              '#8957E5', '#e34c26', '#CB3837', '#DA5B0B',
+              '#4F5D95', '#563d7c'
+            ]
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'right'
+            },
+            title: {
+              display: true,
+              text: 'Projects by Language'
+            }
+          }
+        }
+      });
+    }
+
+    // Stars 增长柱状图
+    function initGrowthChart() {
+      const ctx = document.getElementById('growthChart').getContext('2d');
+      const projects = window.dashboardData.projects.slice(0, 10);
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: projects.map(p => p.name.split('/')[1] || p.name),
+          datasets: [{
+            label: 'Stars This Period',
+            data: projects.map(p => parseInt(p.starsThisPeriod.replace('+', '') || 0)),
+            backgroundColor: 'rgba(88, 166, 255, 0.8)',
+            borderColor: 'rgba(88, 166, 255, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          indexAxis: 'y',
+          plugins: {
+            title: {
+              display: true,
+              text: 'Top 10 Growth'
+            }
+          },
+          scales: {
+            x: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    }
+
+    // 筛选项目
+    function filterProjects() {
+      const searchValue = document.getElementById('searchInput').value.toLowerCase();
+      const languageValue = document.getElementById('languageFilter').value;
+
+      const cards = document.querySelectorAll('.project-card');
+
+      cards.forEach(card => {
+        const name = card.dataset.name.toLowerCase();
+        const description = card.dataset.description.toLowerCase();
+        const language = card.dataset.language;
+
+        const matchesSearch = name.includes(searchValue) || description.includes(searchValue);
+        const matchesLanguage = languageValue === 'all' || language === languageValue;
+
+        card.style.display = matchesSearch && matchesLanguage ? 'block' : 'none';
+      });
+    }
+
+    // 排序项目
+    function sortProjects() {
+      const sortBy = document.getElementById('sortSelect').value;
+      const container = document.getElementById('projects-container');
+      const cards = Array.from(container.children);
+
+      cards.sort((a, b) => {
+        switch(sortBy) {
+          case 'stars':
+            return parseInt(b.dataset.stars.replace(/,/g, '')) - parseInt(a.dataset.stars.replace(/,/g, ''));
+          case 'growth':
+            const growthA = parseInt(a.dataset.growth.replace(/[+,]/g, '') || 0);
+            const growthB = parseInt(b.dataset.growth.replace(/[+,]/g, '') || 0);
+            return growthB - growthA;
+          case 'rank':
+          default:
+            return parseInt(a.dataset.rank) - parseInt(b.dataset.rank);
+        }
+      });
+
+      cards.forEach(card => container.appendChild(card));
+    }
+  </script>
+</body>
+</html>

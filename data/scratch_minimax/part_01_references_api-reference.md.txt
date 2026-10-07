@@ -1,0 +1,253 @@
+references/api-reference.md
+# Minimax Music API Reference
+
+## Authentication
+
+All requests require a Bearer token in the Authorization header.
+
+```
+Authorization: Bearer <MINIMAX_API_KEY>
+Content-Type: application/json
+```
+
+**Base URL:** `https://api.minimax.io/v1/`
+
+Get your API key at [platform.minimax.io](https://platform.minimax.io) > Account Management > API Keys. Use a **Pay-as-you-go** key — Coding Plan keys do NOT cover music generation.
+
+---
+
+## Music Generation Endpoint
+
+```
+POST https://api.minimax.io/v1/music_generation
+```
+
+### Request Body
+
+```json
+{
+  "model": "music-2.5",
+  "prompt": "Indie folk, melancholic, acoustic guitar, soft piano, female vocals",
+  "lyrics": "[Verse]\nWalking through the autumn leaves\nNobody knows where I've been\n\n[Chorus]\nEvery road leads back to you",
+  "audio_setting": {
+    "sample_rate": 44100,
+    "bitrate": 256000,
+    "format": "mp3"
+  },
+  "output_format": "url",
+  "stream": false
+}
+```
+
+### Parameter Reference
+
+| Parameter | Type | Required | Default | Constraints | Description |
+| --- | --- | --- | --- | --- | --- |
+| `model` | string | Yes | — | `"music-2.5"` | Model version identifier |
+| `lyrics` | string | Yes | — | 1-3500 chars | Song lyrics with structure tags and `\n` line breaks |
+| `prompt` | string | No | `""` | 0-2000 chars | Music style, mood, genre, instrument descriptors |
+| `audio_setting` | object | No | see below | — | Audio quality configuration |
+| `output_format` | string | No | `"hex"` | `"hex"` or `"url"` | Response format for audio data |
+| `stream` | boolean | No | `false` | — | Enable streaming (hex output only) |
+
+### audio_setting Object
+
+| Field | Type | Valid Values | Default | Description |
+| --- | --- | --- | --- | --- |
+| `sample_rate` | integer | `16000`, `24000`, `32000`, `44100` | `44100` | Sample rate in Hz |
+| `bitrate` | integer | `32000`, `64000`, `128000`, `256000` | `256000` | Bitrate in bps |
+| `format` | string | `"mp3"`, `"wav"`, `"pcm"` | `"mp3"` | Output audio format |
+
+### Structure Tags (14 supported)
+
+These tags control song arrangement. Place each on its own line before the lyrics for that section:
+
+| Tag | Purpose |
+| --- | --- |
+| `[Intro]` | Opening instrumental or vocal intro |
+| `[Verse]` | Main verse section |
+| `[Pre Chorus]` | Build-up before chorus |
+| `[Chorus]` | Main chorus/hook |
+| `[Post Chorus]` | Section immediately after chorus |
+| `[Bridge]` | Contrasting section, usually before final chorus |
+| `[Interlude]` | Instrumental break between sections |
+| `[Outro]` | Closing section |
+| `[Transition]` | Short musical transition between sections |
+| `[Break]` | Rhythmic break or pause |
+| `[Hook]` | Catchy melodic hook section |
+| `[Build Up]` | Increasing intensity before a drop or chorus |
+| `[Inst]` | Instrumental-only section (no vocals) |
+| `[Solo]` | Instrumental solo (guitar solo, etc.) |
+
+Tags count toward the 3500 character limit.
+
+### Success Response (output_format: "url")
+
+```json
+{
+  "trace_id": "0af12abc3def4567890abcdef1234567",
+  "data": {
+    "status": 2,
+    "audio": "https://cdn.minimax.io/music/output_abc123.mp3"
+  },
+  "extra_info": {
+    "music_duration": 187.4,
+    "music_sample_rate": 44100,
+    "music_channel": 2,
+    "bitrate": 256000,
+    "music_size": 6054912
+  },
+  "base_resp": {
+    "status_code": 0,
+    "status_msg": "success"
+  }
+}
+```
+
+### Success Response (output_format: "hex")
+
+```json
+{
+  "trace_id": "0af12abc3def4567890abcdef1234567",
+  "data": {
+    "status": 2,
+    "audio": "fffb9064000000..."
+  },
+  "extra_info": {
+    "music_duration": 187.4,
+    "music_sample_rate": 44100,
+    "music_channel": 2,
+    "bitrate": 256000,
+    "music_size": 6054912
+  },
+  "base_resp": {
+    "status_code": 0,
+    "status_msg": "success"
+  }
+}
+```
+
+### Response Field Reference
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `trace_id` | string | Unique request trace ID for debugging |
+| `data.status` | integer | `1` = in progress, `2` = completed |
+| `data.audio` | string | Audio URL (url mode) or hex-encoded bytes (hex mode) |
+| `extra_info.music_duration` | float | Duration in seconds |
+| `extra_info.music_sample_rate` | integer | Actual sample rate used |
+| `extra_info.music_channel` | integer | Channel count (`2` = stereo) |
+| `extra_info.bitrate` | integer | Actual bitrate used |
+| `extra_info.music_size` | integer | File size in bytes |
+| `base_resp.status_code` | integer | `0` = success, see error codes |
+| `base_resp.status_msg` | string | Human-readable status message |
+
+### Streaming Behavior
+
+When `stream: true` is set:
+- Only works with `output_format: "hex"` (NOT compatible with `"url"`)
+- Response arrives as Server-Sent Events (SSE)
+- Each chunk contains `data.audio` with a hex fragment
+- Chunks with `data.status: 1` are audio data
+- Final chunk has `data.status: 2` with summary info
+- Concatenate all hex chunks and decode to get the full audio
+
+---
+
+## Lyrics Generation Endpoint
+
+```
+POST https://api.minimax.io/v1/lyrics_generation
+```
+
+### Request Body
+
+```json
+{
+  "mode": "write_full_song",
+  "prompt": "A soulful blues song about a rainy night and lost love"
+}
+```
+
+### Parameter Reference
+
+| Parameter | Type | Required | Default | Constraints | Description |
+| --- | --- | --- | --- | --- | --- |
+| `mode` | string | Yes | — | `"write_full_song"` or `"edit"` | Generation mode |
+| `prompt` | string | No | — | 0-2000 chars | Theme, concept, or style description |
+| `lyrics` | string | No | — | 0-3500 chars | Existing lyrics (edit mode only) |
+| `title` | string | No | — | — | Song title (preserved if provided) |
+
+### Response Body
+
+```json
+{
+  "song_title": "Rainy Night Blues",
+  "style_tags": "Soulful Blues, Rainy Night, Melancholy, Male Vocals, Slow Tempo",
+  "lyrics": "[Verse]\nThe streetlights blur through window pane\nAnother night of autumn rain\n\n[Chorus]\nYou left me standing in the storm\nNow all I have is memories warm",
+  "base_resp": {
+    "status_code": 0,
+    "status_msg": "success"
+  }
+}
+```
+
+### Response Field Reference
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `song_title` | string | Generated or preserved song title |
+| `style_tags` | string | Comma-separated style descriptors (use as music prompt) |
+| `lyrics` | string | Generated lyrics with structure tags — ready for music_generation |
+| `base_resp.status_code` | integer | `0` = success |
+| `base_resp.status_msg` | string | Status message |
+
+### Two-Step Workflow
+
+```
+Step 1: POST /v1/lyrics_generation
+        Input:  { mode: "write_full_song", prompt: "theme description" }
+        Output: { song_title, style_tags, lyrics }
+
+Step 2: POST /v1/music_generation
+        Input:  { model: "music-2.5", prompt: style_tags, lyrics: lyrics }
+        Output: { data.audio (url or hex) }
+```
+
+---
+
+## Audio Quality Presets
+
+### Low Bandwidth (smallest file)
+```json
+{ "sample_rate": 16000, "bitrate": 64000, "format": "mp3" }
+```
+
+### Preview / Draft
+```json
+{ "sample_rate": 24000, "bitrate": 128000, "format": "mp3" }
+```
+
+### Standard (recommended default)
+```json
+{ "sample_rate": 44100, "bitrate": 256000, "format": "mp3" }
+```
+
+### Professional / DAW Import
+```json
+{ "sample_rate": 44100, "bitrate": 256000, "format": "wav" }
+```
+
+---
+
+## Rate Limits and Pricing
+
+| Tier | Monthly Cost | Credits | RPM (requests/min) |
+| --- | --- | --- | --- |
+| Starter | $5 | 100,000 | 10 |
+| Standard | $30 | 300,000 | 50 |
+| Pro | $99 | 1,100,000 | 200 |
+| Scale | $249 | 3,300,000 | 500 |
+| Business | $999 | 20,000,000 | 800 |
+
+Credits consumed per generation are based on audio duration. Audio URLs expire after 24 hours.

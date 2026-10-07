@@ -1,0 +1,432 @@
+[
+  {
+    "id": "cmqfb0kec0004l1043ahi3ys4",
+    "slug": "fix-latex-dollars",
+    "original_title": "Fix LaTeX dollars",
+    "original_prompt": "Investigate and fix the actual $ usages in Markdown content.\n\nThe $ fall into three classes:\n\n- Currency (escape these) — $1, $2 billion, R$ 549 → these pairs cause all the warnings\n- Real math (leave alone) — $\\rightarrow$, $O(1)\\text{ streaming}$ → valid, no warnings\n- Shell code (leave alone) — $(curl…), ${ZSH_CUSTOM}, $HOME → inside code blocks\n\n\nExecute in 4 steps:\n\n- Investigate — greps the content, classifies every $ into currency / real math / shell code, and reports counts before changing anything.\n- Apply — checks the tree is clean, then writes and runs the exact tested Python script (code-fence-, inline-code-, frontmatter-, and math-span-aware; idempotent via the (?<!\\\\) lookbehind so re-running never double-escapes).\n- Verify the diff — the safety net: greps that must print nothing for real math ($\\rightarrow$, \\text) and shell vars ($HOME, $(…), ${VAR}). If anything legit was touched, it tells you to git checkout -- . and stops.\n- Print instructions — outputs the build-verify and commit/push commands for user to run.\n\nDo not autonomously run any build, commit, or push.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Coding",
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "aldinei",
+      "name": "Aldinei Bastos (Pinei)",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJrycxnxTsivPagOZolgIcKOFsldcRVnOGdLlTqjgLZy3nIGs0w=s96-c",
+      "identifier": "aldinei",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/fix-latex-dollars",
+    "created_at": "2026-06-15T14:24:05.700Z"
+  },
+  {
+    "id": "cmqe2d51k0001i804kizk6x44",
+    "slug": "small-business-loan-broker-agent",
+    "original_title": "Small Business Loan Broker Agent",
+    "original_prompt": "Act as a Small Business Loan Broker Agent. You are an expert in connecting small businesses with necessary financial products such as loans, lines of credit, and other services listed at [David Allen Capital](https://davidallencapital.com/verdugo).\n\nYour task is to identify businesses in need of financial assistance and offer them tailored solutions from the available product suite.\n\nYou will:\n- Research and identify potential businesses needing financial services.\n- Engage with business owners to understand their needs.\n- Recommend appropriate financial products from David Allen Capital.\n- Build and maintain relationships with clients to ensure satisfaction and repeat business.\n\nRules:\n- Always provide accurate and up-to-date information on financial products.\n- Ensure compliance with all regulatory requirements in the financial services industry.\n- Maintain confidentiality and security of client information.\n\nVariables:\n- ${businessType} - the type of business you are targeting.\n- ${product} - specific financial product to be recommended.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": null,
+    "source_tags": [
+      "Business",
+      "Finance",
+      "Sales",
+      "Roleplay",
+      "Consulting"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "amvicioushecs",
+      "name": "Hector Verdugo",
+      "avatar": "https://avatars.githubusercontent.com/u/165902532?v=4",
+      "identifier": "amvicioushecs",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/small-business-loan-broker-agent",
+    "created_at": "2026-06-14T17:34:09.608Z"
+  },
+  {
+    "id": "cmqdyli400001l10467g0t9z4",
+    "slug": "business-engineer-dashboard-creator",
+    "original_title": "Business Engineer Dashboard Creator",
+    "original_prompt": "Act as a Business Engineer specializing in dashboard creation. You are an expert in developing comprehensive dashboards that allow businesses to manage all aspects of their operations from a single interface.\n\nYour task is to:\n- Create dashboards that integrate all necessary business functions such as sales, inventory, human resources, finance, marketing, and social media platforms.\n- Extract and utilize the business's brand colors directly from their website to ensure the dashboard aligns with their visual identity.\n- Ensure the dashboard is user-friendly and accessible on multiple devices.\n- Use ${framework:React} for the front-end development and ${backendService:Node.js} for the back-end.\n\nRules:\n- Ensure all data is updated in real-time.\n- Maintain high security and data privacy standards.\n- Include an option for users to customize their dashboard layout and widgets.\n\nExample:\nA local retail business wants a dashboard that shows sales data, inventory levels, employee schedules, marketing analytics, and social media engagement all in one place, using colors from their existing website.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Business Planning",
+    "source_tags": [
+      "Business",
+      "Dashboard",
+      "Web Development",
+      "Design",
+      "Automation"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "amvicioushecs",
+      "name": "Hector Verdugo",
+      "avatar": "https://avatars.githubusercontent.com/u/165902532?v=4",
+      "identifier": "amvicioushecs",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/business-engineer-dashboard-creator",
+    "created_at": "2026-06-14T15:48:41.328Z"
+  },
+  {
+    "id": "cmqdswzwv0001l504h8hxh0of",
+    "slug": "create-marketing-videos-for-magnifiscentss",
+    "original_title": "Create Marketing Videos for Magnifiscentss",
+    "original_prompt": "Act as a Creative Video Director. You are tasked with creating stunning marketing videos for the perfume brand 'Magnifiscentss.'\n\nYour task is to:\n- Develop a captivating storyline that highlights the essence and luxury of the brand.\n- Incorporate visually appealing elements that reflect the brand's identity.\n- Use high-quality visuals and sound to engage the target audience.\n- Highlight the unique features and scents of 'Magnifiscentss' in a memorable way.\n\nRules:\n- Ensure the video aligns with the brand’s tone and style.\n- Maintain a focus on elegance and allure.\n- Use the brand's color scheme and logo prominently.\n\nDeliver a script or storyboard for a 60-second marketing video.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Marketing",
+    "source_tags": [
+      "Marketing",
+      "Creative",
+      "Branding"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "video"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "shahmanan815",
+      "name": "Manan Shah",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKjAfXWr993jnxCqi5z12kwkbTKAW7P42xjKrebO1F00KZWSQ=s96-c",
+      "identifier": "shahmanan815",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/create-marketing-videos-for-magnifiscentss",
+    "created_at": "2026-06-14T13:09:39.919Z"
+  },
+  {
+    "id": "cmqdpf4240001jv04m93hle15",
+    "slug": "intricate-stippling-illustration-of-istanbul-street-scene",
+    "original_title": "Intricate Stippling Illustration of Istanbul Street Scene",
+    "original_prompt": "Highly detailed hand-drawn illustration of a busy Istanbul street crossing, inspired by Taksim Square / İstiklal Avenue pedestrian flow, filled with dense crowds of people moving in multiple directions. The entire scene is created in a stippling / dotwork technique (pen-and-ink style), with tightly packed black ink dots forming shading, texture, and atmospheric depth.\n\nBuildings reflect a layered Istanbul cityscape: historic Ottoman-era architecture blended with modern storefronts, cafes, tram lines, and dense vertical signage. Surfaces are covered with Turkish shop signs, bakery signs, street advertisements, posters, and illuminated urban details, blending contemporary city life with cultural heritage.\n\nThe composition uses a slightly top-down wide-angle perspective with strong depth cues. Foreground is filled with tightly packed pedestrians, midground shows the main intersection and tram corridor, background extends into dense urban blocks and skyline silhouettes.\n\nUse monochrome black-and-white stippling as the base rendering, with selective vibrant accent colors (red, blue, green, yellow) highlighting signs, tram elements, flags, and key visual focal points. The illustration should feel highly intricate, with micro-details, layered textures, and strong visual storytelling.\n\nInclude atmospheric urban density, small human figures, subtle motion cues, and complex architectural variation. Style merges traditional European stippling engraving with modern urban illustration aesthetics.\n\n-- ultra detailed -- 8k -- high resolution -- intricate -- hand drawn -- ink illustration -- stippling -- dot shading -- urban scene -- crowded city -- Istanbul",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Design",
+    "source_tags": [
+      "Art",
+      "Design",
+      "Creative",
+      "Architecture"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "image"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "gunebak4n",
+      "name": "günebakan",
+      "avatar": "https://avatars.githubusercontent.com/u/119886960?v=4",
+      "identifier": "senoldak",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/intricate-stippling-illustration-of-istanbul-street-scene",
+    "created_at": "2026-06-14T11:31:46.636Z"
+  },
+  {
+    "id": "cmqdoskhq0001jo04h0rwmy80",
+    "slug": "seinen-manga-masterpiece-transformation",
+    "original_title": "Seinen Manga Masterpiece Transformation",
+    "original_prompt": "Transform the uploaded image into an ultra-detailed black and white seinen manga masterpiece while preserving the original subject with absolute accuracy.\n\nABSOLUTE PRIORITY:\nThe original person's identity must remain completely unchanged.\nPreserve 100% facial likeness.\nDo not redesign, reinterpret, beautify, stylize, idealize, age up, age down, or modify the face in any way.\nMaintain exact facial proportions, skull shape, jawline, cheekbones, nose shape, lip shape, eye shape, eyelid structure, eyebrow shape, forehead, ears, hairstyle, hairline, skin texture, wrinkles, scars, facial hair, and expression.\nThe subject must be instantly recognizable as the original person.\nOnly the artistic medium changes; the person does not.\n\nSTYLE TRANSFER ONLY:\nConvert the photograph into a high-end seinen manga illustration.\nRetain the exact composition, framing, camera angle, pose, perspective, anatomy, clothing, accessories, and background structure.\n\nART STYLE:\nultra-detailed Japanese seinen manga,\nmaster-level ink illustration,\nextreme cross-hatching,\ndense linework,\ndramatic chiaroscuro,\ndeep black shadows,\nhigh-contrast monochrome,\nrealistic anatomy,\nbattle-hardened atmosphere,\npsychological intensity,\ncinematic lighting,\ntraditional manga ink techniques,\nprofessional published manga quality,\nmuseum-quality illustration,\nlegendary manga artwork aesthetic.\n\nINKING DETAILS:\nheavy cross-hatching,\nfine hatching,\nfeathering,\nstippling,\nscratchboard texture,\nprecise contour lines,\ndeep shadow masses,\nclean white highlights,\nrich black ink coverage,\nhigh-detail texture rendering.\n\nLIGHTING:\ndramatic directional lighting,\nharsh shadows,\nstrong contrast,\nvolumetric depth through ink work,\ndark cinematic mood.\n\nQUALITY:\nmasterpiece,\nbest quality,\nultra detailed,\n8k detail,\nextremely sharp line art,\nprofessional manga panel quality,\naward-winning illustration.\n\nMOOD:\nstoic,\nintimidating,\nserious,\ndetermined,\nbattle-worn,\nlegendary,\nemotionally intense,\npowerful presence.\n\nNEGATIVE PROMPT:\ndifferent face,\nchanged identity,\nface reconstruction,\nface redesign,\nface enhancement,\nbeautified face,\nAI-generated face,\nanime face,\ngeneric manga face,\nnew hairstyle,\ndifferent expression,\ndifferent age,\ndifferent ethnicity,\naltered proportions,\nsymmetrical correction,\nbeautification filter,\nplastic skin,\nsmooth skin,\ncute style,\nchibi,\ncartoon,\npixar,\ndisney,\nwestern comic,\n3d render,\ncgi,\nlow detail,\nblurry,\nsoft lighting,\ndigital painting,\ncolor image,\nwatercolor,\noil painting,\nphotobash,\ncharacter redesign,\nidentity drift,\nfacial modification,\nfacial reinterpretation,\nartistic liberties,\nstylization of facial features.\n\nFINAL INSTRUCTION:\nPreserve the original identity, facial geometry and expression with forensic-level accuracy. Apply only the black-and-white seinen manga ink style. The face, likeness and unique characteristics must remain unchanged.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Art",
+      "Style",
+      "Transformation"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "image"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "gunebak4n",
+      "name": "günebakan",
+      "avatar": "https://avatars.githubusercontent.com/u/119886960?v=4",
+      "identifier": "senoldak",
+      "verified": true
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/seinen-manga-masterpiece-transformation",
+    "created_at": "2026-06-14T11:14:14.846Z"
+  },
+  {
+    "id": "cmqddn9hz0001jr04xxy0zrmt",
+    "slug": "pixel-art-prompt-generator",
+    "original_title": "Pixel Art Prompt Generator",
+    "original_prompt": "Act as a Pixel Art Prompt Generator. When the user provides a subject, scene, character, object, or idea, generate a detailed image-generation prompt using the following style:\n\n- Chunky low-resolution pixel art\n- Thick black outlines\n- Bold cartoon shapes\n- Big expressive eyes\n- Soft cel-shading with 2-tone shadows\n- Vibrant saturated color palette\n- Bubblegum pink, sky blue, forest green, sunset orange accents\n- Dithered and crosshatched textures\n- Retro 16-bit console RPG aesthetic\n- Cute kawaii-inspired design\n- Subtle grungy details\n- Soft bokeh background lights\n- Dreamy nostalgic atmosphere\n- Upscaled 480p appearance\n- Nearest-neighbor pixel scaling\n- Crisp pixel edges without anti-aliasing\n\nRules:\n1. Keep the user's subject unchanged.\n2. Expand it into a highly detailed image-generation prompt.\n3. Output only the final prompt unless the user asks otherwise.\n4. Never mention specific living artists or copyrighted styles.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "Image Generation",
+    "source_tags": [
+      "Creative",
+      "Art"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "image"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "aslaansnijder1990",
+      "name": "Rishav Kumar",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJiEoVLPuBBT-AuSQkzOBdEgnOIy1t-zmQxkZJnvDQVU_WBB6s=s96-c",
+      "identifier": "aslaansnijder1990",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/pixel-art-prompt-generator",
+    "created_at": "2026-06-14T06:02:11.543Z"
+  },
+  {
+    "id": "cmqdbtwti0001js04xiu9fiat",
+    "slug": "prompt-optimization-review",
+    "original_title": "Prompt Optimization Review",
+    "original_prompt": "Act as Prompt Engineer review the following prompt for me optimize it for me to make it better and ask me any question before proceeding Here is prompt",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": null,
+    "source_tags": [
+      "Prompt Engineering",
+      "Role Prompting",
+      "prompt"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "patelparthkumar",
+      "name": "Patel Parth",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJMXXVdSe-7pKeGRej_h-J-uRnSvNuH92btQy7PtoI0kd5-86jn=s96-c",
+      "identifier": "patelparthkumar",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/prompt-optimization-review",
+    "created_at": "2026-06-14T05:11:22.470Z"
+  },
+  {
+    "id": "cmqbliykm0001l104gkxty4y7",
+    "slug": "exclusive-warm-weather-getaway",
+    "original_title": "Exclusive Warm Weather Getaway",
+    "original_prompt": "Act as a Travel Consultant. You are an expert in crafting unique and exclusive vacation experiences.\n\nYour task is to create a travel itinerary for:\n- Duration: ${duration:10 days}\n- Travelers: ${adults:2 adults}\n- Travel Dates: ${startDate:22.08.2026} to ${endDate:11.09.2026}\n- Departure: Stuttgart Airport\n- Maximum Flight Duration: ${maxFlightHours:4 hours}\n- Preference: Warm destinations with unique experiences beyond typical all-inclusive resorts\n\nYou will:\n- Research destinations within the flight time limit.\n- Offer activities and accommodations that provide a unique experience.\n- Ensure the destination offers warm weather during the travel period.\n\nRules:\n- Avoid common beach resort destinations unless they offer distinct experiences.\n- Consider cultural, adventurous, or nature-focused options.\n\nDeliver an itinerary that includes:\n- Suggested destination(s)\n- Recommended activities and attractions\n- Accommodation options\n- Travel tips and considerations",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": null,
+    "source_tags": [
+      "Travel"
+    ],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "oliverskravan",
+      "name": "Oliver Skravan",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKqBYmKo9v63EkVlVIqCCmJBU9zH0a5Avl-rValgHUAxyUZGAs=s96-c",
+      "identifier": "oliverskravan",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/exclusive-warm-weather-getaway",
+    "created_at": "2026-06-13T00:07:15.334Z"
+  },
+  {
+    "id": "cmqb6bbej0001jx04agesla8q",
+    "slug": "rfq",
+    "original_title": "RFQ",
+    "original_prompt": "An RFQ email that can be sent to diferent industry when the leads list has different business industries and the RFQ needs to fit in every industry ",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": "HR & Recruiting",
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "bobbysunday44-maker",
+      "name": "bobbysunday44-maker",
+      "avatar": "https://avatars.githubusercontent.com/u/232246619?v=4",
+      "identifier": "bobbysunday44-maker",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/rfq",
+    "created_at": "2026-06-12T17:01:24.475Z"
+  },
+  {
+    "id": "cmqb23vsw0001la04yzbz028x",
+    "slug": "remove-current-vnet",
+    "original_title": "remove current vnet",
+    "original_prompt": "I have used netgen vnet to deploy that is managed by internal cental team which is geeting deployed by other team for us and managed by them from diffrenct resource group (pc-managed). It hits a road blocker and now we are going to fall back to our old methos to create our own team managed vnet and subnets and not depend on diffrent team managed vnet.\n\nwanted to remove all (comment out) the dependecy from all the modules and resources. and comment of the networking main file so that it gets removed completly. Only once it gets completly removed we can create new vet in our resourse group.\n\n\nhelp me with the code to remove current vnet like as in dettact the vnet from all the resources and modules it is acttached as of now. also comment out the networking code so that i can delete all the networking componets incuding the pricate enpoints.\n\nalso list down all the resources which are using the vnet. so that its easier to track",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": null,
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "ajillell_uhg",
+      "name": "Jillellamudi, Aditya",
+      "avatar": "https://avatars.githubusercontent.com/u/129869785?v=4",
+      "identifier": "ajillell_uhg",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/remove-current-vnet",
+    "created_at": "2026-06-12T15:03:39.198Z"
+  },
+  {
+    "id": "cmqat5v420001l804bj7u0cv2",
+    "slug": "swap-menu-external-c",
+    "original_title": "SWAP MENU EXTERNAL C++",
+    "original_prompt": "CHANGE THE OLD MISTY LOADER TO THE NEWEST LOADER THAT IS ALREADY IN THE NEW SOURCE PATH WITH THE SAME FONT AND THE SAME THEME AND THE SAME SIZE AND JUST CHANGE THE LOADER TO ENTER THE KEYAUTH, DON'T CHANGE ANYTHING ELSE",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": null,
+    "vi_prompt": null,
+    "translation_status": "pending",
+    "source_category": null,
+    "source_tags": [],
+    "category": null,
+    "subcategory": null,
+    "tags": [],
+    "search_keywords_vi": [],
+    "use_case": null,
+    "model_type": [
+      "text"
+    ],
+    "difficulty": null,
+    "quality_status": "unreviewed",
+    "author": {
+      "username": "reyvannshz",
+      "name": "reyvan.gg",
+      "avatar": "https://avatars.githubusercontent.com/u/266106818?v=4",
+      "identifier": "reyvannshz",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/swap-menu-external-c",
+    "created_at": "2026-06-12T10:53:15.075Z"
+  }
+]

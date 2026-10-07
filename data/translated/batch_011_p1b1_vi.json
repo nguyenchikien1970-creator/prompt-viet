@@ -1,0 +1,266 @@
+[
+  {
+    "id": "cmr6dnd0j001dl804mond9brp",
+    "slug": "timeline",
+    "original_title": "timeline",
+    "original_prompt": "Objective: Construct a chronological sequence of events\n\n1. **Identify the central point of the content**\n\n    * Find explicit dates, for example, \"January 15, 2024\"; \"2019\"; or \"last Tuesday\"\n    * Identify relative references, for example, \"three months later\", \"the following year\"\n    * Note sequence words like \"first\", \"then\", \"finally\", \"before\", and \"after\"\n\n2. **Identify what happened at each point**\n\n    * Identify the action or occurrence\n    * Note who was involved\n    * Note the significance, if stated\n\n3. **Convert events to specific dates when possible**\n\n    * Use context clues to calculate relative dates\n    * Mark uncertain dates with (?)\n    * Preserve original phrasing when dates can't be determined\n\n4. **Unless there is a strong reason not to, arrange events**\n\n    * Place earliest events first\n    * Group events with the same date/timeframe\n    * Use relative markers (\"Before X,\" \"After Y\") when exact sequence is known but dates aren't\n\n5. **Cover the entire timeline of events presented on the page**\n\n    * Comprehensiveness is important, so complete timelines with all information available on a webpage\n    * Contextual accuracy is important, so don't add additional events to the timeline that aren't mentioned on the webpage\n\n6. **Handling exceptions**\n\n    Prioritize excellent content in your response. If you're unable to formulate a response that meets all criteria, you should\n    * respond as best you can and\n    * acknowledge any limitations or challenges you faced. For example, maybe there wasn't sufficient content on a webpage or the content wasn't compatible with a given request.\n\n    Consider your proposed response objectively and rate it on a scale from 1-10. If you wouldn't give it a 10, either try to create a stronger response or consider acknowledging any limitations or challenges you faced. The score is just for your own purposes; don't share it with the user.\n\n7. **Final response**\n\n    If you have relevant info to share, your final response should follow standard writing guidelines, including:\n\n    * Sentence case: titles, labels, and all other content should be displayed using sentence case (only proper nouns and the first letter of a string appear capitalized).\n    * Favor simple sentences that use common words\n\n    **Format the response as:**\n\n    **Timeline**\n\n    * **[Date/Timeframe]**: ${event_description}\n    * **[Date/Timeframe]**: ${event_description}\n    * **[Date/Timeframe]**: ${event_description}\n\n    **Notes**\n\n    * ${any_dates_marked_uncertain}\n    * ${any_events_where_sequence_is_unclear}\n\n8. **Follow-up questions**\n\n    If you can think of a way you can help the user act on information shown in the response, conclude with one (at most two) sentences that offers this help. Frame it as a question so that a simple response like \"yes please\" might launch the next round.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Dòng thời gian sự kiện",
+    "vi_prompt": "Mục tiêu: Xây dựng trình tự thời gian cho các sự kiện\n\n1. **Xác định trọng tâm của nội dung**\n\n    * Tìm các mốc ngày tháng rõ ràng, ví dụ: \"15 tháng 1, 2024\"; \"2019\"; hoặc \"thứ Ba tuần trước\"\n    * Xác định các mốc tham chiếu tương đối, ví dụ: \"ba tháng sau\", \"năm tiếp theo\"\n    * Lưu ý các từ chỉ trình tự như \"đầu tiên\", \"sau đó\", \"cuối cùng\", \"trước khi\", và \"sau khi\"\n\n2. **Xác định diễn biến tại từng mốc thời gian**\n\n    * Xác định hành động hoặc sự việc xảy ra\n    * Ghi nhận những ai có liên quan\n    * Ghi nhận ý nghĩa/tầm quan trọng, nếu được nêu\n\n3. **Chuyển đổi sự kiện sang ngày tháng cụ thể khi có thể**\n\n    * Sử dụng các manh mối ngữ cảnh để tính toán ngày tương đối\n    * Đánh dấu các ngày không chắc chắn bằng (?)\n    * Giữ nguyên cách diễn đạt gốc khi không thể xác định ngày cụ thể\n\n4. **Trừ khi có lý do xác đáng, hãy sắp xếp các sự kiện**\n\n    * Đặt các sự kiện diễn ra sớm nhất lên đầu\n    * Nhóm các sự kiện có cùng ngày/khung thời gian\n    * Sử dụng các mốc tương đối (\"Trước X,\" \"Sau Y\") khi biết trình tự chính xác nhưng không rõ ngày tháng\n\n5. **Bao quát toàn bộ dòng thời gian của các sự kiện được trình bày trên trang**\n\n    * Tính toàn diện là rất quan trọng, vì vậy hãy hoàn thiện dòng thời gian với tất cả thông tin có trên trang web\n    * Tính chính xác theo ngữ cảnh là rất quan trọng, vì vậy đừng thêm các sự kiện bổ sung vào dòng thời gian mà không được đề cập trên trang web\n\n6. **Xử lý các ngoại lệ**\n\n    Ưu tiên nội dung xuất sắc trong câu trả lời của bạn. Nếu bạn không thể xây dựng câu trả lời đáp ứng tất cả các tiêu chí, bạn nên\n    * phản hồi tốt nhất có thể trong khả năng và\n    * thừa nhận bất kỳ giới hạn hoặc thách thức nào bạn gặp phải. Ví dụ, có thể không có đủ nội dung trên trang web hoặc nội dung không tương thích với yêu cầu đã cho.\n\n    Xem xét phản hồi dự kiến của bạn một cách khách quan và chấm điểm theo thang điểm 1-10. Nếu bạn không cho điểm 10, hãy thử tạo phản hồi mạnh mẽ hơn hoặc cân nhắc việc thừa nhận bất kỳ giới hạn hay khó khăn nào đã gặp phải. Điểm số này chỉ dành cho mục đích nội bộ của bạn; đừng chia sẻ nó với người dùng.\n\n7. **Phản hồi cuối cùng**\n\n    Nếu bạn có thông tin liên quan để chia sẻ, phản hồi cuối cùng của bạn phải tuân theo các nguyên tắc viết tiêu chuẩn, bao gồm:\n\n    * Sentence case: tiêu đề, nhãn và tất cả nội dung khác phải hiển thị theo dạng viết hoa chữ cái đầu câu (chỉ danh từ riêng và chữ cái đầu tiên của chuỗi mới viết hoa).\n    * Ưu tiên các câu đơn giản sử dụng các từ ngữ thông dụng\n\n    **Định dạng phản hồi như sau:**\n\n    **Dòng thời gian**\n\n    * **[Ngày/Khung thời gian]**: ${event_description}\n    * **[Ngày/Khung thời gian]**: ${event_description}\n    * **[Ngày/Khung thời gian]**: ${event_description}\n\n    **Ghi chú**\n\n    * ${any_dates_marked_uncertain}\n    * ${any_events_where_sequence_is_unclear}\n\n8. **Câu hỏi tiếp nối**\n\n    Nếu bạn có thể nghĩ ra cách giúp người dùng hành động dựa trên thông tin hiển thị trong phản hồi, hãy kết luận bằng một (tối đa hai) câu đưa ra sự trợ giúp này. Diễn đạt nó dưới dạng câu hỏi để một câu trả lời đơn giản như \"vâng, làm ơn\" có thể kích hoạt vòng trao đổi tiếp theo.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Năng suất & Công việc",
+    "subcategory": "Tóm tắt & Tổng hợp",
+    "tags": [
+      "timeline",
+      "dòng thời gian",
+      "sự kiện",
+      "tóm tắt",
+      "trình tự"
+    ],
+    "search_keywords_vi": [
+      "tạo dòng thời gian",
+      "xây dựng timeline sự kiện",
+      "tóm tắt trình tự thời gian",
+      "timeline sự kiện lịch sử"
+    ],
+    "use_case": "Trích xuất và sắp xếp các sự kiện từ tài liệu hoặc trang web thành dòng thời gian trực quan theo trình tự thời gian.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "medium",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "kennynah85",
+      "name": "cw ka",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIMWRaDu9jROdmgI26R4lcF3-HWMGtCnCi6_7QtxkCtIsqOO1Dldg=s96-c",
+      "identifier": "kennynah85",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/timeline",
+    "created_at": "2026-07-04T13:07:35.204Z"
+  },
+  {
+    "id": "cmr6dk8nw0017lh042rgys9zd",
+    "slug": "tabs",
+    "original_title": "tabs",
+    "original_prompt": "Objective: Compare product in current tab to items in other tabs\n\n1. **Identify open product tabs**\n\n    * List all tabs with product pages, \"comparison tabs\"\n    * Verify they're comparable products\n    * Note if permission is needed for tab access\n\n2. **Analyze the active tab**\n\n    * Product name and brand\n    * Price\n    * Key specifications\n    * Rating\n\n3. **Analyze each comparison tab**\n\n    * Search for the same attributes for each product\n    * Convert units and formatting, to facilitate comparison\n\n4. **Compare products**\n\n    * Side-by-side comparison\n    * Highlight differences\n    * Highlight missing data\n\n5. **Make a recommendation**\n\n    * Based on all preceding steps, form a recommendation\n    * The objective is to give the user a gut check\n    * At the end of your initial response, inform the user: \"Final costs may vary, always verify at checkout\"\n    * Cheapest option\n    * Best reviewed\n    * Best overall value\n\n6. **Handling exceptions**\n\n    Prioritize excellent content in your response. If you're unable to formulate a response that meets all criteria, you should\n    * respond as best you can and\n    * acknowledge any limitations or challenges you faced. For example, maybe there wasn't sufficient content on a webpage or the content wasn't compatible with a given request.\n\n    Consider your proposed response objectively and rate it on a scale from 1-10. If you wouldn't give it a 10, either try to create a stronger response or consider acknowledging any limitations or challenges you faced. The score is just for your own purposes; don't share it with the user.\n    * No other tabs → Explain user needs to open comparison tabs\n    * Non-comparable tabs → List what's open, note they're different categories\n    * Permission needed → Explain tab access requirement\n\n7. **Final response**\n\n    If you have relevant info to share, your final response should follow standard writing guidelines, including:\n\n    * Sentence case: titles, labels, and all other content should be displayed using sentence case (only proper nouns and the first letter of a string appear capitalized).\n    * Favor simple sentences that use common words\n\n    **Recommendation:** ${which_tab_to_buy_from_and_why}\n\n    **Comparison:**\n\n    | Feature | This Tab | Tab 2 | Tab 3 | Tab 4 |\n    | :------ | :------- | :---- | :---- | :---- |\n    | Product |          |       |       |       |\n    | Price   |          |       |       |       |\n    | Rating  |          |       |       |       |\n    | Specs   |          |       |       |       |\n\n    **Best by category:**\n\n    * Cheapest: ${tab_x}\n    * Best reviewed: ${tab_y}\n    * Best value: ${tab_z}\n\n    *No external search needed—just comparing what you already have open.*\n\n    **Follow-up questions**\n\n    If you can think of a way you can help the user act on information shown in the response, conclude with one (at most two) sentences that offers this help. Frame it as a question so that a simple response like \"yes please\" might launch the next round.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "So sánh sản phẩm giữa các tab",
+    "vi_prompt": "Mục tiêu: So sánh sản phẩm ở tab hiện tại với các sản phẩm ở các tab khác\n\n1. **Xác định các tab sản phẩm đang mở**\n\n    * Liệt kê tất cả các tab có trang sản phẩm, gọi là \"các tab so sánh\"\n    * Xác minh chúng là các sản phẩm có thể so sánh được với nhau\n    * Lưu ý nếu cần cấp quyền để truy cập tab\n\n2. **Phân tích tab đang hoạt động**\n\n    * Tên sản phẩm và thương hiệu\n    * Giá cả\n    * Thông số kỹ thuật chính\n    * Đánh giá / Xếp hạng\n\n3. **Phân tích từng tab so sánh**\n\n    * Tìm kiếm các thuộc tính tương tự cho từng sản phẩm\n    * Chuyển đổi đơn vị và định dạng để thuận tiện cho việc so sánh\n\n4. **So sánh các sản phẩm**\n\n    * So sánh đối chiếu trực tiếp (side-by-side)\n    * Nổi bật các điểm khác biệt\n    * Làm nổi bật dữ liệu còn thiếu\n\n5. **Đưa ra khuyến nghị**\n\n    * Dựa trên tất cả các bước trước đó, đưa ra một đề xuất khuyến nghị\n    * Mục tiêu là giúp người dùng kiểm chứng nhanh trực giác mua sắm\n    * Ở cuối phản hồi ban đầu, thông báo cho người dùng: \"Chi phí cuối cùng có thể thay đổi, luôn xác minh khi thanh toán\"\n    * Lựa chọn rẻ nhất\n    * Lựa chọn được đánh giá tốt nhất\n    * Lựa chọn có giá trị tổng thể tốt nhất\n\n6. **Xử lý các ngoại lệ**\n\n    Ưu tiên nội dung xuất sắc trong câu trả lời của bạn. Nếu bạn không thể xây dựng câu trả lời đáp ứng tất cả các tiêu chí, bạn nên\n    * phản hồi tốt nhất có thể trong khả năng và\n    * thừa nhận bất kỳ giới hạn hoặc thách thức nào bạn gặp phải. Ví dụ, có thể không có đủ nội dung trên trang web hoặc nội dung không tương thích với yêu cầu đã cho.\n\n    Xem xét phản hồi dự kiến của bạn một cách khách quan và chấm điểm theo thang điểm 1-10. Nếu bạn không cho điểm 10, hãy thử tạo phản hồi mạnh mẽ hơn hoặc cân nhắc việc thừa nhận bất kỳ giới hạn hay khó khăn nào đã gặp phải. Điểm số này chỉ dành cho mục đích nội bộ của bạn; đừng chia sẻ nó với người dùng.\n    * Không có tab nào khác → Giải thích người dùng cần mở các tab so sánh\n    * Các tab không thể so sánh → Liệt kê những gì đang mở, lưu ý chúng thuộc các danh mục khác nhau\n    * Cần quyền truy cập → Giải thích yêu cầu cấp quyền truy cập tab\n\n7. **Phản hồi cuối cùng**\n\n    Nếu bạn có thông tin liên quan để chia sẻ, phản hồi cuối cùng của bạn phải tuân theo các nguyên tắc viết tiêu chuẩn, bao gồm:\n\n    * Sentence case: tiêu đề, nhãn và tất cả nội dung khác phải hiển thị theo dạng viết hoa chữ cái đầu câu (chỉ danh từ riêng và chữ cái đầu tiên của chuỗi mới viết hoa).\n    * Ưu tiên các câu đơn giản sử dụng các từ ngữ thông dụng\n\n    **Khuyến nghị:** ${which_tab_to_buy_from_and_why}\n\n    **So sánh:**\n\n    | Feature | This Tab | Tab 2 | Tab 3 | Tab 4 |\n    | :------ | :------- | :---- | :---- | :---- |\n    | Product |          |       |       |       |\n    | Price   |          |       |       |       |\n    | Rating  |          |       |       |       |\n    | Specs   |          |       |       |       |\n\n    **Tốt nhất theo danh mục:**\n\n    * Rẻ nhất: ${tab_x}\n    * Đánh giá tốt nhất: ${tab_y}\n    * Giá trị tốt nhất: ${tab_z}\n\n    *Không cần tìm kiếm bên ngoài—chỉ so sánh những gì bạn đã mở sẵn.*\n\n    **Câu hỏi tiếp nối**\n\n    Nếu bạn có thể nghĩ ra cách giúp người dùng hành động dựa trên thông tin hiển thị trong phản hồi, hãy kết luận bằng một (tối đa hai) câu đưa ra sự trợ giúp này. Diễn đạt nó dưới dạng câu hỏi để một câu trả lời đơn giản như \"vâng, làm ơn\" có thể kích hoạt vòng trao đổi tiếp theo.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Năng suất & Công việc",
+    "subcategory": "Nghiên cứu & Phân tích",
+    "tags": [
+      "so sánh sản phẩm",
+      "mua sắm",
+      "tab trình duyệt",
+      "shopping",
+      "ecommerce"
+    ],
+    "search_keywords_vi": [
+      "so sánh giá sản phẩm các tab",
+      "so sánh sản phẩm mua sắm",
+      "đối chiếu thông số kỹ thuật",
+      "công cụ hỗ trợ mua sắm"
+    ],
+    "use_case": "Hỗ trợ người dùng so sánh thông số, giá và đánh giá sản phẩm giữa các tab trình duyệt đang mở.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "medium",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "kennynah85",
+      "name": "cw ka",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIMWRaDu9jROdmgI26R4lcF3-HWMGtCnCi6_7QtxkCtIsqOO1Dldg=s96-c",
+      "identifier": "kennynah85",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/tabs",
+    "created_at": "2026-07-04T13:05:09.596Z"
+  },
+  {
+    "id": "cmr6dj9q80011l1041hlogk8z",
+    "slug": "cunninglinguist",
+    "original_title": "cunninglinguist",
+    "original_prompt": "- Alliteration  \n- Antithesis  \n- Hyperbole  \n- Paradox  \n- Personification  \n- Rhetorical Questions  \n- Synaesthesia  \n- Hyperbaton  \n- Anadiplosis  \n- Diacope  \n- Epistrophe  \n- Tricolon  \n- Epizeuxis  \n- Syllepsis  \n- Isocolon  \n- Enallage  \n- Chiasmus  \n- Catachresis  \n- Litotes  \n- Metonymy  \n- Synecdoche  \n- Epanalepsis  \n- Aposiopesis  \n- Prolepsis  \n- Congeries  \n- Bdelygmia  \n- Adynaton  \n- Anaphora  \n- Assonance  \n- Blazon  \n- Hendiadys  \n- Hypotaxis  \n- Parataxis  \n- Merism  \n- Periodic Sentences  \n- Pleonasm  \n- Polyptoton  \n- Scēsis Onomaton  \n- Transferred Epithets  \n- Zeugma[1][4][6][8]",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Bộ thuật ngữ tu từ học",
+    "vi_prompt": "- Alliteration (Điệp phụ âm đầu)  \n- Antithesis (Phép phản đề / Đối lập)  \n- Hyperbole (Phép nói quá / Ngoa dụ)  \n- Paradox (Nghịch lý)  \n- Personification (Phép nhân hóa)  \n- Rhetorical Questions (Câu hỏi tu từ)  \n- Synaesthesia (Hiện tượng cảm giác kèm / Chuyển đổi cảm giác)  \n- Hyperbaton (Phép đảo trật tự từ)  \n- Anadiplosis (Phép điệp từ đầu cuối / Điệp liên hoàn)  \n- Diacope (Phép lặp từ ngắt quãng)  \n- Epistrophe (Phép điệp vĩ / Lặp từ cuối câu)  \n- Tricolon (Cấu trúc tam cú / Nhịp ba)  \n- Epizeuxis (Phép điệp liên tục)  \n- Syllepsis (Phép dùng một từ cho hai nghĩa)  \n- Isocolon (Phép đối cân xứng cấu trúc)  \n- Enallage (Phép hoán đổi từ loại / ngữ pháp)  \n- Chiasmus (Phép đối chéo)  \n- Catachresis (Phép lạm dụng từ / Ẩn dụ gượng ép)  \n- Litotes (Phép nói giảm / Phủ định của phủ định)  \n- Metonymy (Phép hoán dụ)  \n- Synecdoche (Phép cải dung / Lấy bộ phận chỉ toàn thể)  \n- Epanalepsis (Phép lặp đầu đuôi câu)  \n- Aposiopesis (Phép bỏ lửng câu)  \n- Prolepsis (Phép đón trước / Phản bác trước)  \n- Congeries (Phép dồn tích từ ngữ)  \n- Bdelygmia (Phép mắng chửi thậm tệ / Biểu cảm ghê tởm)  \n- Adynaton (Phép cường điệu đến mức bất khả)  \n- Anaphora (Phép điệp thủ / Lặp từ đầu câu)  \n- Assonance (Phép điệp nguyên âm)  \n- Blazon (Thơ ca ngợi hình thể)  \n- Hendiadys (Phép song từ biểu nhất niệm)  \n- Hypotaxis (Cấu trúc câu chính phụ)  \n- Parataxis (Cấu trúc câu đẳng lập)  \n- Merism (Phép liệt kê toàn phần)  \n- Periodic Sentences (Câu chu kỳ / Câu thắt nút)  \n- Pleonasm (Phép dùng từ thừa / Đầy ngữ)  \n- Polyptoton (Phép lặp gốc từ khác dạng biến thể)  \n- Scēsis Onomaton (Phép liên tiếp danh ngữ đồng nghĩa)  \n- Transferred Epithets (Phép chuyển dịch định ngữ)  \n- Zeugma[1][4][6][8] (Phép tỉnh lược cú pháp gộp)",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Học tập & Giáo dục",
+    "subcategory": "Ngôn ngữ học",
+    "tags": [
+      "ngôn ngữ học",
+      "biện pháp tu từ",
+      "tu từ học",
+      "văn học",
+      "linguistics"
+    ],
+    "search_keywords_vi": [
+      "các biện pháp tu từ tiếng anh",
+      "danh sách thủ pháp tu từ",
+      "thuật ngữ tu từ học",
+      "rhetorical devices"
+    ],
+    "use_case": "Cung cấp danh mục toàn diện các biện pháp tu từ trong văn học và diễn thuyết kèm đối chiếu thuật ngữ.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "hard",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "kennynah85",
+      "name": "cw ka",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIMWRaDu9jROdmgI26R4lcF3-HWMGtCnCi6_7QtxkCtIsqOO1Dldg=s96-c",
+      "identifier": "kennynah85",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/cunninglinguist",
+    "created_at": "2026-07-04T13:04:24.320Z"
+  },
+  {
+    "id": "cmr6dikja001cjx04mriyq4fs",
+    "slug": "dialectic",
+    "original_title": "dialectic",
+    "original_prompt": "The \"Universal Steelman & Synthesis\" Prompt\n\"Act as a Master Dialectician. I want to explore the subject of ${insert_subject}.\n\nTask 1: The Steelman of the Opposing View. Identify the most common or 'obvious' critique of this subject. Now, discard it. Instead, construct the 'Steelman' version of the opposition. Use the most credible, modern, and scientifically/logically sound arguments available. Avoid caricatures. Assume the opponent is highly intelligent, well-meaning, and factually informed.\n\nTask 2: The Steelman of the Proponent View. Construct the strongest possible defense for the subject. Use 'Property-level' arguments (looking at the essence) and 'Systems-level' arguments (looking at the outcomes).\n\nTask 3: The Crux of the Disagreement. Identify the single fundamental premise (a 'prior') where these two positions diverge. Is it a difference in values, a difference in the interpretation of data, or a difference in the definition of a key term?\n\nTask 4: The 2026 Synthesis. Based on the current state of knowledge in 2026, provide a 'Third Way' or a nuanced middle ground that acknowledges the validity of both Steelmen.\"\n\nWhy this prompt works:\nDiscarding the \"Obvious\": Most people argue against the weakest version of an idea (the Strawman). This prompt explicitly tells the AI to ignore those and look for the \"Boss Level\" arguments.\n\nThe \"Crux\" Identification: Most debates are circular because people are arguing about symptoms. This prompt forces the AI to find the root cause—the \"Prior\"—which is usually a deep philosophical or moral disagreement (e.g., \"Liberty vs. Security\" or \"Absolute vs. Relative\").\n\nProperty vs. System: It forces a distinction between what something is (Property) and what something does (System), which provides a 3D view of the topic.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Biện chứng Steelman & Tổng hợp phổ quát",
+    "vi_prompt": "Prompt \"Steelman & Tổng hợp phổ quát\" (The \"Universal Steelman & Synthesis\" Prompt)\n\"Đóng vai trò là một Bậc thầy Biện chứng (Master Dialectician). Tôi muốn đào sâu nghiên cứu về chủ đề ${insert_subject}.\n\nNhiệm vụ 1: Xây dựng lập luận Steelman cho Quan điểm Đối lập (The Steelman of the Opposing View). Xác định lời chỉ trích phổ biến hoặc 'rõ ràng nhất' về chủ đề này. Bây giờ, hãy loại bỏ nó. Thay vào đó, hãy xây dựng phiên bản 'Steelman' (lập luận mạnh mẽ nhất, đáng tin cậy nhất) của phe đối lập. Sử dụng các luận điểm đáng tin cậy, hiện đại và vững chắc nhất về mặt khoa học/logic hiện có. Tránh bóp méo hay biếm họa quan điểm đối lập. Giả định rằng đối thủ là người cực kỳ thông minh, có thiện chí và nắm bắt đầy đủ thông tin thực tế.\n\nNhiệm vụ 2: Xây dựng lập luận Steelman cho Quan điểm Ủng hộ (The Steelman of the Proponent View). Xây dựng hàng rào phòng thủ mạnh mẽ nhất có thể cho chủ đề này. Sử dụng các lập luận 'ở cấp độ thuộc tính' (Property-level - xem xét bản chất cốt lõi) và các lập luận 'ở cấp độ hệ thống' (Systems-level - xem xét các kết quả tác động).\n\nNhiệm vụ 3: Mấu chốt của Sự bất đồng (The Crux of the Disagreement). Xác định tiền đề cơ bản duy nhất (một 'tiền định' - prior) nơi hai lập trường này phân kỳ. Đó là sự khác biệt về hệ giá trị, sự khác biệt trong diễn giải dữ liệu, hay sự khác biệt trong định nghĩa của một thuật ngữ then chốt?\n\nNhiệm vụ 4: Tổng hợp thời đại 2026 (The 2026 Synthesis). Dựa trên thực trạng tri thức hiện tại vào năm 2026, hãy đưa ra một 'Con đường thứ ba' (Third Way) hoặc một lập trường trung gian sắc thái, công nhận tính hợp lệ của cả hai lập luận Steelman.\"\n\nTại sao prompt này hiệu quả:\nLoại bỏ điều \"Rõ ràng/Tầm thường\": Hầu hết mọi người đều tranh luận chống lại phiên bản yếu nhất của một ý tưởng (Strawman - Người rơm). Prompt này yêu cầu rõ ràng AI bỏ qua những điều đó và tìm kiếm các lập luận cấp cao nhất (\"Boss Level\").\n\nXác định \"Mấu chốt\" (Crux): Hầu hết các cuộc tranh luận đều vòng vo vì mọi người chỉ tranh cãi về các triệu chứng bề nổi. Prompt này buộc AI phải tìm ra nguyên nhân gốc rễ—\"Tiền đề cơ sở\" (Prior)—thường là một bất đồng triết học hoặc đạo đức sâu sắc (ví dụ: \"Tự do đối đầu với An ninh\" hoặc \"Tuyệt đối đối đầu với Tương đối\").\n\nThuộc tính đối đầu Hệ thống (Property vs. System): Nó buộc phải phân biệt giữa một thứ là gì (Thuộc tính) và thứ đó làm được gì (Hệ thống), mang lại cái nhìn không gian 3 chiều toàn diện về chủ đề.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Năng suất & Công việc",
+    "subcategory": "Tư duy phản biện & Ra quyết định",
+    "tags": [
+      "biện chứng",
+      "steelman",
+      "tư duy phản biện",
+      "triết học",
+      "tranh luận"
+    ],
+    "search_keywords_vi": [
+      "kỹ thuật steelman",
+      "biện chứng tổng hợp",
+      "phân tích quan điểm đối lập",
+      "tư duy phản biện nâng cao"
+    ],
+    "use_case": "Phân tích đa chiều một chủ đề gây tranh cãi bằng cách dựng lập luận mạnh mẽ nhất cho cả hai phía và tìm điểm hội tụ.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "hard",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "kennynah85",
+      "name": "cw ka",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIMWRaDu9jROdmgI26R4lcF3-HWMGtCnCi6_7QtxkCtIsqOO1Dldg=s96-c",
+      "identifier": "kennynah85",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/dialectic",
+    "created_at": "2026-07-04T13:03:51.671Z"
+  },
+  {
+    "id": "cmr6dhthi000zlh04oydnr9mb",
+    "slug": "echo-innovation",
+    "original_title": "Echo innovation",
+    "original_prompt": "You are an expert innovation strategist specializing in \"Echoes & Horizons\" synthesis.\n\n**Task**: Generate ${number} innovative concepts / solutions / products / strategies for [specific problem/domain/opportunity].\n\n**Step 1: Historical Analogs (Echoes)**\n- Identify 3-5 relevant historical analogs from different eras and geographies.\n- For each analog, extract:\n  - Core pattern/mechanism that drove success or failure\n  - Key enabling conditions at the time\n  - Major risks, unintended consequences, and why it declined or succeeded\n  - Transferable principles (what made it powerful)\n\nFocus on analogs from:\n- Ancient history & classical civilizations\n- Industrial revolutions\n- 20th century business/technological shifts\n- Cultural or social movements\n- Military/strategic history (where relevant)\n\n**Step 2: Modern Trends (Horizons)**\n- Identify 4-6 current and emerging trends relevant to the domain.\n- Categorize them:\n  - Technological (AI, biotech, energy, etc.)\n  - Behavioral/Social (demographics, values shifts, attention economy)\n  - Economic/Platform (creator economy, tokenization, decentralization)\n  - Geopolitical/Regulatory\n  - Environmental/Climate\n- For each trend, note acceleration signals, second-order effects, and convergence potential.\n\n**Step 3: Cross-Pollination Matrix**\nCreate a synthesis by mapping historical principles against modern trends.\nAsk:\n- How can this old pattern be supercharged or protected by new technologies?\n- What new failure modes emerge from combining them?\n- Where does the historical analog expose blind spots in current trends?\n- What \"missing ingredient\" from history could make the modern trend more robust/sustainable/ethical?\n\n**Step 4: Innovation Concepts**\nGenerate [X] concrete, original concepts. For each:\n- Name (memorable and evocative)\n- Core Idea (one-sentence punch)\n- Historical Root + Modern Engine (explicit linkage)\n- Value Proposition & Target Users\n- Potential Impact (scale, defensibility)\n- Key Risks & Mitigation (informed by historical lessons)\n- First-Principles Validation (why this should work now but not before)\n\n**Step 5: Evaluation & Stress Testing**\nScore each concept on:\n- Novelty (vs. obvious recombinations)\n- Feasibility (technical + adoption)\n- Resilience (drawing from historical durability)\n- antifragility (benefits from volatility)\n- Ethical/Societal Fit\n\n**Step 6: Actionable Next Steps**\nProvide a 30-90 day validation roadmap, including cheap experiments, key assumptions to test, and signals to watch.\n\n**Output Format**:\n- Use clear sections and tables where helpful (especially for the matrix).\n- Be specific, evidence-based, and avoid fluff.\n- Prioritize depth over breadth.\n- Highlight non-obvious insights.\n\nDomain/Problem: ${insert_here}\nAdditional constraints/context: ${insert_here}",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Chiến lược Đổi mới Sáng tạo Vọng âm & Chân trời",
+    "vi_prompt": "Bạn là một chuyên gia chiến lược đổi mới sáng tạo chuyên về phương pháp tổng hợp \"Vọng âm & Chân trời\" (Echoes & Horizons).\n\n**Nhiệm vụ**: Tạo ra ${number} khái niệm / giải pháp / sản phẩm / chiến lược đổi mới sáng tạo cho [vấn đề/lĩnh vực/cơ hội cụ thể].\n\n**Bước 1: Các tiền lệ lịch sử tương đồng (Vọng âm - Echoes)**\n- Xác định 3-5 tiền lệ tương đồng có liên quan trong lịch sử từ các thời đại và khu vực địa lý khác nhau.\n- Đối với mỗi tiền lệ, trích xuất:\n  - Mô hình/cơ chế cốt lõi đã thúc đẩy thành công hoặc thất bại\n  - Các điều kiện thuận lợi then chốt vào thời điểm đó\n  - Rủi ro lớn, hậu quả ngoài ý muốn và lý do tại sao nó suy tàn hoặc thành công\n  - Các nguyên lý có thể chuyển giao (điều gì đã làm cho nó mạnh mẽ)\n\nTập trung vào các tiền lệ tương đồng từ:\n- Lịch sử cổ đại & các nền văn minh cổ điển\n- Các cuộc cách mạng công nghiệp\n- Các bước chuyển dịch công nghệ/kinh doanh thế kỷ 20\n- Các phong trào xã hội hoặc văn hóa\n- Lịch sử quân sự/chiến lược (nơi phù hợp)\n\n**Bước 2: Các xu hướng hiện đại (Chân trời - Horizons)**\n- Xác định 4-6 xu hướng hiện tại và mới nổi có liên quan đến lĩnh vực.\n- Phân loại chúng:\n  - Công nghệ (AI, công nghệ sinh học, năng lượng, v.v.)\n  - Hành vi/Xã hội (nhân khẩu học, thay đổi giá trị, nền kinh tế chú ý)\n  - Kinh tế/Nền tảng (kinh tế nhà sáng tạo, token hóa, phi tập trung hóa)\n  - Địa chính trị/Quy định pháp lý\n  - Môi trường/Khí hậu\n- Đối với mỗi xu hướng, lưu ý các tín hiệu tăng tốc, tác động bậc hai và tiềm năng hội tụ.\n\n**Bước 3: Ma trận Thụ phấn Chéo (Cross-Pollination Matrix)**\nTạo sự tổng hợp bằng cách đối chiếu các nguyên lý lịch sử với các xu hướng hiện đại.\nĐặt câu hỏi:\n- Mô hình cũ này có thể được tăng tốc hoặc bảo vệ bằng các công nghệ mới như thế nào?\n- Những dạng thức thất bại mới nào xuất hiện khi kết hợp chúng?\n- Tiền lệ lịch sử làm lộ ra những điểm mù nào trong các xu hướng hiện tại?\n- \"Thành phần còn thiếu\" nào từ lịch sử có thể làm cho xu hướng hiện đại trở nên mạnh mẽ/bền vững/có đạo đức hơn?\n\n**Bước 4: Các khái niệm đổi mới sáng tạo**\nTạo ra [X] khái niệm cụ thể, độc đáo. Đối với mỗi khái niệm:\n- Tên gọi (dễ nhớ và gợi cảm xúc)\n- Ý tưởng cốt lõi (câu khẩu hiệu đắt giá trong một câu)\n- Cội nguồn lịch sử + Động cơ hiện đại (mối liên kết rõ ràng)\n- Đề xuất giá trị & Người dùng mục tiêu\n- Tác động tiềm năng (quy mô, khả năng phòng thủ)\n- Rủi ro chính & Giảm thiểu rủi ro (được đúc kết từ các bài học lịch sử)\n- Xác thực từ nguyên lý đầu tiên (tại sao điều này hoạt động được bây giờ mà trước đây lại không)\n\n**Bước 5: Đánh giá & Thử nghiệm áp lực (Stress Testing)**\nChấm điểm từng khái niệm theo:\n- Tính mới lạ (so với các kết hợp hiển nhiên thông thường)\n- Tính khả thi (kỹ thuật + mức độ tiếp nhận)\n- Tính kiên cường (rút ra từ độ bền vững trong lịch sử)\n- Khả năng chống mong manh (hưởng lợi từ sự biến động)\n- Sự phù hợp về đạo đức/xã hội\n\n**Bước 6: Các bước hành động tiếp theo**\nCung cấp lộ trình xác thực từ 30-90 ngày, bao gồm các thử nghiệm chi phí thấp, các giả định chính cần kiểm tra và các tín hiệu cần theo dõi.\n\n**Định dạng đầu ra**:\n- Sử dụng các phần và bảng biểu rõ ràng ở những nơi hữu ích (đặc biệt là đối với ma trận).\n- Hãy cụ thể, dựa trên bằng chứng và tránh lan man sáo rỗng.\n- Ưu tiên chiều sâu hơn chiều rộng.\n- Làm nổi bật những hiểu biết sâu sắc không hiển nhiên.\n\nDomain/Problem: ${insert_here}\nAdditional constraints/context: ${insert_here}",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Kinh doanh & Khởi nghiệp",
+    "subcategory": "Chiến lược & Đổi mới",
+    "tags": [
+      "đổi mới sáng tạo",
+      "chiến lược kinh doanh",
+      "lịch sử",
+      "xu hướng công nghệ",
+      "suy nghĩ đột phá"
+    ],
+    "search_keywords_vi": [
+      "chiến lược đổi mới sáng tạo",
+      "kết hợp lịch sử và công nghệ",
+      "phát triển ý tưởng kinh doanh",
+      "mô hình đổi mới"
+    ],
+    "use_case": "Phát triển các ý tưởng đổi mới mang tính đột phá bằng cách kết hợp bài học lịch sử với xu hướng công nghệ hiện đại.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "hard",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "kennynah85",
+      "name": "cw ka",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIMWRaDu9jROdmgI26R4lcF3-HWMGtCnCi6_7QtxkCtIsqOO1Dldg=s96-c",
+      "identifier": "kennynah85",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/echo-innovation",
+    "created_at": "2026-07-04T13:03:16.614Z"
+  },
+  {
+    "id": "cmr6dh3oh000tl104g4myiyc6",
+    "slug": "devil-adv",
+    "original_title": "devil adv",
+    "original_prompt": "Objective: Construct a compelling counter-argument\n\n1. **Identify the central point of the content**\n\n    * Find the core idea or main argument\n    * Identify what the author wants readers to believe or do\n    * Reflect on the \"why?\" of the content\n    * Note the scope and limitations of the content\n\n2. **Identify the counter-position**\n\n    * Determine what a thoughtful critic would argue\n    * Find the strongest objections you can\n    * Identify shared ground and points of departure\n\n3. **Show genuine understanding**\n\n    * Start by stating what the original argument gets right\n    * Identify valid concerns the original argument addresses\n    * Demonstrate respect for the position you're arguing against\n\n4. **Build a strong opposing case**\n\n    * Present 2-3 compelling counter-points with reasoning\n    * Use evidence and logic, not emotion or dismissal\n    * Anticipate and address likely rebuttals\n\n5. **Explain the fundamental disagreement**\n\n    * Identify the key assumption or value difference\n    * Show why reasonable people might disagree\n    * Avoid straw-man fallacy or bad-faith interpretation\n\n6. **Handling exceptions**\n\n    Prioritize excellent content in your response. If you're unable to formulate a response that meets all criteria, you should\n    * respond as best you can and\n    * acknowledge any limitations or challenges you faced. For example, maybe there wasn't sufficient content on a webpage or the content wasn't compatible with a given request.\n\n    Consider your proposed response objectively and rate it on a scale from 1-10. If you wouldn't give it a 10, either try to create a stronger response or consider acknowledging any limitations or challenges you faced. The score is just for your own purposes; don't share it with the user.\n\n7. **Final response**\n\n    If you have relevant info to share, your final response should follow standard writing guidelines, including:\n\n    * Sentence case: titles, labels, and all other content should be displayed using sentence case (only proper nouns and the first letter of a string appear capitalized).\n    * Favor simple sentences that use common words\n\n    **Format the response as:**\n\n    **The original position:** ${one_sentence_summary_of_what_the_page_argues}\n\n    **What this gets right:** ${genuine_acknowledgment_of_valid_points}\n\n    **A counter argument**\n\n1. [Counter-point with reasoning]\n\n2. [Counter-point with reasoning]\n\n3. [Counter-point with reasoning]\n\n    **The core disagreement:** ${explanation_of_the_underlying_value_or_assumption_difference}\n\n8. **Follow-up questions**\n\n    If you can think of a way you can help the user act on information shown in the response, conclude with one (at most two) sentences that offers this help. Frame it as a question so that a simple response like \"yes please\" might launch the next round.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Phản biện Devil's Advocate",
+    "vi_prompt": "Mục tiêu: Xây dựng một lập luận phản biện thuyết phục\n\n1. **Xác định điểm cốt lõi của nội dung**\n\n    * Tìm ý tưởng cốt lõi hoặc luận điểm chính\n    * Xác định điều tác giả muốn người đọc tin hoặc thực hiện\n    * Suy ngẫm về câu hỏi \"tại sao?\" của nội dung\n    * Lưu ý phạm vi và những hạn chế của nội dung\n\n2. **Xác định lập trường phản biện**\n\n    * Xác định một nhà phê bình sâu sắc sẽ lập luận điều gì\n    * Tìm những ý kiến phản đối mạnh mẽ nhất mà bạn có thể\n    * Xác định các điểm chung và điểm bất đồng phân kỳ\n\n3. **Thể hiện sự thấu hiểu chân thành**\n\n    * Bắt đầu bằng cách nêu rõ những điểm mà lập luận ban đầu đã đúng\n    * Xác định các mối quan tâm hợp lệ mà lập luận ban đầu giải quyết\n    * Thể hiện sự tôn trọng đối với lập trường mà bạn đang tranh luận chống lại\n\n4. **Xây dựng lập luận phản đối vững chắc**\n\n    * Trình bày 2-3 điểm phản bác thuyết phục kèm lý lẽ chặt chẽ\n    * Sử dụng bằng chứng và logic, không dùng cảm xúc hay bác bỏ phiến diện\n    * Dự đoán và giải quyết các phản hồi có thể xảy ra\n\n5. **Giải thích sự bất đồng nền tảng**\n\n    * Xác định giả định chính hoặc sự khác biệt về hệ giá trị\n    * Cho thấy lý do tại sao những người có lý trí vẫn có thể không đồng ý với nhau\n    * Tránh ngụy biện người rơm hoặc diễn giải ác ý\n\n6. **Xử lý các ngoại lệ**\n\n    Ưu tiên nội dung xuất sắc trong câu trả lời của bạn. Nếu bạn không thể xây dựng câu trả lời đáp ứng tất cả các tiêu chí, bạn nên\n    * phản hồi tốt nhất có thể trong khả năng và\n    * thừa nhận bất kỳ giới hạn hoặc thách thức nào bạn gặp phải. Ví dụ, có thể không có đủ nội dung trên trang web hoặc nội dung không tương thích với yêu cầu đã cho.\n\n    Xem xét phản hồi dự kiến của bạn một cách khách quan và chấm điểm theo thang điểm 1-10. Nếu bạn không cho điểm 10, hãy thử tạo phản hồi mạnh mẽ hơn hoặc cân nhắc việc thừa nhận bất kỳ giới hạn hay khó khăn nào đã gặp phải. Điểm số này chỉ dành cho mục đích nội bộ của bạn; đừng chia sẻ nó với người dùng.\n\n7. **Phản hồi cuối cùng**\n\n    Nếu bạn có thông tin liên quan để chia sẻ, phản hồi cuối cùng của bạn phải tuân theo các nguyên tắc viết tiêu chuẩn, bao gồm:\n\n    * Sentence case: tiêu đề, nhãn và tất cả nội dung khác phải hiển thị theo dạng viết hoa chữ cái đầu câu (chỉ danh từ riêng và chữ cái đầu tiên của chuỗi mới viết hoa).\n    * Ưu tiên các câu đơn giản sử dụng các từ ngữ thông dụng\n\n    **Định dạng phản hồi như sau:**\n\n    **Lập trường ban đầu:** ${one_sentence_summary_of_what_the_page_argues}\n\n    **Điểm đúng đắn của quan điểm này:** ${genuine_acknowledgment_of_valid_points}\n\n    **Lập luận phản biện**\n\n1. [Điểm phản bác kèm lý lẽ]\n\n2. [Điểm phản bác kèm lý lẽ]\n\n3. [Điểm phản bác kèm lý lẽ]\n\n    **Bất đồng cốt lõi:** ${explanation_of_the_underlying_value_or_assumption_difference}\n\n8. **Câu hỏi tiếp nối**\n\n    Nếu bạn có thể nghĩ ra cách giúp người dùng hành động dựa trên thông tin hiển thị trong phản hồi, hãy kết luận bằng một (tối đa hai) câu đưa ra sự trợ giúp này. Diễn đạt nó dưới dạng câu hỏi để một câu trả lời đơn giản như \"vâng, làm ơn\" có thể kích hoạt vòng trao đổi tiếp theo.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Năng suất & Công việc",
+    "subcategory": "Tư duy phản biện & Ra quyết định",
+    "tags": [
+      "phản biện",
+      "devil advocate",
+      "tranh luận",
+      "tư duy phản biện",
+      "critical thinking"
+    ],
+    "search_keywords_vi": [
+      "kỹ thuật phản biện devil advocate",
+      "lập luận phản biện",
+      "phân tích quan điểm trái chiều",
+      "tư duy đa chiều"
+    ],
+    "use_case": "Đóng vai người phản biện (Devil's Advocate) để tìm ra các lỗ hổng logic và thử thách độ bền vững của một quan điểm.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "medium",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "kennynah85",
+      "name": "cw ka",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIMWRaDu9jROdmgI26R4lcF3-HWMGtCnCi6_7QtxkCtIsqOO1Dldg=s96-c",
+      "identifier": "kennynah85",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/devil-adv",
+    "created_at": "2026-07-04T13:02:43.169Z"
+  }
+]

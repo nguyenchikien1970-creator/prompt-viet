@@ -1,0 +1,460 @@
+examples/code-examples.md
+# Code Examples
+
+All examples load the API key from the `.env` file via environment variables.
+
+---
+
+## Python: Music Generation (URL Output)
+
+```python
+import os
+import requests
+from dotenv import load_dotenv
+
+load_dotenv()
+API_KEY = os.getenv("MINIMAX_API_KEY")
+
+def generate_music(prompt, lyrics, output_file="output.mp3"):
+    response = requests.post(
+        "https://api.minimax.io/v1/music_generation",
+        headers={
+            "Authorization": f"Bearer {API_KEY}",
+            "Content-Type": "application/json"
+        },
+        json={
+            "model": "music-2.5",
+            "prompt": prompt,
+            "lyrics": lyrics,
+            "audio_setting": {
+                "sample_rate": 44100,
+                "bitrate": 256000,
+                "format": "mp3"
+            },
+            "output_format": "url"
+        }
+    )
+    response.raise_for_status()
+    result = response.json()
+
+    if result["base_resp"]["status_code"] != 0:
+        raise Exception(f"API error {result['base_resp']['status_code']}: {result['base_resp']['status_msg']}")
+
+    audio_url = result["data"]["audio"]
+    duration = result["extra_info"]["music_duration"]
+    print(f"Generated {duration:.1f}s of music")
+
+    audio_data = requests.get(audio_url)
+    with open(output_file, "wb") as f:
+        f.write(audio_data.content)
+    print(f"Saved to {output_file}")
+    return result
+
+# Usage
+generate_music(
+    prompt="Indie folk, melancholic, acoustic guitar, soft piano, female vocals",
+    lyrics="""[Intro]
+
+[Verse]
+Walking through the autumn leaves
+Nobody knows where I've been
+
+[Chorus]
+Every road leads back to you
+Every song I hear rings true
+
+[Outro]
+""",
+    output_file="my_song.mp3"
+)
+```
+
+---
+
+## Python: Music Generation (Hex Output)
+
+```python
+import os
+import binascii
+import requests
+from dotenv import load_dotenv
+
+load_dotenv()
+API_KEY = os.getenv("MINIMAX_API_KEY")
+
+def generate_music_hex(prompt, lyrics, output_file="output.mp3"):
+    response = requests.post(
+        "https://api.minimax.io/v1/music_generation",
+        headers={
+            "Authorization": f"Bearer {API_KEY}",
+            "Content-Type": "application/json"
+        },
+        json={
+            "model": "music-2.5",
+            "prompt": prompt,
+            "lyrics": lyrics,
+            "audio_setting": {
+                "sample_rate": 44100,
+                "bitrate": 256000,
+                "format": "mp3"
+            },
+            "output_format": "hex"
+        }
+    )
+    response.raise_for_status()
+    result = response.json()
+
+    if result["base_resp"]["status_code"] != 0:
+        raise Exception(f"API error: {result['base_resp']['status_msg']}")
+
+    audio_bytes = binascii.unhexlify(result["data"]["audio"])
+    with open(output_file, "wb") as f:
+        f.write(audio_bytes)
+    print(f"Saved {len(audio_bytes)} bytes to {output_file}")
+```
+
+---
+
+## Python: Two-Step Workflow (Lyrics then Music)
+
+```python
+import os
+import requests
+from dotenv import load_dotenv
+
+load_dotenv()
+API_KEY = os.getenv("MINIMAX_API_KEY")
+BASE_URL = "https://api.minimax.io/v1"
+HEADERS = {
+    "Authorization": f"Bearer {API_KEY}",
+    "Content-Type": "application/json"
+}
+
+def generate_lyrics(theme):
+    """Step 1: Generate structured lyrics from a theme."""
+    response = requests.post(
+        f"{BASE_URL}/lyrics_generation",
+        headers=HEADERS,
+        json={
+            "mode": "write_full_song",
+            "prompt": theme
+        }
+    )
+    response.raise_for_status()
+    data = response.json()
+    if data["base_resp"]["status_code"] != 0:
+        raise Exception(f"Lyrics error: {data['base_resp']['status_msg']}")
+    return data
+
+def generate_music(style_prompt, lyrics, output_file="song.mp3"):
+    """Step 2: Generate music from lyrics and a style prompt."""
+    response = requests.post(
+        f"{BASE_URL}/music_generation",
+        headers=HEADERS,
+        json={
+            "model": "music-2.5",
+            "prompt": style_prompt,
+            "lyrics": lyrics,
+            "audio_setting": {
+                "sample_rate": 44100,
+                "bitrate": 256000,
+                "format": "mp3"
+            },
+            "output_format": "url"
+        }
+    )
+    response.raise_for_status()
+    result = response.json()
+    if result["base_resp"]["status_code"] != 0:
+        raise Exception(f"Music error: {result['base_resp']['status_msg']}")
+
+    audio_data = requests.get(result["data"]["audio"])
+    with open(output_file, "wb") as f:
+        f.write(audio_data.content)
+    print(f"Saved to {output_file} ({result['extra_info']['music_duration']:.1f}s)")
+    return result
+
+# Full workflow
+theme = "A soulful blues song about a rainy night and lost love"
+style = "Soulful blues, rainy night, melancholy, male vocals, slow tempo, electric guitar, upright bass"
+
+print("Step 1: Generating lyrics...")
+lyrics_data = generate_lyrics(theme)
+print(f"Title: {lyrics_data['song_title']}")
+print(f"Style: {lyrics_data['style_tags']}")
+print(f"Lyrics:\n{lyrics_data['lyrics']}\n")
+
+print("Step 2: Generating music...")
+generate_music(style, lyrics_data["lyrics"], "blues_song.mp3")
+```
+
+---
+
+## Python: Streaming Response
+
+```python
+import os
+import json
+import binascii
+import requests
+from dotenv import load_dotenv
+
+load_dotenv()
+API_KEY = os.getenv("MINIMAX_API_KEY")
+
+def generate_music_streaming(prompt, lyrics, output_file="stream_output.mp3"):
+    response = requests.post(
+        "https://api.minimax.io/v1/music_generation",
+        headers={
+            "Authorization": f"Bearer {API_KEY}",
+            "Content-Type": "application/json"
+        },
+        json={
+            "model": "music-2.5",
+            "prompt": prompt,
+            "lyrics": lyrics,
+            "audio_setting": {
+                "sample_rate": 44100,
+                "bitrate": 256000,
+                "format": "mp3"
+            },
+            "output_format": "hex",
+            "stream": True
+        },
+        stream=True
+    )
+    response.raise_for_status()
+
+    chunks = []
+    for line in response.iter_lines():
+        if not line:
+            continue
+        line_str = line.decode("utf-8")
+        if not line_str.startswith("data:"):
+            continue
+        data = json.loads(line_str[5:].strip())
+
+        if data.get("base_resp", {}).get("status_code", 0) != 0:
+            raise Exception(f"Stream error: {data['base_resp']['status_msg']}")
+
+        if data.get("data", {}).get("status") == 1 and data["data"].get("audio"):
+            chunks.append(binascii.unhexlify(data["data"]["audio"]))
+
+    audio_bytes = b"".join(chunks)
+    with open(output_file, "wb") as f:
+        f.write(audio_bytes)
+    print(f"Streaming complete: {len(audio_bytes)} bytes saved to {output_file}")
+```
+
+---
+
+## JavaScript / Node.js: Music Generation (URL Output)
+
+```javascript
+import "dotenv/config";
+import { writeFile } from "fs/promises";
+
+const API_KEY = process.env.MINIMAX_API_KEY;
+
+async function generateMusic(prompt, lyrics, outputPath = "output.mp3") {
+  const response = await fetch("https://api.minimax.io/v1/music_generation", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model: "music-2.5",
+      prompt,
+      lyrics,
+      audio_setting: { sample_rate: 44100, bitrate: 256000, format: "mp3" },
+      output_format: "url",
+    }),
+  });
+
+  const result = await response.json();
+
+  if (result.base_resp?.status_code !== 0) {
+    throw new Error(`API Error ${result.base_resp?.status_code}: ${result.base_resp?.status_msg}`);
+  }
+
+  const audioUrl = result.data.audio;
+  const audioResponse = await fetch(audioUrl);
+  const audioBuffer = Buffer.from(await audioResponse.arrayBuffer());
+
+  await writeFile(outputPath, audioBuffer);
+  console.log(`Saved to ${outputPath} (${result.extra_info.music_duration.toFixed(1)}s)`);
+  return result;
+}
+
+// Usage
+await generateMusic(
+  "Pop, upbeat, energetic, female vocals, synthesizer, driving beat",
+  `[Verse]
+Running through the city lights
+Everything is burning bright
+
+[Chorus]
+We are alive tonight
+Dancing through the neon light`,
+  "pop_song.mp3"
+);
+```
+
+---
+
+## JavaScript / Node.js: Hex Output with Decode
+
+```javascript
+import "dotenv/config";
+import { writeFile } from "fs/promises";
+
+const API_KEY = process.env.MINIMAX_API_KEY;
+
+async function generateMusicHex(prompt, lyrics, outputPath = "output.mp3") {
+  const response = await fetch("https://api.minimax.io/v1/music_generation", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model: "music-2.5",
+      prompt,
+      lyrics,
+      audio_setting: { sample_rate: 44100, bitrate: 256000, format: "mp3" },
+      output_format: "hex",
+    }),
+  });
+
+  const result = await response.json();
+
+  if (result.base_resp?.status_code !== 0) {
+    throw new Error(`API Error: ${result.base_resp?.status_msg}`);
+  }
+
+  const audioBuffer = Buffer.from(result.data.audio, "hex");
+  await writeFile(outputPath, audioBuffer);
+  console.log(`Saved ${audioBuffer.length} bytes to ${outputPath}`);
+}
+```
+
+---
+
+## JavaScript / Node.js: Streaming
+
+```javascript
+import "dotenv/config";
+import { writeFile } from "fs/promises";
+
+const API_KEY = process.env.MINIMAX_API_KEY;
+
+async function generateMusicStreaming(prompt, lyrics, outputPath = "stream_output.mp3") {
+  const response = await fetch("https://api.minimax.io/v1/music_generation", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model: "music-2.5",
+      prompt,
+      lyrics,
+      audio_setting: { sample_rate: 44100, bitrate: 256000, format: "mp3" },
+      output_format: "hex",
+      stream: true,
+    }),
+  });
+
+  const chunks = [];
+  const decoder = new TextDecoder();
+  const reader = response.body.getReader();
+  let buffer = "";
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+
+    buffer += decoder.decode(value, { stream: true });
+    let boundary;
+
+    while ((boundary = buffer.indexOf("\n\n")) !== -1) {
+      const event = buffer.slice(0, boundary).trim();
+      buffer = buffer.slice(boundary + 2);
+
+      if (!event) continue;
+      const dataMatch = event.match(/^data:\s*(.+)$/m);
+      if (!dataMatch) continue;
+
+      const parsed = JSON.parse(dataMatch[1]);
+
+      if (parsed.base_resp?.status_code !== 0) {
+        throw new Error(`Stream error: ${parsed.base_resp?.status_msg}`);
+      }
+
+      if (parsed.data?.status === 1 && parsed.data?.audio) {
+        chunks.push(Buffer.from(parsed.data.audio, "hex"));
+      }
+    }
+  }
+
+  const fullAudio = Buffer.concat(chunks);
+  await writeFile(outputPath, fullAudio);
+  console.log(`Streaming complete: ${fullAudio.length} bytes saved to ${outputPath}`);
+}
+```
+
+---
+
+## cURL: Music Generation
+
+```bash
+curl -X POST "https://api.minimax.io/v1/music_generation" \
+  -H "Authorization: Bearer $MINIMAX_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "music-2.5",
+    "prompt": "Indie folk, melancholic, acoustic guitar, soft piano",
+    "lyrics": "[Verse]\nWalking through the autumn leaves\nNobody knows where I have been\n\n[Chorus]\nEvery road leads back to you\nEvery song I hear rings true",
+    "audio_setting": {
+      "sample_rate": 44100,
+      "bitrate": 256000,
+      "format": "mp3"
+    },
+    "output_format": "url"
+  }'
+```
+
+---
+
+## cURL: Lyrics Generation
+
+```bash
+curl -X POST "https://api.minimax.io/v1/lyrics_generation" \
+  -H "Authorization: Bearer $MINIMAX_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "mode": "write_full_song",
+    "prompt": "A soulful blues song about a rainy night and lost love"
+  }'
+```
+
+---
+
+## Audio Quality Presets
+
+### Python dict presets
+```python
+QUALITY_LOW = {"sample_rate": 16000, "bitrate": 64000, "format": "mp3"}
+QUALITY_PREVIEW = {"sample_rate": 24000, "bitrate": 128000, "format": "mp3"}
+QUALITY_STANDARD = {"sample_rate": 44100, "bitrate": 256000, "format": "mp3"}
+QUALITY_PROFESSIONAL = {"sample_rate": 44100, "bitrate": 256000, "format": "wav"}
+```
+
+### JavaScript object presets
+```javascript
+const QUALITY_LOW = { sample_rate: 16000, bitrate: 64000, format: "mp3" };
+const QUALITY_PREVIEW = { sample_rate: 24000, bitrate: 128000, format: "mp3" };
+const QUALITY_STANDARD = { sample_rate: 44100, bitrate: 256000, format: "mp3" };
+const QUALITY_PROFESSIONAL = { sample_rate: 44100, bitrate: 256000, format: "wav" };
+```

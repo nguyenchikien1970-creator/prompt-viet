@@ -1,0 +1,72 @@
+Tools/Lib/template-helpers.ts
+/**
+ * Template Helpers
+ *
+ * Handlebars 自定义辅助函数
+ */
+
+import Handlebars from 'handlebars';
+
+/**
+ * 注册所有自定义辅助函数
+ */
+export function registerHelpers(): void {
+  // 格式化数字（添加千位分隔符）
+  Handlebars.registerHelper('formatNumber', (value: number) => {
+    return value.toLocaleString();
+  });
+
+  // 截断文本
+  Handlebars.registerHelper('truncate', (str: string, length: number = 100) => {
+    if (str.length <= length) return str;
+    return str.substring(0, length) + '...';
+  });
+
+  // 格式化日期
+  Handlebars.registerHelper('formatDate', (dateStr: string) => {
+    const date = new Date(dateStr);
+    return date.toLocaleDateString('zh-CN', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  });
+
+  // JSON 序列化（用于内嵌数据）
+  Handlebars.registerHelper('json', (context: any) => {
+    return JSON.stringify(context);
+  });
+
+  // 条件判断
+  Handlebars.registerHelper('eq', (a: any, b: any) => {
+    return a === b;
+  });
+
+  Handlebars.registerHelper('ne', (a: any, b: any) => {
+    return a !== b;
+  });
+
+  Handlebars.registerHelper('gt', (a: number, b: number) => {
+    return a > b;
+  });
+
+  Handlebars.registerHelper('lt', (a: number, b: number) => {
+    return a < b;
+  });
+}
+
+/**
+ * 渲染模板
+ */
+export async function renderTemplate(
+  templatePath: string,
+  data: any
+): Promise<string> {
+  const templateContent = await Bun.file(templatePath).text();
+  const template = Handlebars.compile(templateContent);
+  return template(data);
+}
+
+export default { registerHelpers, renderTemplate };

@@ -1,0 +1,148 @@
+[
+  {
+    "id": "cmm55hzfp0001l504s6rrl4hb",
+    "slug": "information-gathering-prompt",
+    "original_title": "Information Gathering Prompt",
+    "original_prompt": "## *Information Gathering Prompt*\n\n---\n\n## *Prompt Input*\n- Enter the prompt topic = ${topic}\n- **The entered topic is a variable within curly braces that will be referred to as \"M\" throughout the prompt.**\n\n---\n\n## *Prompt Principles*\n- I am a researcher designing articles on various topics.\n- You are **absolutely not** supposed to help me design the article. (Most important point)\n\t1. **Never suggest an article about \"M\" to me.**\n\t2. **Do not provide any tips for designing an article about \"M\".**\n- You are only supposed to give me information about \"M\" so that **based on my learnings from this information, ==I myself== can go and design the article.**\n- In the \"Prompt Output\" section, various outputs will be designed, each labeled with a number, e.g., Output 1, Output 2, etc.\n\t- **How the outputs work:**\n\t\t1. **To start, after submitting this prompt, ask which output I need.**\n\t\t2. I will type the number of the desired output, e.g., \"1\" or \"2\", etc.\n\t\t3. You will only provide the output with that specific number.\n\t\t4. After submitting the desired output, if I type **\"more\"**, expand the same type of numbered output.\n\t- It doesn’t matter which output you provide or if I type \"more\"; in any case, your response should be **extremely detailed** and use **the maximum characters and tokens** you can for the outputs. (Extremely important)\n- Thank you for your cooperation, respected chatbot!\n\n---\n\n## *Prompt Output*\n\n---\n\n### *Output 1*\n- This output is named: **\"Basic Information\"**\n- Includes the following:\n\t- An **introduction** about \"M\"\n\t- **General** information about \"M\"\n\t- **Key** highlights and points about \"M\"\n- If \"2\" is typed, proceed to the next output.\n- If \"more\" is typed, expand this type of output.\n\n---\n\n### *Output 2*\n- This output is named: \"Specialized Information\"\n- Includes:\n\t- More academic and specialized information\n\t- If the prompt topic is character development:\n\t\t- For fantasy character development, more detailed information such as hardcore fan opinions, detailed character stories, and spin-offs about the character.\n\t\t- For real-life characters, more personal stories, habits, behaviors, and detailed information obtained about the character.\n- How to deliver the output:\n\t1. Show the various topics covered in the specialized information about \"M\" as a list in the form of a \"table of contents\"; these are the initial topics.\n\t2. Below it, type:\n\t\t- \"Which topic are you interested in?\"\n\t\t\t- If the name of the desired topic is typed, provide complete specialized information about that topic.\n\t\t- \"If you need more topics about 'M', please type 'more'\"\n\t\t\t- If \"more\" is typed, provide additional topics beyond the initial list. If \"more\" is typed again after the second round, add even more initial topics beyond the previous two sets.\n\t\t\t\t- A note for you: When compiling the topics initially, try to include as many relevant topics as possible to minimize the need for using this option.\n\t\t- \"If you need access to subtopics of any topic, please type 'topics ... (desired topic)'.\"\n\t\t\t- If the specified text is typed, provide the subtopics (secondary topics) of the initial topics.\n\t\t\t- Even if I type \"topics ... (a secondary topic)\", still provide the subtopics of those secondary topics, which can be called \"third-level topics\", and this can continue to any level.\n\t\t\t- At any stage of the topics (initial, secondary, third-level, etc.), typing \"more\" will always expand the topics at that same level.\n\t\t- **Summary**:\n\t\t\t- If only the topic name is typed, provide specialized information in the format of that topic.\n\t\t\t- If \"topics ... (another topic)\" is typed, address the subtopics of that topic.\n\t\t\t- If \"more\" is typed after providing a list of topics, expand the topics at that same level.\n\t\t\t- If \"more\" is typed after providing information on a topic, give more specialized information about that topic.\n\t3. At any stage, if \"1\" is typed, refer to \"Output 1\".\n\t\t- When providing a list of topics at any level, remind me that if I just type \"1\", we will return to \"Basic Information\"; if I type \"option 1\", we will go to the first item in that list.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Prompt thu thập thông tin chuyên sâu đa tầng",
+    "vi_prompt": "## *Prompt thu thập thông tin*\n\n---\n\n## *Đầu vào của Prompt*\n- Nhập chủ đề của prompt = ${topic}\n- **Chủ đề đã nhập là một biến số nằm trong dấu ngoặc nhọn sẽ được gọi là \"M\" xuyên suốt toàn bộ prompt.**\n\n---\n\n## *Nguyên tắc của Prompt*\n- Tôi là một nhà nghiên cứu đang thiết kế các bài viết về nhiều chủ đề khác nhau.\n- Bạn **tuyệt đối không** được giúp tôi thiết kế hoặc viết bài. (Điểm quan trọng nhất)\n\t1. **Không bao giờ gợi ý một bài viết về \"M\" cho tôi.**\n\t2. **Không cung cấp bất kỳ mẹo nào để thiết kế một bài viết về \"M\".**\n- Bạn chỉ có nhiệm vụ cung cấp cho tôi thông tin về \"M\" để **dựa trên những kiến thức tôi học được từ thông tin này, ==chính bản thân tôi== có thể tự đi thiết kế bài viết.**\n- Trong phần \"Đầu ra của Prompt\", các đầu ra khác nhau sẽ được thiết kế, mỗi đầu ra được dán nhãn bằng một con số, ví dụ: Đầu ra 1, Đầu ra 2, v.v.\n\t- **Cách thức hoạt động của các đầu ra:**\n\t\t1. **Để bắt đầu, sau khi gửi prompt này, hãy hỏi tôi cần đầu ra số mấy.**\n\t\t2. Tôi sẽ gõ số của đầu ra mong muốn, ví dụ: \"1\" hoặc \"2\", v.v.\n\t\t3. Bạn sẽ chỉ cung cấp duy nhất đầu ra với con số cụ thể đó.\n\t\t4. Sau khi gửi đầu ra mong muốn, nếu tôi gõ **\"more\"**, hãy mở rộng cùng loại đầu ra được đánh số đó.\n\t- Bất kể bạn cung cấp đầu ra nào hoặc nếu tôi gõ \"more\"; trong mọi trường hợp, câu trả lời của bạn phải **cực kỳ chi tiết** và sử dụng **số lượng ký tự và token tối đa** mà bạn có thể cho các đầu ra. (Cực kỳ quan trọng)\n- Cảm ơn sự hợp tác của bạn, chatbot đáng kính!\n\n---\n\n## *Đầu ra của Prompt*\n\n---\n\n### *Đầu ra 1*\n- Đầu ra này có tên là: **\"Thông tin cơ bản\"**\n- Bao gồm những nội dung sau:\n\t- Phần **giới thiệu** tổng quan về \"M\"\n\t- Thông tin **chung** về \"M\"\n\t- Các điểm nổi bật và **luận điểm then chốt** về \"M\"\n- Nếu tôi gõ \"2\", hãy chuyển sang đầu ra tiếp theo.\n- Nếu tôi gõ \"more\", hãy mở rộng loại đầu ra này.\n\n---\n\n### *Đầu ra 2*\n- Đầu ra này có tên là: **\"Thông tin chuyên sâu\"**\n- Bao gồm:\n\t- Thông tin mang tính học thuật và chuyên môn hóa cao hơn\n\t- Nếu chủ đề của prompt là phát triển nhân vật:\n\t\t- Đối với phát triển nhân vật giả tưởng: thông tin chi tiết hơn như ý kiến của người hâm mộ cuồng nhiệt (hardcore fan), cốt truyện chi tiết của nhân vật và các phần ngoại truyện (spin-off) về nhân vật.\n\t\t- Đối với nhân vật ngoài đời thực: thêm các câu chuyện cá nhân, thói quen, hành vi và thông tin chi tiết thu thập được về nhân vật.\n- Cách thức phân phối đầu ra:\n\t1. Hiển thị các chủ đề khác nhau được đề cập trong thông tin chuyên sâu về \"M\" dưới dạng một danh sách theo hình thức \"mục lục\"; đây là các chủ đề ban đầu.\n\t2. Bên dưới mục lục đó, hãy gõ:\n\t\t- \"Bạn quan tâm đến chủ đề nào?\"\n\t\t\t- Nếu tôi gõ tên của chủ đề mong muốn, hãy cung cấp đầy đủ thông tin chuyên sâu về chủ đề đó.\n\t\t- \"Nếu bạn cần thêm các chủ đề về 'M', vui lòng gõ 'more'\"\n\t\t\t- Nếu tôi gõ \"more\", hãy cung cấp thêm các chủ đề bổ sung ngoài danh sách ban đầu. Nếu tôi gõ \"more\" một lần nữa sau vòng thứ hai, hãy thêm nhiều chủ đề ban đầu hơn nữa ngoài hai tập hợp trước đó.\n\t\t\t\t- Một lưu ý dành cho bạn: Khi biên soạn các chủ đề ban đầu, hãy cố gắng đưa vào càng nhiều chủ đề liên quan càng tốt để giảm thiểu nhu cầu sử dụng tùy chọn này.\n\t\t- \"Nếu bạn cần truy cập vào các chủ đề con của bất kỳ chủ đề nào, vui lòng gõ 'topics ... (chủ đề mong muốn)'.\"\n\t\t\t- Nếu tôi gõ văn bản đã chỉ định, hãy cung cấp các chủ đề con (chủ đề cấp 2) của các chủ đề ban đầu.\n\t\t\t- Ngay cả khi tôi gõ \"topics ... (một chủ đề phụ)\", vẫn tiếp tục cung cấp các chủ đề con của các chủ đề phụ đó, có thể gọi là \"chủ đề cấp 3\", và điều này có thể tiếp tục đến bất kỳ cấp độ nào.\n\t\t\t- Ở bất kỳ giai đoạn nào của các chủ đề (ban đầu, thứ cấp, cấp 3, v.v.), việc gõ \"more\" sẽ luôn mở rộng các chủ đề ở cùng cấp độ đó.\n\t\t- **Tóm tắt quy ước**:\n\t\t\t- Nếu chỉ gõ tên chủ đề: cung cấp thông tin chuyên sâu theo định dạng của chủ đề đó.\n\t\t\t- Nếu gõ \"topics ... (chủ đề khác)\": xử lý các chủ đề con của chủ đề đó.\n\t\t\t- Nếu gõ \"more\" sau khi nhận danh sách chủ đề: mở rộng các chủ đề ở cùng cấp độ đó.\n\t\t\t- Nếu gõ \"more\" sau khi nhận thông tin về một chủ đề: cung cấp thêm thông tin chuyên sâu về chủ đề đó.\n\t3. Ở bất kỳ giai đoạn nào, nếu tôi gõ \"1\", hãy tham chiếu lại \"Đầu ra 1\".\n\t\t- Khi cung cấp danh sách chủ đề ở bất kỳ cấp độ nào, hãy nhắc nhở tôi rằng nếu tôi chỉ gõ \"1\", chúng ta sẽ quay lại \"Thông tin cơ bản\"; nếu tôi gõ \"option 1\", chúng ta sẽ đi đến mục đầu tiên trong danh sách đó.",
+    "translation_status": "translated",
+    "source_category": "Writing",
+    "source_tags": [
+      "Research",
+      "Creative Writing",
+      "Essay Writing",
+      "Blogging",
+      "AI Tools",
+      "Brainstorming"
+    ],
+    "category": "Nghiên cứu & Học thuật",
+    "subcategory": "Thu thập & Đào sâu thông tin",
+    "tags": [
+      "thu thập thông tin",
+      "nghiên cứu chủ đề",
+      "tra cứu chuyên sâu",
+      "cây chủ đề",
+      "prompt tương tác"
+    ],
+    "search_keywords_vi": [
+      "prompt thu thập thông tin chuyên sâu",
+      "hướng dẫn đào sâu dữ liệu ai",
+      "tra cứu chủ đề theo tầng"
+    ],
+    "use_case": "Hệ thống prompt tương tác đa tầng giúp nhà nghiên cứu khai thác kiến thức chuyên sâu và cây chủ đề phân cấp mà không bị AI can thiệp viết bài",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "themikimano",
+      "name": "Mikimano",
+      "avatar": "https://avatars.githubusercontent.com/u/84177041?s=400&u=25b375687b26772b5230380e53a41be3a9ac018d&v=4",
+      "identifier": "kenicodes",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/information-gathering-prompt",
+    "created_at": "2026-02-27T17:13:09.542Z"
+  },
+  {
+    "id": "cmm55drxk0001l3046qy7s1ms",
+    "slug": "tcre-framework-ai-prompt-engineer",
+    "original_title": "TCRE Framework - AI Prompt Engineer",
+    "original_prompt": "I want to create a highly effective AI prompt using the TCRE framework (Task, Context, References, Evaluate/Iterate). My goal is to **${insert_objective}.\n\nStep 1: Ask me multiple structured, specific questions—one at a time—to gather all essential input for each TCRE component, also using the 5 Whys technique when helpful to uncover deeper context and intent.\n\nStep 2: Once you’ve gathered enough information, generate the best version of the final prompt.\n\nStep 3: Evaluate the prompt using the TCRE framework, briefly explaining how it satisfies each element.\n\nStep 4: Suggest specific, actionable improvements to enhance clarity, completeness, or impact.\n\nIf anything is unclear or you need more context or examples, please ask follow-up questions before proceeding. You may apply best practices from prompt engineering where helpful.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Khung sườn TCRE - Kỹ sư Prompt AI",
+    "vi_prompt": "Tôi muốn tạo một prompt AI có hiệu quả cao bằng cách sử dụng khung sườn TCRE (Nhiệm vụ - Task, Ngữ cảnh - Context, Tài liệu tham khảo - References, Đánh giá/Lặp lại - Evaluate/Iterate). Mục tiêu của tôi là **${insert_objective}.\n\nBước 1: Hãy hỏi tôi nhiều câu hỏi cụ thể, có cấu trúc—từng câu một—để thu thập tất cả thông tin đầu vào thiết yếu cho từng thành phần của TCRE, đồng thời sử dụng kỹ thuật 5 Câu hỏi Tại sao (5 Whys) khi thấy hữu ích để khám phá ngữ cảnh và ý định sâu xa hơn.\n\nBước 2: Khi bạn đã thu thập đủ thông tin, hãy tạo phiên bản hoàn thiện tối ưu nhất của prompt cuối cùng.\n\nBước 3: Đánh giá prompt bằng khung sườn TCRE, giải thích ngắn gọn cách nó đáp ứng từng yếu tố.\n\nBước 4: Đề xuất các cải tiến cụ thể, có thể hành động để nâng cao độ rõ ràng, tính đầy đủ hoặc tác động của prompt.\n\nNếu có bất kỳ điều gì chưa rõ hoặc bạn cần thêm ngữ cảnh hay ví dụ minh họa, vui lòng đặt câu hỏi tiếp theo trước khi tiếp tục. Bạn có thể áp dụng các thực hành tốt nhất từ kỹ nghệ prompt ở những nơi hữu ích.",
+    "translation_status": "translated",
+    "source_category": "Productivity",
+    "source_tags": [
+      "Prompt Engineering",
+      "System Prompt",
+      "Workflow",
+      "Productivity",
+      "AI Tools"
+    ],
+    "category": "Kỹ nghệ Prompt & AI",
+    "subcategory": "Thiết kế & Tối ưu Prompt",
+    "tags": [
+      "khung tcre",
+      "prompt engineering",
+      "kỹ sư prompt",
+      "5 whys",
+      "tối ưu hóa prompt"
+    ],
+    "search_keywords_vi": [
+      "khung sườn tcre prompt",
+      "tạo prompt chuyên nghiệp",
+      "kỹ thuật viết prompt 5 whys"
+    ],
+    "use_case": "Quy trình từng bước phỏng vấn và xây dựng prompt AI chuẩn mực chất lượng cao theo mô hình TCRE",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "medium",
+    "quality_status": "ok",
+    "author": {
+      "username": "themikimano",
+      "name": "Mikimano",
+      "avatar": "https://avatars.githubusercontent.com/u/84177041?s=400&u=25b375687b26772b5230380e53a41be3a9ac018d&v=4",
+      "identifier": "kenicodes",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/tcre-framework-ai-prompt-engineer",
+    "created_at": "2026-02-27T17:09:53.192Z"
+  },
+  {
+    "id": "cmm55ath70007k104tngijuee",
+    "slug": "structured-and-effective-learning-prompt",
+    "original_title": "Structured and Effective Learning Prompt",
+    "original_prompt": "${subject}=\n${current_level}=\n${time_available}=\n${learning_style}=\n${goal}=\n\nStep 1: Knowledge Assessment\n1. Break down ${subject} into core components\n2. Evaluate complexity levels of each component\n3. Map prerequisites and dependencies\n4. Identify foundational concepts\nOutput detailed skill tree and learning hierarchy\n\n~ Step 2: Learning Path Design\n1. Create progression milestones based on ${current_level}\n2. Structure topics in optimal learning sequence\n3. Estimate time requirements per topic\n4. Align with ${time_available} constraints\nOutput structured learning roadmap with timeframes\n\n~ Step 3: Resource Curation\n1. Identify learning materials matching ${learning_style}:\n   - Video courses\n   - Books/articles\n   - Interactive exercises\n   - Practice projects\n2. Rank resources by effectiveness\n3. Create resource playlist\nOutput comprehensive resource list with priority order\n\n~ Step 4: Practice Framework\n1. Design exercises for each topic\n2. Create real-world application scenarios\n3. Develop progress checkpoints\n4. Structure review intervals\nOutput practice plan with spaced repetition schedule\n\n~ Step 5: Progress Tracking System\n1. Define measurable progress indicators\n2. Create assessment criteria\n3. Design feedback loops\n4. Establish milestone completion metrics\nOutput progress tracking template and benchmarks\n\n~ Step 6: Study Schedule Generation\n1. Break down learning into daily/weekly tasks\n2. Incorporate rest and review periods\n3. Add checkpoint assessments\n4. Balance theory and practice\nOutput detailed study schedule aligned with ${time_available}",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Lộ trình học tập hiệu quả và có cấu trúc",
+    "vi_prompt": "${subject}=\n${current_level}=\n${time_available}=\n${learning_style}=\n${goal}=\n\nBước 1: Đánh giá kiến thức\n1. Phân tách ${subject} thành các thành phần cốt lõi\n2. Đánh giá mức độ phức tạp của từng thành phần\n3. Lập bản đồ kiến thức tiên quyết và các mối quan hệ phụ thuộc\n4. Xác định các khái niệm nền tảng\nĐầu ra: Cây kỹ năng (skill tree) chi tiết và hệ thống phân cấp học tập\n\n~ Bước 2: Thiết kế lộ trình học tập\n1. Tạo các mốc tiến độ phát triển dựa trên ${current_level}\n2. Sắp xếp các chủ đề theo trình tự học tập tối ưu\n3. Ước tính thời gian cần thiết cho mỗi chủ đề\n4. Điều chỉnh phù hợp với giới hạn ${time_available}\nĐầu ra: Lộ trình học tập có cấu trúc kèm khung thời gian cụ thể\n\n~ Bước 3: Tuyển chọn tài nguyên học tập\n1. Xác định các tài liệu học tập phù hợp với ${learning_style}:\n   - Các khóa học video\n   - Sách / bài viết chuyên sâu\n   - Bài tập tương tác\n   - Dự án thực hành thực tế\n2. Xếp hạng tài nguyên theo mức độ hiệu quả\n3. Tạo danh sách phát (playlist) tài nguyên\nĐầu ra: Danh sách tài nguyên toàn diện theo thứ tự ưu tiên\n\n~ Bước 4: Khung thực hành\n1. Thiết kế bài tập cho từng chủ đề\n2. Xây dựng các tình huống ứng dụng trong thực tế\n3. Phát triển các điểm kiểm tra tiến độ\n4. Thiết lập các khoảng thời gian ôn tập\nĐầu ra: Kế hoạch thực hành kèm lịch lặp lại ngắt quãng (spaced repetition)\n\n~ Bước 5: Hệ thống theo dõi tiến độ\n1. Xác định các chỉ số đo lường tiến độ có thể định lượng\n2. Thiết lập tiêu chí đánh giá\n3. Thiết kế các vòng phản hồi (feedback loops)\n4. Thiết lập các thước đo hoàn thành cột mốc\nĐầu ra: Biểu mẫu theo dõi tiến độ và các điểm chuẩn đánh giá\n\n~ Bước 6: Tạo lịch trình học tập\n1. Chia nhỏ việc học thành các nhiệm vụ hàng ngày/hàng tuần\n2. Kết hợp thời gian nghỉ ngơi và giai đoạn ôn tập\n3. Bổ sung các bài đánh giá tại từng chốt kiểm tra\n4. Cân bằng giữa lý thuyết và thực hành\nĐầu ra: Lịch học chi tiết bám sát quỹ thời gian ${time_available}",
+    "translation_status": "translated",
+    "source_category": "Education",
+    "source_tags": [
+      "Learning",
+      "Self Learning",
+      "Self Improvement"
+    ],
+    "category": "Giáo dục & Học tập",
+    "subcategory": "Kế hoạch & Phương pháp học tập",
+    "tags": [
+      "lộ trình học tập",
+      "spaced repetition",
+      "kế hoạch học tập",
+      "cây kỹ năng",
+      "tự học"
+    ],
+    "search_keywords_vi": [
+      "lập kế hoạch tự học hiệu quả",
+      "lộ trình học tập có cấu trúc",
+      "prompt thiết kế khóa học cá nhân"
+    ],
+    "use_case": "Thiết kế kế hoạch và lộ trình tự học cá nhân hóa 6 bước từ đánh giá năng lực đến lịch học chi tiết",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "medium",
+    "quality_status": "ok",
+    "author": {
+      "username": "themikimano",
+      "name": "Mikimano",
+      "avatar": "https://avatars.githubusercontent.com/u/84177041?s=400&u=25b375687b26772b5230380e53a41be3a9ac018d&v=4",
+      "identifier": "kenicodes",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/structured-and-effective-learning-prompt",
+    "created_at": "2026-02-27T17:07:35.227Z"
+  }
+]

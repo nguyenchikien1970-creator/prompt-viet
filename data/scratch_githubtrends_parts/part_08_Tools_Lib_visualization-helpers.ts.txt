@@ -1,0 +1,86 @@
+Tools/Lib/visualization-helpers.ts
+/**
+ * Visualization Helpers
+ *
+ * 数据分析和可视化辅助函数
+ */
+
+import type { TrendingProject, Analytics } from './types';
+
+/**
+ * 分析项目数据
+ */
+export function analyzeData(projects: TrendingProject[]): Analytics {
+  // 语言分布统计
+  const languageDistribution: Record<string, number> = {};
+  projects.forEach(project => {
+    const lang = project.language;
+    languageDistribution[lang] = (languageDistribution[lang] || 0) + 1;
+  });
+
+  // 总 stars 数
+  const totalStars = projects.reduce((sum, project) => {
+    return sum + parseInt(project.stars.replace(/,/g, '') || 0);
+  }, 0);
+
+  // 找出 top project
+  const topProject = projects.reduce((top, project) => {
+    const topStars = parseInt(top.stars.replace(/,/g, '') || 0);
+    const projStars = parseInt(project.stars.replace(/,/g, '') || 0);
+    return projStars > topStars ? project : top;
+  }, projects[0]);
+
+  // 增长统计
+  const projectsWithGrowth = projects.filter(p => p.starsThisPeriod);
+  const growthValues = projectsWithGrowth.map(p =>
+    parseInt(p.starsThisPeriod.replace(/[+,]/g, '') || 0)
+  );
+
+  const highestGrowth = projectsWithGrowth.reduce((highest, project) => {
+    const highestValue = parseInt(highest.starsThisPeriod.replace(/[+,]/g, '') || 0);
+    const projValue = parseInt(project.starsThisPeriod.replace(/[+,]/g, '') || 0);
+    return projValue > highestValue ? project : highest;
+  }, projectsWithGrowth[0] || projects[0]);
+
+  const averageGrowth = growthValues.length > 0
+    ? Math.round(growthValues.reduce((a, b) => a + b, 0) / growthValues.length)
+    : 0;
+
+  // 提取唯一语言列表（用于筛选）
+  const languages = Object.keys(languageDistribution).sort();
+
+  // 生成图表数据
+  const growthData = projects.slice(0, 10).map(p => ({
+    name: p.name.split('/')[1] || p.name,
+    growth: parseInt(p.starsThisPeriod.replace(/[+,]/g, '') || 0)
+  }));
+
+  return {
+    languageDistribution,
+    totalStars,
+    topProject,
+    growthStats: {
+      highest: highestGrowth,
+      average: averageGrowth
+    },
+    languages,
+    growthData
+  };
+}
+
+/**
+ * 格式化 stars 数字
+ */
+export function formatStars(starsStr: string): number {
+  return parseInt(starsStr.replace(/,/g, '') || 0);
+}
+
+/**
+ * 解析增长数值
+ */
+export function parseGrowth(growthStr: string): number {
+  if (!growthStr) return 0;
+  return parseInt(growthStr.replace(/[+,]/g, '') || 0);
+}
+
+export default { analyzeData, formatStars, parseGrowth };

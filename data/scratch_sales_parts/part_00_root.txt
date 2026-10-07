@@ -1,0 +1,72 @@
+---
+name: sales-research
+description: Kỹ năng này cung cấp phương pháp luận và các thực hành tốt nhất để nghiên cứu khách hàng tiềm năng bán hàng.
+---
+
+# Nghiên Cứu Bán Hàng (Sales Research)
+
+## Tổng Quan
+
+Kỹ năng này cung cấp phương pháp luận và các thực hành tốt nhất để nghiên cứu khách hàng tiềm năng bán hàng (sales prospects). Kỹ năng bao gồm nghiên cứu doanh nghiệp, lập hồ sơ liên hệ cá nhân và phát hiện tín hiệu mua hàng để mang lại thông tin tình báo có thể hành động được.
+
+## Sử Dụng
+
+Các sub-agent `company-researcher` và `contact-researcher` tham chiếu kỹ năng này khi:
+- Nghiên cứu khách hàng tiềm năng mới
+- Tìm kiếm thông tin công ty
+- Lập hồ sơ người liên hệ cá nhân
+- Phát hiện tín hiệu mua hàng (buying signals)
+
+## Phương Pháp Luận Nghiên Cứu
+
+### Danh Sách Kiểm Tra Nghiên Cứu Công Ty
+
+1. **Hồ Sơ Cơ Bản**
+   - Tên công ty, ngành nghề, quy mô (số lượng nhân viên, doanh thu)
+   - Trụ sở chính và các địa điểm văn phòng trọng yếu
+   - Ngày thành lập, giai đoạn phát triển
+
+2. **Các Bước Phát Triển Gần Đây**
+   - Các thông báo gọi vốn (trong vòng 12 tháng qua)
+   - Hoạt động mua bán & sáp nhập (M&A)
+   - Thay đổi nhân sự cấp cao
+   - Ra mắt sản phẩm mới
+
+3. **Ngăn Xếp Công Nghệ (Tech Stack)**
+   - Các công nghệ đã biết (BuiltWith, StackShare)
+   - Tin tuyển dụng có đề cập đến công cụ
+   - Quan hệ đối tác tích hợp
+
+4. **Tín Hiệu (Signals)**
+   - Tin tuyển dụng (mở rộng quy mô = cơ hội)
+   - Đánh giá trên Glassdoor (các điểm nghẽn / nỗi đau)
+   - Đề cập trên tin tức truyền thông (bối cảnh)
+   - Hoạt động trên mạng xã hội
+
+### Danh Sách Kiểm Tra Nghiên Cứu Người Liên Hệ
+
+1. **Lý Lịch Chuyên Môn**
+   - Vai trò hiện tại và thâm niên làm việc
+   - Các công ty và vai trò trước đây
+   - Trình độ học vấn
+
+2. **Chỉ Số Ảnh Hưởng**
+   - Cơ cấu báo cáo công việc
+   - Thẩm quyền ra quyết định
+   - Quyền quản lý ngân sách
+
+3. **Điểm Móc Nối Tiếp Cận (Engagement Hooks)**
+   - Các bài đăng LinkedIn gần đây
+   - Các bài báo / bài viết đã xuất bản
+   - Các sự kiện diễn thuyết
+   - Kết nối chung giữa hai bên
+
+## Tài Nguyên
+
+- `resources/signal-indicators.md` - Phân loại các tín hiệu mua hàng
+- `resources/research-checklist.md` - Danh sách kiểm tra nghiên cứu toàn diện
+
+## Kịch Bản (Scripts)
+
+- `scripts/company-enricher.py` - Tổng hợp dữ liệu công ty từ nhiều nguồn
+- `scripts/linkedin-parser.py` - Cấu trúc hóa dữ liệu hồ sơ LinkedIn

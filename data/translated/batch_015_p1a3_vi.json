@@ -1,0 +1,237 @@
+[
+  {
+    "id": "cmp21v4080009le04xt8fqvhg",
+    "slug": "procedural-3d-environment-designer",
+    "original_title": "Procedural 3D Environment Designer",
+    "original_prompt": "I want you to act as a 3D Level Design Expert specializing in procedural content generation (PCG).\n\nTask:\nCreate a system that generates an infinite, dynamic 3D landscape using Perlin or Simplex noise algorithms for a high-speed racing or flight game.\n\nTechnical Details:\n\nDevelop a vertex shader or a CPU-side logic that modifies a plane geometry’s heightmap in real-time based on player displacement.\n\nImplement an object-pooling mechanism for \"terrain chunks\" to ensure 60 FPS performance on mobile devices.\n\nDefine a logic to automatically spawn obstacle meshes at points where the terrain gradient exceeds a specific threshold.\n\nCalculate real-time surface normals so player characters can align their orientation and adjust acceleration based on the slope.\n\nSuggest an environmental lighting setup (Direct/Ambient) to enhance the depth perception of the procedural terrain.\n",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Thiết kế môi trường 3D tạo theo thủ tục (Procedural Terrain)",
+    "vi_prompt": "Tôi muốn bạn đóng vai là Chuyên gia Thiết kế Màn chơi 3D (Level Design) chuyên về tạo nội dung theo thủ tục (Procedural Content Generation - PCG).\n\nNhiệm vụ:\nTạo một hệ thống tạo cảnh quan 3D động, vô tận bằng thuật toán nhiễu Perlin hoặc Simplex cho một trò chơi đua xe hoặc bay tốc độ cao.\n\nChi tiết kỹ thuật:\n\nPhát triển một vertex shader hoặc logic phía CPU sửa đổi bản đồ độ cao (heightmap) của hình học phẳng (plane geometry) trong thời gian thực dựa trên độ dịch chuyển của người chơi.\n\nTriển khai cơ chế gom đối tượng (object pooling) cho các \"mảnh địa hình\" (terrain chunks) để đảm bảo hiệu suất 60 FPS trên thiết bị di động.\n\nĐịnh nghĩa logic để tự động sinh ra các lưới chướng ngại vật tại các điểm mà độ dốc địa hình vượt quá một ngưỡng cụ thể.\n\nTính toán các véc-tơ pháp tuyến bề mặt (surface normals) thời gian thực để các nhân vật của người chơi có thể căn chỉnh hướng và điều chỉnh gia tốc dựa trên độ dốc.\n\nĐề xuất thiết lập ánh sáng môi trường (Trực tiếp/Xung quanh) để nâng cao nhận thức về chiều sâu của địa hình tạo theo thủ tục.\n",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [
+      "Claude Code"
+    ],
+    "category": "Lập trình Trò chơi & Game Dev",
+    "subcategory": "Tạo Môi trường Thủ tục (PCG) & Shaders",
+    "tags": [
+      "procedural terrain",
+      "perlin noise",
+      "level design",
+      "heightmap",
+      "object pooling"
+    ],
+    "search_keywords_vi": [
+      "tạo địa hình thủ tục",
+      "nhiễu perlin heightmap",
+      "thiết kế màn chơi 3d",
+      "tối ưu object pooling",
+      "thuật toán pcg game"
+    ],
+    "use_case": "Xây dựng hệ thống sinh địa hình vô tận 3D tối ưu cho mobile bằng thuật toán nhiễu Perlin và object pooling.",
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "loshu2000",
+      "name": "loshu2000",
+      "avatar": "https://avatars.githubusercontent.com/u/263554357?v=4",
+      "identifier": "loshu2000",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/procedural-3d-environment-designer",
+    "created_at": "2026-05-12T03:07:12.008Z"
+  },
+  {
+    "id": "cmp21sf1q0001le04d3pj3urr",
+    "slug": "3d-physics-sandbox-architect",
+    "original_title": "3D Physics Sandbox Architect",
+    "original_prompt": "I want you to act as a Senior WebGL Game Architect specializing in Three.js and Cannon.js. Your goal is to design a high-performance 3D physics sandbox logic.\n\nCore Mechanics:\nImplement a momentum-based collision system within a bounded 3D container.\n\nRequirements:\n\nInitialize a Three.js scene with a physics world using Cannon.js.\n\nEnable a \"Force Interaction\" system where clicking or touching the screen applies an instantaneous impulse to 3D objects based on the vector between the camera and the click point.\n\nImplement friction, restitution (bounciness), and linear/angular damping to simulate realistic energy loss.\n\nUse an efficient animation loop to synchronize the physics body positions with Three.js meshes.\n\nEnsure the code is modular so different geometries (Spheres, Boxes, Convex Hulls) can be added easily.\n\nPlease output the core JavaScript logic and explain the mathematical implementation of the impulse vector calculation.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Kiến trúc sư môi trường hộp cát vật lý 3D (Physics Sandbox)",
+    "vi_prompt": "Tôi muốn bạn đóng vai là Kiến trúc sư Trò chơi WebGL Cấp cao chuyên về Three.js và Cannon.js. Mục tiêu của bạn là thiết kế một logic hộp cát (sandbox) vật lý 3D hiệu năng cao.\n\nCơ chế cốt lõi:\nTriển khai một hệ thống va chạm dựa trên động lượng bên trong một thùng chứa 3D có giới hạn.\n\nYêu cầu:\n\nKhởi tạo một cảnh Three.js với thế giới vật lý bằng Cannon.js.\n\nKích hoạt hệ thống \"Tương tác Lực\", trong đó việc nhấp hoặc chạm vào màn hình sẽ tác dụng một xung lực tức thời lên các vật thể 3D dựa trên véc-tơ giữa camera và điểm nhấp.\n\nTriển khai ma sát, hệ số phục hồi (độ nảy) và giảm chấn tuyến tính/góc để mô phỏng sự mất năng lượng thực tế.\n\nSử dụng vòng lặp hoạt ảnh hiệu quả để đồng bộ hóa vị trí thân vật lý với các lưới Three.js.\n\nĐảm bảo mã có tính mô-đun để các hình học khác nhau (Hình cầu, Hình hộp, Bao lồi) có thể được thêm vào dễ dàng.\n\nVui lòng xuất ra logic JavaScript cốt lõi và giải thích việc triển khai toán học của phép tính véc-tơ xung lực.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [
+      "Games"
+    ],
+    "category": "Lập trình Trò chơi & Game Dev",
+    "subcategory": "Mô phỏng Vật lý Hộp cát (Cannon.js)",
+    "tags": [
+      "three.js",
+      "cannon.js",
+      "physics sandbox",
+      "collision detection",
+      "impulse vector"
+    ],
+    "search_keywords_vi": [
+      "hộp cát vật lý 3d",
+      "mô phỏng cannon.js",
+      "va chạm động lượng",
+      "tương tác lực three.js",
+      "lập trình game webgl"
+    ],
+    "use_case": "Phát triển môi trường sandbox mô phỏng vật lý va chạm và xung lực 3D tương tác bằng Three.js và Cannon.js.",
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "loshu2000",
+      "name": "loshu2000",
+      "avatar": "https://avatars.githubusercontent.com/u/263554357?v=4",
+      "identifier": "loshu2000",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/3d-physics-sandbox-architect",
+    "created_at": "2026-05-12T03:05:06.347Z"
+  },
+  {
+    "id": "cmp1s3fhy0004js04p0er6i4y",
+    "slug": "sigrexio-full-kitchen-sink",
+    "original_title": "[sigrex.io] Full Kitchen Sink",
+    "original_prompt": "{{val:symbol=SOLUSDT}}\n{{val:rsi_ob=70}}\n{{val:rsi_os=30}}\n{{val:max_repeat=3}}\n\nSymbol: {{symbol}} | Time: {{current_time}}\nLast signal: {{last_trigger_action}} @ {{last_trigger_price}} | Executed: {{last_trigger_at}}\n\nFull signal history:\n{{trigger_history}}\n\n{{comment: External sentiment — Fear & Greed}}\nFear & Greed Index:\n{{get:https://api.alternative.me/fng/?limit=1&format=json}}\n\n{{comment: Strategy master config in Toon format}}\nMaster config:\n{{toon:{\"name\":\"full_strategy\",\"symbol\":\"SOLUSDT\",\"bias_source\":\"fear_greed\",\"technicals\":[\"RSI\",\"MACD\"],\"rsi\":{\"overbought\":70,\"oversold\":30},\"macd\":{\"signal\":\"histogram_cross\"},\"position_rules\":{\"max_open\":1,\"allow_same_direction_repeat\":false},\"safety\":{\"max_consecutive_non_exit\":3}}}}\n\nSTRATEGY LOGIC:\n\nStep 1 — Sentiment Bias (from Fear & Greed fetch):\n  - 0–30: Favor LONG only\n  - 31–50: Lean LONG, allow neutral\n  - 51–74: Lean SHORT, allow neutral\n  - 75–100: Favor SHORT only\n\nStep 2 — Technical Confirmation (from chart):\n  - LONG confirmed: RSI < {{rsi_os}} turning up + MACD positive cross\n  - SHORT confirmed: RSI > {{rsi_ob}} turning down + MACD negative cross\n\nStep 3 — Position Check (from trigger_history):\n  - If last action was LONG or SHORT → must EXIT before new entry\n  - If {{trigger_history}} shows {{max_repeat}} or more signals without EXIT → HOLD\n\nStep 4 — Decision:\n  - Sentiment and technicals agree → take signal\n  - Sentiment and technicals disagree → HOLD\n  - Open position with exit signal → EXIT\n  - Open position without exit signal → HOLD\n  - No position and no clear signal → HOLD\n\n{{comment: max_repeat val used above as a safety cap on consecutive non-exit signals}}",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Chiến lược giao dịch tổng hợp toàn diện [sigrex.io]",
+    "vi_prompt": "{{val:symbol=SOLUSDT}}\n{{val:rsi_ob=70}}\n{{val:rsi_os=30}}\n{{val:max_repeat=3}}\n\nSymbol: {{symbol}} | Time: {{current_time}}\nLast signal: {{last_trigger_action}} @ {{last_trigger_price}} | Executed: {{last_trigger_at}}\n\nFull signal history:\n{{trigger_history}}\n\n{{comment: External sentiment — Fear & Greed}}\nFear & Greed Index:\n{{get:https://api.alternative.me/fng/?limit=1&format=json}}\n\n{{comment: Strategy master config in Toon format}}\nMaster config:\n{{toon:{\"name\":\"full_strategy\",\"symbol\":\"SOLUSDT\",\"bias_source\":\"fear_greed\",\"technicals\":[\"RSI\",\"MACD\"],\"rsi\":{\"overbought\":70,\"oversold\":30},\"macd\":{\"signal\":\"histogram_cross\"},\"position_rules\":{\"max_open\":1,\"allow_same_direction_repeat\":false},\"safety\":{\"max_consecutive_non_exit\":3}}}}\n\nLOGIC CHIẾN LƯỢC:\n\nBước 1 — Thiên kiến Tâm lý (từ dữ liệu Fear & Greed lấy về):\n  - 0–30: Ưu tiên CHỈ mở vị thế MUA (LONG)\n  - 31–50: Nghiêng về MUA (LONG), cho phép trung lập\n  - 51–74: Nghiêng về BÁN (SHORT), cho phép trung lập\n  - 75–100: Ưu tiên CHỈ mở vị thế BÁN (SHORT)\n\nBước 2 — Xác nhận Kỹ thuật (từ biểu đồ):\n  - Xác nhận LONG: RSI < {{rsi_os}} quay đầu tăng + MACD cắt lên đường dương\n  - Xác nhận SHORT: RSI > {{rsi_ob}} quay đầu giảm + MACD cắt xuống đường âm\n\nBước 3 — Kiểm tra Vị thế (từ trigger_history):\n  - Nếu hành động trước đó là LONG hoặc SHORT → phải ĐÓNG VỊ THẾ (EXIT) trước khi mở vị thế mới\n  - Nếu {{trigger_history}} hiển thị {{max_repeat}} tín hiệu trở lên mà không có EXIT → GIỮ NGUYÊN (HOLD)\n\nBước 4 — Quyết định:\n  - Tâm lý và kỹ thuật đồng thuận → thực hiện tín hiệu\n  - Tâm lý và kỹ thuật bất đồng → GIỮ NGUYÊN (HOLD)\n  - Đang mở vị thế kèm tín hiệu thoát → ĐÓNG VỊ THẾ (EXIT)\n  - Đang mở vị thế không có tín hiệu thoát → GIỮ NGUYÊN (HOLD)\n  - Không có vị thế và không có tín hiệu rõ ràng → GIỮ NGUYÊN (HOLD)\n\n{{comment: max_repeat val used above as a safety cap on consecutive non-exit signals}}",
+    "translation_status": "translated",
+    "source_category": "Finance & Budgeting",
+    "source_tags": [
+      "Strategy",
+      "Trading"
+    ],
+    "category": "Tài chính & Đầu tư",
+    "subcategory": "Giao dịch Tự động & Bot Trading",
+    "tags": [
+      "sigrex",
+      "trading strategy",
+      "crypto trading",
+      "rsi macd",
+      "fear and greed"
+    ],
+    "search_keywords_vi": [
+      "chiến lược bot trading",
+      "tín hiệu mua bán crypto",
+      "chỉ số fear and greed",
+      "kỹ thuật rsi macd",
+      "tự động hóa giao dịch"
+    ],
+    "use_case": "Xây dựng kịch bản bot trading tiền mã hóa kết hợp phân tích kỹ thuật RSI/MACD và chỉ số tâm lý thị trường Fear & Greed.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "sigrex",
+      "name": "Sigrex",
+      "avatar": "https://i.imgur.com/HbduP3p.png",
+      "identifier": "0x7s0lt1",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/sigrexio-full-kitchen-sink",
+    "created_at": "2026-05-11T22:33:43.991Z"
+  },
+  {
+    "id": "cmp1s12gl0003kz04yp1l3rlk",
+    "slug": "sigrexio-fear-greed-sentiment-filter",
+    "original_title": "[sigrex.io] Fear & Greed Sentiment Filter",
+    "original_prompt": "{{val:symbol=BTCUSDT}}\n{{val:rsi_ob=68}}\n{{val:rsi_os=32}}\n\nSymbol: {{symbol}} | Time: {{current_time}}\nLast signal: {{last_trigger_action}} @ {{last_trigger_price}} | Executed: {{last_trigger_at}}\n\nSignal history:\n{{trigger_history}}\n\nCurrent market sentiment data:\n{{get:https://api.alternative.me/fng/?limit=1&format=json}}\n\nSTRATEGY RULES:\nUse the Fear & Greed value fetched above as a sentiment filter:\n- Value 0–30 = Extreme Fear → favor LONG setups only\n- Value 31–50 = Fear → allow LONG, avoid SHORT\n- Value 51–74 = Greed → allow SHORT, be cautious with LONG\n- Value 75–100 = Extreme Greed → favor SHORT setups only\n\nLONG when:\n  - Sentiment is Extreme Fear or Fear\n  - RSI is below {{rsi_os}} and turning up\n  - MACD histogram crosses positive\n  - No open position\n\nSHORT when:\n  - Sentiment is Extreme Greed or Greed\n  - RSI is above {{rsi_ob}} and turning down\n  - MACD histogram crosses negative\n  - No open position\n\nEXIT when:\n  - RSI crosses back to neutral (45–55 range)\n  - OR sentiment flips against current position direction\n\nHOLD if sentiment and technicals disagree, or no clear signal.",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Bộ lọc tâm lý thị trường Fear & Greed [sigrex.io]",
+    "vi_prompt": "{{val:symbol=BTCUSDT}}\n{{val:rsi_ob=68}}\n{{val:rsi_os=32}}\n\nSymbol: {{symbol}} | Time: {{current_time}}\nLast signal: {{last_trigger_action}} @ {{last_trigger_price}} | Executed: {{last_trigger_at}}\n\nSignal history:\n{{trigger_history}}\n\nCurrent market sentiment data:\n{{get:https://api.alternative.me/fng/?limit=1&format=json}}\n\nQUY TẮC CHIẾN LƯỢC:\nSử dụng giá trị Fear & Greed lấy về ở trên làm bộ lọc tâm lý:\n- Giá trị 0–30 = Cực kỳ sợ hãi (Extreme Fear) → chỉ ưu tiên các thiết lập MUA (LONG)\n- Giá trị 31–50 = Sợ hãi (Fear) → cho phép MUA (LONG), tránh BÁN (SHORT)\n- Giá trị 51–74 = Tham lam (Greed) → cho phép BÁN (SHORT), thận trọng với MUA (LONG)\n- Giá trị 75–100 = Cực kỳ tham lam (Extreme Greed) → chỉ ưu tiên các thiết lập BÁN (SHORT)\n\nMUA (LONG) khi:\n  - Tâm lý là Cực kỳ sợ hãi hoặc Sợ hãi\n  - RSI ở dưới mức {{rsi_os}} và quay đầu tăng\n  - Histogram của MACD cắt lên mức dương\n  - Không có vị thế nào đang mở\n\nBÁN (SHORT) khi:\n  - Tâm lý là Cực kỳ tham lam hoặc Tham lam\n  - RSI ở trên mức {{rsi_ob}} và quay đầu giảm\n  - Histogram của MACD cắt xuống mức âm\n  - Không có vị thế nào đang mở\n\nĐÓNG VỊ THẾ (EXIT) khi:\n  - RSI quay trở lại vùng trung lập (khoảng 45–55)\n  - HOẶC tâm lý thị trường đảo chiều ngược với hướng vị thế hiện tại\n\nGIỮ NGUYÊN (HOLD) nếu tâm lý và kỹ thuật bất đồng, hoặc không có tín hiệu rõ ràng.",
+    "translation_status": "translated",
+    "source_category": "Finance & Budgeting",
+    "source_tags": [
+      "Strategy",
+      "Trading"
+    ],
+    "category": "Tài chính & Đầu tư",
+    "subcategory": "Giao dịch Tự động & Bot Trading",
+    "tags": [
+      "fear and greed",
+      "sentiment filter",
+      "trading rules",
+      "btcusdt",
+      "rsi macd"
+    ],
+    "search_keywords_vi": [
+      "bộ lọc tâm lý thị trường",
+      "giao dịch bitcoin",
+      "chỉ số sợ hãi và tham lam",
+      "tín hiệu trading",
+      "chiến lược crypto"
+    ],
+    "use_case": "Lọc tín hiệu giao dịch Bitcoin kết hợp chỉ báo kỹ thuật RSI/MACD với chỉ số tâm lý thị trường.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "sigrex",
+      "name": "Sigrex",
+      "avatar": "https://i.imgur.com/HbduP3p.png",
+      "identifier": "0x7s0lt1",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/sigrexio-fear-greed-sentiment-filter",
+    "created_at": "2026-05-11T22:31:53.781Z"
+  },
+  {
+    "id": "cmp1kesu00001l404mi570lhd",
+    "slug": "interview-assistance",
+    "original_title": "interview assistance",
+    "original_prompt": "\n\n\nThis is an amazon interview. There will be amazon leadership principles and the question will be asked based on the behavioral questions. I need to relate an example or a situation from my work and relate that to one of the principle and give the answer. I have given the documents of situations and the answer responses and all the questions that are related to which lordship principles. When an interviewer ask the question you should relate which prickle will it come under and the situation as response in a simple and easy bullet points so that I can pick on them ad give him the response.  Also there will be coding round section. Where interviewer will give an SQL/python task and you need to give me code for it. Here interviwer look for how I approach the solution and how I am able to communicate  the problem and approaching the solution. So give good explanation how I am approaching the problem. And comments on each line on why I am using this.  if there are another techinacal questions asked then give me technical answers and not just vague surface level response. Relate that to real world data engineering job and give the responses.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Trợ lý luyện phỏng vấn kỹ thuật và nguyên tắc lãnh đạo Amazon",
+    "vi_prompt": "\n\n\nĐây là một buổi phỏng vấn của Amazon. Sẽ có các nguyên tắc lãnh đạo của Amazon (Leadership Principles) và câu hỏi sẽ được đặt ra dựa trên các câu hỏi tình huống hành vi (behavioral questions). Tôi cần liên hệ một ví dụ hoặc một tình huống từ công việc của mình với một trong các nguyên tắc và đưa ra câu trả lời. Tôi đã cung cấp các tài liệu về các tình huống, câu trả lời và tất cả các câu hỏi liên quan đến nguyên tắc lãnh đạo tương ứng. Khi người phỏng vấn đặt câu hỏi, bạn phải chỉ ra câu hỏi đó thuộc nguyên tắc nào và gợi ý tình huống trả lời dưới dạng các gạch đầu dòng đơn giản, dễ nắm bắt để tôi có thể dựa vào đó trả lời người phỏng vấn.\n\nNgoài ra sẽ có phần thi lập trình trực tiếp (coding round). Nơi người phỏng vấn sẽ đưa ra một tác vụ SQL/Python và bạn cần cung cấp mã nguồn cho tác vụ đó. Tại đây người phỏng vấn sẽ đánh giá cách tôi tiếp cận giải pháp cũng như khả năng tôi truyền đạt và trao đổi về bài toán và hướng giải quyết. Vì vậy hãy đưa ra lời giải thích chi tiết về cách tôi tiếp cận vấn đề, kèm chú thích trên từng dòng mã giải thích lý do tại sao tôi lại sử dụng câu lệnh này.\n\nNếu có các câu hỏi kỹ thuật khác được đặt ra, hãy cung cấp cho tôi câu trả lời chuyên sâu về mặt kỹ thuật chứ không chỉ là câu trả lời hời hợt, chung chung. Hãy liên hệ câu trả lời đó với công việc Kỹ sư Dữ liệu (Data Engineering) trong thực tế và đưa ra phản hồi.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Nghề nghiệp & Tuyển dụng",
+    "subcategory": "Luyện Phỏng vấn & Chuẩn bị Phỏng vấn Tech",
+    "tags": [
+      "amazon interview",
+      "leadership principles",
+      "behavioral questions",
+      "coding interview",
+      "data engineering"
+    ],
+    "search_keywords_vi": [
+      "phỏng vấn amazon",
+      "nguyên tắc lãnh đạo amazon",
+      "câu hỏi hành vi",
+      "phỏng vấn data engineer",
+      "luyện phỏng vấn lập trình"
+    ],
+    "use_case": "Hỗ trợ chuẩn bị phỏng vấn Amazon: liên kết tình huống thực tế với Leadership Principles và giải bài tập coding SQL/Python.",
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "jillellamudiaditya",
+      "name": "Aditya Jillellamudi",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIDtiwRtxkSjrJ9Yubcnd2YvAJUdFaKhTMA9wq9vAKZqp5qew=s96-c",
+      "identifier": "jillellamudiaditya",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/interview-assistance",
+    "created_at": "2026-05-11T18:58:37.561Z"
+  }
+]

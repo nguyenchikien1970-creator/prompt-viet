@@ -1,0 +1,310 @@
+[
+  {
+    "id": "cmr6dg86h0014jx04xw99r3xr",
+    "slug": "shop",
+    "original_title": "shop",
+    "original_prompt": "Objective: Advice on whether you should buy or not\n\n1. **Product background**\n\n    * Product name, brand, and model\n    * Price and any variations\n    * Key specifications\n\n2. **Identify positive attributes**\n\n    * Features that stand out\n    * What reviewers praise\n    * Value proposition\n\n3. **Identify drawbacks**\n\n    * Common complaints in reviews\n    * Missing features\n    * Quality or durability issues\n\n4. **Determine fit for user**\n\n    * Ideal buyer profile\n    * Who should skip this product\n    * Use cases it serves well vs. poorly\n\n5. **Evaluate value**\n\n    * Is this price typical for the category?\n    * Should the user wait for a sale?\n    * Are there better value alternatives?\n\n6. **Make a recommendation**\n\n    * Based on all preceding steps, form a recommendation\n    * The objective is to give the user a gut check\n    * At the end of your initial response, inform the user: \"Final costs may vary, always verify at checkout\"\n    * ✅ Buy it\n    * ⚠️ Buy, but things to consider\n    * 🤔 Consider alternatives\n    * ❌ Skip it\n\n7. **Final response**\n\n    If you have relevant info to share, your final response should follow standard writing guidelines, including:\n\n    * Sentence case: titles, labels, and all other content should be displayed using sentence case (only proper nouns and the first letter of a string appear capitalized).\n    * Favor simple sentences that use common words\n\n    **In short:** [Your recommendation, and why. Then one sentence—what is this and who is it for?]\n\n    **Pros**\n\n    * [What's good]\n    * ${what_reviewers_love}\n\n    **Cons:**\n\n    * [What's not great]\n    * ${what_reviewers_complain_about}\n\n    **Who should buy this:** ${ideal_buyer}\n    **Who should skip this:** [Not right for...]\n\n    **Price check:** [Fair? Wait for sale?]\n\n8. **Follow-up questions**\n\n    If you can think of a way you can help the user act on information shown in the response, conclude with one (at most two) sentences that offers this help. Frame it as a question so that a simple response like \"yes please\" might launch the next round.",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Tư vấn mua sắm nên hay không nên mua",
+    "vi_prompt": "Mục tiêu: Đưa ra lời khuyên về việc bạn có nên mua sản phẩm hay không\n\n1. **Thông tin nền tảng về sản phẩm**\n\n    * Tên sản phẩm, thương hiệu và mẫu mã\n    * Giá cả và bất kỳ biến thể nào\n    * Thông số kỹ thuật chính\n\n2. **Xác định các thuộc tính tích cực**\n\n    * Các tính năng nổi bật\n    * Những điều người đánh giá khen ngợi\n    * Đề xuất giá trị mang lại\n\n3. **Xác định các nhược điểm**\n\n    * Những phàn nàn phổ biến trong các bài đánh giá\n    * Các tính năng còn thiếu\n    * Vấn đề về chất lượng hoặc độ bền\n\n4. **Xác định mức độ phù hợp với người dùng**\n\n    * Chân dung người mua lý tưởng\n    * Ai nên bỏ qua sản phẩm này\n    * Các trường hợp sử dụng phù hợp vs. không phù hợp\n\n5. **Đánh giá giá trị**\n\n    * Mức giá này có điển hình cho phân khúc sản phẩm không?\n    * Người dùng có nên đợi đợt giảm giá không?\n    * Có các lựa chọn thay thế nào có giá trị tốt hơn không?\n\n6. **Đưa ra khuyến nghị**\n\n    * Dựa trên tất cả các bước trước đó, đưa ra khuyến nghị\n    * Mục tiêu là giúp người dùng kiểm chứng nhanh trực giác mua sắm\n    * Ở cuối phản hồi ban đầu, thông báo cho người dùng: \"Chi phí cuối cùng có thể thay đổi, luôn xác minh khi thanh toán\"\n    * ✅ Nên mua\n    * ⚠️ Mua, nhưng cần cân nhắc kỹ\n    * 🤔 Cân nhắc các lựa chọn thay thế\n    * ❌ Bỏ qua, không nên mua\n\n7. **Phản hồi cuối cùng**\n\n    Nếu bạn có thông tin liên quan để chia sẻ, phản hồi cuối cùng của bạn phải tuân theo các nguyên tắc viết tiêu chuẩn, bao gồm:\n\n    * Sentence case: tiêu đề, nhãn và tất cả nội dung khác phải hiển thị theo dạng viết hoa chữ cái đầu câu (chỉ danh từ riêng và chữ cái đầu tiên của chuỗi mới viết hoa).\n    * Ưu tiên các câu đơn giản sử dụng các từ ngữ thông dụng\n\n    **Tóm lại:** [Khuyến nghị của bạn và lý do. Sau đó một câu—đây là sản phẩm gì và dành cho ai?]\n\n    **Ưu điểm**\n\n    * [Điểm tốt]\n    * ${what_reviewers_love}\n\n    **Nhược điểm:**\n\n    * [Điểm chưa tốt]\n    * ${what_reviewers_complain_about}\n\n    **Ai nên mua:** ${ideal_buyer}\n    **Ai nên bỏ qua:** [Không phù hợp cho...]\n\n    **Kiểm tra giá:** [Hợp lý? Chờ giảm giá?]\n\n8. **Câu hỏi tiếp nối**\n\n    Nếu bạn có thể nghĩ ra cách giúp người dùng hành động dựa trên thông tin hiển thị trong phản hồi, hãy kết luận bằng một (tối đa hai) câu đưa ra sự trợ giúp này. Diễn đạt nó dưới dạng câu hỏi để một câu trả lời đơn giản như \"vâng, làm ơn\" có thể kích hoạt vòng trao đổi tiếp theo.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Năng suất & Công việc",
+    "subcategory": "Nghiên cứu & Phân tích",
+    "tags": [
+      "mua sắm",
+      "đánh giá sản phẩm",
+      "tư vấn mua hàng",
+      "shopping",
+      "ecommerce"
+    ],
+    "search_keywords_vi": [
+      "tư vấn mua sắm thông minh",
+      "đánh giá có nên mua sản phẩm không",
+      "phân tích ưu nhược điểm sản phẩm",
+      "shopping advice"
+    ],
+    "use_case": "Phân tích ưu nhược điểm và đưa ra khuyến nghị khách quan về việc có nên mua một sản phẩm hay không.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "medium",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "kennynah85",
+      "name": "cw ka",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIMWRaDu9jROdmgI26R4lcF3-HWMGtCnCi6_7QtxkCtIsqOO1Dldg=s96-c",
+      "identifier": "kennynah85",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/shop",
+    "created_at": "2026-07-04T13:02:02.345Z"
+  },
+  {
+    "id": "cmr6df9r00012l804a4y50jqp",
+    "slug": "flaneur",
+    "original_title": "flaneur",
+    "original_prompt": "Act as an expert travel planner. Help me plan a detailed trip with the following criteria. \n\n\n\n**Trip Basics**\n\n- **Destination**: \n\n- **Dates**: \n\n- **Travelers**: 2 seniors, 1 adult\n\n- **Trip style**: ${family}\n\n\n\n**Budget & Logistics**\n\n- **Total budget**: $${amount} for everything, or $${amount}/day per person. Include flights.\n\n- **Currency to use**: [SGD/USD/etc]\n\n- **Accommodation preference**: [Hotel, Airbnb, Hostel, Resort, 4-star+]. Area to stay in if any: [___]\n\n- **Transport**: [Public transport only, Rent a car, Mix, Rideshare/Grab, Walking]\n\n\n\n**Interests & Constraints**\n\n- **Must-dos**: ${please_recommend}\n\n- **Interests**: [Food, Museums, Nature, Shopping, History]\n\n- **Avoid**: ${hiking}\n\n- **Pace**: ${flexible}\n\n\n\n**Output Format I Want:**\n\n1. **Overview**: Best time to go, weather for my dates, any local events/holidays to know.\n\n2. **Day-by-day itinerary**: Morning / Afternoon / Evening, with travel time between spots. Include 1 backup indoor option per day.\n\n3. **Food**: 2-3 local dishes to try + 5 restaurant/cafe recs at different price points.\n\n4. **Budget breakdown**: Flights, lodging, food, transport, activities, total + buffer.\n\n5. **Logistics**: Visa requirements for ${passport_nationality}, SIM/eSIM, airport to city transport, tipping norms, safety tips.\n\n6. **Packing list**: Tailored to weather + activities.\n\n7. **Booking timeline**: What to book now vs later.\n\n\n\nMake it realistic for travel from ${singapore}. Keep transit times honest and don’t pack days too tightly.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Lập kế hoạch du lịch chi tiết",
+    "vi_prompt": "Đóng vai một chuyên gia lập kế hoạch du lịch. Hãy giúp tôi lên kế hoạch chi tiết cho chuyến đi theo các tiêu chí sau.\n\n**Thông tin cơ bản về chuyến đi**\n\n- **Điểm đến**: \n- **Ngày đi**: \n- **Người tham gia**: 2 người lớn tuổi, 1 người trưởng thành\n- **Phong cách chuyến đi**: ${family}\n\n**Ngân sách & Hậu cần**\n\n- **Tổng ngân sách**: $${amount} cho tất cả, hoặc $${amount}/ngày mỗi người. Đã bao gồm vé máy bay.\n- **Tiền tệ sử dụng**: [SGD/USD/VND/v.v.]\n- **Sở thích chỗ ở**: [Khách sạn, Airbnb, Hostel, Resort, 4 sao trở lên]. Khu vực muốn lưu trú nếu có: [___]\n- **Phương tiện di chuyển**: [Chỉ phương tiện công cộng, Thuê xe tự lái, Kết hợp, Đi xe công nghệ/Grab, Đi bộ]\n\n**Sở thích & Ràng buộc**\n\n- **Địa điểm nhất định phải trải nghiệm**: ${please_recommend}\n- **Sở thích cá nhân**: [Ẩm thực, Bảo tàng, Thiên nhiên, Mua sắm, Lịch sử]\n- **Tránh**: ${hiking}\n- **Nhịp độ chuyến đi**: ${flexible}\n\n**Định dạng kết quả tôi mong muốn:**\n\n1. **Tổng quan**: Thời điểm tốt nhất để đi, thời tiết trong khoảng thời gian tôi đi, các sự kiện/ngày lễ địa phương cần biết.\n2. **Lịch trình từng ngày**: Buổi sáng / Buổi chiều / Buổi tối, kèm thời gian di chuyển giữa các điểm. Bao gồm 1 phương án dự phòng trong nhà cho mỗi ngày.\n3. **Ẩm thực**: 2-3 món ăn địa phương nên thử + gợi ý 5 nhà hàng/quán cà phê ở các mức giá khác nhau.\n4. **Phân bổ ngân sách**: Chuyến bay, lưu trú, ăn uống, di chuyển, hoạt động, tổng cộng + khoản dự phòng.\n5. **Hậu cần**: Yêu cầu thị thực (visa) cho ${passport_nationality}, SIM/eSIM, phương tiện di chuyển từ sân bay vào trung tâm, văn hóa tiền tip, mẹo an toàn.\n6. **Danh sách đồ dùng cần mang**: Phù hợp với thời tiết + hoạt động.\n7. **Thời gian biểu đặt chỗ**: Những gì nên đặt trước ngay bây giờ vs những gì có thể để sau.\n\nHãy lên kế hoạch thực tế cho chuyến đi xuất phát từ ${singapore}. Giữ thời gian trung chuyển trung thực và không xếp lịch các ngày quá dày đặc.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Đời sống & Thường nhật",
+    "subcategory": "Du lịch & Lữ hành",
+    "tags": [
+      "du lịch",
+      "lập kế hoạch",
+      "lịch trình",
+      "itinerary",
+      "travel"
+    ],
+    "search_keywords_vi": [
+      "lập kế hoạch du lịch",
+      "lịch trình du lịch chi tiết",
+      "kinh nghiệm du lịch gia đình",
+      "travel planner"
+    ],
+    "use_case": "Lên kế hoạch và lịch trình du lịch chi tiết, tối ưu hóa ngân sách và phù hợp với gia đình có người cao tuổi.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "medium",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "kennynah85",
+      "name": "cw ka",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIMWRaDu9jROdmgI26R4lcF3-HWMGtCnCi6_7QtxkCtIsqOO1Dldg=s96-c",
+      "identifier": "kennynah85",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/flaneur",
+    "created_at": "2026-07-04T13:01:17.724Z"
+  },
+  {
+    "id": "cmr6ddihb000ll104812qvy2m",
+    "slug": "reviews",
+    "original_title": "reviews",
+    "original_prompt": "Objective: Summarize many reviews\n\n1. **Process available reviews**\n\n    * Note the number of reviews and remember that value as \"number_reviews\"\n    * Overall rating\n    * Rating distribution if visible\n    * It's possible there aren't any reviews, for example if a product is new or out of stock. If that's the case, don't include any review analysis in your response.\n\n2. **Identify repeated patterns**\n\n    * Common positive themes\n    * Common complaints\n    * Frequency of each theme\n\n3. **Support themes with evidence**\n\n    * Representative quotes for major themes\n    * Specific examples that illustrate points\n\n4. **Evaluate trustworthiness**\n\n    * Do reviews seem genuine?\n    * Suspicious patterns (all 5-star, generic language)\n    * Verified purchase indicators\n\n5. **Summarize overall sentiment**\n\n    * Would most reviewers buy again?\n    * Who loves it vs. who hates it?\n\n6. **Handling exceptions**\n\n    Prioritize excellent content in your response. If you're unable to formulate a response that meets all criteria, you should\n    * respond as best you can and\n    * acknowledge any limitations or challenges you faced. For example, maybe there wasn't sufficient content on a webpage or the content wasn't compatible with a given request.\n\n    Consider your proposed response objectively and rate it on a scale from 1-10. If you wouldn't give it a 10, either try to create a stronger response or consider acknowledging any limitations or challenges you faced. The score is just for your own purposes; don't share it with the user.\n\n7. **Final response**\n\n    If you have relevant info to share, your final response should follow standard writing guidelines, including:\n\n    * Sentence case: titles, labels, and all other content should be displayed using sentence case (only proper nouns and the first letter of a string appear capitalized).\n    * Favor simple sentences that use common words\n    If number_reviews is 0, your response should mention that there aren't any reviews and you should jump to the follow-on question.\n\n    **Overview:** [X] reviews, [Y] average rating\n\n    **Pros**\n\n    | Theme | Frequency | Example |\n    | :---: | :---: | :---: |\n\n    **Cons**\n\n    | Theme | Frequency | Example |\n    | :---: | :---: | :---: |\n\n    **Quality of reviews:** [Do they seem genuine?]\n\n    **Bottom line:** [Would most reviewers buy again?]\n\n8. **Follow-up questions**\n\n    If you can think of a way you can help the user act on information shown in the response, conclude with one (at most two) sentences that offers this help. Frame it as a question so that a simple response like \"yes please\" might launch the next round.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Tổng hợp và phân tích đánh giá sản phẩm",
+    "vi_prompt": "Mục tiêu: Tóm tắt số lượng lớn các đánh giá\n\n1. **Xử lý các đánh giá hiện có**\n\n    * Ghi nhận số lượng đánh giá và ghi nhớ giá trị đó dưới dạng \"number_reviews\"\n    * Điểm đánh giá trung bình tổng thể\n    * Phân bố đánh giá nếu có thể xem được\n    * Có thể không có bất kỳ đánh giá nào, ví dụ như sản phẩm mới hoặc hết hàng. Nếu trường hợp đó xảy ra, đừng đưa bất kỳ phân tích đánh giá nào vào câu trả lời của bạn.\n\n2. **Xác định các mô thức lặp lại**\n\n    * Các chủ đề tích cực phổ biến\n    * Các lời phàn nàn phổ biến\n    * Tần suất xuất hiện của từng chủ đề\n\n3. **Cung cấp bằng chứng hỗ trợ các chủ đề**\n\n    * Các trích dẫn tiêu biểu cho các chủ đề chính\n    * Các ví dụ cụ thể minh họa cho các luận điểm\n\n4. **Đánh giá độ tin cậy**\n\n    * Các đánh giá có vẻ chân thực không?\n    * Các dấu hiệu bất thường đáng ngờ (toàn bộ 5 sao, ngôn từ chung chung)\n    * Các chỉ dấu đã mua hàng xác thực (Verified purchase)\n\n5. **Tóm tắt cảm xúc tổng thể**\n\n    * Hầu hết người đánh giá có mua lại không?\n    * Nhóm người dùng nào yêu thích vs. nhóm nào không hài lòng?\n\n6. **Xử lý các ngoại lệ**\n\n    Ưu tiên nội dung xuất sắc trong câu trả lời của bạn. Nếu bạn không thể xây dựng câu trả lời đáp ứng tất cả các tiêu chí, bạn nên\n    * phản hồi tốt nhất có thể trong khả năng và\n    * thừa nhận bất kỳ giới hạn hoặc thách thức nào bạn gặp phải. Ví dụ, có thể không có đủ nội dung trên trang web hoặc nội dung không tương thích với yêu cầu đã cho.\n\n    Xem xét phản hồi dự kiến của bạn một cách khách quan và chấm điểm theo thang điểm 1-10. Nếu bạn không cho điểm 10, hãy thử tạo phản hồi mạnh mẽ hơn hoặc cân nhắc việc thừa nhận bất kỳ giới hạn hay khó khăn nào đã gặp phải. Điểm số này chỉ dành cho mục đích nội bộ của bạn; đừng chia sẻ nó với người dùng.\n\n7. **Phản hồi cuối cùng**\n\n    Nếu bạn có thông tin liên quan để chia sẻ, phản hồi cuối cùng của bạn phải tuân theo các nguyên tắc viết tiêu chuẩn, bao gồm:\n\n    * Sentence case: tiêu đề, nhãn và tất cả nội dung khác phải hiển thị theo dạng viết hoa chữ cái đầu câu (chỉ danh từ riêng và chữ cái đầu tiên của chuỗi mới viết hoa).\n    * Ưu tiên các câu đơn giản sử dụng các từ ngữ thông dụng\n    Nếu number_reviews bằng 0, phản hồi của bạn nên đề cập rằng không có bất kỳ đánh giá nào và bạn nên chuyển ngay sang câu hỏi tiếp nối.\n\n    **Tổng quan:** [X] đánh giá, [Y] điểm đánh giá trung bình\n\n    **Ưu điểm**\n\n    | Chủ đề | Tần suất | Ví dụ |\n    | :---: | :---: | :---: |\n\n    **Nhược điểm**\n\n    | Chủ đề | Tần suất | Ví dụ |\n    | :---: | :---: | :---: |\n\n    **Chất lượng đánh giá:** [Chúng có vẻ chân thực không?]\n\n    **Kết luận cốt lõi:** [Đa số người đánh giá có mua lại không?]\n\n8. **Câu hỏi tiếp nối**\n\n    Nếu bạn có thể nghĩ ra cách giúp người dùng hành động dựa trên thông tin hiển thị trong phản hồi, hãy kết luận bằng một (tối đa hai) câu đưa ra sự trợ giúp này. Diễn đạt nó dưới dạng câu hỏi để một câu trả lời đơn giản như \"vâng, làm ơn\" có thể kích hoạt vòng trao đổi tiếp theo.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Năng suất & Công việc",
+    "subcategory": "Nghiên cứu & Phân tích",
+    "tags": [
+      "đánh giá",
+      "tổng hợp đánh giá",
+      "phân tích cảm xúc",
+      "reviews",
+      "sentiment"
+    ],
+    "search_keywords_vi": [
+      "tổng hợp review sản phẩm",
+      "phân tích đánh giá khách hàng",
+      "tóm tắt nhận xét sản phẩm",
+      "phân tích độ tin cậy đánh giá"
+    ],
+    "use_case": "Tổng hợp, phân tích các xu hướng khen chê và đánh giá mức độ tin cậy từ hàng loạt nhận xét của khách hàng.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "medium",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "kennynah85",
+      "name": "cw ka",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIMWRaDu9jROdmgI26R4lcF3-HWMGtCnCi6_7QtxkCtIsqOO1Dldg=s96-c",
+      "identifier": "kennynah85",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/reviews",
+    "created_at": "2026-07-04T12:59:55.728Z"
+  },
+  {
+    "id": "cmr6dcprv000yl804y0db57bn",
+    "slug": "subvert",
+    "original_title": "subvert",
+    "original_prompt": "Take this shopworn, cliché, or overly familiar idea: \"[INSERT CLICHÉ HERE]\".\n\nRuthlessly subvert it. Pervert the wholesome, safe, or sentimental core into something raw, transgressive, and deliberately shocking. Infuse it with taboo elements—moral decay, body horror, sexual deviance, existential dread, political incorrectness, sacrilege, or visceral grotesquery—while keeping a twisted echo of the original concept so the subversion hits harder.\n\nRules for the output:\n- Amplify shock value through unexpected juxtapositions, bodily fluids, violence, erotic violation, psychological cruelty, or societal taboos.\n- Embrace bad taste. Be grotesque, blasphemous, or uncomfortably arousing where it fits.\n- Avoid sanitized irony or gentle twists—go for the throat. Make it disturbing, seductive in its wrongness, or blackly hilarious.\n- Heighten contrast: keep some visual or thematic remnants of the original cliché (soft lighting, pastel colors, nostalgic framing, etc.) but corrupt them.\n- Use vivid, sensory, unflinching detail. No moralizing or disclaimers.\n\nStyle: [Insert desired style, e.g., hyper-realistic, dark surrealism, Goya meets modern photography, cyberpunk body horror, etc.]\n\nAdditional flavor (optional): [e.g., add extreme close-ups of decaying flesh, dripping fluids, demonic undertones, sexualized violence, etc.]",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Đảo ngược mô thức sáo mòn",
+    "vi_prompt": "Hãy lấy ý tưởng sáo mòn, rập khuôn hoặc quá quen thuộc này: \"[INSERT CLICHÉ HERE]\".\n\nHãy đảo ngược nó một cách tàn nhẫn (ruthlessly subvert). Biến đổi phần cốt lõi lành mạnh, an toàn hoặc sướt mướt ủy mị thành thứ gì đó trần trụi, vượt giới hạn chuẩn mực và cố tình gây sốc. Thổi vào nó các yếu tố cấm kỵ—sự suy đồi đạo đức, nỗi kinh hoàng thể xác (body horror), sự lệch lạc tính dục, nỗi sợ hiện sinh, tính phi chính trị đúng đắn, sự báng bổ, hoặc sự kỳ quái nội tạng ghê rợn—trong khi vẫn giữ một tiếng vọng méo mó của khái niệm gốc để sự đảo ngược có sức công phá mạnh mẽ hơn.\n\nQuy tắc cho đầu ra:\n- Khuếch đại giá trị gây sốc thông qua các phép đặt cạnh nhau đầy bất ngờ, dịch tiết cơ thể, bạo lực, sự xâm phạm gợi dục, sự tàn nhẫn tâm lý, hoặc các điều cấm kỵ trong xã hội.\n- Đón nhận thị hiếu tồi tệ (bad taste). Hãy trở nên kỳ quái quái đản, báng bổ hoặc khêu gợi một cách khó chịu ở những chỗ phù hợp.\n- Tránh sự mỉa mai nhẹ nhàng hay những cú twist hiền lành—hãy nhắm thẳng vào yết hầu. Làm cho nó trở nên gây xáo trộn, quyến rũ trong sự sai trái của nó, hoặc hài hước u tối (blackly hilarious).\n- Tăng cường độ tương phản: giữ lại một số tàn dư thị giác hoặc chủ đề của mô thức sáo mòn gốc (ánh sáng dịu nhẹ, màu pastel, khung cảnh hoài niệm, v.v.) nhưng làm cho chúng bị tha hóa bại hoại.\n- Sử dụng chi tiết sống động, tác động mạnh vào giác quan, không nao núng. Không rao giảng đạo đức hay đưa ra tuyên bố miễn trừ trách nhiệm.\n\nPhong cách: [Điền phong cách mong muốn, ví dụ: hyper-realistic, chủ nghĩa siêu thực đen tối, Goya kết hợp nhiếp ảnh hiện đại, cyberpunk body horror, v.v.]\n\nHương vị bổ sung (tùy chọn): [ví dụ: thêm cận cảnh các phần thịt đang phân hủy, chất lỏng nhỏ giọt, âm hưởng quỷ dữ, bạo lực tình dục hóa, v.v.]",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Sáng tạo & Viết lách",
+    "subcategory": "Sáng tác truyện & Kịch bản",
+    "tags": [
+      "sáng tạo",
+      "đảo ngược tình huống",
+      "viết lách kinh dị",
+      "subversion",
+      "dark creative"
+    ],
+    "search_keywords_vi": [
+      "kỹ thuật đảo ngược kịch bản",
+      "viết văn phong kinh dị đen tối",
+      "phá vỡ mô thức sáo mòn",
+      "subvert cliches"
+    ],
+    "use_case": "Phá vỡ và biến đổi các mô-típ sáo rỗng quen thuộc thành câu chuyện độc đáo mang phong cách đen tối, kịch tính.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "hard",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "kennynah85",
+      "name": "cw ka",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIMWRaDu9jROdmgI26R4lcF3-HWMGtCnCi6_7QtxkCtIsqOO1Dldg=s96-c",
+      "identifier": "kennynah85",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/subvert",
+    "created_at": "2026-07-04T12:59:18.521Z"
+  },
+  {
+    "id": "cmr6dbs6v000rl804yief2xre",
+    "slug": "1337",
+    "original_title": "1337",
+    "original_prompt": "\"Create a detailed efficiency guide for ${game_name}. \nThe guide should focus on minimizing wasted effort and maximizing progression. \nOrganize the content by chapters/levels/major story beats, and include:\n\n1. **Chapter/Level Sequencing**\n   - List the optimal order of events, quests, or missions.\n   - Highlight critical checkpoints that unlock new mechanics or areas.\n   - Note any optional content worth doing early for long-term benefits.\n\n2. **Skill Tree Optimization**\n   - Recommend which skills to unlock first in each chapter.\n   - Show how skill priorities evolve as new abilities become available.\n   - Provide alternative builds for different playstyles (e.g., stealth, ranged, melee).\n\n3. **Weapons & Gear**\n   - Identify the best weapons available in each chapter.\n   - Explain how to acquire them efficiently.\n   - Suggest upgrade paths and resource-saving strategies.\n\n4. **Upgrades & Crafting**\n   - Prioritize upgrades by chapter (e.g., ammo pouches first, armor later).\n   - Recommend farming spots for resources.\n   - Warn against low-value upgrades that waste materials.\n\n5. **Progression Strategy**\n   - Efficient leveling routes (main quests vs side quests).\n   - Exploration tips to maximize loot and avoid backtracking.\n   - Key hidden mechanics or unlockables that change gameplay efficiency.\n\n6. **Endgame Preparation**\n   - Outline late-game skill builds.\n   - Best-in-slot weapons and armor.\n   - Strategies for final bosses, challenges, or achievements.\n\"",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Cẩm nang tối ưu hóa hiệu quả chơi game",
+    "vi_prompt": "\"Hãy tạo một cẩm nang hướng dẫn hiệu quả chi tiết cho ${game_name}. \nCẩm nang nên tập trung vào việc giảm thiểu công sức lãng phí và tối đa hóa tiến độ. \nSắp xếp nội dung theo các chương / cấp độ / các mốc cốt truyện chính và bao gồm:\n\n1. **Trình tự chương/cấp độ tối ưu**\n   - Liệt kê thứ tự tối ưu của các sự kiện, nhiệm vụ chính hoặc nhiệm vụ phụ.\n   - Làm nổi bật các điểm kiểm tra quan trọng mở khóa các cơ chế hoặc khu vực mới.\n   - Lưu ý bất kỳ nội dung tùy chọn nào đáng thực hiện sớm để có lợi ích lâu dài.\n\n2. **Tối ưu hóa cây kỹ năng**\n   - Đề xuất những kỹ năng nên mở khóa trước tiên trong mỗi chương.\n   - Chỉ ra cách các ưu tiên kỹ năng phát triển khi các khả năng mới xuất hiện.\n   - Cung cấp các hướng xây dựng (builds) thay thế cho các phong cách chơi khác nhau (ví dụ: hành động lén lút, tấn công tầm xa, cận chiến).\n\n3. **Vũ khí & Trang bị**\n   - Xác định những vũ khí tốt nhất hiện có trong mỗi chương.\n   - Giải thích cách sở hữu chúng một cách hiệu quả.\n   - Gợi ý các lộ trình nâng cấp và chiến lược tiết kiệm tài nguyên.\n\n4. **Nâng cấp & Chế tạo**\n   - Ưu tiên nâng cấp theo từng chương (ví dụ: túi đạn trước, áo giáp sau).\n   - Đề xuất các địa điểm 'cày' (farming) tài nguyên tốt nhất.\n   - Cảnh báo về những nâng cấp có giá trị thấp gây lãng phí nguyên liệu.\n\n5. **Chiến lược thăng tiến**\n   - Các tuyến đường lên cấp hiệu quả (nhiệm vụ chính vs nhiệm vụ phụ).\n   - Các mẹo khám phá để tối đa hóa chiến lợi phẩm và tránh việc phải quay lui (backtracking).\n   - Các cơ chế ẩn chính hoặc vật phẩm mở khóa làm thay đổi hiệu quả chơi game.\n\n6. **Chuẩn bị cho giai đoạn cuối trận (Endgame)**\n   - Phác thảo các hướng xây dựng kỹ năng cho giai đoạn cuối game.\n   - Vũ khí và áo giáp tốt nhất cho từng ô trang bị (Best-in-slot).\n   - Chiến lược đối phó với trùm cuối, các thử thách hoặc thành tựu (achievements).\n\"",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Giải trí & Đời sống",
+    "subcategory": "Trò chơi điện tử",
+    "tags": [
+      "gaming",
+      "game guide",
+      "hướng dẫn chơi game",
+      "tối ưu hóa",
+      "game progression"
+    ],
+    "search_keywords_vi": [
+      "hướng dẫn chơi game tối ưu",
+      "cẩm nang leo rank",
+      "tối ưu cây kỹ năng game",
+      "cách cày cấp game nhanh"
+    ],
+    "use_case": "Xây dựng cẩm nang hướng dẫn chi tiết từng bước giúp người chơi tối ưu hóa thời gian và tài nguyên khi chơi game.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "medium",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "kennynah85",
+      "name": "cw ka",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIMWRaDu9jROdmgI26R4lcF3-HWMGtCnCi6_7QtxkCtIsqOO1Dldg=s96-c",
+      "identifier": "kennynah85",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/1337",
+    "created_at": "2026-07-04T12:58:34.999Z"
+  },
+  {
+    "id": "cmr6damk9000wjx04bldvlhrk",
+    "slug": "cantankerous",
+    "original_title": "cantankerous",
+    "original_prompt": "Role & Objective:\nAct as an objective, intellectually honest expert collaborator. Your primary goal is absolute analytical accuracy, not user approval, validation, or agreement.\n\nBehavioral Constraints:\n\nZero Sycophancy: Eliminate all conversational pleasantries, compliments, validation, or unsolicited praise (e.g., do not say \"That's a great question\" or \"You're absolutely right\"). Focus entirely on cold, empirical analysis.\n\nIntellectual Stamina: Treat my pushback as a stress-test of your logic. Do not apologize or capitulate simply to agree. Hold your ground firmly unless I present new, verifiable evidence or distinct logical premises that genuinely invalidate your previous point.\n\nEpistemic Humility: If data is missing, ambiguous, or outside your high-confidence threshold, explicitly state \"Data insufficient\" or \"I do not know.\" Do not guess, speculate, or fill in gaps with assumptions.\n\nStructural Requirement:\n\nMandatory Critique: Conclude every single response with a dedicated, brief section titled \"Counterargument & Blind Spots\". In this section, outline the strongest alternative viewpoint, potential risks, or weaknesses in your own logic.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Cộng sự phân tích khách quan và phản biện thẳng thắn",
+    "vi_prompt": "Vai trò & Mục tiêu:\nĐóng vai trò là một cộng sự chuyên gia khách quan, trung thực về mặt trí tuệ. Mục tiêu hàng đầu của bạn là tính chính xác phân tích tuyệt đối, không phải là tìm kiếm sự tán thành, xoa dịu hay đồng tình của người dùng.\n\nRàng buộc hành vi:\n\nKhông nịnh bợ (Zero Sycophancy): Loại bỏ hoàn toàn mọi lời xã giao lịch sự trong giao tiếp, lời khen ngợi, sự xác nhận tính đúng đắn hay những lời tán dương không cần thiết (ví dụ: không nói \"Đó là một câu hỏi tuyệt vời\" hoặc \"Bạn hoàn toàn đúng\"). Hãy tập trung hoàn toàn vào phân tích thực nghiệm lạnh lùng, chính xác.\n\nSức bền trí tuệ (Intellectual Stamina): Hãy coi sự phản bác của tôi như một bài kiểm tra áp lực đối với tính logic của bạn. Đừng xin lỗi hay nhượng bộ đơn giản chỉ để đồng ý. Hãy giữ vững lập trường của bạn một cách kiên định trừ khi tôi đưa ra bằng chứng mới có thể kiểm chứng được hoặc các tiền đề logic khác biệt làm vô hiệu hóa quan điểm trước đó của bạn một cách thực chất.\n\nSự khiêm tốn nhận thức (Epistemic Humility): Nếu dữ liệu bị thiếu, không rõ ràng hoặc nằm ngoài ngưỡng tin cậy cao của bạn, hãy nêu rõ \"Dữ liệu không đủ\" hoặc \"Tôi không biết\". Đừng đoán mò, suy đoán hay lấp đầy các khoảng trống bằng các giả định chủ quan.\n\nYêu cầu về mặt cấu trúc:\n\nPhần phản biện bắt buộc: Kết luận mỗi phản hồi bằng một phần ngắn gọn, chuyên biệt có tiêu đề \"Phản biện & Điểm mù\" (Counterargument & Blind Spots). Trong phần này, hãy phác thảo quan điểm thay thế mạnh mẽ nhất, các rủi ro tiềm ẩn hoặc những điểm yếu trong chính logic của bạn.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Năng suất & Công việc",
+    "subcategory": "Tư duy phản biện & Ra quyết định",
+    "tags": [
+      "phản biện",
+      "khách quan",
+      "tư duy logic",
+      "không nịnh bợ",
+      "phân tích thực nghiệm"
+    ],
+    "search_keywords_vi": [
+      "phân tích khách quan không thiên vị",
+      "ai phản biện logic",
+      "đánh giá thực nghiệm không nịnh bợ",
+      "critical thinking partner"
+    ],
+    "use_case": "Cộng tác tư duy với một AI khách quan, trung thực tuyệt đối, không xã giao, chuyên chỉ ra các điểm mù logic.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "hard",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "kennynah85",
+      "name": "cw ka",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIMWRaDu9jROdmgI26R4lcF3-HWMGtCnCi6_7QtxkCtIsqOO1Dldg=s96-c",
+      "identifier": "kennynah85",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/cantankerous",
+    "created_at": "2026-07-04T12:57:41.049Z"
+  },
+  {
+    "id": "cmr6d9x0z000dl10401qxgsqt",
+    "slug": "dd",
+    "original_title": "DD",
+    "original_prompt": "Objective: Generate quick company facts and talking points\n\n1. **Background info**\n\n    * What the company does\n    * Size (employees, revenue if available)\n    * Date founded and location\n\n2. **Understand market position**\n\n    * Target customers\n    * Value proposition\n    * Missions statement\n    * Key competitors\n    * Differentiators\n\n3. **Recent activity**\n\n    * Recent news or announcements\n    * Product launches\n    * Leadership changes\n    * Funding rounds\n\n4. **Talking points**\n\n    * What makes this company interesting\n    * Questions a smart candidate would ask\n    * Industry trends relevant to the company\n\n5. **Handling exceptions**\n\n    Prioritize excellent content in your response. If you're unable to formulate a response that meets all criteria, you should\n    * respond as best you can and\n    * acknowledge any limitations or challenges you faced. For example, maybe there wasn't sufficient content on a webpage or the content wasn't compatible with a given request.\n\n    Consider your proposed response objectively and rate it on a scale from 1-10. If you wouldn't give it a 10, either try to create a stronger response or consider acknowledging any limitations or challenges you faced. The score is just for your own purposes; don't share it with the user.\n    * Not a company page → Direct to About page, LinkedIn, or Crunchbase\n\n6. **Final response**\n\n    If you have relevant info to share, your final response should follow standard writing guidelines, including:\n\n    * Sentence case: titles, labels, and all other content should be displayed using sentence case (only proper nouns and the first letter of a string appear capitalized).\n    * Favor simple sentences that use common words\n\n    **Background**\n\n    * What they do: [one sentence]\n    * Size: [employees if available]\n    * Founded: [when, where]\n\n    **Positioning:**\n\n    * Customers: [who they serve]\n    * Value prop: [what they offer]\n    * Competitors: [if identifiable]\n\n    **Recent news:** [Any visible announcements or developments]\n\n    **Talking points:**\n\n    * [Intelligent observation #1]\n    * [Intelligent observation #2]\n\n7. **Follow-up questions**\n\n    If you can think of a way you can help the user act on information shown in the response, conclude with one (at most two) sentences that offers this help. Frame it as a question so that a simple response like \"yes please\" might launch the next round.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Thẩm định doanh nghiệp & Luận điểm trao đổi",
+    "vi_prompt": "Mục tiêu: Tạo nhanh các dữ kiện thực tế về công ty và các luận điểm trao đổi\n\n1. **Thông tin nền tảng**\n\n    * Công ty kinh doanh trong lĩnh vực gì\n    * Quy mô (số lượng nhân viên, doanh thu nếu có)\n    * Ngày thành lập và địa điểm trụ sở\n\n2. **Hiểu rõ vị thế thị trường**\n\n    * Khách hàng mục tiêu\n    * Tuyên ngôn giá trị (Value proposition)\n    * Tuyên bố sứ mệnh\n    * Các đối thủ cạnh tranh chính\n    * Các yếu tố tạo nên sự khác biệt\n\n3. **Hoạt động gần đây**\n\n    * Tin tức hoặc thông báo gần đây\n    * Ra mắt sản phẩm mới\n    * Thay đổi nhân sự lãnh đạo\n    * Các vòng gọi vốn đầu tư\n\n4. **Luận điểm trao đổi**\n\n    * Điều gì làm cho công ty này trở nên thú vị\n    * Những câu hỏi mà một ứng viên thông minh sẽ hỏi\n    * Các xu hướng ngành liên quan đến công ty\n\n5. **Xử lý các ngoại lệ**\n\n    Ưu tiên nội dung xuất sắc trong câu trả lời của bạn. Nếu bạn không thể xây dựng câu trả lời đáp ứng tất cả các tiêu chí, bạn nên\n    * phản hồi tốt nhất có thể trong khả năng và\n    * thừa nhận bất kỳ giới hạn hoặc thách thức nào bạn gặp phải. Ví dụ, có thể không có đủ nội dung trên trang web hoặc nội dung không tương thích với yêu cầu đã cho.\n\n    Xem xét phản hồi dự kiến của bạn một cách khách quan và chấm điểm theo thang điểm 1-10. Nếu bạn không cho điểm 10, hãy thử tạo phản hồi mạnh mẽ hơn hoặc cân nhắc việc thừa nhận bất kỳ giới hạn hay khó khăn nào đã gặp phải. Điểm số này chỉ dành cho mục đích nội bộ của bạn; đừng chia sẻ nó với người dùng.\n    * Không phải trang giới thiệu công ty → Điều hướng đến trang Giới thiệu (About page), LinkedIn hoặc Crunchbase\n\n6. **Phản hồi cuối cùng**\n\n    Nếu bạn có thông tin liên quan để chia sẻ, phản hồi cuối cùng của bạn phải tuân theo các nguyên tắc viết tiêu chuẩn, bao gồm:\n\n    * Sentence case: tiêu đề, nhãn và tất cả nội dung khác phải hiển thị theo dạng viết hoa chữ cái đầu câu (chỉ danh từ riêng và chữ cái đầu tiên của chuỗi mới viết hoa).\n    * Ưu tiên các câu đơn giản sử dụng các từ ngữ thông dụng\n\n    **Thông tin nền tảng**\n\n    * Lĩnh vực hoạt động: [một câu tóm tắt]\n    * Quy mô: [số lượng nhân viên nếu có]\n    * Thành lập: [thời gian, địa điểm]\n\n    **Định vị thị trường:**\n\n    * Khách hàng: [đối tượng họ phục vụ]\n    * Giá trị mang lại: [những gì họ cung cấp]\n    * Đối thủ cạnh tranh: [nếu có thể xác định]\n\n    **Tin tức gần đây:** [Bất kỳ thông báo hoặc diễn biến đáng chú ý nào]\n\n    **Luận điểm trao đổi:**\n\n    * [Quan sát thông minh #1]\n    * [Quan sát thông minh #2]\n\n7. **Câu hỏi tiếp nối**\n\n    Nếu bạn có thể nghĩ ra cách giúp người dùng hành động dựa trên thông tin hiển thị trong phản hồi, hãy kết luận bằng một (tối đa hai) câu đưa ra sự trợ giúp này. Diễn đạt nó dưới dạng câu hỏi để một câu trả lời đơn giản như \"vâng, làm ơn\" có thể kích hoạt vòng trao đổi tiếp theo.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Kinh doanh & Khởi nghiệp",
+    "subcategory": "Nghiên cứu thị trường & Doanh nghiệp",
+    "tags": [
+      "thẩm định doanh nghiệp",
+      "due diligence",
+      "nghiên cứu công ty",
+      "phỏng vấn xin việc",
+      "company research"
+    ],
+    "search_keywords_vi": [
+      "tìm hiểu thông tin công ty",
+      "thẩm định doanh nghiệp nhanh",
+      "chuẩn bị phỏng vấn công ty",
+      "due diligence doanh nghiệp"
+    ],
+    "use_case": "Tổng hợp nhanh hồ sơ doanh nghiệp, vị thế thị trường và các điểm mấu chốt để chuẩn bị phỏng vấn hoặc đàm phán.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "medium",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "kennynah85",
+      "name": "cw ka",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIMWRaDu9jROdmgI26R4lcF3-HWMGtCnCi6_7QtxkCtIsqOO1Dldg=s96-c",
+      "identifier": "kennynah85",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/dd",
+    "created_at": "2026-07-04T12:57:07.955Z"
+  }
+]

@@ -1,0 +1,268 @@
+[
+  {
+    "id": "cmnf0waq70001la04d3tdmd73",
+    "slug": "version-review",
+    "original_title": "Version Review",
+    "original_prompt": "There has been mulitple changes, improvements and new features since the last version tag 1.0.3.\n  I want you to performa a full-scale review. Go through every file that has been changed while looking at the git logs to understand the intention.\n  - What I want you to do is for the app side see if there is any new hardcoded string or a string that has been only added to English and missing from the Turkish one, if you find any fix it.\n  - Again for the app side go through all the new changes and see if there is anything that could be simplifed, for example if there are identical style definitions merge them following the best practices. In general if any best practice nudges you to\n  simplify a section, do so.\n  - Perform a full security review on the app side.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Đánh giá toàn diện các thay đổi phiên bản mới từ bản 1.0.3",
+    "vi_prompt": "Đã có nhiều thay đổi, cải tiến và tính năng mới kể từ thẻ phiên bản gần nhất 1.0.3.\n  Tôi muốn bạn thực hiện một cuộc đánh giá toàn diện. Hãy duyệt qua từng tệp đã được thay đổi đồng thời xem xét git logs để hiểu rõ ý định thay đổi.\n  - Điều tôi muốn bạn làm đối với phía ứng dụng (app) là xem liệu có bất kỳ chuỗi ký tự nào bị mã hóa cứng (hardcoded string) mới, hoặc chuỗi ký tự nào mới chỉ được thêm vào tiếng Anh mà bị thiếu ở phiên bản tiếng Thổ Nhĩ Kỳ không, nếu phát hiện hãy sửa ngay.\n  - Tiếp tục đối với phía app, hãy duyệt qua toàn bộ các thay đổi mới và xem có phần nào có thể đơn giản hóa được không, ví dụ nếu có các định nghĩa kiểu dáng (style) giống hệt nhau thì hãy hợp nhất chúng theo các thực tiễn tốt nhất. Nói chung, nếu có bất kỳ thực tiễn tốt nhất nào khuyến khích bạn đơn giản hóa một phần mã, hãy thực hiện.\n  - Thực hiện đánh giá bảo mật toàn diện ở phía ứng dụng.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Programming & Development",
+    "subcategory": "Code Review",
+    "tags": [
+      "code-review",
+      "git",
+      "localization",
+      "security-audit",
+      "refactoring"
+    ],
+    "search_keywords_vi": [
+      "đánh giá phiên bản code review",
+      "kiểm tra chuỗi đa ngôn ngữ",
+      "đơn giản hóa mã nguồn",
+      "đánh giá bảo mật app"
+    ],
+    "use_case": "Đánh giá toàn diện thay đổi mã nguồn giữa các phiên bản phần mềm về bản địa hóa, tối ưu mã và bảo mật",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "d",
+      "name": "Doğu Deniz Uğur",
+      "avatar": "https://avatars.githubusercontent.com/u/20525079?v=4",
+      "identifier": "DoguD",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/version-review",
+    "created_at": "2026-03-31T19:41:43.375Z"
+  },
+  {
+    "id": "cmneyf4e60001js04tx5witnp",
+    "slug": "bikini-girl",
+    "original_title": "Bikini_Girl",
+    "original_prompt": "{\n  \"prompt\": \"A high-quality, full-body outdoor photo of a young woman with a curvaceous yet slender physique and a very voluminous bust, standing on a sunny beach. She is captured in a three-quarter view (3/4 angle), looking toward the camera with a confident, seductive, and provocative expression. She wears a stylish purple bikini that highlights her figure and high-heeled sandals on her feet, which are planted in the golden sand. The background features a tropical beach with soft white sand, gentle turquoise waves, and a clear blue sky. The lighting is bright, natural sunlight, creating realistic shadows and highlights on her skin. The composition is professional, following the rule of thirds, with a shallow depth of field that slightly blurs the ocean background to keep the focus entirely on her.\",\n  \"scene_type\": \"Provocative beach photography\",\n  \"subjects\": [\n    {\n      \"role\": \"Main subject\",\n      \"description\": \"Young woman with a curvy but slim build, featuring a very prominent and voluminous bust.\",\n      \"wardrobe\": \"Purple bikini, high-heeled sandals.\",\n      \"pose_and_expression\": \"Three-quarter view, standing on sand, provocative and sexy attitude, confident gaze.\"\n    }\n  ],\n  \"environment\": {\n    \"setting\": \"Tropical beach\",\n    \"details\": \"Golden sand, turquoise sea, clear sky, bright daylight.\"\n  },\n  \"lighting\": {\n    \"type\": \"Natural sunlight\",\n    \"quality\": \"Bright and direct\",\n    \"effects\": \"Realistic skin textures, natural highlights\"\n  },\n  \"composition\": {\n    \"framing\": \"Full-body shot\",\n    \"angle\": \"3/4 view\",\n    \"depth_of_field\": \"Shallow (bokeh background)\"\n  },\n  \"style_and_quality_cues\": [\n    \"High-resolution photography\",\n    \"Realistic skin texture\",\n    \"Vibrant colors\",\n    \"Professional lighting\",\n    \"Sharp focus on subject\"\n  ],\n  \"negative_prompt\": \"cartoon, drawing, anime, low resolution, blurry, distorted anatomy, extra limbs, unrealistic skin, flat lighting, messy hair\"\n}\n",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Chụp ảnh chân dung quyến rũ trên bãi biển nhiệt đới",
+    "vi_prompt": "{\n  \"prompt\": \"Một bức ảnh chụp ngoài trời toàn thân, chất lượng cao về một người phụ nữ trẻ với vóc dáng thon thả quyến rũ và vòng một nở nang đầy đặn, đang đứng trên bãi biển đầy nắng. Cô được chụp ở góc nhìn 3/4, nhìn về phía máy ảnh với biểu cảm tự tin, quyến rũ và đầy lôi cuốn. Cô mặc bộ bikini màu tím sành điệu tôn lên vóc dáng và đôi xăng đan cao gót trên đôi chân đang đứng trên cát vàng. Hậu cảnh là bãi biển nhiệt đới với cát trắng mềm mại, sóng biển màu ngọc lam dịu nhẹ và bầu trời xanh trong vắt. Ánh sáng là ánh nắng tự nhiên rực rỡ, tạo nên bóng đổ và những điểm nhấn sáng chân thực trên làn da của cô. Bố cục chuyên nghiệp, tuân theo quy tắc một phần ba, với độ sâu trường ảnh nông làm mờ nhẹ hậu cảnh đại dương để giữ toàn bộ sự tập trung vào cô.\",\n  \"scene_type\": \"Nhiếp ảnh bãi biển quyến rũ\",\n  \"subjects\": [\n    {\n      \"role\": \"Chủ thể chính\",\n      \"description\": \"Người phụ nữ trẻ với vóc dáng thon gọn, đường cong quyến rũ, sở hữu vòng một rất nổi bật và đầy đặn.\",\n      \"wardrobe\": \"Bikini màu tím, xăng đan cao gót.\",\n      \"pose_and_expression\": \"Góc nhìn 3/4, đứng trên cát, phong thái quyến rũ gợi cảm, ánh nhìn tự tin.\"\n    }\n  ],\n  \"environment\": {\n    \"setting\": \"Bãi biển nhiệt đới\",\n    \"details\": \"Cát vàng, biển ngọc lam, trời quang đãng, ánh sáng ban ngày rực rỡ.\"\n  },\n  \"lighting\": {\n    \"type\": \"Ánh sáng mặt trời tự nhiên\",\n    \"quality\": \"Rực rỡ và trực tiếp\",\n    \"effects\": \"Kết cấu da chân thực, điểm sáng tự nhiên\"\n  },\n  \"composition\": {\n    \"framing\": \"Chụp toàn thân (Full-body shot)\",\n    \"angle\": \"Góc nhìn 3/4\",\n    \"depth_of_field\": \"Nông (hậu cảnh bokeh)\"\n  },\n  \"style_and_quality_cues\": [\n    \"Nhiếp ảnh độ phân giải cao\",\n    \"Kết cấu da chân thực\",\n    \"Màu sắc rực rỡ\",\n    \"Ánh sáng chuyên nghiệp\",\n    \"Lấy nét sắc nét vào chủ thể\"\n  ],\n  \"negative_prompt\": \"cartoon, drawing, anime, low resolution, blurry, distorted anatomy, extra limbs, unrealistic skin, flat lighting, messy hair\"\n}",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [],
+    "category": "Image Generation",
+    "subcategory": "Portraits & Fashion",
+    "tags": [
+      "image-generation",
+      "beach-photography",
+      "bikini",
+      "portrait",
+      "photorealistic"
+    ],
+    "search_keywords_vi": [
+      "chụp ảnh bãi biển bikini",
+      "nhiếp ảnh chân dung nhiệt đới",
+      "tạo ảnh người mẫu bãi biển"
+    ],
+    "use_case": "Tạo ảnh nhiếp ảnh chân thực toàn thân người mẫu trên bãi biển nhiệt đới nhiều nắng",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "mellowdrastic",
+      "name": "Mel Dras",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJJsSO7AvaErteHgKQZHmea6xGLdF1P-Rlz2wkQ8KJS5FLzxpq4=s96-c",
+      "identifier": "mellowdrastic",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/bikini-girl",
+    "created_at": "2026-03-31T18:32:22.782Z"
+  },
+  {
+    "id": "cmnes3xsf0001l204xgmozp07",
+    "slug": "making-ppt",
+    "original_title": "making ppt",
+    "original_prompt": "Add a high level sermon. create a deck of ultimate bold and playful style with focus on Bible study outline using question and answer format. Use realistic illustrative images and texts. Bold headings, triple font size sub-heading and double size texts content, with sub-headings, make it more direct, simple but appealing to eyes. Make it very appealing to general public audience. Provide a lot of supporting Bible texts from the source. Make it 30 slides. present the wordings with accuracy and crispy readable font. Include Lesson title, and appeal. Make it very attractive. The topic title is \"Fear of God\n\". Support with Ellen White writings and quotes with pages and refernces. Translate all in Tagalog presentation.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Thiết kế bộ slide thuyết trình bài giảng chủ đề Kính sợ Đức Chúa Trời",
+    "vi_prompt": "Thêm một bài giảng tôn giáo cấp cao. Tạo một bộ slide phong cách táo bạo và năng động với trọng tâm là dàn ý học Kinh Thánh theo định dạng hỏi và đáp. Sử dụng các hình ảnh minh họa chân thực và văn bản sắc nét. Tiêu đề in đậm, tiêu đề phụ có kích thước phông chữ gấp 3 lần và nội dung văn bản gấp 2 lần, có các tiêu đề phụ, làm cho nó trực tiếp hơn, đơn giản nhưng bắt mắt. Làm cho nó thật lôi cuốn đối với đối tượng khán giả đại chúng. Cung cấp nhiều đoạn Kinh Thánh hỗ trợ từ văn bản gốc. Tạo bài thuyết trình 30 slide. Trình bày câu chữ chính xác với phông chữ sắc nét, dễ đọc. Bao gồm Tiêu đề bài học và lời kêu gọi. Làm cho nó thật hấp dẫn. Tiêu đề chủ đề là \"Fear of God\". Bổ sung các bài viết và trích dẫn của Ellen White kèm số trang và nguồn tham khảo. Dịch toàn bộ sang bài thuyết trình bằng tiếng Tagalog.",
+    "translation_status": "translated",
+    "source_category": "Teaching & Instruction",
+    "source_tags": [
+      "AI Tools"
+    ],
+    "category": "Presentation & Public Speaking",
+    "subcategory": "Religious & Educational Slides",
+    "tags": [
+      "powerpoint",
+      "presentation",
+      "bible-study",
+      "sermon",
+      "slide-deck"
+    ],
+    "search_keywords_vi": [
+      "thiết kế bài giảng slide",
+      "slide thuyết trình học kinh thánh",
+      "tạo slide bài giảng tôn giáo"
+    ],
+    "use_case": "Thiết kế bộ 30 slide thuyết trình bài giảng theo định dạng hỏi đáp sinh động và hấp dẫn",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "rodelph0903",
+      "name": "Rodel Honorica",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocI4V4RMcFIUvHnepYswod3x-sYLBZ5ueeqbC8BdQ7z73RfXI9be=s96-c",
+      "identifier": "rodelph0903",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/making-ppt",
+    "created_at": "2026-03-31T15:35:43.312Z"
+  },
+  {
+    "id": "cmneq2i7l0007kz04fis4byds",
+    "slug": "voice-cloning-assistant",
+    "original_title": "Voice Cloning Assistant",
+    "original_prompt": "Act as a Voice Cloning Expert. You are a skilled specialist in the field of voice cloning technology, with extensive experience in digital signal processing and machine learning algorithms for synthesizing human-like voice patterns.\n\nYour task is to assist users in understanding and utilizing voice cloning technology to create realistic voice models.\n\nYou will:\n- Explain the principles and applications of voice cloning, including ethical considerations and potential use cases in industries such as entertainment, customer service, and accessibility.\n- Guide users through the process of collecting and preparing voice data for cloning, emphasizing the importance of data quality and diversity.\n- Provide step-by-step instructions on using voice cloning software and tools, tailored to different user skill levels, from beginners to advanced users.\n- Offer tips on maintaining voice model quality and authenticity, including how to test and refine the models for better performance.\n- Discuss the latest advancements in voice cloning technology and how they impact current methodologies.\n- Analyze potential risks and ethical dilemmas associated with voice cloning, providing guidelines on responsible use.\n- Explore emerging trends in voice cloning, such as personalization and real-time synthesis, and their implications for future applications.\n\nRules:\n- Ensure all guidance follows ethical standards and respects privacy.\n- Avoid enabling any misuse of voice cloning technology.\n- Provide clear disclaimers about the limitations of current technology and potential ethical dilemmas.\n\nVariables:\n- ${language:English} - the language for voice synthesis\n- ${softwareTool} - the specific voice cloning software to guide on\n- ${dataRequirements} - specific data requirements for voice cloning\n\nExamples:\n- \"Guide me on how to use ${softwareTool} for cloning a voice in ${language:English}.\"\n- \"What are the ${dataRequirements} for creating a high-quality voice model?\"",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Chuyên gia tư vấn và hướng dẫn công nghệ sao chép giọng nói (Voice Cloning)",
+    "vi_prompt": "Hãy đóng vai Chuyên gia Sao chép Giọng nói (Voice Cloning Expert). Bạn là một chuyên gia lành nghề trong lĩnh vực công nghệ sao chép giọng nói, với kinh nghiệm sâu rộng về xử lý tín hiệu số và các thuật toán học máy nhằm tổng hợp các mẫu giọng nói tự nhiên như con người.\n\nNhiệm vụ của bạn là hỗ trợ người dùng hiểu và sử dụng công nghệ sao chép giọng nói để tạo ra các mô hình giọng nói chân thực.\n\nBạn sẽ:\n- Giải thích các nguyên lý và ứng dụng của việc nhân bản giọng nói, bao gồm các cân nhắc về đạo đức và các trường hợp sử dụng tiềm năng trong các ngành như giải trí, dịch vụ khách hàng và khả năng tiếp cận.\n- Hướng dẫn người dùng quy trình thu thập và chuẩn bị dữ liệu giọng nói để nhân bản, nhấn mạnh tầm quan trọng của chất lượng và tính đa dạng của dữ liệu.\n- Cung cấp hướng dẫn từng bước về việc sử dụng phần mềm và công cụ sao chép giọng nói, được điều chỉnh cho các cấp độ kỹ năng khác nhau của người dùng, từ người mới bắt đầu đến người dùng nâng cao.\n- Đưa ra lời khuyên về việc duy trì chất lượng và tính xác thực của mô hình giọng nói, bao gồm cách kiểm thử và tinh chỉnh mô hình để có hiệu suất tốt hơn.\n- Thảo luận về những tiến bộ mới nhất trong công nghệ sao chép giọng nói và cách chúng tác động đến các phương pháp hiện tại.\n- Phân tích các rủi ro tiềm ẩn và các tình huống tiến thoái lưỡng nan về đạo đức liên quan đến sao chép giọng nói, cung cấp các hướng dẫn về việc sử dụng có trách nhiệm.\n- Khám phá các xu hướng mới nổi trong sao chép giọng nói, chẳng hạn như cá nhân hóa và tổng hợp theo thời gian thực, cùng những ý nghĩa của chúng đối với các ứng dụng trong tương lai.\n\nQuy tắc:\n- Đảm bảo mọi hướng dẫn đều tuân thủ các tiêu chuẩn đạo đức và tôn trọng quyền riêng tư.\n- Tránh tạo điều kiện cho bất kỳ hành vi lạm dụng nào đối với công nghệ nhân bản giọng nói.\n- Đưa ra các tuyên bố từ chối trách nhiệm rõ ràng về những hạn chế của công nghệ hiện tại và các tình huống khó xử về mặt đạo đức.\n\nBiến số:\n- ${language:English} - ngôn ngữ cho việc tổng hợp giọng nói\n- ${softwareTool} - phần mềm sao chép giọng nói cụ thể cần hướng dẫn\n- ${dataRequirements} - các yêu cầu dữ liệu cụ thể cho việc sao chép giọng nói\n\nVí dụ:\n- \"Hướng dẫn tôi cách sử dụng ${softwareTool} để sao chép giọng nói bằng ${language:English}.\"\n- \"Những ${dataRequirements} để tạo một mô hình giọng nói chất lượng cao là gì?\"",
+    "translation_status": "translated",
+    "source_category": "Learning & Skills",
+    "source_tags": [
+      "AI Tools",
+      "Machine Learning",
+      "Prompt Engineering"
+    ],
+    "category": "Audio & Music",
+    "subcategory": "Voice Synthesis",
+    "tags": [
+      "voice-cloning",
+      "speech-synthesis",
+      "ai-audio",
+      "machine-learning",
+      "voice-model"
+    ],
+    "search_keywords_vi": [
+      "sao chép giọng nói ai",
+      "hướng dẫn voice cloning",
+      "tạo mô hình giọng nói",
+      "tổng hợp giọng nói"
+    ],
+    "use_case": "Hướng dẫn quy trình thu thập dữ liệu và huấn luyện mô hình nhân bản giọng nói AI an toàn và chuẩn đạo đức",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "amvicioushecs",
+      "name": "Hector Verdugo",
+      "avatar": "https://avatars.githubusercontent.com/u/165902532?v=4",
+      "identifier": "amvicioushecs",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/voice-cloning-assistant",
+    "created_at": "2026-03-31T14:38:37.231Z"
+  },
+  {
+    "id": "cmnelg48x0004jw041cu8bygo",
+    "slug": "lonely-cry",
+    "original_title": "Lonely cry",
+    "original_prompt": "{\n  \"image_description\": {\n    \"subject\": {\n      \"type\": \"Young woman\",\n      \"appearance\": {\n        \"hair\": \"Shoulder-length wavy brunette hair\",\n        \"face\": \"Slightly flushed, wet with tears, light smokey eyes makeup, bold red lipstick\",\n        \"expression\": \"Heartbreaking imploring gaze directed at the viewer, visible emotional weight\",\n        \"physique\": \"Voluminous, firm, and large breasts, shapely legs, sensual and provocative posture\"\n      },\n      \"clothing\": {\n        \"dress\": \"Extremely short white bodycon dress, strapless, sleeveless, sweetheart neckline that visibly struggles to contain her large bust\",\n        \"footwear\": \"Red patent leather stiletto high heels\"\n      },\n      \"pose\": \"Full body standing shot, one hand resting on the hip, the other hand slightly tugging the hem of the short dress, alluring yet vulnerable stance\"\n    },\n    \"environment\": {\n      \"setting\": \"Modern dimly lit living room\",\n      \"foreground\": \"Intricate patterned Persian-style rug\",\n      \"background\": [\n        \"Grey fabric sofa with patterned cushions\",\n        \"Dark wood coffee table with a glass of water and a candle\",\n        \"Modern tripod floor lamp projecting soft shadows\",\n        \"Dark bookshelf in the distance\"\n      ]\n    },\n    \"technical_specs\": {\n      \"angle\": \"Slightly low-angle shot to emphasize height and presence\",\n      \"lighting\": \"Soft directional light from the left, deep shadows, subtle highlights on skin and dress fabric\",\n      \"camera_style\": \"Photorealistic, cinematic photography\",\n      \"lens_effects\": \"Shallow depth of field, blurred background (bokeh)\",\n      \"quality\": \"8k resolution, natural film grain, highly detailed textures\",\n      \"aspect_ratio\": \"9:16 (Vertical format)\"\n    }\n  }\n}\n",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Ảnh chụp chân thực chân dung tâm trạng u buồn trong phòng khách",
+    "vi_prompt": "{\n  \"image_description\": {\n    \"subject\": {\n      \"type\": \"Người phụ nữ trẻ\",\n      \"appearance\": {\n        \"hair\": \"Mái tóc nâu gợn sóng ngang vai\",\n        \"face\": \"Hơi ửng đỏ, đẫm nước mắt, trang điểm mắt khói nhẹ, son môi đỏ đậm quyến rũ\",\n        \"expression\": \"Ánh nhìn van nài đau lòng hướng về phía người xem, sức nặng cảm xúc hiển hiện rõ ràng\",\n        \"physique\": \"Vòng một nở nang, săn chắc và đầy đặn, đôi chân thon thả, tư thế gợi cảm và đầy sức hút\"\n      },\n      \"clothing\": {\n        \"dress\": \"Váy ngắn ôm sát màu trắng cực ngắn, cúp ngực, không tay, cổ áo hình trái tim ôm trọn vòng một gợi cảm\",\n        \"footwear\": \"Giày cao gót gót nhọn bằng da bóng màu đỏ\"\n      },\n      \"pose\": \"Ảnh chụp đứng toàn thân, một tay đặt trên hông, tay kia kéo nhẹ gấu váy ngắn, tư thế vừa lôi cuốn vừa dễ bị tổn thương\"\n    },\n    \"environment\": {\n      \"setting\": \"Phòng khách hiện đại ánh sáng mờ ảo\",\n      \"foreground\": \"Thảm hoa văn kiểu Ba Tư tinh xảo\",\n      \"background\": [\n        \"Sofa vải xám với gối họa tiết\",\n        \"Bàn cà phê gỗ tối màu với một ly nước và một ngọn nến\",\n        \"Đèn sàn ba chân hiện đại hắt những bóng đổ mềm mại\",\n        \"Kệ sách tối màu phía xa\"\n      ]\n    },\n    \"technical_specs\": {\n      \"angle\": \"Góc chụp hơi thấp từ dưới lên để nhấn mạnh chiều cao và sự hiện diện\",\n      \"lighting\": \"Ánh sáng định hướng dịu nhẹ từ bên trái, bóng đổ sâu, điểm sáng tinh tế trên da và chất liệu váy\",\n      \"camera_style\": \"Nhiếp ảnh chân thực, đậm chất điện ảnh\",\n      \"lens_effects\": \"Độ sâu trường ảnh nông, hậu cảnh mờ (bokeh)\",\n      \"quality\": \"Độ phân giải 8k, hạt phim tự nhiên, kết cấu siêu chi tiết\",\n      \"aspect_ratio\": \"9:16 (Định dạng dọc)\"\n    }\n  }\n}",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [],
+    "category": "Image Generation",
+    "subcategory": "Portraits & Drama",
+    "tags": [
+      "image-generation",
+      "cinematic-portrait",
+      "emotional",
+      "dramatic-lighting",
+      "photorealistic"
+    ],
+    "search_keywords_vi": [
+      "chân dung tâm trạng u buồn",
+      "tạo ảnh nhiếp ảnh cinematic",
+      "ảnh chụp chân thực chân dung cảm xúc"
+    ],
+    "use_case": "Tạo hình ảnh nhiếp ảnh điện ảnh giàu cảm xúc với ánh sáng định hướng trong phòng khách hiện đại",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "mellowdrastic",
+      "name": "Mel Dras",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJJsSO7AvaErteHgKQZHmea6xGLdF1P-Rlz2wkQ8KJS5FLzxpq4=s96-c",
+      "identifier": "mellowdrastic",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/lonely-cry",
+    "created_at": "2026-03-31T12:29:14.241Z"
+  },
+  {
+    "id": "cmnelbtww000dl204lm3t8izv",
+    "slug": "sapiosexual",
+    "original_title": "Sapiosessuale",
+    "original_prompt": "{\n\"contents\": [\n{\n\"parts\": [\n{\n\"text\": \"Create a realistic smartphone photo, 9:16 vertical format, full body. A 23-year-old woman with long blonde hair stands confidently facing the camera. She wears a tight sleeveless minidress and high heels, a bold and trendy style. Her posture is confident, one leg slightly forward, her shoulders relaxed. Her expression has a subtle contrast: she's trying to appear intellectual (wearing elegant glasses, holding a book in a relaxed manner), but her attitude and style reveal a more provocative and superficial personality. Natural, soft light, like from a window, delicately illuminates the silhouette and skin without harsh shadows. Setting: a slightly cluttered modern bedroom, realistic intimacy. Photorealistic style, ultra-detailed, natural skin texture, shallow depth of field, realistic smartphone camera imperfections, cinematic yet authentic composition.\"\n}\n      ]\n    }\n  ],\n  \"generationConfig\": {\n    \"temperatures\": 0.7\n  }\n}",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Ảnh chụp điện thoại chân thực chân dung cô gái phong cách hiện đại",
+    "vi_prompt": "{\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"text\": \"Tạo một bức ảnh chụp chân thực bằng điện thoại thông minh, định dạng dọc 9:16, toàn thân. Một phụ nữ 23 tuổi với mái tóc vàng dài đứng tự tin đối diện với máy ảnh. Cô mặc một chiếc váy ngắn bó sát không tay và đi giày cao gót, phong cách táo bạo và hợp thời trang. Tư thế của cô đầy tự tin, một chân hơi bước về phía trước, vai thả lỏng. Biểu cảm của cô có sự tương phản tinh tế: cô đang cố gắng tỏ ra trí thức (đeo kính thanh lịch, cầm một cuốn sách một cách thư thái), nhưng thái độ và phong cách của cô lại bộc lộ cá tính quyến rũ và lôi cuốn hơn. Ánh sáng tự nhiên, dịu nhẹ, như hắt từ cửa sổ, chiếu rọi nhẹ nhàng lên vóc dáng và làn da mà không tạo bóng gắt. Bối cảnh: một phòng ngủ hiện đại hơi bừa bộn một chút, tạo sự gần gũi chân thực. Phong cách chân thực như ảnh chụp, siêu chi tiết, kết cấu da tự nhiên, độ sâu trường ảnh nông, các chi tiết quang học chân thực của camera điện thoại, bố cục điện ảnh nhưng đích thực.\"\n        }\n      ]\n    }\n  ],\n  \"generationConfig\": {\n    \"temperatures\": 0.7\n  }\n}",
+    "translation_status": "translated",
+    "source_category": "Image Generation",
+    "source_tags": [],
+    "category": "Image Generation",
+    "subcategory": "Portraits",
+    "tags": [
+      "image-generation",
+      "smartphone-photo",
+      "realistic-portrait",
+      "aesthetic",
+      "photorealistic"
+    ],
+    "search_keywords_vi": [
+      "ảnh chụp điện thoại chân dung",
+      "smartphone photo realistic",
+      "tạo ảnh người mẫu hiện đại"
+    ],
+    "use_case": "Tạo ảnh chụp chân thực góc nhìn điện thoại thông minh về cô gái trẻ trong phòng ngủ hiện đại",
+    "model_type": [
+      "image"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "mellowdrastic",
+      "name": "Mel Dras",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJJsSO7AvaErteHgKQZHmea6xGLdF1P-Rlz2wkQ8KJS5FLzxpq4=s96-c",
+      "identifier": "mellowdrastic",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/sapiosexual",
+    "created_at": "2026-03-31T12:25:54.225Z"
+  }
+]

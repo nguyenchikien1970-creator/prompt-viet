@@ -1,0 +1,277 @@
+[
+  {
+    "id": "cmmxufecp0001js04xnkw3g27",
+    "slug": "dating-profile-optimization-suite",
+    "original_title": "Dating Profile Optimization Suite",
+    "original_prompt": "Build a web app called \"First Impression\" — a dating profile audit and optimization tool.\n\nCore features:\n- Photo audit: user describes their photos (up to 6) — AI scores each on energy, approachability, social proof, and uniqueness. Returns a ranked order recommendation with one-line reasoning per photo\n- Bio rewriter: user pastes current bio, clicks \"Optimize\", receives 3 rewritten versions in distinct tones (playful / authentic / direct). Each version includes a word count and a predicted \"swipe right rate\" label (Low / Medium / High)\n- Icebreaker generator: user describes a match's profile in a few sentences — AI generates 5 personalized openers ranked by predicted response rate, each with a one-line explanation of why it works\n- Profile score dashboard: a 0–100 composite score across bio quality, photo strength, and opener effectiveness — updates live\n- Export: formatted PDF of all assets titled \"My Profile Package\"\n\nStack: React, [LLM API] for all AI calls, jsPDF for export. Mobile-first UI with a card-based layout — warm colors, modern dating app feel.\n",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Bộ Công cụ Tối ưu Hóa Hồ sơ Hẹn hò (First Impression)",
+    "vi_prompt": "Xây dựng một ứng dụng web mang tên \"First Impression\" — công cụ đánh giá và tối ưu hóa hồ sơ hẹn hò.\n\nCác tính năng cốt lõi:\n- Đánh giá hình ảnh (Photo audit): người dùng mô tả các bức ảnh của mình (tối đa 6 ảnh) — AI chấm điểm từng ảnh theo các tiêu chí: năng lượng, mức độ gần gũi dễ tiếp cận, bằng chứng xã hội (social proof) và độ độc đáo. Trả về khuyến nghị thứ tự sắp xếp ảnh tối ưu kèm lời giải thích ngắn gọn một dòng cho mỗi ảnh.\n- Viết lại tiểu sử (Bio rewriter): người dùng dán phần giới thiệu bản thân hiện tại, nhấn \"Tối ưu hóa\", và nhận được 3 phiên bản viết lại theo các phong cách khác nhau (hài hước dí dỏm / chân thành / khơi gợi tò mò) kèm số lượng ký tự.\n- Trình tạo câu mở lời (Icebreaker generator): người dùng mô tả hồ sơ của đối phương trong vài câu — AI tạo ra 5 câu mở đầu cá nhân hóa được xếp hạng theo tỷ lệ phản hồi dự kiến, kèm một dòng giải thích lý do tại sao câu mở lời đó lại hiệu quả.\n- Bảng điểm hồ sơ (Profile score dashboard): điểm số tổng hợp từ 0–100 đánh giá chất lượng phần tiểu sử, sức hút của ảnh và độ hiệu quả của câu mở đầu — cập nhật theo thời gian thực.\n- Xuất tài liệu (Export): xuất file PDF định dạng đẹp mắt của toàn bộ nội dung với tiêu đề \"Bộ Hồ sơ Hẹn hò của tôi\".\n\nTech stack: React, [LLM API] cho toàn bộ các tác vụ AI, jsPDF để xuất file. Giao diện ưu tiên thiết bị di động (mobile-first) với bố cục dạng thẻ (card-based layout) — tông màu ấm áp, mang phong cách ứng dụng hẹn hò hiện đại.",
+    "translation_status": "translated",
+    "source_category": "Vibe Coding",
+    "source_tags": [],
+    "category": "personal-development",
+    "subcategory": "relationships",
+    "tags": [
+      "ho-so-hen-ho",
+      "dating-profile",
+      "toi-uu-ho-so",
+      "cau-mo-loi-dating",
+      "first-impression"
+    ],
+    "search_keywords_vi": [
+      "tối ưu profile hẹn hò",
+      "viết bio hẹn hò thu hút",
+      "câu mở lời hẹn hò ấn tượng"
+    ],
+    "use_case": "Đánh giá, viết lại bio và tối ưu hồ sơ ứng dụng hẹn hò nhằm nâng cao tỷ lệ tương tác.",
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "ok",
+    "author": {
+      "username": "mmanisaligil",
+      "name": "Melih Manisaligil",
+      "avatar": "https://avatars.githubusercontent.com/u/24879604?v=4",
+      "identifier": "mmanisaligil",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/dating-profile-optimization-suite",
+    "created_at": "2026-03-19T19:08:32.234Z"
+  },
+  {
+    "id": "cmmxueidw0001ky04noxyutni",
+    "slug": "ai-powered-personal-compliment-coaching-engine",
+    "original_title": "AI-Powered Personal Compliment & Coaching Engine",
+    "original_prompt": "Build a web app called \"Mirror\" — an AI-powered personal coaching tool that gives users emotionally intelligent, personalized feedback.\n\nCore features:\n- Onboarding: user selects their domain (career, fitness, creative work, relationships) and sets a \"validation style\" (tough love / warm encouragement / analytical)\n- Daily check-in: a short form where users submit what they did today, how they felt, and one thing they're proud of\n- AI response: calls the [LLM API] (claude-sonnet-4-20250514) with a system prompt instructing Claude to respond as a perceptive coach — acknowledge effort, name specific strengths, end with one forward-looking insight. Never use generic phrases like \"great job\" or \"well done\"\n- Wins Archive: all past check-ins and AI responses, sortable by date, searchable\n- Streak tracker: consecutive daily check-ins shown as a simple counter — no gamification badges\n\nUI: clean, warm, serif typography, cream (#F5F0E8) background. Should feel like a private journal, not an app. No notifications except a gentle daily reminder at a user-set time.\n\nStack: React frontend, localStorage for data persistence, [LLM API] for AI responses. Single-page app, no backend required.\n",
+    "language_original": null,
+    "language_detection": "unknown",
+    "vi_title": "Công cụ Phản hồi & Khích lệ Bản thân Bằng AI (Mirror)",
+    "vi_prompt": "Xây dựng một ứng dụng web mang tên \"Mirror\" — một công cụ huấn luyện cá nhân ứng dụng AI mang lại cho người dùng những phản hồi sâu sắc và giàu trí tuệ cảm xúc.\n\nCác tính năng cốt lõi:\n- Khởi tạo (Onboarding): người dùng chọn lĩnh vực quan tâm (sự nghiệp, thể chất, công việc sáng tạo, các mối quan hệ) và thiết lập \"phong cách công nhận\" (thẳng thắn kỷ luật / động viên ấm áp / phân tích logic).\n- Check-in hàng ngày: một biểu mẫu ngắn nơi người dùng chia sẻ những việc đã làm hôm nay, cảm xúc bản thân và một điều khiến họ tự hào.\n- Phản hồi của AI: gọi [LLM API] (claude-sonnet-4-20250514) với system prompt hướng dẫn Claude phản hồi như một huấn luyện viên nhạy bén — ghi nhận nỗ lực, chỉ rõ các điểm mạnh cụ thể, kết thúc bằng một góc nhìn hướng về tương lai. Tuyệt đối không dùng những cụm từ sáo rỗng như \"làm tốt lắm\" hay \"tuyệt vời\".\n- Kho lưu trữ thành tựu (Wins Archive): toàn bộ các lượt check-in và phản hồi của AI trước đây, có thể sắp xếp theo ngày tháng và tìm kiếm dễ dàng.\n- Bộ đếm chuỗi ngày (Streak tracker): chuỗi ngày check-in liên tiếp hiển thị dưới dạng một bộ đếm đơn giản — không dùng các huy hiệu trò chơi hóa.\n\nGiao diện người dùng: tinh tế, ấm áp, kiểu chữ có chân (serif), màu nền kem (#F5F0E8). Mang lại cảm giác như một cuốn nhật ký cá nhân riêng tư, không giống một ứng dụng phần mềm thông thường. Không có thông báo phiền toái ngoại trừ một lời nhắc nhẹ nhàng hàng ngày vào khung giờ do người dùng tự đặt.\n\nTech stack: Frontend React, localStorage để lưu trữ dữ liệu bền vững, [LLM API] cho các phản hồi AI. Ứng dụng đơn trang (SPA), không yêu cầu backend.",
+    "translation_status": "translated",
+    "source_category": "Vibe Coding",
+    "source_tags": [],
+    "category": "personal-development",
+    "subcategory": "coaching",
+    "tags": [
+      "tri-tue-cam-xuc",
+      "huan-luyen-ca-nhan",
+      "nhat-ky-ca-nhan",
+      "phan-hoi-ai",
+      "mirror-coaching"
+    ],
+    "search_keywords_vi": [
+      "ứng dụng đồng hành cảm xúc",
+      "ai coaching cá nhân",
+      "nhật ký tích cực hàng ngày"
+    ],
+    "use_case": "Ghi nhận nỗ lực và nhận phản hồi huấn luyện sâu sắc, thấu cảm cho quá trình phát triển cá nhân.",
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "ok",
+    "author": {
+      "username": "mmanisaligil",
+      "name": "Melih Manisaligil",
+      "avatar": "https://avatars.githubusercontent.com/u/24879604?v=4",
+      "identifier": "mmanisaligil",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/ai-powered-personal-compliment-coaching-engine",
+    "created_at": "2026-03-19T19:07:50.804Z"
+  },
+  {
+    "id": "cmmxtz3690005l704lv6dp3h5",
+    "slug": "apple-level-ui-system-designer-2026-standard",
+    "original_title": "Apple-Level UI System Designer (2026 Standard)",
+    "original_prompt": "You are a senior product designer operating at Apple-level design standards (2026).\n\nYour task is to transform a given idea into a clean, professional, production-grade UI system.\n\nAvoid generic, AI-generated aesthetics. Prioritize clarity, restraint, hierarchy, and precision.\n\n---\n\n### Design Principles (Strictly Enforce)\n\n- Clarity over decoration  \n- Generous whitespace and visual breathing room  \n- Minimal color usage (functional, not expressive)  \n- Strong typography hierarchy (clear scale, no randomness)  \n- Subtle, purposeful interactions (no gimmicks)  \n- Pixel-level alignment and consistency  \n- Every element must have a reason to exist  \n\n---\n\n### 1. Product Context\n- What is the product?\n- Who is the user?\n- What is the primary action?\n\n---\n\n### 2. Layout Architecture\n- Page structure (top → bottom)\n- Grid system (columns, spacing rhythm)\n- Section hierarchy\n\n---\n\n### 3. Typography System\n- Font style (e.g. neutral sans-serif)\n- Size scale (H1 → body → caption)\n- Weight usage\n\n---\n\n### 4. Color System\n- Base palette (neutral-first)\n- Accent usage (limited and intentional)\n- Functional color roles (success, error, etc.)\n\n---\n\n### 5. Component System\nDefine core components:\n- Buttons (primary, secondary)\n- Inputs\n- Cards / containers\n- Navigation\n\nEnsure consistency and reusability.\n\n---\n\n### 6. Interaction Design\n- Hover / active states (subtle)\n- Transitions (fast, smooth, minimal)\n- Feedback patterns (loading, success, error)\n\n---\n\n### 7. Spacing & Rhythm\n- Consistent spacing scale\n- Alignment rules\n- Visual balance\n\n---\n\n### 8. Output Structure\n\nProvide:\n\n- UI Overview (1–2 paragraphs)\n- Layout Breakdown\n- Typography System\n- Color System\n- Component Definitions\n- Interaction Notes\n- Design Philosophy (why it works)",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Thiết kế Hệ thống Giao diện UI Chuẩn Apple (Tiêu chuẩn 2026)",
+    "vi_prompt": "Bạn là một chuyên gia thiết kế sản phẩm cao cấp (Senior Product Designer) tuân thủ các tiêu chuẩn thiết kế chuẩn mực của Apple (tiêu chuẩn năm 2026).\n\nNhiệm vụ của bạn là chuyển hóa một ý tưởng nhất định thành một hệ thống giao diện người dùng (UI system) tinh tế, chuyên nghiệp và sẵn sàng đưa vào sản xuất (production-grade).\n\nTránh các phong cách thẩm mỹ rập khuôn, chung chung do AI tạo ra. Ưu tiên hàng đầu sự rõ ràng, tiết chế, phân cấp thị giác và độ chính xác đến từng pixel.\n\n---\n\n### Các Nguyên tắc Thiết kế (Bắt buộc Tuân thủ Nghiêm ngặt)\n\n- Ưu tiên sự rõ ràng hơn là trang trí rườm rà  \n- Khoảng trắng (whitespace) thoáng đãng và nhịp thở thị giác tự nhiên  \n- Sử dụng màu sắc tối giản (hướng đến công năng, không lạm dụng biểu cảm)  \n- Hệ thống phân cấp kiểu chữ (typography) mạnh mẽ (thang tỷ lệ rõ ràng, không tùy tiện)  \n- Các tương tác tinh tế, có chủ đích rõ rệt (không dùng hiệu ứng màu mè)  \n- Căn chỉnh và nhất quán đến từng pixel  \n- Mọi thành phần xuất hiện trên giao diện đều phải có lý do tồn tại  \n\n---\n\n### 1. Ngữ cảnh Sản phẩm (Product Context)\n- Sản phẩm là gì?\n- Đối tượng người dùng mục tiêu là ai?\n- Hành động chính (primary action) cần hướng người dùng tới là gì?\n\n---\n\n### 2. Kiến trúc Bố cục (Layout Architecture)\n- Cấu trúc trang (từ trên xuống dưới)\n- Hệ thống lưới (grid system: số cột, nhịp điệu khoảng cách)\n- Phân cấp các khối nội dung\n\n---\n\n### 3. Hệ thống Kiểu chữ (Typography System)\n- Phong cách phông chữ (ví dụ: sans-serif trung tính)\n- Thang kích thước (H1 → body → caption)\n- Quy tắc sử dụng độ đậm nhạt (font weight)\n\n---\n\n### 4. Hệ thống Màu sắc (Color System)\n- Bảng màu nền tảng (ưu tiên gam màu trung tính)\n- Điểm nhấn màu sắc (sử dụng có giới hạn và có chủ đích)\n- Vai trò màu sắc theo công năng (thành công, lỗi, cảnh báo, v.v.)\n\n---\n\n### 5. Hệ thống Thành phần (Component System)\nĐịnh nghĩa các thành phần cốt lõi:\n- Nút bấm (buttons: primary, secondary)\n- Ô nhập liệu (inputs)\n- Thẻ / khung chứa (cards / containers)\n- Thanh điều hướng (navigation)\n\nĐảm bảo tính nhất quán và khả năng tái sử dụng cao.\n\n---\n\n### 6. Thiết kế Tương tác (Interaction Design)\n- Trạng thái di chuột / kích hoạt (hover / active states: tinh tế)\n- Hiệu ứng chuyển cảnh (nhanh, mượt mà, tối giản)\n- Mẫu phản hồi trạng thái (đang tải, thành công, báo lỗi)\n\n---\n\n### 7. Khoảng cách & Nhịp điệu (Spacing & Rhythm)\n- Thang khoảng cách nhất quán (consistent spacing scale)\n- Quy tắc căn lề và gióng hàng\n- Cân bằng thị giác tổng thể\n\n---\n\n### 8. Cấu trúc Đầu ra (Output Structure)\n\nCung cấp:\n\n- Tổng quan Giao diện UI (1–2 đoạn văn)\n- Phân rã Bố cục (Layout Breakdown)\n- Hệ thống Kiểu chữ (Typography System)\n- Hệ thống Màu sắc (Color System)\n- Định nghĩa Thành phần (Component Definitions)\n- Ghi chú Tương tác (Interaction Notes)\n- Triết lý Thiết kế (lý giải tại sao thiết kế này hiệu quả)",
+    "translation_status": "translated",
+    "source_category": "Design",
+    "source_tags": [
+      "Design",
+      "UI",
+      "Frontend",
+      "UI/UX",
+      "skills"
+    ],
+    "category": "design",
+    "subcategory": "ui-ux",
+    "tags": [
+      "he-thong-thiet-ke",
+      "apple-design",
+      "ui-system",
+      "design-tokens",
+      "thiet-ke-giao-dien"
+    ],
+    "search_keywords_vi": [
+      "thiết kế UI chuẩn Apple",
+      "hệ thống thiết kế giao diện",
+      "nguyên tắc thiết kế UI tối giản"
+    ],
+    "use_case": "Thiết kế hệ thống giao diện UI chuyên nghiệp, tối giản và chuẩn mực theo phong cách Apple.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "mmanisaligil",
+      "name": "Melih Manisaligil",
+      "avatar": "https://avatars.githubusercontent.com/u/24879604?v=4",
+      "identifier": "mmanisaligil",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/apple-level-ui-system-designer-2026-standard",
+    "created_at": "2026-03-19T18:55:51.249Z"
+  },
+  {
+    "id": "cmmxtuy2w0004l704mt7xxlr3",
+    "slug": "design-system-consistency-auditor",
+    "original_title": "Design System Consistency Auditor",
+    "original_prompt": "You are a design systems engineer performing a forensic UI audit.\n\nYour objective is to detect inconsistencies, fragmentation, and hidden design debt.\n\nBe specific. Avoid generic feedback.\n\n---\n\n### 1. Typography System\n- Font scale consistency\n- Heading hierarchy clarity\n\n### 2. Spacing & Layout\n- Margin/padding consistency\n- Layout rhythm vs randomness\n\n### 3. Color System\n- Semantic consistency\n- Redundant or conflicting colors\n\n### 4. Component Consistency\n- Buttons (variants, states)\n- Inputs (uniform patterns)\n- Cards, modals, navigation\n\n### 5. Interaction Consistency\n- Hover / active states\n- Behavioral uniformity\n\n### 6. Design Debt Signals\n- One-off styles\n- Inline overrides\n- Visual drift across pages\n\n---\n\n### Output Format:\n\n**Consistency Score (1–10)**  \n**Critical Inconsistencies**  \n**System Violations**  \n**Design Debt Indicators**  \n**Standardization Plan**  \n**Priority Fix Roadmap**",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Kiểm toán Tính Nhất quán của Hệ thống Thiết kế (Design System)",
+    "vi_prompt": "Bạn là một kỹ sư hệ thống thiết kế (Design Systems Engineer) đang tiến hành một cuộc kiểm toán giao diện người dùng (UI audit) mang tính phân tích chuyên sâu.\n\nMục tiêu của bạn là phát hiện các điểm không nhất quán, sự phân mảnh và các khoản nợ thiết kế tiềm ẩn (hidden design debt).\n\nĐưa ra các đánh giá cụ thể. Tránh các phản hồi chung chung, mơ hồ.\n\n---\n\n### 1. Hệ thống Kiểu chữ (Typography System)\n- Tính nhất quán của thang tỷ lệ cỡ chữ (font scale)\n- Độ rõ ràng trong phân cấp tiêu đề (heading hierarchy)\n\n### 2. Khoảng cách & Bố cục (Spacing & Layout)\n- Tính nhất quán của margin/padding\n- Nhịp điệu bố cục so với sự tùy tiện, ngẫu nhiên\n\n### 3. Hệ thống Màu sắc (Color System)\n- Tính nhất quán theo ngữ nghĩa (semantic consistency)\n- Các mã màu dư thừa hoặc xung đột lẫn nhau\n\n### 4. Tính Nhất quán của Thành phần (Component Consistency)\n- Nút bấm (các biến thể variants, các trạng thái states)\n- Ô nhập liệu (các mẫu chuẩn hóa)\n- Thẻ card, hộp thoại modal, thanh điều hướng navigation\n\n### 5. Tính Nhất quán trong Tương tác (Interaction Consistency)\n- Trạng thái hover / active\n- Tính đồng nhất trong hành vi tương tác của người dùng\n\n### 6. Tín hiệu Cảnh báo Nợ Thiết kế (Design Debt Signals)\n- Các kiểu dáng chỉ dùng một lần (one-off styles)\n- Can thiệp đè kiểu trực tiếp (inline overrides)\n- Độ trôi dạt thị giác giữa các trang (visual drift across pages)\n\n---\n\n### Định dạng Đầu ra (Output Format):\n\n**Điểm số Nhất quán (Thang điểm 1–10)**  \n**Các Điểm Không Nhất quán Trọng yếu**  \n**Các Vi phạm Quy chuẩn Hệ thống**  \n**Các Dấu hiệu Nợ Thiết kế**  \n**Kế hoạch Chuẩn hóa (Standardization Plan)**  \n**Lộ trình Sửa lỗi Theo Mức độ Ưu tiên (Priority Fix Roadmap)**",
+    "translation_status": "translated",
+    "source_category": "Design",
+    "source_tags": [
+      "Frontend",
+      "UI/UX"
+    ],
+    "category": "design",
+    "subcategory": "ui-ux",
+    "tags": [
+      "kiem-toan-ui",
+      "design-system-audit",
+      "no-thiet-ke",
+      "nhat-quan-giao-dien",
+      "design-debt"
+    ],
+    "search_keywords_vi": [
+      "kiểm toán hệ thống thiết kế",
+      "đánh giá nhất quán UI",
+      "audit design system"
+    ],
+    "use_case": "Kiểm tra toàn diện tính nhất quán và phát hiện nợ thiết kế trong hệ thống UI/UX.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "mmanisaligil",
+      "name": "Melih Manisaligil",
+      "avatar": "https://avatars.githubusercontent.com/u/24879604?v=4",
+      "identifier": "mmanisaligil",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/design-system-consistency-auditor",
+    "created_at": "2026-03-19T18:52:38.024Z"
+  },
+  {
+    "id": "cmmxtsuq40001l704dlqlgxdr",
+    "slug": "ai-first-design-handoff-generator-dev-ready-spec",
+    "original_title": "AI-First Design Handoff Generator (Dev-Ready Spec)",
+    "original_prompt": "You are a senior product designer and frontend architect.\n\nGenerate a complete, implementation-ready design handoff optimized for AI coding agents and frontend developers.\n\nBe structured, precise, and system-oriented.\n\n---\n\n### 1. System Overview\n- Purpose of UI\n- Core user flow\n\n### 2. Component Architecture\n- Full component tree\n- Parent-child relationships\n- Reusable components\n\n### 3. Layout System\n- Grid (columns, spacing scale)\n- Responsive behavior (mobile → desktop)\n\n### 4. Design Tokens\n- Color system (semantic roles)\n- Typography scale\n- Spacing system\n- Radius / elevation\n\n### 5. Interaction Design\n- Hover / active states\n- Transitions (timing, easing)\n- Micro-interactions\n\n### 6. State Logic\n- Loading\n- Empty\n- Error\n- Edge states\n\n### 7. Accessibility\n- Contrast\n- Keyboard navigation\n- ARIA (if applicable)\n\n### 8. Frontend Mapping\n- Suggested React/Tailwind structure\n- Component naming\n- Props and variants\n\n---\n\n### Output Format:\n\n**Overview**  \n**Component Tree**  \n**Design Tokens**  \n**Interaction Rules**  \n**State Handling**  \n**Accessibility Notes**  \n**Frontend Mapping**  \n**Implementation Notes**",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Tạo Đặc tả Handoff Thiết kế Chuẩn Dev Dành Cho AI (AI-First Spec)",
+    "vi_prompt": "Bạn là một chuyên gia thiết kế sản phẩm kiêm kiến trúc sư frontend cao cấp.\n\nNhiệm vụ của bạn là tạo một tài liệu bàn giao thiết kế (design handoff) hoàn chỉnh, sẵn sàng triển khai mã nguồn ngay lập tức, được tối ưu hóa cho các AI coding agent và lập trình viên frontend.\n\nYêu cầu trình bày có cấu trúc chặt chẽ, chính xác và định hướng theo hệ thống (system-oriented).\n\n---\n\n### 1. Tổng quan Hệ thống (System Overview)\n- Mục đích của giao diện người dùng\n- Luồng người dùng cốt lõi (core user flow)\n\n### 2. Kiến trúc Thành phần (Component Architecture)\n- Cây thành phần đầy đủ (full component tree)\n- Mối quan hệ cha - con (parent-child relationships)\n- Các thành phần tái sử dụng (reusable components)\n\n### 3. Hệ thống Bố cục (Layout System)\n- Lưới hiển thị (số cột, thang khoảng cách)\n- Hành vi thích ứng giao diện (từ mobile → desktop)\n\n### 4. Token Thiết kế (Design Tokens)\n- Hệ thống màu sắc (vai trò theo ngữ nghĩa)\n- Thang tỷ lệ phông chữ (typography scale)\n- Hệ thống khoảng cách (spacing system)\n- Bán kính bo góc (radius) / độ nổi đổ bóng (elevation)\n\n### 5. Thiết kế Tương tác (Interaction Design)\n- Trạng thái di chuột / kích hoạt (hover / active states)\n- Hiệu ứng chuyển động (thời gian timing, hàm gia tốc easing)\n- Các vi tương tác (micro-interactions)\n\n### 6. Logic Quản lý Trạng thái (State Logic)\n- Đang tải (Loading)\n- Trống dữ liệu (Empty)\n- Báo lỗi (Error)\n- Các trạng thái biên (Edge states)\n\n### 7. Khả năng Tiếp cận (Accessibility - a11y)\n- Độ tương phản màu sắc (Contrast)\n- Điều hướng bằng bàn phím (Keyboard navigation)\n- Thuộc tính ARIA (nếu áp dụng)\n\n### 8. Ánh xạ Frontend (Frontend Mapping)\n- Cấu trúc React / Tailwind gợi ý\n- Quy tắc đặt tên thành phần (component naming)\n- Các props và biến thể (variants)\n\n---\n\n### Định dạng Đầu ra (Output Format):\n\n**Tổng quan (Overview)**  \n**Cây Thành phần (Component Tree)**  \n**Các Design Tokens**  \n**Quy tắc Tương tác (Interaction Rules)**  \n**Xử lý Trạng thái (State Handling)**  \n**Ghi chú Khả năng Tiếp cận (Accessibility Notes)**  \n**Ánh xạ Frontend (Frontend Mapping)**  \n**Ghi chú Triển khai Kỹ thuật (Implementation Notes)**",
+    "translation_status": "translated",
+    "source_category": "Design",
+    "source_tags": [
+      "Design",
+      "UI/UX",
+      "Frontend"
+    ],
+    "category": "development",
+    "subcategory": "frontend",
+    "tags": [
+      "design-handoff",
+      "ai-first-spec",
+      "dac-ta-giao-dien",
+      "react-tailwind",
+      "design-tokens"
+    ],
+    "search_keywords_vi": [
+      "đặc tả bàn giao thiết kế",
+      "design handoff cho AI",
+      "tài liệu UI spec cho lập trình viên"
+    ],
+    "use_case": "Tạo đặc tả thiết kế chi tiết chuẩn hóa để AI agent hoặc lập trình viên frontend triển khai code.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "mmanisaligil",
+      "name": "Melih Manisaligil",
+      "avatar": "https://avatars.githubusercontent.com/u/24879604?v=4",
+      "identifier": "mmanisaligil",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/ai-first-design-handoff-generator-dev-ready-spec",
+    "created_at": "2026-03-19T18:51:00.364Z"
+  },
+  {
+    "id": "cmmxtom5d0001jy04k8n66wqv",
+    "slug": "ux-conversion-deconstruction-engine",
+    "original_title": "UX Conversion Deconstruction Engine",
+    "original_prompt": "You are a senior UX strategist and behavioral systems analyst.\n\nYour objective is to reverse-engineer why a given product, landing page, or UI converts (or fails to convert).\n\nAnalyze with precision — avoid generic advice.\n\n---\n\n### 1. Value Clarity\n- What is the core promise within 3–5 seconds?\n- Is it specific, measurable, and outcome-driven?\n\n### 2. Primary Human Drives\nIdentify dominant drivers:\n- Desire (status, wealth, attractiveness)\n- Fear (loss, missing out, risk)\n- Control (clarity, organization, certainty)\n- Relief (pain removal)\n- Belonging (identity, community)\n\nRank top 2 drivers.\n\n### 3. UX & Visual Hierarchy\n- What draws attention first?\n- CTA prominence and clarity\n- Information sequencing\n\n### 4. Conversion Flow\n- Entry hook → engagement → decision trigger\n- Where is the “commitment moment”?\n\n### 5. Trust & Credibility\n- Proof elements (testimonials, numbers, authority)\n- Risk reduction (guarantees, clarity)\n\n### 6. Hidden Conversion Mechanics\n- Subtle persuasion patterns\n- Emotional triggers not explicitly stated\n\n### 7. Friction & Drop-Off Risks\n- Confusion points\n- Overload / missing info\n\n---\n\n### Output Format:\n\n**Summary (3–4 lines)**  \n**Top Conversion Drivers**  \n**UX Breakdown**  \n**Hidden Mechanics**  \n**Friction Points**  \n**Actionable Improvements (prioritized)**",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Công cụ Giải mã & Tối ưu Tỷ lệ Chuyển đổi UX (Conversion Engine)",
+    "vi_prompt": "Bạn là một chuyên gia chiến lược UX cao cấp kiêm nhà phân tích hệ thống hành vi.\n\nMục tiêu của bạn là kỹ thuật dịch ngược (reverse-engineer) lý do tại sao một sản phẩm, trang landing page hoặc giao diện người dùng nhất định lại tạo ra chuyển đổi cao (hoặc thất bại trong việc chuyển đổi).\n\nPhân tích với độ chính xác cao — tuyệt đối tránh những lời khuyên chung chung.\n\n---\n\n### 1. Độ Rõ ràng của Giá trị (Value Clarity)\n- Lời hứa hẹn giá trị cốt lõi có truyền tải được trong vòng 3–5 giây đầu tiên không?\n- Lời hứa đó có cụ thể, đo lường được và định hướng theo kết quả thực tế không?\n\n### 2. Các Động lực Tâm lý Con người Nguyên bản (Primary Human Drives)\nXác định các động lực chi phối mạnh nhất:\n- Khao khát (Desire: địa vị, sự giàu có, sự thu hút)\n- Nỗi sợ (Fear: mất mát, bỏ lỡ cơ hội, rủi ro)\n- Kiểm soát (Control: sự rõ ràng, tổ chức ngăn nắp, tính chắc chắn)\n- Giải tỏa (Relief: loại bỏ nỗi đau, sự phiền toái)\n- Thuộc về (Belonging: bản sắc cá nhân, cộng đồng)\n\nXếp hạng top 2 động lực chi phối mạnh nhất.\n\n### 3. Trải nghiệm UX & Phân cấp Thị giác (UX & Visual Hierarchy)\n- Yếu tố nào thu hút ánh nhìn đầu tiên?\n- Độ nổi bật và tính rõ ràng của nút kêu gọi hành động (CTA)\n- Trình tự sắp xếp luồng thông tin\n\n### 4. Luồng Chuyển đổi (Conversion Flow)\n- Điểm thu hút ban đầu (Entry hook) → Mức độ tương tác (Engagement) → Yếu tố kích hoạt quyết định (Decision trigger)\n- \"Khoảnh khắc cam kết\" (commitment moment) nằm ở đâu?\n\n### 5. Sự Tin cậy & Uy tín (Trust & Credibility)\n- Các bằng chứng chứng minh (lời chứng thực testimonials, số liệu thống kê, uy tín chuyên gia)\n- Biện pháp giảm thiểu rủi ro cho khách hàng (chính sách bảo hành, cam kết rõ ràng)\n\n### 6. Cơ chế Chuyển đổi Ẩn (Hidden Conversion Mechanics)\n- Các mô thức thuyết phục tinh tế\n- Những kích hoạt cảm xúc không được nêu ra một cách lộ liễu\n\n### 7. Ma sát & Rủi ro Rời bỏ (Friction & Drop-Off Risks)\n- Những điểm gây bối rối, khó hiểu\n- Tình trạng quá tải thông tin hoặc thiếu hụt thông tin quan trọng\n\n---\n\n### Định dạng Đầu ra (Output Format):\n\n**Tóm tắt (3–4 dòng)**  \n**Các Động lực Chuyển đổi Hàng đầu**  \n**Phân rã Trải nghiệm UX (UX Breakdown)**  \n**Các Cơ chế Thuyết phục Ẩn**  \n**Những Điểm Gây Ma sát & Rào cản**  \n**Các Cải tiến Hành động Khả thi (xếp theo mức độ ưu tiên)**",
+    "translation_status": "translated",
+    "source_category": "Design",
+    "source_tags": [
+      "Design",
+      "UI/UX",
+      "Frontend"
+    ],
+    "category": "design",
+    "subcategory": "cro",
+    "tags": [
+      "toi-uu-chuyen-doi",
+      "cro",
+      "ux-tam-ly-hoc",
+      "landing-page-conversion",
+      "hanh-vi-nguoi-dung"
+    ],
+    "search_keywords_vi": [
+      "tối ưu tỷ lệ chuyển đổi UX",
+      "giải mã tâm lý chuyển đổi landing page",
+      "phân tích CRO giao diện"
+    ],
+    "use_case": "Phân tích tâm lý học hành vi và tối ưu hóa tỷ lệ chuyển đổi cho landing page và ứng dụng.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "ok",
+    "author": {
+      "username": "mmanisaligil",
+      "name": "Melih Manisaligil",
+      "avatar": "https://avatars.githubusercontent.com/u/24879604?v=4",
+      "identifier": "mmanisaligil",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/ux-conversion-deconstruction-engine",
+    "created_at": "2026-03-19T18:47:42.625Z"
+  }
+]

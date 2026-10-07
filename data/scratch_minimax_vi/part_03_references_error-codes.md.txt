@@ -1,0 +1,60 @@
+references/error-codes.md 
+# Bảng tra cứu mã lỗi API Minimax (Minimax API Error Reference)
+
+## Bảng mã lỗi (Error Code Table)
+
+| Mã lỗi | Tên lỗi | Nguyên nhân | Cách khắc phục |
+| --- | --- | --- | --- |
+| `0` | Success | Yêu cầu hoàn thành thành công | Không cần thao tác gì |
+| `1002` | Rate Limited | Quá số lượng yêu cầu cho phép mỗi phút | Chờ từ 10-30 giây và thử lại với độ trễ lũy thừa |
+| `1004` | Auth Failed | Khóa API không hợp lệ, hết hạn hoặc bị thiếu | Kiểm tra khóa tại platform.minimax.io, xóa khoảng trắng thừa, tạo khóa mới nếu đã hết hạn |
+| `1008` | Insufficient Balance | Tài khoản đã hết số dư tín dụng | Nạp thêm tiền tại platform.minimax.io > Billing |
+| `1026` | Content Flagged | Lời bài hát hoặc prompt vi phạm chính sách kiểm duyệt | Điều chỉnh lại nội dung để loại bỏ từ ngữ nhạy cảm, bạo lực hoặc khiêu dâm |
+| `2013` | Invalid Parameters | Thân yêu cầu sai kiểu dữ liệu hoặc ngoài phạm vi giá trị | Đối chiếu và chuẩn hóa toàn bộ tham số theo schema của API |
+| `2049` | Invalid API Key Format | Định dạng chuỗi API key không đúng | Kiểm tra ký tự xuống dòng thừa, khoảng trắng hoặc lỗi sao chép |
+
+## Sơ đồ cây quyết định xử lý sự cố (Troubleshooting Decision Tree)
+
+```
+Gặp phản hồi lỗi từ API?
+│
+├─ Kiểm tra base_resp.status_code
+│
+├─ 1002 (Rate Limited - Vượt giới hạn tần suất)
+│  ├─ Bạn đang gửi nhiều request liên tục? → Bổ sung độ trễ giữa các lần gọi
+│  ├─ Chỉ gửi một request duy nhất? → Hạn mức RPM của gói tài khoản quá thấp (Gói Starter = 10 RPM)
+│  └─ Hành động: Chờ và thử lại với độ trễ lũy thừa (10s, 20s, 40s)
+│
+├─ 1004 (Auth Failed - Lỗi xác thực)
+│  ├─ Đã truyền API key chưa? → Kiểm tra định dạng header Authorization
+│  ├─ Có đang dùng nhầm khóa Coding Plan không? → API âm nhạc yêu cầu khóa Pay-as-you-go
+│  ├─ Khóa API đã hết hạn chưa? → Tạo khóa mới tại platform.minimax.io
+│  └─ Hành động: Xác minh chuỗi "Authorization: Bearer <key>", không có khoảng trắng thừa
+│
+├─ 1008 (Insufficient Balance - Hết số dư)
+│  ├─ Kiểm tra số dư tài khoản tại platform.minimax.io
+│  └─ Hành động: Nạp thêm tín dụng hoặc nâng cấp gói tài khoản cao hơn
+│
+├─ 1026 (Content Flagged - Vi phạm kiểm duyệt)
+│  ├─ Rà soát lời bài hát xem có từ ngữ hoặc chủ đề nhạy cảm không
+│  ├─ Rà soát prompt xem có nội dung bạo lực/người lớn không
+│  └─ Hành động: Sửa lại nội dung và gửi lại; chính sách kiểm duyệt không được công khai chi tiết
+│
+├─ 2013 (Invalid Parameters - Tham số không hợp lệ)
+│  ├─ Trường model đã đặt là "music-2.5" chưa? (không phải "music-01" hay giá trị khác)
+│  ├─ Độ dài lyrics có nằm trong khoảng 1-3500 ký tự không?
+│  ├─ Độ dài prompt có dưới 2000 ký tự không?
+│  ├─ sample_rate có thuộc danh sách: 16000, 24000, 32000, 44100?
+│  ├─ bitrate có thuộc danh sách: 32000, 64000, 128000, 256000?
+│  ├─ format có là một trong các giá trị: "mp3", "wav", "pcm"?
+│  ├─ output_format có là: "hex", "url"?
+│  └─ Hành động: Sửa đúng tham số bị sai và gửi lại yêu cầu
+│
+├─ 2049 (Invalid API Key Format - Sai định dạng khóa)
+│  ├─ Khóa có dính ký tự xuống dòng hoặc dấu cách ở cuối không?
+│  ├─ Đã sao chép chính xác từ trang quản trị dashboard chưa?
+│  └─ Hành động: Sao chép lại khóa, cắt tỉa toàn bộ khoảng trắng thừa
+│
+└─ data.status === 1 (Không phải là lỗi!)
+   └─ Quá trình sinh nhạc vẫn đang thực thi. Hãy tiếp tục thăm dò (poll) hoặc đợi hoàn tất.
+```

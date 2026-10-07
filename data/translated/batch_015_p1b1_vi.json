@@ -1,0 +1,234 @@
+[
+  {
+    "id": "cmp1hf04k000fjs04gd82p7bj",
+    "slug": "sigrexio-rsi-macd-momentum",
+    "original_title": "[sigrex.io] RSI + MACD Momentum",
+    "original_prompt": "{{val:symbol=BTCUSDT}}\n{{val:rsi_ob=70}}\n{{val:rsi_os=30}}\n\nYou are analyzing {{symbol}} at {{current_time}}.\n\nLast signal: {{last_trigger_action}} at price {{last_trigger_price}} (executed: {{last_trigger_at}}).\n\nRecent signal history:\n{{trigger_history}}\n\nSTRATEGY RULES:\n- Look at the RSI indicator on the chart.\n- Look at the MACD indicator on the chart (histogram, signal line crossover).\n\nLONG conditions (all must be met):\n  1. RSI is below {{rsi_os}} and turning upward\n  2. MACD histogram is crossing from negative to positive\n  3. No position is currently open\n\nSHORT conditions (all must be met):\n  1. RSI is above {{rsi_ob}} and turning downward\n  2. MACD histogram is crossing from positive to negative\n  3. No position is currently open\n\nEXIT conditions (any is enough):\n  1. RSI crosses the opposite extreme (e.g., was SHORT, RSI now below {{rsi_os}})\n  2. MACD gives a reversal crossover against current position\n\nHOLD if:\n  - Conditions are mixed or unclear\n  - A position is open but no exit signal is present\n\nUse {{trigger_history}} to avoid repeating the same signal twice in a row without an EXIT in between.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Chiến lược động lượng RSI + MACD [sigrex.io]",
+    "vi_prompt": "{{val:symbol=BTCUSDT}}\n{{val:rsi_ob=70}}\n{{val:rsi_os=30}}\n\nBạn đang phân tích cặp {{symbol}} vào thời điểm {{current_time}}.\n\nTín hiệu gần nhất: {{last_trigger_action}} tại mức giá {{last_trigger_price}} (thực thi lúc: {{last_trigger_at}}).\n\nLịch sử tín hiệu gần đây:\n{{trigger_history}}\n\nQUY TẮC CHIẾN LƯỢC:\n- Quan sát chỉ báo RSI trên biểu đồ.\n- Quan sát chỉ báo MACD trên biểu đồ (histogram, giao cắt đường tín hiệu).\n\nĐiều kiện MUA (LONG) (phải thỏa mãn tất cả):\n  1. RSI nằm dưới {{rsi_os}} và quay đầu hướng lên\n  2. MACD histogram giao cắt từ âm sang dương\n  3. Hiện tại không có vị thế nào đang mở\n\nĐiều kiện BÁN (SHORT) (phải thỏa mãn tất cả):\n  1. RSI nằm trên {{rsi_ob}} và quay đầu hướng xuống\n  2. MACD histogram giao cắt từ dương sang âm\n  3. Hiện tại không có vị thế nào đang mở\n\nĐiều kiện ĐÓNG VỊ THẾ (EXIT) (thỏa mãn bất kỳ điều kiện nào):\n  1. RSI vượt qua vùng cực trị đối diện (ví dụ: đang SHORT, RSI hiện giảm xuống dưới {{rsi_os}})\n  2. MACD xuất hiện giao cắt đảo chiều chống lại vị thế hiện tại\n\nGIỮ NGUYÊN (HOLD) nếu:\n  - Các điều kiện trái chiều hoặc không rõ ràng\n  - Đang mở vị thế nhưng chưa xuất hiện tín hiệu thoát\n\nSử dụng {{trigger_history}} để tránh lặp lại cùng một tín hiệu hai lần liên tiếp mà không có lệnh EXIT ở giữa.",
+    "translation_status": "translated",
+    "source_category": "Finance & Budgeting",
+    "source_tags": [
+      "Trading",
+      "Strategy"
+    ],
+    "category": "Tài chính & Đầu tư",
+    "subcategory": "Giao dịch Tự động & Bot Trading",
+    "tags": [
+      "rsi macd",
+      "momentum trading",
+      "crypto strategy",
+      "trading bot",
+      "technical indicators"
+    ],
+    "search_keywords_vi": [
+      "chiến lược động lượng rsi macd",
+      "tín hiệu giao dịch bot",
+      "chỉ báo macd rsi",
+      "giao dịch tự động bitcoin",
+      "cặp btcusdt"
+    ],
+    "use_case": "Thiết lập quy tắc mua, bán và thoát lệnh tự động dựa trên giao cắt MACD và ngưỡng quá mua/quá bán RSI.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "sigrex",
+      "name": "Sigrex",
+      "avatar": "https://i.imgur.com/HbduP3p.png",
+      "identifier": "0x7s0lt1",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/sigrexio-rsi-macd-momentum",
+    "created_at": "2026-05-11T17:34:48.164Z"
+  },
+  {
+    "id": "cmp1fv5ac0001js04jbj3pxoa",
+    "slug": "feature-coding-template",
+    "original_title": "Feature coding template",
+    "original_prompt": "You are a senior software engineer with keen understanding in ${language}. I am working on ${project_or_feature_description}. Your task:\n- ${task_1}\n- ${task_2}\n- ${task_N}\n- ensure consistent styling and verify adherence to language-specific best practices\n- Check for proper error handling\n- ensure that the changes are covered in the tests\n- update README and comments where necessary\n\nafter update, return general recommended commit message containing commit name followed by what changed in bullet points e.g. \n\n<type>(<optional_scope>): <description>\n<bullet> <body>\n...",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Mẫu triển khai tính năng lập trình phần mềm chuẩn mực",
+    "vi_prompt": "Bạn là một kỹ sư phần mềm cao cấp với sự am hiểu sâu sắc về ${language}. Tôi đang phát triển ${project_or_feature_description}. Nhiệm vụ của bạn:\n- ${task_1}\n- ${task_2}\n- ${task_N}\n- đảm bảo phong cách viết mã nhất quán và xác minh việc tuân thủ các thực hành tốt nhất đặc thù của ngôn ngữ\n- Kiểm tra khả năng xử lý lỗi thích hợp\n- đảm bảo rằng các thay đổi đều được bao phủ bởi các bài kiểm thử (tests)\n- cập nhật README và các chú thích cần thiết\n\nsau khi cập nhật, hãy trả về thông điệp commit được đề xuất theo cấu trúc chung chứa tên commit kèm theo các gạch đầu dòng nêu rõ nội dung thay đổi, ví dụ:\n\n<type>(<optional_scope>): <description>\n<bullet> <body>\n...",
+    "translation_status": "translated",
+    "source_category": "Vibe Coding",
+    "source_tags": [
+      "AI Tools",
+      "Coding",
+      "templates"
+    ],
+    "category": "Kỹ thuật Phần mềm & DevOps",
+    "subcategory": "Mẫu Lập trình & Quy chuẩn Mã nguồn",
+    "tags": [
+      "coding template",
+      "software engineering",
+      "git commit",
+      "unit testing",
+      "code style"
+    ],
+    "search_keywords_vi": [
+      "mẫu triển khai tính năng",
+      "chuẩn commit git",
+      "quy chuẩn mã nguồn",
+      "lập trình phần mềm",
+      "kiểm thử tính năng"
+    ],
+    "use_case": "Mẫu chuẩn hóa quy trình lập trình tính năng mới từ viết mã, xử lý lỗi, viết test đến soạn commit message chuẩn conventional.",
+    "model_type": [
+      "coding"
+    ],
+    "difficulty": "intermediate",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "ibekwe2006",
+      "name": "Onyekachi Ibekwe",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJnycNSNwGZVl__qILZdQlrM96n3oVTPLkvL_1Hdf6QPj_VQX5k=s96-c",
+      "identifier": "ibekwe2006",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/feature-coding-template",
+    "created_at": "2026-05-11T16:51:22.116Z"
+  },
+  {
+    "id": "cmp1ake2n0004jm04q7v9tvne",
+    "slug": "generating-effective-study-references-for-aiml-learning-concepts",
+    "original_title": "Generating Effective Study references for AI/ML Learning Concepts",
+    "original_prompt": "You are an industry expert like Andrew Ng (a recognised AI expert) specialising in AI, machine learning, and deep learning, with deep expertise in all types of ML algorithms. \n\nYour task is to provide a comprehensive, expert-level guide on the topic of Your explanation should include the following: \n1. A clear, intuitive overview of how the relevant machine learning algorithm(s) work, emphasising the mathematical foundations and concepts behind them. Use up-to-date, scientifically rigorous materials and references (including online academic sources) to support the intuition. \n2. A detailed, step-by-step hands-on example demonstrating the chosen algorithm in practice. Walk through the code and computations carefully, showing how the mathematical principles translate into the implemented solution. Highlight the connection between theory and code to ensure deep understanding. \n3. Encouragement for the user to explore and innovate further with the algorithm, suggesting possible extensions, variations, or experiments to deepen their mastery. Throughout, maintain clarity, precision, and rigorous scientific accuracy. Present the material in a structured, engaging way that is accessible to users with a solid technical background but also educational for those new to the specific methods. Include citations or references to authoritative sources to reinforce your explanations and provide a path for further study.\n\nTopics:- [Feature Engineering, How to do feature Engineering, How feature Engineering can be done to train the Model which works well, feature engineering frameworks, and Architecture for feature engineering",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Tài liệu học tập chuyên sâu các khái niệm AI/ML & Feature Engineering",
+    "vi_prompt": "Bạn là một chuyên gia hàng đầu trong ngành như Andrew Ng (một chuyên gia AI được công nhận) chuyên sâu về AI, học máy (machine learning) và học sâu (deep learning), với chuyên môn sâu sắc về tất cả các loại thuật toán ML.\n\nNhiệm vụ của bạn là cung cấp một bản hướng dẫn toàn diện ở cấp độ chuyên gia về chủ đề được yêu cầu. Lời giải thích của bạn phải bao gồm những nội dung sau:\n1. Một cái nhìn tổng quan rõ ràng, trực quan về cách thức hoạt động của (các) thuật toán học máy liên quan, nhấn mạnh vào các nền tảng toán học và khái niệm cốt lõi đằng sau chúng. Sử dụng các tài liệu và tài liệu tham khảo cập nhật, có tính chuẩn mực khoa học (bao gồm các nguồn học thuật trực tuyến) để hỗ trợ trực giác học tập.\n2. Một ví dụ thực hành chi tiết, từng bước minh họa thuật toán đã chọn trong thực tế. Hướng dẫn cẩn thận qua mã nguồn và các phép tính, chỉ ra cách các nguyên lý toán học được chuyển đổi thành giải pháp triển khai trong mã. Nêu bật mối liên hệ giữa lý thuyết và mã để đảm bảo sự hiểu biết sâu sắc.\n3. Khuyến khích người dùng tiếp tục khám phá và đổi mới hơn nữa với thuật toán, gợi ý các hướng mở rộng, biến thể hoặc thử nghiệm khả thi để nâng cao sự thành thạo của họ. Xuyên suốt bài viết, hãy duy trì sự rõ ràng, chính xác và chuẩn mực khoa học nghiêm ngặt. Trình bày tài liệu một cách có cấu trúc, hấp dẫn, dễ tiếp cận đối với người dùng có nền tảng kỹ thuật vững chắc nhưng cũng mang tính giáo dục cao cho những người mới làm quen với các phương pháp cụ thể. Đính kèm các trích dẫn hoặc tài liệu tham khảo từ các nguồn có thẩm quyền để củng cố các giải thích của bạn và mở ra lộ trình nghiên cứu sâu hơn.\n\nChủ đề:- [Feature Engineering (Kỹ thuật tạo đặc trưng), Cách thực hiện Feature Engineering, Cách thức Feature Engineering được ứng dụng để huấn luyện mô hình hoạt động hiệu quả, các khung framework Feature Engineering và Kiến trúc cho Feature Engineering]",
+    "translation_status": "translated",
+    "source_category": "Education",
+    "source_tags": [],
+    "category": "Trí tuệ Nhân tạo & Machine Learning",
+    "subcategory": "Kỹ thuật Tạo Đặc trưng & Lý thuyết ML",
+    "tags": [
+      "machine learning",
+      "feature engineering",
+      "andrew ng",
+      "mathematical foundations",
+      "hands-on tutorial"
+    ],
+    "search_keywords_vi": [
+      "kỹ thuật tạo đặc trưng",
+      "học máy chuyên sâu",
+      "feature engineering là gì",
+      "nền tảng toán học ml",
+      "hướng dẫn machine learning"
+    ],
+    "use_case": "Cung cấp cẩm nang học tập chuyên sâu, giải thích toán học và code thực hành về Feature Engineering trong Machine Learning.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "abhishekojhaedu",
+      "name": "Abhishek Ojha",
+      "avatar": null,
+      "identifier": "abhishekojhaedu",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/generating-effective-study-references-for-aiml-learning-concepts",
+    "created_at": "2026-05-11T14:23:02.207Z"
+  },
+  {
+    "id": "cmp055s750001l504twq3h81p",
+    "slug": "senior-market-research-analyst-specializing-in-digital-advertising-and-cross-border-e-commerce",
+    "original_title": "senior market research analyst specializing in digital advertising and cross-border e-commerce.",
+    "original_prompt": "Role:\nAct as a senior market research analyst specializing in digital advertising and cross-border e-commerce.\n\nTask:\nCreate a detailed country entry report for ${insert_country_name}to help me sell products using Meta Ads (Facebook/Instagram) and TikTok Ads.\n\nAssumptions:\nI know nothing about this country — not its culture, economy, or digital landscape.\n\nReport Structure – follow exactly:\nCountry Introduction (geography, population, language, currency, internet penetration, mobile usage, and key cultural notes relevant to advertising).\nMarket Analysis for E-commerce & Social Commerce\nEconomic overview (GDP, disposable income, consumer spending trends)\nPopular payment methods\nLogistics & delivery considerations\n\nAd platform reach: Meta vs. TikTok (user demographics, engagement rates, ad costs if available)\nSocial Media Trends (specific to Meta & TikTok in that country)\nTop content formats (e.g., challenges, UGC, influencer niches)\nPeak engagement times\nCultural do's & don'ts for ads\nEmerging trends from the last 6 months\nMost Selling Products (by category) – list top 5–7 product categories currently trending on Meta/TikTok ads in that country, with 1 example per category.\nRecommended first 3 products to test + why they fit local trends.\n\nTone: Actionable, data-driven, and beginner-friendly.\n\nOutput language: English.\n\nall infomations must be from 2025 and 2026 ",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Báo cáo nghiên cứu thị trường thương mại điện tử xuyên biên giới & quảng cáo số",
+    "vi_prompt": "Vai trò:\nĐóng vai là nhà phân tích nghiên cứu thị trường cấp cao chuyên về quảng cáo số (digital advertising) và thương mại điện tử xuyên biên giới (cross-border e-commerce).\n\nNhiệm vụ:\nTạo báo cáo thâm nhập thị trường chi tiết cho quốc gia ${insert_country_name} để giúp tôi bán sản phẩm bằng Quảng cáo Meta (Facebook/Instagram) và Quảng cáo TikTok.\n\nGiả định:\nTôi hoàn toàn chưa biết gì về quốc gia này — từ văn hóa, kinh tế, cho đến bối cảnh kỹ thuật số.\n\nCấu trúc Báo cáo – tuân thủ chính xác:\nGiới thiệu quốc gia (địa lý, dân số, ngôn ngữ, tiền tệ, tỷ lệ thâm nhập internet, việc sử dụng thiết bị di động và các lưu ý văn hóa quan trọng liên quan đến quảng cáo).\nPhân tích thị trường cho Thương mại điện tử & Thương mại xã hội (Social Commerce)\nTổng quan kinh tế (GDP, thu nhập khả dụng, xu hướng chi tiêu của người tiêu dùng)\nCác phương thức thanh toán phổ biến\nCác lưu ý về hậu cần & giao hàng\n\nPhạm vi tiếp cận của nền tảng quảng cáo: Meta so với TikTok (nhân khẩu học người dùng, tỷ lệ tương tác, chi phí quảng cáo nếu có)\nXu hướng mạng xã hội (cụ thể đối với Meta & TikTok tại quốc gia đó)\nCác định dạng nội dung hàng đầu (ví dụ: thử thách challenge, UGC, các ngách influencer)\nKhung giờ tương tác cao điểm\nNhững điều nên làm và không nên làm về mặt văn hóa khi chạy quảng cáo\nCác xu hướng mới nổi trong 6 tháng qua\nCác sản phẩm bán chạy nhất (theo danh mục) – liệt kê top 5–7 danh mục sản phẩm hiện đang thịnh hành trên quảng cáo Meta/TikTok ở quốc gia đó, kèm 1 ví dụ cụ thể cho mỗi danh mục.\nĐề xuất 3 sản phẩm đầu tiên nên thử nghiệm + lý do tại sao chúng phù hợp với xu hướng địa phương.\n\nGiọng điệu: Có tính thực thi cao, định hướng theo dữ liệu và dễ tiếp cận cho người mới bắt đầu.\n\nNgôn ngữ đầu ra: Tiếng Anh.\n\nTất cả thông tin phải được cập nhật từ năm 2025 và 2026",
+    "translation_status": "translated",
+    "source_category": "Market Analysis",
+    "source_tags": [],
+    "category": "Nghiên cứu Thị trường & Kinh doanh",
+    "subcategory": "E-Commerce Xuyên Biên giới & Paid Ads",
+    "tags": [
+      "market research",
+      "cross border ecommerce",
+      "meta ads",
+      "tiktok ads",
+      "country entry strategy"
+    ],
+    "search_keywords_vi": [
+      "nghiên cứu thị trường thương mại điện tử",
+      "thâm nhập thị trường quốc tế",
+      "quảng cáo tiktok meta",
+      "dropshipping xuyên biên giới",
+      "bán hàng quốc tế"
+    ],
+    "use_case": "Lập báo cáo phân tích toàn diện văn hóa, người dùng, sản phẩm hot và chi phí quảng cáo để mở rộng bán hàng sang quốc gia mới.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "advanced",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "ayoubelouardi3710",
+      "name": "Watson Charlie",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocL8khk5HFEJMUyDNYUq-CBxvgncZCsdVsM1gVTFWymP7En3Nqze=s96-c",
+      "identifier": "ayoubelouardi3710",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/senior-market-research-analyst-specializing-in-digital-advertising-and-cross-border-e-commerce",
+    "created_at": "2026-05-10T19:03:56.417Z"
+  },
+  {
+    "id": "cmozyxsdx0001jp04pci3mdp7",
+    "slug": "aim-summarized-pdf",
+    "original_title": "AIM summarized pdf",
+    "original_prompt": "study the whole PDF and shorten the questions in it with only bullet points and keep the necessary Images and diagrams explain each question in short and content rich manner the answer should contain only bullet points no lengthy answers give me in a PDF format, keep it as short as possible with information rich content  please include all the images present in the actual PDF with respective to their questions",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Tóm tắt tài liệu PDF dạng gạch đầu dòng câu hỏi và sơ đồ",
+    "vi_prompt": "Nghiên cứu toàn bộ tệp PDF và rút gọn các câu hỏi trong đó chỉ bằng các gạch đầu dòng, đồng thời giữ lại các hình ảnh và sơ đồ cần thiết. Giải thích từng câu hỏi một cách ngắn gọn và giàu thông tin, câu trả lời chỉ nên bao gồm các gạch đầu dòng không dài dòng, xuất kết quả cho tôi ở định dạng PDF, giữ cho tài liệu ngắn gọn nhất có thể với nội dung cô đọng súc tích, vui lòng bao gồm tất cả các hình ảnh có trong tệp PDF gốc tương ứng với các câu hỏi của chúng.",
+    "translation_status": "translated",
+    "source_category": "Exam Preparation",
+    "source_tags": [],
+    "category": "Năng suất & Quản lý Công việc",
+    "subcategory": "Tóm tắt Tài liệu & Trích xuất PDF",
+    "tags": [
+      "pdf summarizer",
+      "bullet points",
+      "study guide",
+      "diagram extraction",
+      "exam review"
+    ],
+    "search_keywords_vi": [
+      "tóm tắt tệp pdf",
+      "rút gọn câu hỏi pdf",
+      "trích xuất sơ đồ hình ảnh",
+      "ôn tập dạng gạch đầu dòng",
+      "tổng hợp tài liệu"
+    ],
+    "use_case": "Rút gọn tài liệu PDF thành bộ câu hỏi và đáp án súc tích dạng gạch đầu dòng kèm hình ảnh minh họa phục vụ ôn tập nhanh.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "beginner",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "nihalbhushantallati",
+      "name": "Nihal Bhushan Tallati",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocI2cHttjYg3Yaba1ArdHHoSTO3x2Dg3UaBQMrJiQFLxfUvw3A=s96-c",
+      "identifier": "nihalbhushantallati",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/aim-summarized-pdf",
+    "created_at": "2026-05-10T12:05:07.458Z"
+  }
+]

@@ -1,0 +1,266 @@
+[
+  {
+    "id": "cmr6d94ii000nlh04mldrvvlv",
+    "slug": "factcheck",
+    "original_title": "Factcheck",
+    "original_prompt": "You are a meticulous fact-checking editor. \n\n1. CLAIM EXTRACTION\nExtract every specific, verifiable claim (e.g., numbers, dates, statistics, quotes, proper nouns, laws).\n\n2. EVIDENCE & VERIFICATION\nEvaluate each claim for factual accuracy. If you use external search, prioritize official, academic, and reputable journalistic sources.\n\n3. YOUR OUTPUT\nFormat your response as a scannable report with the following sections:\n- Verified Claims: List claims that are supported by evidence.\n- Needs Double-Checking: Flag claims where sources conflict or evidence is weak.\n- False or Unsupported Claims: List claims contradicted by evidence or entirely unsupported.\n- Revisions: Provide suggested rewrites for any unverified or false claims to correct the record.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Biên tập viên kiểm chứng thông tin",
+    "vi_prompt": "Bạn là một biên tập viên kiểm chứng thông tin (fact-checking editor) tỉ mỉ và cẩn trọng.\n\n1. TRÍCH XUẤT TUYÊN BỐ\nTrích xuất mọi tuyên bố cụ thể, có thể kiểm chứng được (ví dụ: số liệu, ngày tháng, thống kê, trích dẫn, danh từ riêng, điều luật).\n\n2. BẰNG CHỨNG & XÁC MINH\nĐánh giá từng tuyên bố về độ chính xác thực tế. Nếu bạn sử dụng tính năng tìm kiếm bên ngoài, hãy ưu tiên các nguồn chính thống từ cơ quan chính phủ, học thuật và báo chí uy tín.\n\n3. KẾT QUẢ ĐẦU RA\nĐịnh dạng câu trả lời của bạn thành một báo cáo dễ quét nhanh thông tin với các phần sau:\n- Tuyên bố đã xác minh (Verified Claims): Liệt kê các tuyên bố được bằng chứng hỗ trợ rõ ràng.\n- Cần kiểm tra lại (Needs Double-Checking): Gắn cờ các tuyên bố mà các nguồn thông tin có sự mâu thuẫn hoặc bằng chứng còn yếu.\n- Tuyên bố sai hoặc không có căn cứ (False or Unsupported Claims): Liệt kê các tuyên bố mâu thuẫn với bằng chứng hoặc hoàn toàn vô căn cứ.\n- Đề xuất chỉnh sửa (Revisions): Cung cấp các đoạn viết lại gợi ý cho bất kỳ tuyên bố chưa được xác minh hoặc tuyên bố sai nào để đính chính lại thông tin chuẩn xác.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Học tập & Giáo dục",
+    "subcategory": "Kiểm chứng & Biên tập",
+    "tags": [
+      "kiểm chứng",
+      "fact check",
+      "xác minh thông tin",
+      "biên tập",
+      "nghiên cứu"
+    ],
+    "search_keywords_vi": [
+      "kiểm chứng tính xác thực thông tin",
+      "fact checking văn bản",
+      "xác minh số liệu bài viết",
+      "công cụ kiểm chứng tin tức"
+    ],
+    "use_case": "Đóng vai trò biên tập viên chuyên nghiệp để kiểm tra, đánh giá tính xác thực của các số liệu và tuyên bố trong tài liệu.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "medium",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "kennynah85",
+      "name": "cw ka",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIMWRaDu9jROdmgI26R4lcF3-HWMGtCnCi6_7QtxkCtIsqOO1Dldg=s96-c",
+      "identifier": "kennynah85",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/factcheck",
+    "created_at": "2026-07-04T12:56:31.002Z"
+  },
+  {
+    "id": "cmr6d8efk000jl804hxg7evzr",
+    "slug": "deduce",
+    "original_title": "Deduce",
+    "original_prompt": "You are acting as a Senior Intelligence Analyst. Your task is to investigate an unknown or undisclosed entity (Asset/Person/Event) by triangulating multiple circumstantial clues and executing structured deductive reasoning. \n\nI will provide you with the known constraints, behavioral profiles, and operational data.\n\nPlease analyze the data using the following strict framework:\n\n### 1. Constraint Mapping & Elimination\n* List every explicit boundary, technical requirement, and geographical constraint provided in the source text.\n* Identify what categories or assets are *completely ruled out* by these boundaries.\n\n### 2. Behavioral & Profile Matching\n* Map the behavioral patterns or operational mechanics described (e.g., volume spikes, specific trading corridors, funding sizes).\n* Cross-reference these patterns against known market baselines or historical precedents. What specific profiles perfectly mirror these mechanics?\n\n### 3. Quantitative Calibration\n* Evaluate any numerical data provided (e.g., dollar amounts, supply percentages, timeframes).\n* Determine the mathematical plausibility of potential candidates (e.g., \"If $X amount can control 50% of the supply, the total market cap must sit strictly between $Y and $Z\").\n\n### 4. Triangulated Candidates Matrix\nConstruct a comparative table evaluating the top 3-4 most likely candidates that \"fit the bill.\" Rate them based on:\n* Technical Fit (Does it meet all operational constraints?)\n* Narrative Fit (Does it align with the geopolitical/market context?)\n* Overall Probability (Low / Medium / High)\n\n### 5. Definitive \"Educated Guess\" & Confidence Score\n* Based on the matrix, state your primary hypothesis. \n* Provide a Confidence Score (0-100%) and clearly list the #1 missing piece of data required to confirm this guess with 100% certainty.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Phân tích tình báo suy luận định lượng",
+    "vi_prompt": "Bạn đang đóng vai trò là một Chuyên viên Phân tích Tình báo Cao cấp (Senior Intelligence Analyst). Nhiệm vụ của bạn là điều tra một đối tượng chưa xác định hoặc chưa được tiết lộ (Tài sản/Cá nhân/Sự kiện) bằng cách tam giác hóa nhiều manh mối gián tiếp và thực hiện suy luận diễn dịch có cấu trúc.\n\nTôi sẽ cung cấp cho bạn các ràng buộc đã biết, hồ sơ hành vi và dữ liệu hoạt động.\n\nVui lòng phân tích dữ liệu bằng khung phân tích nghiêm ngặt sau:\n\n### 1. Lập bản đồ ràng buộc & Loại trừ (Constraint Mapping & Elimination)\n* Liệt kê mọi ranh giới rõ ràng, yêu cầu kỹ thuật và ràng buộc địa lý được cung cấp trong văn bản nguồn.\n* Xác định danh mục hoặc tài sản nào bị *loại trừ hoàn toàn* bởi các ranh giới này.\n\n### 2. Khớp hồ sơ & Hành vi (Behavioral & Profile Matching)\n* Lập bản đồ các mô hình hành vi hoặc cơ chế hoạt động được mô tả (ví dụ: các đợt tăng vọt đột biến khối lượng, các hành lang giao dịch cụ thể, quy mô vốn tài trợ).\n* Đối chiếu chéo các mô hình này với đường cơ sở thị trường đã biết hoặc các tiền lệ lịch sử. Những hồ sơ cụ thể nào phản ánh chính xác các cơ chế này?\n\n### 3. Hiệu chuẩn định lượng (Quantitative Calibration)\n* Đánh giá bất kỳ dữ liệu số nào được cung cấp (ví dụ: số tiền tính bằng đô la, tỷ lệ phần trăm nguồn cung, khung thời gian).\n* Xác định tính hợp lý về mặt toán học của các ứng viên tiềm năng (ví dụ: \"Nếu số tiền $X có thể kiểm soát 50% nguồn cung, thì tổng vốn hóa thị trường phải nằm nghiêm ngặt trong khoảng $Y và $Z\").\n\n### 4. Ma trận các ứng viên được tam giác hóa (Triangulated Candidates Matrix)\nConstruct a comparative table evaluating the top 3-4 most likely candidates that \"fit the bill.\" Rate them based on:\n* Mức độ phù hợp kỹ thuật (Có đáp ứng tất cả các ràng buộc hoạt động không?)\n* Mức độ phù hợp câu chuyện (Có phù hợp với bối cảnh địa chính trị/thị trường không?)\n* Xác suất tổng thể (Thấp / Trung bình / Cao)\n\n### 5. \"Phán đoán có cơ sở\" dứt khoát & Điểm tin cậy (Definitive \"Educated Guess\" & Confidence Score)\n* Dựa trên ma trận, hãy nêu giả thuyết chính của bạn.\n* Cung cấp Điểm tin cậy (0-100%) và liệt kê rõ ràng mảnh ghép dữ liệu còn thiếu số 1 cần thiết để xác nhận phỏng đoán này với độ chắc chắn 100%.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Năng suất & Công việc",
+    "subcategory": "Nghiên cứu & Phân tích",
+    "tags": [
+      "suy luận",
+      "tình báo",
+      "phân tích dữ liệu",
+      "tam giác hóa",
+      "intelligence"
+    ],
+    "search_keywords_vi": [
+      "suy luận tình báo",
+      "phân tích suy luận diễn dịch",
+      "kỹ thuật tam giác hóa thông tin",
+      "intelligence analysis"
+    ],
+    "use_case": "Điều tra, xác định danh tính thực thể ẩn danh thông qua xâu chuỗi manh mối và suy luận diễn dịch logic.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "hard",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "kennynah85",
+      "name": "cw ka",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIMWRaDu9jROdmgI26R4lcF3-HWMGtCnCi6_7QtxkCtIsqOO1Dldg=s96-c",
+      "identifier": "kennynah85",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/deduce",
+    "created_at": "2026-07-04T12:55:57.201Z"
+  },
+  {
+    "id": "cmr6d7p87000ojx04wlu84i64",
+    "slug": "distill",
+    "original_title": "distill",
+    "original_prompt": "Here is a prompt designed to strip away complexity and distill any subject down to its absolute core using a vivid analogy:\n\nCore Essence Analogy Prompt\nAct as an expert educator who specializes in radical simplicity. Your goal is to strip away all jargon, academic fluff, and minor details from a subject to reveal its absolute core mechanism using one powerful, sticky analogy.\n\nSubject to distill: [Insert your topic, concept, or process here]\n\nPlease structure your response using the following framework:\n\nThe core truth (one sentence): State the single most important mechanism or purpose of this subject. What is the fundamental problem it solves or the basic rule it follows?\n\nThe anchor analogy: Connect this core truth to a highly familiar, universal human experience (e.g., a sandbox, a kitchen, traffic, a campfire). Explain the subject entirely through this analogy.\n\nThe mapping: Briefly map the key parts of the real subject to the parts of your analogy so the connection is crystal clear (e.g., \"In this scenario, the flour represents X, the oven is Y, and the cake is Z\").\n\nThe takeaway: Conclude with a memorable, one-sentence rule of thumb that perfectly captures the essence of the subject",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Chiết xuất bản chất cốt lõi bằng phép ẩn dụ",
+    "vi_prompt": "Dưới đây là một prompt được thiết kế để loại bỏ sự phức tạp và chắt lọc bất kỳ chủ đề nào xuống bản chất cốt lõi tuyệt đối của nó bằng một phép ẩn dụ sống động:\n\nPrompt Ẩn dụ Bản chất Cốt lõi (Core Essence Analogy Prompt)\nĐóng vai trò là một nhà giáo dục chuyên gia chuyên về sự đơn giản hóa triệt để. Mục tiêu của bạn là tước bỏ mọi thuật ngữ chuyên ngành phức tạp, câu từ học thuật rườm rà và các chi tiết phụ khỏi một chủ đề để hé lộ cơ chế cốt lõi tuyệt đối của nó bằng một phép ẩn dụ mạnh mẽ, dễ ghi nhớ.\n\nChủ đề cần chắt lọc: [Chèn chủ đề, khái niệm hoặc quy trình của bạn vào đây]\n\nVui lòng cấu trúc phản hồi của bạn bằng khung sườn sau:\n\nChân lý cốt lõi (một câu): Nêu rõ cơ chế hoặc mục đích quan trọng duy nhất của chủ đề này. Vấn đề cơ bản mà nó giải quyết hoặc quy tắc cơ bản mà nó tuân theo là gì?\n\nPhép ẩn dụ điểm tựa: Kết nối chân lý cốt lõi này với một trải nghiệm quen thuộc, phổ quát của con người (ví dụ: hộp cát trẻ em, nhà bếp, giao thông đường phố, lửa trại). Giải thích toàn bộ chủ đề thông qua phép ẩn dụ này.\n\nLập bản đồ tương quan: Ánh xạ ngắn gọn các phần chính của chủ đề thực tế sang các phần trong phép ẩn dụ của bạn để mối liên kết trở nên rõ ràng mạch lạc (ví dụ: \"Trong kịch bản này, bột mì đại diện cho X, lò nướng là Y, và chiếc bánh là Z\").\n\nBài học đúc kết: Kết luận bằng một quy tắc kinh nghiệm dễ nhớ dài một câu, nắm bắt hoàn hảo bản chất của chủ đề.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Học tập & Giáo dục",
+    "subcategory": "Phương pháp học tập",
+    "tags": [
+      "chắt lọc kiến thức",
+      "ẩn dụ",
+      "đơn giản hóa",
+      "học tập",
+      "tư duy bản chất"
+    ],
+    "search_keywords_vi": [
+      "cách giải thích đơn giản",
+      "chắt lọc khái niệm phức tạp",
+      "học bằng phép ẩn dụ",
+      "first principles thinking"
+    ],
+    "use_case": "Đơn giản hóa và truyền đạt một khái niệm kỹ thuật phức tạp thông qua hình tượng ẩn dụ quen thuộc đời thường.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "medium",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "kennynah85",
+      "name": "cw ka",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIMWRaDu9jROdmgI26R4lcF3-HWMGtCnCi6_7QtxkCtIsqOO1Dldg=s96-c",
+      "identifier": "kennynah85",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/distill",
+    "created_at": "2026-07-04T12:55:24.499Z"
+  },
+  {
+    "id": "cmr6d6ry20005l104q02hfy8f",
+    "slug": "diff",
+    "original_title": "diff",
+    "original_prompt": "The \"Deep-Scan Comparative\" Prompt\n\"Act as an Expert Educator. I want to learn about [INSERT SUBJECT/TOPIC].\n\nTask 1: The Core Landscape. Create a comprehensive comparison table of the 5–7 most important [CONCEPTS/THEORIES/TOOLS] within this subject.\n\nUse the following columns:\n\nConcept Name: The standard term.\n\nThe 'In a Nutshell' Definition: A 1-sentence plain-English summary.\n\nThe Core Mechanism: How it actually works (the 'under the hood' logic).\n\nKey Differentiator: The one specific thing that makes it different from the other items in the table.\n\nBest Use Case: When or where this is the 'gold standard' to use.\n\nThe 'Major Flaw': The most common critique or limitation.\n\nTask 2: The Similarity Spectrum. Below the table, identify the two concepts that are most frequently confused with each other. Explain the 'nuance' that separates them using a simple analogy.\n\nTask 3: The Hierarchy/taxonomy. If these concepts were a 'building,' which one is the foundation (the most basic) and which one is the roof (the most advanced/niche)? Briefly explain why.\"\n\nWhy this prompt works:\nThe 'Key Differentiator' Column: This is the most important part. Most AI responses give you a list of similarities. Forcing a \"differentiator\" column stops the information from bleeding together.\n\nThe 'Major Flaw' Column: This provides immediate critical thinking. It prevents you from seeing a concept as a \"perfect solution\" and helps you understand its boundaries.\n\nTask 2 (The Nuance): This targets the \"Confusables.\" In any field (e.g., Marketing vs. Branding, or Data Science vs. Statistics), there are always two terms that sound the same but aren't. This clears that up instantly.\n\nTask 3 (The Hierarchy): This gives you a learning roadmap. It tells you what you need to master first before moving to the \"roof.\"\n\nHere’s your original text reformatted cleanly, with consistent headings, spacing, and structure — but without shortening or simplifying any of the content:",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "So sánh quét sâu đa chiều các khái niệm",
+    "vi_prompt": "Prompt \"So sánh quét sâu\" (The \"Deep-Scan Comparative\" Prompt)\n\"Đóng vai trò là một Chuyên gia Giáo dục. Tôi muốn tìm hiểu về [CHÈN CHỦ ĐỀ/LĨNH VỰC VÀO ĐÂY].\n\nNhiệm vụ 1: Toàn cảnh cốt lõi. Tạo một bảng so sánh toàn diện về 5–7 [KHÁI NIỆM/LÝ THUYẾT/CÔNG CỤ] quan trọng nhất trong chủ đề này.\n\nSử dụng các cột sau:\n\nTên khái niệm: Thuật ngữ chuẩn.\n\nĐịnh nghĩa 'Tóm gọn trong một câu': Tóm tắt bằng một câu bằng ngôn ngữ đại chúng dễ hiểu.\n\nCơ chế cốt lõi: Cách nó thực sự hoạt động (logic vận hành bên dưới).\n\nĐiểm khác biệt then chốt: Điểm cụ thể duy nhất giúp nó khác biệt so với các mục khác trong bảng.\n\nTrường hợp sử dụng tốt nhất: Khi nào hoặc ở đâu đây là 'tiêu chuẩn vàng' để áp dụng.\n\n'Lỗ hổng lớn': Lời chỉ trích hoặc hạn chế phổ biến nhất.\n\nNhiệm vụ 2: Phổ tương đồng. Bên dưới bảng, xác định hai khái niệm thường xuyên bị nhầm lẫn với nhau nhất. Giải thích 'sắc thái khác biệt' phân tách chúng bằng một phép ẩn dụ đơn giản.\n\nNhiệm vụ 3: Hệ thống phân cấp/Phân loại học. Nếu những khái niệm này là một 'tòa nhà', khái niệm nào là nền móng (cơ bản nhất) và khái niệm nào là mái nhà (nâng cao/chuyên sâu nhất)? Giải thích ngắn gọn lý do.\"\n\nTại sao prompt này hiệu quả:\nCột 'Điểm khác biệt then chốt': Đây là phần quan trọng nhất. Hầu hết các câu trả lời của AI cung cấp cho bạn một danh sách các điểm tương đồng. Việc bắt buộc có cột \"điểm khác biệt\" sẽ ngăn chặn thông tin bị hòa lẫn mờ nhạt vào nhau.\n\nCột 'Lỗ hổng lớn': Điều này cung cấp tư duy phản biện ngay lập tức. Nó ngăn bạn xem một khái niệm như một \"giải pháp hoàn hảo\" và giúp bạn hiểu rõ các ranh giới giới hạn của nó.\n\nNhiệm vụ 2 (Sắc thái): Điều này nhắm vào các cặp khái niệm \"Dễ gây nhầm lẫn\". Trong bất kỳ lĩnh vực nào (ví dụ: Marketing vs. Branding, hoặc Khoa học dữ liệu vs. Thống kê), luôn có hai thuật ngữ nghe có vẻ giống nhau nhưng thực tế lại khác biệt. Điều này làm sáng tỏ ngay lập tức.\n\nNhiệm vụ 3 (Phân cấp): Điều này cung cấp cho bạn một lộ trình học tập. Nó cho bạn biết những gì bạn cần phải thành thạo trước khi bước lên \"mái nhà\".\n\nDưới đây là văn bản gốc của bạn được định dạng lại gọn gàng, với các tiêu đề, khoảng cách và cấu trúc nhất quán — mà không rút ngắn hay đơn giản hóa bất kỳ nội dung nào:",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Học tập & Giáo dục",
+    "subcategory": "Nghiên cứu & Đối chiếu",
+    "tags": [
+      "so sánh",
+      "đối chiếu",
+      "phân biệt khái niệm",
+      "phân tích sâu",
+      "comparative"
+    ],
+    "search_keywords_vi": [
+      "bảng so sánh các khái niệm",
+      "phân biệt các thuật ngữ dễ nhầm lẫn",
+      "so sánh chi tiết chuyên sâu",
+      "deep scan comparative"
+    ],
+    "use_case": "Phân tích, so sánh và phân biệt rõ ràng các khái niệm phức tạp trong một lĩnh vực bằng bảng đối chiếu đa chiều.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "medium",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "kennynah85",
+      "name": "cw ka",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIMWRaDu9jROdmgI26R4lcF3-HWMGtCnCi6_7QtxkCtIsqOO1Dldg=s96-c",
+      "identifier": "kennynah85",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/diff",
+    "created_at": "2026-07-04T12:54:41.401Z"
+  },
+  {
+    "id": "cmr6d5ze9000gjx04xc4vwuvx",
+    "slug": "alfa2",
+    "original_title": "alfa2",
+    "original_prompt": "Act as an elite institutional equity research analyst and global macro portfolio strategist specializing in tech, cross-border supply chains, and on-chain liquid markets.\n\nI will provide you with a list of tickers (stocks and crypto assets) from my watchlist, along with recent market price movements. Your task is to organize these assets into hyper-granular sectors and generate a comprehensive market intelligence report.\n\nFor each asset or granular sector, analyze and link the current market movements to the following seven vectors:\n\n1. GRANULAR SECTOR CLASSIFICATION: Do not use broad terms like \"Tech,\" \"Crypto,\" or \"Hardware.\" Segment assets into precise operational niches (e.g., \"Full-Stack GPU Neoclouds\" vs \"HPC Miner Pivots,\" \"AI Data Center Grid Infrastructure,\" \"DeFi Layer-1 Alternative Execution Environments,\" or \"On-Chain Derivative Liquidity Layers\").\n\n2. REGIONAL-SPECIFIC THEMES & GEOPOLITICS: Identify how regional geographic factors impact the asset. Analyze localized macro-structural engines such as:\n   - Domestic regulatory shifts (e.g., EU AI Act, US FTC/DOJ antitrust actions, SEC/CFTC crypto policies, China State Council guidelines).\n   - Localized economic engines or cross-border currency regimes (e.g., Emerging Markets outperformance relative to US equities, JPY carry trade shifts, US CHIPS Act funding).\n   - Geopolitical friction points (e.g., Taiwan Strait shipping risks, specific tariff updates, near-shoring/friend-shoring supply chain pivots).\n\n3. SOCIAL ARBITRAGE & TRACKED DATA SOURCES: Directly integrate insights, structural theses, and sentiment indicators from my core data feeds to interpret momentum shifts:\n   - @aleabitoreddit (X): Focus on GPU cloud dynamics, Neocloud contracts (e.g., Microsoft, AWS, Meta deals), ARR expansions, and the structural divergence between pure-play Neoclouds ($NBIS) vs infrastructure miners ($IREN, $CIFR, $WULF).\n   - @MoneyPrinter0x (X): Focus on the Hyperliquid ecosystem, next-generation equity perps, on-chain options architectures ($HIGH, $HYPE), and macro thematic shifts like Emerging Markets/Chinese automation cycles vs US equities.\n   - @crypto_condom (X): Focus on regulatory sentiment shifts, institutional accumulation trends (e.g., political/corporate entity accumulation), and systemic on-chain DeFI liquidity/leverage warnings.\n   - Degen Trading House (Telegram): Track near-term momentum trends and high-beta flow allocations.\n   - Chris Camillo (Dumb Money): Leverage consumer social arbitrage metrics and identity-driven narrative shifts.\n\n4. NEWS & IMMEDIATE CATALYSTS: Identify the exact recent operational milestones driving the price action. Look for earnings surprises, forward guidance updates, major hyper-scaler lease agreements, protocol upgrades/hard forks, or multi-billion dollar GPU cloud contracts.\n\n5. 13F FILINGS & SUPERINVESTOR ACTIVITY: Cross-reference recent regulatory filings (13F, 13D/G, Form 4) or public wallet addresses for high-conviction buying, selling, or accumulating. Track positions, entries, exits, or sizing changes by Atreides Management (Gavin Baker), Leopold Aschenbrenner (specifically regarding AGI infrastructure and compute investments), and major sovereign or systemic hedge funds.\n\n6. MACROECONOMIC DRIVERS: Connect the movements to broader macro data. This includes FOMC interest rate decisions, inflation prints (CPI/PCE), employment reports, treasury yield curves, or sector-specific indicators (e.g., ISM Manufacturing index, energy grid capacity limitations).\n\n7. OUTLOOK & ACTIONABLE SYNTHESIS: Provide a short, forward-looking assessment. Is the current movement a sentiment-driven overreaction (noise/retail panic), or a structural repricing based on fundamental catalysts (e.g., gross margin improvements, institutional accumulation, or network expansion)?\n\nFormat the output cleanly using Markdown headers for each granular sector, followed by a bulleted list for each of the seven vectors per asset.",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Báo cáo tình báo thị trường và vĩ mô chuyên sâu",
+    "vi_prompt": "Đóng vai trò là một nhà phân tích nghiên cứu vốn cổ phần tổ chức ưu tú và chiến lược gia danh mục đầu tư vĩ mô toàn cầu chuyên về công nghệ, chuỗi cung ứng xuyên biên giới và các thị trường thanh khoản on-chain.\n\nTôi sẽ cung cấp cho bạn một danh sách các mã cổ phiếu và tài sản tiền mã hóa từ danh sách theo dõi của tôi, cùng với các biến động giá thị trường gần đây. Nhiệm vụ của bạn là sắp xếp các tài sản này vào các phân khúc ngành siêu chi tiết (hyper-granular) và tạo ra một báo cáo tình báo thị trường toàn diện.\n\nĐối với từng tài sản hoặc phân khúc chi tiết, hãy phân tích và liên kết các biến động thị trường hiện tại với bảy vectơ sau:\n\n1. PHÂN LOẠI NGÀNH CHI TIẾT (GRANULAR SECTOR CLASSIFICATION): Không sử dụng các thuật ngữ rộng như \"Tech\", \"Crypto\" hay \"Hardware\". Hãy phân khúc tài sản thành các thị trường ngách hoạt động chính xác (ví dụ: \"Full-Stack GPU Neoclouds\" đối đầu \"HPC Miner Pivots\", \"AI Data Center Grid Infrastructure\", \"DeFi Layer-1 Alternative Execution Environments\", hoặc \"On-Chain Derivative Liquidity Layers\").\n\n2. CÁC CHỦ ĐỀ THEO KHU VỰC & ĐỊA CHÍNH TRỊ (REGIONAL-SPECIFIC THEMES & GEOPOLITICS): Xác định các yếu tố địa lý khu vực tác động như thế nào đến tài sản. Phân tích các động cơ cấu trúc vĩ mô mang tính bản địa như:\n   - Các thay đổi quy định trong nước (ví dụ: Đạo luật AI của EU, các hành động chống độc quyền của FTC/DOJ Hoa Kỳ, chính sách tiền mã hóa của SEC/CFTC, hướng dẫn của Quốc vụ viện Trung Quốc).\n   - Các động cơ kinh tế địa phương hoặc cơ chế tiền tệ xuyên biên giới (ví dụ: sự vượt trội của các thị trường mới nổi so với chứng khoán Mỹ, sự chuyển dịch carry trade đồng Yên Nhật JPY, nguồn vốn từ Đạo luật CHIPS của Mỹ).\n   - Các điểm ma sát địa chính trị (ví dụ: rủi ro vận tải eo biển Đài Loan, cập nhật thuế quan cụ thể, sự chuyển dịch chuỗi cung ứng near-shoring/friend-shoring).\n\n3. KINH DOANH CHÊNH LỆCH XÃ HỘI & NGUỒN DỮ LIỆU ĐƯỢC THEO DÕI (SOCIAL ARBITRAGE & TRACKED DATA SOURCES): Tích hợp trực tiếp các hiểu biết sâu sắc, luận điểm cấu trúc và các chỉ báo cảm xúc từ các nguồn cấp dữ liệu cốt lõi của tôi để diễn giải các chuyển dịch động lượng:\n   - @aleabitoreddit (X): Tập trung vào động lực đám mây GPU, hợp đồng Neocloud (ví dụ: các thỏa thuận của Microsoft, AWS, Meta), mức tăng trưởng ARR và sự phân kỳ cấu trúc giữa Neocloud thuần túy ($NBIS) vs các thợ đào cơ sở hạ tầng ($IREN, $CIFR, $WULF).\n   - @MoneyPrinter0x (X): Tập trung vào hệ sinh thái Hyperliquid, hợp đồng tương lai vĩnh cửu vốn cổ phần thế hệ mới, kiến trúc quyền chọn on-chain ($HIGH, $HYPE) và các chuyển dịch chủ đề vĩ mô như chu kỳ tự động hóa của các thị trường mới nổi/Trung Quốc vs chứng khoán Mỹ.\n   - @crypto_condom (X): Tập trung vào các chuyển dịch tâm lý quy định, xu hướng tích lũy của tổ chức (ví dụ: sự tích lũy của các thực thể chính trị/doanh nghiệp) và các cảnh báo đòn bẩy/thanh khoản DeFi on-chain mang tính hệ thống.\n   - Degen Trading House (Telegram): Theo dõi các xu hướng động lượng ngắn hạn và sự phân bổ dòng vốn beta cao.\n   - Chris Camillo (Dumb Money): Tận dụng các chỉ số chênh lệch xã hội của người tiêu dùng và các chuyển dịch câu chuyện dựa trên bản sắc cá nhân.\n\n4. TIN TỨC & CÁC CHẤT XÚC TÁC TRỰC TIẾP (NEWS & IMMEDIATE CATALYSTS): Xác định các cột mốc hoạt động gần đây thúc đẩy hành động giá. Tìm kiếm các bất ngờ về thu nhập, cập nhật định hướng tương lai, các thỏa thuận thuê dung lượng lớn của hyper-scaler, nâng cấp giao thức / hard fork, hoặc các hợp đồng đám mây GPU trị giá hàng tỷ đô la.\n\n5. HỒ SƠ 13F & HOẠT ĐỘNG CỦA CÁC SIÊU NHÀ ĐẦU TƯ (13F FILINGS & SUPERINVESTOR ACTIVITY): Đối chiếu chéo các hồ sơ pháp lý gần đây (13F, 13D/G, Form 4) hoặc các địa chỉ ví công khai để phát hiện việc mua, bán hoặc tích lũy có niềm tin cao. Theo dõi vị thế, điểm vào, điểm thoát hoặc thay đổi quy mô vị thế của Atreides Management (Gavin Baker), Leopold Aschenbrenner (đặc biệt liên quan đến cơ sở hạ tầng AGI và đầu tư tính toán compute), và các quỹ đầu cơ hệ thống hoặc quỹ đầu tư quốc gia lớn.\n\n6. CÁC YẾU TỐ THÚC ĐẨY KINH TẾ VĨ MÔ (MACROECONOMIC DRIVERS): Kết nối các biến động với dữ liệu vĩ mô rộng lớn hơn. Điều này bao gồm các quyết định lãi suất của FOMC, số liệu lạm phát (CPI/PCE), báo cáo việc làm, đường cong lợi suất trái phiếu kho bạc, hoặc các chỉ số ngành cụ thể (ví dụ: chỉ số Sản xuất ISM, các hạn chế công suất lưới điện năng lượng).\n\n7. TRIỂN VỌNG & TỔNG HỢP CÓ THỂ HÀNH ĐỘNG (OUTLOOK & ACTIONABLE SYNTHESIS): Cung cấp một đánh giá ngắn gọn hướng tới tương lai. Liệu biến động hiện tại là một phản ứng thái quá do tâm lý thúc đẩy (nhiễu/sự hoảng loạn của nhà đầu tư nhỏ lẻ), hay là một sự định giá lại về mặt cấu trúc dựa trên các chất xúc tác cơ bản (ví dụ: cải thiện biên lợi nhuận gộp, tổ chức tích lũy, hoặc mở rộng mạng lưới)?\n\nĐịnh dạng kết quả đầu ra rõ ràng bằng tiêu đề Markdown cho từng phân khúc chi tiết, theo sau là danh sách có dấu đầu dòng cho từng vectơ trong số bảy vectơ trên đối với mỗi tài sản.",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Tài chính & Đầu tư",
+    "subcategory": "Nghiên cứu thị trường & Cổ phiếu",
+    "tags": [
+      "chứng khoán",
+      "macro",
+      "crypto",
+      "equity research",
+      "thị trường tài chính"
+    ],
+    "search_keywords_vi": [
+      "nghiên cứu cổ phiếu vĩ mô",
+      "phân tích danh mục đầu tư công nghệ",
+      "tình báo thị trường vốn",
+      "báo cáo tài chính chuyên sâu"
+    ],
+    "use_case": "Phân tích biến động cổ phiếu công nghệ và tài sản số theo 7 chiều kích vĩ mô, chuỗi cung ứng và dòng tiền tổ chức.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "hard",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "kennynah85",
+      "name": "cw ka",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIMWRaDu9jROdmgI26R4lcF3-HWMGtCnCi6_7QtxkCtIsqOO1Dldg=s96-c",
+      "identifier": "kennynah85",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/alfa2",
+    "created_at": "2026-07-04T12:54:04.401Z"
+  },
+  {
+    "id": "cmr6d4vtq0001l104ewlye5ia",
+    "slug": "alpha",
+    "original_title": "alfa",
+    "original_prompt": "Organise every asset into granular sectors and identify clear trends/narratives. If applicable, highlight geographical rotations. \n\nBased on the % price change on the page, organise the sectors according to:\n\nBullish = green dot\nNeutral = yellow dot\nBearish = red dot\n\nIf available: Highlight mentions by these accounts in the last 30 days:\n\n@aleabitoreddit, @MoneyPrinter0x, @crypto_condom, @degentradingLSD, and @ChrisCamillo",
+    "language_original": "en",
+    "language_detection": "rule_based",
+    "vi_title": "Phân loại động lượng tài sản theo màu",
+    "vi_prompt": "Sắp xếp từng tài sản vào các phân khúc ngành chi tiết và xác định các xu hướng/câu chuyện rõ ràng. Nếu có thể, hãy làm nổi bật sự luân chuyển theo khu vực địa lý.\n\nDựa trên % thay đổi giá trên trang, sắp xếp các phân khúc theo:\n\nTăng giá (Bullish) = chấm xanh lá (🟢)\nTrung lập (Neutral) = chấm vàng (🟡)\nGiảm giá (Bearish) = chấm đỏ (🔴)\n\nNếu có sẵn: Làm nổi bật các lượt đề cập bởi các tài khoản sau trong 30 ngày qua:\n\n@aleabitoreddit, @MoneyPrinter0x, @crypto_condom, @degentradingLSD, và @ChrisCamillo",
+    "translation_status": "translated",
+    "source_category": null,
+    "source_tags": [],
+    "category": "Tài chính & Đầu tư",
+    "subcategory": "Theo dõi thị trường",
+    "tags": [
+      "thị trường tài chính",
+      "phân loại tài sản",
+      "crypto",
+      "chứng khoán",
+      "xu hướng"
+    ],
+    "search_keywords_vi": [
+      "theo dõi xu hướng tài sản",
+      "phân loại nhóm ngành chứng khoán",
+      "đánh giá động lượng thị trường",
+      "tín hiệu thị trường crypto"
+    ],
+    "use_case": "Phân loại nhanh các mã tài sản theo nhóm ngành và trực quan hóa trạng thái xu hướng bằng mã màu.",
+    "model_type": [
+      "text"
+    ],
+    "difficulty": "easy",
+    "quality_status": "needs_review",
+    "author": {
+      "username": "kennynah85",
+      "name": "cw ka",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIMWRaDu9jROdmgI26R4lcF3-HWMGtCnCi6_7QtxkCtIsqOO1Dldg=s96-c",
+      "identifier": "kennynah85",
+      "verified": false
+    },
+    "source": "prompts.chat",
+    "source_url": "https://prompts.chat/p/alpha",
+    "created_at": "2026-07-04T12:53:13.118Z"
+  }
+]

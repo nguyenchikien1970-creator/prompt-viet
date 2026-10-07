@@ -1,0 +1,188 @@
+examples/code-examples.md 
+# Các ví dụ mã nguồn (Code Examples)
+
+Tất cả các ví dụ dưới đây đều tải khóa API từ tệp `.env` thông qua các biến môi trường.
+
+---
+
+## Python: Tạo âm nhạc (Đầu ra dạng URL)
+
+```python
+import os
+import requests
+from dotenv import load_dotenv
+
+load_dotenv()
+API_KEY = os.getenv("MINIMAX_API_KEY")
+
+def generate_music(prompt, lyrics, output_file="output.mp3"):
+    response = requests.post(
+        "https://api.minimax.io/v1/music_generation",
+        headers={
+            "Authorization": f"Bearer {API_KEY}",
+            "Content-Type": "application/json"
+        },
+        json={
+            "model": "music-2.5",
+            "prompt": prompt,
+            "lyrics": lyrics,
+            "audio_setting": {
+                "sample_rate": 44100,
+                "bitrate": 256000,
+                "format": "mp3"
+            },
+            "output_format": "url"
+        }
+    )
+    response.raise_for_status()
+    result = response.json()
+
+    if result["base_resp"]["status_code"] != 0:
+        raise Exception(f"Lỗi API {result['base_resp']['status_code']}: {result['base_resp']['status_msg']}")
+
+    audio_url = result["data"]["audio"]
+    duration = result["extra_info"]["music_duration"]
+    print(f"Đã tạo thành công {duration:.1f}s âm nhạc")
+
+    audio_data = requests.get(audio_url)
+    with open(output_file, "wb") as f:
+        f.write(audio_data.content)
+    print(f"Đã lưu bài hát vào {output_file}")
+    return result
+
+# Cách sử dụng
+generate_music(
+    prompt="Indie folk, melancholic, acoustic guitar, soft piano, female vocals",
+    lyrics="""[Intro]
+
+[Verse]
+Walking through the autumn leaves
+Nobody knows where I've been
+
+[Chorus]
+Every road leads back to you
+Every song I hear rings true
+
+[Outro]
+""",
+    output_file="my_song.mp3"
+)
+```
+
+---
+
+## Python: Tạo âm nhạc (Đầu ra dạng Hex nhị phân)
+
+```python
+import os
+import binascii
+import requests
+from dotenv import load_dotenv
+
+load_dotenv()
+API_KEY = os.getenv("MINIMAX_API_KEY")
+
+def generate_music_hex(prompt, lyrics, output_file="output.mp3"):
+    response = requests.post(
+        "https://api.minimax.io/v1/music_generation",
+        headers={
+            "Authorization": f"Bearer {API_KEY}",
+            "Content-Type": "application/json"
+        },
+        json={
+            "model": "music-2.5",
+            "prompt": prompt,
+            "lyrics": lyrics,
+            "audio_setting": {
+                "sample_rate": 44100,
+                "bitrate": 256000,
+                "format": "mp3"
+            },
+            "output_format": "hex"
+        }
+    )
+    response.raise_for_status()
+    result = response.json()
+
+    if result["base_resp"]["status_code"] != 0:
+        raise Exception(f"Lỗi API {result['base_resp']['status_code']}: {result['base_resp']['status_msg']}")
+
+    hex_data = result["data"]["audio"]
+    audio_bytes = binascii.unhexlify(hex_data)
+    with open(output_file, "wb") as f:
+        f.write(audio_bytes)
+    print(f"Đã giải mã chuỗi hex và lưu bài hát vào {output_file}")
+    return result
+```
+
+---
+
+## Node.js / TypeScript: Tạo âm nhạc
+
+```typescript
+import axios from "axios";
+import * as fs from "fs";
+import * as dotenv from "dotenv";
+
+dotenv.config();
+const API_KEY = process.env.MINIMAX_API_KEY;
+
+async function generateMusic(prompt: string, lyrics: string, outputFile: string = "output.mp3") {
+  const response = await axios.post(
+    "https://api.minimax.io/v1/music_generation",
+    {
+      model: "music-2.5",
+      prompt,
+      lyrics,
+      audio_setting: {
+        sample_rate: 44100,
+        bitrate: 256000,
+        format: "mp3"
+      },
+      output_format: "url"
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+        "Content-Type": "application/json"
+      }
+    }
+  );
+
+  const result = response.data;
+  if (result.base_resp?.status_code !== 0) {
+    throw new Error(`Lỗi API: ${result.base_resp?.status_msg}`);
+  }
+
+  const audioUrl = result.data.audio;
+  const audioResponse = await axios.get(audioUrl, { responseType: "arraybuffer" });
+  fs.writeFileSync(outputFile, Buffer.from(audioResponse.data));
+  console.log(`Đã lưu bài hát vào ${outputFile}`);
+}
+```
+
+---
+
+## cURL: Tạo âm nhạc và Lời bài hát
+
+```bash
+# 1. Tạo lời bài hát
+curl -X POST "https://api.minimax.io/v1/lyrics_generation" \
+  -H "Authorization: Bearer $MINIMAX_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "mode": "write_full_song",
+    "prompt": "Một ca khúc acoustic pop tươi vui về buổi sáng thức dậy tràn đầy hy vọng"
+  }'
+
+# 2. Tạo file âm nhạc
+curl -X POST "https://api.minimax.io/v1/music_generation" \
+  -H "Authorization: Bearer $MINIMAX_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "music-2.5",
+    "prompt": "Upbeat acoustic pop, sunny morning, energetic 115 BPM",
+    "lyrics": "[Intro]\n\n[Verse]\nSun is shining through the trees...",
+    "output_format": "url"
+  }'
+```

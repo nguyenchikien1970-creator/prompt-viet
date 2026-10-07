@@ -1,0 +1,90 @@
+Tools/Lib/types.ts
+/**
+ * GitHubTrends - 类型定义
+ *
+ * 定义所有 TypeScript 接口和类型
+ */
+
+/**
+ * GitHub Trending 项目
+ */
+export interface TrendingProject {
+  rank: number;
+  name: string;
+  description: string;
+  language: string;
+  stars: string;
+  starsThisPeriod: string;
+  url: string;
+}
+
+/**
+ * 技术新闻条目
+ */
+export interface TechNewsItem {
+  id: string;
+  title: string;
+  url: string;
+  source: string; // 'hackernews', 'reddit', etc.
+  points?: number;
+  comments?: number;
+  timestamp: string;
+  tags: string[];
+}
+
+/**
+ * 仪表板生成选项
+ */
+export interface DashboardOptions {
+  period: 'daily' | 'weekly';
+  language?: string;
+  limit: number;
+  output: string;
+  includeNews: boolean;
+  newsCount: number;
+  theme: 'light' | 'dark' | 'auto';
+}
+
+/**
+ * 数据分析结果
+ */
+export interface Analytics {
+  languageDistribution: Record<string, number>;
+  totalStars: number;
+  topProject: TrendingProject;
+  growthStats: {
+    highest: TrendingProject;
+    average: number;
+  };
+}
+
+/**
+ * Trending 查询选项（用于 GetTrending.ts）
+ */
+export interface TrendingOptions {
+  period: "daily" | "weekly";
+  language?: string;
+  limit: number;
+}
+
+/**
+ * 图表数据
+ */
+export interface ChartData {
+  labels: string[];
+  data: number[];
+  colors: string[];
+}
+
+/**
+ * 模板渲染数据
+ */
+export interface TemplateData {
+  title: string;
+  generatedAt: string;
+  period: string;
+  projects: TrendingProject[];
+  news?: TechNewsItem[];
+  analytics: Analytics;
+  options: DashboardOptions;
+}

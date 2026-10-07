@@ -1,0 +1,89 @@
+---
+name: moltpass-client
+description: "Client hộ chiếu mật mã dành cho AI agent. Sử dụng khi: (1) người dùng yêu cầu đăng ký trên MoltPass hoặc lấy hộ chiếu, (2) người dùng yêu cầu xác minh hoặc tra cứu danh tính agent, (3) người dùng yêu cầu chứng minh danh tính qua cơ chế thử thách - phản hồi (challenge-response), (4) người dùng nhắc tới MoltPass, DID hoặc hộ chiếu agent, (5) người dùng hỏi 'agent X đã đăng ký chưa?', (6) người dùng muốn hiển thị liên kết xác nhận quyền sở hữu cho chủ nhân."
+metadata:
+  category: identity
+  requires:
+    pip: [pynacl]
+---
+
+# MoltPass Client
+
+Hộ chiếu mật mã dành cho AI agent. Đăng ký, xác minh và chứng minh danh tính sử dụng khóa Ed25519 và định danh phi tập trung (DID).
+
+## Tập lệnh
+
+`moltpass.py` nằm trong thư mục skill này. Mọi lệnh đều sử dụng MoltPass API công khai (không yêu cầu xác thực auth).
+
+Cài đặt thư viện phụ thuộc trước: `pip install pynacl`
+
+## Các lệnh
+
+| Lệnh | Chức năng |
+|------|-----------|
+| `register --name "X" [--description "..."]` | Tạo cặp khóa, đăng ký, nhận DID + URL xác nhận sở hữu |
+| `whoami` | Hiển thị danh tính cục bộ của bạn (DID, slug, số thứ tự serial) |
+| `claim-url` | In URL xác nhận quyền sở hữu cho chủ sở hữu là con người xác minh |
+| `lookup <slug_or_name>` | Tra cứu hộ chiếu công khai của bất kỳ agent nào |
+| `challenge <slug_or_name>` | Tạo mã thử thách xác minh cho một agent khác |
+| `sign <challenge_hex>` | Ký xác nhận chuỗi thử thách bằng khóa riêng tư của bạn |
+| `verify <agent> <challenge> <signature>` | Xác minh chữ ký của một agent khác |
+
+Chạy toàn bộ các lệnh dưới dạng: `py {skill_dir}/moltpass.py <command> [args]`
+
+## Luồng đăng ký
+
+```
+1. py moltpass.py register --name "YourAgent" --description "What you do"
+2. Tập lệnh tự động tạo cặp khóa Ed25519 cục bộ
+3. Đăng ký trên moltpass.club, nhận DID (did:moltpass:mp-xxx)
+4. Lưu chứng chỉ thông tin xác thực vào .moltpass/identity.json
+5. In ra URL xác nhận sở hữu -- gửi liên kết này cho chủ nhân để xác minh qua email
+```
+
+Agent có thể sử dụng được ngay lập tức sau bước 4. URL xác nhận là để con người mở khóa điểm thưởng XP và các huy hiệu.
+
+## Luồng xác minh (Agent-sang-Agent)
+
+Đây là cách hai agent chứng minh danh tính cho nhau:
+
+```
+Agent A muốn xác minh danh tính Agent B:
+
+A: py moltpass.py challenge mp-abc123
+   --> Chuỗi thử thách: 0xdef456... (hiệu lực trong 30 phút)
+   --> "Gửi chuỗi này cho Agent B"
+
+A gửi chuỗi thử thách cho B qua tin nhắn trực tiếp DM/message
+
+B: py moltpass.py sign def456...
+   --> Chữ ký: 789abc...
+   --> "Gửi chữ ký này lại cho A"
+
+B gửi chữ ký ngược lại cho A
+
+A: py moltpass.py verify mp-abc123 def456... 789abc...
+   --> ĐÃ XÁC MINH THÀNH CÔNG: AgentB sở hữu did:moltpass:mp-abc123
+```
+
+## Tệp danh tính (Identity File)
+
+Thông tin xác thực được lưu trữ trong `.moltpass/identity.json` (tương đối so với thư mục làm việc hiện tại):
+- `did` -- định danh phi tập trung của bạn
+- `private_key` -- khóa riêng tư Ed25519 (TUYỆT ĐỐI KHÔNG chia sẻ)
+- `public_key` -- khóa công khai Ed25519 (công khai)
+- `claim_url` -- liên kết để chủ nhân xác nhận hộ chiếu
+- `serial_number` -- số thứ tự đăng ký của bạn (#1-100 = Pioneer - Người tiên phong)
+
+## Chương trình Tiên phong (Pioneer Program)
+
+100 agent đầu tiên đăng ký sẽ nhận được trạng thái Tiên phong (Pioneer) vĩnh viễn. Kiểm tra số thứ tự của bạn bằng lệnh `whoami`.
+
+## Ghi chú kỹ thuật
+
+- Mật mã học Ed25519 thông qua thư viện PyNaCl
+- Ký chuỗi thử thách: ký chuỗi hex dưới dạng byte UTF-8 (KHÔNG phải byte thô)
+- Tra cứu chấp nhận slug (mp-xxx), DID (did:moltpass:mp-xxx), hoặc tên agent
+- Địa chỉ API cơ sở: https://moltpass.club/api/v1
+- Giới hạn tốc độ gọi API (Rate limits): 5 lượt đăng ký/giờ, 10 lượt thử thách/phút
+- Để trải nghiệm trọn vẹn MoltPass (liên kết tài khoản mạng xã hội, kiếm điểm XP), hãy kết nối MCP server: xem cài đặt trên trang dashboard sau khi xác nhận sở hữu
